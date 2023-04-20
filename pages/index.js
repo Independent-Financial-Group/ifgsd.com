@@ -1,8 +1,12 @@
 import React from 'react'
+import Nav from '../components/Nav/Nav'
 
 const HomePage = () => {
   return (
-    <div className='text-3xl font-bold underline'>Welcome to IFGSD.COM!</div>
+    <>
+    <Nav />
+    TEst!
+    </>
   )
 }
 
