@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #F6F8FC;
+}
+
+.outline {
+    outline: 2px solid red;
+}
+
+
+.width-300 {
+    width: 300px;
+}
