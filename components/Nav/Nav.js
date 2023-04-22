@@ -7,8 +7,8 @@ import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
 const Nav = () => {
     return (
-        <nav className='py-5 mx-auto bg-white relative drop-shadow hidden lg:block'>
-            <div className="row xl:container px-4 xl:px-0 mx-auto flex flex-row justify-between">
+        <nav className='py-5 bg-white relative drop-shadow hidden lg:block'>
+            <div className="row mx-auto max-w-screen-xl flex flex-row justify-between">
                 <div className="col">
                     <Link href="/">
                         <Image
