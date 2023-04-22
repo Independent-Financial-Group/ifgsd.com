@@ -1,3 +1,6 @@
+// 014C86
+// '#1523FE'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,7 +10,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'blue-wave': '#1523FE',
+      'blue-wave': '#014C86',
       'red-fire': '#E65950',
       'dunkel-blue': '#111820',
       'blue-foam': '#B4C9DC',
