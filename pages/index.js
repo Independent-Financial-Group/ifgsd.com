@@ -1,7 +1,9 @@
 import React from 'react'
+import Head from 'next/head'
+
 import Nav from '../components/Nav/Nav'
 import MobileNav from '../components/MobileNav/MobileNav'
-import Head from 'next/head'
+import Hero from '../components/Hero/Hero'
 
 const HomePage = () => {
   return (
@@ -11,9 +13,7 @@ const HomePage = () => {
     </Head>
     <Nav />
     <MobileNav />
-    <h1>
-      Independence, Perfected.
-    </h1>
+    <Hero />
     </>
   )
 }
