@@ -7,7 +7,7 @@ import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
 const Nav = () => {
     return (
-        <nav className='py-5 mx-auto bg-white relative drop-shadow'>
+        <nav className='py-5 mx-auto bg-white relative drop-shadow hidden md:block'>
             <div className="row container mx-auto flex flex-row justify-between">
                 <div className="col">
                     <Link href="/">
@@ -484,7 +484,7 @@ const Nav = () => {
                     </Menu>
                     <Menu>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-blue-wave text-white p-3 rounded'>
+                            <Menu.Button className='h-full flex flex-row bg-blue-wave text-white p-3 rounded drop-shadow'>
                                 <p className='font-bold'>Login</p>
                                 <ChevronDownIcon
                                     className='h-5 w-5 ext-dunkel-blue'
@@ -501,10 +501,10 @@ const Nav = () => {
                                 leaveTo="transform opacity-0 scale-95"
                             >
                                 <Menu.Items className='absolute top-full w-64 bg-white flex flex-col gap-y-5 drop-shadow rounded'>
-                                    <Menu.Item className='hover:bg-blue-foam p-3'>
+                                    <Menu.Item className='hover:bg-blue-foam'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-500'}`}
+                                                className={`${active && 'bg-blue-500'} p-3`}
                                                 href="https://ifg-gateway.com"
                                             >
                                                 Gateway
