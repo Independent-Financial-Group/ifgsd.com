@@ -7,7 +7,7 @@ import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
 const Nav = () => {
     return (
-        <nav className='py-5 mx-auto bg-white relative drop-shadow hidden md:block'>
+        <nav className='py-5 mx-auto bg-white relative drop-shadow hidden lg:block'>
             <div className="row container mx-auto flex flex-row justify-between">
                 <div className="col">
                     <Link href="/">
@@ -22,10 +22,10 @@ const Nav = () => {
                 <div className="col flex flex-row gap-x-20 shrink-0 items-center ">
                     <Menu>
                         <div>
-                            <Menu.Button className='h-full flex flex-row'>
+                            <Menu.Button className='flex flex-row items-center'>
                                 <p>About Us</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue'
+                                    className='h-5 w-5'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -61,7 +61,7 @@ const Nav = () => {
                                     </Menu.Item>
                                     <Menu.Item className='hover:bg-blue-foam p-3'>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row w-full hover:bg-blue-foam'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-foam'>
                                                 <p>Work at IFG</p>
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -111,7 +111,7 @@ const Nav = () => {
                                     </Menu.Item>
                                     <Menu.Item className='hover:bg-blue-foam p-3'>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row w-full hover:bg-blue-foam'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-foam'>
                                                 Why Choose Us
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -482,7 +482,7 @@ const Nav = () => {
                             </Transition>
                         </div>
                     </Menu>
-                    <Menu>
+                    <Menu className='relative'>
                         <div>
                             <Menu.Button className='h-full flex flex-row bg-blue-wave text-white p-3 rounded drop-shadow'>
                                 <p className='font-bold'>Login</p>
@@ -500,7 +500,7 @@ const Nav = () => {
                                 leaveFrom="transform opacity-100 scale-100"
                                 leaveTo="transform opacity-0 scale-95"
                             >
-                                <Menu.Items className='absolute top-full w-64 bg-white flex flex-col gap-y-5 drop-shadow rounded'>
+                                <Menu.Items className='absolute top-full -left-full mt-8 w-64 bg-white flex flex-col drop-shadow rounded'>
                                     <Menu.Item className='hover:bg-blue-foam'>
                                         {({ active }) => (
                                             <Link
