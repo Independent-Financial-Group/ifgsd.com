@@ -8,7 +8,7 @@ import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 const Nav = () => {
     return (
         <nav className='py-5 mx-auto bg-white relative drop-shadow hidden lg:block'>
-            <div className="row container mx-auto flex flex-row justify-between">
+            <div className="row xl:container px-4 xl:px-0 mx-auto flex flex-row justify-between">
                 <div className="col">
                     <Link href="/">
                         <Image
@@ -19,7 +19,7 @@ const Nav = () => {
                         />
                     </Link>
                 </div>
-                <div className="col flex flex-row gap-x-20 shrink-0 items-center ">
+                <div className="col flex flex-row gap-x-10 shrink-0 items-center ">
                     <Menu>
                         <div>
                             <Menu.Button className='flex flex-row items-center'>
@@ -417,7 +417,7 @@ const Nav = () => {
                                 leaveFrom="transform opacity-100 scale-100"
                                 leaveTo="transform opacity-0 scale-95"
                             >
-                                <Menu.Items className='absolute top-full w-64 bg-white flex flex-col gap-y-5 drop-shadow rounded'>
+                                <Menu.Items className='absolute top-full right-36 xl:right-auto w-64 bg-white flex flex-col drop-shadow rounded'>
                                     <Menu.Item className='hover:bg-blue-foam p-3'>
                                         {({ active }) => (
                                             <Link
@@ -500,7 +500,7 @@ const Nav = () => {
                                 leaveFrom="transform opacity-100 scale-100"
                                 leaveTo="transform opacity-0 scale-95"
                             >
-                                <Menu.Items className='absolute top-full -left-full mt-8 w-64 bg-white flex flex-col drop-shadow rounded'>
+                                <Menu.Items className='absolute top-full -ml-40 xl:ml-0 xl:-left-full mt-8 w-64 bg-white flex flex-col drop-shadow rounded'>
                                     <Menu.Item className='hover:bg-blue-foam'>
                                         {({ active }) => (
                                             <Link
