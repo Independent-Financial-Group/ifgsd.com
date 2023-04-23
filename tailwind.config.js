@@ -7,6 +7,8 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flowbite-react/**/*.js",
+    "./public/**/*.html"
   ],
   theme: {
     colors: {
@@ -22,6 +24,8 @@ module.exports = {
     },
     extend: {}
   },
-  plugins: [],
+  plugins: [
+    require("flowbite/plugin")
+  ],
 }
 
