@@ -6,7 +6,8 @@ const Hero = () => {
             className="px-6 pt-14 lg:px-8"
             style={{
                 backgroundImage: "url('https://new.ifgsd.com/wp-content/uploads/2023/03/ifg-hero.jpg')",
-                objectFit: 'cover'
+                backgroundSize: 'cover',
+                backgroundPosition: 'center right'
             }}>
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
