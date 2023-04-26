@@ -6,6 +6,10 @@ module.exports = {
           protocol: 'https',
           hostname: 'ifgsd.com',
         },
+        {
+          protocol: 'https',
+          hostname: 'new.ifgsd.com'
+        }
       ],
     },
   }
