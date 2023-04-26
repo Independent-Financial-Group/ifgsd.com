@@ -7,7 +7,7 @@ const Hero = () => {
             style={{
                 backgroundImage: "url('https://new.ifgsd.com/wp-content/uploads/2023/03/ifg-hero.jpg')",
                 backgroundSize: 'cover',
-                backgroundPosition: 'center right'
+                backgroundPosition: 'right center'
             }}>
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
