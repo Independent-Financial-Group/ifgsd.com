@@ -7,7 +7,7 @@ import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
 const Nav = () => {
     return (
-        <nav className='py-5 bg-white relative drop-shadow hidden lg:block'>
+        <nav className='py-5 bg-seabreeze-100 relative drop-shadow hidden lg:block'>
             <div className="row mx-auto max-w-screen-xl flex flex-row justify-between">
                 <div className="col">
                     <Link href="/">
@@ -39,20 +39,20 @@ const Nav = () => {
                                 leaveTo="transform opacity-0 scale-95"
                             >
                                 <Menu.Items className='absolute top-3/4 w-56 bg-white flex flex-col drop-shadow rounded text-sm'>
-                                    <Menu.Item className='hover:text-white py-3 px-2'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'}`}
+                                                className={`${active && 'bg-blue-wave-500'}`}
                                                 href="/about/leadership"
                                             >
                                                 Leadership
                                             </Link>
                                         )}
                                     </Menu.Item>
-                                    <Menu.Item className='hover:text-white py-3 px-2'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'}`}
+                                                className={`${active && 'bg-blue-wave-500'}`}
                                                 href="/about/our-story"
                                             >
                                                 Our Story
@@ -61,7 +61,7 @@ const Nav = () => {
                                     </Menu.Item>
                                     <Menu.Item>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row items-center w-full hover:text-white hover:bg-blue-wave py-3 px-2'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:text-seabreeze-500 hover:bg-blue-wave-500 py-3 px-2'>
                                                 <p>Work at IFG</p>
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -78,7 +78,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/work-at-ifg/careers"
                                                             >
                                                                 Careers
@@ -88,7 +88,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/work-at-ifg/culture"
                                                             >
                                                                 Culture
@@ -98,7 +98,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/work-at-ifg/benefits"
                                                             >
                                                                 Benefits
@@ -111,7 +111,7 @@ const Nav = () => {
                                     </Menu.Item>
                                     <Menu.Item>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-wave hover:text-white py-3 px-2'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-wave-500 hover:text-seabreeze-500 py-3 px-2'>
                                                 Why Choose Us
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -128,7 +128,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/our-misison"
                                                             >
                                                                 Our Mission
@@ -138,7 +138,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/compensation"
                                                             >
                                                                 Compensation
@@ -148,7 +148,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/transition-support"
                                                             >
                                                                 Transition Support
@@ -158,7 +158,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/customer-service"
                                                             >
                                                                 Customer Service
@@ -168,7 +168,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/advisor-success-stories"
                                                             >
                                                                 Advisor Success Stories
@@ -178,7 +178,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/partners"
                                                             >
                                                                 Our Partners
@@ -198,7 +198,7 @@ const Nav = () => {
                             <Menu.Button className='h-full flex flex-row items-center'>
                                 <p>Offerings</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue'
+                                    className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -215,7 +215,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/practice-development"
                                             >
                                                 Practice Development
@@ -225,7 +225,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/products"
                                             >
                                                 Products
@@ -235,7 +235,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/technology"
                                             >
                                                 Technology
@@ -245,7 +245,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/marketing-support"
                                             >
                                                 Marketing Support
@@ -255,7 +255,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/compliance"
                                             >
                                                 Compliance
@@ -271,7 +271,7 @@ const Nav = () => {
                             <Menu.Button className='h-full flex flex-row items-center'>
                                 <p>Press & Media</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue'
+                                    className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -288,7 +288,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/press-and-media/blog"
                                             >
                                                 Blog
@@ -298,7 +298,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/press-and-media/press-releases"
                                             >
                                                 Press Releases
@@ -308,7 +308,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/press-and-media/podcast"
                                             >
                                                 Podcast
@@ -317,7 +317,7 @@ const Nav = () => {
                                     </Menu.Item>
                                     <Menu.Item>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row w-full py-3 px-2 hover:bg-blue-wave hover:text-white'>
+                                            <Menu.Button className='flex flex-row w-full py-3 px-2 hover:bg-blue-wave-500 hover:text-seabreeze-500'>
                                                 Press Room
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -334,7 +334,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/press-and-media/ifg-connect"
                                                             >
                                                                 IFG Connect
@@ -344,7 +344,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/press-and-media/bluechip"
                                                             >
                                                                 Bluechip
@@ -354,7 +354,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/press-and-media/the-independent"
                                                             >
                                                                 The Independent
@@ -364,7 +364,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/press-and-media/advisor-success-stories"
                                                             >
                                                                 Advisor Success Stories
@@ -374,7 +374,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/partners"
                                                             >
                                                                 Our Partners
@@ -394,7 +394,7 @@ const Nav = () => {
                             <Menu.Button className='h-full flex flex-row'>
                                 <p>Join Us</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue'
+                                    className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -411,7 +411,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/join/advisor-diversity-and-inclusion"
                                             >
                                                 Advisor Diversity & Inclusion
@@ -421,7 +421,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/join/awards-and-recognition"
                                             >
                                                 Awards & Recognition
@@ -431,7 +431,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/join/independent-business-model"
                                             >
                                                 Independent Business Model
@@ -441,7 +441,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/join/visit-us"
                                             >
                                                 Visit Us
@@ -451,7 +451,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/join/recruiting-team"
                                             >
                                                 Recruiting Team
@@ -461,7 +461,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave'} hover:text-white`}
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/join/we-value-you"
                                             >
                                                 We Value You
@@ -474,10 +474,10 @@ const Nav = () => {
                     </Menu>
                     <Menu className='relative'>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-blue-wave text-white p-3 rounded drop-shadow'>
+                            <Menu.Button className='h-full flex flex-row bg-blue-wave-500 text-seabreeze-500 p-3 rounded drop-shadow'>
                                 <p className='font-bold'>Login</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue'
+                                    className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -491,20 +491,20 @@ const Nav = () => {
                                 leaveTo="transform opacity-0 scale-95"
                             >
                                 <Menu.Items className='absolute top-full -ml-40 xl:ml-0 xl:-left-full mt-8 w-64 bg-white flex flex-col drop-shadow rounded'>
-                                    <Menu.Item className='hover:bg-blue-foam'>
+                                    <Menu.Item>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-500'} p-3`}
+                                                className={`${active && 'bg-blue-wave-500'} py-3 px-2 hover:text-seabreeze-500`}
                                                 href="https://ifg-gateway.com"
                                             >
                                                 Gateway
                                             </Link>
                                         )}
                                     </Menu.Item>
-                                    <Menu.Item className='hover:bg-blue-foam p-3'>
+                                    <Menu.Item className='p-3'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-500'}`}
+                                                className={`${active && 'bg-blue-wave-500'} py-3 px-2 hover:text-seabreeze-500`}
                                                 href="https://new.ifgsd.com"
                                             >
                                                 Advisor Portal
