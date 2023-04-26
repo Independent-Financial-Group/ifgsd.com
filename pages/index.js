@@ -62,8 +62,8 @@ const HomePage = () => {
             </div>
             <div className="relative">
               <Image
-                src='https://ifgsd.com/wp-content/uploads/2019/12/Website-I-Home3-600x776-e1576010522495.png' className='w-full rounded-lg mx'
-                width={100} height={100}
+                src='https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png' className='w-full rounded-lg mx'
+                width={600} height={600}
                 alt='ifg logo with employees'
               />
             </div>
