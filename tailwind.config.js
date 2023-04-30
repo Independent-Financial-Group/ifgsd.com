@@ -13,6 +13,8 @@ module.exports = {
   theme: {
     colors: {
       'blue-wave': {
+        0: '#e6eff6',
+        50: '#80aed1',
         100: '#739dc9',
         200: '#5c8cc0',
         300: '#447cb6',
