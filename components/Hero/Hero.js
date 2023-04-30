@@ -7,8 +7,7 @@ const Hero = () => {
             style={{
                 backgroundImage: "url('https://new.ifgsd.com/wp-content/uploads/2023/03/hero-drone-shot-compressed-scaled.webp')",
                 backgroundSize: 'cover',
-                backgroundPosition: 'right center',
-                clipPath: 'polygon(100% 90%, 100% 0%, 0% 0%, 0% 90%, 50% 100%)'
+                backgroundPosition: 'right center'
             }}>
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
