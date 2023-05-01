@@ -13,7 +13,7 @@ const Footer = () => {
                     <div class="grid grid-cols-2 gap-8 sm:gap-0 sm:grid-cols-4">
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-                            <ul class="text-gray-600 dark:text-gray-400">
+                            <ul class="text-gray-600 dark:text-gray-400 text-xs">
                                 <li className="mb-4">
                                     <a href="https://flowbite.com" class="hover:underline">Our Story</a>
                                 </li>
@@ -33,7 +33,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Press & Media</h2>
-                            <ul class="text-gray-600 dark:text-gray-400">
+                            <ul class="text-gray-600 dark:text-gray-400 text-xs">
                                 <li className='mb-4'>
                                     <a href="https://tailwindcss.com/" class="hover:underline">Blog</a>
                                 </li>
@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Join Us</h2>
-                            <ul class="text-gray-600 dark:text-gray-400">
+                            <ul class="text-gray-600 dark:text-gray-400 text-xs">
                                 <li class="mb-4">
                                     <a href="#" class="hover:underline">Independent Business Model</a>
                                 </li>
@@ -64,7 +64,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                            <ul class="text-gray-600 dark:text-gray-400">
+                            <ul class="text-gray-600 dark:text-gray-400 text-xs">
                                 <li class="mb-4">
                                     <a href="#" class="hover:underline">Broker Check</a>
                                 </li>
