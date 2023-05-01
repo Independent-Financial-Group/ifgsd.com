@@ -7,6 +7,8 @@ import Nav from "../components/Nav/Nav";
 import MobileNav from "../components/MobileNav/MobileNav";
 import Hero from "../components/Hero/Hero";
 
+import quotes from "../public/quotes.png";
+
 const HomePage = () => {
   return (
     <>
@@ -194,9 +196,20 @@ const HomePage = () => {
         </section>
         <section className="bg-blue-wave-0">
           <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div className="relative flex flex-row justify-center">
+              <Image
+                src="https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png"
+                className="rounded-lg mx"
+                width={400}
+                height={400}
+                alt="ifg logo with employees"
+              />
+            </div>
             <div className="sm:text-lg dark:text-gray-400 text-blue-wave-900">
-              <h3 className="font-medium">Independence, Perfected.</h3>
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-sunburst-500 dark:text-seabreeze-500">
+              <h3 className="text-sunburst-100 font-semibold text-sm">
+                Independence, Perfected.
+              </h3>
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
                 The IFG way
               </h2>
               <p className="mb-4">
@@ -220,19 +233,10 @@ const HomePage = () => {
                 </Link>
               </button>
             </div>
-            <div className="relative flex flex-row justify-end">
-              <Image
-                src="https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png"
-                className="self-end rounded-lg mx"
-                width={400}
-                height={400}
-                alt="ifg logo with employees"
-              />
-            </div>
           </div>
         </section>
         <section class="py-24 sm:py-32">
-          <div class="mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-white p-8 rounded-md drop-shadow">
+          <div class="mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
             <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-blue-wave-500 text-center">
               The Rankings
             </h2>
@@ -301,23 +305,30 @@ const HomePage = () => {
                 quisquam recusandae atque vero.
               </p>
             </div>
-            <div className="lg:grid lg:grid-cols-3 gap-4 absolute -bottom-1/4 max-w-screen-xl mx-auto">
+            <div className="lg:grid lg:grid-cols-3 gap-4 absolute -bottom-1/2 max-w-screen-xl mx-auto">
               <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500">
-                <p className="text-blue-wave-900 italic text-sm">
-                  "I have been with four broker-dealers over my 36 year career,
+                <Image
+                  src={quotes}
+                  width={50}
+                  height={50}
+                  className="mx-auto py-4"
+                />
+                <p className="text-blue-wave-900 text-sm">
+                  I have been with four broker-dealers over my 36 year career,
                   including my own. I have now been with IFG for 14 years and
                   could not be more pleased with the character and quality of
                   the firm. They are committed to excellence and integrity,
                   focusing on the important values in our industry rather than
                   their profits. I am delighted to be associated with such a
-                  first-rate, high-class firm!"
+                  first-rate, high-class firm!
                 </p>
-                <div className="text-center py-4 flex flex-row justify-end items-center">
+                <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
+                <div className="text-center flex flex-row justify-end items-center">
                   <div className="mr-2">
-                    <h3 className="text-blue-wave-500 font-bold text-right">
+                    <h3 className="text-blue-wave-500 font-bold text-right text-sm">
                       Arthur Molloy
                     </h3>
-                    <p className="text-blue-wave-900 font-semibold text-right">
+                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
                       California
                     </p>
                   </div>
@@ -329,21 +340,28 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500">
-                <p className="text-blue-wave-900 italic text-sm">
-                  "I have been with four broker-dealers over my 36 year career,
+                <Image
+                  src={quotes}
+                  width={50}
+                  height={50}
+                  className="mx-auto py-4"
+                />
+                <p className="text-blue-wave-900 text-sm">
+                  I have been with four broker-dealers over my 36 year career,
                   including my own. I have now been with IFG for 14 years and
                   could not be more pleased with the character and quality of
                   the firm. They are committed to excellence and integrity,
                   focusing on the important values in our industry rather than
                   their profits. I am delighted to be associated with such a
-                  first-rate, high-class firm!"
+                  first-rate, high-class firm!
                 </p>
-                <div className="text-center py-4 flex flex-row justify-end items-center">
+                <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
+                <div className="text-center flex flex-row justify-end items-center">
                   <div className="mr-2">
-                    <h3 className="text-blue-wave-500 font-bold text-right">
+                    <h3 className="text-blue-wave-500 font-bold text-right text-sm">
                       Arthur Molloy
                     </h3>
-                    <p className="text-blue-wave-900 font-semibold text-right">
+                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
                       California
                     </p>
                   </div>
@@ -355,21 +373,28 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500">
-                <p className="text-blue-wave-900 italic text-sm">
-                  "I have been with four broker-dealers over my 36 year career,
+                <Image
+                  src={quotes}
+                  width={50}
+                  height={50}
+                  className="mx-auto py-4"
+                />
+                <p className="text-blue-wave-900 text-sm">
+                  I have been with four broker-dealers over my 36 year career,
                   including my own. I have now been with IFG for 14 years and
                   could not be more pleased with the character and quality of
                   the firm. They are committed to excellence and integrity,
                   focusing on the important values in our industry rather than
                   their profits. I am delighted to be associated with such a
-                  first-rate, high-class firm!"
+                  first-rate, high-class firm!
                 </p>
-                <div className="text-center py-4 flex flex-row justify-end items-center">
+                <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
+                <div className="text-center flex flex-row justify-end items-center">
                   <div className="mr-2">
-                    <h3 className="text-blue-wave-500 font-bold text-right">
+                    <h3 className="text-blue-wave-500 font-bold text-right text-sm">
                       Arthur Molloy
                     </h3>
-                    <p className="text-blue-wave-900 font-semibold text-right">
+                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
                       California
                     </p>
                   </div>
@@ -383,9 +408,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="min-h-screen">
-
-        </section>
+        <section className="min-h-screen"></section>
       </main>
     </>
   );
