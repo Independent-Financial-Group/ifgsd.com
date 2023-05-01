@@ -211,14 +211,14 @@ const HomePage = () => {
             <div className="flex flex-row justify-center">
               <Image
                 src="https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png"
-                className="rounded-lg absolute top-36 left-1/4"
+                className="rounded-lg absolute top-36 left-1/4 z-10"
                 width={400}
                 height={400}
                 alt="ifg logo with employees"
               />
             </div>
             <div className="sm:text-lg dark:text-gray-400 text-blue-wave-900">
-              <div className="lg:absolute left-48 top-8 z-10">
+              <div className="lg:absolute left-48 top-8 z-0">
                 <h3 className="text-[#f8fafc] font-semibold lg:font-bold lg:text-8xl">
                   Independence,<br className="hidden lg:block" /> Perfected.
                 </h3>
@@ -250,16 +250,16 @@ const HomePage = () => {
           </div>
         </section>
         <section class="py-24 sm:py-32">
-          <div class="mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
-            <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-blue-wave-500 text-center">
-              The Rankings
+          <div class="relative mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
+            <h2 className=" absolute bg-sunburst-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg">
+              Rankings
             </h2>
             <div className="flex flex-col gap-y-5">
               <dl class="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">Advisors</dt>
+                  <dt class="text-base leading-7 text-gray-600">Financial Advisors</dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    500+
+                    600+
                   </dd>
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
@@ -267,23 +267,23 @@ const HomePage = () => {
                     Assets Under Management
                   </dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    $37 Billion
+                    $37B
                   </dd>
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">Offices</dt>
+                  <dt class="text-base leading-7 text-gray-600">Highest % of Women Advisors*</dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    411+
+                    #4
                   </dd>
                 </div>
               </dl>
               <dl class="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">
-                    Recruited Annually on Average
+                    Largest Independent Broker-Dealer*
                   </dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    72
+                    #17
                   </dd>
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
@@ -295,9 +295,9 @@ const HomePage = () => {
                   </dd>
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">Offices</dt>
+                  <dt class="text-base leading-7 text-gray-600">Overall Experience Satisfaction*</dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    411+
+                    #2
                   </dd>
                 </div>
               </dl>
