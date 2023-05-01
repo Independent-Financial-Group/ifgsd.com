@@ -6,6 +6,7 @@ import Link from "next/link";
 import Nav from "../components/Nav/Nav";
 import MobileNav from "../components/MobileNav/MobileNav";
 import Hero from "../components/Hero/Hero";
+import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
 
@@ -409,6 +410,7 @@ const HomePage = () => {
         </section>
         <section className="min-h-screen"></section>
       </main>
+      <Footer />
     </>
   );
 };
