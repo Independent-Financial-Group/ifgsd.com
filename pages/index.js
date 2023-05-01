@@ -274,7 +274,7 @@ const HomePage = () => {
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">
-                    Largest Privately Held Company in San Diego
+                    Largest Privately Held Company in San Diego*
                   </dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #7
@@ -300,9 +300,8 @@ const HomePage = () => {
                 What our advisors say about us
               </h3>
               <p className="text-center mx-auto w-1/2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                aspernatur odit, perferendis veritatis amet delectus quo
-                quisquam recusandae atque vero.
+                At IFG, we will always believe you are a name, not a number.
+                We aim to provide our representatives with investment opportunity, guidance, and planning.
               </p>
             </div>
             <div className="lg:grid lg:grid-cols-3 gap-4 absolute -bottom-1/2 max-w-screen-xl mx-auto">
