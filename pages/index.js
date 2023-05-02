@@ -466,7 +466,7 @@ const HomePage = () => {
           </div>
         </section>
         <section>
-          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 bg-sunburst-500 rounded-lg drop-shadow-lg"
+          <div class="mx-auto max-w-screen-xl sm:py-16 lg:px-6 rounded-lg drop-shadow-lg"
             style={{
               backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
               backgroundSize: 'cover',
