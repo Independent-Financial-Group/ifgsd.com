@@ -3,12 +3,15 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+
 import Nav from "../components/Nav/Nav";
 import MobileNav from "../components/MobileNav/MobileNav";
 import Hero from "../components/Hero/Hero";
 import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
+import phoneImage from "../public/phone-picking-up-compressed.jpg"
 
 const HomePage = () => {
   return (
@@ -306,7 +309,7 @@ const HomePage = () => {
         </section>
         <section className="bg-blue-wave-0 relative">
           <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="mb-40">
+            <div className="mb-52">
               <h2 className="tracking-tight font-extrabold text-sunburst-100 dark:text-seabreeze-500 text-center text-lg">
                 Testimonials
               </h2>
@@ -319,7 +322,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="lg:grid lg:grid-cols-3 gap-4 absolute -bottom-1/2 max-w-screen-xl mx-auto">
-              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500">
+              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
                 <Image
                   src={quotes}
                   width={50}
@@ -336,7 +339,7 @@ const HomePage = () => {
                   first-rate, high-class firm!
                 </p>
                 <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
-                <div className="text-center flex flex-row justify-end items-center">
+                <div className="text-center flex flex-row justify-end items-end mt-auto">
                   <div className="mr-2">
                     <h3 className="text-blue-wave-500 font-bold text-right text-sm">
                       Arthur Molloy
@@ -352,7 +355,7 @@ const HomePage = () => {
                   />
                 </div>
               </div>
-              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500">
+              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
                 <Image
                   src={quotes}
                   width={50}
@@ -360,32 +363,26 @@ const HomePage = () => {
                   className="mx-auto py-4"
                 />
                 <p className="text-blue-wave-900 text-sm">
-                  I have been with four broker-dealers over my 36 year career,
-                  including my own. I have now been with IFG for 14 years and
-                  could not be more pleased with the character and quality of
-                  the firm. They are committed to excellence and integrity,
-                  focusing on the important values in our industry rather than
-                  their profits. I am delighted to be associated with such a
-                  first-rate, high-class firm!
+                  Since we joined the IFG family, I am consistently reminded of how cooperative and helpful IFG is of our business. Those reminders are not slogans and mission statements included at the tops of letters or the bottoms of emails. They are a real help on important matters when and where we need them. Our business supports our clients, and IFG supports our business. We are very happy to have a partner so clearly interested in helping us all grow together.
                 </p>
                 <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
-                <div className="text-center flex flex-row justify-end items-center">
+                <div className="text-center flex flex-row justify-end items-end mt-auto">
                   <div className="mr-2">
                     <h3 className="text-blue-wave-500 font-bold text-right text-sm">
-                      Arthur Molloy
+                      Anna Luke
                     </h3>
                     <p className="text-blue-wave-900 font-semibold text-right text-xs">
                       California
                     </p>
                   </div>
                   <Image
-                    src="https://ifgsd.com/wp-content/uploads/2013/05/Art-Molloy.png"
+                    src="https://ifgsd.com/wp-content/uploads/2018/04/Anna-Luke.png"
                     width={50}
                     height={50}
                   />
                 </div>
               </div>
-              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500">
+              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
                 <Image
                   src={quotes}
                   width={50}
@@ -393,19 +390,13 @@ const HomePage = () => {
                   className="mx-auto py-4"
                 />
                 <p className="text-blue-wave-900 text-sm">
-                  I have been with four broker-dealers over my 36 year career,
-                  including my own. I have now been with IFG for 14 years and
-                  could not be more pleased with the character and quality of
-                  the firm. They are committed to excellence and integrity,
-                  focusing on the important values in our industry rather than
-                  their profits. I am delighted to be associated with such a
-                  first-rate, high-class firm!
+						Hard to believe it’s been six years since we have joined the IFG family. Top rate professional and caring service team always ready to respond to needs. Conferences are top notch. Family oriented with great educational content. Consultants, management specialists, product specialists, asset management and insurance resources. A complete suite. Couldn’t ask for more in a broker dealer. Great family environment. Hats off to the management team and principals Scott, Joe and Dave.
                 </p>
                 <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
-                <div className="text-center flex flex-row justify-end items-center">
+                <div className="text-center flex flex-row justify-end items-end">
                   <div className="mr-2">
                     <h3 className="text-blue-wave-500 font-bold text-right text-sm">
-                      Arthur Molloy
+                      Larry Steckler
                     </h3>
                     <p className="text-blue-wave-900 font-semibold text-right text-xs">
                       California
@@ -421,7 +412,59 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="min-h-screen"></section>
+        <section className="mt-56">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div className="overflow-hidden py-24 sm:py-32">
+              <div>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
+                  <div className="lg:pr-8 lg:pt-4">
+                    <div className="lg:max-w-lg">
+                      <h2 className="text-base font-semibold leading-7 text-sunburst-500">Offerings</h2>
+                      <p className="mt-2 text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">Valuable resources a phone call away</p>
+                      <p className="mt-6 text-lg leading-8 text-blue-wave-900">
+                        Independence doesn't mean you're on your own. We unlock a powerful set of resources to support your practice as you need.
+                      </p>
+                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-blue-wave-900 lg:max-w-none">
+                        <div className="relative pl-9">
+                          <dt className="inline font-semibold text-blue-wave-500">
+                            <CloudArrowUpIcon className="absolute left-1 top-1 h-5 w-5 text-sunburst-500" aria-hidden="true" />
+                            Marketing Support.
+                          </dt>{' '}
+                          <dd className="inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eaque recusandae dolor magnam cum odit dolorem fuga possimus beatae sed?</dd>
+                        </div>
+                      </dl>
+                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                        <div className="relative pl-9">
+                          <dt className="inline font-semibold text-gray-900">
+                            <CloudArrowUpIcon className="absolute left-1 top-1 h-5 w-5 text-sunburst-500" aria-hidden="true" />
+                            Products.
+                          </dt>{' '}
+                          <dd className="inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eaque recusandae dolor magnam cum odit dolorem fuga possimus beatae sed?</dd>
+                        </div>
+                      </dl>
+                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                        <div className="relative pl-9">
+                          <dt className="inline font-semibold text-gray-900">
+                            <CloudArrowUpIcon className="absolute left-1 top-1 h-5 w-5 text-sunburst-500" aria-hidden="true" />
+                            Technology.
+                          </dt>{' '}
+                          <dd className="inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eaque recusandae dolor magnam cum odit dolorem fuga possimus beatae sed?</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                  <Image
+                    src={phoneImage}
+                    alt="Product screenshot"
+                    className="rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+                    width={2432}
+                    height={1442}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
