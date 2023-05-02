@@ -214,16 +214,16 @@ const HomePage = () => {
             <div className="flex flex-row justify-center">
               <Image
                 src="https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png"
-                className="rounded-lg absolute top-36 left-1/4 z-10"
+                className="rounded-lg 2xl:absolute 2xl:top-36 2xl:left-1/4 2xl:z-10"
                 width={400}
                 height={400}
                 alt="ifg logo with employees"
               />
             </div>
             <div className="sm:text-lg dark:text-gray-400 text-blue-wave-900">
-              <div className="lg:absolute left-48 top-8 z-0">
-                <h3 className="text-[#f8fafc] font-semibold lg:font-bold lg:text-8xl">
-                  Independence,<br className="hidden lg:block" /> Perfected.
+              <div className="2xl:absolute left-48 top-8 z-0">
+                <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-8xl">
+                  Independence,<br className="hidden 2xl:block" /> Perfected.
                 </h3>
               </div>
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
