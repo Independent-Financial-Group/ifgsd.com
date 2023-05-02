@@ -5,15 +5,15 @@ const Hero = () => {
         <header
             className="px-6 pt-14 lg:px-8 relative"
             style={{
-                backgroundImage: "url('https://new.ifgsd.com/wp-content/uploads/2023/03/hero-drone-shot-compressed-scaled.webp')",
+                backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://new.ifgsd.com/wp-content/uploads/2023/03/ifg-hero.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'right center'
             }}>
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                    <div className="rounded-full px-3 py-1 text-sm leading-6 text-dunkel-blue-500 ring-1 ring-blue-wave-500">
+                    <div className="rounded-full px-3 py-1 text-sm leading-6 text-seabreeze-500 ring-1 ring-blue-wave-500">
                         IFG & Reg Bi{' '}
-                        <a href="#" className="font-semibold text-sunburst-500">
+                        <a href="#" className="font-semibold text-sunburst-100">
                             <span className="1 inset-0" aria-hidden="true" />
                             Read more <span aria-hidden="true">&rarr;</span>
                         </a>
