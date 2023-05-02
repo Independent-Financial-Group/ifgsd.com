@@ -390,7 +390,7 @@ const HomePage = () => {
                   className="mx-auto py-4"
                 />
                 <p className="text-blue-wave-900 text-sm">
-						Hard to believe it’s been six years since we have joined the IFG family. Top rate professional and caring service team always ready to respond to needs. Conferences are top notch. Family oriented with great educational content. Consultants, management specialists, product specialists, asset management and insurance resources. A complete suite. Couldn’t ask for more in a broker dealer. Great family environment. Hats off to the management team and principals Scott, Joe and Dave.
+                  Hard to believe it’s been six years since we have joined the IFG family. Top rate professional and caring service team always ready to respond to needs. Conferences are top notch. Family oriented with great educational content. Consultants, management specialists, product specialists, asset management and insurance resources. A complete suite. Couldn’t ask for more in a broker dealer. Great family environment. Hats off to the management team and principals Scott, Joe and Dave.
                 </p>
                 <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
                 <div className="text-center flex flex-row justify-end items-end">
@@ -462,6 +462,21 @@ const HomePage = () => {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 bg-sunburst-500 rounded-lg drop-shadow-lg"
+            style={{
+              backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+            }}
+          >
+            <div class="mx-auto max-w-screen-sm text-center">
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-seabreeze-500 dark:text-white">Start your transition</h2>
+              <p class="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
+              <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Schedule a Visit</a>
             </div>
           </div>
         </section>
