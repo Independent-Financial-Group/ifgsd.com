@@ -222,11 +222,11 @@ const HomePage = () => {
             <div className="sm:text-lg dark:text-gray-400 text-blue-wave-900">
               <div>
                 <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-sm">
-                  Independence, Perfected.
+                  Our Mission
                 </h3>
               </div>
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
-                The IFG way
+                Independence, Perfected
               </h2>
               <p className="mb-4">
                 Independent Financial Group, LLC is based on three core values

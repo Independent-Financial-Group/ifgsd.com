@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { motion } from 'framer-motion'
+
 const Hero = () => {
     return (
         <header
@@ -19,7 +21,11 @@ const Hero = () => {
                         </a>
                     </div>
                 </div>
-                <div className="text-center">
+                <motion.div
+                    initial={{opacity: 0, y:500}}
+                    whileInView={{opacity: 1, y:0}}
+                    transition={{type: 'spring', duration: 1.3}}
+                    className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-seabreeze-500 sm:text-6xl">
                         Catch the wave and grow your practice
                     </h1>
@@ -37,7 +43,7 @@ const Hero = () => {
                             Learn more <span aria-hidden="true">→</span>
                         </a>
                     </div>
-                </div>
+                </motion.div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12 absolute left-[49%] bottom-5 text-sunburst-500">
                 <path fillRule="evenodd" d="M20.03 4.72a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 11.69l6.97-6.97a.75.75 0 011.06 0zm0 6a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06L12 17.69l6.97-6.97a.75.75 0 011.06 0z" clipRule="evenodd" />
