@@ -307,21 +307,21 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-blue-wave-0 relative">
-          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="mb-52">
+        <section className="bg-blue-wave-0">
+          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 relative">
+            <div className=" mb-10 xl:mb-52">
               <h2 className="tracking-tight font-extrabold text-sunburst-100 dark:text-seabreeze-500 text-center text-lg">
                 Testimonials
               </h2>
               <h3 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500 text-center">
                 What our advisors say about us
               </h3>
-              <p className="text-center mx-auto w-1/2">
+              <p className="text-center mx-auto xl:w-1/2">
                 At IFG, we will always believe you are a name, not a number.
                 We aim to provide our representatives with investment opportunity, guidance, and planning.
               </p>
             </div>
-            <div className="lg:grid lg:grid-cols-3 gap-4 absolute -bottom-1/2 max-w-screen-xl mx-auto">
+            <div className=" flex flex-col gap-y-4 lg:grid lg:grid-cols-3 gap-4 xl:absolute xl:inset-x-0 xl:-bottom-1/2 xl:max-w-screen-xl">
               <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
                 <Image
                   src={quotes}
@@ -412,41 +412,41 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="mt-56">
+        <section className="xl:mt-56">
           <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-            <div className="overflow-hidden py-24 sm:py-32">
+            <div className="overflow-hidden xl:py-24 sm:py-32">
               <div>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
                   <div className="lg:pr-8 lg:pt-4">
                     <div className="lg:max-w-lg">
-                      <h2 className="text-base font-semibold leading-7 text-sunburst-500">Offerings</h2>
-                      <p className="mt-2 text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">Valuable resources a phone call away</p>
+                      <h2 className="text-base font-semibold leading-7 text-sunburst-500">Join Us</h2>
+                      <p className="mt-2 text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">Have ease of mind when transitioning</p>
                       <p className="mt-6 text-lg leading-8 text-blue-wave-900">
-                        Independence doesn't mean you're on your own. We unlock a powerful set of resources to support your practice as you need.
+                        Independence doesn't mean you're on your own. Our transition team works with your practice to ensure that you have a smooth transition.
                       </p>
                       <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-blue-wave-900 lg:max-w-none">
                         <div className="relative pl-9">
                           <dt className="inline font-semibold text-blue-wave-500">
                             <CloudArrowUpIcon className="absolute left-1 top-1 h-5 w-5 text-sunburst-500" aria-hidden="true" />
-                            Marketing Support.
+                            Phase 1
                           </dt>{' '}
                           <dd className="inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eaque recusandae dolor magnam cum odit dolorem fuga possimus beatae sed?</dd>
                         </div>
                       </dl>
                       <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                         <div className="relative pl-9">
-                          <dt className="inline font-semibold text-gray-900">
+                          <dt className="inline font-semibold text-blue-wave-500">
                             <CloudArrowUpIcon className="absolute left-1 top-1 h-5 w-5 text-sunburst-500" aria-hidden="true" />
-                            Products.
+                            Phase 2
                           </dt>{' '}
                           <dd className="inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eaque recusandae dolor magnam cum odit dolorem fuga possimus beatae sed?</dd>
                         </div>
                       </dl>
                       <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                         <div className="relative pl-9">
-                          <dt className="inline font-semibold text-gray-900">
+                          <dt className="inline font-semibold text-blue-wave-500">
                             <CloudArrowUpIcon className="absolute left-1 top-1 h-5 w-5 text-sunburst-500" aria-hidden="true" />
-                            Technology.
+                            Phase 3
                           </dt>{' '}
                           <dd className="inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eaque recusandae dolor magnam cum odit dolorem fuga possimus beatae sed?</dd>
                         </div>
@@ -466,17 +466,17 @@ const HomePage = () => {
           </div>
         </section>
         <section>
-          <div class="mx-auto max-w-screen-xl sm:py-16 lg:px-6 rounded-lg drop-shadow-lg"
-            style={{
+          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div className="drop-shadow-lg rounded-lg px-2 py-4" style={{
               backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
-            }}
-          >
-            <div class="mx-auto max-w-screen-sm text-center">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-seabreeze-500 dark:text-white">Start your transition</h2>
-              <p class="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
-              <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Schedule a Visit</a>
+            }}>
+              <div class="mx-auto max-w-screen-sm text-center">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-seabreeze-500 dark:text-white">Start your transition</h2>
+                <p class="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
+                <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Schedule a Visit</a>
+              </div>
             </div>
           </div>
         </section>
