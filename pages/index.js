@@ -512,6 +512,11 @@ const HomePage = () => {
                         </div>
                       </dl>
                     </div>
+                    <button
+                      className="rounded-md bg-blue-wave-500 px-3.5 py-2.5 text-sm font-semibold text-seabreeze-500 shadow-sm hover:bg-sunburst-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 outline"
+                    >
+                      Learn More
+                    </button>
                   </motion.div>
                   <Image
                     src={phoneImage}
@@ -528,15 +533,15 @@ const HomePage = () => {
         <section>
           <div class="mx-auto max-w-screen-xl">
             <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="drop-shadow-xl rounded-xl px-2 py-8" style={{
-              backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center center',
-            }}>
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="drop-shadow-xl rounded-xl px-2 py-8" style={{
+                backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center center',
+              }}>
               <div class="mx-auto max-w-screen-sm text-center">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-seabreeze-500 dark:text-white">Start your transition</h2>
                 <p class="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
