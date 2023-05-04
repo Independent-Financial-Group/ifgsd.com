@@ -526,13 +526,13 @@ const HomePage = () => {
           </div>
         </section>
         <section>
-          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+          <div class="mx-auto max-w-screen-xl">
             <motion.div
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{ once: true }}
-            className="drop-shadow-lg rounded-lg px-2 py-4" style={{
+            className="drop-shadow-xl rounded-xl px-2 py-8" style={{
               backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
