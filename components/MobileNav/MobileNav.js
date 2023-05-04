@@ -15,9 +15,9 @@ const MobileNav = () => {
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6">
                         <div className="relative flex h-16 items-center justify-between">
-                            <div className="absolute inset-y-0 left-0 flex items-center">
+                            <div className="absolute z-0 inset-y-0 left-0 flex items-center">
                                 {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 bg-blue-wave text-white drop-shadow font-bold">
+                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 bg-blue-wave-500 text-white drop-shadow font-bold">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
                                         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -33,56 +33,13 @@ const MobileNav = () => {
                                         src="https://new.ifgsd.com/wp-content/uploads/2019/04/cropped-IFGLogo2016_icon.png"
                                         alt="IFG Logo Icon"
                                     />
-
                                 </div>
-                            </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center">
-                                <Menu className='relative'>
-                                    <div>
-                                        <Menu.Button className='h-full flex flex-row items-center bg-blue-wave text-white p-3 rounded drop-shadow'>
-                                            <p className='font-bold'>Login</p>
-                                            <ChevronDownIcon
-                                                className='h-5 w-5 ml-2'
-                                                aria-hidden='true'
-                                            />
-                                        </Menu.Button>
-                                        <Transition
-                                            as={Fragment}
-                                            enter="transition ease-out duration-100"
-                                            enterFrom="transform opacity-0 scale-95"
-                                            enterTo="transform opacity-100 scale-100"
-                                            leave="transition ease-in duration-75"
-                                            leaveFrom="transform opacity-100 scale-100"
-                                            leaveTo="transform opacity-0 scale-95"
-                                        >
-                                            <Menu.Items className='absolute top-full start-0 -ml-10 mt-3 bg-white flex flex-col rounded drop-shadow'>
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <Link
-                                                            className={`${active && 'bg-blue-500'} p-3`}
-                                                            href="https://ifg-gateway.com"
-                                                        >
-                                                            Gateway
-                                                        </Link>
-                                                    )}
-                                                </Menu.Item>
-                                                <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                    {({ active }) => (
-                                                        <Link
-                                                            className={`${active && 'bg-blue-500'}`}
-                                                            href="https://new.ifgsd.com"
-                                                        >
-                                                            Advisor Portal
-                                                        </Link>
-                                                    )}
-                                                </Menu.Item>
-                                            </Menu.Items>
-                                        </Transition>
-                                    </div>
-                                </Menu>
                             </div>
                         </div>
                     </div>
+
+
+
 
                     <Disclosure.Panel className="p-3 lg:hidden">
                         <div className="flex flex-col">
@@ -541,6 +498,49 @@ const MobileNav = () => {
                                                         href="/join/we-value-you"
                                                     >
                                                         We Value You
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                        </Menu.Items>
+                                    </Transition>
+                                </div>
+                            </Menu>
+                            <Menu className="bg-blue-wave-500 h-full rounded">
+                                <div>
+                                    <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
+                                        <p>Login</p>
+                                        <ChevronDownIcon
+                                            className='h-5 w-5 ml-2'
+                                            aria-hidden='true'
+                                        />
+                                    </Menu.Button>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className='flex flex-col text-center bg-seabreeze-500'>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
+                                                        href="https://ifg-gateway.com"
+                                                    >
+                                                        Gateway
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
+                                                        href="https://new.ifgsd.com"
+                                                    >
+                                                        Advisor Portal
                                                     </Link>
                                                 )}
                                             </Menu.Item>
