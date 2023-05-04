@@ -5,7 +5,7 @@ const Hero = () => {
         <header
             className="px-6 pt-14 lg:px-8 relative"
             style={{
-                backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://new.ifgsd.com/wp-content/uploads/2023/03/ifg-hero.jpg')",
+                backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('https://new.ifgsd.com/wp-content/uploads/2023/03/ifg-hero.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'right center'
             }}>

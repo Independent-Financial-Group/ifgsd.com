@@ -211,19 +211,18 @@ const HomePage = () => {
         </section>
         <section className="bg-blue-wave-0 relative">
           <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row content-center">
               <Image
                 src="https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png"
-                className="rounded-lg 2xl:absolute 2xl:top-36 2xl:left-1/4 2xl:z-10"
                 width={400}
                 height={400}
                 alt="ifg logo with employees"
               />
             </div>
             <div className="sm:text-lg dark:text-gray-400 text-blue-wave-900">
-              <div className="2xl:absolute left-48 top-8 z-0">
-                <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-8xl">
-                  Independence,<br className="hidden 2xl:block" /> Perfected.
+              <div>
+                <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-sm">
+                  Independence, Perfected.
                 </h3>
               </div>
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
