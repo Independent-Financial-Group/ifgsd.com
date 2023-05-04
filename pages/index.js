@@ -3,6 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion"
+
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 
 import Nav from "../components/Nav/Nav";
@@ -35,7 +37,12 @@ const HomePage = () => {
                 value and drive growth for your practice.
               </p>
             </div>
-            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", duration: 1, delay: 0.3 }}
+              class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
               <div>
                 <div className="flex flex-row items-center justify-start mb-2 gap-2">
                   <svg
@@ -206,7 +213,7 @@ const HomePage = () => {
                   magni accusantium quos vel iste.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className="bg-blue-wave-0 relative">
@@ -219,12 +226,16 @@ const HomePage = () => {
                 alt="ifg logo with employees"
               />
             </div>
-            <div className="sm:text-lg dark:text-gray-400 text-blue-wave-900">
-              <div>
-                <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-sm">
-                  Our Mission
-                </h3>
-              </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="sm:text-lg dark:text-gray-400 text-blue-wave-900"
+            >
+              <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-sm">
+                Our Mission
+              </h3>
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
                 Independence, Perfected
               </h2>
@@ -248,60 +259,100 @@ const HomePage = () => {
                   Learn More
                 </Link>
               </button>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section class="py-24 sm:py-32">
           <div class="relative mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
-            <h2 className=" absolute bg-sunburst-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg">
-              Rankings
-            </h2>
-            <div className="flex flex-col gap-y-5">
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: -32 }}
+              viewport={{ once: true }}
+              transition={{ delay: 1 }}
+            >
+              <h2
+                className=" absolute bg-sunburst-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg"
+              >
+                Rankings
+              </h2>
+            </motion.div>
+            <div
+              className="flex flex-col gap-y-5">
               <dl class="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
-                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">Financial Advisors</dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     600+
                   </dd>
-                </div>
-                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 }}
+                  class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">
                     Assets Under Management
                   </dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     $37B
                   </dd>
-                </div>
-                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7 }}
+                  class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">Highest % of Women Advisors*</dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #4
                   </dd>
-                </div>
+                </motion.div>
               </dl>
               <dl class="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
-                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.8 }}
+                  class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">
                     Largest Independent Broker-Dealer*
                   </dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #17
                   </dd>
-                </div>
-                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.9 }}
+                  class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">
                     Largest Privately Held Company in San Diego*
                   </dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #7
                   </dd>
-                </div>
-                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1 }}
+                  class="mx-auto flex max-w-xs flex-col gap-y-4">
                   <dt class="text-base leading-7 text-gray-600">Overall Experience Satisfaction*</dt>
                   <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #2
                   </dd>
-                </div>
+                </motion.div>
               </dl>
             </div>
           </div>
@@ -320,7 +371,12 @@ const HomePage = () => {
                 We aim to provide our representatives with investment opportunity, guidance, and planning.
               </p>
             </div>
-            <div className=" flex flex-col gap-y-4 lg:grid lg:grid-cols-3 gap-4 xl:absolute xl:inset-x-0 xl:-bottom-1/2 xl:max-w-screen-xl">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className=" flex flex-col gap-y-4 lg:grid lg:grid-cols-3 gap-4 xl:absolute xl:inset-x-0 xl:-bottom-1/2 xl:max-w-screen-xl">
               <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
                 <Image
                   src={quotes}
@@ -408,7 +464,7 @@ const HomePage = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className="xl:mt-56">
@@ -416,7 +472,12 @@ const HomePage = () => {
             <div className="overflow-hidden xl:py-24 sm:py-32">
               <div>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
-                  <div className="lg:pr-8 lg:pt-4">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="lg:pr-8 lg:pt-4">
                     <div className="lg:max-w-lg">
                       <h2 className="text-base font-semibold leading-7 text-sunburst-500">Join Us</h2>
                       <p className="mt-2 text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">Have ease of mind when transitioning</p>
@@ -451,7 +512,7 @@ const HomePage = () => {
                         </div>
                       </dl>
                     </div>
-                  </div>
+                  </motion.div>
                   <Image
                     src={phoneImage}
                     alt="Product screenshot"
@@ -466,7 +527,12 @@ const HomePage = () => {
         </section>
         <section>
           <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-            <div className="drop-shadow-lg rounded-lg px-2 py-4" style={{
+            <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="drop-shadow-lg rounded-lg px-2 py-4" style={{
               backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('https://ifgsd.com/wp-content/uploads/2019/12/Optimized-IFG-Building-Cropped.jpg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
@@ -476,7 +542,7 @@ const HomePage = () => {
                 <p class="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
                 <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Schedule a Visit</a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

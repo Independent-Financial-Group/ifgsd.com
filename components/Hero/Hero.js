@@ -22,9 +22,10 @@ const Hero = () => {
                     </div>
                 </div>
                 <motion.div
-                    initial={{opacity: 0, y:500}}
+                    initial={{opacity: 0, y:200}}
                     whileInView={{opacity: 1, y:0}}
                     transition={{type: 'spring', duration: 1.3}}
+                    viewport={{once: true}}
                     className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-seabreeze-500 sm:text-6xl">
                         Catch the wave and grow your practice
