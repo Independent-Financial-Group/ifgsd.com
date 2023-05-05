@@ -25,13 +25,13 @@ const HomePage = () => {
       <MobileNav />
       <Hero />
       <main>
-        <section class="dark:bg-gray-900">
-          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-            <div class="max-w-screen-md mb-8 lg:mb-16">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
+        <section className="dark:bg-gray-900">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div className="max-w-screen-md mb-8 lg:mb-16">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
                 Fearlessly Independent
               </h2>
-              <p class="text-dunkel-blue sm:text-xl dark:text-gray-400">
+              <p className="text-dunkel-blue sm:text-xl dark:text-gray-400">
                 With 20-years of experience and a focus on technology,
                 innovation, expertise and independence, we can unlock long-term
                 value and drive growth for your practice.
@@ -42,7 +42,7 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: "spring", duration: 1, delay: 0.3 }}
-              class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+              className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
               <div>
                 <div className="flex flex-row items-center justify-start mb-2 gap-2">
                   <svg
@@ -59,11 +59,11 @@ const HomePage = () => {
                       d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
                     />
                   </svg>
-                  <h3 class="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
+                  <h3 className="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
                     Practice Development
                   </h3>
                 </div>
-                <p class="text-dunkel-blue dark:text-gray-400">
+                <p className="text-dunkel-blue dark:text-gray-400">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Earum labore hic repudiandae consequatur quos temporibus
                   doloremque reiciendis, non iure quibusdam?
@@ -90,11 +90,11 @@ const HomePage = () => {
                       d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
                     />
                   </svg>
-                  <h3 class="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
+                  <h3 className="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
                     Products
                   </h3>
                 </div>
-                <p class="text-dunkel-blue dark:text-gray-400">
+                <p className="text-dunkel-blue dark:text-gray-400">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Laboriosam eligendi commodi saepe inventore recusandae! Eius
                   voluptates nemo quasi corrupti reiciendis!
@@ -117,11 +117,11 @@ const HomePage = () => {
                     />
                   </svg>
 
-                  <h3 class="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
+                  <h3 className="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
                     Technology
                   </h3>
                 </div>
-                <p class="text-dunkel-blue dark:text-gray-400">
+                <p className="text-dunkel-blue dark:text-gray-400">
                   We partner with a wide range of service providers to help youy
                   run your business more effeciently.
                 </p>
@@ -148,11 +148,11 @@ const HomePage = () => {
                     />
                   </svg>
 
-                  <h3 class="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
+                  <h3 className="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
                     Marketing Support
                   </h3>
                 </div>
-                <p class="text-dunkel-blue dark:text-gray-400">
+                <p className="text-dunkel-blue dark:text-gray-400">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Nihil explicabo hic voluptatem aliquam aliquid? Id temporibus
                   vel quisquam odio nemo.
@@ -175,11 +175,11 @@ const HomePage = () => {
                     />
                   </svg>
 
-                  <h3 class="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
+                  <h3 className="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
                     Competitive Compensation
                   </h3>
                 </div>
-                <p class="text-dunkel-blue dark:text-gray-400">
+                <p className="text-dunkel-blue dark:text-gray-400">
                   We offer one of the most competitive payouts in the industry.
                   A great payout offering in addition to the variety of services
                   we offer make it simple to see why our advisors choose to join
@@ -203,11 +203,11 @@ const HomePage = () => {
                     />
                   </svg>
 
-                  <h3 class="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
+                  <h3 className="text-xl font-bold dark:text-seabreeze-500 text-blue-wave-500">
                     Operations
                   </h3>
                 </div>
-                <p class="text-dunkel-blue dark:text-gray-400">
+                <p className="text-dunkel-blue dark:text-gray-400">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo, quibusdam. Omnis ullam aspernatur suscipit ipsa
                   magni accusantium quos vel iste.
@@ -262,8 +262,8 @@ const HomePage = () => {
             </motion.div>
           </div>
         </section>
-        <section class="py-24 sm:py-32">
-          <div class="relative mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
+        <section className="py-24 sm:py-32">
+          <div className="relative mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: -32 }}
@@ -278,15 +278,15 @@ const HomePage = () => {
             </motion.div>
             <div
               className="flex flex-col gap-y-5">
-              <dl class="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
+              <dl className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 }}
-                  class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">Financial Advisors</dt>
-                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">Financial Advisors</dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     600+
                   </dd>
                 </motion.div>
@@ -295,11 +295,11 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6 }}
-                  class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">
+                  className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">
                     Assets Under Management
                   </dt>
-                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     $37B
                   </dd>
                 </motion.div>
@@ -308,24 +308,24 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.7 }}
-                  class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">Highest % of Women Advisors*</dt>
-                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">Highest % of Women Advisors*</dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #4
                   </dd>
                 </motion.div>
               </dl>
-              <dl class="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
+              <dl className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.8 }}
-                  class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">
+                  className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">
                     Largest Independent Broker-Dealer*
                   </dt>
-                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #17
                   </dd>
                 </motion.div>
@@ -334,11 +334,11 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.9 }}
-                  class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">
+                  className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">
                     Largest Privately Held Company in San Diego*
                   </dt>
-                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #7
                   </dd>
                 </motion.div>
@@ -347,9 +347,9 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1 }}
-                  class="mx-auto flex max-w-xs flex-col gap-y-4">
-                  <dt class="text-base leading-7 text-gray-600">Overall Experience Satisfaction*</dt>
-                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  className="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">Overall Experience Satisfaction*</dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                     #2
                   </dd>
                 </motion.div>
@@ -391,7 +391,7 @@ const HomePage = () => {
                   the firm. They are committed to excellence and integrity,
                   focusing on the important values in our industry rather than
                   their profits. I am delighted to be associated with such a
-                  first-rate, high-class firm!
+                  first-rate, high-className firm!
                 </p>
                 <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
                 <div className="text-center flex flex-row justify-end items-end mt-auto">
@@ -468,7 +468,7 @@ const HomePage = () => {
           </div>
         </section>
         <section className="xl:mt-56">
-          <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div className="overflow-hidden xl:py-24 sm:py-32">
               <div>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
@@ -531,7 +531,7 @@ const HomePage = () => {
           </div>
         </section>
         <section>
-          <div class="mx-auto max-w-screen-xl">
+          <div className="mx-auto max-w-screen-xl">
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -542,10 +542,10 @@ const HomePage = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center center',
               }}>
-              <div class="mx-auto max-w-screen-sm text-center">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-seabreeze-500 dark:text-white">Start your transition</h2>
-                <p class="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
-                <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Schedule a Visit</a>
+              <div className="mx-auto max-w-screen-sm text-center">
+                <h2 className="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-seabreeze-500 dark:text-white">Start your transition</h2>
+                <p className="mb-6 font-light text-seabreeze-100 dark:text-gray-400 md:text-lg">Get in contact with our recruiting team and schedule a home office visit to see what we're all about.</p>
+                <a href="#" className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Schedule a Visit</a>
               </div>
             </motion.div>
           </div>
