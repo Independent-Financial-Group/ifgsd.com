@@ -9,6 +9,10 @@ module.exports = {
         {
           protocol: 'https',
           hostname: 'new.ifgsd.com'
+        },
+        {
+          protocol: 'https',
+          hostname: 'flowbite.com'
         }
       ],
     },
