@@ -289,7 +289,7 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/press-and-media/blog"
+                                                href="/press-media/blog"
                                             >
                                                 Blog
                                             </Link>
@@ -299,7 +299,7 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/press-and-media/press-releases"
+                                                href="/press-media/press-releases"
                                             >
                                                 Press Releases
                                             </Link>

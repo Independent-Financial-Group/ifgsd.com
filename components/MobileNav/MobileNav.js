@@ -312,7 +312,7 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/press-and-media/blog"
+                                                        href="/press-media/blog"
                                                     >
                                                         Blog
                                                     </Link>
@@ -322,7 +322,7 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/press-and-media/press-releases"
+                                                        href="/press-media/press-releases"
                                                     >
                                                         Press Releases
                                                     </Link>
