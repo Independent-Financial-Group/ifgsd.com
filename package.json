@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@contentful/f36-datetime": "^4.37.1",
     "@contentful/rich-text-react-renderer": "^15.16.4",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",

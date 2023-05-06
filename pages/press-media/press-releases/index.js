@@ -11,12 +11,16 @@ const client = contenful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 })
 
+import { formatDateAndTime } from '@contentful/f36-datetime';
+import Link from 'next/link';
+
 export async function getStaticProps() {
-  const pressReleases = await client.getEntries({content_type: 'pressRelease', order: "-sys.createdAt"})
+  const pressReleases = await client.getEntries({content_type: 'pressRelease'})
 
   const formattedPressReleases = pressReleases.items.map((item) => {
     return {
       allData: item,
+      date: formatDateAndTime(item.fields.date, 'day'),
       author: item.fields.author.fields,
       title: item.fields.title,
       slug: item.fields.slug,
@@ -84,17 +88,17 @@ const index = ({formattedPressReleases}) => {
                     </time>
                     <a
                       href="#"
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-sunburst-500 hover:bg-sunburst-100 hover:text-dunkel-blue-500"
+                      className="relative z-10 rounded-full px-3 py-1.5 font-medium bg-sunburst-100 text-dunkel-blue-500"
                     >
                       Press Release
                     </a>
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-wave-500 group-hover:text-blue-wave-200">
-                      <a href={post.href}>
+                      <Link href={`/press-media/press-releases/${post.slug}`}>
                         <span className="absolute inset-0" />
                         {post.title}
-                      </a>
+                      </Link>
                     </h3>
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-dunkel-blue-500">{post.description}</p>
                   </div>
@@ -114,7 +118,13 @@ const index = ({formattedPressReleases}) => {
               ))}
             </div>
             <aside className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sunburst-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none xl:col-span-2 hidden xl:block">
-                test
+                Categories
+                <ul>
+                  <li>press releases</li>
+                  <li>blog</li>
+                  <li>podcast</li>
+                  <li></li>
+                </ul>
             </aside>
           </div>
         </div>

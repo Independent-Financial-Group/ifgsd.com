@@ -13,6 +13,10 @@ module.exports = {
         {
           protocol: 'https',
           hostname: 'flowbite.com'
+        },
+        {
+          protocol: 'https',
+          hostname: 'images.ctfassets.net'
         }
       ],
     },
