@@ -73,12 +73,12 @@ const index = ({formattedPressReleases}) => {
                     <time dateTime={post.date} className="text-dunkel-blue-500">
                       {post.date}
                     </time>
-                    <a
+                    <Link
                       href="#"
                       className="relative z-10 rounded-full px-3 py-1.5 font-medium bg-sunburst-100 text-dunkel-blue-500"
                     >
                       Press Release
-                    </a>
+                    </Link>
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-wave-500 group-hover:text-blue-wave-200">
@@ -90,13 +90,13 @@ const index = ({formattedPressReleases}) => {
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-dunkel-blue-500">{post.description}</p>
                   </div>
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    <img src={`https:${post.author.photo.fields.file.url}`} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                    <Image src={`https:${post.author.photo.fields.file.url}`} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-blue-wave-500">
-                        <a href="#">
+                        <Link href="#">
                           <span className="absolute inset-0" />
                           {post.author.fullName}
-                        </a>
+                        </Link>
                       </p>
                       <p className="text-dunkel-blue-600">{post.author.role}</p>
                     </div>

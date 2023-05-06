@@ -93,13 +93,13 @@ const blogPost = ({ post }) => {
                     alt="Jese Leos"
                   />
                   <div>
-                    <a
+                    <Link
                       href="#"
                       rel="author"
                       class="text-xl font-bold text-gray-900 dark:text-white"
                     >
                       {post.author.fullName}
-                    </a>
+                    </Link>
                     <p class="text-base font-light text-gray-500 dark:text-gray-400">
                       {post.author.role}
                     </p>

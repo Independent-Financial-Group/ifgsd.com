@@ -69,12 +69,12 @@ const index = ({ formattedPosts }) => {
                     <time dateTime={post.date} className="text-dunkel-blue-500">
                       {post.date}
                     </time>
-                    <a
+                    <Link
                       href="#"
                       className="relative z-10 rounded-full px-3 py-1.5 font-medium bg-sunburst-100 text-dunkel-blue-500"
                     >
                       Educational
-                    </a>
+                    </Link>
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-wave-500 group-hover:text-blue-wave-200">
@@ -95,10 +95,10 @@ const index = ({ formattedPosts }) => {
                     />
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-blue-wave-500">
-                        <a href="#">
+                        <Link href="#">
                           <span className="absolute inset-0" />
                           {post.author.fullName}
-                        </a>
+                        </Link>
                       </p>
                       <p className="text-dunkel-blue-600">{post.author.role}</p>
                     </div>

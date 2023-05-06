@@ -604,12 +604,12 @@ const HomePage = () => {
                   Get in contact with our recruiting team and schedule a home
                   office visit to see what we're all about.
                 </p>
-                <a
+                <Link
                   href="#"
                   className="text-sunburst-500 bg-dune-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                 >
                   Schedule a Visit
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
