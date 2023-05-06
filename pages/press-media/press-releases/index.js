@@ -4,6 +4,8 @@ import Nav from "../../../components/Nav/Nav"
 import MobileNav from "../../../components/MobileNav/MobileNav"
 import Footer from "../../../components/Footer/Footer"
 
+import banner from "../../../public/press-release-hero.png"
+
 const contenful = require("contentful");
 
 const client = contenful.createClient({
@@ -43,13 +45,19 @@ const index = ({formattedPressReleases}) => {
     <>
       <Nav />
       <MobileNav />
-      <header>
-        <div className="bg-seabreeze-500 pt-24 sm:pt-32 px-8">
+      <header
+        style={{
+          backgroundImage: "url('/press-release-hero.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className=" py-32 sm:py-32 px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">Press Releases</h2>
-              <p className="mt-2 text-lg leading-8 text-blue-wave-900">
-                Stay in the know of all the happenings at the home office.
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-seabreeze-500 sm:text-4xl text-center">Press Releases</h2>
+              <p className="mt-2 text-lg leading-8 text-seabreeze-500 text-center">
+                Stay in the know of all the happenings at the home office
               </p>
             </div>
           </div>
