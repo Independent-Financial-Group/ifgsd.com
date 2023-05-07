@@ -6,7 +6,7 @@ import Footer from "../../../components/Footer/Footer"
 
 import Link from 'next/link'
 
-import banner from "../../../public/press-release-hero.png"
+import { formatDateAndTime } from '@contentful/f36-datetime';
 
 const contenful = require("contentful");
 
@@ -14,9 +14,6 @@ const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 })
-
-import { formatDateAndTime } from '@contentful/f36-datetime';
-import Link from 'next/link';
 
 export async function getStaticProps() {
   const pressReleases = await client.getEntries({content_type: 'pressRelease'})
