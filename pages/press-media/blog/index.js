@@ -3,7 +3,6 @@ import React from "react";
 import Nav from "../../../components/Nav/Nav";
 import MobileNav from "../../../components/MobileNav/MobileNav";
 import Footer from "../../../components/Footer/Footer";
-import Link from "next/link";
 
 const contenful = require("contentful");
 
