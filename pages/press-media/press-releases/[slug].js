@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 
 import Nav from "../../../components/Nav/Nav";
 import MobileNav from "../../../components/MobileNav/MobileNav";
