@@ -4,6 +4,7 @@ import Nav from "../../../components/Nav/Nav"
 import MobileNav from "../../../components/MobileNav/MobileNav"
 import Footer from "../../../components/Footer/Footer"
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { formatDateAndTime } from '@contentful/f36-datetime';
