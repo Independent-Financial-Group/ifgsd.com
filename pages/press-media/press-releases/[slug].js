@@ -69,7 +69,8 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-        release: formattedPressReleases[0]
+        release: formattedPressReleases[0],
+        revalidate: 5
     }
   }
 };
