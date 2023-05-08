@@ -82,10 +82,12 @@ const blogPost = ({ post }) => {
   const dtrOptions = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <Image src={`https://${node.data.target.fields.file.url}`} width={300} height={300} alt={node.data.target.fields.title} />
+        <Image src={`https://${node.data.target.fields.file.url}`} width={node.data.target.fields.file.details.image.width} height={node.data.target.fields.file.details.image.height} alt={node.data.target.fields.title} />
       )
     }
   }
+
+  console.log(post.writtenContent);
 
   return (
     <>
