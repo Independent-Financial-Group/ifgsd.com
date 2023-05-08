@@ -72,8 +72,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
         post: formattedBlogPosts[0],
-        revalidate: 5
-    }
+    },
+    revalidate: 5
   }
 };
 
