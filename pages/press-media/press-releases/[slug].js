@@ -86,6 +86,8 @@ export const getStaticProps = async ({ params }) => {
 
 const pressRelease = ({ release }) => {
 
+  if(!release) return <div>Loading...</div>
+
   return (
     <>
       <Nav />

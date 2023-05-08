@@ -96,7 +96,7 @@ const blogPost = ({ post }) => {
     }
   }
 
-  console.log(post.writtenContent);
+  if(!post) return <div>Loading...</div>
 
   return (
     <>
