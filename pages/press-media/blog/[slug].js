@@ -8,6 +8,8 @@ import MobileNav from "../../../components/MobileNav/MobileNav";
 import Footer from "../../../components/Footer/Footer";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from '@contentful/rich-text-types';
+
 
 const contentful = require("contentful");
 
@@ -77,6 +79,14 @@ export const getStaticProps = async ({ params }) => {
 
 const blogPost = ({ post }) => {
 
+  const dtrOptions = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => (
+        <Image src={`https://${node.data.target.fields.file.url}`} width={300} height={300} alt={node.data.target.fields.title} />
+      )
+    }
+  }
+
   return (
     <>
       <Nav />
@@ -84,11 +94,11 @@ const blogPost = ({ post }) => {
       <main>
         <section className="dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-[900px] sm:py-16 lg:px-6">
-            <header class="mb-4 lg:mb-6 not-format">
-              <address class="flex items-center mb-6 not-italic">
-                <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+            <header className="mb-4 lg:mb-6 not-format">
+              <address className="flex items-center mb-6 not-italic">
+                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                   <Image
-                    class="mr-4 w-16 h-16 rounded-full"
+                    className="mr-4 w-16 h-16 rounded-full"
                     width={600}
                     height={600}
                     src={`https:${post.author.photo.fields.file.url}`}
@@ -98,14 +108,14 @@ const blogPost = ({ post }) => {
                     <Link
                       href="#"
                       rel="author"
-                      class="text-xl font-bold text-gray-900 dark:text-white"
+                      className="text-xl font-bold text-gray-900 dark:text-white"
                     >
                       {post.author.fullName}
                     </Link>
-                    <p class="text-base font-light text-gray-500 dark:text-gray-400">
+                    <p className="text-base font-light text-gray-500 dark:text-gray-400">
                       {post.author.role}
                     </p>
-                    <p class="text-base font-light text-gray-500 dark:text-gray-400">
+                    <p className="text-base font-light text-gray-500 dark:text-gray-400">
                       <time
                         pubdate
                         datetime="2022-02-08"
@@ -117,12 +127,12 @@ const blogPost = ({ post }) => {
                   </div>
                 </div>
               </address>
-              <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+              <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
                 {post.title}
               </h1>
             </header>
             <article>
-                {documentToReactComponents(post.writtenContent)}
+                {documentToReactComponents(post.writtenContent, dtrOptions)}
             </article>
           </div>
         </section>
