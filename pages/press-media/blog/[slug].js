@@ -69,6 +69,15 @@ export const getStaticProps = async ({ params }) => {
     };
   });
 
+  if(!formattedBlogPosts.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
   return {
     props: {
         post: formattedBlogPosts[0],

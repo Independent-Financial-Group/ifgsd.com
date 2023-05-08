@@ -41,6 +41,15 @@ export const getStaticPaths = async () => {
     };
   });
 
+  if(!formattedPressReleases.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
   return {
     paths,
     fallback: true,
