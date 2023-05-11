@@ -90,7 +90,7 @@ const index = ({formattedPressReleases}) => {
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-dunkel-blue-500">{post.description}</p>
                   </div>
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    <Image src={`https:${post.author.photo.fields.file.url}`} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                    <img src={`https:${post.author.photo.fields.file.url}`} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-blue-wave-500">
                         <Link href="#">
