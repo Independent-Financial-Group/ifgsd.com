@@ -46,7 +46,7 @@ const MobileNav = () => {
                             <Menu>
                                 <div>
                                     <Menu.Button className='h-full flex flex-row items-center p-3'>
-                                        <p>About Us</p>
+                                        <p>Join IFG</p>
                                         <ChevronDownIcon
                                             className='h-5 w-5 ml-2'
                                             aria-hidden='true'
@@ -62,76 +62,6 @@ const MobileNav = () => {
                                         leaveTo="transform opacity-0 scale-95"
                                     >
                                         <Menu.Items className='flex flex-col ml-10'>
-                                            <Menu.Item className='p-3'>
-                                                {({ active }) => (
-                                                    <Link
-                                                        className={`${active && 'bg-blue-500'} p-3`}
-                                                        href="/about/leadership"
-                                                    >
-                                                        Leadership
-                                                    </Link>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item className='p-3'>
-                                                {({ active }) => (
-                                                    <Link
-                                                        className={`${active && 'bg-blue-500'} p-3`}
-                                                        href="/about/our-story"
-                                                    >
-                                                        Our Story
-                                                    </Link>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item className='p-3'>
-                                                <Menu as='div'>
-                                                    <Menu.Button className='flex flex-row w-full items-center'>
-                                                        <p>Work at IFG</p>
-                                                        <ChevronDownIcon className='w-5 h-5 ml-2' />
-                                                    </Menu.Button>
-                                                    <Transition
-                                                        as={Fragment}
-                                                        enter="transition ease-out duration-100"
-                                                        enterFrom="transform opacity-0 scale-95"
-                                                        enterTo="transform opacity-100 scale-100"
-                                                        leave="transition ease-in duration-75"
-                                                        leaveFrom="transform opacity-100 scale-100"
-                                                        leaveTo="transform opacity-0 scale-95"
-                                                    >
-                                                        <Menu.Items className='flex flex-col ml-10'>
-                                                            <Menu.Item className='p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/work-at-ifg/careers"
-                                                                    >
-                                                                        Careers
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/work-at-ifg/culture"
-                                                                    >
-                                                                        Culture
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/work-at-ifg/benefits"
-                                                                    >
-                                                                        Benefits
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                        </Menu.Items>
-                                                    </Transition>
-                                                </Menu>
-                                            </Menu.Item>
                                             <Menu.Item>
                                                 <Menu as='div' className='p-3'>
                                                     <Menu.Button className='flex flex-row items-center'>
@@ -152,7 +82,7 @@ const MobileNav = () => {
                                                                 {({ active }) => (
                                                                     <Link
                                                                         className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/our-misison"
+                                                                        href="/join-ifg/why-choose-us/our-mission"
                                                                     >
                                                                         Our Mission
                                                                     </Link>
@@ -162,7 +92,7 @@ const MobileNav = () => {
                                                                 {({ active }) => (
                                                                     <Link
                                                                         className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/compensation"
+                                                                        href="/join-ifg/why-choose-us/compensation"
                                                                     >
                                                                         Compensation
                                                                     </Link>
@@ -172,7 +102,7 @@ const MobileNav = () => {
                                                                 {({ active }) => (
                                                                     <Link
                                                                         className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/transition-support"
+                                                                        href="/join-ifg/why-choose-us/transition-support"
                                                                     >
                                                                         Transition Support
                                                                     </Link>
@@ -182,7 +112,7 @@ const MobileNav = () => {
                                                                 {({ active }) => (
                                                                     <Link
                                                                         className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/customer-service"
+                                                                        href="/join-ifg/why-choose-us/customer-service"
                                                                     >
                                                                         Customer Service
                                                                     </Link>
@@ -192,19 +122,9 @@ const MobileNav = () => {
                                                                 {({ active }) => (
                                                                     <Link
                                                                         className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/advisor-success-stories"
+                                                                        href="/join-ifg/why-choose-us/advisor-testimonials"
                                                                     >
-                                                                        Advisor Success Stories
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/partners"
-                                                                    >
-                                                                        Our Partners
+                                                                        Advisor Testimonials
                                                                     </Link>
                                                                 )}
                                                             </Menu.Item>
@@ -212,14 +132,74 @@ const MobileNav = () => {
                                                     </Transition>
                                                 </Menu>
                                             </Menu.Item>
+                                            <Menu.Item>
+                                                <Menu as='div' className='p-3'>
+                                                    <Menu.Button className='flex flex-row items-center'>
+                                                        Business Solution Models
+                                                        <ChevronDownIcon className='w-5 h-5 ml-2' />
+                                                    </Menu.Button>
+                                                    <Transition
+                                                        as={Fragment}
+                                                        enter="transition ease-out duration-100"
+                                                        enterFrom="transform opacity-0 scale-95"
+                                                        enterTo="transform opacity-100 scale-100"
+                                                        leave="transition ease-in duration-75"
+                                                        leaveFrom="transform opacity-100 scale-100"
+                                                        leaveTo="transform opacity-0 scale-95"
+                                                    >
+                                                        <Menu.Items className='flex flex-col ml-10'>
+                                                            <Menu.Item className='p-3'>
+                                                                {({ active }) => (
+                                                                    <Link
+                                                                        className={`${active && 'bg-blue-500'}`}
+                                                                        href="/join-ifg/business-solutions/solo-practitioner"
+                                                                    >
+                                                                        Solo Practitioner
+                                                                    </Link>
+                                                                )}
+                                                            </Menu.Item>
+                                                            <Menu.Item className='p-3'>
+                                                                {({ active }) => (
+                                                                    <Link
+                                                                        className={`${active && 'bg-blue-500'}`}
+                                                                        href="/join-ifg/business-solutions/join-an-existing-practice"
+                                                                    >
+                                                                        Join an Existing Practice
+                                                                    </Link>
+                                                                )}
+                                                            </Menu.Item>
+                                                            <Menu.Item className='p-3'>
+                                                                {({ active }) => (
+                                                                    <Link
+                                                                        className={`${active && 'bg-blue-500'}`}
+                                                                        href="/join-ifg/business-solutions/selling-your-practice"
+                                                                    >
+                                                                        Selling Your Practice
+                                                                    </Link>
+                                                                )}
+                                                            </Menu.Item>
+                                                        </Menu.Items>
+                                                    </Transition>
+                                                </Menu>
+                                            </Menu.Item>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
+                                                        href="/join/contact"
+                                                    >
+                                                        Request More Information
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
                                         </Menu.Items>
                                     </Transition>
                                 </div>
                             </Menu>
                             <Menu>
                                 <div>
-                                    <Menu.Button className='h-full flex flex-row p-3 items-center'>
-                                        <p>Offerings</p>
+                                    <Menu.Button className='h-full flex flex-row items-center p-3'>
+                                        <p>About</p>
                                         <ChevronDownIcon
                                             className='h-5 w-5 ml-2'
                                             aria-hidden='true'
@@ -238,50 +218,40 @@ const MobileNav = () => {
                                             <Menu.Item className='p-3'>
                                                 {({ active }) => (
                                                     <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/offerings/practice-development"
+                                                        className={`${active && 'bg-blue-500'} p-3`}
+                                                        href="/about/our-story"
                                                     >
-                                                        Practice Development
+                                                        Our Story
                                                     </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item className='p-3'>
                                                 {({ active }) => (
                                                     <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/offerings/products"
+                                                        className={`${active && 'bg-blue-500'} p-3`}
+                                                        href="/about/leadership"
                                                     >
-                                                        Products
+                                                        Leadership
                                                     </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item className='p-3'>
                                                 {({ active }) => (
                                                     <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/offerings/technology"
+                                                        className={`${active && 'bg-blue-500'} p-3`}
+                                                        href="/about/culture"
                                                     >
-                                                        Technology
+                                                        Culture
                                                     </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item className='p-3'>
                                                 {({ active }) => (
                                                     <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/offerings/marketing-support"
+                                                        className={`${active && 'bg-blue-500'} p-3`}
+                                                        href="/about/philanthropy"
                                                     >
-                                                        Marketing Support
-                                                    </Link>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item className='p-3'>
-                                                {({ active }) => (
-                                                    <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/offerings/compliance"
-                                                    >
-                                                        Compliance
+                                                        Philanthropy
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -312,9 +282,19 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/press-media/blog"
+                                                        href="/press-media/ifg-in-the-news"
                                                     >
-                                                        Blog
+                                                        IFG in the News
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
+                                                        href="/press-and-media/awards-and-recognition"
+                                                    >
+                                                        Awards & Recognition
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -328,104 +308,14 @@ const MobileNav = () => {
                                                     </Link>
                                                 )}
                                             </Menu.Item>
-                                            <Menu.Item className='p-3'>
-                                                {({ active }) => (
-                                                    <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/press-and-media/podcast"
-                                                    >
-                                                        Podcast
-                                                    </Link>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                <Menu as='div'>
-                                                    <Menu.Button className='flex flex-row w-full items-center p-3'>
-                                                        Press Room
-                                                        <ChevronDownIcon className='w-5 h-5 ml-2' />
-                                                    </Menu.Button>
-                                                    <Transition
-                                                        as={Fragment}
-                                                        enter="transition ease-out duration-100"
-                                                        enterFrom="transform opacity-0 scale-95"
-                                                        enterTo="transform opacity-100 scale-100"
-                                                        leave="transition ease-in duration-75"
-                                                        leaveFrom="transform opacity-100 scale-100"
-                                                        leaveTo="transform opacity-0 scale-95"
-                                                    >
-                                                        <Menu.Items className='flex flex-col ml-10'>
-                                                            <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/press-and-media/ifg-connect"
-                                                                    >
-                                                                        IFG Connect
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/press-and-media/bluechip"
-                                                                    >
-                                                                        Bluechip
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/press-and-media/the-independent"
-                                                                    >
-                                                                        The Independent
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/press-and-media/advisor-success-stories"
-                                                                    >
-                                                                        Advisor Success Stories
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/advisor-success-stories"
-                                                                    >
-                                                                        Advisor Success Stories
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                            <Menu.Item className='hover:bg-blue-foam p-3'>
-                                                                {({ active }) => (
-                                                                    <Link
-                                                                        className={`${active && 'bg-blue-500'}`}
-                                                                        href="/about/why-choose-us/partners"
-                                                                    >
-                                                                        Our Partners
-                                                                    </Link>
-                                                                )}
-                                                            </Menu.Item>
-                                                        </Menu.Items>
-                                                    </Transition>
-                                                </Menu>
-                                            </Menu.Item>
                                         </Menu.Items>
                                     </Transition>
                                 </div>
                             </Menu>
                             <Menu>
                                 <div>
-                                    <Menu.Button className='h-full flex flex-row items-center p-3'>
-                                        <p>Join Us</p>
+                                    <Menu.Button className='h-full flex flex-row p-3 items-center'>
+                                        <p>Offerings</p>
                                         <ChevronDownIcon
                                             className='h-5 w-5 ml-2'
                                             aria-hidden='true'
@@ -445,9 +335,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/join/advisor-diversity-and-inclusion"
+                                                        href="/offerings/products-and-platforms"
                                                     >
-                                                        Advisor Diversity & Inclusion
+                                                        Products & Platforms
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -455,9 +345,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/join/awards-and-recognition"
+                                                        href="/offerings/technology"
                                                     >
-                                                        Awards & Recognition
+                                                        Technology
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -465,9 +355,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/join/independent-business-model"
+                                                        href="/offerings/practice-development"
                                                     >
-                                                        Independent Business Model
+                                                        Practice Development
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -475,9 +365,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/join/visit-us"
+                                                        href="/offerings/conferences"
                                                     >
-                                                        Visit Us
+                                                        Conferences
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -485,9 +375,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/join/recruiting-team"
+                                                        href="/offerings/marketing-support"
                                                     >
-                                                        Recruiting Team
+                                                        Marketing Support
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -495,9 +385,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/join/we-value-you"
+                                                        href="/offerings/compliance"
                                                     >
-                                                        We Value You
+                                                        Compliance
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -505,10 +395,10 @@ const MobileNav = () => {
                                     </Transition>
                                 </div>
                             </Menu>
-                            <Menu className="bg-blue-wave-500 h-full rounded">
+                            <Menu>
                                 <div>
-                                    <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
-                                        <p>Login</p>
+                                    <Menu.Button className='h-full flex flex-row p-3 items-center'>
+                                        <p>Careers</p>
                                         <ChevronDownIcon
                                             className='h-5 w-5 ml-2'
                                             aria-hidden='true'
@@ -523,14 +413,14 @@ const MobileNav = () => {
                                         leaveFrom="transform opacity-100 scale-100"
                                         leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <Menu.Items className='flex flex-col text-center bg-seabreeze-500'>
+                                        <Menu.Items className='flex flex-col ml-10'>
                                             <Menu.Item className='p-3'>
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="https://ifg-gateway.com"
+                                                        href="/careers/job-openings"
                                                     >
-                                                        Gateway
+                                                        Job Openings
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -538,14 +428,38 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="https://new.ifgsd.com"
+                                                        href="/careers/benefits"
                                                     >
-                                                        Advisor Portal
+                                                        Benefits
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
+                                                        href="/careers/career-support"
+                                                    >
+                                                        Career Support
                                                     </Link>
                                                 )}
                                             </Menu.Item>
                                         </Menu.Items>
                                     </Transition>
+                                </div>
+                            </Menu>
+                            <Menu className="bg-sunburst-500 h-full rounded mb-2">
+                                <div>
+                                    <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
+                                        <Link href="https://new.ifgsd.com">Find an Advisor</Link>
+                                    </Menu.Button>
+                                </div>
+                            </Menu>
+                            <Menu className="bg-blue-wave-500 h-full rounded">
+                                <div>
+                                    <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
+                                        <Link href="https://new.ifgsd.com">Login</Link>
+                                    </Menu.Button>
                                 </div>
                             </Menu>
                         </div>
