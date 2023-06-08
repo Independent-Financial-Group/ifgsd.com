@@ -22,10 +22,10 @@ const Nav = () => {
                 <div className="col flex flex-row gap-x-10 shrink-0 items-center ">
                     <Menu>
                         <div>
-                            <Menu.Button className='flex flex-row items-center'>
-                                <p>About Us</p>
+                            <Menu.Button className='h-full flex flex-row'>
+                                <p>Join Us</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5'
+                                    className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -38,77 +38,7 @@ const Nav = () => {
                                 leaveFrom="transform opacity-100 scale-100"
                                 leaveTo="transform opacity-0 scale-95"
                             >
-                                <Menu.Items className='absolute top-3/4 w-56 bg-white flex flex-col drop-shadow rounded text-sm'>
-                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
-                                                href="/about/leadership"
-                                            >
-                                                Leadership
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
-                                                href="/about/our-story"
-                                            >
-                                                Our Story
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row items-center w-full hover:text-seabreeze-500 hover:bg-blue-wave-500 py-3 px-2'>
-                                                <p>Work at IFG</p>
-                                                <ChevronRightIcon className='w-5 h-5' />
-                                            </Menu.Button>
-                                            <Transition
-                                                as={Fragment}
-                                                enter="transition ease-out duration-100"
-                                                enterFrom="transform opacity-0 scale-95"
-                                                enterTo="transform opacity-100 scale-100"
-                                                leave="transition ease-in duration-75"
-                                                leaveFrom="transform opacity-100 scale-100"
-                                                leaveTo="transform opacity-0 scale-95"
-                                            >
-                                                <Menu.Items className='absolute left-full ml-1 top-0 w-56 bg-white flex flex-col drop-shadow-md rounded'>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/about/work-at-ifg/careers"
-                                                            >
-                                                                Careers
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/about/work-at-ifg/culture"
-                                                            >
-                                                                Culture
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/about/work-at-ifg/benefits"
-                                                            >
-                                                                Benefits
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                </Menu.Items>
-                                            </Transition>
-                                        </Menu>
-                                    </Menu.Item>
+                                <Menu.Items className='absolute top-3/4 right-36 xl:right-auto w-56 bg-white flex flex-col drop-shadow rounded text-sm z-10'>
                                     <Menu.Item>
                                         <Menu as='div' className='relative'>
                                             <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-wave-500 hover:text-seabreeze-500 py-3 px-2'>
@@ -171,7 +101,7 @@ const Nav = () => {
                                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/advisor-success-stories"
                                                             >
-                                                                Advisor Success Stories
+                                                                Advisor Testimonials
                                                             </Link>
                                                         )}
                                                     </Menu.Item>
@@ -189,16 +119,76 @@ const Nav = () => {
                                             </Transition>
                                         </Menu>
                                     </Menu.Item>
+                                    <Menu.Item>
+                                        <Menu as='div' className='relative'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-wave-500 hover:text-seabreeze-500 py-3 px-2'>
+                                                Business Solutions Models
+                                                <ChevronRightIcon className='w-5 h-5' />
+                                            </Menu.Button>
+                                            <Transition
+                                                as={Fragment}
+                                                enter="transition ease-out duration-100"
+                                                enterFrom="transform opacity-0 scale-95"
+                                                enterTo="transform opacity-100 scale-100"
+                                                leave="transition ease-in duration-75"
+                                                leaveFrom="transform opacity-100 scale-100"
+                                                leaveTo="transform opacity-0 scale-95"
+                                            >
+                                                <Menu.Items className='absolute left-full ml-1 top-0 w-56 bg-white flex flex-col drop-shadow-md rounded'>
+                                                    <Menu.Item className='py-3 px-2'>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                href="/about/why-choose-us/our-misison"
+                                                            >
+                                                                Solo Practitioner
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
+                                                    <Menu.Item className='py-3 px-2'>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                href="/about/why-choose-us/compensation"
+                                                            >
+                                                                Join an Existing Practice
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
+                                                    <Menu.Item className='py-3 px-2'>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                href="/about/why-choose-us/transition-support"
+                                                            >
+                                                                Selling Your Practice
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
+                                                </Menu.Items>
+                                            </Transition>
+                                        </Menu>
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/join/visit-us"
+                                            >
+                                                Request More Information
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
                                 </Menu.Items>
                             </Transition>
                         </div>
                     </Menu>
                     <Menu>
                         <div>
-                            <Menu.Button className='h-full flex flex-row items-center'>
-                                <p>Offerings</p>
+                            <Menu.Button className='flex flex-row items-center'>
+                                <p>About</p>
                                 <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue-500'
+                                    className='h-5 w-5'
                                     aria-hidden='true'
                                 />
                             </Menu.Button>
@@ -212,53 +202,43 @@ const Nav = () => {
                                 leaveTo="transform opacity-0 scale-95"
                             >
                                 <Menu.Items className='absolute top-3/4 w-56 bg-white flex flex-col drop-shadow rounded text-sm'>
-                                    <Menu.Item className='py-3 px-2'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/offerings/practice-development"
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/about/our-story"
                                             >
-                                                Practice Development
+                                                Our Story
                                             </Link>
                                         )}
                                     </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/offerings/products"
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/about/leadership"
                                             >
-                                                Products
+                                                Leadership
                                             </Link>
                                         )}
                                     </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/offerings/technology"
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/about/culture"
                                             >
-                                                Technology
+                                                Culture
                                             </Link>
                                         )}
                                     </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/offerings/marketing-support"
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/about/leadership"
                                             >
-                                                Marketing Support
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/offerings/compliance"
-                                            >
-                                                Compliance
+                                                Philanthropy
                                             </Link>
                                         )}
                                     </Menu.Item>
@@ -289,9 +269,9 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/press-media/blog"
+                                                href="/press-media/IFG-in-the-news"
                                             >
-                                                Blog
+                                                IFG in the News
                                             </Link>
                                         )}
                                     </Menu.Item>
@@ -299,130 +279,7 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/press-media/press-releases"
-                                            >
-                                                Press Releases
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/press-and-media/podcast"
-                                            >
-                                                Podcast
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row w-full py-3 px-2 hover:bg-blue-wave-500 hover:text-seabreeze-500'>
-                                                Press Room
-                                                <ChevronRightIcon className='w-5 h-5' />
-                                            </Menu.Button>
-                                            <Transition
-                                                as={Fragment}
-                                                enter="transition ease-out duration-100"
-                                                enterFrom="transform opacity-0 scale-95"
-                                                enterTo="transform opacity-100 scale-100"
-                                                leave="transition ease-in duration-75"
-                                                leaveFrom="transform opacity-100 scale-100"
-                                                leaveTo="transform opacity-0 scale-95"
-                                            >
-                                                <Menu.Items className='absolute left-full ml-1 top-0 w-56 bg-white flex flex-col drop-shadow-md rounded'>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/press-and-media/ifg-connect"
-                                                            >
-                                                                IFG Connect
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/press-and-media/bluechip"
-                                                            >
-                                                                Bluechip
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/press-and-media/the-independent"
-                                                            >
-                                                                The Independent
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/press-and-media/advisor-success-stories"
-                                                            >
-                                                                Advisor Success Stories
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/partners"
-                                                            >
-                                                                Our Partners
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
-                                                </Menu.Items>
-                                            </Transition>
-                                        </Menu>
-                                    </Menu.Item>
-                                </Menu.Items>
-                            </Transition>
-                        </div>
-                    </Menu>
-                    <Menu>
-                        <div>
-                            <Menu.Button className='h-full flex flex-row'>
-                                <p>Join Us</p>
-                                <ChevronDownIcon
-                                    className='h-5 w-5 ext-dunkel-blue-500'
-                                    aria-hidden='true'
-                                />
-                            </Menu.Button>
-                            <Transition
-                                as={Fragment}
-                                enter="transition ease-out duration-100"
-                                enterFrom="transform opacity-0 scale-95"
-                                enterTo="transform opacity-100 scale-100"
-                                leave="transition ease-in duration-75"
-                                leaveFrom="transform opacity-100 scale-100"
-                                leaveTo="transform opacity-0 scale-95"
-                            >
-                                <Menu.Items className='absolute top-3/4 right-36 xl:right-auto w-56 bg-white flex flex-col drop-shadow rounded text-sm z-10'>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/join/advisor-diversity-and-inclusion"
-                                            >
-                                                Advisor Diversity & Inclusion
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/join/awards-and-recognition"
+                                                href="/press-and-media/awards-and-recognition"
                                             >
                                                 Awards & Recognition
                                             </Link>
@@ -432,39 +289,9 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/join/independent-business-model"
+                                                href="/press-and-media/press-releases"
                                             >
-                                                Independent Business Model
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/join/visit-us"
-                                            >
-                                                Visit Us
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/join/recruiting-team"
-                                            >
-                                                Recruiting Team
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/join/we-value-you"
-                                            >
-                                                We Value You
+                                                Press Releases
                                             </Link>
                                         )}
                                     </Menu.Item>
@@ -472,10 +299,10 @@ const Nav = () => {
                             </Transition>
                         </div>
                     </Menu>
-                    <Menu className='relative'>
+                    <Menu>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-blue-wave-500 text-seabreeze-500 p-3 rounded drop-shadow'>
-                                <p className='font-bold'>Login</p>
+                            <Menu.Button className='h-full flex flex-row items-center'>
+                                <p>Offerings</p>
                                 <ChevronDownIcon
                                     className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
@@ -490,29 +317,136 @@ const Nav = () => {
                                 leaveFrom="transform opacity-100 scale-100"
                                 leaveTo="transform opacity-0 scale-95"
                             >
-                                <Menu.Items className='absolute top-full -ml-40 xl:ml-0 xl:-left-full mt-8 w-64 bg-white flex flex-col drop-shadow rounded'>
-                                    <Menu.Item>
+                                <Menu.Items className='absolute top-3/4 w-56 bg-white flex flex-col drop-shadow rounded text-sm'>
+                                    <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} py-3 px-2 hover:text-seabreeze-500`}
-                                                href="https://ifg-gateway.com"
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/products"
                                             >
-                                                Gateway
+                                                Products & Platforms
                                             </Link>
                                         )}
                                     </Menu.Item>
-                                    <Menu.Item className='p-3'>
+                                    <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} py-3 px-2 hover:text-seabreeze-500`}
-                                                href="https://new.ifgsd.com"
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/technology"
                                             >
-                                                Advisor Portal
+                                                Technology
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/practice-development"
+                                            >
+                                                Practice Development
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/conferences"
+                                            >
+                                                Conferences
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/marketing-support"
+                                            >
+                                                Marketing Support
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/compliance"
+                                            >
+                                                Compliance
                                             </Link>
                                         )}
                                     </Menu.Item>
                                 </Menu.Items>
                             </Transition>
+                        </div>
+                    </Menu>
+                    <Menu>
+                        <div>
+                            <Menu.Button className='flex flex-row items-center'>
+                                <p>Careers</p>
+                                <ChevronDownIcon
+                                    className='h-5 w-5'
+                                    aria-hidden='true'
+                                />
+                            </Menu.Button>
+                            <Transition
+                                as={Fragment}
+                                enter="transition ease-out duration-100"
+                                enterFrom="transform opacity-0 scale-95"
+                                enterTo="transform opacity-100 scale-100"
+                                leave="transition ease-in duration-75"
+                                leaveFrom="transform opacity-100 scale-100"
+                                leaveTo="transform opacity-0 scale-95"
+                            >
+                                <Menu.Items className='absolute top-3/4 w-56 bg-white flex flex-col drop-shadow rounded text-sm'>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/careers/job-openings"
+                                            >
+                                                Job Openings
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/careers/benefits"
+                                            >
+                                                Benefits
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                href="/careers/career-support"
+                                            >
+                                                Career Support
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                </Menu.Items>
+                            </Transition>
+                        </div>
+                    </Menu>
+                    <Menu className='relative'>
+                        <div>
+                            <Menu.Button className='h-full flex flex-row bg-sunburst-500 text-seabreeze-500 p-3 rounded drop-shadow'>
+                                <Link href="/advisor-lookup" className='font-bold'>Find an Advisor</Link>
+                            </Menu.Button>
+                        </div>
+                    </Menu>
+                    <Menu className='relative'>
+                        <div>
+                            <Menu.Button className='h-full flex flex-row bg-blue-wave-500 text-seabreeze-500 p-3 rounded drop-shadow'>
+                                <Link href="https://new.ifgsd.com" className='font-bold'>Login</Link>
+                            </Menu.Button>
                         </div>
                     </Menu>
                 </div>
