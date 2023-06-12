@@ -17,7 +17,7 @@ import Hero from "../components/Hero/Hero";
 import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
-import phoneImage from "../public/phone-picking-up-compressed.jpg";
+import familySectionImage from "../public/family-section-image-compressed.jpg";
 
 const HomePage = () => {
   return (
@@ -561,7 +561,7 @@ const HomePage = () => {
                     </div>
                   </motion.div>
                   <Image
-                    src={phoneImage}
+                    src={familySectionImage}
                     alt="Product screenshot"
                     className="rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
                     width={2432}
