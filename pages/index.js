@@ -33,12 +33,12 @@ const HomePage = () => {
           <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div className="max-w-screen-md mb-8 lg:mb-16">
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
-                Fearlessly Independent
+                Empowering Financial Advisors with Independence and Support
               </h2>
-              <p className="text-dunkel-blue sm:text-xl dark:text-gray-400">
+              <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
                 With 20-years of experience and a focus on technology,
                 innovation, expertise and independence, we can unlock long-term
-                value and drive growth for your practice.
+                value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.
               </p>
             </div>
             <motion.div
@@ -242,22 +242,10 @@ const HomePage = () => {
                 Our Mission
               </h3>
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
-                Independence, Perfected
+                Integrity, Balance, and Independence
               </h2>
               <p className="mb-4">
-                Independent Financial Group, LLC is based on three core values
-                shared by Independent Financial Group’s executive team:
-                integrity, balance and independence. Founders Scott Heising and
-                David Fischer along with their home office team of employees are
-                committed to providing excellent customer service while always
-                keeping these values at the forefront of decisions as leaders.
-              </p>
-              <p>
-                From the top down, each employee shares in this understanding
-                while providing efficient and friendly service to our advisors
-                according to those beliefs. Independent Financial Group is
-                committed to bringing true independence to the marketplace while
-                staying true to the values the founders have set in place.
+                Independent Financial Group, LLC prioritizes integrity, balance, and independence in everything we do. Our founders, Scott Heising, and David Fischer, along with our dedicated team, are committed to providing excellent customer service while upholding these core values. From the moment you join our firm, you'll experience a culture that puts integrity at the forefront of decision-making and values a balanced approach to business. We believe in true independence, empowering our advisors to serve their client's best interests without any conflicts of interest. Our home office team supports our advisors with efficient and friendly service, ensuring they have the tools and resources they need to succeed. At Independent Financial Group, we stay true to the values set by our founders and strive to bring genuine independence to the marketplace. Join Independent Financial Group today and experience a firm that values integrity, balance, and independence, providing you with the platform to thrive as a financial advisor. Together, we can make a positive impact on the lives of our clients while staying true to our core values.
               </p>
               <button className="mt-5 rounded-md bg-blue-wave-500 text-sm font-semibold text-seabreeze-500 shadow-sm hover:bg-red-fire focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-3.5 py-2.5">
                 <Link className="px-3.5 py-2.5" href="/about/our-story">
@@ -275,7 +263,7 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ delay: 1 }}
             >
-              <h2 className=" absolute bg-sunburst-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg">
+              <h2 className=" absolute bg-blue-wave-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg">
                 Rankings
               </h2>
             </motion.div>
@@ -291,7 +279,7 @@ const HomePage = () => {
                   <dt className="text-base leading-7 text-gray-600">
                     Financial Advisors
                   </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
                     600+
                   </dd>
                 </motion.div>
@@ -305,7 +293,7 @@ const HomePage = () => {
                   <dt className="text-base leading-7 text-gray-600">
                     Assets Under Management
                   </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
                     $37B
                   </dd>
                 </motion.div>
@@ -319,7 +307,7 @@ const HomePage = () => {
                   <dt className="text-base leading-7 text-gray-600">
                     Highest % of Women Advisors*
                   </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
                     #4
                   </dd>
                 </motion.div>
@@ -335,7 +323,7 @@ const HomePage = () => {
                   <dt className="text-base leading-7 text-gray-600">
                     Largest Independent Broker-Dealer*
                   </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
                     #17
                   </dd>
                 </motion.div>
@@ -349,7 +337,7 @@ const HomePage = () => {
                   <dt className="text-base leading-7 text-gray-600">
                     Largest Privately Held Company in San Diego*
                   </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
                     #7
                   </dd>
                 </motion.div>
@@ -363,7 +351,7 @@ const HomePage = () => {
                   <dt className="text-base leading-7 text-gray-600">
                     Overall Experience Satisfaction*
                   </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
                     #2
                   </dd>
                 </motion.div>
@@ -378,12 +366,10 @@ const HomePage = () => {
                 Testimonials
               </h2>
               <h3 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500 text-center">
-                What our advisors say about us
+                Hear What Our Family Says
               </h3>
               <p className="text-center mx-auto xl:w-1/2">
-                At IFG, we will always believe you are a name, not a number. We
-                aim to provide our representatives with investment opportunity,
-                guidance, and planning.
+                we take pride in the relationships we build with our family of advisors. Don't just take our word for it – hear what our valued advisors have to say about their experiences with us.
               </p>
             </div>
             <motion.div
@@ -510,16 +496,11 @@ const HomePage = () => {
                     className="lg:pr-8 lg:pt-4"
                   >
                     <div className="lg:max-w-lg">
-                      <h2 className="text-base font-semibold leading-7 text-sunburst-500">
-                        Join Us
-                      </h2>
                       <p className="mt-2 text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">
-                        Have ease of mind when transitioning
+                        Where Family and Community Thrive!
                       </p>
                       <p className="mt-6 text-lg leading-8 text-blue-wave-900">
-                        Independence doesn't mean you're on your own. Our
-                        transition team works with your practice to ensure that
-                        you have a smooth transition.
+                        We understand that being a financial advisor is more than just a career – it's about building relationships, creating lasting impact, and being part of a supportive community. We foster a sense of family and community among our financial advisors, providing an environment where you can excel personally and professionally.
                       </p>
                       <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-blue-wave-900 lg:max-w-none">
                         <div className="relative pl-9">
@@ -528,12 +509,10 @@ const HomePage = () => {
                               className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
                               aria-hidden="true"
                             />
-                            Phase 1
+                            Collaborative Environment.
                           </dt>{" "}
                           <dd className="inline">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia eaque recusandae dolor magnam cum
-                            odit dolorem fuga possimus beatae sed?
+                            We believe in the power of collaboration and knowledge-sharing. When you join, you become part of a close-knit community of experienced financial advisors who support one another. We encourage teamwork and mentorship, empowering you to reach new heights in your practice.
                           </dd>
                         </div>
                       </dl>
@@ -544,12 +523,10 @@ const HomePage = () => {
                               className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
                               aria-hidden="true"
                             />
-                            Phase 2
+                            Client-Centric Approach.
                           </dt>{" "}
                           <dd className="inline">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia eaque recusandae dolor magnam cum
-                            odit dolorem fuga possimus beatae sed?
+                            We prioritize building long-term relationships with clients based on trust and transparency. With us, you’ll have the freedom to provide personalized, holistic solutions tailored to your client’s unique financial goals and aspirations. Our emphasis on client satisfaction creates a fulfilling and rewarding experience for both you and your clients.
                           </dd>
                         </div>
                       </dl>
@@ -560,19 +537,28 @@ const HomePage = () => {
                               className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
                               aria-hidden="true"
                             />
-                            Phase 3
+                            Continuing Education and Professional Development.
                           </dt>{" "}
                           <dd className="inline">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia eaque recusandae dolor magnam cum
-                            odit dolorem fuga possimus beatae sed?
+                            We invest in your growth by offering a comprehensive range of educational resources and training programs. Our goal is to equip you with the latest industry insights, cutting-edge strategies, and regulatory knowledge. Stay ahead of the curve and enhance your expertise while contributing to the success of your client.
+                          </dd>
+                        </div>
+                      </dl>
+                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                        <div className="relative pl-9">
+                          <dt className="inline font-semibold text-blue-wave-500">
+                            <CloudArrowUpIcon
+                              className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
+                              aria-hidden="true"
+                            />
+                            Technology and Innovation:
+                          </dt>{" "}
+                          <dd className="inline">
+                            Embracing technological advancements, we provide you with cutting-edge tools and resources to streamline your practice. Our intuitive online platform simplifies processes, enhances client interactions, and enables you to stay connected and productive wherever you are.
                           </dd>
                         </div>
                       </dl>
                     </div>
-                    <button className="rounded-md bg-blue-wave-500 px-3.5 py-2.5 text-sm font-semibold text-seabreeze-500 shadow-sm hover:bg-sunburst-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-10 mx-auto block">
-                      Learn More
-                    </button>
                   </motion.div>
                   <Image
                     src={phoneImage}
@@ -586,7 +572,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-sunburst-500">
+        <section className="bg-blue-wave-0">
           <div className="mx-auto max-w-screen-xl">
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
@@ -597,16 +583,15 @@ const HomePage = () => {
               style={{}}
             >
               <div className="mx-auto max-w-screen-sm text-center">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-dune-500 dark:text-white">
-                  Start your transition
+                <h2 className="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-blue-wave-500 dark:text-white">
+                  Join our Family Today!
                 </h2>
-                <p className="mb-6 text-dune-500 dark:text-gray-400 md:text-lg">
-                  Get in contact with our recruiting team and schedule a home
-                  office visit to see what we're all about.
+                <p className="mb-6 text-dunkel-blue-500 dark:text-gray-400 md:text-lg">
+                  We invite passionate financial advisors to join our thriving community. Experience support, collaboration, and belonging that sets us apart. Take your practice to new heights and make a lasting impact on clients' lives. Start your journey toward fulfillment.
                 </p>
                 <Link
                   href="#"
-                  className="text-sunburst-500 bg-dune-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  className="text-seabreeze-500 bg-blue-wave-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                 >
                   Schedule a Visit
                 </Link>
