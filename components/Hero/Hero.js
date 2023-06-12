@@ -22,16 +22,16 @@ const Hero = () => {
                     </div>
                 </div>
                 <motion.div
-                    initial={{opacity: 0, y:200}}
-                    whileInView={{opacity: 1, y:0}}
-                    transition={{type: 'spring', duration: 1.3}}
-                    viewport={{once: true}}
+                    initial={{ opacity: 0, y: 200 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ type: 'spring', duration: 1.3 }}
+                    viewport={{ once: true }}
                     className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-seabreeze-500 sm:text-6xl">
-                        Catch the wave and grow your practice
+                        Find Your Professional Home
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-seabreeze-500">
-                        Ready to ride the wave? Take your practice to the next level and start growing today. Learn how.
+                        Looking for a home where you're more than just a number? Discover IFG, a broker-dealer that prioritizes family values and a strong sense of community. Join us and experience a supportive environment that recognizes your unique contributions. Contact us now to find your place within our family.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <a
