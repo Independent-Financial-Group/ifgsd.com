@@ -28,10 +28,10 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-seabreeze-500 sm:text-6xl">
-                        Find Your Professional Home
+                        We're Different
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-seabreeze-500">
-                        Looking for a home where you're more than just a number? Discover IFG, a broker-dealer that prioritizes family values and a strong sense of community. Join us and experience a supportive environment that recognizes your unique contributions. Contact us now to find your place within our family.
+                        Discover IFG, a firm that values community and family. Join us to immerse yourself in an environment that supports your independence. Contact us now and discover where you belong.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <a
