@@ -152,6 +152,16 @@ const MobileNav = () => {
                                                                 {({ active }) => (
                                                                     <Link
                                                                         className={`${active && 'bg-blue-500'}`}
+                                                                        href="/join-ifg/business-solutions/independent-practice"
+                                                                    >
+                                                                        Independent Practice
+                                                                    </Link>
+                                                                )}
+                                                            </Menu.Item>
+                                                            <Menu.Item className='p-3'>
+                                                                {({ active }) => (
+                                                                    <Link
+                                                                        className={`${active && 'bg-blue-500'}`}
                                                                         href="/join-ifg/business-solutions/solo-practitioner"
                                                                     >
                                                                         Solo Practitioner
@@ -345,6 +355,26 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
+                                                        href="/offerings/marketing-and-product-support"
+                                                    >
+                                                        Marketing & Product Support
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
+                                                        href="/offerings/platform-support"
+                                                    >
+                                                        Platform Support
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item className='p-3'>
+                                                {({ active }) => (
+                                                    <Link
+                                                        className={`${active && 'bg-blue-500'}`}
                                                         href="/offerings/technology"
                                                     >
                                                         Technology
@@ -368,16 +398,6 @@ const MobileNav = () => {
                                                         href="/offerings/conferences"
                                                     >
                                                         Conferences
-                                                    </Link>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item className='p-3'>
-                                                {({ active }) => (
-                                                    <Link
-                                                        className={`${active && 'bg-blue-500'}`}
-                                                        href="/offerings/marketing-support"
-                                                    >
-                                                        Marketing Support
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -418,9 +438,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/careers/job-openings"
+                                                        href="/careers/work-at-ifg"
                                                     >
-                                                        Job Openings
+                                                        Work at IFG
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -428,9 +448,9 @@ const MobileNav = () => {
                                                 {({ active }) => (
                                                     <Link
                                                         className={`${active && 'bg-blue-500'}`}
-                                                        href="/careers/benefits"
+                                                        href="/careers/benefits-and-perks"
                                                     >
-                                                        Benefits
+                                                        Benefits & Perks
                                                     </Link>
                                                 )}
                                             </Menu.Item>
@@ -458,7 +478,7 @@ const MobileNav = () => {
                             <Menu className="bg-blue-wave-500 h-full rounded">
                                 <div>
                                     <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
-                                        <Link href="https://new.ifgsd.com">Login</Link>
+                                        <Link href="https://new.ifgsd.com">Rep Login</Link>
                                     </Menu.Button>
                                 </div>
                             </Menu>
