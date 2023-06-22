@@ -37,7 +37,7 @@ const Testimonial = () => {
 
     return (
         <>
-            <section className="bg-gray-100">
+            <section>
                 <div
                     className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:pe-0 lg:ps-8"
                 >
