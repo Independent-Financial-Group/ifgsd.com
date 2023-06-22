@@ -22,8 +22,8 @@ const Nav = () => {
                 <div className="col flex flex-row gap-x-10 shrink-0 items-center ">
                     <Menu>
                         <div>
-                            <Menu.Button className='h-full flex flex-row'>
-                                <p>Join Us</p>
+                            <Menu.Button className='h-full flex flex-row bg-sunburst-500 text-seabreeze-500 p-3 rounded drop-shadow'>
+                                <p>Join IFG</p>
                                 <ChevronDownIcon
                                     className='h-5 w-5 ext-dunkel-blue-500'
                                     aria-hidden='true'
@@ -105,16 +105,6 @@ const Nav = () => {
                                                             </Link>
                                                         )}
                                                     </Menu.Item>
-                                                    <Menu.Item className='py-3 px-2'>
-                                                        {({ active }) => (
-                                                            <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/partners"
-                                                            >
-                                                                Our Partners
-                                                            </Link>
-                                                        )}
-                                                    </Menu.Item>
                                                 </Menu.Items>
                                             </Transition>
                                         </Menu>
@@ -135,6 +125,16 @@ const Nav = () => {
                                                 leaveTo="transform opacity-0 scale-95"
                                             >
                                                 <Menu.Items className='absolute left-full ml-1 top-0 w-56 bg-white flex flex-col drop-shadow-md rounded'>
+                                                    <Menu.Item className='py-3 px-2'>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                href="/about/why-choose-us/independent-practice"
+                                                            >
+                                                                Independent Practice
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
@@ -332,6 +332,26 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/marketing-and-product-support"
+                                            >
+                                                Marketing & Product Support
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                href="/offerings/platform-support"
+                                            >
+                                                Platform Support
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item className='py-3 px-2'>
+                                        {({ active }) => (
+                                            <Link
+                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/technology"
                                             >
                                                 Technology
@@ -355,16 +375,6 @@ const Nav = () => {
                                                 href="/offerings/conferences"
                                             >
                                                 Conferences
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item className='py-3 px-2'>
-                                        {({ active }) => (
-                                            <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
-                                                href="/offerings/marketing-support"
-                                            >
-                                                Marketing Support
                                             </Link>
                                         )}
                                     </Menu.Item>
@@ -405,9 +415,9 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'}`}
-                                                href="/careers/job-openings"
+                                                href="/careers/work-at-ifg"
                                             >
-                                                Job Openings
+                                                Work at IFG
                                             </Link>
                                         )}
                                     </Menu.Item>
@@ -415,9 +425,9 @@ const Nav = () => {
                                         {({ active }) => (
                                             <Link
                                                 className={`${active && 'bg-blue-wave-500'}`}
-                                                href="/careers/benefits"
+                                                href="/careers/benefits-and-perks"
                                             >
-                                                Benefits
+                                                Benefits & Perks
                                             </Link>
                                         )}
                                     </Menu.Item>
@@ -437,7 +447,7 @@ const Nav = () => {
                     </Menu>
                     <Menu className='relative'>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-sunburst-500 text-seabreeze-500 p-3 rounded drop-shadow'>
+                            <Menu.Button className='h-full flex flex-row text-dunkel-blue-500 '>
                                 <Link href="/advisor-lookup" className='font-bold'>Find an Advisor</Link>
                             </Menu.Button>
                         </div>
@@ -445,7 +455,7 @@ const Nav = () => {
                     <Menu className='relative'>
                         <div>
                             <Menu.Button className='h-full flex flex-row bg-blue-wave-500 text-seabreeze-500 p-3 rounded drop-shadow'>
-                                <Link href="https://new.ifgsd.com" className='font-bold'>Login</Link>
+                                <Link href="https://new.ifgsd.com" className='font-bold'>Rep Login</Link>
                             </Menu.Button>
                         </div>
                     </Menu>

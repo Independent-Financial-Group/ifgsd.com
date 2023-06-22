@@ -14,12 +14,38 @@ import {
 import Nav from "../components/Nav/Nav";
 import MobileNav from "../components/MobileNav/MobileNav";
 import Hero from "../components/Hero/Hero";
+import Testimonial from "../components/Testimonial/Testimonial";
+import BranchAnnouncement from "../components/BranchAnnouncement/BranchAnnouncement";
 import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
 import familySectionImage from "../public/family-section-image-compressed.jpg";
 
-const HomePage = () => {
+const contenful = require("contentful");
+
+const client = contenful.createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+    const newBranches = await client.getEntries({ content_type: "newBranch" });
+
+    const formattedBranches = newBranches.items.map((item) => {
+      return {
+        reps: item.fields.repNames,
+        dba: item.fields.dba,
+        officeLocation: item.fields.officeLocation
+      }
+    })
+
+    return {
+        props: { formattedBranches },
+        revalidate: 10,
+    };
+}
+
+const HomePage = ({ formattedBranches: newBranches }) => {
   return (
     <>
       <Head>
@@ -29,6 +55,8 @@ const HomePage = () => {
       <MobileNav />
       <Hero />
       <main>
+        <Testimonial />
+        <BranchAnnouncement newBranches={newBranches} />
         <section className="dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div className="max-w-screen-md mb-8 lg:mb-16">
@@ -357,130 +385,6 @@ const HomePage = () => {
                 </motion.div>
               </dl>
             </div>
-          </div>
-        </section>
-        <section className="bg-blue-wave-0">
-          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 relative">
-            <div className=" mb-10 xl:mb-52">
-              <h2 className="tracking-tight font-extrabold text-sunburst-100 dark:text-seabreeze-500 text-center text-lg">
-                Testimonials
-              </h2>
-              <h3 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500 text-center">
-                Hear What Our Family Says
-              </h3>
-              <p className="text-center mx-auto xl:w-1/2">
-                we take pride in the relationships we build with our family of advisors. Don't just take our word for it – hear what our valued advisors have to say about their experiences with us.
-              </p>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className=" flex flex-col gap-y-4 lg:grid lg:grid-cols-3 gap-4 xl:absolute xl:inset-x-0 xl:-bottom-1/2 xl:max-w-screen-xl"
-            >
-              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
-                <Image
-                  src={quotes}
-                  width={50}
-                  height={50}
-                  className="mx-auto py-4"
-                />
-                <p className="text-blue-wave-900 text-sm">
-                  I have been with four broker-dealers over my 36 year career,
-                  including my own. I have now been with IFG for 14 years and
-                  could not be more pleased with the character and quality of
-                  the firm. They are committed to excellence and integrity,
-                  focusing on the important values in our industry rather than
-                  their profits. I am delighted to be associated with such a
-                  first-rate, high-className firm!
-                </p>
-                <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
-                <div className="text-center flex flex-row justify-end items-end mt-auto">
-                  <div className="mr-2">
-                    <h3 className="text-blue-wave-500 font-bold text-right text-sm">
-                      Arthur Molloy
-                    </h3>
-                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                      California
-                    </p>
-                  </div>
-                  <Image
-                    src="https://ifgsd.com/wp-content/uploads/2013/05/Art-Molloy.png"
-                    width={50}
-                    height={50}
-                  />
-                </div>
-              </div>
-              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
-                <Image
-                  src={quotes}
-                  width={50}
-                  height={50}
-                  className="mx-auto py-4"
-                />
-                <p className="text-blue-wave-900 text-sm">
-                  Since we joined the IFG family, I am consistently reminded of
-                  how cooperative and helpful IFG is of our business. Those
-                  reminders are not slogans and mission statements included at
-                  the tops of letters or the bottoms of emails. They are a real
-                  help on important matters when and where we need them. Our
-                  business supports our clients, and IFG supports our business.
-                  We are very happy to have a partner so clearly interested in
-                  helping us all grow together.
-                </p>
-                <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
-                <div className="text-center flex flex-row justify-end items-end mt-auto">
-                  <div className="mr-2">
-                    <h3 className="text-blue-wave-500 font-bold text-right text-sm">
-                      Anna Luke
-                    </h3>
-                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                      California
-                    </p>
-                  </div>
-                  <Image
-                    src="https://ifgsd.com/wp-content/uploads/2018/04/Anna-Luke.png"
-                    width={50}
-                    height={50}
-                  />
-                </div>
-              </div>
-              <div className="drop-shadow-lg p-8 rounded-lg bg-seabreeze-500 flex flex-col">
-                <Image
-                  src={quotes}
-                  width={50}
-                  height={50}
-                  className="mx-auto py-4"
-                />
-                <p className="text-blue-wave-900 text-sm">
-                  Hard to believe it’s been six years since we have joined the
-                  IFG family. Top rate professional and caring service team
-                  always ready to respond to needs. Conferences are top notch.
-                  Family oriented with great educational content. Consultants,
-                  management specialists, product specialists, asset management
-                  and insurance resources. A complete suite. Couldn’t ask for
-                  more in a broker dealer. Great family environment. Hats off to
-                  the management team and principals Scott, Joe and Dave.
-                </p>
-                <hr className="w-1/4 my-4 mx-auto border-sunburst-500 border-2" />
-                <div className="text-center flex flex-row justify-end items-end">
-                  <div className="mr-2">
-                    <h3 className="text-blue-wave-500 font-bold text-right text-sm">
-                      Larry Steckler
-                    </h3>
-                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                      California
-                    </p>
-                  </div>
-                  <Image
-                    src="https://ifgsd.com/wp-content/uploads/2013/05/Art-Molloy.png"
-                    width={50}
-                    height={50}
-                  />
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
         <section className="xl:mt-56">
