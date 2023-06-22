@@ -52,7 +52,7 @@ const Testimonial = () => {
                             </h2>
 
                             <p className="mt-4 text-dunkel-blue-500">
-                                Our representatives come from all walks of life, but they all seek the same thing. A place where they don't feel like another number, instead like family.
+                                Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
                             </p>
 
                             <div className="hidden lg:mt-8 lg:flex lg:gap-4">
