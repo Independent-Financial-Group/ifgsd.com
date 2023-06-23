@@ -19,30 +19,31 @@ import BranchAnnouncement from "../components/BranchAnnouncement/BranchAnnouncem
 import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
-import familySectionImage from "../public/family-section-image-compressed.jpg";
+import ctaImage1 from "../public/cta-image-1.png"
+import ctaImage2 from "../public/cta-image-2.png"
 
 const contenful = require("contentful");
 
 const client = contenful.createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
 export async function getStaticProps() {
-    const newBranches = await client.getEntries({ content_type: "newBranch" });
+  const newBranches = await client.getEntries({ content_type: "newBranch" });
 
-    const formattedBranches = newBranches.items.map((item) => {
-      return {
-        reps: item.fields.repNames,
-        dba: item.fields.dba,
-        officeLocation: item.fields.officeLocation
-      }
-    })
-
+  const formattedBranches = newBranches.items.map((item) => {
     return {
-        props: { formattedBranches },
-        revalidate: 10,
-    };
+      reps: item.fields.repNames,
+      dba: item.fields.dba,
+      officeLocation: item.fields.officeLocation
+    }
+  })
+
+  return {
+    props: { formattedBranches },
+    revalidate: 10,
+  };
 }
 
 const HomePage = ({ formattedBranches: newBranches }) => {
@@ -55,8 +56,114 @@ const HomePage = ({ formattedBranches: newBranches }) => {
       <MobileNav />
       <Hero />
       <main>
-        <Testimonial />
-        <BranchAnnouncement newBranches={newBranches} />
+        <section>
+          <Testimonial />
+          <BranchAnnouncement newBranches={newBranches} />
+        </section>
+        <section className="py-24 sm:py-32">
+          <div className="relative mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: -32 }}
+              viewport={{ once: true }}
+              transition={{ delay: 1 }}
+            >
+              <h2 className=" absolute bg-blue-wave-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg">
+                Rankings
+              </h2>
+            </motion.div>
+            <div className="flex flex-col gap-y-5">
+              <dl className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base leading-7 text-gray-600">
+                    Financial Advisors
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
+                    600+
+                  </dd>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 }}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base leading-7 text-gray-600">
+                    Assets Under Management
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
+                    $37B
+                  </dd>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7 }}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base leading-7 text-gray-600">
+                    Highest % of Women Advisors*
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
+                    #4
+                  </dd>
+                </motion.div>
+              </dl>
+              <dl className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.8 }}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base leading-7 text-gray-600">
+                    Largest Independent Broker-Dealer*
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
+                    #17
+                  </dd>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.9 }}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base leading-7 text-gray-600">
+                    Largest Privately Held Company in San Diego*
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
+                    #7
+                  </dd>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1 }}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base leading-7 text-gray-600">
+                    Overall Experience Satisfaction*
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
+                    #2
+                  </dd>
+                </motion.div>
+              </dl>
+            </div>
+          </div>
+        </section>
         <section className="dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div className="max-w-screen-md mb-8 lg:mb-16">
@@ -249,258 +356,44 @@ const HomePage = ({ formattedBranches: newBranches }) => {
             </motion.div>
           </div>
         </section>
-        <section className="bg-blue-wave-0 relative">
-          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-            <div className="flex flex-row content-center">
-              <Image
-                src="https://new.ifgsd.com/wp-content/uploads/2023/03/Mask-group.png"
-                width={400}
-                height={400}
-                alt="ifg logo with employees"
-              />
-            </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="sm:text-lg dark:text-gray-400 text-blue-wave-900"
-            >
-              <h3 className="text-[#f8fafc] xl:text-sunburst-300 font-semibold lg:font-bold 2xl:text-sm">
-                Our Mission
-              </h3>
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-blue-wave-500 dark:text-seabreeze-500">
-                Integrity, Balance, and Independence
-              </h2>
-              <p className="mb-4">
-                Independent Financial Group, LLC prioritizes integrity, balance, and independence in everything we do. Our founders, Scott Heising, and David Fischer, along with our dedicated team, are committed to providing excellent customer service while upholding these core values. From the moment you join our firm, you'll experience a culture that puts integrity at the forefront of decision-making and values a balanced approach to business. We believe in true independence, empowering our advisors to serve their client's best interests without any conflicts of interest. Our home office team supports our advisors with efficient and friendly service, ensuring they have the tools and resources they need to succeed. At Independent Financial Group, we stay true to the values set by our founders and strive to bring genuine independence to the marketplace. Join Independent Financial Group today and experience a firm that values integrity, balance, and independence, providing you with the platform to thrive as a financial advisor. Together, we can make a positive impact on the lives of our clients while staying true to our core values.
-              </p>
-              <button className="mt-5 rounded-md bg-blue-wave-500 text-sm font-semibold text-seabreeze-500 shadow-sm hover:bg-red-fire focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-3.5 py-2.5">
-                <Link className="px-3.5 py-2.5" href="/about/our-story">
-                  Learn More
-                </Link>
-              </button>
-            </motion.div>
-          </div>
-        </section>
-        <section className="py-24 sm:py-32">
-          <div className="relative mx-auto w-[90%] lg:max-w-7xl px-6 lg:px-8 bg-seabreeze-100 p-8 rounded-md drop-shadow-lg">
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: -32 }}
-              viewport={{ once: true }}
-              transition={{ delay: 1 }}
-            >
-              <h2 className=" absolute bg-blue-wave-500 w-[265px] left-1/2 right-1/2 -translate-x-1/2 -top-8 p-2 rounded mb-8 text-4xl tracking-tight font-extrabold text-seabreeze-500 text-center drop-shadow-lg">
-                Rankings
-              </h2>
-            </motion.div>
-            <div className="flex flex-col gap-y-5">
-              <dl className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                  className="mx-auto flex max-w-xs flex-col gap-y-4"
-                >
-                  <dt className="text-base leading-7 text-gray-600">
-                    Financial Advisors
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
-                    600+
-                  </dd>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                  className="mx-auto flex max-w-xs flex-col gap-y-4"
-                >
-                  <dt className="text-base leading-7 text-gray-600">
-                    Assets Under Management
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
-                    $37B
-                  </dd>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
-                  className="mx-auto flex max-w-xs flex-col gap-y-4"
-                >
-                  <dt className="text-base leading-7 text-gray-600">
-                    Highest % of Women Advisors*
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
-                    #4
-                  </dd>
-                </motion.div>
-              </dl>
-              <dl className="grid grid-cols-1 gap-y-16 text-center lg:grid-cols-3 py-3">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.8 }}
-                  className="mx-auto flex max-w-xs flex-col gap-y-4"
-                >
-                  <dt className="text-base leading-7 text-gray-600">
-                    Largest Independent Broker-Dealer*
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
-                    #17
-                  </dd>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.9 }}
-                  className="mx-auto flex max-w-xs flex-col gap-y-4"
-                >
-                  <dt className="text-base leading-7 text-gray-600">
-                    Largest Privately Held Company in San Diego*
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
-                    #7
-                  </dd>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1 }}
-                  className="mx-auto flex max-w-xs flex-col gap-y-4"
-                >
-                  <dt className="text-base leading-7 text-gray-600">
-                    Overall Experience Satisfaction*
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-sunburst-500 sm:text-5xl">
-                    #2
-                  </dd>
-                </motion.div>
-              </dl>
-            </div>
-          </div>
-        </section>
-        <section className="xl:mt-56">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-            <div className="overflow-hidden xl:py-24 sm:py-32">
-              <div>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    viewport={{ once: true }}
-                    className="lg:pr-8 lg:pt-4"
-                  >
-                    <div className="lg:max-w-lg">
-                      <p className="mt-2 text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">
-                        Where Family and Community Thrive!
-                      </p>
-                      <p className="mt-6 text-lg leading-8 text-blue-wave-900">
-                        We understand that being a financial advisor is more than just a career – it's about building relationships, creating lasting impact, and being part of a supportive community. We foster a sense of family and community among our financial advisors, providing an environment where you can excel personally and professionally.
-                      </p>
-                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-blue-wave-900 lg:max-w-none">
-                        <div className="relative pl-9">
-                          <dt className="inline font-semibold text-blue-wave-500">
-                            <CloudArrowUpIcon
-                              className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
-                              aria-hidden="true"
-                            />
-                            Collaborative Environment.
-                          </dt>{" "}
-                          <dd className="inline">
-                            We believe in the power of collaboration and knowledge-sharing. When you join, you become part of a close-knit community of experienced financial advisors who support one another. We encourage teamwork and mentorship, empowering you to reach new heights in your practice.
-                          </dd>
-                        </div>
-                      </dl>
-                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                        <div className="relative pl-9">
-                          <dt className="inline font-semibold text-blue-wave-500">
-                            <CloudArrowUpIcon
-                              className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
-                              aria-hidden="true"
-                            />
-                            Client-Centric Approach.
-                          </dt>{" "}
-                          <dd className="inline">
-                            We prioritize building long-term relationships with clients based on trust and transparency. With us, you’ll have the freedom to provide personalized, holistic solutions tailored to your client’s unique financial goals and aspirations. Our emphasis on client satisfaction creates a fulfilling and rewarding experience for both you and your clients.
-                          </dd>
-                        </div>
-                      </dl>
-                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                        <div className="relative pl-9">
-                          <dt className="inline font-semibold text-blue-wave-500">
-                            <CloudArrowUpIcon
-                              className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
-                              aria-hidden="true"
-                            />
-                            Continuing Education and Professional Development.
-                          </dt>{" "}
-                          <dd className="inline">
-                            We invest in your growth by offering a comprehensive range of educational resources and training programs. Our goal is to equip you with the latest industry insights, cutting-edge strategies, and regulatory knowledge. Stay ahead of the curve and enhance your expertise while contributing to the success of your client.
-                          </dd>
-                        </div>
-                      </dl>
-                      <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                        <div className="relative pl-9">
-                          <dt className="inline font-semibold text-blue-wave-500">
-                            <CloudArrowUpIcon
-                              className="absolute left-1 top-1 h-5 w-5 text-sunburst-500"
-                              aria-hidden="true"
-                            />
-                            Technology and Innovation:
-                          </dt>{" "}
-                          <dd className="inline">
-                            Embracing technological advancements, we provide you with cutting-edge tools and resources to streamline your practice. Our intuitive online platform simplifies processes, enhances client interactions, and enables you to stay connected and productive wherever you are.
-                          </dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </motion.div>
-                  <Image
-                    src={familySectionImage}
-                    alt="Product screenshot"
-                    className="rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-                    width={2432}
-                    height={1442}
-                  />
+        <section>
+          <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="bg-blue-wave-500 border-t-8 border-dune-500 p-8 md:p-12 lg:px-16 lg:py-24">
+                <div className="mx-auto max-w-xl text-center flex flex-col">
+                  <h2 className="text-2xl font-bold text-white md:text-3xl">
+                    Join our Family Today!
+                  </h2>
+
+                  <p className="hidden text-white/90 sm:mt-4 sm:block">
+                    We invite passionate financial professionals to join our thriving community. Experience support, collaboration, and belonging that sets us apart. Take your practice to new heights and make a lasting impact on clients' lives. Start your journey toward fulfillment.
+                  </p>
+
+                  <div className="mt-4 md:mt-8">
+                    <a
+                      href="#"
+                      className="inline-block rounded bg-sunburst-400 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
+                    >
+                      Get Started Today
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        <section className="bg-blue-wave-0">
-          <div className="mx-auto max-w-screen-xl">
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="drop-shadow-xl rounded-xl px-2 py-20"
-              style={{}}
-            >
-              <div className="mx-auto max-w-screen-sm text-center">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-blue-wave-500 dark:text-white">
-                  Join our Family Today!
-                </h2>
-                <p className="mb-6 text-dunkel-blue-500 dark:text-gray-400 md:text-lg">
-                  We invite passionate financial advisors to join our thriving community. Experience support, collaboration, and belonging that sets us apart. Take your practice to new heights and make a lasting impact on clients' lives. Start your journey toward fulfillment.
-                </p>
-                <Link
-                  href="#"
-                  className="text-seabreeze-500 bg-blue-wave-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-                >
-                  Schedule a Visit
-                </Link>
+
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
+                <Image
+                  alt="Student"
+                  src={ctaImage1}
+                  className="h-40 w-full object-cover sm:h-56 md:h-full"
+                />
+
+                <Image
+                  alt="Student"
+                  src={ctaImage2}
+                  className="h-40 w-full object-cover sm:h-56 md:h-full"
+                />
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
