@@ -38,7 +38,7 @@ const Testimonial = () => {
     return (
         <>
                 <div
-                    className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:pe-0 lg:ps-8"
+                    className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 sm:py-24 lg:pe-0 lg:ps-8"
                 >
                     <div
                         className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16"

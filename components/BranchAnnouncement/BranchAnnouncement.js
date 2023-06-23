@@ -11,7 +11,7 @@ const BranchAnnouncement = ({ newBranches }) => {
     return (
         <div className='bg-gradient-to-r from-blue-wave-400 to-blue-wave-800 text-seabreeze-500 w-full border-b-8 border-dune-500'>
             <div
-                className="mx-auto max-w-screen-xl text-center px-4 py-16 sm:px-6 sm:py-12"
+                className="mx-auto max-w-screen-2xl text-center px-4 py-16 sm:px-6 sm:py-12"
             >
                 <Image width={300} className='m-auto mb-8 rounded border-4 border-seabreeze-500' src={newRepBanner} />
                 <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500'>{newBranches[0].dba} joins IFG</h2>
