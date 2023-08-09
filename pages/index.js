@@ -64,7 +64,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
         <section className="py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6 lg:my-8">
           <Stats />
         </section>
-        <section className="bg-gradient-to-r from-blue-wave-400 to-blue-wave-800 text-seabreeze-500">
+        <section className="bg-gradient-to-r from-blue-wave-400 to-blue-wave-800 text-seabreeze-500 border-t-8 border-dune-500">
           <div className="py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6">
             <div className="max-w-screen-md mb-8 lg:mb-16 mx-auto text-center">
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500">
