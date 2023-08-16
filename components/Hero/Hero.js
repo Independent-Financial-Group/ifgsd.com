@@ -18,9 +18,9 @@ const Hero = () => {
                     </div>
                 </div>
                 <motion.div
-                    initial={{ opacity: 0, y: 200 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ type: 'spring', duration: 1.3 }}
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1}}
+                    transition={{ type: 'spring', duration: 2}}
                     viewport={{ once: true }}
                     className='max-w-prose'
                     >
