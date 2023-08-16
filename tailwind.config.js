@@ -73,7 +73,11 @@ module.exports = {
     fontFamily: {
       sans: ['Montserrat', 'sans-serif']
     },
-    extend: {}
+    extend: {
+      backgroundImage: {
+        'hero': "url('/ifg-hero-surfer-wave-flipped-compressed.jpg')"
+      }
+    }
   },
   plugins: [
     require("flowbite/plugin")
