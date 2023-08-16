@@ -57,7 +57,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
       <MobileNav />
       <Hero />
       <main>
-        <section>
+        <section className="mx-auto max-w-[1500px]">
           <Testimonial />
           <BranchAnnouncement newBranches={newBranches} />
         </section>

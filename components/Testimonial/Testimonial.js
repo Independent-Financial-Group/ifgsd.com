@@ -21,11 +21,11 @@ const Testimonial = () => {
             breakpoints: {
                 640: {
                     centeredSlides: true,
-                    slidesPerView: 1.25,
+                    slidesPerView: 1,
                 },
                 1024: {
                     centeredSlides: false,
-                    slidesPerView: 1.25,
+                    slidesPerView: 1,
                 },
             },
             navigation: {
@@ -38,14 +38,14 @@ const Testimonial = () => {
     return (
         <>
             <div
-                className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 sm:py-24 lg:pe-0 lg:ps-8"
+                className="lg:py-16"
             >
                 <div
                     className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16"
                 >
-                    <div className="max-w-xl ltr:sm:text-left rtl:sm:text-right">
+                    <div className='max-w-prose text-center'>
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-blue-wave-500">
-                            Don't just take our word for it...
+                            Don't just take our word for it
                             <br className="hidden sm:block" />
                             read why our reps love IFG.
                         </h2>
@@ -53,27 +53,9 @@ const Testimonial = () => {
                         <p className="mt-4 text-dunkel-blue-500">
                             Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
                         </p>
-
+                    </div>
+                    <div className="max-w-xl ltr:sm:text-left rtl:sm:text-right">
                         <div className="hidden lg:mt-8 lg:flex lg:gap-4">
-                            <button
-                                className="prev-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
-                            >
-                                <span className="sr-only">Previous Slide</span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    className="h-5 w-5 rtl:rotate-180"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M15.75 19.5L8.25 12l7.5-7.5"
-                                    />
-                                </svg>
-                            </button>
 
                             <button
                                 className="next-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
@@ -98,70 +80,32 @@ const Testimonial = () => {
                     </div>
 
                     <div className="-mx-6 lg:col-span-2 lg:mx-0">
+                        <button
+                            className="prev-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
+                        >
+                            <span className="sr-only">Previous Slide</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                className="h-5 w-5 rtl:rotate-180"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                                />
+                            </svg>
+                        </button>
                         <div className="swiper-container !overflow-hidden">
                             <div className="swiper-wrapper">
                                 <div className="swiper-slide !h-[480px]">
                                     <blockquote
-                                        className="flex h-full flex-col justify-between bg-white p-12"
+                                        className="flex h-full flex-col justify-between p-12"
                                     >
                                         <div>
-                                            <div className="flex gap-0.5 text-green-500">
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-                                            </div>
-
                                             <div className="mt-4">
                                                 <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
                                                     Committed to Excellence
@@ -197,72 +141,16 @@ const Testimonial = () => {
 
                                 <div className="swiper-slide !h-[480px]">
                                     <blockquote
-                                        className="flex flex-col flex-auto h-full justify-between bg-white p-12"
+                                        className="flex flex-col flex-auto h-full justify-between p-12"
                                     >
                                         <div>
-                                            <div className="flex gap-0.5 text-green-500">
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-
-                                                <svg
-                                                    className="h-5 w-5"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                                    />
-                                                </svg>
-                                            </div>
 
                                             <div className="mt-4">
                                                 <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
                                                     When and where we need them
                                                 </p>
 
-                                                <p className="mt-4 leading-relaxed text-dunkel-blue-500">
+                                                <p className="mt-4 leading-relaxed text-dunkel-blue-500 max-w-prose">
                                                     Since we joined the IFG family, I am consistently reminded of
                                                     how cooperative and helpful IFG is of our business. Those
                                                     reminders are not slogans and mission statements included at
