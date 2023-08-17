@@ -24,10 +24,10 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className='max-w-prose'
                     >
-                    <h1 className="text-4xl font-bold tracking-tight text-seabreeze-500 sm:text-6xl">
+                    <h1 className="font-bold tracking-tight text-seabreeze-500 md:text-6xl">
                         We're Different
                     </h1>
-                    <p className="mt-6 text-lg leading-8 text-seabreeze-500">
+                    <p className="mt-6 md:text-xl text-seabreeze-500">
                         Discover IFG, a firm that values community and family. Join us to immerse yourself in an environment that supports your independence. Contact us now and discover where you belong.
                     </p>
                     <div className="mt-10 flex items-center gap-x-6">
