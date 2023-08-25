@@ -7,7 +7,7 @@ const Hero = () => {
         <header
             className="px-6 pt-14 lg:px-8 relative bg-[url('/home/ifg-hero-surfer-wave-flipped-compressed.jpg')] bg-no-repeat bg-cover bg-center md:rounded-bl-[80px] md:rounded-br-[80px]"
             >
-            <div className="mx-auto max-w-[1500px] py-32 sm:py-48 lg:py-56">
+            <div className="mx-auto max-w-screen-xl py-32 sm:py-48 lg:py-56">
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center md:justify-start">
                     <div className="rounded-full px-3 py-1 text-sm leading-6 text-seabreeze-100 drop-shadow-xl bg-sunburst-500">
                         IFG & Reg Bi{' '}

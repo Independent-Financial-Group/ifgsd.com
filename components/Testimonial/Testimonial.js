@@ -37,21 +37,19 @@ const Testimonial = () => {
 
     return (
         <>
-            <div
-                className="lg:py-16"
-            >
+            <div>
                 <div className='mx-auto text-center max-w-prose'>
-                    <h2 className='lg:mb-5 lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
+                    <h2 className=' lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
                     <h3 className='lg:text-6xl font-bold text-blue-wave-500'>Our reps love IFG.</h3>
                     <p className="lg:text-xl md:mt-5 text-dunkel-blue-500">
                         Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
                     </p>
                 </div>
                 <div
-                    className="grid gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16"
+                    className="grid gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
                 >
                     <div className='lg:col-span-1 '>
-                        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}><iframe src="https://player.vimeo.com/video/190608042?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} title="The Playbook - Trends in Real Estate"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}><iframe src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} title="IFG 20th Anniversary"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
 
                     <div className="-mx-6 lg:col-span-1 lg:mx-0 relative">
@@ -79,7 +77,7 @@ const Testimonial = () => {
 
                             <div className="swiper-container !overflow-hidden">
                                 <div className="swiper-wrapper">
-                                    <div className="swiper-slide !h-[480px]">
+                                    <div className="swiper-slide !h-[600px]">
                                         <blockquote
                                             className="flex h-full flex-col justify-between p-12"
                                         >

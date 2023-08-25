@@ -57,9 +57,11 @@ const HomePage = ({ formattedBranches: newBranches }) => {
       <MobileNav />
       <Hero />
       <main>
-        <section className="mx-auto max-w-[1500px]">
-          <Testimonial />
-          <BranchAnnouncement newBranches={newBranches} />
+        <section>
+          <div className="px-6 pt-14 lg:px-8 mx-auto max-w-screen-xl">
+            <Testimonial />
+            <BranchAnnouncement newBranches={newBranches} />
+          </div>
         </section>
         <section className="py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6 lg:my-8">
           <Stats />
