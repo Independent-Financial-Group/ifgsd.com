@@ -57,16 +57,18 @@ const HomePage = ({ formattedBranches: newBranches }) => {
       <MobileNav />
       <Hero />
       <main>
-        <section className="relative">
+        <section className="relative my-32">
           <p className="text-[160px] text-[#E2E7EB] font-bold absolute z-0 top-35" >happy</p>
-          <p className="text-[160px] text-[#E2E7EB] font-bold absolute z-0 top-60 left-40">advisors</p>
-          <div className="px-6 pt-14 lg:px-8 mx-auto max-w-screen-xl relative z-10">
+          <p className="text-[160px] text-[#E2E7EB] font-bold absolute z-0 top-44 left-40">advisors</p>
+          <div className="mx-auto max-w-screen-xl relative z-10">
             <Testimonial />
             <BranchAnnouncement newBranches={newBranches} />
           </div>
         </section>
-        <section className="py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6 lg:my-8">
-          <Stats />
+        <section className="my-32">
+          <div className="mx-auto max-w-screen-xl relative z-10">
+            <Stats />
+          </div>
         </section>
         <section className="bg-gradient-to-r from-blue-wave-400 to-blue-wave-800 text-seabreeze-500 border-t-8 border-dune-500">
           <div className="py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6">
