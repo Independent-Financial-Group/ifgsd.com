@@ -11,11 +11,10 @@ const Nav = () => {
             <div className="row mx-auto max-w-screen-xl flex flex-row justify-between">
                 <div className="col">
                     <Link href="/">
-                        <Image
+                        <img
+                        width={200}
                             alt='IFG logo'
-                            width={200}
-                            height={50}
-                            src='https://ifgsd.com/wp-content/uploads/2017/09/IFGLogo2016_Full_Large_400px.png'
+                            src='/logo-full-color.png'
                         />
                     </Link>
                 </div>
