@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" type="image/png" href="/logo.ico" />
       </Head>
       <NextNProgress />
-      <ClerkProvider {...pageProps}>
+      <ClerkProvider {...pageProps} appearance={{elements: {footer: "hidden"}}}>
         <Component className="box-border" {...pageProps} />
       </ClerkProvider>
       <Script src='../node_modules/flowbite/dist/flowbite.min.js' />
