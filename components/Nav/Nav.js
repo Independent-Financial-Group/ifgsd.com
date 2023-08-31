@@ -454,7 +454,7 @@ const Nav = () => {
                     <Menu className='relative'>
                         <div>
                             <Menu.Button className='h-full flex flex-row bg-blue-wave-500 text-seabreeze-500 p-3 rounded drop-shadow'>
-                                <Link href="https://new.ifgsd.com" className='font-bold'>Rep Login</Link>
+                                <Link href="/app" className='font-bold'>Rep Portal</Link>
                             </Menu.Button>
                         </div>
                     </Menu>
