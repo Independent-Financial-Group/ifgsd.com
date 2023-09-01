@@ -60,10 +60,12 @@ const HomePage = ({ formattedBranches: newBranches }) => {
       <Hero />
       <main>
         <section className="relative my-16 lg:my-32">
-          <p className="text-[80px] md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:top-35" >happy</p>
-          <p className="text-[80px] md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 top-36 lg:top-44 lg:left-40">advisors</p>
+          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
+          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35" >happy</p>
           <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
             <Testimonial />
+            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
+            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
             <BranchAnnouncement newBranches={newBranches} />
           </div>
         </section>
@@ -80,7 +82,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                   Empowering Financial Advisors with Independence and Support
                 </h2>
                 <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
-                  {"With 20-years of experience and a focus on technology,innovation, expertise and independence, we can unlock long-term value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.".substring(0,250)}
+                  {"With 20-years of experience and a focus on technology,innovation, expertise and independence, we can unlock long-term value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.".substring(0, 250)}
                 </p>
               </div>
               <motion.div
