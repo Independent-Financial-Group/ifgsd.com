@@ -3,8 +3,10 @@ import "../styles/globals.css";
 import Script from "next/script";
 import NextNProgress from 'nextjs-progressbar';
 import { ClerkProvider } from '@clerk/nextjs'
+import Scrollbar from "react-smooth-scrollbar";
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <>
       <Head>
@@ -12,8 +14,10 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
       <NextNProgress />
-      <ClerkProvider {...pageProps} appearance={{elements: {footer: "hidden"}}}>
-        <Component className="box-border" {...pageProps} />
+      <ClerkProvider {...pageProps} appearance={{ elements: { footer: "hidden" } }}>
+        <Scrollbar>
+          <Component className="box-border" {...pageProps} />
+        </Scrollbar>
       </ClerkProvider>
       <Script src='../node_modules/flowbite/dist/flowbite.min.js' />
     </>

@@ -12,7 +12,7 @@ const Nav = () => {
                 <div className="col">
                     <Link href="/">
                         <img
-                        width={200}
+                            width={200}
                             alt='IFG logo'
                             src='/logo-full-color.png'
                         />
@@ -453,9 +453,7 @@ const Nav = () => {
                     </Menu>
                     <Menu className='relative'>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-hazard-blue-500 text-seabreeze-500 p-3 rounded drop-shadow'>
-                                <Link href="/app" className='font-bold'>Rep Portal</Link>
-                            </Menu.Button>
+                            <Link href="/app" className='font-bold P-3 bg-hazard-blue-500 text-seabreeze-500 p-3 rounded drop-shadow'>Rep Portal</Link>
                         </div>
                     </Menu>
                 </div>
