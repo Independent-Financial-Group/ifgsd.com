@@ -70,7 +70,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
           </div>
         </section>
         <section className="my-32">
-          <div className="mx-auto max-w-screen-xl relative z-10">
+          <div className="mx-auto max-w-screen-xl px-4 lg:relative lg:z-10">
             <Stats />
           </div>
         </section>
