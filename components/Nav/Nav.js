@@ -21,7 +21,7 @@ const Nav = () => {
                 <div className="col flex flex-row gap-x-10 shrink-0 items-center ">
                     <Menu>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-sunburst-500 text-seabreeze-500 p-3 rounded drop-shadow'>
+                            <Menu.Button className='h-full flex flex-row bg-neon-orange-500 text-seabreeze-500 p-3 rounded drop-shadow'>
                                 <p>Join IFG</p>
                                 <ChevronDownIcon
                                     className='h-5 w-5 ext-dunkel-blue-500'
@@ -453,7 +453,7 @@ const Nav = () => {
                     </Menu>
                     <Menu className='relative'>
                         <div>
-                            <Menu.Button className='h-full flex flex-row bg-blue-wave-500 text-seabreeze-500 p-3 rounded drop-shadow'>
+                            <Menu.Button className='h-full flex flex-row bg-hazard-blue-500 text-seabreeze-500 p-3 rounded drop-shadow'>
                                 <Link href="/app" className='font-bold'>Rep Portal</Link>
                             </Menu.Button>
                         </div>

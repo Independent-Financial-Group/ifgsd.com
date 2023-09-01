@@ -17,7 +17,7 @@ const MobileNav = () => {
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute z-0 inset-y-0 left-0 flex items-center">
                                 {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 bg-blue-wave-500 text-white drop-shadow font-bold">
+                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 bg-hazard-blue-500 text-white drop-shadow font-bold">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
                                         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -468,14 +468,14 @@ const MobileNav = () => {
                                     </Transition>
                                 </div>
                             </Menu>
-                            <Menu className="bg-sunburst-500 h-full rounded mb-2">
+                            <Menu className="bg-neon-orange-500 h-full rounded mb-2">
                                 <div>
                                     <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
                                         <Link href="https://new.ifgsd.com">Find an Advisor</Link>
                                     </Menu.Button>
                                 </div>
                             </Menu>
-                            <Menu className="bg-blue-wave-500 h-full rounded">
+                            <Menu className="bg-hazard-blue-500 h-full rounded">
                                 <div>
                                     <Menu.Button className='h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500'>
                                         <Link href="https://new.ifgsd.com">Rep Login</Link>
