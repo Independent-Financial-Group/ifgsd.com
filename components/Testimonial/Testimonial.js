@@ -40,7 +40,7 @@ const Testimonial = () => {
             <div>
                 <div className='mx-auto text-center max-w-prose'>
                     <h2 className=' lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
-                    <h3 className='lg:text-6xl font-bold text-blue-wave-500'>Our reps love IFG.</h3>
+                    <h3 className='lg:text-6xl font-bold text-hazard-blue-500'>Our reps love IFG.</h3>
                     <p className="lg:text-xl md:mt-5 text-dunkel-blue-500">
                         Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
                     </p>
@@ -83,7 +83,7 @@ const Testimonial = () => {
                                         >
                                             <div>
                                                 <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
+                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
                                                         Committed to Excellence
                                                     </p>
 
@@ -122,7 +122,7 @@ const Testimonial = () => {
                                             <div>
 
                                                 <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
+                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
                                                         When and where we need them
                                                     </p>
 
@@ -163,7 +163,7 @@ const Testimonial = () => {
 
 
                                                 <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
+                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
                                                         Family Oriented with great educational content
                                                     </p>
 
@@ -204,7 +204,7 @@ const Testimonial = () => {
 
 
                                                 <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
+                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
                                                         Extreme Pleasure
                                                     </p>
 
@@ -239,7 +239,7 @@ const Testimonial = () => {
 
 
                                                 <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-sunburst-500 sm:text-3xl">
+                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
                                                         The epitome of a broker-dealer
                                                     </p>
 
