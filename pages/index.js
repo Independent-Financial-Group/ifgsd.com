@@ -75,94 +75,96 @@ const HomePage = ({ formattedBranches: newBranches }) => {
           </div>
         </section>
         <section className="text-seabreeze-500">
-          <div className="bg-[url('/home/ifg-wave-2.jpg')] rounded-[80px] mx-auto max-w-screen-xl">
-            <div className="bg-blue-wave-700/60 rounded-[80px] py-8 px-4 sm:py-16 lg:px-6">
-              <div className="max-w-screen-md mb-8 lg:mb-16 mx-auto text-center">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500">
-                  Empowering Financial Advisors with Independence and Support
-                </h2>
-                <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
-                  {"With 20-years of experience and a focus on technology,innovation, expertise and independence, we can unlock long-term value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.".substring(0, 250)}
-                </p>
+          <div className="rounded-[40px] px-4 mx-auto max-w-screen-xl">
+            <div className="bg-[url('/home/ifg-wave-2.jpg')] bg-no-repeat bg-cover rounded-[40px]">
+              <div className="bg-blue-wave-700/60 rounded-[40px] py-8 px-4 sm:py-16 lg:px-6">
+                <div className="max-w-screen-md mb-8 lg:mb-16 mx-auto text-center">
+                  <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500">
+                    Empowering Financial Advisors with Independence and Support
+                  </h2>
+                  <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
+                    {"With 20-years of experience and a focus on technology,innovation, expertise and independence, we can unlock long-term value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.".substring(0, 250)}
+                  </p>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", duration: 1, delay: 0.3 }}
+                  className=" lg:text-left space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+                >
+                  <div>
+                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                      <img src="/home/icons/icon-practice-development.png" className="w-10" />
+                      <h3 className="text-xl font-bold text-seabreeze-500">
+                        Practice Development
+                      </h3>
+                    </div>
+                    <p>
+                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                      <img src="/home/icons/icon-products.png" className="w-10" />
+                      <h3 className="text-xl font-bold text-seabreeze-500">
+                        Products
+                      </h3>
+                    </div>
+                    <p className="text-dunkel-blue dark:text-gray-400">
+                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                      <img src="/home/icons/icon-technology.png" className="w-10" />
+
+                      <h3 className="text-xl font-bold dark:text-seabreeze-500 text-seabreeze-500">
+                        Technology
+                      </h3>
+                    </div>
+                    <p className="text-dunkel-blue dark:text-gray-400">
+                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                      <img src="/home/icons/icon-marketing-support.png" className="w-10" />
+
+                      <h3 className="text-xl font-bold text-seabreeze-500">
+                        Marketing Support
+                      </h3>
+                    </div>
+                    <p className="text-dunkel-blue dark:text-gray-400">
+                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                      <img src="/home/icons/icon-competitive-compensation.png" className="w-10" />
+
+                      <h3 className="text-xl font-bold text-seabreeze-500">
+                        Competitive Compensation
+                      </h3>
+                    </div>
+                    <p className="text-dunkel-blue dark:text-gray-400">
+                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                      <img src="/home/icons/icon-operations.png" className="w-10" />
+
+                      <h3 className="text-xl font-bold text-seabreeze-500">
+                        Operations
+                      </h3>
+                    </div>
+                    <p className="text-dunkel-blue dark:text-gray-400">
+                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                    </p>
+                  </div>
+                </motion.div>
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", duration: 1, delay: 0.3 }}
-                className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
-              >
-                <div>
-                  <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src="/home/icons/icon-practice-development.png" className="w-10" />
-                    <h3 className="text-xl font-bold text-seabreeze-500">
-                      Practice Development
-                    </h3>
-                  </div>
-                  <p>
-                    {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src="/home/icons/icon-products.png" className="w-10" />
-                    <h3 className="text-xl font-bold text-seabreeze-500">
-                      Products
-                    </h3>
-                  </div>
-                  <p className="text-dunkel-blue dark:text-gray-400">
-                    {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src="/home/icons/icon-technology.png" className="w-10" />
-
-                    <h3 className="text-xl font-bold dark:text-seabreeze-500 text-seabreeze-500">
-                      Technology
-                    </h3>
-                  </div>
-                  <p className="text-dunkel-blue dark:text-gray-400">
-                    {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src="/home/icons/icon-marketing-support.png" className="w-10" />
-
-                    <h3 className="text-xl font-bold text-seabreeze-500">
-                      Marketing Support
-                    </h3>
-                  </div>
-                  <p className="text-dunkel-blue dark:text-gray-400">
-                    {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src="/home/icons/icon-competitive-compensation.png" className="w-10" />
-
-                    <h3 className="text-xl font-bold text-seabreeze-500">
-                      Competitive Compensation
-                    </h3>
-                  </div>
-                  <p className="text-dunkel-blue dark:text-gray-400">
-                    {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src="/home/icons/icon-operations.png" className="w-10" />
-
-                    <h3 className="text-xl font-bold text-seabreeze-500">
-                      Operations
-                    </h3>
-                  </div>
-                  <p className="text-dunkel-blue dark:text-gray-400">
-                    {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>
