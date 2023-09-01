@@ -169,25 +169,25 @@ const HomePage = ({ formattedBranches: newBranches }) => {
           </div>
         </section>
         <section className="my-32">
-          <div className="mx-auto max-w-screen-xl">
+          <div className="mx-auto px-4 lg:px-0 max-w-screen-xl">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="">
-                <div className="mx-auto max-w-xl flex flex-col">
+                <div className="flex flex-col items-center lg:items-start">
                   <h2 className="text-xl font-bold text-hazard-blue-500 md:text-4xl">
                     Join our Family Today!
                   </h2>
 
-                  <p className="hidden text-dunkel-blue-100 text-lg sm:mt-4 sm:block">
+                  <p className="text-center lg:text-left py-4 lg:py-0 text-dunkel-blue-100 text-lg sm:mt-4 sm:block">
                     We invite passionate financial professionals to join our thriving community. Experience support, collaboration, and belonging that sets us apart. Take your practice to new heights and make a lasting impact on clients' lives. Start your journey toward fulfillment.
                   </p>
 
                   <div className="mt-4 md:mt-8">
-                    <a
+                    <Link
                       href="#"
-                      className="inline-block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
+                      className="order-3 inline-block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
                     >
                       Get Started Today
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
