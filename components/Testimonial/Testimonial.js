@@ -39,23 +39,23 @@ const Testimonial = () => {
         <>
             <div>
                 <div className='mx-auto text-center max-w-prose'>
-                    <h2 className=' lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
-                    <h3 className='lg:text-6xl font-bold text-hazard-blue-500'>Our reps love IFG.</h3>
-                    <p className="lg:text-xl md:mt-5 text-dunkel-blue-500">
+                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
+                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>Our reps love IFG.</h3>
+                    <p className="text-xl md:mt-5 text-dunkel-blue-500">
                         Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
                     </p>
                 </div>
                 <div
-                    className="grid gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
+                    className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
                 >
                     <div className='lg:col-span-1 '>
                         <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}><iframe src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} title="IFG 20th Anniversary"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
 
-                    <div className="-mx-6 lg:col-span-1 lg:mx-0 relative">
+                    <div className="relative mb-16 lg:col-span-1 lg:mx-0">
                         <div className='flex flex-row items-center'>
                             <button
-                                className="prev-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
+                                className="hidden lg:block prev-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
                             >
                                 <span className="sr-only">Previous Slide</span>
                                 <svg
@@ -77,9 +77,9 @@ const Testimonial = () => {
 
                             <div className="swiper-container !overflow-hidden">
                                 <div className="swiper-wrapper">
-                                    <div className="swiper-slide !h-[600px]">
+                                    <div className="swiper-slide !h-fit lg:!h-[600px]">
                                         <blockquote
-                                            className="flex h-full flex-col justify-between p-12"
+                                            className="flex h-full flex-col justify-between"
                                         >
                                             <div>
                                                 <div className="mt-4">
@@ -87,7 +87,7 @@ const Testimonial = () => {
                                                         Committed to Excellence
                                                     </p>
 
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500">
+                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
                                                         I have been with four broker-dealers over my 36 year career,
                                                         including my own. I have now been with IFG for 14 years and
                                                         could not be more pleased with the character and quality of
@@ -115,9 +115,9 @@ const Testimonial = () => {
                                         </blockquote>
                                     </div>
 
-                                    <div className="swiper-slide !h-[480px]">
+                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
                                         <blockquote
-                                            className="flex flex-col flex-auto h-full justify-between p-12"
+                                            className="flex flex-col flex-auto h-full justify-between lg:p-12"
                                         >
                                             <div>
 
@@ -126,7 +126,7 @@ const Testimonial = () => {
                                                         When and where we need them
                                                     </p>
 
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 max-w-prose">
+                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
                                                         Since we joined the IFG family, I am consistently reminded of
                                                         how cooperative and helpful IFG is of our business. Those
                                                         reminders are not slogans and mission statements included at
@@ -155,9 +155,9 @@ const Testimonial = () => {
                                         </blockquote>
                                     </div>
 
-                                    <div className="swiper-slide !h-[480px]">
+                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
                                         <blockquote
-                                            className="flex h-full flex-col justify-between p-12"
+                                            className="flex h-full flex-col justify-between lg:p-12"
                                         >
                                             <div>
 
@@ -167,7 +167,7 @@ const Testimonial = () => {
                                                         Family Oriented with great educational content
                                                     </p>
 
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500">
+                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
                                                         Hard to believe it’s been six years since we have joined the
                                                         IFG family. Top rate professional and caring service team
                                                         always ready to respond to needs. Conferences are top notch.
@@ -196,9 +196,9 @@ const Testimonial = () => {
                                         </blockquote>
                                     </div>
 
-                                    <div className="swiper-slide !h-[480px]">
+                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
                                         <blockquote
-                                            className="flex h-full flex-col justify-between  p-12"
+                                            className="flex h-full flex-col justify-between lg:p-12"
                                         >
                                             <div>
 
@@ -208,7 +208,7 @@ const Testimonial = () => {
                                                         Extreme Pleasure
                                                     </p>
 
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500">
+                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose ">
 
                                                         My extreme pleasure from my association with Independent Financial Group is due the entire organization sharing a common vision with their representatives. That being our mutual success.
                                                     </p>
@@ -231,9 +231,9 @@ const Testimonial = () => {
                                         </blockquote>
                                     </div>
 
-                                    <div className="swiper-slide !h-[480px]">
+                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
                                         <blockquote
-                                            className="flex h-full flex-col justify-between  p-12"
+                                            className="flex h-full flex-col justify-between  lg:p-12"
                                         >
                                             <div>
 
@@ -269,7 +269,7 @@ const Testimonial = () => {
                             </div>
 
                             <button
-                                className="next-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
+                                className="hidden lg:block next-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
                             >
                                 <span className="sr-only">Next Slide</span>
                                 <svg
