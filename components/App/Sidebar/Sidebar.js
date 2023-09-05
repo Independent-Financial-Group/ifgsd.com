@@ -7,9 +7,9 @@ const Sidebar = ({userInfo}) => {
         <div className="flex max-w-[20%] h-screen flex-col justify-between border-e bg-white">
             <div className="px-4 py-6">
                 <span
-                    className="flex h-10 w-full place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
+                    className="flex w-full py-4 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
                 >
-                    <img src="/logo-full-color.png" />
+                    <img src="/logo-full-color.png" className='w-1/3' />
                 </span>
 
                 <ul className="mt-6 space-y-1">
