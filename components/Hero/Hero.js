@@ -9,10 +9,10 @@ const Hero = () => {
         >
             <div className="mx-auto max-w-screen-xl px-4">
                 <div className='absolute top-[50%] translate-y-[-50%]'>
-                    <div className="hidden sm:flex sm:justify-center md:justify-start">
+                    <div className="mb-4 sm:flex sm:justify-center md:justify-start">
                         <div className="rounded-full px-3 py-1 text-sm leading-6 text-seabreeze-100 drop-shadow-xl bg-neon-orange-500 font-semibold">
                             IFG & Reg Bi.
-                            <Link href="#" className="font-bold text-neon-orange-700/60">
+                            <Link href="#" className="font-bold text-neon-orange-700/50 ml-4">
                                 <span className="1 inset-0" aria-hidden="true" />
                                 Read more <span aria-hidden="true">&rarr;</span>
                             </Link>
