@@ -40,7 +40,7 @@ const Nav = () => {
                                 <Menu.Items className='absolute top-3/4 right-36 xl:right-auto w-56 bg-white flex flex-col drop-shadow rounded text-sm z-10'>
                                     <Menu.Item>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-wave-500 hover:text-seabreeze-500 py-3 px-2'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-hazard-blue-500 hover:text-seabreeze-500 py-3 px-2'>
                                                 Why Choose Us
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -57,7 +57,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/our-misison"
                                                             >
                                                                 Our Mission
@@ -67,7 +67,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/compensation"
                                                             >
                                                                 Compensation
@@ -77,7 +77,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/transition-support"
                                                             >
                                                                 Transition Support
@@ -87,7 +87,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/customer-service"
                                                             >
                                                                 Customer Service
@@ -97,7 +97,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/advisor-success-stories"
                                                             >
                                                                 Advisor Testimonials
@@ -110,7 +110,7 @@ const Nav = () => {
                                     </Menu.Item>
                                     <Menu.Item>
                                         <Menu as='div' className='relative'>
-                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-blue-wave-500 hover:text-seabreeze-500 py-3 px-2'>
+                                            <Menu.Button className='flex flex-row items-center w-full hover:bg-hazard-blue-500 hover:text-seabreeze-500 py-3 px-2'>
                                                 Business Solutions Models
                                                 <ChevronRightIcon className='w-5 h-5' />
                                             </Menu.Button>
@@ -127,7 +127,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/independent-practice"
                                                             >
                                                                 Independent Practice
@@ -137,7 +137,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/our-misison"
                                                             >
                                                                 Solo Practitioner
@@ -147,7 +147,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/compensation"
                                                             >
                                                                 Join an Existing Practice
@@ -157,7 +157,7 @@ const Nav = () => {
                                                     <Menu.Item className='py-3 px-2'>
                                                         {({ active }) => (
                                                             <Link
-                                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                                 href="/about/why-choose-us/transition-support"
                                                             >
                                                                 Selling Your Practice
@@ -171,7 +171,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/join/visit-us"
                                             >
                                                 Request More Information
@@ -204,7 +204,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/about/our-story"
                                             >
                                                 Our Story
@@ -214,7 +214,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/about/leadership"
                                             >
                                                 Leadership
@@ -224,7 +224,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/about/culture"
                                             >
                                                 Culture
@@ -234,7 +234,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/about/leadership"
                                             >
                                                 Philanthropy
@@ -267,7 +267,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/press-media/IFG-in-the-news"
                                             >
                                                 IFG in the News
@@ -277,7 +277,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/press-and-media/awards-and-recognition"
                                             >
                                                 Awards & Recognition
@@ -287,7 +287,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/press-and-media/press-releases"
                                             >
                                                 Press Releases
@@ -320,7 +320,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/products"
                                             >
                                                 Products & Platforms
@@ -330,7 +330,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/marketing-and-product-support"
                                             >
                                                 Marketing & Product Support
@@ -340,7 +340,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/platform-support"
                                             >
                                                 Platform Support
@@ -350,7 +350,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/technology"
                                             >
                                                 Technology
@@ -360,7 +360,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/practice-development"
                                             >
                                                 Practice Development
@@ -370,7 +370,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/conferences"
                                             >
                                                 Conferences
@@ -380,7 +380,7 @@ const Nav = () => {
                                     <Menu.Item className='py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'} hover:text-seabreeze-500`}
+                                                className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
                                                 href="/offerings/compliance"
                                             >
                                                 Compliance
@@ -413,7 +413,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/careers/work-at-ifg"
                                             >
                                                 Work at IFG
@@ -423,7 +423,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/careers/benefits-and-perks"
                                             >
                                                 Benefits & Perks
@@ -433,7 +433,7 @@ const Nav = () => {
                                     <Menu.Item className='hover:text-seabreeze-500 py-3 px-2'>
                                         {({ active }) => (
                                             <Link
-                                                className={`${active && 'bg-blue-wave-500'}`}
+                                                className={`${active && 'bg-hazard-blue-500'}`}
                                                 href="/careers/career-support"
                                             >
                                                 Career Support
