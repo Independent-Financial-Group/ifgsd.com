@@ -49,7 +49,7 @@ const Testimonial = () => {
                     className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
                 >
                     <div className='lg:col-span-1 '>
-                        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}><iframe src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} title="IFG 20th Anniversary"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}><iframe src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} title="IFG 20th Anniversary"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
 
                     <div className="relative mb-16 lg:col-span-1 lg:mx-0">
