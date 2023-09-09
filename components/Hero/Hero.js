@@ -18,11 +18,7 @@ const Hero = () => {
                             </Link>
                         </div>
                     </div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ type: 'spring', duration: 2 }}
-                        viewport={{ once: true }}
+                    <div
                         className='max-w-prose'
                     >
                         <h1 className="font-bold text-seabreeze-500 text-4xl md:text-6xl">
@@ -43,7 +39,7 @@ const Hero = () => {
                                 Learn more <span aria-hidden="true">→</span>
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </header>
