@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { useAnimate, motion, stagger, useInView } from "framer-motion";
+// import { animate, inView } from "framer-motion/dom"
 
 import {
   CloudArrowUpIcon,
@@ -49,6 +50,14 @@ export async function getStaticProps() {
 
 const HomePage = ({ formattedBranches: newBranches }) => {
   const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: true })
+
+  useEffect(() => {
+    if (isInView) {
+      animate(".product-card", { opacity: [0, 1], y: [100, 0] }, { delay: stagger(0.4) })
+    }
+  }, [isInView])
 
   return (
     <>
@@ -86,14 +95,11 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                     {"With 20-years of experience and a focus on technology,innovation, expertise and independence, we can unlock long-term value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.".substring(0, 250)}
                   </p>
                 </div>
-                <motion.div
-                  initial={{ opacity: 0, y: 100 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", duration: 1, delay: 0.3 }}
+                <div
+                  ref={scope}
                   className=" lg:text-left space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
                 >
-                  <div>
+                  <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
                       <img src="/home/icons/icon-practice-development.png" className="w-10" />
                       <h3 className="text-xl font-bold text-seabreeze-500">
@@ -104,7 +110,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                       {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
-                  <div>
+                  <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
                       <img src="/home/icons/icon-products.png" className="w-10" />
                       <h3 className="text-xl font-bold text-seabreeze-500">
@@ -115,7 +121,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                       {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
-                  <div>
+                  <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
                       <img src="/home/icons/icon-technology.png" className="w-10" />
 
@@ -127,7 +133,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                       {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
-                  <div>
+                  <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
                       <img src="/home/icons/icon-marketing-support.png" className="w-10" />
 
@@ -139,7 +145,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                       {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
-                  <div>
+                  <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
                       <img src="/home/icons/icon-competitive-compensation.png" className="w-10" />
 
@@ -151,7 +157,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                       {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
-                  <div>
+                  <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
                       <img src="/home/icons/icon-operations.png" className="w-10" />
 
@@ -163,7 +169,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
                       {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
