@@ -44,6 +44,10 @@ const Stats = () => {
                             slidesPerView={1}
                             centeredSlides={true}
                             effect={'fade'}
+                            fadeEffect={{
+                                crossFade: true
+                            }}
+                            speed={1500}
                             autoplay={{
                                 delay: 2500,
                                 disableOnInteraction: false
@@ -88,8 +92,12 @@ const Stats = () => {
                             slidesPerView={1}
                             centeredSlides={true}
                             effect={'fade'}
+                            speed={1500}
+                            fadeEffect={{
+                                crossFade: true
+                            }}
                             autoplay={{
-                                delay: 4500,
+                                delay: 1000,
                                 disableOnInteraction: false
                             }}
                             modules={[EffectFade, Autoplay]}
@@ -116,7 +124,7 @@ const Stats = () => {
                                 <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show17-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show18-compressed.webp`} />
+                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-bottom rounded-lg' src={`/home/slideshow/ifg-slide-show18-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show19-compressed.webp`} />
@@ -131,14 +139,18 @@ const Stats = () => {
                             slidesPerView={1}
                             centeredSlides={true}
                             effect={'fade'}
+                            speed={1500}
+                            fadeEffect={{
+                                crossFade: true
+                            }}
                             autoplay={{
-                                delay: 3500,
+                                delay: 1500,
                                 disableOnInteraction: false
                             }}
                             modules={[EffectFade, Autoplay]}
                         >
                                                         <SwiperSlide>
-                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show21-compressed.webp`} />
+                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-center  rounded-lg' src={`/home/slideshow/ifg-slide-show21-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show22-compressed.webp`} />
@@ -156,16 +168,16 @@ const Stats = () => {
                                 <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show26-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show27-compressed.webp`} />
+                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-center rounded-lg' src={`/home/slideshow/ifg-slide-show27-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show28-compressed.webp`} />
+                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-center rounded-lg' src={`/home/slideshow/ifg-slide-show28-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show29-compressed.webp`} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-top rounded-lg' src={`/home/slideshow/ifg-slide-show30-compressed.webp`} />
+                                <img alt="ifg slide show image" className='w-full h-48 !object-cover !object-bottom rounded-lg' src={`/home/slideshow/ifg-slide-show30-compressed.webp`} />
                             </SwiperSlide>
                         </Swiper>
                     </div>
