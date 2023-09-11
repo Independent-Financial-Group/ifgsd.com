@@ -7,7 +7,7 @@ import 'swiper/css'
 import quotes from '../../public/quotes.png'
 import Image from 'next/image'
 
-const Testimonial = () => {
+const Testimonial = ({ content }) => {
 
     useEffect(() => {
         const swiper = new Swiper('.swiper-container', {
@@ -39,11 +39,9 @@ const Testimonial = () => {
         <>
             <div>
                 <div className='mx-auto text-center max-w-prose'>
-                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
-                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>Our reps love IFG.</h3>
-                    <p className="text-xl md:mt-5 text-dunkel-blue-500">
-                        Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
-                    </p>
+                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>{content.headingSecondary}</h2>
+                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>{content.headingPrimary}</h3>
+                    <p className="text-xl md:mt-5 text-dunkel-blue-500">{content.paragraph}</p>
                 </div>
                 <div
                     className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
