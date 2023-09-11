@@ -34,7 +34,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
   const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
-  
+
   const formattedPageContent = {
     hero: {
       featuredAnnouncement: pageContent.fields.featuredAnnouncement,
@@ -106,7 +106,7 @@ export async function getStaticProps() {
 }
 
 const HomePage = ({ newBranch, pageContent }) => {
-  console.log(pageContent)
+  console.log(pageContent.sectionOfferings.offering)
 
   const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   const [scope, animate] = useAnimate();
@@ -131,7 +131,7 @@ const HomePage = ({ newBranch, pageContent }) => {
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35" >happy</p>
           <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
-            <Testimonial content={pageContent.sectionTestimonial}/>
+            <Testimonial content={pageContent.sectionTestimonial} />
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
             <BranchAnnouncement newBranch={newBranch} />
@@ -148,11 +148,9 @@ const HomePage = ({ newBranch, pageContent }) => {
               <div className="bg-blue-wave-700/60 rounded-[40px] py-8 px-4 sm:py-16 lg:px-6">
                 <div className="max-w-screen-md mb-8 lg:mb-16 mx-auto text-center">
                   <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500">
-                    Empowering Financial Advisors with Independence and Support
+                    {pageContent.sectionOfferings.heading}
                   </h2>
-                  <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
-                    {"With 20-years of experience and a focus on technology,innovation, expertise and independence, we can unlock long-term value and drive growth for your practice. we are dedicated to empowering financial advisors like you with the independence and support you deserve. As an independent firm, we provide you with the freedom to run your practice your way. We offer comprehensive resources, cutting-edge technology, and a collaborative community of like-minded professionals who are committed to your success.".substring(0, 250)}
-                  </p>
+                  <p className="text-dunkel-blue sm:text-md dark:text-gray-400">{pageContent.sectionOfferings.paragraph}</p>
                 </div>
                 <div
                   ref={scope}
@@ -160,72 +158,72 @@ const HomePage = ({ newBranch, pageContent }) => {
                 >
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src="/home/icons/icon-practice-development.png" className="w-10" />
+                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringOne.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringOne.icon.title} className="w-10" />
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        Practice Development
+                        {pageContent.sectionOfferings.offerings.offeringOne.header}
                       </h3>
                     </div>
                     <p>
-                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {pageContent.sectionOfferings.offerings.offeringOne.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src="/home/icons/icon-products.png" className="w-10" />
+                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringTwo.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringTwo.icon.title} className="w-10" />
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        Products
+                        {pageContent.sectionOfferings.offerings.offeringTwo.header}
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {pageContent.sectionOfferings.offerings.offeringThree.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src="/home/icons/icon-technology.png" className="w-10" />
+                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringThree.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringThree.icon.title} className="w-10" />
 
                       <h3 className="text-xl font-bold dark:text-seabreeze-500 text-seabreeze-500">
-                        Technology
+                        {pageContent.sectionOfferings.offerings.offeringThree.header}
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {pageContent.sectionOfferings.offerings.offeringThree.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src="/home/icons/icon-marketing-support.png" className="w-10" />
+                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringFour.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringFour.icon.title} className="w-10" />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        Marketing Support
+                        {pageContent.sectionOfferings.offerings.offeringFour.header}
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {pageContent.sectionOfferings.offerings.offeringFour.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src="/home/icons/icon-competitive-compensation.png" className="w-10" />
+                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringFive.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringFive.icon.title} className="w-10" />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        Competitive Compensation
+                        {pageContent.sectionOfferings.offerings.offeringFive.header}
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {pageContent.sectionOfferings.offerings.offeringFive.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src="/home/icons/icon-operations.png" className="w-10" />
+                    <img src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringSix.icon.title} className="w-10" />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        Operations
+                        {pageContent.sectionOfferings.offerings.offeringSix.header}
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {loremText.substring(0, 97)}. <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {pageContent.sectionOfferings.offerings.offeringSix.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
                     </p>
                   </div>
                 </div>
@@ -240,11 +238,11 @@ const HomePage = ({ newBranch, pageContent }) => {
                 <div className="flex flex-col items-center lg:items-start relative">
                   <img src="/graphicAssets/CTA-Arrow.png" alt="arrow pointing to sign-up button" className="absolute -left-24 top-4 h-[214px]" />
                   <h2 className="text-xl font-bold text-hazard-blue-500 md:text-4xl">
-                    Join our Family Today!
+                    {pageContent.sectionCTA.heading}
                   </h2>
 
                   <p className="text-center lg:text-left py-4 lg:py-0 text-dunkel-blue-100 text-lg sm:mt-4 sm:block">
-                    We invite passionate financial professionals to join our thriving community. Experience support, collaboration, and belonging that sets us apart. Take your practice to new heights and make a lasting impact on clients' lives. Start your journey toward fulfillment.
+                    {pageContent.sectionCTA.paragraph}
                   </p>
 
                   <div className="mt-4 md:mt-8">
