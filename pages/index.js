@@ -179,7 +179,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="">
                 <div className="flex flex-col items-center lg:items-start relative">
-                  <img src="/graphicAssets/CTA-arrow.png" alt="arrow pointing to sign-up button" className="absolute -left-24 top-4 h-[214px]" />
+                  <img src="/graphicAssets/CTA-Arrow.png" alt="arrow pointing to sign-up button" className="absolute -left-24 top-4 h-[214px]" />
                   <h2 className="text-xl font-bold text-hazard-blue-500 md:text-4xl">
                     Join our Family Today!
                   </h2>
