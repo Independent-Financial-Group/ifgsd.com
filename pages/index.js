@@ -131,7 +131,7 @@ const HomePage = ({ newBranch, pageContent }) => {
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35" >happy</p>
           <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
-            <Testimonial />
+            <Testimonial content={pageContent.sectionTestimonial}/>
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
             <BranchAnnouncement newBranch={newBranch} />
