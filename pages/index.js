@@ -125,7 +125,7 @@ const HomePage = ({ newBranch, pageContent }) => {
       </Head>
       <Nav />
       <MobileNav />
-      <Hero content={{}} />
+      <Hero />
       <main>
         <section className="relative my-16 lg:my-32">
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
@@ -139,7 +139,7 @@ const HomePage = ({ newBranch, pageContent }) => {
         </section>
         <section className="my-32">
           <div className="mx-auto max-w-screen-xl px-4 lg:relative lg:z-10">
-            <Stats />
+            <Stats content={pageContent.sectionAbout} />
           </div>
         </section>
         <section className="text-seabreeze-500">
