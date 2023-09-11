@@ -8,17 +8,7 @@ import 'swiper/css/effect-fade';
 
 import { EffectFade, Autoplay } from 'swiper'
 
-const Stats = () => {
-
-    const getRandomNumber = () => {
-        // Generate a random decimal number between 0 (inclusive) and 1 (exclusive)
-        const randomDecimal = Math.random();
-
-        // Scale the random number to be between 1 and 30
-        const randomNumber = Math.floor(randomDecimal * 10) + 1;
-
-        return randomNumber;
-    }
+const Stats = ({content}) => {
 
     return (
         <>
@@ -27,15 +17,10 @@ const Stats = () => {
             <div className='lg:flex lg:gap-x-4'>
                 <div className='lg:max-w-prose'>
                     <h2 className="font-bold text-hazard-blue-500 sm:text-2xl lg:text-4xl">
-                        Why IFG?
+                        {content.heading}
                     </h2>
 
-                    <p className="my-4 text-gray-500 sm:text-xl">
-                        We are based on three core values shared by our executive team: integrity, balance and independence. Founders Scott Heising and David Fischer along with their home office team of employees are committed to providing excellent customer service while always keeping these values at the forefront of decisions as leaders.
-                        <br />
-                        <br />
-                        From the top down, each employee shares in this understanding while providing efficient and friendly service to our advisors according to those beliefs. Independent Financial Group is committed to bringing true independence to the marketplace while staying true to the values the founders have set in place.
-                    </p>
+                    <p className="my-4 text-gray-500 sm:text-xl">{content.paragraph}</p>
                     <Link className='font-bold bg-neon-orange-500 py-2 px-4 rounded-lg text-seabreeze-500' href="/about/our-story">Our Story</Link>
                 </div>
                 <div className='my-4 lg:my-0 lg:w-1/2 grid grid-rows-2 grid-cols-2 gap-4'>
