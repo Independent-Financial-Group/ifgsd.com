@@ -32,23 +32,82 @@ const client = contenful.createClient({
 });
 
 export async function getStaticProps() {
-  const newBranches = await client.getEntries({ content_type: "newBranch" });
-
-  const formattedBranches = newBranches.items.map((item) => {
-    return {
-      reps: item.fields.repNames,
-      dba: item.fields.dba,
-      officeLocation: item.fields.officeLocation
+  const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
+  const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
+  
+  const formattedPageContent = {
+    hero: {
+      featuredAnnouncement: pageContent.fields.featuredAnnouncement,
+      reference: pageContent.fields.featuredAnnouncementReference,
+      Heading: pageContent.fields.heroSectionHeading,
+      paragraph: pageContent.fields.heroParagraph
+    },
+    sectionTestimonial: {
+      headingPrimary: pageContent.fields.testimonialSectionHeaderPrimary,
+      headingSecondary: pageContent.fields.testimonialSectionHeaderSecondary,
+      paragraph: pageContent.fields.testimonialSectionParagraph,
+    },
+    sectionAbout: {
+      heading: pageContent.fields.aboutSectionHeader,
+      paragraph: pageContent.fields.aboutSectionParagraph
+    },
+    sectionRankings: {
+      heading: pageContent.fields.rankingsSectionHeader
+    },
+    sectionOfferings: {
+      heading: pageContent.fields.offeringsSectionHeader,
+      paragraph: pageContent.fields.offeringsSectionParagraph,
+      offerings: {
+        offeringOne: {
+          icon: pageContent.fields.offering1Icon,
+          header: pageContent.fields.offering1Header,
+          paragraph: pageContent.fields.offering1Text
+        },
+        offeringTwo: {
+          icon: pageContent.fields.offering2Icon,
+          header: pageContent.fields.offering2Header,
+          paragraph: pageContent.fields.offering2Text
+        },
+        offeringThree: {
+          icon: pageContent.fields.offering3Icon,
+          header: pageContent.fields.offering3Header,
+          paragraph: pageContent.fields.offering3Text
+        },
+        offeringFour: {
+          icon: pageContent.fields.offering4Icon,
+          header: pageContent.fields.offering4Header,
+          paragraph: pageContent.fields.offering4Text
+        },
+        offeringFive: {
+          icon: pageContent.fields.offering5Icon,
+          header: pageContent.fields.offering5Header,
+          paragraph: pageContent.fields.offering5Text
+        },
+        offeringSix: {
+          icon: pageContent.fields.offering6Icon,
+          header: pageContent.fields.offering6Header,
+          paragraph: pageContent.fields.offering6Text
+        }
+      }
+    },
+    sectionCTA: {
+      heading: pageContent.fields.ctaSectionHeader,
+      paragraph: pageContent.fields.ctaSectionParagraph
     }
-  })
+  }
 
   return {
-    props: { formattedBranches },
+    props: {
+      newBranch,
+      pageContent: JSON.parse(JSON.stringify(formattedPageContent))
+    },
     revalidate: 10,
   };
 }
 
-const HomePage = ({ formattedBranches: newBranches }) => {
+const HomePage = ({ newBranch, pageContent }) => {
+  console.log(pageContent)
+
   const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true })
@@ -66,7 +125,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
       </Head>
       <Nav />
       <MobileNav />
-      <Hero />
+      <Hero content={{}} />
       <main>
         <section className="relative my-16 lg:my-32">
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
@@ -75,7 +134,7 @@ const HomePage = ({ formattedBranches: newBranches }) => {
             <Testimonial />
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
-            <BranchAnnouncement newBranches={newBranches} />
+            <BranchAnnouncement newBranch={newBranch} />
           </div>
         </section>
         <section className="my-32">
@@ -200,8 +259,8 @@ const HomePage = ({ formattedBranches: newBranches }) => {
               </div>
 
               <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2 relative">
-                <img alt="grahic design accent" src="/graphicAssets/CTA-ornament.png" className="absolute -bottom-28 -left-36 -z-10"/>
-                <img alt="grahic design accent" src="/graphicAssets/CTA-ornament.png" className="absolute -right-36 -top-28 -z-10"/>
+                <img alt="grahic design accent" src="/graphicAssets/CTA-ornament.png" className="absolute -bottom-28 -left-36 -z-10" />
+                <img alt="grahic design accent" src="/graphicAssets/CTA-ornament.png" className="absolute -right-36 -top-28 -z-10" />
                 <Image
                   alt="Student"
                   src={ctaImage1}
