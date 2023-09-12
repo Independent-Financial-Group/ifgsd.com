@@ -34,6 +34,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
   const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
+  const testimonials = await client.getEntries({content_type: "testimonials"});
 
   const formattedPageContent = {
     hero: {
@@ -96,17 +97,21 @@ export async function getStaticProps() {
     }
   }
 
+  const formattedTestimonials = testimonials.items.map((item) => {
+    return {...item.fields}
+  })
+
   return {
     props: {
       newBranch,
-      pageContent: JSON.parse(JSON.stringify(formattedPageContent))
+      pageContent: JSON.parse(JSON.stringify(formattedPageContent)),
+      formattedTestimonials
     },
     revalidate: 10,
   };
 }
 
-const HomePage = ({ newBranch, pageContent }) => {
-  console.log(pageContent.sectionOfferings.offering)
+const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials }) => {
 
   const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   const [scope, animate] = useAnimate();
@@ -131,7 +136,7 @@ const HomePage = ({ newBranch, pageContent }) => {
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35" >happy</p>
           <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
-            <Testimonial content={pageContent.sectionTestimonial} />
+            <Testimonial content={pageContent.sectionTestimonial} testimonials={testimonials} />
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
             <BranchAnnouncement newBranch={newBranch} />
