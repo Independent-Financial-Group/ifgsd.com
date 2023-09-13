@@ -58,7 +58,7 @@ const Nav = () => {
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
-                                                                href="/join/why-choose-us/our-misison"
+                                                                href="/join/why-choose-us/our-mission"
                                                             >
                                                                 Our Mission
                                                             </Link>
