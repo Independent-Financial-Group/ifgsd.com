@@ -21,7 +21,7 @@ const Stats = ({content}) => {
                     </h2>
 
                     <p className="my-4 text-gray-500 sm:text-xl">{content.paragraph}</p>
-                    <Link className='font-bold bg-neon-orange-500 py-2 px-4 rounded-lg text-seabreeze-500' href="/why-choose-us/our-mission">Our Mission</Link>
+                    <Link className='font-bold bg-neon-orange-500 py-2 px-4 rounded-lg text-seabreeze-500' href="/join/why-choose-us/our-mission">Our Mission</Link>
                 </div>
                 <div className='my-4 lg:my-0 lg:w-1/2 grid grid-rows-2 grid-cols-2 gap-4'>
                     <div className='row-start-1 col-start-1 rounded-lg'>
