@@ -1,5 +1,5 @@
 import React from 'react'
-import PublicLayout from '../../../components/publicLayout/PublicLayout'
+import PublicLayout from '../../../components/PublicLayout/PublicLayout'
 import Container from '../../../components/Container/Container'
 import Link from 'next/link'
 
