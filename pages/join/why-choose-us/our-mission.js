@@ -1,10 +1,11 @@
 import React from 'react'
+import PublicLayout from '../../../components/publicLayout/PublicLayout'
 
 const ourMission = () => {
   return (
-    <div>
-        
-    </div>
+    <PublicLayout>
+        <h1>HELLO WORLD!</h1>
+    </PublicLayout>
   )
 }
 
