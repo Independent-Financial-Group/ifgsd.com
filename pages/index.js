@@ -40,7 +40,7 @@ export async function getStaticProps() {
     hero: {
       featuredAnnouncement: pageContent.fields.featuredAnnouncement,
       reference: pageContent.fields.featuredAnnouncementReference,
-      Heading: pageContent.fields.heroSectionHeading,
+      heading: pageContent.fields.heroSectionHeading,
       paragraph: pageContent.fields.heroParagraph
     },
     sectionTestimonial: {
@@ -130,7 +130,7 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
       </Head>
       <Nav />
       <MobileNav />
-      <Hero />
+      <Hero content={pageContent.hero} />
       <main>
         <section className="relative my-16 lg:my-32">
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
