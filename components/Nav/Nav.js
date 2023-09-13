@@ -58,7 +58,7 @@ const Nav = () => {
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/our-misison"
+                                                                href="/join/why-choose-us/our-mission"
                                                             >
                                                                 Our Mission
                                                             </Link>
@@ -68,7 +68,7 @@ const Nav = () => {
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/compensation"
+                                                                href="/join/why-choose-us/compensation"
                                                             >
                                                                 Compensation
                                                             </Link>
@@ -78,7 +78,7 @@ const Nav = () => {
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/transition-support"
+                                                                href="/join/why-choose-us/transition-support"
                                                             >
                                                                 Transition Support
                                                             </Link>
@@ -88,7 +88,7 @@ const Nav = () => {
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/customer-service"
+                                                                href="/join/why-choose-us/customer-service"
                                                             >
                                                                 Customer Service
                                                             </Link>
@@ -98,7 +98,7 @@ const Nav = () => {
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active && 'bg-hazard-blue-500'} hover:text-seabreeze-500`}
-                                                                href="/about/why-choose-us/advisor-success-stories"
+                                                                href="/join/why-choose-us/advisor-success-stories"
                                                             >
                                                                 Advisor Testimonials
                                                             </Link>
