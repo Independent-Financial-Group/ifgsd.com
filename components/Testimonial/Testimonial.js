@@ -7,7 +7,7 @@ import 'swiper/css'
 import quotes from '../../public/quotes.png'
 import Image from 'next/image'
 
-const Testimonial = () => {
+const Testimonial = ({ content, testimonials }) => {
 
     useEffect(() => {
         const swiper = new Swiper('.swiper-container', {
@@ -39,11 +39,9 @@ const Testimonial = () => {
         <>
             <div>
                 <div className='mx-auto text-center max-w-prose'>
-                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>Don't just take our word for it!</h2>
-                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>Our reps love IFG.</h3>
-                    <p className="text-xl md:mt-5 text-dunkel-blue-500">
-                        Our representatives come from all walks of life, but they all seek the same thing: A place where they don't feel like another number, instead like family.
-                    </p>
+                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>{content.headingSecondary}</h2>
+                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>{content.headingPrimary}</h3>
+                    <p className="text-xl md:mt-5 text-dunkel-blue-500">{content.paragraph}</p>
                 </div>
                 <div
                     className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
@@ -77,194 +75,44 @@ const Testimonial = () => {
 
                             <div className="swiper-container !overflow-hidden">
                                 <div className="swiper-wrapper">
-                                    <div className="swiper-slide !h-fit lg:!h-[600px]">
-                                        <blockquote
-                                            className="flex h-full flex-col justify-between"
-                                        >
-                                            <div>
-                                                <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
-                                                        Committed to Excellence
-                                                    </p>
-
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
-                                                        I have been with four broker-dealers over my 36 year career,
-                                                        including my own. I have now been with IFG for 14 years and
-                                                        could not be more pleased with the character and quality of
-                                                        the firm. They are committed to excellence and integrity,
-                                                        focusing on the important values in our industry rather than
-                                                        their profits. I am delighted to be associated with such a
-                                                        first-rate, high-className firm!
-                                                    </p>
-                                                </div>
+                                    {testimonials.map((testimonial) => {
+                                        return (
+                                            <div key={testimonial.headshot.sys.id} className='swiper-slide !h-fit lg:!h-[600px]'>
+                                                <blockquote className='flex h-full flex-col justify-between'>
+                                                    <div>
+                                                        <div className='mt-4>'>
+                                                            <h3 className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
+                                                                {testimonial.heading}
+                                                            </h3>
+                                                            <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
+                                                                I have been with four broker-dealers over my 36 year career,
+                                                                including my own. I have now been with IFG for 14 years and
+                                                                could not be more pleased with the character and quality of
+                                                                the firm. They are committed to excellence and integrity,
+                                                                focusing on the important values in our industry rather than
+                                                                their profits. I am delighted to be associated with such a
+                                                                first-rate, high-className firm!
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <footer className="mt-8 text-sm text-gray-500 flex items-center gap-3">
+                                                        <div>
+                                                            <p className='text-blue-wave-500 font-bold text-right text-sm'>{testimonial.fullName}</p>
+                                                            <p className="text-blue-wave-900 font-semibold text-right text-xs">
+                                                                {testimonial.state}
+                                                            </p>
+                                                        </div>
+                                                        <Image
+                                                            src={`https://${testimonial.headshot.fields.file.url}`}
+                                                            width={50}
+                                                            height={50}
+                                                            alt={testimonial.headshot.fields.title}
+                                                        />
+                                                    </footer>
+                                                </blockquote>
                                             </div>
-
-                                            <footer className="mt-8 text-sm text-gray-500 flex items-center gap-3">
-                                                <div>
-                                                    <p className='text-blue-wave-500 font-bold text-right text-sm'>Arthuer Malloy</p>
-                                                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                                                        California
-                                                    </p>
-                                                </div>
-                                                <Image
-                                                    src="https://ifgsd.com/wp-content/uploads/2013/05/Art-Molloy.png"
-                                                    width={50}
-                                                    height={50}
-                                                />
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-
-                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
-                                        <blockquote
-                                            className="flex flex-col flex-auto h-full justify-between lg:p-12"
-                                        >
-                                            <div>
-
-                                                <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
-                                                        When and where we need them
-                                                    </p>
-
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
-                                                        Since we joined the IFG family, I am consistently reminded of
-                                                        how cooperative and helpful IFG is of our business. Those
-                                                        reminders are not slogans and mission statements included at
-                                                        the tops of letters or the bottoms of emails. They are a real
-                                                        help on important matters when and where we need them. Our
-                                                        business supports our clients, and IFG supports our business.
-                                                        We are very happy to have a partner so clearly interested in
-                                                        helping us all grow together.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <footer className="mt-8 text-sm flex items-center gap-3 text-gray-500">
-                                                <div>
-                                                    <p className='text-blue-wave-500 font-bold text-right text-sm'>Anna Luke</p>
-                                                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                                                        California
-                                                    </p>
-                                                </div>
-                                                <Image
-                                                    src="https://ifgsd.com/wp-content/uploads/2018/04/Anna-Luke.png"
-                                                    width={50}
-                                                    height={50}
-                                                />
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-
-                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
-                                        <blockquote
-                                            className="flex h-full flex-col justify-between lg:p-12"
-                                        >
-                                            <div>
-
-
-                                                <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
-                                                        Family Oriented with great educational content
-                                                    </p>
-
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
-                                                        Hard to believe it’s been six years since we have joined the
-                                                        IFG family. Top rate professional and caring service team
-                                                        always ready to respond to needs. Conferences are top notch.
-                                                        Family oriented with great educational content. Consultants,
-                                                        management specialists, product specialists, asset management
-                                                        and insurance resources. A complete suite. Couldn’t ask for
-                                                        more in a broker dealer. Great family environment. Hats off to
-                                                        the management team and principals Scott, Joe and Dave.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <footer className="mt-8 text-sm flex items-center gap-3 text-gray-500">
-                                                <div>
-                                                    <p className='text-blue-wave-500 font-bold text-right text-sm'>Larry Steckler</p>
-                                                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                                                        California
-                                                    </p>
-                                                </div>
-                                                <Image
-                                                    src="https://ifgsd.com/wp-content/uploads/2014/11/Larry-Steckler.png"
-                                                    width={50}
-                                                    height={50}
-                                                />
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-
-                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
-                                        <blockquote
-                                            className="flex h-full flex-col justify-between lg:p-12"
-                                        >
-                                            <div>
-
-
-                                                <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
-                                                        Extreme Pleasure
-                                                    </p>
-
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose ">
-
-                                                        My extreme pleasure from my association with Independent Financial Group is due the entire organization sharing a common vision with their representatives. That being our mutual success.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <footer className="mt-8 text-sm flex items-center gap-3 text-gray-500">
-                                                <div>
-                                                    <p className='text-blue-wave-500 font-bold text-right text-sm'>Chris Divito</p>
-                                                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                                                        Ohio
-                                                    </p>
-                                                </div>
-                                                <Image
-                                                    src="https://ifgsd.com/wp-content/uploads/2013/05/Chris-DiVito.png"
-                                                    width={50}
-                                                    height={50}
-                                                />
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-
-                                    <div className="swiper-slide !h-fit lg:!h-[480px]">
-                                        <blockquote
-                                            className="flex h-full flex-col justify-between  lg:p-12"
-                                        >
-                                            <div>
-
-
-                                                <div className="mt-4">
-                                                    <p className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
-                                                        The epitome of a broker-dealer
-                                                    </p>
-
-                                                    <p className="mt-4 leading-relaxed text-dunkel-blue-500">
-
-                                                        I have been in the investment/financial planning business for over 41 years, and I can safely say that IFG is the epitome of what a broker-dealer should be– accessible, responsive, future-oriented, with honesty and integrity and providing the independence we all want. It starts at the top with the leadership of Scott, Joe, and David, and permeates the whole organization. I wish the opportunity would have been available for me when I started in the business, but I couldn’t be happier now!
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <footer className="mt-8 text-sm flex items-center gap-3 text-gray-500">
-                                                <div>
-                                                    <p className='text-blue-wave-500 font-bold text-right text-sm'>Gregory Lohmer</p>
-                                                    <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                                                        Minnesota
-                                                    </p>
-                                                </div>
-                                                <Image
-                                                    src="https://ifgsd.com/wp-content/uploads/2014/11/Gregory-Lohmer.png"
-                                                    height={50}
-                                                    width={50}
-                                                />
-                                            </footer>
-                                        </blockquote>
-                                    </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
 
