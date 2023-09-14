@@ -34,7 +34,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
   const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
-  const testimonials = await client.getEntries({content_type: "testimonials"});
+  const testimonials = await client.getEntries({ content_type: "testimonials" });
 
   const formattedPageContent = {
     hero: {
@@ -98,7 +98,7 @@ export async function getStaticProps() {
   }
 
   const formattedTestimonials = testimonials.items.map((item) => {
-    return {...item.fields}
+    return { ...item.fields }
   })
 
   return {
@@ -134,11 +134,20 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
       <main>
         <section className="relative my-16 lg:my-32">
           <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
-          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35" >happy</p>
+          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35 lf:left-62" >happy</p>
           <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
+            <div className='mx-auto text-center max-w-prose my-10'>
+              <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>{pageContent.sectionTestimonial.headingSecondary}</h2>
+              <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>{pageContent.sectionTestimonial.headingPrimary}</h3>
+              <p className="text-xl md:mt-5 text-dunkel-blue-500">{pageContent.sectionTestimonial.paragraph}</p>
+            </div>
             <Testimonial content={pageContent.sectionTestimonial} testimonials={testimonials} />
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
             <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
+          </div>
+        </section>
+        <section className="my-16 lg:my-32">
+          <div className="px-4 lg:px-0 mx-auto max-w-screen-xl">
             <BranchAnnouncement newBranch={newBranch} />
           </div>
         </section>
@@ -221,7 +230,7 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                    <img src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringSix.icon.title} className="w-10" />
+                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringSix.icon.title} className="w-10" />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
                         {pageContent.sectionOfferings.offerings.offeringSix.header}

@@ -9,6 +9,8 @@ import Image from 'next/image'
 
 const Testimonial = ({ content, testimonials }) => {
 
+    console.log(testimonials[0].headshot.fields.file)
+
     useEffect(() => {
         const swiper = new Swiper('.swiper-container', {
             modules: [Navigation, Pagination, Autoplay],
@@ -38,11 +40,6 @@ const Testimonial = ({ content, testimonials }) => {
     return (
         <>
             <div>
-                <div className='mx-auto text-center max-w-prose'>
-                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>{content.headingSecondary}</h2>
-                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>{content.headingPrimary}</h3>
-                    <p className="text-xl md:mt-5 text-dunkel-blue-500">{content.paragraph}</p>
-                </div>
                 <div
                     className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
                 >
@@ -85,13 +82,7 @@ const Testimonial = ({ content, testimonials }) => {
                                                                 {testimonial.heading}
                                                             </h3>
                                                             <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
-                                                                I have been with four broker-dealers over my 36 year career,
-                                                                including my own. I have now been with IFG for 14 years and
-                                                                could not be more pleased with the character and quality of
-                                                                the firm. They are committed to excellence and integrity,
-                                                                focusing on the important values in our industry rather than
-                                                                their profits. I am delighted to be associated with such a
-                                                                first-rate, high-className firm!
+                                                                {testimonial.paragraph}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -103,7 +94,7 @@ const Testimonial = ({ content, testimonials }) => {
                                                             </p>
                                                         </div>
                                                         <Image
-                                                            src={`https://${testimonial.headshot.fields.file.url}`}
+                                                            src={`https:${testimonial.headshot.fields.file.url}`}
                                                             width={50}
                                                             height={50}
                                                             alt={testimonial.headshot.fields.title}
