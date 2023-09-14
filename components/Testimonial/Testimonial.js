@@ -50,7 +50,7 @@ const Testimonial = ({ content, testimonials }) => {
                     <div className="relative mb-16 lg:col-span-1 lg:mx-0">
                         <div className='flex flex-row items-center'>
                             <button
-                                className="hidden lg:block prev-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
+                                className="hidden lg:block prev-button rounded-full border  border-neon-orange-500 p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white"
                             >
                                 <span className="sr-only">Previous Slide</span>
                                 <svg
@@ -74,7 +74,7 @@ const Testimonial = ({ content, testimonials }) => {
                                 <div className="swiper-wrapper">
                                     {testimonials.map((testimonial) => {
                                         return (
-                                            <div key={testimonial.headshot.sys.id} className='swiper-slide !h-fit lg:!h-[600px]'>
+                                            <div key={testimonial.headshot.sys.id} className='swiper-slide !h-fit lg:!h-[450px]'>
                                                 <blockquote className='flex h-full flex-col justify-between'>
                                                     <div>
                                                         <div className='mt-4>'>
@@ -108,7 +108,7 @@ const Testimonial = ({ content, testimonials }) => {
                             </div>
 
                             <button
-                                className="hidden lg:block next-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
+                                className="hidden lg:block next-button rounded-full border border-neon-orange-500 p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white"
                             >
                                 <span className="sr-only">Next Slide</span>
                                 <svg
