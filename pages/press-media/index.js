@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const pressAndMedia = () => {
-  return (
-    <div>Press & Media</div>
-  )
-}
+  return <div>Press & Media</div>;
+};
 
-export default pressAndMedia
+export default pressAndMedia;

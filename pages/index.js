@@ -21,8 +21,8 @@ import Stats from "../components/Stats/Stats";
 import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
-import ctaImage1 from "../public/cta-image-1.png"
-import ctaImage2 from "../public/cta-image-2.png"
+import ctaImage1 from "../public/cta-image-1.png";
+import ctaImage2 from "../public/cta-image-2.png";
 
 const contenful = require("contentful");
 
@@ -34,14 +34,16 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
   const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
-  const testimonials = await client.getEntries({ content_type: "testimonials" });
+  const testimonials = await client.getEntries({
+    content_type: "testimonials",
+  });
 
   const formattedPageContent = {
     hero: {
       featuredAnnouncement: pageContent.fields.featuredAnnouncement,
       reference: pageContent.fields.featuredAnnouncementReference,
       heading: pageContent.fields.heroSectionHeading,
-      paragraph: pageContent.fields.heroParagraph
+      paragraph: pageContent.fields.heroParagraph,
     },
     sectionTestimonial: {
       headingPrimary: pageContent.fields.testimonialSectionHeaderPrimary,
@@ -50,10 +52,10 @@ export async function getStaticProps() {
     },
     sectionAbout: {
       heading: pageContent.fields.aboutSectionHeader,
-      paragraph: pageContent.fields.aboutSectionParagraph
+      paragraph: pageContent.fields.aboutSectionParagraph,
     },
     sectionRankings: {
-      heading: pageContent.fields.rankingsSectionHeader
+      heading: pageContent.fields.rankingsSectionHeader,
     },
     sectionOfferings: {
       heading: pageContent.fields.offeringsSectionHeader,
@@ -62,66 +64,74 @@ export async function getStaticProps() {
         offeringOne: {
           icon: pageContent.fields.offering1Icon,
           header: pageContent.fields.offering1Header,
-          paragraph: pageContent.fields.offering1Text
+          paragraph: pageContent.fields.offering1Text,
         },
         offeringTwo: {
           icon: pageContent.fields.offering2Icon,
           header: pageContent.fields.offering2Header,
-          paragraph: pageContent.fields.offering2Text
+          paragraph: pageContent.fields.offering2Text,
         },
         offeringThree: {
           icon: pageContent.fields.offering3Icon,
           header: pageContent.fields.offering3Header,
-          paragraph: pageContent.fields.offering3Text
+          paragraph: pageContent.fields.offering3Text,
         },
         offeringFour: {
           icon: pageContent.fields.offering4Icon,
           header: pageContent.fields.offering4Header,
-          paragraph: pageContent.fields.offering4Text
+          paragraph: pageContent.fields.offering4Text,
         },
         offeringFive: {
           icon: pageContent.fields.offering5Icon,
           header: pageContent.fields.offering5Header,
-          paragraph: pageContent.fields.offering5Text
+          paragraph: pageContent.fields.offering5Text,
         },
         offeringSix: {
           icon: pageContent.fields.offering6Icon,
           header: pageContent.fields.offering6Header,
-          paragraph: pageContent.fields.offering6Text
-        }
-      }
+          paragraph: pageContent.fields.offering6Text,
+        },
+      },
     },
     sectionCTA: {
       heading: pageContent.fields.ctaSectionHeader,
-      paragraph: pageContent.fields.ctaSectionParagraph
-    }
-  }
+      paragraph: pageContent.fields.ctaSectionParagraph,
+    },
+  };
 
   const formattedTestimonials = testimonials.items.map((item) => {
-    return { ...item.fields }
-  })
+    return { ...item.fields };
+  });
 
   return {
     props: {
       newBranch,
       pageContent: JSON.parse(JSON.stringify(formattedPageContent)),
-      formattedTestimonials
+      formattedTestimonials,
     },
     revalidate: 10,
   };
 }
 
-const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials }) => {
-
-  const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+const HomePage = ({
+  newBranch,
+  pageContent,
+  formattedTestimonials: testimonials,
+}) => {
+  const loremText =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, { once: true })
+  const isInView = useInView(scope, { once: true });
 
   useEffect(() => {
     if (isInView) {
-      animate(".product-card", { opacity: [0, 1], y: [100, 0] }, { delay: stagger(0.4) })
+      animate(
+        ".product-card",
+        { opacity: [0, 1], y: [100, 0] },
+        { delay: stagger(0.4) }
+      );
     }
-  }, [isInView])
+  }, [isInView]);
 
   return (
     <>
@@ -133,17 +143,34 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
       <Hero content={pageContent.hero} />
       <main>
         <section className="relative my-16 lg:my-32">
-          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">advisors</p>
-          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35 lf:left-62" >happy</p>
+          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">
+            advisors
+          </p>
+          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35 lf:left-62">
+            happy
+          </p>
           <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
-            <div className='mx-auto text-center max-w-prose my-10'>
-              <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>{pageContent.sectionTestimonial.headingSecondary}</h2>
-              <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>{pageContent.sectionTestimonial.headingPrimary}</h3>
-              <p className="text-xl md:mt-5 text-dunkel-blue-500">{pageContent.sectionTestimonial.paragraph}</p>
+            <div className="mx-auto text-center max-w-prose my-10">
+              <h2 className="text-xl lg:text-2xl font-bold text-dunkel-blue-500">
+                {pageContent.sectionTestimonial.headingSecondary}
+              </h2>
+              <h3 className="text-5xl lg:text-6xl font-bold text-hazard-blue-500">
+                {pageContent.sectionTestimonial.headingPrimary}
+              </h3>
+              <p className="text-xl md:mt-5 text-dunkel-blue-500">
+                {pageContent.sectionTestimonial.paragraph}
+              </p>
             </div>
-            <Testimonial content={pageContent.sectionTestimonial} testimonials={testimonials} />
-            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden" >happy</p>
-            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">advisors</p>
+            <Testimonial
+              content={pageContent.sectionTestimonial}
+              testimonials={testimonials}
+            />
+            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">
+              happy
+            </p>
+            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">
+              advisors
+            </p>
           </div>
         </section>
         <section className="my-16 lg:my-32">
@@ -164,7 +191,9 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
                   <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500">
                     {pageContent.sectionOfferings.heading}
                   </h2>
-                  <p className="text-dunkel-blue sm:text-md dark:text-gray-400">{pageContent.sectionOfferings.paragraph}</p>
+                  <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
+                    {pageContent.sectionOfferings.paragraph}
+                  </p>
                 </div>
                 <div
                   ref={scope}
@@ -172,72 +201,180 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
                 >
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringOne.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringOne.icon.title} className="w-10" />
+                      <img
+                        src={`https://${pageContent.sectionOfferings.offerings.offeringOne.icon.fields.file.url}`}
+                        alt={
+                          pageContent.sectionOfferings.offerings.offeringOne
+                            .icon.title
+                        }
+                        className="w-10"
+                      />
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        {pageContent.sectionOfferings.offerings.offeringOne.header}
+                        {
+                          pageContent.sectionOfferings.offerings.offeringOne
+                            .header
+                        }
                       </h3>
                     </div>
                     <p>
-                      {pageContent.sectionOfferings.offerings.offeringOne.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {
+                        pageContent.sectionOfferings.offerings.offeringOne
+                          .paragraph
+                      }{" "}
+                      <span className="text-neon-orange-500 font-bold">
+                        <Link href="/offerings/practice-development">
+                          Learn More &rarr;
+                        </Link>
+                      </span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringTwo.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringTwo.icon.title} className="w-10" />
+                      <img
+                        src={`https://${pageContent.sectionOfferings.offerings.offeringTwo.icon.fields.file.url}`}
+                        alt={
+                          pageContent.sectionOfferings.offerings.offeringTwo
+                            .icon.title
+                        }
+                        className="w-10"
+                      />
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        {pageContent.sectionOfferings.offerings.offeringTwo.header}
+                        {
+                          pageContent.sectionOfferings.offerings.offeringTwo
+                            .header
+                        }
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {pageContent.sectionOfferings.offerings.offeringThree.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {
+                        pageContent.sectionOfferings.offerings.offeringThree
+                          .paragraph
+                      }{" "}
+                      <span className="text-neon-orange-500 font-bold">
+                        <Link href="/offerings/practice-development">
+                          Learn More &rarr;
+                        </Link>
+                      </span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringThree.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringThree.icon.title} className="w-10" />
+                      <img
+                        src={`https://${pageContent.sectionOfferings.offerings.offeringThree.icon.fields.file.url}`}
+                        alt={
+                          pageContent.sectionOfferings.offerings.offeringThree
+                            .icon.title
+                        }
+                        className="w-10"
+                      />
 
                       <h3 className="text-xl font-bold dark:text-seabreeze-500 text-seabreeze-500">
-                        {pageContent.sectionOfferings.offerings.offeringThree.header}
+                        {
+                          pageContent.sectionOfferings.offerings.offeringThree
+                            .header
+                        }
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {pageContent.sectionOfferings.offerings.offeringThree.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {
+                        pageContent.sectionOfferings.offerings.offeringThree
+                          .paragraph
+                      }{" "}
+                      <span className="text-neon-orange-500 font-bold">
+                        <Link href="/offerings/practice-development">
+                          Learn More &rarr;
+                        </Link>
+                      </span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringFour.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringFour.icon.title} className="w-10" />
+                      <img
+                        src={`https://${pageContent.sectionOfferings.offerings.offeringFour.icon.fields.file.url}`}
+                        alt={
+                          pageContent.sectionOfferings.offerings.offeringFour
+                            .icon.title
+                        }
+                        className="w-10"
+                      />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        {pageContent.sectionOfferings.offerings.offeringFour.header}
+                        {
+                          pageContent.sectionOfferings.offerings.offeringFour
+                            .header
+                        }
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {pageContent.sectionOfferings.offerings.offeringFour.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {
+                        pageContent.sectionOfferings.offerings.offeringFour
+                          .paragraph
+                      }{" "}
+                      <span className="text-neon-orange-500 font-bold">
+                        <Link href="/offerings/practice-development">
+                          Learn More &rarr;
+                        </Link>
+                      </span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringFive.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringFive.icon.title} className="w-10" />
+                      <img
+                        src={`https://${pageContent.sectionOfferings.offerings.offeringFive.icon.fields.file.url}`}
+                        alt={
+                          pageContent.sectionOfferings.offerings.offeringFive
+                            .icon.title
+                        }
+                        className="w-10"
+                      />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        {pageContent.sectionOfferings.offerings.offeringFive.header}
+                        {
+                          pageContent.sectionOfferings.offerings.offeringFive
+                            .header
+                        }
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {pageContent.sectionOfferings.offerings.offeringFive.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {
+                        pageContent.sectionOfferings.offerings.offeringFive
+                          .paragraph
+                      }{" "}
+                      <span className="text-neon-orange-500 font-bold">
+                        <Link href="/offerings/practice-development">
+                          Learn More &rarr;
+                        </Link>
+                      </span>
                     </p>
                   </div>
                   <div className="product-card">
                     <div className="flex flex-row items-center justify-start mb-2 gap-2">
-                      <img src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`} alt={pageContent.sectionOfferings.offerings.offeringSix.icon.title} className="w-10" />
+                      <img
+                        src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`}
+                        alt={
+                          pageContent.sectionOfferings.offerings.offeringSix
+                            .icon.title
+                        }
+                        className="w-10"
+                      />
 
                       <h3 className="text-xl font-bold text-seabreeze-500">
-                        {pageContent.sectionOfferings.offerings.offeringSix.header}
+                        {
+                          pageContent.sectionOfferings.offerings.offeringSix
+                            .header
+                        }
                       </h3>
                     </div>
                     <p className="text-dunkel-blue dark:text-gray-400">
-                      {pageContent.sectionOfferings.offerings.offeringSix.paragraph} <span className="text-neon-orange-500 font-bold"><Link href="/offerings/practice-development">Learn More &rarr;</Link></span>
+                      {
+                        pageContent.sectionOfferings.offerings.offeringSix
+                          .paragraph
+                      }{" "}
+                      <span className="text-neon-orange-500 font-bold">
+                        <Link href="/offerings/practice-development">
+                          Learn More &rarr;
+                        </Link>
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -250,7 +387,11 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="">
                 <div className="flex flex-col items-center lg:items-start relative">
-                  <img src="/graphicAssets/CTA-Arrow.png" alt="arrow pointing to sign-up button" className="absolute -left-24 top-4 h-[214px]" />
+                  <img
+                    src="/graphicAssets/CTA-Arrow.png"
+                    alt="arrow pointing to sign-up button"
+                    className="absolute -left-24 top-4 h-[214px]"
+                  />
                   <h2 className="text-xl font-bold text-hazard-blue-500 md:text-4xl">
                     {pageContent.sectionCTA.heading}
                   </h2>
@@ -271,8 +412,16 @@ const HomePage = ({ newBranch, pageContent, formattedTestimonials: testimonials 
               </div>
 
               <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2 relative">
-                <img alt="grahic design accent" src="/graphicAssets/CTA-ornament.png" className="absolute -bottom-28 -left-36 -z-10" />
-                <img alt="grahic design accent" src="/graphicAssets/CTA-ornament.png" className="absolute -right-36 -top-28 -z-10" />
+                <img
+                  alt="grahic design accent"
+                  src="/graphicAssets/CTA-ornament.png"
+                  className="absolute -bottom-28 -left-36 -z-10"
+                />
+                <img
+                  alt="grahic design accent"
+                  src="/graphicAssets/CTA-ornament.png"
+                  className="absolute -right-36 -top-28 -z-10"
+                />
                 <Image
                   alt="Student"
                   src={ctaImage1}

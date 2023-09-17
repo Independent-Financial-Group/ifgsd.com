@@ -1,17 +1,17 @@
-import React from 'react'
-import Nav from '../Nav/Nav'
-import MobileNav from '../MobileNav/MobileNav'
-import Footer from '../Footer/Footer'
+import React from "react";
+import Nav from "../Nav/Nav";
+import MobileNav from "../MobileNav/MobileNav";
+import Footer from "../Footer/Footer";
 
-const PublicLayout = ({children}) => {
+const PublicLayout = ({ children }) => {
   return (
     <>
-        <Nav />
-        <MobileNav />
-        <main>{children}</main>
-        <Footer />
+      <Nav />
+      <MobileNav />
+      <main>{children}</main>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default PublicLayout
+export default PublicLayout;

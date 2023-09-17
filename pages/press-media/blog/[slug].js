@@ -8,8 +8,7 @@ import MobileNav from "../../../components/MobileNav/MobileNav";
 import Footer from "../../../components/Footer/Footer";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from '@contentful/rich-text-types';
-
+import { BLOCKS } from "@contentful/rich-text-types";
 
 const contentful = require("contentful");
 
@@ -69,34 +68,38 @@ export const getStaticProps = async ({ params }) => {
     };
   });
 
-  if(!formattedBlogPosts.length) {
+  if (!formattedBlogPosts.length) {
     return {
       redirect: {
-        destination: '/',
-        permanent: false
-      }
-    }
+        destination: "/",
+        permanent: false,
+      },
+    };
   }
 
   return {
     props: {
-        post: formattedBlogPosts[0],
+      post: formattedBlogPosts[0],
     },
-    revalidate: 5
-  }
+    revalidate: 5,
+  };
 };
 
 const blogPost = ({ post }) => {
-
   const dtrOptions = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <Image src={`https:${node.data.target.fields.file.url}`} width={node.data.target.fields.file.details.image.width} height={node.data.target.fields.file.details.image.height} alt={node.data.target.fields.title} />
-      )
-    }
-  }
+        <Image
+          src={`https:${node.data.target.fields.file.url}`}
+          width={node.data.target.fields.file.details.image.width}
+          height={node.data.target.fields.file.details.image.height}
+          alt={node.data.target.fields.title}
+        />
+      ),
+    },
+  };
 
-  if(!post) return <div>Loading...</div>
+  if (!post) return <div>Loading...</div>;
 
   return (
     <>
@@ -143,7 +146,7 @@ const blogPost = ({ post }) => {
               </h1>
             </header>
             <article>
-                {documentToReactComponents(post.writtenContent, dtrOptions)}
+              {documentToReactComponents(post.writtenContent, dtrOptions)}
             </article>
           </div>
         </section>
