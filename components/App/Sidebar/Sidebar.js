@@ -4,9 +4,9 @@ import { UserButton } from "@clerk/nextjs";
 
 const Sidebar = ({ userInfo }) => {
   return (
-    <div className="flex max-w-[20%] h-screen flex-col justify-between border-e bg-white">
+    <div className="flex h-screen max-w-[20%] flex-col justify-between border-e bg-white">
       <div className="px-4 py-6">
-        <span className="flex w-full py-4 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">
+        <span className="flex w-full place-content-center rounded-lg bg-gray-100 py-4 text-xs text-gray-600">
           <img src="/logo-full-color.png" className="w-1/3" />
         </span>
 
