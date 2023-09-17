@@ -107,12 +107,12 @@ const blogPost = ({ post }) => {
       <MobileNav />
       <main>
         <section className="dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-[900px] sm:py-16 lg:px-6">
-            <header className="mb-4 lg:mb-6 not-format">
-              <address className="flex items-center mb-6 not-italic">
-                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+          <div className="mx-auto max-w-[900px] px-4 py-8 sm:py-16 lg:px-6">
+            <header className="not-format mb-4 lg:mb-6">
+              <address className="mb-6 flex items-center not-italic">
+                <div className="mr-3 inline-flex items-center text-sm text-gray-900 dark:text-white">
                   <Image
-                    className="mr-4 w-16 h-16 rounded-full"
+                    className="mr-4 h-16 w-16 rounded-full"
                     width={600}
                     height={600}
                     src={`https:${post.author.photo.fields.file.url}`}
@@ -141,7 +141,7 @@ const blogPost = ({ post }) => {
                   </div>
                 </div>
               </address>
-              <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+              <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white lg:mb-6 lg:text-4xl">
                 {post.title}
               </h1>
             </header>

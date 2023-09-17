@@ -41,13 +41,13 @@ export const getStaticPaths = async () => {
     };
   });
 
-  if(!formattedPressReleases.length) {
+  if (!formattedPressReleases.length) {
     return {
       redirect: {
-        destination: '/',
-        permanent: false
-      }
-    }
+        destination: "/",
+        permanent: false,
+      },
+    };
   }
 
   return {
@@ -78,15 +78,14 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-        release: formattedPressReleases[0],
+      release: formattedPressReleases[0],
     },
-    revalidate: 5
-  }
+    revalidate: 5,
+  };
 };
 
 const pressRelease = ({ release }) => {
-
-  if(!release) return <div>Loading...</div>
+  if (!release) return <div>Loading...</div>;
 
   return (
     <>
@@ -94,12 +93,12 @@ const pressRelease = ({ release }) => {
       <MobileNav />
       <main>
         <section className="dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-[900px] sm:py-16 lg:px-6">
-            <header class="mb-4 lg:mb-6 not-format">
-              <address class="flex items-center mb-6 not-italic">
-                <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+          <div className="mx-auto max-w-[900px] px-4 py-8 sm:py-16 lg:px-6">
+            <header class="not-format mb-4 lg:mb-6">
+              <address class="mb-6 flex items-center not-italic">
+                <div class="mr-3 inline-flex items-center text-sm text-gray-900 dark:text-white">
                   <Image
-                    class="mr-4 w-16 h-16 rounded-full"
+                    class="mr-4 h-16 w-16 rounded-full"
                     width={600}
                     height={600}
                     src={`https:${release.author.photo.fields.file.url}`}
@@ -128,12 +127,12 @@ const pressRelease = ({ release }) => {
                   </div>
                 </div>
               </address>
-              <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+              <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white lg:mb-6 lg:text-4xl">
                 {release.title}
               </h1>
             </header>
             <article>
-                {documentToReactComponents(release.writtenContent)}
+              {documentToReactComponents(release.writtenContent)}
             </article>
           </div>
         </section>

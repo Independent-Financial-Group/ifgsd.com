@@ -15,7 +15,7 @@ export const getServerSideProps = async () => {
 
   const res = await fetch(
     "https://api.bamboohr.com/api/gateway.php/ifgsd/v1/applicant_tracking/jobs?statusGroups=Open&sortBy=department",
-    options
+    options,
   );
   const data = await res.json();
 
@@ -27,7 +27,7 @@ const index = ({ data }) => {
     <>
       <Nav />
       <main>
-        <section className="max-w-screen-xl mx-auto my-32">
+        <section className="mx-auto my-32 max-w-screen-xl">
           <div>
             <JobBoard jobs={data} />
           </div>

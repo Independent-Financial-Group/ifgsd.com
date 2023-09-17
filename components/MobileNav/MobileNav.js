@@ -19,9 +19,9 @@ const MobileNav = () => {
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute z-0 inset-y-0 left-0 flex items-center">
+              <div className="absolute inset-y-0 left-0 z-0 flex items-center">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 bg-hazard-blue-500 text-white drop-shadow font-bold">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-hazard-blue-500 p-2 font-bold text-white drop-shadow">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -46,10 +46,10 @@ const MobileNav = () => {
             <div className="flex flex-col">
               <Menu>
                 <div>
-                  <Menu.Button className="h-full flex flex-row items-center p-3">
+                  <Menu.Button className="flex h-full flex-row items-center p-3">
                     <p>Join IFG</p>
                     <ChevronDownIcon
-                      className="h-5 w-5 ml-2"
+                      className="ml-2 h-5 w-5"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -62,12 +62,12 @@ const MobileNav = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="flex flex-col ml-10">
+                    <Menu.Items className="ml-10 flex flex-col">
                       <Menu.Item>
                         <Menu as="div" className="p-3">
                           <Menu.Button className="flex flex-row items-center">
                             Why Choose Us
-                            <ChevronDownIcon className="w-5 h-5 ml-2" />
+                            <ChevronDownIcon className="ml-2 h-5 w-5" />
                           </Menu.Button>
                           <Transition
                             as={Fragment}
@@ -78,7 +78,7 @@ const MobileNav = () => {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
                           >
-                            <Menu.Items className="flex flex-col ml-10">
+                            <Menu.Items className="ml-10 flex flex-col">
                               <Menu.Item className="p-3">
                                 {({ active }) => (
                                   <Link
@@ -137,7 +137,7 @@ const MobileNav = () => {
                         <Menu as="div" className="p-3">
                           <Menu.Button className="flex flex-row items-center">
                             Business Solution Models
-                            <ChevronDownIcon className="w-5 h-5 ml-2" />
+                            <ChevronDownIcon className="ml-2 h-5 w-5" />
                           </Menu.Button>
                           <Transition
                             as={Fragment}
@@ -148,7 +148,7 @@ const MobileNav = () => {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
                           >
-                            <Menu.Items className="flex flex-col ml-10">
+                            <Menu.Items className="ml-10 flex flex-col">
                               <Menu.Item className="p-3">
                                 {({ active }) => (
                                   <Link
@@ -209,10 +209,10 @@ const MobileNav = () => {
               </Menu>
               <Menu>
                 <div>
-                  <Menu.Button className="h-full flex flex-row items-center p-3">
+                  <Menu.Button className="flex h-full flex-row items-center p-3">
                     <p>About</p>
                     <ChevronDownIcon
-                      className="h-5 w-5 ml-2"
+                      className="ml-2 h-5 w-5"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -225,7 +225,7 @@ const MobileNav = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="flex flex-col ml-10">
+                    <Menu.Items className="ml-10 flex flex-col">
                       <Menu.Item className="p-3">
                         {({ active }) => (
                           <Link
@@ -272,10 +272,10 @@ const MobileNav = () => {
               </Menu>
               <Menu>
                 <div>
-                  <Menu.Button className="h-full flex flex-row items-center p-3">
+                  <Menu.Button className="flex h-full flex-row items-center p-3">
                     <p>Press & Media</p>
                     <ChevronDownIcon
-                      className="h-5 w-5 ml-2"
+                      className="ml-2 h-5 w-5"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -288,7 +288,7 @@ const MobileNav = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="flex flex-col ml-10">
+                    <Menu.Items className="ml-10 flex flex-col">
                       <Menu.Item className="p-3">
                         {({ active }) => (
                           <Link
@@ -325,10 +325,10 @@ const MobileNav = () => {
               </Menu>
               <Menu>
                 <div>
-                  <Menu.Button className="h-full flex flex-row p-3 items-center">
+                  <Menu.Button className="flex h-full flex-row items-center p-3">
                     <p>Offerings</p>
                     <ChevronDownIcon
-                      className="h-5 w-5 ml-2"
+                      className="ml-2 h-5 w-5"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -341,7 +341,7 @@ const MobileNav = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="flex flex-col ml-10">
+                    <Menu.Items className="ml-10 flex flex-col">
                       <Menu.Item className="p-3">
                         {({ active }) => (
                           <Link
@@ -418,10 +418,10 @@ const MobileNav = () => {
               </Menu>
               <Menu>
                 <div>
-                  <Menu.Button className="h-full flex flex-row p-3 items-center">
+                  <Menu.Button className="flex h-full flex-row items-center p-3">
                     <p>Careers</p>
                     <ChevronDownIcon
-                      className="h-5 w-5 ml-2"
+                      className="ml-2 h-5 w-5"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -434,7 +434,7 @@ const MobileNav = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="flex flex-col ml-10">
+                    <Menu.Items className="ml-10 flex flex-col">
                       <Menu.Item className="p-3">
                         {({ active }) => (
                           <Link
@@ -469,16 +469,16 @@ const MobileNav = () => {
                   </Transition>
                 </div>
               </Menu>
-              <Menu className="bg-neon-orange-500 h-full rounded mb-2">
+              <Menu className="mb-2 h-full rounded bg-neon-orange-500">
                 <div>
-                  <Menu.Button className="h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500">
+                  <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 text-seabreeze-500">
                     <Link href="https://new.ifgsd.com">Find an Advisor</Link>
                   </Menu.Button>
                 </div>
               </Menu>
-              <Menu className="bg-hazard-blue-500 h-full rounded">
+              <Menu className="h-full rounded bg-hazard-blue-500">
                 <div>
-                  <Menu.Button className="h-full flex flex-row items-center mx-auto p-3 text-seabreeze-500">
+                  <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 text-seabreeze-500">
                     <Link href="https://new.ifgsd.com">Rep Login</Link>
                   </Menu.Button>
                 </div>

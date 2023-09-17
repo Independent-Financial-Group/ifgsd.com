@@ -4,7 +4,7 @@ import { SignIn } from "@clerk/nextjs";
 const index = () => {
   return (
     <>
-      <div className="h-[100vh] bg-[url(/sign-in/bg-coronado-compressed.jpg)] bg-no-repeat bg-cover relative">
+      <div className="relative h-[100vh] bg-[url(/sign-in/bg-coronado-compressed.jpg)] bg-cover bg-no-repeat">
         <SignIn
           appearance={{
             elements: {

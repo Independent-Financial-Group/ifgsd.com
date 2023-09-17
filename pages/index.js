@@ -128,7 +128,7 @@ const HomePage = ({
       animate(
         ".product-card",
         { opacity: [0, 1], y: [100, 0] },
-        { delay: stagger(0.4) }
+        { delay: stagger(0.4) },
       );
     }
   }, [isInView]);
@@ -143,21 +143,21 @@ const HomePage = ({
       <Hero content={pageContent.hero} />
       <main>
         <section className="relative my-16 lg:my-32">
-          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-44 lg:left-40">
+          <p className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block">
             advisors
           </p>
-          <p className="hidden md:text-[160px] text-[#E2E7EB] font-bold absolute z-0 lg:block lg:top-35 lf:left-62">
+          <p className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block">
             happy
           </p>
-          <div className="px-4 lg:px-0 mx-auto max-w-screen-xl relative z-10">
-            <div className="mx-auto text-center max-w-prose my-10">
-              <h2 className="text-xl lg:text-2xl font-bold text-dunkel-blue-500">
+          <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
+            <div className="mx-auto my-10 max-w-prose text-center">
+              <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
                 {pageContent.sectionTestimonial.headingSecondary}
               </h2>
-              <h3 className="text-5xl lg:text-6xl font-bold text-hazard-blue-500">
+              <h3 className="text-5xl font-bold text-hazard-blue-500 lg:text-6xl">
                 {pageContent.sectionTestimonial.headingPrimary}
               </h3>
-              <p className="text-xl md:mt-5 text-dunkel-blue-500">
+              <p className="text-xl text-dunkel-blue-500 md:mt-5">
                 {pageContent.sectionTestimonial.paragraph}
               </p>
             </div>
@@ -165,16 +165,16 @@ const HomePage = ({
               content={pageContent.sectionTestimonial}
               testimonials={testimonials}
             />
-            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">
+            <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
               happy
             </p>
-            <p className="text-[80px] text-[#E2E7EB] font-bold lg:hidden">
+            <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
               advisors
             </p>
           </div>
         </section>
         <section className="my-16 lg:my-32">
-          <div className="px-4 lg:px-0 mx-auto max-w-screen-xl">
+          <div className="mx-auto max-w-screen-xl px-4 lg:px-0">
             <BranchAnnouncement newBranch={newBranch} />
           </div>
         </section>
@@ -184,11 +184,11 @@ const HomePage = ({
           </div>
         </section>
         <section className="text-seabreeze-500">
-          <div className="rounded-[40px] px-4 mx-auto max-w-screen-xl">
-            <div className="bg-[url('/home/ifg-wave-2.jpg')] bg-no-repeat bg-cover rounded-[40px]">
-              <div className="bg-blue-wave-700/60 rounded-[40px] py-8 px-4 sm:py-16 lg:px-6">
-                <div className="max-w-screen-md mb-8 lg:mb-16 mx-auto text-center">
-                  <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-seabreeze-500">
+          <div className="mx-auto max-w-screen-xl rounded-[40px] px-4">
+            <div className="rounded-[40px] bg-[url('/home/ifg-wave-2.jpg')] bg-cover bg-no-repeat">
+              <div className="rounded-[40px] bg-blue-wave-700/60 px-4 py-8 sm:py-16 lg:px-6">
+                <div className="mx-auto mb-8 max-w-screen-md text-center lg:mb-16">
+                  <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-seabreeze-500">
                     {pageContent.sectionOfferings.heading}
                   </h2>
                   <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
@@ -197,10 +197,10 @@ const HomePage = ({
                 </div>
                 <div
                   ref={scope}
-                  className=" lg:text-left space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+                  className=" space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3 lg:text-left"
                 >
                   <div className="product-card">
-                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
                       <img
                         src={`https://${pageContent.sectionOfferings.offerings.offeringOne.icon.fields.file.url}`}
                         alt={
@@ -221,7 +221,7 @@ const HomePage = ({
                         pageContent.sectionOfferings.offerings.offeringOne
                           .paragraph
                       }{" "}
-                      <span className="text-neon-orange-500 font-bold">
+                      <span className="font-bold text-neon-orange-500">
                         <Link href="/offerings/practice-development">
                           Learn More &rarr;
                         </Link>
@@ -229,7 +229,7 @@ const HomePage = ({
                     </p>
                   </div>
                   <div className="product-card">
-                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
                       <img
                         src={`https://${pageContent.sectionOfferings.offerings.offeringTwo.icon.fields.file.url}`}
                         alt={
@@ -250,7 +250,7 @@ const HomePage = ({
                         pageContent.sectionOfferings.offerings.offeringThree
                           .paragraph
                       }{" "}
-                      <span className="text-neon-orange-500 font-bold">
+                      <span className="font-bold text-neon-orange-500">
                         <Link href="/offerings/practice-development">
                           Learn More &rarr;
                         </Link>
@@ -258,7 +258,7 @@ const HomePage = ({
                     </p>
                   </div>
                   <div className="product-card">
-                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
                       <img
                         src={`https://${pageContent.sectionOfferings.offerings.offeringThree.icon.fields.file.url}`}
                         alt={
@@ -268,7 +268,7 @@ const HomePage = ({
                         className="w-10"
                       />
 
-                      <h3 className="text-xl font-bold dark:text-seabreeze-500 text-seabreeze-500">
+                      <h3 className="text-xl font-bold text-seabreeze-500 dark:text-seabreeze-500">
                         {
                           pageContent.sectionOfferings.offerings.offeringThree
                             .header
@@ -280,7 +280,7 @@ const HomePage = ({
                         pageContent.sectionOfferings.offerings.offeringThree
                           .paragraph
                       }{" "}
-                      <span className="text-neon-orange-500 font-bold">
+                      <span className="font-bold text-neon-orange-500">
                         <Link href="/offerings/practice-development">
                           Learn More &rarr;
                         </Link>
@@ -288,7 +288,7 @@ const HomePage = ({
                     </p>
                   </div>
                   <div className="product-card">
-                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
                       <img
                         src={`https://${pageContent.sectionOfferings.offerings.offeringFour.icon.fields.file.url}`}
                         alt={
@@ -310,7 +310,7 @@ const HomePage = ({
                         pageContent.sectionOfferings.offerings.offeringFour
                           .paragraph
                       }{" "}
-                      <span className="text-neon-orange-500 font-bold">
+                      <span className="font-bold text-neon-orange-500">
                         <Link href="/offerings/practice-development">
                           Learn More &rarr;
                         </Link>
@@ -318,7 +318,7 @@ const HomePage = ({
                     </p>
                   </div>
                   <div className="product-card">
-                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
                       <img
                         src={`https://${pageContent.sectionOfferings.offerings.offeringFive.icon.fields.file.url}`}
                         alt={
@@ -340,7 +340,7 @@ const HomePage = ({
                         pageContent.sectionOfferings.offerings.offeringFive
                           .paragraph
                       }{" "}
-                      <span className="text-neon-orange-500 font-bold">
+                      <span className="font-bold text-neon-orange-500">
                         <Link href="/offerings/practice-development">
                           Learn More &rarr;
                         </Link>
@@ -348,7 +348,7 @@ const HomePage = ({
                     </p>
                   </div>
                   <div className="product-card">
-                    <div className="flex flex-row items-center justify-start mb-2 gap-2">
+                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
                       <img
                         src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`}
                         alt={
@@ -370,7 +370,7 @@ const HomePage = ({
                         pageContent.sectionOfferings.offerings.offeringSix
                           .paragraph
                       }{" "}
-                      <span className="text-neon-orange-500 font-bold">
+                      <span className="font-bold text-neon-orange-500">
                         <Link href="/offerings/practice-development">
                           Learn More &rarr;
                         </Link>
@@ -383,10 +383,10 @@ const HomePage = ({
           </div>
         </section>
         <section className="my-32">
-          <div className="mx-auto px-4 lg:px-0 max-w-screen-xl">
+          <div className="mx-auto max-w-screen-xl px-4 lg:px-0">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="">
-                <div className="flex flex-col items-center lg:items-start relative">
+                <div className="relative flex flex-col items-center lg:items-start">
                   <img
                     src="/graphicAssets/CTA-Arrow.png"
                     alt="arrow pointing to sign-up button"
@@ -396,7 +396,7 @@ const HomePage = ({
                     {pageContent.sectionCTA.heading}
                   </h2>
 
-                  <p className="text-center lg:text-left py-4 lg:py-0 text-dunkel-blue-100 text-lg sm:mt-4 sm:block">
+                  <p className="py-4 text-center text-lg text-dunkel-blue-100 sm:mt-4 sm:block lg:py-0 lg:text-left">
                     {pageContent.sectionCTA.paragraph}
                   </p>
 
@@ -411,7 +411,7 @@ const HomePage = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2 relative">
+              <div className="relative grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
                 <img
                   alt="grahic design accent"
                   src="/graphicAssets/CTA-ornament.png"
@@ -425,13 +425,13 @@ const HomePage = ({
                 <Image
                   alt="Student"
                   src={ctaImage1}
-                  className="h-40 w-full object-cover sm:h-56 md:h-full rounded-lg"
+                  className="h-40 w-full rounded-lg object-cover sm:h-56 md:h-full"
                 />
 
                 <Image
                   alt="Student"
                   src={ctaImage2}
-                  className="h-40 w-full object-cover sm:h-56 md:h-full rounded-lg"
+                  className="h-40 w-full rounded-lg object-cover sm:h-56 md:h-full"
                 />
               </div>
             </div>

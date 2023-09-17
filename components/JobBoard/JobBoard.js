@@ -7,7 +7,7 @@ const JobBoard = ({ jobs }) => {
 
   return (
     <>
-      <h3 className="text-4xl font-bold text-blue-wave-500 mb-12">
+      <h3 className="mb-12 text-4xl font-bold text-blue-wave-500">
         {jobs.length} Positions Open
       </h3>
       <ul className="flex flex-col gap-y-4">

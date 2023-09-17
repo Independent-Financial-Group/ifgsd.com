@@ -10,7 +10,7 @@ const index = () => {
   }
 
   return (
-    <div className="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
+    <div className="dark:bg-slate-900 leading-default text-slate-500 m-0 bg-gray-50 font-sans text-base font-normal antialiased">
       <Sidebar userInfo={user} />
     </div>
   );

@@ -6,13 +6,13 @@ import Link from "next/link";
 const ourMission = () => {
   return (
     <PublicLayout>
-      <section className="bg-hazard-blue-500 h-[20vh] relative mb-32">
+      <section className="relative mb-32 h-[20vh] bg-hazard-blue-500">
         <Container>
           <div className="absolute top-1/2 -translate-y-1/2">
             <h2 className="text-2xl font-bold text-white">
               Committed to Excellence
             </h2>
-            <h1 className="lg:text-6xl font-bold text-white">Our Mission</h1>
+            <h1 className="font-bold text-white lg:text-6xl">Our Mission</h1>
           </div>
         </Container>
       </section>
@@ -24,11 +24,11 @@ const ourMission = () => {
                 <img
                   src="/graphicAssets/triangle-highlight.png"
                   alt="ornament"
-                  className="inline mr-4"
+                  className="mr-4 inline"
                 />{" "}
                 Personalized Services
               </h2>
-              <p className="text-lg my-6">
+              <p className="my-6 text-lg">
                 Independent Financial Group is a comprehensive Independent
                 Financial Services company committed to the support, success and
                 independence of our financial advisors and their clients. We
@@ -53,16 +53,16 @@ const ourMission = () => {
           </div>
         </Container>
       </section>
-      <section className="text-white py-10 my-32">
+      <section className="my-32 py-10 text-white">
         <Container classes={"bg-neon-orange-500 rounded-[40px] py-8"}>
-          <h2 className="text-3xl font-bold text-center">Our Core Values</h2>
-          <div className="lg:grid lg:grid-cols-3 gap-5 p-4">
+          <h2 className="text-center text-3xl font-bold">Our Core Values</h2>
+          <div className="gap-5 p-4 lg:grid lg:grid-cols-3">
             <div className="border-r-2">
               <img
                 src="/graphicAssets/handshake.png"
                 alt="handshake of integrity"
               />
-              <h3 className="text-xl font-bold my-4">Integrity</h3>
+              <h3 className="my-4 text-xl font-bold">Integrity</h3>
               <p className="text-lg">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptas alias, debitis saepe nesciunt natus esse at aut neque
@@ -71,7 +71,7 @@ const ourMission = () => {
             </div>
             <div className="border-r-2">
               <img src="/graphicAssets/balance.png" alt="balanced scale" />
-              <h3 className="text-xl font-bold my-4">Balance</h3>
+              <h3 className="my-4 text-xl font-bold">Balance</h3>
               <p className="text-lg">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptas alias, debitis saepe nesciunt natus esse at aut neque
@@ -80,7 +80,7 @@ const ourMission = () => {
             </div>
             <div>
               <img src="/graphicAssets/person.png" alt="Independent Person" />
-              <h3 className="text-xl font-bold my-4">Independence</h3>
+              <h3 className="my-4 text-xl font-bold">Independence</h3>
               <p className="text-lg">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptas alias, debitis saepe nesciunt natus esse at aut neque
@@ -98,7 +98,7 @@ const ourMission = () => {
                 <img
                   src="/graphicAssets/triangle-highlight.png"
                   alt="ornament"
-                  className="inline mr-4"
+                  className="mr-4 inline"
                 />
                 Experience Independence.
               </h2>
@@ -113,7 +113,7 @@ const ourMission = () => {
               </p>
               <Link
                 href="/join/contact"
-                className="border-2 border-hazard-blue-500 px-4 py-2 text-hazard-blue-500 font-bold rounded"
+                className="rounded border-2 border-hazard-blue-500 px-4 py-2 font-bold text-hazard-blue-500"
               >
                 Talk to an IFG Rep
               </Link>
@@ -123,10 +123,10 @@ const ourMission = () => {
                 <img
                   src="/graphicAssets/CTA-ornament.png"
                   alt="ornament"
-                  className="absolute left-1/2 -translate-x-1/2 -bottom-10"
+                  className="absolute -bottom-10 left-1/2 -translate-x-1/2"
                 />
                 <img
-                  className=" max-auto rounded-lg h-[500px] w-[450px] object-top object-cover"
+                  className=" max-auto h-[500px] w-[450px] rounded-lg object-cover object-top"
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
                   alt="Financial Professional"
                 />

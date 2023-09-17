@@ -39,7 +39,7 @@ const Testimonial = ({ content, testimonials }) => {
   return (
     <>
       <div>
-        <div className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16">
+        <div className="items-center lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8">
           <div className="lg:col-span-1 ">
             <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
               <iframe
@@ -61,7 +61,7 @@ const Testimonial = ({ content, testimonials }) => {
 
           <div className="relative mb-16 lg:col-span-1 lg:mx-0">
             <div className="flex flex-row items-center">
-              <button className="hidden lg:block prev-button rounded-full border  border-neon-orange-500 p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white">
+              <button className="prev-button hidden rounded-full border border-neon-orange-500  p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white lg:block">
                 <span className="sr-only">Previous Slide</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -98,12 +98,12 @@ const Testimonial = ({ content, testimonials }) => {
                               </p>
                             </div>
                           </div>
-                          <footer className="mt-8 text-sm text-gray-500 flex items-center gap-3">
+                          <footer className="mt-8 flex items-center gap-3 text-sm text-gray-500">
                             <div>
-                              <p className="text-blue-wave-500 font-bold text-right text-sm">
+                              <p className="text-right text-sm font-bold text-blue-wave-500">
                                 {testimonial.fullName}
                               </p>
-                              <p className="text-blue-wave-900 font-semibold text-right text-xs">
+                              <p className="text-right text-xs font-semibold text-blue-wave-900">
                                 {testimonial.state}
                               </p>
                             </div>
@@ -121,7 +121,7 @@ const Testimonial = ({ content, testimonials }) => {
                 </div>
               </div>
 
-              <button className="hidden lg:block next-button rounded-full border border-neon-orange-500 p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white">
+              <button className="next-button hidden rounded-full border border-neon-orange-500 p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white lg:block">
                 <span className="sr-only">Next Slide</span>
                 <svg
                   className="h-5 w-5 rtl:rotate-180"

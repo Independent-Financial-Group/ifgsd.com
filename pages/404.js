@@ -3,12 +3,12 @@ import React from "react";
 
 const Custom404 = () => {
   return (
-    <div class="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16 outline h-screen">
+    <div class="flex h-screen flex-col-reverse items-center justify-center gap-16 px-4 py-24 outline md:gap-28 md:px-44 md:py-20 lg:flex-row lg:px-24 lg:py-24">
       <div class="max-w-screen-xl">
         <div class="relative">
           <div class="absolute">
             <div class="">
-              <h1 class="my-2 text-gray-800 font-bold text-2xl">
+              <h1 class="my-2 text-2xl font-bold text-gray-800">
                 Looks like the page you're looking for doesn't exist!
               </h1>
               <p class="my-8 text-gray-800">
@@ -17,7 +17,7 @@ const Custom404 = () => {
               </p>
               <Link
                 href="/"
-                class="sm:w-full lg:w-auto my-6 border rounded md py-4 px-8 text-center bg-neon-orange-500 text-white hover:bg-neon-orange-700 focus:outline-none focus:ring-2 focus:ring-neon-orange-700 focus:ring-opacity-50"
+                class="md my-6 rounded border bg-neon-orange-500 px-8 py-4 text-center text-white hover:bg-neon-orange-700 focus:outline-none focus:ring-2 focus:ring-neon-orange-700 focus:ring-opacity-50 sm:w-full lg:w-auto"
               >
                 Take me there!
               </Link>

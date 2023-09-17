@@ -3,8 +3,8 @@ import { UserProfile } from "@clerk/nextjs";
 
 const profile = () => {
   return (
-    <div className="bg-[url(/sign-in/bg-coronado-compressed.jpg)] bg-no-repeat bg-cover">
-      <div className="max-w-screen-xl mx-auto relative h-[100vh]">
+    <div className="bg-[url(/sign-in/bg-coronado-compressed.jpg)] bg-cover bg-no-repeat">
+      <div className="relative mx-auto h-[100vh] max-w-screen-xl">
         <UserProfile
           appearance={{
             elements: {

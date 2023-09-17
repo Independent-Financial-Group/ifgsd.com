@@ -43,7 +43,7 @@ const index = ({ formattedPosts }) => {
       <Nav />
       <MobileNav />
       <header>
-        <div className="bg-seabreeze-500 pt-24 sm:pt-32 px-8">
+        <div className="bg-seabreeze-500 px-8 pt-24 sm:pt-32">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight text-blue-wave-500 sm:text-4xl">
@@ -71,7 +71,7 @@ const index = ({ formattedPosts }) => {
                     </time>
                     <Link
                       href="#"
-                      className="relative z-10 rounded-full px-3 py-1.5 font-medium bg-sunburst-100 text-dunkel-blue-500"
+                      className="relative z-10 rounded-full bg-sunburst-100 px-3 py-1.5 font-medium text-dunkel-blue-500"
                     >
                       Educational
                     </Link>
@@ -106,7 +106,7 @@ const index = ({ formattedPosts }) => {
                 </article>
               ))}
             </div>
-            <aside className="mx-auto mt-10 xl:grid max-w-2xl xl:grid-cols-1 gap-x-8 gap-y-16 border-t border-sunburst-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none xl:col-span-2 hidden">
+            <aside className="mx-auto mt-10 hidden max-w-2xl gap-x-8 gap-y-16 border-t border-sunburst-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none xl:col-span-2 xl:grid xl:grid-cols-1">
               Categories
               <ul>
                 <li>press releases</li>
