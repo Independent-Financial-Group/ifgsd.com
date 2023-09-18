@@ -87,7 +87,7 @@ const Testimonial = ({ content, testimonials }) => {
                         key={testimonial.headshot.sys.id}
                         className="swiper-slide !h-fit lg:!h-[450px]"
                       >
-                        <blockquote className="flex h-full flex-col justify-between">
+                        <blockquote className="flex h-full flex-col justify-between px-4">
                           <div>
                             <div className="mt-4>">
                               <h3 className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
