@@ -57,6 +57,7 @@ const Testimonial = ({ content, testimonials }) => {
               ></iframe>
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
+            <img src="/graphicAssets/ornament-2.png" alt="ornament" className="absolute bottom-12 -left-16 -z-10" />
           </div>
 
           <div className="relative mb-16 lg:col-span-1 lg:mx-0">
