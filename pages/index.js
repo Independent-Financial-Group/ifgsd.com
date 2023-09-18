@@ -43,6 +43,7 @@ export async function getStaticProps() {
       featuredAnnouncement: pageContent.fields.featuredAnnouncement,
       reference: pageContent.fields.featuredAnnouncementReference,
       heading: pageContent.fields.heroSectionHeading,
+      subheading: pageContent.fields.heroSectionSubheading,
       paragraph: pageContent.fields.heroParagraph,
     },
     sectionTestimonial: {
