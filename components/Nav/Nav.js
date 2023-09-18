@@ -11,7 +11,7 @@ const Nav = () => {
       <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
         <div className="col">
           <Link href="/">
-            <img width={200} alt="IFG logo" src="/logo-full-color.png" />
+            <img width={250} alt="IFG logo" src="/logo-full-color.png" />
           </Link>
         </div>
         <div className="col flex shrink-0 flex-row items-center gap-x-10 ">
