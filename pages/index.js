@@ -402,7 +402,7 @@ const HomePage = ({
                       href="#"
                       className="order-3 inline-block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
                     >
-                      Get Started Today
+                      Get Started
                     </Link>
                   </div>
                 </div>
