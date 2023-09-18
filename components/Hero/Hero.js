@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Button from "../Button/Button";
 
 const Hero = ({ content }) => {
   return (
@@ -20,6 +21,7 @@ const Hero = ({ content }) => {
             </div>
           </div>
           <div className="max-w-prose">
+            <h2 className="font-bold text-3xl text-seabreeze-500">{content.subheading}</h2>
             <h1 className="text-4xl font-bold text-seabreeze-500 md:text-6xl">
               {content.heading}
             </h1>
@@ -27,18 +29,16 @@ const Hero = ({ content }) => {
               {content.paragraph}
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <a
-                href="/join/contact"
-                className="rounded-md bg-hazard-blue-500 px-3.5 py-2.5 text-sm font-semibold text-seabreeze-500 shadow-sm hover:bg-sunburst-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Get started
-              </a>
+              <Button href={"/join/contact"} type="primary">
+                Get Started
+              </Button>
+              <Button href={"/join/why-choose-us/our-mission"}>
+                Learn more <span aria-hidden="true">→</span>
+              </Button>
               <a
                 href="/about/our-story"
                 className="text-md font-semibold leading-6 text-neon-orange-500"
-              >
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              ></a>
             </div>
           </div>
         </div>
