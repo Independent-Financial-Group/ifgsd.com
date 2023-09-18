@@ -342,57 +342,9 @@ const Nav = () => {
                         className={`${
                           active && "bg-hazard-blue-500"
                         } hover:text-seabreeze-500`}
-                        href="/offerings/products"
+                        href="/offerings/compliance"
                       >
-                        Products & Platforms
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3">
-                    {({ active }) => (
-                      <Link
-                        className={`${
-                          active && "bg-hazard-blue-500"
-                        } hover:text-seabreeze-500`}
-                        href="/offerings/marketing-and-product-support"
-                      >
-                        Marketing & Product Support
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3">
-                    {({ active }) => (
-                      <Link
-                        className={`${
-                          active && "bg-hazard-blue-500"
-                        } hover:text-seabreeze-500`}
-                        href="/offerings/platform-support"
-                      >
-                        Platform Support
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3">
-                    {({ active }) => (
-                      <Link
-                        className={`${
-                          active && "bg-hazard-blue-500"
-                        } hover:text-seabreeze-500`}
-                        href="/offerings/technology"
-                      >
-                        Technology
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3">
-                    {({ active }) => (
-                      <Link
-                        className={`${
-                          active && "bg-hazard-blue-500"
-                        } hover:text-seabreeze-500`}
-                        href="/offerings/practice-development"
-                      >
-                        Practice Development
+                        Compliance
                       </Link>
                     )}
                   </Menu.Item>
@@ -414,9 +366,45 @@ const Nav = () => {
                         className={`${
                           active && "bg-hazard-blue-500"
                         } hover:text-seabreeze-500`}
-                        href="/offerings/compliance"
+                        href="/offerings/marketing-support"
                       >
-                        Compliance
+                        Marketing Support
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item className="px-2 py-3">
+                    {({ active }) => (
+                      <Link
+                        className={`${
+                          active && "bg-hazard-blue-500"
+                        } hover:text-seabreeze-500`}
+                        href="/offerings/practice-development"
+                      >
+                        Practice Development
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item className="px-2 py-3">
+                    {({ active }) => (
+                      <Link
+                        className={`${
+                          active && "bg-hazard-blue-500"
+                        } hover:text-seabreeze-500`}
+                        href="/offerings/product-and-platform support"
+                      >
+                        Product & Platform Support
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item className="px-2 py-3">
+                    {({ active }) => (
+                      <Link
+                        className={`${
+                          active && "bg-hazard-blue-500"
+                        } hover:text-seabreeze-500`}
+                        href="/offerings/technology"
+                      >
+                        Technology
                       </Link>
                     )}
                   </Menu.Item>
