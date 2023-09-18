@@ -25,7 +25,7 @@ const ourMission = () => {
                   src="/graphicAssets/triangle-highlight.png"
                   alt="ornament"
                   className="mr-4 inline"
-                />{" "}
+                />
                 Personalized Services
               </h2>
               <p className="my-6 text-lg">
