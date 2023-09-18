@@ -9,10 +9,10 @@ const ourMission = () => {
       <section className="relative mb-32 h-[20vh] bg-hazard-blue-500">
         <Container>
           <div className="absolute top-1/2 -translate-y-1/2">
-            <h2 className="text-2xl font-bold text-white">
-              Committed to Excellence
-            </h2>
-            <h1 className="font-bold text-white lg:text-6xl">Our Mission</h1>
+            <h1 className="text-2xl font-bold text-white">
+             <img className="inline" src="/graphicAssets/triangle-highlight.png" alt="ornament highlight" /> Our Mission
+            </h1>
+            <h2 className="font-bold text-white lg:text-6xl">Commited to Excellence</h2>
           </div>
         </Container>
       </section>
