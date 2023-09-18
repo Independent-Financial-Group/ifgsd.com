@@ -188,7 +188,7 @@ const Nav = () => {
                         className={`${
                           active && "bg-hazard-blue-500"
                         } hover:text-seabreeze-500`}
-                        href="/join/visit-us"
+                        href="/join/contact"
                       >
                         Request More Information
                       </Link>
@@ -218,9 +218,9 @@ const Nav = () => {
                     {({ active }) => (
                       <Link
                         className={`${active && "bg-hazard-blue-500"}`}
-                        href="/about/our-story"
+                        href="/about/culture"
                       >
-                        Our Story
+                        Culture
                       </Link>
                     )}
                   </Menu.Item>
@@ -238,9 +238,9 @@ const Nav = () => {
                     {({ active }) => (
                       <Link
                         className={`${active && "bg-hazard-blue-500"}`}
-                        href="/about/culture"
+                        href="/about/our-story"
                       >
-                        Culture
+                        Our Story
                       </Link>
                     )}
                   </Menu.Item>
@@ -248,7 +248,7 @@ const Nav = () => {
                     {({ active }) => (
                       <Link
                         className={`${active && "bg-hazard-blue-500"}`}
-                        href="/about/leadership"
+                        href="/about/philantropy"
                       >
                         Philanthropy
                       </Link>
@@ -283,9 +283,9 @@ const Nav = () => {
                         className={`${
                           active && "bg-hazard-blue-500"
                         } hover:text-seabreeze-500`}
-                        href="/press-media/IFG-in-the-news"
+                        href="/press-media/awards-and-recognition"
                       >
-                        IFG in the News
+                        Awards & Recognition
                       </Link>
                     )}
                   </Menu.Item>
@@ -295,9 +295,9 @@ const Nav = () => {
                         className={`${
                           active && "bg-hazard-blue-500"
                         } hover:text-seabreeze-500`}
-                        href="/press-and-media/awards-and-recognition"
+                        href="/press-and-media/ifg-in-the-news"
                       >
-                        Awards & Recognition
+                        IFG in the News
                       </Link>
                     )}
                   </Menu.Item>
@@ -432,16 +432,6 @@ const Nav = () => {
                     {({ active }) => (
                       <Link
                         className={`${active && "bg-hazard-blue-500"}`}
-                        href="/careers/work-at-ifg"
-                      >
-                        Work at IFG
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
-                    {({ active }) => (
-                      <Link
-                        className={`${active && "bg-hazard-blue-500"}`}
                         href="/careers/benefits-and-perks"
                       >
                         Benefits & Perks
@@ -455,6 +445,16 @@ const Nav = () => {
                         href="/careers/career-support"
                       >
                         Career Support
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
+                    {({ active }) => (
+                      <Link
+                        className={`${active && "bg-hazard-blue-500"}`}
+                        href="/careers/work-at-ifg"
+                      >
+                        Work at IFG
                       </Link>
                     )}
                   </Menu.Item>
