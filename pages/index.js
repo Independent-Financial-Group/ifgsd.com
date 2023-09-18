@@ -191,9 +191,6 @@ const HomePage = ({
                   <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-seabreeze-500">
                     {pageContent.sectionOfferings.heading}
                   </h2>
-                  <p className="text-dunkel-blue sm:text-md dark:text-gray-400">
-                    {pageContent.sectionOfferings.paragraph}
-                  </p>
                 </div>
                 <div
                   ref={scope}
