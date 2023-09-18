@@ -90,7 +90,7 @@ const Testimonial = ({ content, testimonials }) => {
                         <blockquote className="flex h-full flex-col justify-between px-4">
                           <div>
                             <div className="mt-4>">
-                              <h3 className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
+                              <h3 className="text-2xl font-bold text-neon-orange-500 sm:text-3xl">
                                 {testimonial.heading}
                               </h3>
                               <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
@@ -100,17 +100,17 @@ const Testimonial = ({ content, testimonials }) => {
                           </div>
                           <footer className="mt-8 flex items-center gap-3 text-sm text-gray-500">
                             <div>
-                              <p className="text-right text-sm font-bold text-blue-wave-500">
+                              <p className="text-right text-base font-bold text-hazard-blue-500">
                                 {testimonial.fullName}
                               </p>
-                              <p className="text-right text-xs font-semibold text-blue-wave-900">
+                              <p className="text-right text-sm font-semibold text-blue-wave-900">
                                 {testimonial.state}
                               </p>
                             </div>
                             <Image
                               src={`https:${testimonial.headshot.fields.file.url}`}
-                              width={50}
-                              height={50}
+                              width={80}
+                              height={80}
                               alt={testimonial.headshot.fields.title}
                             />
                           </footer>
