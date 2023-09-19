@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 
 import PublicLayout from "../../components/PublicLayout/PublicLayout";
@@ -6,6 +6,68 @@ import Container from "../../components/Container/Container";
 import Button from "../../components/Button/Button";
 
 const contact = () => {
+  const [states, setStates] = useState([
+    "AL",
+    "AK",
+    "AS",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "DC",
+    "FM",
+    "FL",
+    "GA",
+    "GU",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MH",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "MP",
+    "OH",
+    "OK",
+    "OR",
+    "PW",
+    "PA",
+    "PR",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VI",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
+  ]);
+
   return (
     <>
       <Head>
@@ -13,7 +75,7 @@ const contact = () => {
       </Head>
       <PublicLayout>
         <section className="relative mb-32 h-[50vh] bg-[url('/homeofficebuilding-compressed.webp')] bg-cover bg-center">
-          <div className="h-full w-full bg-gradient-to-r from-black to-black/0">
+          <div className="h-full w-full bg-gradient-to-r from-hazard-blue-500 to-black/0">
             <Container>
               <div className="absolute top-1/2 max-w-prose -translate-y-1/2">
                 <h1 className="text-2xl font-bold text-seabreeze-500">
@@ -35,11 +97,14 @@ const contact = () => {
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div>
-                <h2 className="text-3xl font-bold"><img
+                <h2 className="text-3xl font-bold">
+                  <img
                     className="inline"
                     src="/graphicAssets/triangle-highlight.png"
                     alt="ornament highlight"
-                  />{" "}What's Next?</h2>
+                  />{" "}
+                  What's Next?
+                </h2>
                 <p className="my-8">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
                   mollitia est ipsa consequuntur autem iste veritatis laudantium
@@ -71,6 +136,17 @@ const contact = () => {
                         id="name"
                       />
                     </div>
+                    <div>
+                      <label className="sr-only" htmlFor="name">
+                        Company/Organization
+                      </label>
+                      <input
+                        className="w-full rounded-lg border border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                        placeholder="Company/Organization"
+                        type="text"
+                        id="name"
+                      />
+                    </div>
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div>
@@ -95,6 +171,33 @@ const contact = () => {
                           type="tel"
                           id="phone"
                         />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <div>
+                        <label className="sr-only" htmlFor="email">
+                          City
+                        </label>
+                        <input
+                          className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                          placeholder="City"
+                          type="text"
+                          id="city"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="sr-only" htmlFor="state">
+                          Phone
+                        </label>
+                        <select id="state" className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500">
+                          {states.map((state) => {
+                            return (
+                              <option value={state}>{state}</option>
+                            )
+                          })}
+                        </select>
                       </div>
                     </div>
 
