@@ -190,7 +190,7 @@ const Nav = () => {
                         } hover:text-seabreeze-500`}
                         href="/join/contact"
                       >
-                        Request More Information
+                        Contact Us
                       </Link>
                     )}
                   </Menu.Item>
