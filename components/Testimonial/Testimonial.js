@@ -80,31 +80,31 @@ const Testimonial = ({ content, testimonials }) => {
                 </svg>
               </button>
 
-              <div className="swiper-container !overflow-hidden">
+              <div className=" bg-neon-orange-500 swiper-container !overflow-hidden p-4 rounded-[20px] mx-5">
                 <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => {
                     return (
                       <div
                         key={testimonial.headshot.sys.id}
-                        className="swiper-slide !h-fit lg:!h-[450px]"
+                        className="swiper-slide !h-fit lg:!h-[500px]"
                       >
                         <blockquote className="flex h-full flex-col justify-between px-4">
                           <div>
                             <div className="mt-4>">
-                              <h3 className="text-2xl font-bold text-neon-orange-500 sm:text-3xl">
+                              <h3 className="text-2xl font-bold text-neon-orange-800 sm:text-3xl">
                                 {testimonial.heading}
                               </h3>
-                              <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
+                              <p className="mt-4 leading-relaxed text-seabreeze-500 lg:max-w-prose">
                                 {testimonial.paragraph}
                               </p>
                             </div>
                           </div>
                           <footer className="mt-8 flex items-center gap-3 text-sm text-gray-500">
                             <div>
-                              <p className="text-right text-base font-bold text-hazard-blue-500">
+                              <p className="text-right text-base font-bold text-seabreeze-500">
                                 {testimonial.fullName}
                               </p>
-                              <p className="text-right text-sm font-semibold text-blue-wave-900">
+                              <p className="text-right text-sm font-semibold text-neon-orange-800">
                                 {testimonial.state}
                               </p>
                             </div>
@@ -113,6 +113,7 @@ const Testimonial = ({ content, testimonials }) => {
                               width={80}
                               height={80}
                               alt={testimonial.headshot.fields.title}
+                              className="rounded-full"
                             />
                           </footer>
                         </blockquote>
