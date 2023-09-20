@@ -8,30 +8,34 @@ const ourMission = () => {
   return (
     <>
       <Head>
-        <title>Our Mission & Values | Independent Financial Group San Diego</title>
+        <title>
+          Our Mission & Values | Independent Financial Group San Diego
+        </title>
       </Head>
       <PublicLayout>
-        <section className="relative mb-32 h-[20vh] bg-hazard-blue-500">
-          <Container>
-            <div className="absolute top-1/2 -translate-y-1/2">
-              <h1 className="text-2xl font-bold text-seabreeze-500">
-                <img
-                  className="inline"
-                  src="/graphicAssets/triangle-highlight.png"
-                  alt="ornament highlight"
-                />{" "}
-                Our Mission & Values
-              </h1>
-              <h2 className="font-bold text-seabreeze-500 lg:text-6xl">
-                Commited to Excellence
-              </h2>
-            </div>
-          </Container>
+        <section className="relative mb-32 h-[50vh] bg-[url('/backgrounds/wave-background-abstract-compressed.webp')] bg-cover bg-center rounded-b-[40px]">
+          <div className="bg-hazard-blue-500/60 w-full h-full rounded-b-[40px]">
+            <Container>
+              <div className="absolute top-1/2 -translate-y-1/2">
+                <h1 className="text-2xl font-bold text-seabreeze-500">
+                  <img
+                    className="inline"
+                    src="/graphicAssets/triangle-highlight.png"
+                    alt="ornament highlight"
+                  />{" "}
+                  Our Mission & Values
+                </h1>
+                <h2 className="font-bold text-seabreeze-500 lg:text-6xl">
+                  Commited to Excellence
+                </h2>
+              </div>
+            </Container>
+          </div>
         </section>
         <section className="my-32">
           <Container>
             <div className="lg:flex lg:gap-5">
-              <div>
+              <div className="max-w-prose">
                 <h2 className="text-3xl font-bold">
                   <img
                     src="/graphicAssets/triangle-highlight.png"
@@ -58,8 +62,8 @@ const ourMission = () => {
                   src="/graphicAssets/CTA-ornament.png"
                 />
                 <img
-                  className="rounded-lg"
-                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=5040&q=80"
+                  className="w-full rounded-lg"
+                  src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 />
               </div>
             </div>
