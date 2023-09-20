@@ -253,20 +253,6 @@ const Stats = ({ content }) => {
               <SwiperSlide>
                 <img
                   alt="ifg slide show image"
-                  className="h-48 w-full rounded-lg !object-cover !object-top"
-                  src={`/home/slideshow/ifg-slide-show25-compressed.webp`}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  alt="ifg slide show image"
-                  className="h-48 w-full rounded-lg !object-cover !object-top"
-                  src={`/home/slideshow/ifg-slide-show26-compressed.webp`}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  alt="ifg slide show image"
                   className="h-48 w-full rounded-lg !object-cover !object-center"
                   src={`/home/slideshow/ifg-slide-show27-compressed.webp`}
                 />
