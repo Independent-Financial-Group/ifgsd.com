@@ -4,13 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useAnimate, motion, stagger, useInView } from "framer-motion";
-// import { animate, inView } from "framer-motion/dom"
 
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
+import PublicLayout from "../components/PublicLayout/PublicLayout";
+import Container from "../components/Container/Container";
 
 import Nav from "../components/Nav/Nav";
 import MobileNav from "../components/MobileNav/MobileNav";
@@ -137,12 +133,13 @@ const HomePage = ({
   return (
     <>
       <Head>
-        <title>Independent Financial Group - Independence Perfected</title>
+        <title>
+          Find Your Balance, Catch the Wave. - Independent Financial Group San
+          Diego
+        </title>
       </Head>
-      <Nav />
-      <MobileNav />
-      <Hero content={pageContent.hero} />
-      <main>
+      <PublicLayout>
+        <Hero content={pageContent.hero} />
         <section className="relative my-16 lg:my-32">
           <p className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block">
             advisors
@@ -156,7 +153,12 @@ const HomePage = ({
                 {pageContent.sectionTestimonial.headingSecondary}
               </h2>
               <h3 className="text-5xl font-bold text-hazard-blue-500 lg:text-6xl">
-                {pageContent.sectionTestimonial.headingPrimary} <img className="inline w-11" src="/graphicAssets/heart.png" alt="" />
+                {pageContent.sectionTestimonial.headingPrimary}{" "}
+                <img
+                  className="inline w-11"
+                  src="/graphicAssets/heart.png"
+                  alt=""
+                />
               </h3>
               <p className="text-xl text-dunkel-blue-500 md:mt-5">
                 {pageContent.sectionTestimonial.paragraph}
@@ -435,8 +437,7 @@ const HomePage = ({
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
+      </PublicLayout>
     </>
   );
 };
