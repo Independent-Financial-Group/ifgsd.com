@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import PublicLayout from "../../components/PublicLayout/PublicLayout";
 import Container from "../../components/Container/Container";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 import {
   VerticalTimeline,
@@ -61,6 +62,7 @@ const ourStory = ({ timeline }) => {
         </section>
         <section>
           <Container>
+            <Breadcrumb />
             <VerticalTimeline>
               {timeline.map((item) => {
                 return (

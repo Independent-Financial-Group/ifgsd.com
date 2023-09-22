@@ -3,6 +3,7 @@ import PublicLayout from "../../../components/PublicLayout/PublicLayout";
 import Container from "../../../components/Container/Container";
 import Link from "next/link";
 import Head from "next/head";
+import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
 
 const ourMission = () => {
   return (
@@ -34,6 +35,7 @@ const ourMission = () => {
         </section>
         <section className="my-32">
           <Container>
+            <Breadcrumb />
             <div className="lg:flex lg:gap-5">
               <div className="max-w-prose">
                 <h2 className="text-3xl font-bold">

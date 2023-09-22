@@ -4,6 +4,7 @@ import Head from "next/head";
 import PublicLayout from "../../components/PublicLayout/PublicLayout";
 import Container from "../../components/Container/Container";
 import Button from "../../components/Button/Button";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 const contact = () => {
   const [states, setStates] = useState([
@@ -95,6 +96,7 @@ const contact = () => {
         </section>
         <section>
           <Container>
+            <Breadcrumb />
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div>
                 <h2 className="text-3xl font-bold">
