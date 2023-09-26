@@ -55,38 +55,32 @@ export async function getStaticProps() {
     sectionOfferings: {
       heading: pageContent.fields.offeringsSectionHeader,
       paragraph: pageContent.fields.offeringsSectionParagraph,
-      offerings: {
-        offeringOne: {
+      offerings: [
+        {
           icon: pageContent.fields.offering1Icon,
           header: pageContent.fields.offering1Header,
-          paragraph: pageContent.fields.offering1Text,
         },
-        offeringTwo: {
+        {
           icon: pageContent.fields.offering2Icon,
           header: pageContent.fields.offering2Header,
-          paragraph: pageContent.fields.offering2Text,
         },
-        offeringThree: {
+        {
           icon: pageContent.fields.offering3Icon,
           header: pageContent.fields.offering3Header,
-          paragraph: pageContent.fields.offering3Text,
         },
-        offeringFour: {
+        {
           icon: pageContent.fields.offering4Icon,
           header: pageContent.fields.offering4Header,
-          paragraph: pageContent.fields.offering4Text,
         },
-        offeringFive: {
+        {
           icon: pageContent.fields.offering5Icon,
           header: pageContent.fields.offering5Header,
-          paragraph: pageContent.fields.offering5Text,
         },
-        offeringSix: {
+        {
           icon: pageContent.fields.offering6Icon,
           header: pageContent.fields.offering6Header,
-          paragraph: pageContent.fields.offering6Text,
         },
-      },
+      ],
     },
     sectionCTA: {
       heading: pageContent.fields.ctaSectionHeader,
@@ -113,7 +107,6 @@ const HomePage = ({
   pageContent,
   formattedTestimonials: testimonials,
 }) => {
-
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true });
 
@@ -247,184 +240,21 @@ const HomePage = ({
                   ref={scope}
                   className=" space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3 lg:text-left"
                 >
-                  <div className="product-card">
-                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
-                      <img
-                        src={`https://${pageContent.sectionOfferings.offerings.offeringOne.icon.fields.file.url}`}
-                        alt={
-                          pageContent.sectionOfferings.offerings.offeringOne
-                            .icon.title
-                        }
-                        className="w-10"
-                      />
-                      <h3 className="text-xl font-bold text-seabreeze-500">
-                        {
-                          pageContent.sectionOfferings.offerings.offeringOne
-                            .header
-                        }
-                      </h3>
-                    </div>
-                    <p>
-                      {
-                        pageContent.sectionOfferings.offerings.offeringOne
-                          .paragraph
-                      }{" "}
-                      <span className="font-bold text-neon-orange-500">
-                        <Link href="/offerings/practice-development">
-                          Learn More &rarr;
-                        </Link>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="product-card">
-                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
-                      <img
-                        src={`https://${pageContent.sectionOfferings.offerings.offeringTwo.icon.fields.file.url}`}
-                        alt={
-                          pageContent.sectionOfferings.offerings.offeringTwo
-                            .icon.title
-                        }
-                        className="w-10"
-                      />
-                      <h3 className="text-xl font-bold text-seabreeze-500">
-                        {
-                          pageContent.sectionOfferings.offerings.offeringTwo
-                            .header
-                        }
-                      </h3>
-                    </div>
-                    <p className="text-dunkel-blue dark:text-gray-400">
-                      {
-                        pageContent.sectionOfferings.offerings.offeringThree
-                          .paragraph
-                      }{" "}
-                      <span className="font-bold text-neon-orange-500">
-                        <Link href="/offerings/practice-development">
-                          Learn More &rarr;
-                        </Link>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="product-card">
-                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
-                      <img
-                        src={`https://${pageContent.sectionOfferings.offerings.offeringThree.icon.fields.file.url}`}
-                        alt={
-                          pageContent.sectionOfferings.offerings.offeringThree
-                            .icon.title
-                        }
-                        className="w-10"
-                      />
-
-                      <h3 className="text-xl font-bold text-seabreeze-500 dark:text-seabreeze-500">
-                        {
-                          pageContent.sectionOfferings.offerings.offeringThree
-                            .header
-                        }
-                      </h3>
-                    </div>
-                    <p className="text-dunkel-blue dark:text-gray-400">
-                      {
-                        pageContent.sectionOfferings.offerings.offeringThree
-                          .paragraph
-                      }{" "}
-                      <span className="font-bold text-neon-orange-500">
-                        <Link href="/offerings/practice-development">
-                          Learn More &rarr;
-                        </Link>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="product-card">
-                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
-                      <img
-                        src={`https://${pageContent.sectionOfferings.offerings.offeringFour.icon.fields.file.url}`}
-                        alt={
-                          pageContent.sectionOfferings.offerings.offeringFour
-                            .icon.title
-                        }
-                        className="w-10"
-                      />
-
-                      <h3 className="text-xl font-bold text-seabreeze-500">
-                        {
-                          pageContent.sectionOfferings.offerings.offeringFour
-                            .header
-                        }
-                      </h3>
-                    </div>
-                    <p className="text-dunkel-blue dark:text-gray-400">
-                      {
-                        pageContent.sectionOfferings.offerings.offeringFour
-                          .paragraph
-                      }{" "}
-                      <span className="font-bold text-neon-orange-500">
-                        <Link href="/offerings/practice-development">
-                          Learn More &rarr;
-                        </Link>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="product-card">
-                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
-                      <img
-                        src={`https://${pageContent.sectionOfferings.offerings.offeringFive.icon.fields.file.url}`}
-                        alt={
-                          pageContent.sectionOfferings.offerings.offeringFive
-                            .icon.title
-                        }
-                        className="w-10"
-                      />
-
-                      <h3 className="text-xl font-bold text-seabreeze-500">
-                        {
-                          pageContent.sectionOfferings.offerings.offeringFive
-                            .header
-                        }
-                      </h3>
-                    </div>
-                    <p className="text-dunkel-blue dark:text-gray-400">
-                      {
-                        pageContent.sectionOfferings.offerings.offeringFive
-                          .paragraph
-                      }{" "}
-                      <span className="font-bold text-neon-orange-500">
-                        <Link href="/offerings/practice-development">
-                          Learn More &rarr;
-                        </Link>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="product-card">
-                    <div className="mb-2 flex flex-row items-center justify-start gap-2">
-                      <img
-                        src={`https://${pageContent.sectionOfferings.offerings.offeringSix.icon.fields.file.url}`}
-                        alt={
-                          pageContent.sectionOfferings.offerings.offeringSix
-                            .icon.title
-                        }
-                        className="w-10"
-                      />
-
-                      <h3 className="text-xl font-bold text-seabreeze-500">
-                        {
-                          pageContent.sectionOfferings.offerings.offeringSix
-                            .header
-                        }
-                      </h3>
-                    </div>
-                    <p className="text-dunkel-blue dark:text-gray-400">
-                      {
-                        pageContent.sectionOfferings.offerings.offeringSix
-                          .paragraph
-                      }{" "}
-                      <span className="font-bold text-neon-orange-500">
-                        <Link href="/offerings/practice-development">
-                          Learn More &rarr;
-                        </Link>
-                      </span>
-                    </p>
-                  </div>
+                  {pageContent.sectionOfferings.offerings.map((offering) => {
+                    return (
+                      <div className="product-card">
+                        <div className="mb-2 flex flex-col items-center justify-start gap-2">
+                          <img
+                            src={`https://${offering.icon.fields.file.url}`}
+                            alt={offering.icon.title}
+                          />
+                          <h3 className="text-center text-xl font-bold text-seabreeze-500">
+                            <Link href="#">{offering.header}</Link>
+                          </h3>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

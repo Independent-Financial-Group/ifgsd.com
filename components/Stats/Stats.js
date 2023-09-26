@@ -1,17 +1,18 @@
 import React from "react";
 import Link from "next/link";
 
-
 import HomeSlideshow from "../HomeSlideshow/HomeSlideshow";
 
 const Stats = ({ content }) => {
   return (
     <>
-      <div className="lg:mt-60 relative">
-        <h2 className="py-8 text-center text-[255px] font-bold text-[#E2E7EB] lg:py-0 lg:text-left absolute -top-full -z-10">
+      <div className="relative lg:mt-60">
+        <h2 className="absolute -top-full left-1/2 -translate-x-1/2 -z-10 py-8 text-center md:text-[230px] lg:text-[255px] font-bold text-[#E2E7EB] lg:py-0 lg:text-left">
           Rankings
         </h2>
-        <h3 className="text-4xl font-bold text-neon-orange-500 text-center mb-5">Built to be the Best</h3>
+        <h3 className="mb-5 text-center text-4xl font-bold text-neon-orange-500">
+          Built to be the Best
+        </h3>
         <dl className="flex font-bold">
           <div className="flex flex-col items-center justify-center lg:flex-row">
             <dt className="order-last mt-4 text-center text-xs text-neon-orange-500 lg:text-left lg:text-lg">

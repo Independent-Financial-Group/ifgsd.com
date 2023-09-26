@@ -8,8 +8,6 @@ import quotes from "../../public/quotes.png";
 import Image from "next/image";
 
 const Testimonial = ({ content, testimonials }) => {
-  console.log(testimonials[0].headshot.fields.file);
-
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
       modules: [Navigation, Pagination, Autoplay],
