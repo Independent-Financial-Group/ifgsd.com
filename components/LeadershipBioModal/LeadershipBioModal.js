@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Button, Modal } from "flowbite-react";
+import { Modal, Spinner } from "flowbite-react";
 
 const contenful = require("contentful");
 
@@ -9,34 +9,33 @@ const client = contenful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-const LeadeshipBioModal = ({openModal, setOpenModal, entryId}) => {
-
-  const [bio, setBio] = useState(null)
+const LeadeshipBioModal = ({ openModal, setOpenModal, entryId }) => {
+  const [bio, setBio] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-
-    if(entryId) {
+    if (entryId) {
       const getBio = async () => {
+        setIsLoading(true);
         const bio = await client.getEntry(entryId);
-        setBio({...bio.fields})
-      }
+        setBio({ ...bio.fields });
+        setIsLoading(false);
+      };
 
       getBio();
     }
 
-    if(openModal !== "default"){
-      setBio(null)
+    if (openModal !== "default") {
+      setBio(null);
     }
 
-    console.log(openModal)
-  }, [entryId, openModal])
+    console.log(openModal);
+  }, [entryId, openModal]);
 
-  console.log(bio)
+  console.log(bio);
 
-  if(bio === null) {
-    return (
-      null
-    )
+  if (bio === null) {
+    return null;
   }
 
   return (
@@ -44,23 +43,41 @@ const LeadeshipBioModal = ({openModal, setOpenModal, entryId}) => {
       <Modal
         show={openModal === "default"}
         onClose={() => setOpenModal(null)}
+        className="transition-all"
       >
         <Modal.Header>
-          <img className="mx-auto mb-5 rounded-[20px]" src={`https:${bio.headshot.fields.file.url}`} />
-          <p className="font-bold text-hazard-blue-500 text-3xl">{bio.name}</p>
-          <p className="text-dunkel-blue-300 ">{bio.title}</p>
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <>
+              <img
+                className="mx-auto mb-5 rounded-[20px]"
+                src={`https:${bio.headshot.fields.file.url}`}
+              />
+              <p className="text-3xl font-bold text-hazard-blue-500">
+                {bio.name}
+              </p>
+              <p className="text-dunkel-blue-300 ">{bio.title}</p>
+            </>
+          )}
         </Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
-            <p>
-              {bio.biography}
-            </p>
+            {isLoading ? <Spinner /> : <p>{bio.biography}</p>}
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <a className="text-right" href={bio.linkedInProfile} target="_blank">
-            LinkedIn
-          </a>
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <a
+              className="text-right"
+              href={bio.linkedInProfile}
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          )}
         </Modal.Footer>
       </Modal>
     </>

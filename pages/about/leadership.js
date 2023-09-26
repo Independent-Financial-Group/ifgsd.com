@@ -13,6 +13,7 @@ const client = contenful.createClient({
 });
 
 export async function getStaticProps() {
+
   const initialData = await client.getEntries({ content_type: "leadership", order: "sys.createdAt" });
 
   const formattedData = initialData.items.map((item) => {
@@ -93,10 +94,10 @@ const leadership = ({ formattedData: data, initialData }) => {
             <h2 className="mb-5 text-center text-3xl font-bold text-neon-orange-500">
               Senior Leadership
             </h2>
-            <div className="grid grid-cols-3 justify-center gap-5">
+            <div className="grid grid-cols-3 gap-5">
               {data.map((person) => {
                 return (
-                  <div key={person.id}>
+                  <div className="leadership-card" key={person.id}>
                     <img
                       className="mx-auto mb-5 w-[254px] rounded-bl-full rounded-br-full rounded-tl-full"
                       src={`https:${person.headshot.fields.file.url}`}
