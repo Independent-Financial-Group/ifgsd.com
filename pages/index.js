@@ -8,13 +8,11 @@ import { useAnimate, motion, stagger, useInView } from "framer-motion";
 import PublicLayout from "../components/PublicLayout/PublicLayout";
 import Container from "../components/Container/Container";
 
-import Nav from "../components/Nav/Nav";
-import MobileNav from "../components/MobileNav/MobileNav";
 import Hero from "../components/Hero/Hero";
 import Testimonial from "../components/Testimonial/Testimonial";
 import BranchAnnouncement from "../components/BranchAnnouncement/BranchAnnouncement";
+import HomeSlideshow from "../components/HomeSlideshow/HomeSlideshow";
 import Stats from "../components/Stats/Stats";
-import Footer from "../components/Footer/Footer";
 
 import quotes from "../public/quotes.png";
 import ctaImage1 from "../public/cta-image-1.png";
@@ -115,8 +113,7 @@ const HomePage = ({
   pageContent,
   formattedTestimonials: testimonials,
 }) => {
-  const loremText =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: true });
 
@@ -141,53 +138,104 @@ const HomePage = ({
       <PublicLayout>
         <Hero content={pageContent.hero} />
         <section className="relative my-16 lg:my-32">
-          <p className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block">
-            advisors
-          </p>
-          <p className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block">
-            happy
-          </p>
-          <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
-            <div className="mx-auto my-10 max-w-prose text-center">
-              <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
-                {pageContent.sectionTestimonial.headingSecondary}
-              </h2>
-              <h3 className="text-5xl font-bold text-hazard-blue-500 lg:text-6xl">
-                {pageContent.sectionTestimonial.headingPrimary}{" "}
-                <img
-                  className="inline w-11"
-                  src="/graphicAssets/heart.png"
-                  alt=""
-                />
-              </h3>
-              <p className="text-xl text-dunkel-blue-500 md:mt-5">
-                {pageContent.sectionTestimonial.paragraph}
-              </p>
-            </div>
-            <Testimonial
-              content={pageContent.sectionTestimonial}
-              testimonials={testimonials}
-            />
-            <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
-              happy
-            </p>
-            <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+          <Container>
+            <p className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block">
               advisors
             </p>
-          </div>
+            <p className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block">
+              happy
+            </p>
+            <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
+              <div className="mx-auto my-10 max-w-prose text-center">
+                <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
+                  {pageContent.sectionTestimonial.headingSecondary}
+                </h2>
+                <h3 className="text-5xl font-bold text-hazard-blue-500 lg:text-6xl">
+                  {pageContent.sectionTestimonial.headingPrimary}{" "}
+                  <img
+                    className="inline w-11"
+                    src="/graphicAssets/heart.png"
+                    alt=""
+                  />
+                </h3>
+                <p className="text-xl text-dunkel-blue-500 md:mt-5">
+                  {pageContent.sectionTestimonial.paragraph}
+                </p>
+              </div>
+              <Testimonial
+                content={pageContent.sectionTestimonial}
+                testimonials={testimonials}
+              />
+              <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+                happy
+              </p>
+              <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+                advisors
+              </p>
+            </div>
+          </Container>
         </section>
         <section className="my-16 lg:my-32">
-          <div className="mx-auto max-w-screen-xl px-4 lg:px-0">
+          <Container>
             <BranchAnnouncement newBranch={newBranch} />
-          </div>
+          </Container>
         </section>
         <section className="my-32">
-          <div className="mx-auto max-w-screen-xl px-4 lg:relative lg:z-10">
+          <Container>
+            <div className="lg:flex lg:gap-x-4">
+              <div className="lg:max-w-prose">
+                <h2 className="font-bold text-hazard-blue-500 sm:text-2xl lg:text-4xl">
+                  <img
+                    className="mr-2 inline"
+                    src="/graphicAssets/triangle-highlight.png"
+                  />
+                  {pageContent.sectionAbout.heading}
+                </h2>
+
+                <p className="my-4 text-gray-500 sm:text-xl">
+                  {pageContent.sectionAbout.paragraph}{" "}
+                  <span className="text-sm font-bold text-neon-orange-500">
+                    {" "}
+                    <Link href="/join/why-choose-us/our-mission">
+                      Our Mission&rarr;
+                    </Link>
+                  </span>
+                </p>
+                <div className="my-4 grid grid-cols-2 grid-rows-2 gap-4 text-hazard-blue-500 lg:my-0">
+                  <div className="col-start-1 row-start-1 rounded-[20px] bg-hazard-blue-500/50 p-3">
+                    <img
+                      src="/home/graphicsIllustrations/handshake.png"
+                      className="mx-auto"
+                    />
+                    <h3 className="text-center text-3xl font-bold">
+                      Integrity
+                    </h3>
+                  </div>
+                  <div className="col-start-2 row-start-1 rounded-[20px] bg-hazard-blue-500/50 p-3">
+                    <img
+                      src="/home/graphicsIllustrations/balance.png"
+                      className="mx-auto"
+                    />
+                    <h3 className="text-center text-3xl font-bold">balance</h3>
+                  </div>
+                  <div className="col-span-2 row-start-2 rounded-[20px] bg-hazard-blue-500/50 p-3">
+                    <img
+                      src="/home/graphicsIllustrations/person.png"
+                      className="mx-auto"
+                    />
+                    <h3 className="text-center text-3xl font-bold">
+                      Independence
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <HomeSlideshow />
+            </div>
             <Stats content={pageContent.sectionAbout} />
-          </div>
+          </Container>
         </section>
         <section className="text-seabreeze-500">
-          <div className="mx-auto max-w-screen-xl rounded-[40px] px-4">
+          <Container>
             <div className="rounded-[40px] bg-[url('/home/ifg-wave-2.jpg')] bg-cover bg-no-repeat">
               <div className="rounded-[40px] bg-blue-wave-700/60 px-4 py-8 sm:py-16 lg:px-6">
                 <div className="mx-auto mb-8 max-w-screen-md text-center lg:mb-16">
@@ -380,10 +428,10 @@ const HomePage = ({
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
         <section className="my-32">
-          <div className="mx-auto max-w-screen-xl px-4 lg:px-0">
+          <Container>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="">
                 <div className="relative flex flex-col items-center lg:items-start">
@@ -435,7 +483,7 @@ const HomePage = ({
                 />
               </div>
             </div>
-          </div>
+          </Container>
         </section>
       </PublicLayout>
     </>
