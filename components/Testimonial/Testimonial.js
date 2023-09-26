@@ -57,7 +57,11 @@ const Testimonial = ({ content, testimonials }) => {
               ></iframe>
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
-            <img src="/graphicAssets/ornament-2.png" alt="ornament" className="absolute bottom-12 -left-16 -z-10" />
+            <img
+              src="/graphicAssets/ornament-2.png"
+              alt="ornament"
+              className="absolute -left-16 bottom-12 -z-10"
+            />
           </div>
 
           <div className="relative mb-16 lg:col-span-1 lg:mx-0">
@@ -79,19 +83,24 @@ const Testimonial = ({ content, testimonials }) => {
                   />
                 </svg>
               </button>
+              <img
+                  src="/home/graphicsIllustrations/squiggle.png"
+                  alt="decoration"
+                  className="absolute right-0 -top-10 z-10"
+                />
 
-              <div className=" bg-neon-orange-500 swiper-container !overflow-hidden p-4 rounded-[20px] mx-5">
+              <div className=" swiper-container mx-5 !overflow-hidden rounded-[20px] bg-hazard-blue-500 p-4 relative">
                 <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => {
                     return (
                       <div
                         key={testimonial.headshot.sys.id}
-                        className="swiper-slide !h-fit lg:!h-[500px]"
+                        className="swiper-slide !h-fit lg:!min-h-[500px]"
                       >
                         <blockquote className="flex h-full flex-col justify-between px-4">
                           <div>
                             <div className="mt-4>">
-                              <h3 className="text-2xl font-bold text-neon-orange-800 sm:text-3xl">
+                              <h3 className="text-2xl font-bold text-seabreeze-500 sm:text-3xl">
                                 {testimonial.heading}
                               </h3>
                               <p className="mt-4 leading-relaxed text-seabreeze-500 lg:max-w-prose">
@@ -104,7 +113,7 @@ const Testimonial = ({ content, testimonials }) => {
                               <p className="text-right text-base font-bold text-seabreeze-500">
                                 {testimonial.fullName}
                               </p>
-                              <p className="text-right text-sm font-semibold text-neon-orange-800">
+                              <p className="text-right text-sm font-semibold text-dunkel-blue-500">
                                 {testimonial.state}
                               </p>
                             </div>
