@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
       >
         <Component className="box-border" {...pageProps} />
       </ClerkProvider>
-      <Script src="../node_modules/flowbite/dist/flowbite.min.js" />
     </>
   );
 }

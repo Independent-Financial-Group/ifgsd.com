@@ -86,9 +86,9 @@ const Breadcrumb = () => {
                 </li>
 
                 <li>
-                  <Link href={breadcrumb.href} className="block transition hover:text-gray-700">
+                  <p className="block transition hover:text-gray-700">
                     {convertBreadcrumb(breadcrumb.breadcrumb)}
-                  </Link>
+                  </p>
                 </li>
               </>
             );

@@ -268,7 +268,7 @@ const HomePage = ({
                   <img
                     src="/graphicAssets/CTA-Arrow.png"
                     alt="arrow pointing to sign-up button"
-                    className="absolute -left-24 top-4 h-[214px]"
+                    className="absolute -left-24 top-4 h-[170px]"
                   />
                   <h2 className="text-xl font-bold text-hazard-blue-500 md:text-4xl">
                     {pageContent.sectionCTA.heading}
@@ -280,7 +280,7 @@ const HomePage = ({
 
                   <div className="mt-4 md:mt-8">
                     <Link
-                      href="#"
+                      href="/join/contact"
                       className="order-3 inline-block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
                     >
                       Get Started
@@ -301,13 +301,13 @@ const HomePage = ({
                   className="absolute -right-36 -top-28 -z-10"
                 />
                 <Image
-                  alt="Student"
+                  alt="ifg family"
                   src={ctaImage1}
                   className="h-40 w-full rounded-lg object-cover sm:h-56 md:h-full"
                 />
 
                 <Image
-                  alt="Student"
+                  alt="ifg family at conference"
                   src={ctaImage2}
                   className="h-40 w-full rounded-lg object-cover sm:h-56 md:h-full"
                 />
