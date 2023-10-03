@@ -68,18 +68,6 @@ const Nav = () => {
                                 className={`${
                                   active && "bg-hazard-blue-500"
                                 } hover:text-seabreeze-500`}
-                                href="/join/why-choose-us/compensation"
-                              >
-                                Compensation
-                              </Link>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
                                 href="/join/why-choose-us/transition-support"
                               >
                                 Transition Support

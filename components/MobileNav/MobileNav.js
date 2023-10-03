@@ -46,7 +46,7 @@ const MobileNav = () => {
             <div className="flex flex-col">
               <Menu>
                 <div>
-                  <Menu.Button className="flex h-full flex-row items-center p-3">
+                  <Menu.Button className="flex h-full flex-row items-center p-3 rounded bg-neon-orange-500 w-full text-seabreeze-500">
                     <p>Join IFG</p>
                     <ChevronDownIcon
                       className="ml-2 h-5 w-5"
@@ -86,16 +86,6 @@ const MobileNav = () => {
                                     href="/join-ifg/why-choose-us/our-mission"
                                   >
                                     Our Mission
-                                  </Link>
-                                )}
-                              </Menu.Item>
-                              <Menu.Item className="p-3">
-                                {({ active }) => (
-                                  <Link
-                                    className={`${active && "bg-blue-500"}`}
-                                    href="/join-ifg/why-choose-us/compensation"
-                                  >
-                                    Compensation
                                   </Link>
                                 )}
                               </Menu.Item>
@@ -199,7 +189,7 @@ const MobileNav = () => {
                             className={`${active && "bg-blue-500"}`}
                             href="/join/contact"
                           >
-                            Request More Information
+                            Contact Us
                           </Link>
                         )}
                       </Menu.Item>
@@ -230,9 +220,9 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"} p-3`}
-                            href="/about/our-story"
+                            href="/about/culture"
                           >
-                            Our Story
+                            Culture
                           </Link>
                         )}
                       </Menu.Item>
@@ -250,9 +240,9 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"} p-3`}
-                            href="/about/culture"
+                            href="/about/our-story"
                           >
-                            Culture
+                            Our Story
                           </Link>
                         )}
                       </Menu.Item>
@@ -293,9 +283,9 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/press-media/ifg-in-the-news"
+                            href="/press-and-media/awards-and-recognition"
                           >
-                            IFG in the News
+                            Awards & Recognition
                           </Link>
                         )}
                       </Menu.Item>
@@ -303,9 +293,9 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/press-and-media/awards-and-recognition"
+                            href="/press-media/ifg-in-the-news"
                           >
-                            Awards & Recognition
+                            IFG in the News
                           </Link>
                         )}
                       </Menu.Item>
@@ -346,49 +336,9 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/offerings/products-and-platforms"
+                            href="/offerings/compliance"
                           >
-                            Products & Platforms
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/offerings/marketing-and-product-support"
-                          >
-                            Marketing & Product Support
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/offerings/platform-support"
-                          >
-                            Platform Support
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/offerings/technology"
-                          >
-                            Technology
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/offerings/practice-development"
-                          >
-                            Practice Development
+                            Compliance
                           </Link>
                         )}
                       </Menu.Item>
@@ -406,9 +356,39 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/offerings/compliance"
+                            href="/offerings/marketing-support"
                           >
-                            Compliance
+                            Marketing Support
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item className="p-3">
+                        {({ active }) => (
+                          <Link
+                            className={`${active && "bg-blue-500"}`}
+                            href="/offerings/practice-development"
+                          >
+                            Practice Development
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item className="p-3">
+                        {({ active }) => (
+                          <Link
+                            className={`${active && "bg-blue-500"}`}
+                            href="/offerings/product-platform-support"
+                          >
+                            Product & Platform Support
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item className="p-3">
+                        {({ active }) => (
+                          <Link
+                            className={`${active && "bg-blue-500"}`}
+                            href="/offerings/technology"
+                          >
+                            Technology
                           </Link>
                         )}
                       </Menu.Item>
@@ -469,9 +449,9 @@ const MobileNav = () => {
                   </Transition>
                 </div>
               </Menu>
-              <Menu className="mb-2 h-full rounded bg-neon-orange-500">
+              <Menu className="mb-2 h-full">
                 <div>
-                  <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 text-seabreeze-500">
+                  <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 text-hazard-blue-500 font-bold">
                     <Link href="https://new.ifgsd.com">Find an Advisor</Link>
                   </Menu.Button>
                 </div>
