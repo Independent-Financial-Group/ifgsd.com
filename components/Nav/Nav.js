@@ -68,21 +68,9 @@ const Nav = () => {
                                 className={`${
                                   active && "bg-hazard-blue-500"
                                 } hover:text-seabreeze-500`}
-                                href="/join/why-choose-us/transition-support"
+                                href="/join/why-choose-us/the-ifg-experience"
                               >
-                                Transition Support
-                              </Link>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
-                                href="/join/why-choose-us/customer-service"
-                              >
-                                Customer Service
+                                The IFG Experience
                               </Link>
                             )}
                           </Menu.Item>
@@ -102,73 +90,17 @@ const Nav = () => {
                       </Transition>
                     </Menu>
                   </Menu.Item>
-                  <Menu.Item>
-                    <Menu as="div" className="relative">
-                      <Menu.Button className="flex w-full flex-row items-center px-2 py-3 hover:bg-hazard-blue-500 hover:text-seabreeze-500">
-                        Business Solutions Models
-                        <ChevronRightIcon className="h-5 w-5" />
-                      </Menu.Button>
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
+                  <Menu.Item className="px-2 py-3">
+                    {({ active }) => (
+                      <Link
+                        className={`${
+                          active && "bg-hazard-blue-500"
+                        } hover:text-seabreeze-500`}
+                        href="/join/business-solutions-models"
                       >
-                        <Menu.Items className="absolute left-full top-0 ml-1 flex w-56 flex-col rounded bg-white drop-shadow-md">
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
-                                href="/about/why-choose-us/independent-practice"
-                              >
-                                Independent Practice
-                              </Link>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
-                                href="/about/why-choose-us/our-misison"
-                              >
-                                Solo Practitioner
-                              </Link>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
-                                href="/about/why-choose-us/compensation"
-                              >
-                                Join an Existing Practice
-                              </Link>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
-                                href="/about/why-choose-us/transition-support"
-                              >
-                                Selling Your Practice
-                              </Link>
-                            )}
-                          </Menu.Item>
-                        </Menu.Items>
-                      </Transition>
-                    </Menu>
+                        Business Solutions Models
+                      </Link>
+                    )}
                   </Menu.Item>
                   <Menu.Item className="px-2 py-3">
                     {({ active }) => (
@@ -366,9 +298,9 @@ const Nav = () => {
                         className={`${
                           active && "bg-hazard-blue-500"
                         } hover:text-seabreeze-500`}
-                        href="/offerings/practice-development"
+                        href="/offerings/practice-development-and-succession-planning"
                       >
-                        Practice Development
+                        Practice Development & Succession Planning
                       </Link>
                     )}
                   </Menu.Item>
