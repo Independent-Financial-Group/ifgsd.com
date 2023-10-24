@@ -138,16 +138,6 @@ const Nav = () => {
                     {({ active }) => (
                       <Link
                         className={`${active && "bg-hazard-blue-500"}`}
-                        href="/about/culture"
-                      >
-                        Culture
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
-                    {({ active }) => (
-                      <Link
-                        className={`${active && "bg-hazard-blue-500"}`}
                         href="/about/leadership"
                       >
                         Leadership
@@ -161,16 +151,6 @@ const Nav = () => {
                         href="/about/our-story"
                       >
                         Our Story
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
-                    {({ active }) => (
-                      <Link
-                        className={`${active && "bg-hazard-blue-500"}`}
-                        href="/about/philantropy"
-                      >
-                        Philanthropy
                       </Link>
                     )}
                   </Menu.Item>
@@ -334,52 +314,16 @@ const Nav = () => {
           </Menu>
           <Menu>
             <div>
-              <Menu.Button className="flex flex-row items-center">
-                <p>Careers</p>
-                <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
-              </Menu.Button>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute top-3/4 flex w-56 flex-col rounded bg-white text-sm drop-shadow">
-                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
+            <Menu.Item className="px-2 py-3">
                     {({ active }) => (
                       <Link
-                        className={`${active && "bg-hazard-blue-500"}`}
-                        href="/careers/benefits-and-perks"
+                        className={`${active}`}
+                        href="/careers"
                       >
-                        Benefits & Perks
+                        Careers
                       </Link>
                     )}
                   </Menu.Item>
-                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
-                    {({ active }) => (
-                      <Link
-                        className={`${active && "bg-hazard-blue-500"}`}
-                        href="/careers/career-support"
-                      >
-                        Career Support
-                      </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
-                    {({ active }) => (
-                      <Link
-                        className={`${active && "bg-hazard-blue-500"}`}
-                        href="/careers/work-at-ifg"
-                      >
-                        Work at IFG
-                      </Link>
-                    )}
-                  </Menu.Item>
-                </Menu.Items>
-              </Transition>
             </div>
           </Menu>
           <Menu className="relative">

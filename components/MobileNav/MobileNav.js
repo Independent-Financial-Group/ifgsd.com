@@ -99,16 +99,6 @@ const MobileNav = () => {
                                   </Link>
                                 )}
                               </Menu.Item>
-                              <Menu.Item className="p-3">
-                                {({ active }) => (
-                                  <Link
-                                    className={`${active && "bg-blue-500"}`}
-                                    href="/join-ifg/why-choose-us/advisor-testimonials"
-                                  >
-                                    Advisor Testimonials
-                                  </Link>
-                                )}
-                              </Menu.Item>
                             </Menu.Items>
                           </Transition>
                         </Menu>
@@ -162,16 +152,6 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"} p-3`}
-                            href="/about/culture"
-                          >
-                            Culture
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"} p-3`}
                             href="/about/leadership"
                           >
                             Leadership
@@ -185,16 +165,6 @@ const MobileNav = () => {
                             href="/about/our-story"
                           >
                             Our Story
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"} p-3`}
-                            href="/about/philanthropy"
-                          >
-                            Philanthropy
                           </Link>
                         )}
                       </Menu.Item>
@@ -338,66 +308,14 @@ const MobileNav = () => {
                   </Transition>
                 </div>
               </Menu>
-              <Menu>
+              <Menu className="h-full">
                 <div>
-                  <Menu.Button className="flex h-full flex-row items-center p-3">
-                    <p>Careers</p>
-                    <ChevronDownIcon
-                      className="ml-2 h-5 w-5"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="ml-10 flex flex-col">
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/careers/work-at-ifg"
-                          >
-                            Work at IFG
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/careers/benefits-and-perks"
-                          >
-                            Benefits & Perks
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item className="p-3">
-                        {({ active }) => (
-                          <Link
-                            className={`${active && "bg-blue-500"}`}
-                            href="/careers/career-support"
-                          >
-                            Career Support
-                          </Link>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </div>
-              </Menu>
-              <Menu className="mb-2 h-full">
-                <div>
-                  <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 font-bold text-hazard-blue-500">
-                    <Link href="https://new.ifgsd.com">Find an Advisor</Link>
+                  <Menu.Button className="mx-auto p-3 ">
+                    <Link href="/careers">Careers</Link>
                   </Menu.Button>
                 </div>
               </Menu>
+
               <Menu className="h-full rounded bg-hazard-blue-500">
                 <div>
                   <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 text-seabreeze-500">
