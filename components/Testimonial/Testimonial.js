@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
-import Script from "next/script";
+
+// SWIPER
 import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 
-import quotes from "../../public/quotes.png";
+// GRAPHICS
+import squiggle from "../../public/_home/graphics/squiggle.png"
+
+// NEXT IMPORTS
 import Image from "next/image";
 
 const Testimonial = ({ content, testimonials }) => {
@@ -81,13 +84,13 @@ const Testimonial = ({ content, testimonials }) => {
                   />
                 </svg>
               </button>
-              <img
-                  src="/home/graphicsIllustrations/squiggle.png"
+              <Image
+                  src={squiggle}
                   alt="decoration"
                   className="absolute right-0 -top-10 z-10"
                 />
 
-              <div className=" swiper-container mx-5 !overflow-hidden rounded-[20px] bg-hazard-blue-500 p-4 relative">
+              <div className=" swiper-container mx-5 !overflow-hidden rounded-[20px] bg-gradient-to-b from-hazard-blue-500 to-blue-wave-300 p-4 relative">
                 <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => {
                     return (
@@ -111,7 +114,7 @@ const Testimonial = ({ content, testimonials }) => {
                               <p className="text-right text-base font-bold text-seabreeze-500">
                                 {testimonial.fullName}
                               </p>
-                              <p className="text-right text-sm font-semibold text-dunkel-blue-500">
+                              <p className="text-right text-sm font-semibold text-seabreeze-500">
                                 {testimonial.state}
                               </p>
                             </div>

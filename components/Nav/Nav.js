@@ -74,18 +74,6 @@ const Nav = () => {
                               </Link>
                             )}
                           </Menu.Item>
-                          <Menu.Item className="px-2 py-3">
-                            {({ active }) => (
-                              <Link
-                                className={`${
-                                  active && "bg-hazard-blue-500"
-                                } hover:text-seabreeze-500`}
-                                href="/join/why-choose-us/advisor-success-stories"
-                              >
-                                Advisor Testimonials
-                              </Link>
-                            )}
-                          </Menu.Item>
                         </Menu.Items>
                       </Transition>
                     </Menu>

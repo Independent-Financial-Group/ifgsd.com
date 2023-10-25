@@ -315,7 +315,6 @@ const MobileNav = () => {
                   </Menu.Button>
                 </div>
               </Menu>
-
               <Menu className="h-full rounded bg-hazard-blue-500">
                 <div>
                   <Menu.Button className="mx-auto flex h-full flex-row items-center p-3 text-seabreeze-500">
