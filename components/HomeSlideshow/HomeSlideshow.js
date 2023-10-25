@@ -30,7 +30,7 @@ import image16 from "../../public/_home/images/slideshow/compressed/image16.webp
 import image17 from "../../public/_home/images/slideshow/compressed/image17.webp";
 import image18 from "../../public/_home/images/slideshow/compressed/image18.webp";
 import image19 from "../../public/_home/images/slideshow/compressed/image19.webp";
-import image20 from "../../public/_home/images/slideshow/compressed/image20.JPEG";
+import image20 from "../../public/_home/images/slideshow/compressed/image20.webp";
 import image21 from "../../public/_home/images/slideshow/compressed/image21.webp";
 import image22 from "../../public/_home/images/slideshow/compressed/image22.webp";
 import image23 from "../../public/_home/images/slideshow/compressed/image23.webp";
