@@ -45,7 +45,7 @@ const Breadcrumb = () => {
 */}
 
       <nav aria-label="Breadcrumb" className="my-8">
-        <ol className="flex items-center gap-1 text-sm text-gray-600">
+        <ol className="flex items-center gap-1 text-sm text-neon-orange-500 font-bold">
           <li>
             <Link href="/" className="block transition hover:text-gray-700">
               <span className="sr-only"> Home </span>
