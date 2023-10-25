@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
 const BranchAnnouncement = ({ newBranch }) => {
   const fields = newBranch.fields;

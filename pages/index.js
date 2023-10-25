@@ -18,16 +18,13 @@ import HomeSlideshow from "../components/HomeSlideshow/HomeSlideshow";
 import Stats from "../components/Stats/Stats";
 
 // IMAGES
-import ctaImage1 from "../public/_home/images/cta-image-1.png";
-import ctaImage2 from "../public/_home//images/cta-image-2.png";
+import ctaImage1 from "../public/_home/images/cta-image-1.webp";
+import ctaImage2 from "../public/_home/images/cta-image-2.webp";
 
 // GRAPHICS
 import handshake from "../public/_home/graphics/handshake.png";
 import balance from "../public/_home/graphics/balance.png";
 import person from "../public/_home/graphics/person.png";
-import squiggle from "../public/_home/graphics/squiggle.png";
-import laurel from "../public/_home/graphics/laurel-branded-200.png";
-import heart from "../public/_home/graphics/heart.png";
 
 // CONTENTFUL
 const contenful = require("contentful");
@@ -37,7 +34,7 @@ const client = contenful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-// IMPORT DATA 
+// IMPORT DATA
 export async function getStaticProps() {
   const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
   const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
@@ -248,7 +245,7 @@ const HomePage = ({
         </section>
         <section className="text-seabreeze-500">
           <Container>
-            <div className="rounded-[40px] bg-[url('/_home/images/offerings-bg.jpg')] bg-cover bg-no-repeat">
+            <div className="rounded-[40px] bg-[url('/_home/images/offerings-bg.webp')] bg-cover bg-no-repeat">
               <div className="rounded-[40px] bg-hazard-blue-500/50 px-4 py-8 sm:py-16 lg:px-6">
                 <div className="mx-auto mb-8 max-w-screen-md text-center lg:mb-16">
                   <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-seabreeze-500">
