@@ -5,19 +5,31 @@ import Link from "next/link";
 
 import { useAnimate, motion, stagger, useInView } from "framer-motion";
 
-import PublicLayout from "../components/PublicLayout/PublicLayout";
-import Container from "../components/Container/Container";
 
+//LAYOUT
+import PublicLayout from "../components/PublicLayout/PublicLayout";
+
+// COMPONENTS
+import Container from "../components/Container/Container";
 import Hero from "../components/Hero/Hero";
 import Testimonial from "../components/Testimonial/Testimonial";
 import BranchAnnouncement from "../components/BranchAnnouncement/BranchAnnouncement";
 import HomeSlideshow from "../components/HomeSlideshow/HomeSlideshow";
 import Stats from "../components/Stats/Stats";
 
-import quotes from "../public/quotes.png";
-import ctaImage1 from "../public/cta-image-1.png";
-import ctaImage2 from "../public/cta-image-2.png";
+// IMAGES
+import ctaImage1 from "../public/_home/images/cta-image-1.png";
+import ctaImage2 from "../public/_home//images/cta-image-2.png";
 
+// GRAPHICS
+import handshake from "../public/_home/graphics/handshake.png";
+import balance from "../public/_home/graphics/balance.png";
+import person from "../public/_home/graphics/person.png";
+import squiggle from "../public/_home/graphics/squiggle.png";
+import laurel from "../public/_home/graphics/laurel-branded-200.png";
+import heart from "../public/_home/graphics/heart.png";
+
+// CONTENTFUL
 const contenful = require("contentful");
 
 const client = contenful.createClient({
@@ -25,6 +37,7 @@ const client = contenful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
+// IMPORT DATA 
 export async function getStaticProps() {
   const newBranch = await client.getEntry("3a0Fc06d3mZw0ofKVnfAWy");
   const pageContent = await client.getEntry("4b9Yfat95NTXIYMG5Emg3T");
@@ -59,26 +72,32 @@ export async function getStaticProps() {
         {
           icon: pageContent.fields.offering1Icon,
           header: pageContent.fields.offering1Header,
+          slug: pageContent.fields.offering1Slug
         },
         {
           icon: pageContent.fields.offering2Icon,
           header: pageContent.fields.offering2Header,
+          slug: pageContent.fields.offering2Slug
         },
         {
           icon: pageContent.fields.offering3Icon,
           header: pageContent.fields.offering3Header,
+          slug: pageContent.fields.offering3Slug
         },
         {
           icon: pageContent.fields.offering4Icon,
           header: pageContent.fields.offering4Header,
+          slug: pageContent.fields.offering4Slug
         },
         {
           icon: pageContent.fields.offering5Icon,
           header: pageContent.fields.offering5Header,
+          slug: pageContent.fields.offering5Slug
         },
         {
           icon: pageContent.fields.offering6Icon,
           header: pageContent.fields.offering6Header,
+          slug: pageContent.fields.offering6Slug
         },
       ],
     },
@@ -124,8 +143,8 @@ const HomePage = ({
     <>
       <Head>
         <title>
-          Find Your Balance, Catch the Wave. - Independent Financial Group San
-          Diego
+          Independent Financial Group San
+          Diego | Broker-Dealer & RIA
         </title>
       </Head>
       <PublicLayout>
@@ -143,7 +162,7 @@ const HomePage = ({
                 <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
                   {pageContent.sectionTestimonial.headingSecondary}
                 </h2>
-                <h3 className="text-5xl font-bold text-hazard-blue-500 lg:text-6xl">
+                <h3 className="text-5xl font-bold text-hazard-blue-500 lg:text-5xl">
                   {pageContent.sectionTestimonial.headingPrimary}{" "}
                   <img
                     className="inline w-11"
@@ -194,26 +213,26 @@ const HomePage = ({
                     </Link>
                   </span>
                 </p>
-                <div className="my-4 grid grid-cols-2 grid-rows-2 gap-4 text-hazard-blue-500 lg:my-0">
-                  <div className="col-start-1 row-start-1 rounded-[20px] bg-hazard-blue-500/50 p-3">
-                    <img
-                      src="/home/graphicsIllustrations/handshake.png"
+                <div className="my-4 grid grid-cols-2 grid-rows-2 gap-4 text-seabreeze-500 lg:my-0">
+                  <div className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
+                    <Image
+                      src={handshake}
                       className="mx-auto"
                     />
                     <h3 className="text-center text-3xl font-bold">
                       Integrity
                     </h3>
                   </div>
-                  <div className="col-start-2 row-start-1 rounded-[20px] bg-hazard-blue-500/50 p-3">
-                    <img
-                      src="/home/graphicsIllustrations/balance.png"
+                  <div className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
+                    <Image
+                      src={balance}
                       className="mx-auto"
                     />
                     <h3 className="text-center text-3xl font-bold">balance</h3>
                   </div>
-                  <div className="col-span-2 row-start-2 rounded-[20px] bg-hazard-blue-500/50 p-3">
-                    <img
-                      src="/home/graphicsIllustrations/person.png"
+                  <div className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
+                    <Image
+                      src={person}
                       className="mx-auto"
                     />
                     <h3 className="text-center text-3xl font-bold">
@@ -229,8 +248,8 @@ const HomePage = ({
         </section>
         <section className="text-seabreeze-500">
           <Container>
-            <div className="rounded-[40px] bg-[url('/home/ifg-wave-2.jpg')] bg-cover bg-no-repeat">
-              <div className="rounded-[40px] bg-blue-wave-700/60 px-4 py-8 sm:py-16 lg:px-6">
+            <div className="rounded-[40px] bg-[url('/_home/images/offerings-bg.jpg')] bg-cover bg-no-repeat">
+              <div className="rounded-[40px] bg-hazard-blue-500/50 px-4 py-8 sm:py-16 lg:px-6">
                 <div className="mx-auto mb-8 max-w-screen-md text-center lg:mb-16">
                   <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-seabreeze-500">
                     {pageContent.sectionOfferings.heading}
@@ -249,7 +268,7 @@ const HomePage = ({
                             alt={offering.icon.title}
                           />
                           <h3 className="text-center text-xl font-bold text-seabreeze-500">
-                            <Link href="#">{offering.header}</Link>
+                            <Link href={offering.slug}>{offering.header}</Link>
                           </h3>
                         </div>
                       </div>
