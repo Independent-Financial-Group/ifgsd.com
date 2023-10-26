@@ -56,7 +56,7 @@ const Nav = () => {
                                 className={`${
                                   active && "bg-hazard-blue-500"
                                 } hover:text-seabreeze-500`}
-                                href="/join/why-choose-us/our-mission"
+                                href="/join/why-choose-us/our-mission-and-values"
                               >
                                 Our Mission
                               </Link>

@@ -1,20 +1,18 @@
 import React from "react";
 
-const PageHeader = ({content}) => {
+import Container from "../Container/Container";
+
+const PageHeader = ({children, bgPath}) => {
   return (
-    <div className="absolute top-1/2 -translate-y-1/2">
-      <h1 className="text-2xl font-bold text-seabreeze-500">
-        <img
-          className="inline"
-          src="/graphicAssets/triangle-highlight.png"
-          alt="ornament highlight"
-        />{" "}
-        {content.heading}
-      </h1>
-      <h2 className="font-bold text-seabreeze-500 lg:text-6xl">
-        {content.subheading}
-      </h2>
-    </div>
+    <header className={`relative h-[calc(75vh-60px)] rounded-bl-[40px] rounded-br-[40px] bg-cover bg-center bg-no-repeat md:h-[calc(35vh-60px)] lg:h-[calc(50vh-60px)] xl:h-[calc(50vh-60px)] ${bgPath}`}>
+      <div className="h-full rounded-bl-[40px] rounded-br-[40px] bg-dunkel-blue-900/20">
+        <Container>
+        <div className="absolute top-1/2 -translate-y-1/2">
+          {children}
+        </div>
+        </Container>
+      </div>
+    </header>
   );
 };
 
