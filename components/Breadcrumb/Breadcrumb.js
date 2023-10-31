@@ -5,12 +5,7 @@ import Link from "next/link";
 const Breadcrumb = () => {
   const router = useRouter();
   const convertBreadcrumb = (string) => {
-    return string
-      .replace(/-/g, " ")
-      .replace(/oe/g, "ö")
-      .replace(/ae/g, "ä")
-      .replace(/ue/g, "ü")
-      .toUpperCase();
+    return string.replace(/-/g, " ").toUpperCase();
   };
   const [breadcrumbs, setBreadcrumbs] = useState(null);
 
@@ -34,18 +29,12 @@ const Breadcrumb = () => {
     return null;
   }
 
-  console.log(breadcrumbs)
+  console.log(breadcrumbs);
 
   return (
     <>
-      {/*
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
-*/}
-
       <nav aria-label="Breadcrumb" className="my-8">
-        <ol className="flex items-center gap-1 text-sm text-neon-orange-500 font-bold">
+        <ol className="flex items-center gap-1 text-sm font-bold text-neon-orange-500">
           <li>
             <Link href="/" className="block transition hover:text-gray-700">
               <span className="sr-only"> Home </span>
@@ -85,7 +74,7 @@ const Breadcrumb = () => {
                   </svg>
                 </li>
 
-                <li>
+                <li className="text-[10px] md:text-sm lg:text-base">
                   <p className="block transition hover:text-gray-700">
                     {convertBreadcrumb(breadcrumb.breadcrumb)}
                   </p>
