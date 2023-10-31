@@ -49,8 +49,8 @@ const ourMission = () => {
             <Breadcrumb />
             <div className="flex flex-col gap-5 lg:grid lg:grid-cols-2">
               <div className="self-center">
-                <h2 className="mb-5 text-3xl font-bold text-hazard-blue-500">
-                  <Image src={highlight} alt="highlight" className="inline" />{" "}
+                <h2 className="mb-5 text-3xl font-bold text-hazard-blue-500 flex gap-2 items-start">
+                  <Image src={highlight} alt="highlight" />{" "}
                   Our Culture
                 </h2>
                 <p className="text-xl">
@@ -75,20 +75,20 @@ const ourMission = () => {
             <h2 className="mb-20 text-center text-3xl font-bold">
               Our Core Values
             </h2>
-            <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 md :gap-0">
-              <div className="text-center md:col-span-2 md:lg:col-span-1 lg:border-r-2 lg:border-seabreeze-500 lg:px-10">
+            <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 md:gap-5">
+              <div className="text-center md:col-span-2 md:lg:col-span-1">
                 <Image
                   className="mx-auto"
                   src={handshake}
                   alt="icon of handshake"
                 />
                 <h3 className="my-5 text-2xl font-bold">Integrity</h3>
-                <p className="text-xl">
+                <p className="md:max-w-prose text-xl">
                   We will always run our business ethically and maintain a solid
                   relationship with our regulating authorities
                 </p>
               </div>
-              <div className="text-center md:col-span-1 lg:border-r-2 lg:border-seabreeze-500 lg:px-10">
+              <div className="text-center md:col-span-1 lg:border-x-2 lg:border-seabreeze-500 lg:px-5">
                 <Image
                   className="mx-auto"
                   src={balance}
@@ -101,7 +101,7 @@ const ourMission = () => {
                   your full potential.
                 </p>
               </div>
-              <div className="text-center md:col-span-1 lg:px-10">
+              <div className="text-center md:col-span-1 lg:px-5">
                 <Image
                   className="mx-auto"
                   src={person}
@@ -120,11 +120,10 @@ const ourMission = () => {
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div className="self-center">
-                <h2 className="mb-5 text-3xl font-bold text-neon-orange-500">
+                <h2 className="mb-5 text-3xl font-bold text-neon-orange-500 flex gap-2 items-start">
                   <Image
                     src={highlightBlue}
                     alt="highlight"
-                    className="inline"
                   />{" "}
                   The IFG Charitable Mission
                 </h2>
@@ -141,7 +140,7 @@ const ourMission = () => {
                   />
                   <p className="text-xl">
                     When David Fischer, and I founded IFG, we agreed that giving
-                    back to our community, quietly and consistently, would be a
+                    back to our community, consistently, would be a
                     central part of our mission. We both are fathers, and our
                     community has been good to us and to our families. We want
                     to make sure that all children and young adults in San
@@ -186,11 +185,11 @@ const ourMission = () => {
                 </div>
               </div>
               <div className="self-center">
-                <h2 className="mb-5 text-3xl font-bold text-hazard-blue-500">
-                  <Image src={highlight} alt="highlight" className="inline" />{" "}
+                <h2 className="text-3xl font-bold text-hazard-blue-500 flex gap-2 items-start">
+                  <Image src={highlight} alt="highlight" />{" "}
                   Experience Independence
                 </h2>
-                <div className="relative my-10">
+                <div className="relative my-5">
                   <p className="text-xl">
                     If you are a financial services professional who is
                     considering the freedom and independence of owning your own
