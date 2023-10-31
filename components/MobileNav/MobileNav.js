@@ -83,7 +83,7 @@ const MobileNav = () => {
                                 {({ active }) => (
                                   <Link
                                     className={`${active && "bg-blue-500"}`}
-                                    href="/join-ifg/why-choose-us/our-mission-and-values"
+                                    href="/join/why-choose-us/our-mission-and-values"
                                   >
                                     Our Mission
                                   </Link>
@@ -93,7 +93,7 @@ const MobileNav = () => {
                                 {({ active }) => (
                                   <Link
                                     className={`${active && "bg-blue-500"}`}
-                                    href="/join-ifg/why-choose-us/the-ifg-experience"
+                                    href="/join/why-choose-us/the-ifg-experience"
                                   >
                                     The IFG Experience
                                   </Link>
