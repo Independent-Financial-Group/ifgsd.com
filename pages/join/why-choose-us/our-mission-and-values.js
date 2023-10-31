@@ -22,8 +22,8 @@ import charityCulture from "../../../public/_mission-and-values/images/charity-c
 import quoteLeft from "../../../public/_mission-and-values/graphics/quote-left.png";
 import quoteRight from "../../../public/_mission-and-values/graphics/quote-right.png";
 import gradientShadow from "../../../public/_global-graphics/gradient-shadow.png";
-import employeeHeadshot from "../../../public/_mission-and-values/images/employee-headshot.webp"
-import gradientWave from "../../../public/_mission-and-values/graphics/gradient-wave.png"
+import employeeHeadshot from "../../../public/_mission-and-values/images/employee-headshot.webp";
+import gradientWave from "../../../public/_mission-and-values/graphics/gradient-wave.png";
 
 const ourMission = () => {
   return (
@@ -38,16 +38,16 @@ const ourMission = () => {
           bgPath={`bg-[url('/_mission-and-values/images/hero.webp')]`}
         >
           <div className="flex gap-6">
-            <h1 className="text-5xl font-bold text-seabreeze-500">
+            <h1 className="text-3xl md:text-5xl font-bold text-seabreeze-500">
               <Image src={highlight} alt="highlight" className="inline" />{" "}
               Mission & Values
             </h1>
           </div>
         </PageHeader>
-        <section className="my-32">
+        <section className="my-8 lg:my-32">
           <Container>
             <Breadcrumb />
-            <div className="lg:grid lg:grid-cols-2">
+            <div className="flex flex-col gap-5 lg:grid lg:grid-cols-2">
               <div className="self-center">
                 <h2 className="mb-5 text-3xl font-bold text-hazard-blue-500">
                   <Image src={highlight} alt="highlight" className="inline" />{" "}
@@ -70,13 +70,13 @@ const ourMission = () => {
             </div>
           </Container>
         </section>
-        <section className="my-32 rounded-[20px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300 py-24 text-white">
+        <section className="my-8 rounded-[20px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300 py-24 text-white lg:my-32">
           <Container>
             <h2 className="mb-20 text-center text-3xl font-bold">
               Our Core Values
             </h2>
-            <div className="lg:grid lg:grid-cols-3">
-              <div className="border-r-2 border-seabreeze-500 px-10 text-center">
+            <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 md :gap-0">
+              <div className="text-center md:col-span-2 md:lg:col-span-1 lg:border-r-2 lg:border-seabreeze-500 lg:px-10">
                 <Image
                   className="mx-auto"
                   src={handshake}
@@ -88,7 +88,7 @@ const ourMission = () => {
                   relationship with our regulating authorities
                 </p>
               </div>
-              <div className="border-r-2 border-seabreeze-500 px-10 text-center">
+              <div className="text-center md:col-span-1 lg:border-r-2 lg:border-seabreeze-500 lg:px-10">
                 <Image
                   className="mx-auto"
                   src={balance}
@@ -101,7 +101,7 @@ const ourMission = () => {
                   your full potential.
                 </p>
               </div>
-              <div className="px-10 text-center">
+              <div className="text-center md:col-span-1 lg:px-10">
                 <Image
                   className="mx-auto"
                   src={person}
@@ -116,7 +116,7 @@ const ourMission = () => {
             </div>
           </Container>
         </section>
-        <section className="my-32">
+        <section className="my-8 lg:my-32">
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div className="self-center">
@@ -154,42 +154,53 @@ const ourMission = () => {
                 </p>
               </div>
               <div className="relative rounded-lg">
-                  <Image
-                    className="rounded-lg object-cover"
-                    src={charityCulture}
-                    alt="David Fischer and Scott Heising with members from Promises2Kids holding a contribution check."
-
-                  />
-                  <Image src={gradientShadow} alt="drop shadow" className="absolute top-0 -z-10" />
+                <Image
+                  className="rounded-lg object-cover mx-auto"
+                  src={charityCulture}
+                  alt="David Fischer and Scott Heising with members from Promises2Kids holding a contribution check."
+                />
+                <Image
+                  src={gradientShadow}
+                  alt="drop shadow"
+                  className="hidden lg:block absolute top-0 -z-10"
+                />
               </div>
             </div>
           </Container>
         </section>
-        <section className="my-32 relative">
-        <Image src={gradientWave} alt="decoration" className="absolute -z-10 -bottom-9 w-full"/>
+        <section className="relative my-8 lg:my-32">
+          <Image
+            src={gradientWave}
+            alt="decoration"
+            className="absolute -bottom-9 -z-10 w-full"
+          />
           <Container>
-            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
+            <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-5">
               <div className="relative justify-self-center">
-                <div className="h-[410px] w-[410px] rounded-[20px]">
-                  <Image className="rounded-[20px]" src={employeeHeadshot} alt="A happy IFG employee" />
+                <div className="w-full mx-auto md:mx-0 md:h-[410px] md:w-[410px] rounded-[20px]">
+                  <Image
+                    className="rounded-[20px]"
+                    src={employeeHeadshot}
+                    alt="A happy IFG employee"
+                  />
                 </div>
               </div>
               <div className="self-center">
                 <h2 className="mb-5 text-3xl font-bold text-hazard-blue-500">
-                  <Image
-                    src={highlight}
-                    alt="highlight"
-                    className="inline"
-                  />{" "}
+                  <Image src={highlight} alt="highlight" className="inline" />{" "}
                   Experience Independence
                 </h2>
                 <div className="relative my-10">
                   <p className="text-xl">
-                  If you are a financial services professional who is considering the freedom and independence of owning your own financial practice or if you are an established group of independent financial professionals, you should consider joining us.
+                    If you are a financial services professional who is
+                    considering the freedom and independence of owning your own
+                    financial practice or if you are an established group of
+                    independent financial professionals, you should consider
+                    joining us.
                   </p>
                 </div>
                 <Link href="/join/contact" passHref>
-                  <button className="font-bold text-seabreeze-500 bg-neon-orange-500 rounded-lg px-4 py-4">
+                  <button className="rounded-lg bg-neon-orange-500 px-4 py-4 font-bold text-seabreeze-500">
                     Talk to a Team Member
                   </button>
                 </Link>
