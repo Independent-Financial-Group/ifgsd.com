@@ -41,10 +41,10 @@ const TheIfgExperience = () => {
           centerElement={true}
         >
           <div>
-            <h1 className="mb-8 text-center text-3xl font-bold text-seabreeze-500 md:text-5xl">
+            <h1 className="mb-8 text-center font-bold text-seabreeze-500 text-5xl">
               The IFG Experience
             </h1>
-            <p className="text-center text-xl text-seabreeze-500">
+            <p className="text-center text-xl text-seabreeze-500 lg:w-3/4 lg:mx-auto">
               Embark on a seamless transition to IFG with a dedicated support
               team of experts who can tailor solutions for your practice.
             </p>
@@ -87,23 +87,23 @@ const TheIfgExperience = () => {
               <Image src={highlight} alt="decorative heading highlight" />
               The Transition Journey
             </h2>
-            <div className="flex flex-col-reverse lg:flex lg:min-h-[500px] lg:flex-row lg:gap-5">
-              <div className="lg:grid lg:w-3/4 lg:grid-cols-2 lg:grid-rows-3 lg:gap-5">
-                <div className=" col-span-1 row-span-1 rounded-2xl bg-[url('/_the-ifg-experience/images/guidance.webp')] bg-cover">
+            <div className="flex flex-col-reverse gap-10 lg:flex lg:min-h-[500px] lg:flex-row lg:gap-5">
+              <div className="lg:h-auto lg:grid lg:w-3/4 lg:grid-cols-2 lg:grid-rows-3 lg:gap-5">
+                <div className="h-[100px] lg:h-auto col-span-1 row-span-1 rounded-2xl bg-[url('/_the-ifg-experience/images/guidance.webp')] bg-cover">
                   <div className="flex h-full w-full items-center justify-center rounded-2xl bg-black/25">
                     <h3 className="text-center text-3xl font-bold text-seabreeze-500">
                       Guidance
                     </h3>
                   </div>
                 </div>
-                <div className="col-span-1 row-span-3 rounded-2xl bg-[url('/_the-ifg-experience/images/assistance.webp')] bg-cover bg-right">
+                <div className="h-[100px] lg:h-auto col-span-1 row-span-3 rounded-2xl bg-[url('/_the-ifg-experience/images/assistance.webp')] bg-cover bg-right">
                   <div className="flex h-full w-full items-center justify-center rounded-2xl bg-black/25">
                     <h3 className="text-center align-middle text-3xl font-bold text-seabreeze-500">
                       Assistance
                     </h3>
                   </div>
                 </div>
-                <div className="col-span-1 row-span-2 rounded-2xl bg-[url('/_the-ifg-experience/images/support.webp')] bg-cover">
+                <div className="h-[100px] lg:h-auto col-span-1 row-span-2 rounded-2xl bg-[url('/_the-ifg-experience/images/support.webp')] bg-cover">
                   <div className="flex h-full w-full items-center justify-center rounded-2xl bg-black/25">
                     <h3 className="text-center align-middle text-3xl font-bold text-seabreeze-500">
                       Support
@@ -111,8 +111,8 @@ const TheIfgExperience = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-around">
-                <article className="flex items-center gap-2 text-4xl font-medium text-neon-orange-500">
+              <div className="flex flex-col gap-10 lg:justify-around">
+                <article className="flex items-center gap-2 text-2xl lg:text-4xl font-medium text-neon-orange-500">
                   <div className="flex items-center gap-5">
                     <Image src={checkmarkBlue} alt="decorative checkmark" />
                     <p className="w-3/4">
@@ -120,13 +120,13 @@ const TheIfgExperience = () => {
                     </p>
                   </div>
                 </article>
-                <article className="flex items-center gap-2 text-4xl font-medium text-neon-orange-500">
+                <article className="flex items-center gap-2 text-2xl lg:text-4xl font-medium text-neon-orange-500">
                   <div className="flex items-center gap-5">
                     <Image src={checkmarkBlue} alt="decorative checkmark" />
                     <p className="w-3/4">Dedicated Transition Team</p>
                   </div>
                 </article>
-                <article className="flex items-center gap-2 text-4xl font-medium text-neon-orange-500">
+                <article className="flex items-center gap-2 text-2xl lg:text-4xl font-medium text-neon-orange-500">
                   <div className="flex items-center gap-5">
                     <Image src={checkmarkBlue} alt="decorative checkmark" />
                     <p className="w-3/4">
@@ -138,7 +138,7 @@ const TheIfgExperience = () => {
             </div>
           </Container>
         </section>
-        <section className="my-20 lg:my-32">
+        <section className="my-32">
           <Container>
             <h2 className="mx-auto mb-5 w-1/3 text-center text-3xl font-bold text-hazard-blue-500">
               Dedicated Home Office Transition Team
