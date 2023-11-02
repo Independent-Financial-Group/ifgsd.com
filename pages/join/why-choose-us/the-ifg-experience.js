@@ -256,7 +256,7 @@ const TheIfgExperience = () => {
             </div>
           </Container>
         </section>
-        <section className="my-20 rounded-[40px] bg-gradient-to-r from-hazard-blue-500 to-hazard-blue-400 py-10 lg:my-32">
+        <section className="my-20 rounded-[40px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300 py-10 lg:my-32">
           <Container>
             <h2 className="mb-5 flex items-start gap-2 text-3xl font-bold text-seabreeze-500">
               <Image src={highlightWhite} alt="decorative highlight" />
