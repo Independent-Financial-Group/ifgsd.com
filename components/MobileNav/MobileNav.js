@@ -32,11 +32,13 @@ const MobileNav = () => {
               </div>
               <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block h-8 w-auto"
-                    src="https://new.ifgsd.com/wp-content/uploads/2019/04/cropped-IFGLogo2016_icon.png"
-                    alt="IFG Logo Icon"
-                  />
+                  <Link href="/" passHref>
+                    <img
+                      className="block h-8 w-auto"
+                      src="https://new.ifgsd.com/wp-content/uploads/2019/04/cropped-IFGLogo2016_icon.png"
+                      alt="IFG Logo Icon"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

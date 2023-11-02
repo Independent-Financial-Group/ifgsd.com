@@ -41,10 +41,10 @@ const TheIfgExperience = () => {
           centerElement={true}
         >
           <div>
-            <h1 className="mb-8 text-center font-bold text-seabreeze-500 text-5xl">
+            <h1 className="mb-8 text-center text-5xl font-bold text-seabreeze-500">
               The IFG Experience
             </h1>
-            <p className="text-center text-xl text-seabreeze-500 lg:w-3/4 lg:mx-auto">
+            <p className="text-center text-xl text-seabreeze-500 lg:mx-auto lg:w-3/4">
               Embark on a seamless transition to IFG with a dedicated support
               team of experts who can tailor solutions for your practice.
             </p>
@@ -88,22 +88,22 @@ const TheIfgExperience = () => {
               The Transition Journey
             </h2>
             <div className="flex flex-col-reverse gap-10 lg:flex lg:min-h-[500px] lg:flex-row lg:gap-5">
-              <div className="lg:h-auto lg:grid lg:w-3/4 lg:grid-cols-2 lg:grid-rows-3 lg:gap-5">
-                <div className="h-[100px] lg:h-auto col-span-1 row-span-1 rounded-2xl bg-[url('/_the-ifg-experience/images/guidance.webp')] bg-cover">
+              <div className="flex flex-col gap-5 lg:grid lg:h-auto lg:w-3/4 lg:grid-cols-2 lg:grid-rows-3 lg:gap-5">
+                <div className="col-span-1 row-span-1 h-[100px] rounded-2xl bg-[url('/_the-ifg-experience/images/guidance.webp')] bg-cover lg:h-auto">
                   <div className="flex h-full w-full items-center justify-center rounded-2xl bg-black/25">
                     <h3 className="text-center text-3xl font-bold text-seabreeze-500">
                       Guidance
                     </h3>
                   </div>
                 </div>
-                <div className="h-[100px] lg:h-auto col-span-1 row-span-3 rounded-2xl bg-[url('/_the-ifg-experience/images/assistance.webp')] bg-cover bg-right">
+                <div className="col-span-1 row-span-3 h-[100px] rounded-2xl bg-[url('/_the-ifg-experience/images/assistance.webp')] bg-cover bg-right lg:h-auto">
                   <div className="flex h-full w-full items-center justify-center rounded-2xl bg-black/25">
                     <h3 className="text-center align-middle text-3xl font-bold text-seabreeze-500">
                       Assistance
                     </h3>
                   </div>
                 </div>
-                <div className="h-[100px] lg:h-auto col-span-1 row-span-2 rounded-2xl bg-[url('/_the-ifg-experience/images/support.webp')] bg-cover">
+                <div className="col-span-1 row-span-2 h-[100px] rounded-2xl bg-[url('/_the-ifg-experience/images/support.webp')] bg-cover lg:h-auto">
                   <div className="flex h-full w-full items-center justify-center rounded-2xl bg-black/25">
                     <h3 className="text-center align-middle text-3xl font-bold text-seabreeze-500">
                       Support
@@ -112,7 +112,7 @@ const TheIfgExperience = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-10 lg:justify-around">
-                <article className="flex items-center gap-2 text-2xl lg:text-4xl font-medium text-neon-orange-500">
+                <article className="flex items-center gap-2 text-2xl font-medium text-neon-orange-500 lg:text-4xl">
                   <div className="flex items-center gap-5">
                     <Image src={checkmarkBlue} alt="decorative checkmark" />
                     <p className="w-3/4">
@@ -120,13 +120,13 @@ const TheIfgExperience = () => {
                     </p>
                   </div>
                 </article>
-                <article className="flex items-center gap-2 text-2xl lg:text-4xl font-medium text-neon-orange-500">
+                <article className="flex items-center gap-2 text-2xl font-medium text-neon-orange-500 lg:text-4xl">
                   <div className="flex items-center gap-5">
                     <Image src={checkmarkBlue} alt="decorative checkmark" />
                     <p className="w-3/4">Dedicated Transition Team</p>
                   </div>
                 </article>
-                <article className="flex items-center gap-2 text-2xl lg:text-4xl font-medium text-neon-orange-500">
+                <article className="flex items-center gap-2 text-2xl font-medium text-neon-orange-500 lg:text-4xl">
                   <div className="flex items-center gap-5">
                     <Image src={checkmarkBlue} alt="decorative checkmark" />
                     <p className="w-3/4">
@@ -140,13 +140,13 @@ const TheIfgExperience = () => {
         </section>
         <section className="my-32">
           <Container>
-            <h2 className="mx-auto mb-5 w-1/3 text-center text-3xl font-bold text-hazard-blue-500">
+            <h2 className="mx-auto mb-5 text-center text-3xl font-bold text-hazard-blue-500 md:w-3/4 lg:w-1/3">
               Dedicated Home Office Transition Team
             </h2>
             <p className="mb-5 text-center text-xl">
               Connect with our team members to get started.
             </p>
-            <div className="mb-10 lg:grid lg:grid-cols-3">
+            <div className="mb-10 flex flex-col gap-5 lg:grid lg:grid-cols-3 lg:gap-0">
               <div className="text-center text-neon-orange-500">
                 <Image
                   src={highlights}
@@ -193,17 +193,19 @@ const TheIfgExperience = () => {
                 <p>Senior Recruiter</p>
               </div>
             </div>
-            <Button href={"/join/contact"} type={"primary"}>
-              Let&apos;s Talk
-            </Button>
+            <div className="flex justify-center">
+              <Button href={"/join/contact"} type={"primary"}>
+                Let&apos;s Talk
+              </Button>
+            </div>
           </Container>
         </section>
         <section className="my-20 lg:my-32">
           <Container>
-            <h2 className="mb-10 text-center text-[100px] font-bold text-neon-orange-500">
+            <h2 className="line mb-10 text-center text-[70px] font-bold text-hazard-blue-500 md:text-[100px]">
               Service Oriented
             </h2>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-5">
               <div>
                 <h2 className="mb-5 flex items-start gap-2 text-3xl font-bold text-hazard-blue-500">
                   <Image src={highlight} alt="decorative highlight" />
@@ -254,40 +256,40 @@ const TheIfgExperience = () => {
             </div>
           </Container>
         </section>
-        <section className="my-20 rounded-2xl bg-gradient-to-r from-hazard-blue-500 to-hazard-blue-400 py-10 lg:my-32">
+        <section className="my-20 rounded-[40px] bg-gradient-to-r from-hazard-blue-500 to-hazard-blue-400 py-10 lg:my-32">
           <Container>
             <h2 className="mb-5 flex items-start gap-2 text-3xl font-bold text-seabreeze-500">
               <Image src={highlightWhite} alt="decorative highlight" />
               Clients Come First
             </h2>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <Image
                 src={clientsFirst}
                 alt="image of happy clients at a beach"
               />
               <div>
-                <ul className="flex flex-col justify-between h-full">
+                <ul className="mt-5 flex flex-col justify-between gap-5 lg:mt-0 lg:h-full lg:gap-0">
                   <li className="flex items-center gap-2">
                     <Image src={checkmarkWhite} />
-                    <p className="text-2xl font-bold text-seabreeze-500">
+                    <p className="text-xl font-bold text-seabreeze-500 md:text-2xl">
                       Communications & Service
                     </p>
                   </li>
                   <li className="flex items-center gap-2">
                     <Image src={checkmarkWhite} />
-                    <p className="text-2xl font-bold text-seabreeze-500">
+                    <p className="text-xl font-bold text-seabreeze-500 md:text-2xl">
                       Access to Leading Investment Companies
                     </p>
                   </li>
-                  <li className="flex items-center font-bold gap-2">
+                  <li className="flex items-center gap-2 font-bold">
                     <Image src={checkmarkWhite} />
-                    <p className="text-2xl text-seabreeze-500">
+                    <p className="text-xl text-seabreeze-500 md:text-2xl">
                       Product Availability
                     </p>
                   </li>
                   <li className="flex items-center gap-2">
                     <Image src={checkmarkWhite} />
-                    <p className="text-2xl font-bold text-seabreeze-500">
+                    <p className="text-xl font-bold text-seabreeze-500 md:text-2xl">
                       Risk Management
                     </p>
                   </li>
