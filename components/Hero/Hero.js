@@ -21,7 +21,9 @@ const Hero = ({ content }) => {
             </div>
           </div>
           <div className="max-w-prose">
-            <h2 className="font-bold text-3xl text-seabreeze-500">{content.subheading}</h2>
+            <h2 className="text-3xl font-bold text-seabreeze-500">
+              {content.subheading}
+            </h2>
             <h1 className="text-4xl font-bold text-seabreeze-500 md:text-6xl">
               {content.heading}
             </h1>
@@ -32,7 +34,7 @@ const Hero = ({ content }) => {
               <Button href={"/join/contact"} type="primary">
                 Get Started
               </Button>
-              <Button href={"/join/why-choose-us/our-mission"}>
+              <Button href={"/join/why-choose-us/the-ifg-experience"}>
                 Learn more <span aria-hidden="true">→</span>
               </Button>
               <a
