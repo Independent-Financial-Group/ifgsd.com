@@ -39,7 +39,7 @@ const MyMap = () => {
                 href="https://maps.google.com/maps/dir//Independent+Financial+Group+12671+High+Bluff+Dr+Suite+200+San+Diego,+CA+92130/@32.9481892,-117.2392203,20z/data=!4m5!4m4!1m0!1m2!1m1!1s0x80dc089ef7b05133:0xe7eb08641dc760a"
                 passHref
               >
-                <div className=" mx-auto flex w-1/2 flex-col items-center rounded bg-gray-200 p-2 font-bold text-hazard-blue-500 lg:w-auto">
+                <div className=" mx-auto flex w-1/2 flex-col items-center rounded bg-gray-100 p-2 font-bold text-hazard-blue-500 lg:w-auto">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
