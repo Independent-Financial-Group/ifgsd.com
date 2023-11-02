@@ -15,7 +15,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
 import arrow from "../../public/_contact/graphics/cta-arrow.png";
-import ornament from "../../public/_global-graphics/cta-ornament.png";
+import ornament from "../../public/_global-graphics/CTA-ornament.png";
 
 const contact = () => {
   const [states, setStates] = useState([
