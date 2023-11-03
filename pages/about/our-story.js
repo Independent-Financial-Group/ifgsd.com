@@ -1,14 +1,23 @@
 import React from "react";
+
+// IMPORT NEXT JS
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+
+// IMPORT COMPNENTS
 import PublicLayout from "../../components/PublicLayout/PublicLayout";
 import Container from "../../components/Container/Container";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import PageHeader from "../../components/PageHeader/PageHeader";
+import Timeline from "../../components/Timeline/Timeline";
 
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import ReactBeforeSliderComponent from "react-before-after-slider-component";
+import "react-before-after-slider-component/dist/build.css";
+
+// IMPORT ASSETS
+import highlight from "../../public/_global-graphics/highlight.png";
+import highlightBlue from "../../public/_global-graphics/highlight-blue.png";
 
 const contenful = require("contentful");
 
@@ -20,7 +29,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const timeline = await client.getEntries({
     content_type: "storyTimeline",
-    order: 'sys.createdAt'
+    order: "sys.createdAt",
   });
 
   return {
@@ -34,6 +43,10 @@ export async function getStaticProps() {
 }
 
 const ourStory = ({ timeline }) => {
+  const then = { imageUrl: "/_success-story/images/then.jpg" };
+  const now = { imageUrl: "/_success-story/images/now.jpg" };
+
+  console.log(timeline);
 
   return (
     <>
@@ -41,60 +54,63 @@ const ourStory = ({ timeline }) => {
         <title>Our Story | Independent Financial Group San Diego</title>
       </Head>
       <PublicLayout>
-        <section className="relative mb-32 h-[50vh] rounded-b-[40px] bg-[url('/backgrounds/wave-background-abstract-compressed.webp')] bg-cover bg-center">
-          <div className="h-full w-full rounded-b-[40px] bg-hazard-blue-500/60">
-            <Container>
-              <div className="absolute top-1/2 -translate-y-1/2">
-                <h1 className="text-2xl font-bold text-seabreeze-500">
-                  <img
-                    className="inline"
-                    src="/graphicAssets/triangle-highlight.png"
-                    alt="ornament highlight"
-                  />{" "}
-                  Built on a Handshake
-                </h1>
-                <h2 className="font-bold text-seabreeze-500 lg:text-6xl">
-                  Our Story
-                </h2>
-              </div>
-            </Container>
+        <PageHeader
+          bgPath={
+            "bg-[url('/_success-story/images/hero.webp')] bg-bottom bg-cover bg-left"
+          }
+        >
+          <div>
+            <h1 className="mb-8 flex items-center gap-2 text-5xl font-bold text-seabreeze-500">
+              <Image
+                src={highlight}
+                alt="decorative heading highlight graphic"
+              />
+              Our Success Story
+            </h1>
           </div>
-        </section>
-        <section>
+        </PageHeader>
+        <section className="my-32">
           <Container>
             <Breadcrumb />
-            <VerticalTimeline>
-              {timeline.map((item) => {
-                return (
-                  <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    dateClassName="text-neon-orange-500 !font-bold"
-                    contentStyle={{
-                      background: "white",
-                    }}
-                    contentArrowStyle={{
-                      borderRight: "7px solid white",
-                    }}
-                    date={item.monthAndYear}
-                    dateStyle={{ color: "red" }}
-                    iconStyle={{
-                      background: "#ff7f4e",
-                      color: "#ffe6d4",
-                    }}
-                  >
-                    <img
-                      src="https://images.pexels.com/photos/18210778/pexels-photo-18210778/free-photo-of-rocks-and-grass-on-green-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                      alt="placeholder image"
-                    />
-                    <h3 className="vertical-timeline-element-title !my-5 text-2xl font-bold text-hazard-blue-500">
-                      {item.cardTitle}
-                    </h3>
-                    <p className="text-base">{item.cardDetails}</p>
-                  </VerticalTimelineElement>
-                );
-              })}
-            </VerticalTimeline>
+            <div className="gap-5 lg:grid lg:grid-cols-2">
+              <div className="self-center">
+                <h2 className="flex items-center gap-2 text-3xl font-bold text-hazard-blue-500 ">
+                  <Image src={highlight} alt="decorative heading highlight" />
+                  Built on a handshake
+                </h2>
+                <p className="text-xl">
+                  “Scott and I built IFG one handshake at a time. We&apos;ve
+                  made a personal connection with everyone we&apos;ve
+                  recruited.”{" "}
+                </p>
+                <p className="mb-8 text-xl font-bold text-neon-orange-500">
+                  - David Fischer, IFG Co-Founder
+                </p>
+                <p className="text-xl">
+                  Over the last 20 years, our track record has spoken for
+                  itself: we&apos;re pursuing quality over quantity, so we can
+                  be the best not the biggest.
+                </p>
+              </div>
+              <div>
+                <ReactBeforeSliderComponent
+                  firstImage={now}
+                  secondImage={then}
+                  className="rounded-[20px]"
+                />
+              </div>
+            </div>
           </Container>
+        </section>
+        <section className="my-32 bg-[url('/_success-story/images/time.jpg')] bg-cover bg-center">
+          <div className="h-full bg-dunkel-blue-900/25 py-10">
+            <Container>
+              <h2 className="mb-10 text-center text-3xl font-bold text-seabreeze-500">
+                Committed to you from the beginning
+              </h2>
+              <Timeline data={timeline} />
+            </Container>
+          </div>
         </section>
       </PublicLayout>
     </>
