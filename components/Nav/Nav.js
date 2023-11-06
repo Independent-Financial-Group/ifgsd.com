@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import Container from "../Container/Container";
-import Logo from "../../public/logo-full-color.png"
+import Logo from "../../public/logo-full-color.png";
 
 const Nav = () => {
   return (
@@ -14,7 +14,12 @@ const Nav = () => {
         <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
           <div className="col">
             <Link href="/" passHref>
-              <Image width={250} alt="IFG logo" src={Logo} className="lg:max-w-[120px] xl:max-w-[250px]" />
+              <Image
+                width={250}
+                alt="IFG logo"
+                src={Logo}
+                className="lg:max-w-[120px] xl:max-w-[250px]"
+              />
             </Link>
           </div>
           <div className="col flex shrink-0 flex-row items-center lg:gap-x-5 xl:gap-x-10 ">
@@ -174,9 +179,9 @@ const Nav = () => {
                           className={`${
                             active && "bg-hazard-blue-500"
                           } hover:text-seabreeze-500`}
-                          href="/press-media/awards-and-recognition"
+                          href="/press-and-media/awards-and-accolades"
                         >
-                          Awards & Recognition
+                          Awards & Accolades
                         </Link>
                       )}
                     </Menu.Item>

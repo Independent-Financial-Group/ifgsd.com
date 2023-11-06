@@ -197,9 +197,9 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/press-and-media/awards-and-recognition"
+                            href="/press-and-media/awards-and-accolades"
                           >
-                            Awards & Recognition
+                            Awards & Accolades
                           </Link>
                         )}
                       </Menu.Item>
