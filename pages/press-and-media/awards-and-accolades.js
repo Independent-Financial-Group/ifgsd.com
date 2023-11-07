@@ -22,7 +22,27 @@ import celebrationCollage6 from "../../public/_awards-and-accolades/images/celeb
 import celebrationCollage7 from "../../public/_awards-and-accolades/images/celebration-collage-7.webp";
 import celebrationCollage8 from "../../public/_awards-and-accolades/images/celebration-collage-8.webp";
 
-const awardsAndAccolades = () => {
+// CONTENTFUL
+const contenful = require("contentful");
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  const featuredAwards = await client.getEntries({
+    content_type: "featuredAwards",
+  });
+
+  return {
+    props: {
+      awards: [...featuredAwards.items],
+    },
+    revalidate: 10,
+  };
+}
+
+const awardsAndAccolades = ({ awards }) => {
   return (
     <>
       <Head>
@@ -43,7 +63,7 @@ const awardsAndAccolades = () => {
             <h2 className="text-center text-6xl font-bold text-neon-orange-500">
               To Our Advisors & Employees
             </h2>
-            <p className="mx-auto my-8 w-1/2 text-center text-xl">
+            <p className="mx-auto my-8 text-center text-xl lg:w-1/2">
               We extend our heartfelt appreciation to the exceptional advisors
               and employees at Independent Financial Group. Your dedication,
               expertise, and unwavering commitment are the driving force behind
@@ -103,9 +123,35 @@ const awardsAndAccolades = () => {
         </section>
         <section className="my-10 lg:my-32">
           <Container>
-            <h2 className="text-center text-6xl font-bold text-hazard-blue-500">
+            <h2 className="mb-10 text-center text-6xl font-bold text-hazard-blue-500">
               Featured Awards
             </h2>
+            <div className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+              {awards.map((award) => {
+                return (
+                  <div
+                    className="mb-10 flex flex-col md:mb-0"
+                    key={award.sys.id}
+                  >
+                    <Image
+                      src={`https:${award.fields.image.fields.file.url}`}
+                      alt={award.fields.image.fields.file.fileName}
+                      width={award.fields.image.fields.file.details.image.width}
+                      height={
+                        award.fields.image.fields.file.details.image.height
+                      }
+                      className="mx-auto min-h-[180px] object-contain"
+                    />
+                    <h3 className="my-5 text-xl font-bold text-neon-orange-500">
+                      {award.fields.heading}
+                    </h3>
+                    <p className="mt-auto text-base">
+                      {award.fields.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </Container>
         </section>
       </PublicLayout>
