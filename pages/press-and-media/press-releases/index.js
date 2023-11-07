@@ -1,16 +1,23 @@
 import React from "react";
 
-import Nav from "../../../components/Nav/Nav";
-import MobileNav from "../../../components/MobileNav/MobileNav";
-import Footer from "../../../components/Footer/Footer";
+// IMPORT COMPONENTS
 
+import PublicLayout from "../../../components/PublicLayout/PublicLayout";
+import PageHeader from "../../../components/PageHeader/PageHeader";
+import Container from "../../../components/Container/Container";
+import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
+
+// IMPORT NEXTJS
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
+// IMPORT ASSETS
+import highlightOrange from "../../../public/_global-graphics/highlight.png";
+
+// CONTENTFUL
 import { formatDateAndTime } from "@contentful/f36-datetime";
-
 const contenful = require("contentful");
-
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
@@ -23,13 +30,14 @@ export async function getStaticProps() {
 
   const formattedPressReleases = pressReleases.items.map((item) => {
     return {
-      allData: item,
+      image: item.fields.image,
       date: formatDateAndTime(item.fields.date, "day"),
       author: item.fields.author.fields,
       title: item.fields.title,
       slug: item.fields.slug,
       description: item.fields.description,
       writtenContent: item.fields.writtenContent,
+      sys: item.sys,
     };
   });
 
@@ -41,10 +49,64 @@ export async function getStaticProps() {
 
 const index = ({ formattedPressReleases }) => {
   const posts = formattedPressReleases;
+  console.log(posts);
 
   return (
     <>
-      <Nav />
+      <Head>
+        <title>Press Releases | Independent Financial Group</title>
+      </Head>
+      <PublicLayout>
+        <PageHeader bgPath={"bg-[url('/_press-releases/images/hero.webp')]"}>
+          <h1 className="flex items-center gap-2 text-5xl font-bold text-seabreeze-500">
+            <Image src={highlightOrange} alt="decorative heading highlight" />
+            Press Releases
+          </h1>
+        </PageHeader>
+        <section className="my-10 lg:my-32">
+          <Container>
+            <Breadcrumb />
+          </Container>
+        </section>
+        <section className="my-10 lg:my-32">
+          <Container>
+            <div className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+              {posts.map((post) => {
+                return (
+                  <article
+                    className="mb-10 flex flex-col bg-white md:mb-0"
+                    key={post.sys.id}
+                  >
+                    <Image
+                      src={`https:${post.image.fields.file.url}`}
+                      alt={post.image.fields.title}
+                      width={post.image.fields.file.details.image.width}
+                      height={post.image.fields.file.details.image.height}
+                    />
+                    <div className="flex grow flex-col px-5 py-10">
+                      <p className="text-xs font-bold text-hazard-blue-500">
+                        {formatDateAndTime(post.date, "day")}
+                      </p>
+                      <h2 className="mb-5 text-xl font-bold">{post.title}</h2>
+                      <p className="text-base">{post.description}</p>
+                      <br />
+                      <div className="mt-auto self-end">
+                        <Link
+                          href={`./press-releases/${post.slug}`}
+                          className=" text-neon-orange-500"
+                        >
+                          Read More &rarr;
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+      </PublicLayout>
+      {/* <Nav />
       <MobileNav />
       <header
         style={{
@@ -79,12 +141,6 @@ const index = ({ formattedPressReleases }) => {
                     <time dateTime={post.date} className="text-dunkel-blue-500">
                       {post.date}
                     </time>
-                    <Link
-                      href="#"
-                      className="relative z-10 rounded-full bg-sunburst-100 px-3 py-1.5 font-medium text-dunkel-blue-500"
-                    >
-                      Press Release
-                    </Link>
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-wave-500 group-hover:text-blue-wave-200">
@@ -116,19 +172,10 @@ const index = ({ formattedPressReleases }) => {
                 </article>
               ))}
             </div>
-            <aside className="mx-auto mt-10 hidden max-w-2xl gap-x-8 gap-y-16 border-t border-sunburst-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none xl:col-span-2 xl:grid xl:grid-cols-1">
-              {/* Categories
-                <ul>
-                  <li>press releases</li>
-                  <li>blog</li>
-                  <li>podcast</li>
-                  <li></li>
-                </ul> */}
-            </aside>
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer /> */}
     </>
   );
 };
