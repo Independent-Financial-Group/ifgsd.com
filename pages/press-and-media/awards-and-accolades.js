@@ -14,8 +14,8 @@ import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 // IMPORT ASSETS
 import highlightOrange from "../../public/_global-graphics/highlight.png";
 import celebrationCollage1 from "../../public/_awards-and-accolades/images/celebration-collage-1.webp";
-import celebrationCollage2 from "../../public/_awards-and-accolades/images/celebration-collage-2.JPG";
-import celebrationCollage3 from "../../public/_awards-and-accolades/images/celebration-collage-3.JPG";
+import celebrationCollage2 from "../../public/_awards-and-accolades/images/celebration-collage-2.webp";
+import celebrationCollage3 from "../../public/_awards-and-accolades/images/celebration-collage-3.webp";
 import celebrationCollage4 from "../../public/_awards-and-accolades/images/celebration-collage-4.webp";
 import celebrationCollage5 from "../../public/_awards-and-accolades/images/celebration-collage-5.webp";
 import celebrationCollage6 from "../../public/_awards-and-accolades/images/celebration-collage-6.webp";
