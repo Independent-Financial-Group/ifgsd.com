@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
   const formattedPressReleases = pressReleases.items.map((item) => {
     return {
       date: formatDateAndTime(item.fields.date, "day"),
-      author: item.fields.author.fields,
+      editor: item.fields.author.fields,
       title: item.fields.title,
       slug: item.fields.slug,
       description: item.fields.description,
@@ -71,7 +71,7 @@ export const getStaticProps = async ({ params }) => {
     return {
       image: item.fields.image,
       date: formatDateAndTime(item.fields.date, "day"),
-      author: item.fields.author.fields,
+      editor: item.fields.author.fields,
       title: item.fields.title,
       slug: item.fields.slug,
       description: item.fields.description,
@@ -88,8 +88,6 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const pressRelease = ({ release }) => {
-  console.log(release.author);
-
   if (!release) return <div>Loading...</div>;
 
   return (
@@ -116,16 +114,16 @@ const pressRelease = ({ release }) => {
           <Container>
             <div className="flex flex-col items-center">
               <Image
-                src={`https:${release.author.photo.fields.file.url}`}
-                height={release.author.photo.fields.file.details.image.height}
-                width={release.author.photo.fields.file.details.image.width}
-                alt={`Image of the author of this article, ${release.author.fullName}`}
+                src={`https:${release.editor.photo.fields.file.url}`}
+                height={release.editor.photo.fields.file.details.image.height}
+                width={release.editor.photo.fields.file.details.image.width}
+                alt={`Image of the editor of this article, ${release.editor.fullName}`}
                 className="h-[100px] w-[100px] rounded-full"
               />
               <h2 className="mt- text-base font-bold text-neon-orange-500">
-                {release.author.fullName}
+                {release.editor.fullName}
               </h2>
-              <p className="text-sm">{release.author.role}</p>
+              <p className="text-sm">{release.editor.role}</p>
               <a
                 href="mailto:psaunders@ifgsd.com"
                 className="text-xs font-bold underline"
