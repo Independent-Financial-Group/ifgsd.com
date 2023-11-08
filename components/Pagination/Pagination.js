@@ -6,13 +6,14 @@ const Pagination = ({
   totalPages,
   prevDisabled,
   nextDisabled,
+  path,
 }) => {
   const prevPageUrl =
     currentPage === "2"
-      ? "/press-and-media/press-releases/"
-      : `/press-and-media/press-releases/page/${parseInt(currentPage, 10) - 1}`;
+      ? `/press-and-media/${path}/`
+      : `/press-and-media/${path}/page/${parseInt(currentPage, 10) - 1}`;
 
-  const nextPageUrl = `/press-and-media/press-releases/page/${
+  const nextPageUrl = `/press-and-media/${path}/page/${
     parseInt(currentPage, 10) + 1
   }`;
 
