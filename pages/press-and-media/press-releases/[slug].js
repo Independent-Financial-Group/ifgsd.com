@@ -96,7 +96,7 @@ const pressRelease = ({ release }) => {
         <title>{`${release.title} | IFG Press Release`}</title>
       </Head>
       <PublicLayout>
-        <header className="relative h-[calc(75vh-60px)] bg-neon-orange-500 bg-cover bg-center bg-no-repeat md:h-[calc(35vh-60px)] lg:h-[calc(50vh-60px)] xl:h-[calc(50vh-60px)]">
+        <header className="relative h-[calc(75vh-60px)] bg-neon-orange-500 bg-cover bg-center bg-no-repeat md:h-[calc(70vh-60px)] lg:h-[calc(50vh-60px)] xl:h-[calc(50vh-60px)]">
           <Container>
             <h1 className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/3 text-center text-4xl text-seabreeze-500">
               {release.title}
@@ -106,11 +106,11 @@ const pressRelease = ({ release }) => {
               alt={release.image.fields.title}
               width={release.image.fields.file.details.image.width}
               height={release.image.fields.file.details.image.height}
-              className="absolute -bottom-3/4 h-[650px] w-[1280px] rounded-[20px] object-cover"
+              className="absolute -bottom-1/3 left-1/2 -translate-x-1/2 rounded-[20px] object-cover lg:-bottom-3/4 lg:h-[650px] lg:w-[1280px]"
             />
           </Container>
         </header>
-        <section className="relative mt-[500px]">
+        <section className="relative mt-[300px] lg:mt-[500px]">
           <Container>
             <div className="flex flex-col items-center">
               <Image
@@ -120,10 +120,10 @@ const pressRelease = ({ release }) => {
                 alt={`Image of the editor of this article, ${release.editor.fullName}`}
                 className="h-[100px] w-[100px] rounded-full"
               />
-              <h2 className="mt- text-base font-bold text-neon-orange-500">
+              <h2 className=" text-base font-bold text-neon-orange-500">
                 {release.editor.fullName}
               </h2>
-              <p className="text-sm">{release.editor.role}</p>
+              <p className="text-center text-sm">{release.editor.role}</p>
               <a
                 href="mailto:psaunders@ifgsd.com"
                 className="text-xs font-bold underline"
