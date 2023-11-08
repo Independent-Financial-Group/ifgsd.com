@@ -26,6 +26,8 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const pressReleases = await client.getEntries({
     content_type: "pressRelease",
+    limit: 3,
+    order: "-fields.date",
   });
 
   const formattedPressReleases = pressReleases.items.map((item) => {
@@ -42,15 +44,13 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { formattedPressReleases },
+    props: { formattedPressReleases, pressReleases },
     revalidate: 10,
   };
 }
 
-const index = ({ formattedPressReleases }) => {
+const index = ({ formattedPressReleases, pressReleases }) => {
   const posts = formattedPressReleases;
-  console.log(posts);
-
   return (
     <>
       <Head>
@@ -106,76 +106,6 @@ const index = ({ formattedPressReleases }) => {
           </Container>
         </section>
       </PublicLayout>
-      {/* <Nav />
-      <MobileNav />
-      <header
-        style={{
-          backgroundImage: "url('/press-release-hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className=" px-8 py-32 sm:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div>
-              <h2 className="text-center text-3xl font-bold tracking-tight text-seabreeze-500 sm:text-4xl">
-                Press Releases
-              </h2>
-              <p className="mt-2 text-center text-lg leading-8 text-seabreeze-500">
-                Stay in the know of all the happenings at the home office
-              </p>
-            </div>
-          </div>
-        </div>
-      </header>
-      <main>
-        <div className="bg-seabreeze-500 px-8 ">
-          <div className="mx-auto max-w-7xl xl:grid xl:grid-cols-12">
-            <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sunburst-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:col-span-10">
-              {posts.map((post) => (
-                <article
-                  key={post.slug}
-                  className="flex max-w-xl flex-col items-start justify-between"
-                >
-                  <div className="flex items-center gap-x-4 text-xs">
-                    <time dateTime={post.date} className="text-dunkel-blue-500">
-                      {post.date}
-                    </time>
-                  </div>
-                  <div className="group relative">
-                    <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-wave-500 group-hover:text-blue-wave-200">
-                      <Link href={`/press-media/press-releases/${post.slug}`}>
-                        <span className="absolute inset-0" />
-                        {post.title}
-                      </Link>
-                    </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-dunkel-blue-500">
-                      {post.description}
-                    </p>
-                  </div>
-                  <div className="relative mt-8 flex items-center gap-x-4">
-                    <img
-                      src={`https:${post.author.photo.fields.file.url}`}
-                      alt=""
-                      className="h-10 w-10 rounded-full bg-gray-50"
-                    />
-                    <div className="text-sm leading-6">
-                      <p className="font-semibold text-blue-wave-500">
-                        <Link href="#">
-                          <span className="absolute inset-0" />
-                          {post.author.fullName}
-                        </Link>
-                      </p>
-                      <p className="text-dunkel-blue-600">{post.author.role}</p>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer /> */}
     </>
   );
 };
