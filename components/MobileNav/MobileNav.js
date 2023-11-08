@@ -207,7 +207,7 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/press-media/ifg-in-the-news"
+                            href="/press-and-media/ifg-in-the-news"
                           >
                             IFG in the News
                           </Link>
@@ -217,7 +217,7 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/press-media/press-releases"
+                            href="/press-and-media/press-releases"
                           >
                             Press Releases
                           </Link>
