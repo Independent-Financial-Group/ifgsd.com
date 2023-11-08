@@ -331,7 +331,7 @@ const Nav = () => {
             <Menu className="relative">
               <div>
                 <Link
-                  href="/app"
+                  href="https://new.ifgsd.com"
                   className="flex h-full flex-row rounded bg-hazard-blue-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:drop-shadow"
                 >
                   Rep Portal
