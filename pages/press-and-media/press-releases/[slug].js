@@ -1,11 +1,13 @@
 import React from "react";
 import { useRouter } from "next/router";
+// IMPORT NEXT
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
-import Nav from "../../../components/Nav/Nav";
-import MobileNav from "../../../components/MobileNav/MobileNav";
-import Footer from "../../../components/Footer/Footer";
+// IMPORT COMPONENTS
+import PublicLayout from "../../../components/PublicLayout/PublicLayout";
+import Container from "../../../components/Container/Container";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -19,7 +21,7 @@ const client = contentful.createClient({
 export const getStaticPaths = async () => {
   const pressReleases = await client.getEntries({
     content_type: "pressRelease",
-    order: "-sys.createdAt",
+    order: "-fields.date",
   });
 
   const formattedPressReleases = pressReleases.items.map((item) => {
@@ -67,6 +69,7 @@ export const getStaticProps = async ({ params }) => {
 
   const formattedPressReleases = pressReleases.items.map((item) => {
     return {
+      image: item.fields.image,
       date: formatDateAndTime(item.fields.date, "day"),
       author: item.fields.author.fields,
       title: item.fields.title,
@@ -85,59 +88,57 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const pressRelease = ({ release }) => {
+  console.log(release.author);
+
   if (!release) return <div>Loading...</div>;
 
   return (
     <>
-      <Nav />
-      <MobileNav />
-      <main>
-        <section className="dark:bg-gray-900">
-          <div className="mx-auto max-w-[900px] px-4 py-8 sm:py-16 lg:px-6">
-            <header class="not-format mb-4 lg:mb-6">
-              <address class="mb-6 flex items-center not-italic">
-                <div class="mr-3 inline-flex items-center text-sm text-gray-900 dark:text-white">
-                  <Image
-                    class="mr-4 h-16 w-16 rounded-full"
-                    width={600}
-                    height={600}
-                    src={`https:${release.author.photo.fields.file.url}`}
-                    alt="Jese Leos"
-                  />
-                  <div>
-                    <Link
-                      href="#"
-                      rel="author"
-                      class="text-xl font-bold text-gray-900 dark:text-white"
-                    >
-                      {release.author.fullName}
-                    </Link>
-                    <p class="text-base font-light text-gray-500 dark:text-gray-400">
-                      {release.author.role}
-                    </p>
-                    <p class="text-base font-light text-gray-500 dark:text-gray-400">
-                      <time
-                        pubdate
-                        datetime="2022-02-08"
-                        title="February 8th, 2022"
-                      >
-                        {release.date}
-                      </time>
-                    </p>
-                  </div>
-                </div>
-              </address>
-              <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white lg:mb-6 lg:text-4xl">
-                {release.title}
-              </h1>
-            </header>
-            <article>
+      <Head>
+        <title>{`${release.title} | IFG Press Release`}</title>
+      </Head>
+      <PublicLayout>
+        <header className="relative h-[calc(75vh-60px)] bg-neon-orange-500 bg-cover bg-center bg-no-repeat md:h-[calc(35vh-60px)] lg:h-[calc(50vh-60px)] xl:h-[calc(50vh-60px)]">
+          <Container>
+            <h1 className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/3 text-center text-4xl text-seabreeze-500">
+              {release.title}
+            </h1>
+            <Image
+              src={`https:${release.image.fields.file.url}`}
+              alt={release.image.fields.title}
+              width={release.image.fields.file.details.image.width}
+              height={release.image.fields.file.details.image.height}
+              className="absolute -bottom-3/4 h-[650px] w-[1280px] rounded-[20px] object-cover"
+            />
+          </Container>
+        </header>
+        <section className="relative mt-[500px]">
+          <Container>
+            <div className="flex flex-col items-center">
+              <Image
+                src={`https:${release.author.photo.fields.file.url}`}
+                height={release.author.photo.fields.file.details.image.height}
+                width={release.author.photo.fields.file.details.image.width}
+                alt={`Image of the author of this article, ${release.author.fullName}`}
+                className="h-[100px] w-[100px] rounded-full"
+              />
+              <h2 className="mt- text-base font-bold text-neon-orange-500">
+                {release.author.fullName}
+              </h2>
+              <p className="text-sm">{release.author.role}</p>
+              <a
+                href="mailto:psaunders@ifgsd.com"
+                className="text-xs font-bold underline"
+              >
+                Press Contact
+              </a>
+            </div>
+            <article className="mx-auto my-10 max-w-prose rounded-lg bg-white px-8 py-10">
               {documentToReactComponents(release.writtenContent)}
             </article>
-          </div>
+          </Container>
         </section>
-      </main>
-      <Footer />
+      </PublicLayout>
     </>
   );
 };
