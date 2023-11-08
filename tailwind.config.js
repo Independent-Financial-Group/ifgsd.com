@@ -81,15 +81,17 @@ module.exports = {
         900: "#152226"
       },
       'neon-orange': {
-        100: "#ffe5dc",
-        200: "#ffccb8",
-        300: "#ffb295",
-        400: "#ff9971",
-        500: "#ff7f4e",
-        600: "#cc663e",
-        700: "#994c2f",
-        800: "#66331f",
-        900: "#331910"
+        50: '#FFFFFF',
+        100: '#FFF5F1',
+        200: '#FFD8C8',
+        300: '#FFBAA0',
+        400: '#FF9D77',
+        500: '#FF7F4E',
+        600: '#FF5616',
+        700: '#DD3D00',
+        800: '#A52E00',
+        900: '#6D1E00',
+        950: '#511600'
       },
       'light-blue': {
         100: "#fcfdfd",
@@ -113,7 +115,8 @@ module.exports = {
     }
   },
   plugins: [
-    require("flowbite/plugin")
+    require("flowbite/plugin"),
+    require('@tailwindcss/forms')
   ],
 }
 

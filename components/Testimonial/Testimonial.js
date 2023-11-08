@@ -1,146 +1,161 @@
-import React, { useEffect } from 'react'
-import Head from 'next/head'
-import Script from 'next/script'
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper'
-import 'swiper/css'
+import React, { useEffect } from "react";
 
-import quotes from '../../public/quotes.png'
-import Image from 'next/image'
+// SWIPER
+import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
+import "swiper/css";
+
+// GRAPHICS
+import squiggle from "../../public/_home/graphics/squiggle.png";
+
+// NEXT IMPORTS
+import Image from "next/image";
 
 const Testimonial = ({ content, testimonials }) => {
+  useEffect(() => {
+    const swiper = new Swiper(".swiper-container", {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoplay: {
+        delay: 5000,
+      },
+      breakpoints: {
+        640: {
+          centeredSlides: true,
+          slidesPerView: 1,
+        },
+        1024: {
+          centeredSlides: false,
+          slidesPerView: 1,
+        },
+      },
+      navigation: {
+        nextEl: ".next-button",
+        prevEl: ".prev-button",
+      },
+    });
+  }, []);
 
-    useEffect(() => {
-        const swiper = new Swiper('.swiper-container', {
-            modules: [Navigation, Pagination, Autoplay],
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            autoplay: {
-                delay: 5000,
-            },
-            breakpoints: {
-                640: {
-                    centeredSlides: true,
-                    slidesPerView: 1,
-                },
-                1024: {
-                    centeredSlides: false,
-                    slidesPerView: 1,
-                },
-            },
-            navigation: {
-                nextEl: '.next-button',
-                prevEl: '.prev-button',
-            },
-        })
-    }, [])
-
-    return (
-        <>
-            <div>
-                <div className='mx-auto text-center max-w-prose'>
-                    <h2 className='text-xl lg:text-2xl font-bold text-dunkel-blue-500'>{content.headingSecondary}</h2>
-                    <h3 className='text-5xl lg:text-6xl font-bold text-hazard-blue-500'>{content.headingPrimary}</h3>
-                    <p className="text-xl md:mt-5 text-dunkel-blue-500">{content.paragraph}</p>
-                </div>
-                <div
-                    className="lg:grid lg:gap-y-8 lg:grid-cols-2 items-center lg:gap-x-16"
-                >
-                    <div className='lg:col-span-1 '>
-                        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}><iframe src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} title="IFG 20th Anniversary"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                    </div>
-
-                    <div className="relative mb-16 lg:col-span-1 lg:mx-0">
-                        <div className='flex flex-row items-center'>
-                            <button
-                                className="hidden lg:block prev-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
-                            >
-                                <span className="sr-only">Previous Slide</span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    className="h-5 w-5 rtl:rotate-180"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M15.75 19.5L8.25 12l7.5-7.5"
-                                    />
-                                </svg>
-                            </button>
-
-
-                            <div className="swiper-container !overflow-hidden">
-                                <div className="swiper-wrapper">
-                                    {testimonials.map((testimonial) => {
-                                        return (
-                                            <div key={testimonial.headshot.sys.id} className='swiper-slide !h-fit lg:!h-[600px]'>
-                                                <blockquote className='flex h-full flex-col justify-between'>
-                                                    <div>
-                                                        <div className='mt-4>'>
-                                                            <h3 className="text-2xl font-bold text-hazard-blue-500 sm:text-3xl">
-                                                                {testimonial.heading}
-                                                            </h3>
-                                                            <p className="mt-4 leading-relaxed text-dunkel-blue-500 lg:max-w-prose">
-                                                                I have been with four broker-dealers over my 36 year career,
-                                                                including my own. I have now been with IFG for 14 years and
-                                                                could not be more pleased with the character and quality of
-                                                                the firm. They are committed to excellence and integrity,
-                                                                focusing on the important values in our industry rather than
-                                                                their profits. I am delighted to be associated with such a
-                                                                first-rate, high-className firm!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <footer className="mt-8 text-sm text-gray-500 flex items-center gap-3">
-                                                        <div>
-                                                            <p className='text-blue-wave-500 font-bold text-right text-sm'>{testimonial.fullName}</p>
-                                                            <p className="text-blue-wave-900 font-semibold text-right text-xs">
-                                                                {testimonial.state}
-                                                            </p>
-                                                        </div>
-                                                        <Image
-                                                            src={`https://${testimonial.headshot.fields.file.url}`}
-                                                            width={50}
-                                                            height={50}
-                                                            alt={testimonial.headshot.fields.title}
-                                                        />
-                                                    </footer>
-                                                </blockquote>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
-                            <button
-                                className="hidden lg:block next-button rounded-full border border-blue-wave-500 p-3 text-blue-wave-500 hover:bg-blue-wave-500 hover:text-white"
-                            >
-                                <span className="sr-only">Next Slide</span>
-                                <svg
-                                    className="h-5 w-5 rtl:rotate-180"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9 5l7 7-7 7"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <>
+      <div>
+        <div className="items-center lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8">
+          <div className="lg:col-span-1 ">
+            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+              <iframe
+                src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1"
+                suppressHydrationWarning
+                allow="autoplay; fullscreen; picture-in-picture"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+                title="IFG 20th Anniversary"
+              ></iframe>
             </div>
-        </>
-    )
-}
+            <script src="https://player.vimeo.com/api/player.js"></script>
+            <img
+              src="/graphicAssets/ornament-2.png"
+              alt="ornament"
+              className="absolute -left-16 bottom-12 -z-10"
+            />
+          </div>
 
-export default Testimonial
+          <div className="relative mb-16 lg:col-span-1 lg:mx-0">
+            <div className="flex flex-row items-center">
+              <button className="prev-button hidden rounded-full border border-neon-orange-500  p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white lg:block">
+                <span className="sr-only">Previous Slide</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="h-5 w-5 rtl:rotate-180"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+              <Image
+                src={squiggle}
+                alt="decoration"
+                className="absolute -top-10 right-0 z-10"
+              />
+
+              <div className=" swiper-container relative mx-5 !overflow-hidden rounded-[20px] bg-gradient-to-b from-hazard-blue-500 to-blue-wave-300 p-4">
+                <div className="swiper-wrapper">
+                  {testimonials.map((testimonial) => {
+                    return (
+                      <div
+                        key={testimonial.headshot.sys.id}
+                        className="swiper-slide !h-fit lg:!min-h-[500px]"
+                      >
+                        <blockquote className="flex h-full flex-col justify-between px-4">
+                          <div>
+                            <div className="mt-4>">
+                              <h3 className="text-2xl font-bold text-seabreeze-500 sm:text-3xl">
+                                {testimonial.heading}
+                              </h3>
+                              <p className="mt-4 leading-relaxed text-seabreeze-500 lg:max-w-prose">
+                                {testimonial.paragraph}
+                              </p>
+                            </div>
+                          </div>
+                          <footer className="mt-8 flex items-center gap-3 text-sm text-gray-500">
+                            <div>
+                              <p className="text-right text-base font-bold text-seabreeze-500">
+                                {testimonial.fullName}
+                              </p>
+                              <p className="text-right text-sm font-semibold text-seabreeze-500">
+                                {testimonial.state}
+                              </p>
+                            </div>
+                            <Image
+                              src={`https:${testimonial.headshot.fields.file.url}`}
+                              width={80}
+                              height={80}
+                              alt={testimonial.headshot.fields.title}
+                              className="rounded-full"
+                            />
+                          </footer>
+                        </blockquote>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <button className="next-button hidden rounded-full border border-neon-orange-500 p-3 text-neon-orange-500 hover:bg-neon-orange-500 hover:text-white lg:block">
+                <span className="sr-only">Next Slide</span>
+                <svg
+                  className="h-5 w-5 rtl:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Testimonial;
