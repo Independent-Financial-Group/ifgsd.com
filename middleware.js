@@ -10,7 +10,7 @@ export default authMiddleware({
     "/about/(.*)",
     "/careers(.*)",
     "/press-and-media/(.*)",
-    "/offerings/(.*)",
+    "/offerings(.*)",
     "/find-an-advisor",
   ],
 });
