@@ -87,6 +87,7 @@ const page = ({ posts, currentPage, totalPages }) => {
               currentPage={currentPage}
               totalPages={totalPages}
               nextDisabled={currentPage == totalPages}
+              path={"press-releases"}
             />
             <div className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
               {posts.map((post) => {
@@ -129,6 +130,7 @@ const page = ({ posts, currentPage, totalPages }) => {
               currentPage={currentPage}
               totalPages={totalPages}
               nextDisabled={currentPage == totalPages}
+              path={"press-releases"}
             />
           </Container>
         </section>

@@ -75,6 +75,7 @@ const index = ({ formattedPressReleases, pressReleases }) => {
               totalPages={pressReleases.total / 3}
               currentPage={"1"}
               prevDisabled
+              path={"press-releases"}
             />
             <div className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
               {posts.map((post) => {
@@ -113,6 +114,7 @@ const index = ({ formattedPressReleases, pressReleases }) => {
               totalPages={pressReleases.total / 3}
               currentPage={"1"}
               prevDisabled
+              path={"press-releases"}
             />
           </Container>
         </section>
