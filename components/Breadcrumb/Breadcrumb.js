@@ -29,8 +29,6 @@ const Breadcrumb = () => {
     return null;
   }
 
-  console.log(breadcrumbs);
-
   return (
     <>
       <nav aria-label="Breadcrumb" className="my-8">
@@ -59,7 +57,7 @@ const Breadcrumb = () => {
           {breadcrumbs.map((breadcrumb, i) => {
             return (
               <>
-                <li className="rtl:rotate-180">
+                <li key={i} className="rtl:rotate-180">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
