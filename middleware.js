@@ -8,10 +8,9 @@ export default authMiddleware({
     "/",
     "/join/(.*)",
     "/about/(.*)",
-    "/careers/(.*)",
+    "/careers(.*)",
     "/press-and-media/(.*)",
     "/offerings/(.*)",
-    "/careers/(.*)",
     "/find-an-advisor",
   ],
 });
