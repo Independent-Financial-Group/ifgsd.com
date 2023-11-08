@@ -125,6 +125,11 @@ const page = ({ posts, currentPage, totalPages }) => {
                 );
               })}
             </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              nextDisabled={currentPage == totalPages}
+            />
           </Container>
         </section>
       </PublicLayout>
