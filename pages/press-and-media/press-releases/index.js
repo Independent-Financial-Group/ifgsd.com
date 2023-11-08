@@ -17,6 +17,7 @@ import highlightOrange from "../../../public/_global-graphics/highlight.png";
 
 // CONTENTFUL
 import { formatDateAndTime } from "@contentful/f36-datetime";
+import Pagination from "../../../components/Pagination/Pagination";
 const contenful = require("contentful");
 const client = contenful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -70,6 +71,11 @@ const index = ({ formattedPressReleases, pressReleases }) => {
         </section>
         <section className="my-10 lg:my-32">
           <Container>
+            <Pagination
+              totalPages={pressReleases.total / 3}
+              currentPage={"1"}
+              prevDisabled
+            />
             <div className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
               {posts.map((post) => {
                 return (
@@ -103,6 +109,11 @@ const index = ({ formattedPressReleases, pressReleases }) => {
                 );
               })}
             </div>
+            <Pagination
+              totalPages={pressReleases.total / 3}
+              currentPage={"1"}
+              prevDisabled
+            />
           </Container>
         </section>
       </PublicLayout>

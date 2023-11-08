@@ -7,7 +7,7 @@ import Image from "next/image";
 import PublicLayout from "../../../../components/PublicLayout/PublicLayout";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
 import Container from "../../../../components/Container/Container";
-import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
+import Pagination from "../../../../components/Pagination/Pagination";
 
 // IMPORT ASSETS
 import highlightOrange from "../../../../public/_global-graphics/highlight.png";
@@ -83,6 +83,11 @@ const page = ({ posts, currentPage, totalPages }) => {
         </PageHeader>
         <section className="my-10 lg:my-32">
           <Container>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              nextDisabled={currentPage == totalPages}
+            />
             <div className="md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
               {posts.map((post) => {
                 return (
