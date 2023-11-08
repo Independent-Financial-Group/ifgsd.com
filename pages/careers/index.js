@@ -48,9 +48,12 @@ const index = () => {
                   Find Open Positions
                 </h2>
                 <p className="my-5 text-xl">
-                  We understand that no two advisory practices are the same.
-                  That is why we’ve developed a collection of resources that can
-                  be utilized across any practice type.
+                  Explore our current job openings to discover exciting career
+                  opportunities. Start your journey with us by browsing
+                  available positions that match your skills and interests.
+                  Whether you're seeking a new challenge or looking to join a
+                  dynamic team, we have a variety of roles waiting for talented
+                  individuals like you.
                 </p>
                 <Button href="/careers/open-positions" type={"primary"}>
                   Explore Open Positions
