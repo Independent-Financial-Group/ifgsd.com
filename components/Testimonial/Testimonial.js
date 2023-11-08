@@ -5,7 +5,7 @@ import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 
 // GRAPHICS
-import squiggle from "../../public/_home/graphics/squiggle.png"
+import squiggle from "../../public/_home/graphics/squiggle.png";
 
 // NEXT IMPORTS
 import Image from "next/image";
@@ -45,7 +45,7 @@ const Testimonial = ({ content, testimonials }) => {
             <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
               <iframe
                 src="https://player.vimeo.com/video/857208581?h=59ff69fde7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1"
-                frameborder="0"
+                suppressHydrationWarning
                 allow="autoplay; fullscreen; picture-in-picture"
                 style={{
                   position: "absolute",
@@ -73,24 +73,24 @@ const Testimonial = ({ content, testimonials }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   className="h-5 w-5 rtl:rotate-180"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M15.75 19.5L8.25 12l7.5-7.5"
                   />
                 </svg>
               </button>
               <Image
-                  src={squiggle}
-                  alt="decoration"
-                  className="absolute right-0 -top-10 z-10"
-                />
+                src={squiggle}
+                alt="decoration"
+                className="absolute -top-10 right-0 z-10"
+              />
 
-              <div className=" swiper-container mx-5 !overflow-hidden rounded-[20px] bg-gradient-to-b from-hazard-blue-500 to-blue-wave-300 p-4 relative">
+              <div className=" swiper-container relative mx-5 !overflow-hidden rounded-[20px] bg-gradient-to-b from-hazard-blue-500 to-blue-wave-300 p-4">
                 <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => {
                     return (
@@ -144,9 +144,9 @@ const Testimonial = ({ content, testimonials }) => {
                 >
                   <path
                     d="M9 5l7 7-7 7"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                   />
                 </svg>
               </button>

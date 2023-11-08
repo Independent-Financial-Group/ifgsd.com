@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import { useAnimate, motion, stagger, useInView } from "framer-motion";
 
-
 //LAYOUT
 import PublicLayout from "../components/PublicLayout/PublicLayout";
 
@@ -69,32 +68,32 @@ export async function getStaticProps() {
         {
           icon: pageContent.fields.offering1Icon,
           header: pageContent.fields.offering1Header,
-          slug: pageContent.fields.offering1Slug
+          slug: pageContent.fields.offering1Slug,
         },
         {
           icon: pageContent.fields.offering2Icon,
           header: pageContent.fields.offering2Header,
-          slug: pageContent.fields.offering2Slug
+          slug: pageContent.fields.offering2Slug,
         },
         {
           icon: pageContent.fields.offering3Icon,
           header: pageContent.fields.offering3Header,
-          slug: pageContent.fields.offering3Slug
+          slug: pageContent.fields.offering3Slug,
         },
         {
           icon: pageContent.fields.offering4Icon,
           header: pageContent.fields.offering4Header,
-          slug: pageContent.fields.offering4Slug
+          slug: pageContent.fields.offering4Slug,
         },
         {
           icon: pageContent.fields.offering5Icon,
           header: pageContent.fields.offering5Header,
-          slug: pageContent.fields.offering5Slug
+          slug: pageContent.fields.offering5Slug,
         },
         {
           icon: pageContent.fields.offering6Icon,
           header: pageContent.fields.offering6Header,
-          slug: pageContent.fields.offering6Slug
+          slug: pageContent.fields.offering6Slug,
         },
       ],
     },
@@ -140,8 +139,7 @@ const HomePage = ({
     <>
       <Head>
         <title>
-          Independent Financial Group San
-          Diego | Broker-Dealer & RIA
+          Independent Financial Group San Diego | Broker-Dealer & RIA
         </title>
       </Head>
       <PublicLayout>
@@ -215,6 +213,7 @@ const HomePage = ({
                     <Image
                       src={handshake}
                       className="mx-auto"
+                      alt="handshake icon"
                     />
                     <h3 className="text-center text-3xl font-bold">
                       Integrity
@@ -224,14 +223,12 @@ const HomePage = ({
                     <Image
                       src={balance}
                       className="mx-auto"
+                      alt="balance icon"
                     />
                     <h3 className="text-center text-3xl font-bold">balance</h3>
                   </div>
                   <div className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
-                    <Image
-                      src={person}
-                      className="mx-auto"
-                    />
+                    <Image src={person} className="mx-auto" alt="person icon" />
                     <h3 className="text-center text-3xl font-bold">
                       Independence
                     </h3>
@@ -258,7 +255,7 @@ const HomePage = ({
                 >
                   {pageContent.sectionOfferings.offerings.map((offering) => {
                     return (
-                      <div className="product-card">
+                      <div key={offering.slug} className="product-card">
                         <div className="mb-2 flex flex-col items-center justify-start gap-2">
                           <img
                             src={`https://${offering.icon.fields.file.url}`}
