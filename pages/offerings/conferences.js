@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // IMPORT NEXT
 import Head from "next/head";
@@ -10,6 +10,7 @@ import PublicLayout from "../../components/PublicLayout/PublicLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Container from "../../components/Container/Container";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import Modal from "../../components/Modal/Modal";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
@@ -20,7 +21,40 @@ import phoenician from "../../public/_conferences/images/phoenician.jpg";
 import familyFriendly from "../../public/_conferences/images/family-friendly.png";
 import ornament from "../../public/_global-graphics/CTA-ornament.png";
 
-const conferences = () => {
+// CONTENTFUL IMPORTS
+const contenful = require("contentful");
+
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  const initialData = await client.getEntries({
+    content_type: "conferences",
+    order: "fields.conferenceName",
+  });
+
+  const formattedData = initialData.items.map((item) => {
+    return {
+      ...item.fields,
+      id: item.sys.id,
+    };
+  });
+
+  return { props: { formattedData }, revalidate: 10 };
+}
+
+const conferences = ({ formattedData }) => {
+  const [open, setOpen] = useState(false);
+  const [selectedConference, setSelectedConference] = useState(null);
+
+  const handleOpen = (e) => {
+    setOpen(true);
+    console.log(e.target.dataset.id);
+    setSelectedConference(e.target.dataset.id);
+  };
+
   return (
     <>
       <Head>
@@ -64,8 +98,42 @@ const conferences = () => {
             <h2 className="mb-5  bg-gradient-to-r from-neon-orange-600 via-neon-orange-500 to-neon-orange-600 bg-clip-text text-center text-[90px] font-bold leading-none text-transparent lg:text-[160px]">
               Annual <br /> Events
             </h2>
+            <Modal open={open} setOpen={setOpen} id={selectedConference} />
             <div className="flex flex-col gap-5 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-5">
-              <div className="flex flex-col rounded-t-xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600  lg:h-full">
+              {formattedData.map((conference) => {
+                return (
+                  <div
+                    key={conference.id}
+                    className="flex flex-col rounded-t-xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600  lg:h-full"
+                  >
+                    <Image
+                      src={`https:${conference.locationImage.fields.file.url}`}
+                      width={
+                        conference.locationImage.fields.file.details.image.width
+                      }
+                      height={
+                        conference.locationImage.fields.file.details.image
+                          .height
+                      }
+                      alt="entrace to the london rosewood hotel"
+                      className="h-[280px] rounded-t-xl md:w-full md:object-cover"
+                    />
+                    <div className="my-auto flex items-center gap-2 px-4">
+                      <h3 className="align-middle text-xl font-bold text-seabreeze-500">
+                        {conference.conferenceName}
+                      </h3>
+                      <button
+                        onClick={handleOpen}
+                        data-id={conference.id}
+                        className="text-sm text-seabreeze-500"
+                      >
+                        Read More &rarr;
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+              {/* <div className="flex flex-col rounded-t-xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600  lg:h-full">
                 <Image
                   src={rosewood}
                   alt="entrace to the london rosewood hotel"
@@ -75,7 +143,10 @@ const conferences = () => {
                   <h3 className="align-middle text-xl font-bold text-seabreeze-500">
                     Elite Advisor Conference
                   </h3>
-                  <button className="text-sm text-seabreeze-500">
+                  <button
+                    onClick={handleOpen}
+                    className="text-sm text-seabreeze-500"
+                  >
                     Read More &rarr;
                   </button>
                 </div>
@@ -109,7 +180,7 @@ const conferences = () => {
                     Read More &rarr;
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </Container>
         </section>
