@@ -286,7 +286,7 @@ const Nav = () => {
                           className={`${
                             active && "bg-hazard-blue-500"
                           } hover:text-seabreeze-500`}
-                          href="/offerings/product-and-platform support"
+                          href="/offerings/product-&-platform-support"
                         >
                           Product & Platform Support
                         </Link>
