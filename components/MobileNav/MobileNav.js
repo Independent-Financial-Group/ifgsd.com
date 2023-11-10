@@ -280,7 +280,7 @@ const MobileNav = () => {
                         {({ active }) => (
                           <Link
                             className={`${active && "bg-blue-500"}`}
-                            href="/offerings/practice-development-and-succession-planning"
+                            href="/offerings/practice-development-&-succession-planning"
                           >
                             Practice Development & Succession Planning
                           </Link>

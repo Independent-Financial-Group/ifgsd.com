@@ -274,7 +274,7 @@ const Nav = () => {
                           className={`${
                             active && "bg-hazard-blue-500"
                           } hover:text-seabreeze-500`}
-                          href="/offerings/practice-development-and-succession-planning"
+                          href="/offerings/practice-development-&-succession-planning"
                         >
                           Practice Development & Succession Planning
                         </Link>
