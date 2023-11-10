@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         appearance={{ elements: { footer: "hidden" } }}
       >
         <Component className="box-border" {...pageProps} />
+        <Analytics />
       </ClerkProvider>
     </>
   );
