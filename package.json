@@ -23,7 +23,7 @@
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@vis.gl/react-google-maps": "^0.1.2",
-    "contentful": "^10.1.6",
+    "contentful": "^10.6.7",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.3",
     "framer-motion": "^10.12.7",
