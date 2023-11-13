@@ -8,6 +8,7 @@ export default authMiddleware({
     "/",
     "/reg-bi-investor",
     "/privacy-policy",
+    "/disclosures",
     "/join/(.*)",
     "/about/(.*)",
     "/careers(.*)",
