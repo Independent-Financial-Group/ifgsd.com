@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1"
         ></meta>
       </Head>
-      <NextNProgress />
+      <NextNProgress color="#F47E50" />
       <ClerkProvider
         {...pageProps}
         appearance={{ elements: { footer: "hidden" } }}
