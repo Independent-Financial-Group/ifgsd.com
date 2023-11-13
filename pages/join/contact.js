@@ -156,7 +156,7 @@ const contact = () => {
                       </svg>
 
                       <a href="https://maps.app.goo.gl/ej1SFah3YuxZfmGfA">
-                        1267 High Bluff Dr, Suite 200, San Diego, CA 92130
+                        12671 High Bluff Dr, Suite 200, San Diego, CA 92130
                       </a>
                     </li>
                   </ul>
