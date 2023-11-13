@@ -256,15 +256,17 @@ const HomePage = ({
                   {pageContent.sectionOfferings.offerings.map((offering) => {
                     return (
                       <div key={offering.slug} className="product-card">
-                        <div className="mb-2 flex flex-col items-center justify-start gap-2">
-                          <img
-                            src={`https://${offering.icon.fields.file.url}`}
-                            alt={offering.icon.title}
-                          />
-                          <h3 className="text-center text-xl font-bold text-seabreeze-500">
-                            <Link href={offering.slug}>{offering.header}</Link>
-                          </h3>
-                        </div>
+                        <Link passHref href={offering.slug}>
+                          <div className="mb-2 flex flex-col items-center justify-start gap-2">
+                            <img
+                              src={`https://${offering.icon.fields.file.url}`}
+                              alt={offering.icon.title}
+                            />
+                            <h3 className="text-center text-xl font-bold text-seabreeze-500">
+                              {offering.header}
+                            </h3>
+                          </div>
+                        </Link>
                       </div>
                     );
                   })}
