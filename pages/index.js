@@ -203,7 +203,7 @@ const HomePage = ({
                   {pageContent.sectionAbout.paragraph}{" "}
                   <span className="text-sm font-bold text-neon-orange-500">
                     {" "}
-                    <Link href="/join/why-choose-us/our-mission">
+                    <Link href="/join/why-choose-us/our-mission-and-values">
                       Our Mission&rarr;
                     </Link>
                   </span>
