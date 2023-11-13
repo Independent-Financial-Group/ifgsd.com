@@ -7,6 +7,7 @@ export default authMiddleware({
   publicRoutes: [
     "/",
     "/reg-bi-investor",
+    "/privacy-policy",
     "/join/(.*)",
     "/about/(.*)",
     "/careers(.*)",

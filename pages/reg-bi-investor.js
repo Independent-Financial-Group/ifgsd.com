@@ -12,7 +12,6 @@ import PublicLayout from "../components/PublicLayout/PublicLayout";
 import PageHeader from "../components/PageHeader/PageHeader";
 import Container from "../components/Container/Container";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
-import Button from "../components/Button/Button";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // IMPORT ASSETS
@@ -72,15 +71,6 @@ const regBiInvestor = ({
   fdicSipcAndBrokerCheck,
   investorDefinitions,
 }) => {
-  const faqs = [
-    {
-      question: "Brokerage Services",
-      answer:
-        "As a broker-dealer, we facilitate the execution of securities transactions on your behalf. In addition to executing your orders, IFG provides various services through our Registered Representatives including investment education, research and recommendations on whether to buy or sell securities. There are no additional charges for these services since they are considered incidental to the brokerage services we provide. We are held to the legal standards under applicable federal and state securities laws, and the rules of our self-regulatory organization, FINRA, IFG Brokerage Services for Reg BI Among other things, these regulations require broker-dealers to: Execute your trades with diligence, competence, and seek to provide best execution in light of prevailing market conditions; Have reasonable grounds for believing that any security that we specifically present to you is in your best interest given your investment objectives, risk tolerance, financial and tax status and other financial information you have disclosed to us; and Treat you in a manner characterized by principles of fair dealing and high standards of honesty and integrity. As a broker-dealer, your registered representative does not have the discretion to buy or sell securities for you without your approval. This means that you make the decision to buy or sell securities before trades are placed. If your registered representative recommends that you buy or sell a security, they must have a reasonable basis to believing their recommendation is in your best interest.",
-    },
-    // More questions...
-  ];
-
   return (
     <>
       <Head>
