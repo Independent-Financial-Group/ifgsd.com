@@ -249,6 +249,35 @@ const contact = () => {
                         </select>
                       </div>
                     </div>
+                    <div>
+                      <fieldset className="sm:col-span-2">
+                        <legend className="block text-sm font-semibold leading-6 text-gray-900">
+                          Are you a financial advisor?
+                        </legend>
+                        <div className="mt-4 flex items-center gap-5 text-sm leading-6 text-gray-600">
+                          <div className="flex gap-x-2.5">
+                            <input
+                              id="isFinancialAdvisor"
+                              name="isFinancialAdvisor"
+                              defaultValue="yes"
+                              type="radio"
+                              className="mt-1 h-4 w-4 border-gray-300 text-neon-orange-600 shadow-sm focus:ring-neon-orange-600"
+                            />
+                            <label htmlFor="budget-under-25k">Yes</label>
+                          </div>
+                          <div className="flex gap-x-2.5 ">
+                            <input
+                              id="isNotFinancialAdvisor"
+                              name="isFinancialAdvisor"
+                              defaultValue="no"
+                              type="radio"
+                              className="mt-1 h-4 w-4 border-gray-300 text-neon-orange-500 shadow-sm focus:ring-neon-orange-600"
+                            />
+                            <label htmlFor="budget-25k-50k">No</label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
 
                     <div>
                       <label className="sr-only" htmlFor="message">
