@@ -10,6 +10,7 @@ import PublicLayout from "../../../components/PublicLayout/PublicLayout";
 import Container from "../../../components/Container/Container";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
 const contentful = require("contentful");
 
@@ -90,6 +91,17 @@ export const getStaticProps = async ({ params }) => {
 const pressRelease = ({ release }) => {
   if (!release) return <div>Loading...</div>;
 
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, text) => <p className="my-5">{text}</p>,
+      [INLINES.HYPERLINK]: (node, text) => (
+        <a className="text-blue-wave-500 underline" href={node.data.uri}>
+          {text}
+        </a>
+      ),
+    },
+  };
+
   return (
     <>
       <Head>
@@ -132,7 +144,7 @@ const pressRelease = ({ release }) => {
               </a>
             </div>
             <article className="mx-auto my-10 max-w-prose rounded-lg bg-white px-8 py-10">
-              {documentToReactComponents(release.writtenContent)}
+              {documentToReactComponents(release.writtenContent, options)}
             </article>
           </Container>
         </section>

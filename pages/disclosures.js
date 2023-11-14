@@ -3,15 +3,12 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Disclosure } from "@headlessui/react";
-import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
-
 // IMPORT COMPONENTS
 import PublicLayout from "../components/PublicLayout/PublicLayout";
-import PageHeader from "../components/PageHeader/PageHeader";
 import Container from "../components/Container/Container";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 // IMPORT ASSETS
 import highlight from "../public/_global-graphics/highlight.png";
@@ -39,6 +36,12 @@ export async function getStaticProps() {
 }
 
 const disclosures = ({ disclosures }) => {
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, text) => <p className="my-5">{text}</p>,
+    },
+  };
+
   return (
     <>
       <Head>
@@ -56,7 +59,8 @@ const disclosures = ({ disclosures }) => {
         </header>
         <section className="my-10 lg:my-32">
           <Container>
-            {documentToReactComponents(disclosures[0].fields.text)}
+            <Breadcrumb />
+            {documentToReactComponents(disclosures[0].fields.text, options)}
           </Container>
         </section>
       </PublicLayout>
