@@ -17,6 +17,11 @@ import highlight from "../../public/_global-graphics/highlight.png";
 import arrow from "../../public/_contact/graphics/cta-arrow.png";
 import ornament from "../../public/_global-graphics/CTA-ornament.png";
 
+// IMPORTS FOR REACT EMAIL
+import { render } from "@react-email/render";
+import sendgrid from "@sendgrid/mail";
+import ContactFormConfirmationEmail from "../../emails/contactFormConfirmationEmail";
+
 const contact = () => {
   const [states, setStates] = useState([
     "AL",
@@ -79,6 +84,30 @@ const contact = () => {
     "WI",
     "WY",
   ]);
+
+  const [formData, setFormData] = useState({
+    to: null,
+    subject: null,
+  });
+
+  const handleChange = (e) => {};
+
+  const handleSubmit = (e) => {
+    // sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
+    const emailHtml = render(
+      <ContactFormConfirmationEmail url="https://ifgsd.com" />,
+    );
+
+    const options = {
+      from: "noreply@ifgsd.com",
+      to: "user@gmail.com",
+      subject: "hello world",
+      html: emailHtml,
+    };
+
+    sendgrid.send(options);
+  };
 
   return (
     <>

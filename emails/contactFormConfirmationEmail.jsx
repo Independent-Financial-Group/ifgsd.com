@@ -10,7 +10,7 @@ import { Heading } from "@react-email/heading";
 
 import logo from "../public/logo-full-color.png"
 
-export default function contactFormConfirmationEmail({
+export default function ContactFormConfirmationEmail({
   url = "https://ifgsd.com",
   host = "ifgsd.com",
 }) {
