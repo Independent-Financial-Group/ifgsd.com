@@ -90,10 +90,12 @@ const contact = () => {
     subject: null,
   });
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    console.log(e.target.name);
+  };
 
   const handleSubmit = (e) => {
-    // sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+    sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
 
     const emailHtml = render(
       <ContactFormConfirmationEmail url="https://ifgsd.com" />,
@@ -211,6 +213,7 @@ const contact = () => {
                         placeholder="Name"
                         type="text"
                         id="name"
+                        onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -222,6 +225,7 @@ const contact = () => {
                         placeholder="Company/Organization"
                         type="text"
                         id="name"
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -235,6 +239,7 @@ const contact = () => {
                           placeholder="Email address"
                           type="email"
                           id="email"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -247,6 +252,7 @@ const contact = () => {
                           placeholder="Phone Number"
                           type="tel"
                           id="phone"
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -261,6 +267,7 @@ const contact = () => {
                           placeholder="City"
                           type="text"
                           id="city"
+                          onChange={handleChange}
                         />
                       </div>
 
@@ -271,6 +278,7 @@ const contact = () => {
                         <select
                           id="state"
                           className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                          onChange={handleChange}
                         >
                           {states.map((state) => {
                             return <option value={state}>{state}</option>;
@@ -279,7 +287,10 @@ const contact = () => {
                       </div>
                     </div>
                     <div>
-                      <fieldset className="sm:col-span-2">
+                      <fieldset
+                        onChange={handleChange}
+                        className="sm:col-span-2"
+                      >
                         <legend className="block text-sm font-semibold leading-6 text-gray-900">
                           Are you a financial advisor?
                         </legend>
