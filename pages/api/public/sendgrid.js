@@ -1,7 +1,7 @@
 import { render } from "@react-email/render";
 import sendgrid from "@sendgrid/mail";
-import ContactFormConfirmationEmail from "../../../emails/contactFormConfirmationEmail";
 import ContactFormSubmittedInternal from "../../../emails/contactFormSubmittedInternal";
+import ContactFormSubmittedExternal from "../../../emails/contactFormSubmittedExternal";
 
 export default async function (req, res) {
   const {
@@ -17,7 +17,9 @@ export default async function (req, res) {
 
   sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
 
-  const externalEmailHtml = render(<ContactFormConfirmationEmail />);
+  const externalEmailHtml = render(
+    <ContactFormSubmittedExternal formData={req.body} />,
+  );
 
   const internalEmailHtml = render(
     <ContactFormSubmittedInternal formData={req.body} />,
@@ -26,17 +28,23 @@ export default async function (req, res) {
   const sendOptionsInternal = {
     from: "noreply@ifgsd.com",
     to: "info@ifgsd.com",
-    subject: "Contact form submitted on ifgsd.com",
+    subject: `Contact form submitted on ifgsd.com by ${name}`,
     html: internalEmailHtml,
   };
 
   const sendOptionsExternal = {
     from: "noreply@ifgsd.com",
-    to: to,
-    subject: "We have your email",
+    to: email,
+    subject: `${name}, we have your email!`,
     html: externalEmailHtml,
   };
 
-  sendgrid.send(sendOptionsExternal);
-  sendgrid.send(sendOptionsInternal);
+  try {
+    sendgrid.send(sendOptionsExternal);
+    sendgrid.send(sendOptionsInternal);
+    res.status(200).send(`Message Sent Successfully`);
+  } catch (error) {
+    res.status(400).send(`ERROR: ${error}`);
+  }
+  // sendgrid.send(sendOptionsInternal);
 }
