@@ -15,6 +15,7 @@ export default authMiddleware({
     "/press-and-media/(.*)",
     "/offerings(.*)",
     "/find-an-advisor",
+    "/api/public(.*)",
   ],
 });
 
