@@ -56,8 +56,8 @@ const Breadcrumb = () => {
 
           {breadcrumbs.map((breadcrumb, i) => {
             return (
-              <>
-                <li key={i} className="rtl:rotate-180">
+              <div className="flex items-center" key={breadcrumb.breadcrumb}>
+                <li className="rtl:rotate-180">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
@@ -77,7 +77,7 @@ const Breadcrumb = () => {
                     {convertBreadcrumb(breadcrumb.breadcrumb)}
                   </p>
                 </li>
-              </>
+              </div>
             );
           })}
         </ol>
