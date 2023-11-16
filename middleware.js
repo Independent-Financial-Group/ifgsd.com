@@ -16,6 +16,7 @@ export default authMiddleware({
     "/offerings(.*)",
     "/find-an-advisor",
     "/api/public(.*)",
+    "/advisor-lookup",
   ],
 });
 

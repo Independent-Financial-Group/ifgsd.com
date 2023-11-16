@@ -49,6 +49,7 @@
     "react-chrono": "^2.3.1",
     "react-dom": "^18.2.0",
     "react-email": "1.9.5",
+    "react-spinners": "^0.13.8",
     "swiper": "^9.4.1"
   },
   "devDependencies": {
