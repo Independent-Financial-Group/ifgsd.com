@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../../components/App/Sidebar/Sidebar";
 import { useUser } from "@clerk/nextjs";
+import Layout from "../../components/App/Layout/Layout";
 
 const index = () => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -10,9 +11,9 @@ const index = () => {
   }
 
   return (
-    <div className="dark:bg-slate-900 leading-default text-slate-500 m-0 bg-gray-50 font-sans text-base font-normal antialiased">
-      <Sidebar userInfo={user} />
-    </div>
+    <Layout>
+      <h1>Testing</h1>
+    </Layout>
   );
 };
 
