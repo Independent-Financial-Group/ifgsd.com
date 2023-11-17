@@ -110,12 +110,18 @@ const Pagination = ({
   );
 };
 
-const AdvisorCard = ({ key, fullName, city = "N/A", state = "N/A" }) => {
+const AdvisorCard = ({ fullName, city = "N/A", state = "N/A", id }) => {
   const [open, setOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState("");
+  const handleClick = (e) => {
+    setOpen(true);
+    setSelectedId(e.target.dataset.id);
+    console.log(e.target.dataset.id);
+  };
 
   return (
     <li
-      key={key}
+      key={id}
       className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow"
     >
       <div className="flex w-full items-center justify-between space-x-6 p-6">
@@ -139,7 +145,8 @@ const AdvisorCard = ({ key, fullName, city = "N/A", state = "N/A" }) => {
         <div className="-mt-px flex divide-x divide-gray-200">
           <div className="flex w-0 flex-1">
             <button
-              onClick={() => setOpen(true)}
+              onClick={handleClick}
+              data-id={id}
               className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-hazard-blue-500"
             >
               <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />
@@ -148,7 +155,7 @@ const AdvisorCard = ({ key, fullName, city = "N/A", state = "N/A" }) => {
           </div>
         </div>
       </div>
-      <AdvisorEmailForm open={open} setOpen={setOpen} />
+      <AdvisorEmailForm open={open} setOpen={setOpen} selectedId={selectedId} />
     </li>
   );
 };
@@ -253,7 +260,7 @@ const advisorLookup = () => {
                   {directory.map((advisor) => {
                     return (
                       <AdvisorCard
-                        key={advisor.sys.id}
+                        id={advisor.sys.id}
                         fullName={advisor.fields.fullName}
                         city={advisor.fields.city}
                         state={advisor.fields.state}

@@ -1,9 +1,31 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 
-export default function AdvisorEmailForm({ open, setOpen }) {
+// CONTENTFUL
+const contenful = require("contentful");
+
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export default function AdvisorEmailForm({ open, setOpen, selectedId }) {
+  const [entryData, setEntryData] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await client.getEntry(selectedId);
+
+      setEntryData(data);
+    };
+
+    if (selectedId !== "") {
+      fetchData();
+    }
+  }, [selectedId]);
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -31,7 +53,9 @@ export default function AdvisorEmailForm({ open, setOpen }) {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
-                <p className="text-center">Send an email to Alex Garcia</p>
+                <p className="text-center">
+                  Send an email to {entryData && entryData.fields.firstName}
+                </p>
                 <div>
                   <label
                     htmlFor="name"
