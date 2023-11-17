@@ -59,7 +59,7 @@ const index = ({ newsArticles }) => {
           <Container>
             <Pagination
               currentPage={"1"}
-              totalPages={newsArticles.total / 3}
+              totalPages={Math.ceil(newsArticles.total / 3)}
               prevDisabled
               path={"ifg-in-the-news"}
             />
@@ -105,7 +105,7 @@ const index = ({ newsArticles }) => {
             </div>
             <Pagination
               currentPage={"1"}
-              totalPages={newsArticles.total / 3}
+              totalPages={Math.ceil(newsArticles.total / 3)}
               prevDisabled
               path={"ifg-in-the-news"}
             />
