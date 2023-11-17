@@ -23,6 +23,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 // IMPORT ASSETS
 import highlight from "../public/_global-graphics/highlight.png";
 import logo from "../public/ifg-icon.png";
+import { previewData } from "next/dist/client/components/headers";
 
 // CONTENTFUL
 const contenful = require("contentful");
@@ -36,6 +37,77 @@ const override = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
+};
+
+const Pagination = ({
+  totalPages,
+  currentPage,
+  setCurrentPage,
+  setSkipNumber,
+  setIsLoading,
+}) => {
+  const handleNextPage = (e) => {
+    // setIsLoading(true);
+    setCurrentPage((prevState) => prevState + 1);
+    setSkipNumber((prevState) => prevState + 12);
+    console.log();
+  };
+
+  const handlePrevPage = () => {
+    // setIsLoading(true);
+    setCurrentPage((prevState) => prevState - 1);
+    setSkipNumber((prevState) => prevState - 12);
+  };
+
+  return (
+    <div className="mx-auto my-5 inline-flex w-full items-center justify-center gap-3">
+      <button
+        onClick={handlePrevPage}
+        disabled={currentPage == 1}
+        className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-neon-orange-600 text-seabreeze-100 disabled:bg-gray-200 disabled:text-gray-900 rtl:rotate-180"
+      >
+        <span className="sr-only">Next Page</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-3 w-3"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+
+      <p className="text-xs text-gray-900">
+        {currentPage}
+        <span className="mx-0.25">/</span>
+        {totalPages}
+      </p>
+
+      <button
+        className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-neon-orange-600 text-seabreeze-100 disabled:text-gray-900 rtl:rotate-180"
+        onClick={handleNextPage}
+        disabled={currentPage == totalPages}
+      >
+        <span className="sr-only">Next Page</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-3 w-3"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  );
 };
 
 const AdvisorCard = ({ key, fullName, city = "N/A", state = "N/A" }) => {
@@ -82,25 +154,31 @@ const AdvisorCard = ({ key, fullName, city = "N/A", state = "N/A" }) => {
 };
 
 const advisorLookup = () => {
+  const [paginationCount, setPaginationCount] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const [directory, setDirectory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [skipNumber, setSkipNumber] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
-      const testimonials = await client.getEntries({
+      const directory = await client.getEntries({
         content_type: "advisorDirectory",
         order: "fields.lastName",
         query: searchTerm,
+        limit: 12,
+        skip: skipNumber,
       });
 
-      setDirectory([...testimonials.items]);
+      setDirectory([...directory.items]);
+      setPaginationCount(Math.ceil(directory.total / 12));
     };
 
     fetchData();
 
     setIsLoading(false);
-  }, [searchTerm]);
+  }, [searchTerm, skipNumber]);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -163,18 +241,35 @@ const advisorLookup = () => {
               </div>
             )}
             {!isLoading && (
-              <ul className="grid grid-cols-3 gap-5">
-                {directory.map((advisor) => {
-                  return (
-                    <AdvisorCard
-                      key={advisor.sys.id}
-                      fullName={advisor.fields.fullName}
-                      city={advisor.fields.city}
-                      state={advisor.fields.state}
-                    />
-                  );
-                })}
-              </ul>
+              <>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={paginationCount}
+                  setCurrentPage={setCurrentPage}
+                  setSkipNumber={setSkipNumber}
+                  setIsLoading={setIsLoading}
+                />
+                <ul className="grid grid-cols-3 gap-5">
+                  {directory.map((advisor) => {
+                    return (
+                      <AdvisorCard
+                        key={advisor.sys.id}
+                        fullName={advisor.fields.fullName}
+                        city={advisor.fields.city}
+                        state={advisor.fields.state}
+                        setSkipNumber={setSkipNumber}
+                      />
+                    );
+                  })}
+                </ul>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={paginationCount}
+                  setCurrentPage={setCurrentPage}
+                  setSkipNumber={setSkipNumber}
+                  setIsLoading={setIsLoading}
+                />
+              </>
             )}
           </Container>
         </section>
