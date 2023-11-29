@@ -20,7 +20,7 @@ const client = contentful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-const postsPerPage = 3;
+const postsPerPage = 6;
 
 export async function getStaticPaths() {
   const res = await client.getEntries({
@@ -65,6 +65,7 @@ export async function getStaticProps({ params }) {
       totalPages,
       currentPage: params.page,
     },
+    revalidate: 10
   };
 }
 
