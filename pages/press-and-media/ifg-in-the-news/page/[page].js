@@ -96,7 +96,7 @@ const page = ({ posts, currentPage, totalPages }) => {
                     className="mb-10 flex flex-col bg-white md:mb-0"
                     key={post.sys.id}
                   >
-                    <Image
+                    {/* <Image
                       src={`https:${post.fields.featureImage.fields.file.url}`}
                       alt={post.fields.featureImage.fields.title}
                       width={
@@ -106,7 +106,8 @@ const page = ({ posts, currentPage, totalPages }) => {
                         post.fields.featureImage.fields.file.details.image
                           .height
                       }
-                    />
+                      className="h-[200px] object-cover"
+                    /> */}
                     <div className="flex grow flex-col px-5 py-10">
                       <p className="text-xs font-bold text-hazard-blue-500">
                         {formatDateAndTime(post.fields.publishDate, "day")}

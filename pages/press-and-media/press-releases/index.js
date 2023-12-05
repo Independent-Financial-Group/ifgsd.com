@@ -89,7 +89,7 @@ const index = ({ formattedPressReleases, pressReleases }) => {
                       alt={post.image.fields.title}
                       width={post.image.fields.file.details.image.width}
                       height={post.image.fields.file.details.image.height}
-                      className="h-[350px] object-fill"
+                      className="h-[200px] object-cover"
                     />
                     <div className="flex grow flex-col px-5 py-10">
                       <p className="text-xs font-bold text-hazard-blue-500">
