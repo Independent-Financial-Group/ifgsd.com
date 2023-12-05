@@ -27,7 +27,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const newsArticles = await client.getEntries({
     content_type: "newsArticle",
-    limit: 3,
+    limit: 12,
     order: "-fields.publishDate",
   });
 
@@ -59,7 +59,7 @@ const index = ({ newsArticles }) => {
           <Container>
             <Pagination
               currentPage={"1"}
-              totalPages={Math.ceil(newsArticles.total / 3)}
+              totalPages={Math.ceil(newsArticles.total / 12)}
               prevDisabled
               path={"ifg-in-the-news"}
             />
@@ -105,7 +105,7 @@ const index = ({ newsArticles }) => {
             </div>
             <Pagination
               currentPage={"1"}
-              totalPages={Math.ceil(newsArticles.total / 3)}
+              totalPages={Math.ceil(newsArticles.total / 12)}
               prevDisabled
               path={"ifg-in-the-news"}
             />
