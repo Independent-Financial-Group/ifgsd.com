@@ -20,12 +20,12 @@ const Timeline = ({ data }) => {
       {data.map((item) => {
         return (
           <div className="min-h-[350px] w-[380px] overflow-y-hidden bg-white px-4">
-            <Image
+            {/* <Image
               src={"https://placehold.co/400x100.png"}
               width={400}
               height={100}
               className="mb-10"
-            />
+            /> */}
             <h3 className="text-2xl font-bold text-neon-orange-500">
               {item.cardTitle}
             </h3>
