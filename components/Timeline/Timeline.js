@@ -30,7 +30,7 @@ const Timeline = ({ data }) => {
               {item.cardTitle}
             </h3>
             <p className="mb-4 text-hazard-blue-500">{item.title}</p>
-            <p className="text-sm">{item.cardDetailedText}</p>
+            <p className="text-base">{item.cardDetailedText}</p>
           </div>
         );
       })}
