@@ -15,12 +15,21 @@ import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import highlight from "../../public/_global-graphics/highlight.png";
 import highlightWhite from "../../public/_global-graphics/highlight-white.png";
 import highlightBlue from "../../public/_global-graphics/highlight-blue.png";
-import marketingDesignBranding from "../../public/_marketing-support/images/marketing-design.webp";
+import marketingDesignBranding from "../../public/_marketing-support/images/branding-mockup.webp";
 import resources from "../../public/_marketing-support/images/resources.webp";
 import branding from "../../public/_marketing-support/graphics/branding.png";
 import messaging from "../../public/_marketing-support/graphics/messaging.png";
 import stationery from "../../public/_marketing-support/graphics/stationery.png";
 import freedom from "../../public/_marketing-support/images/freedom.png";
+import {
+  MagnifyingGlassIcon,
+  UserCircleIcon,
+  ChatBubbleLeftRightIcon,
+  FingerPrintIcon,
+  EnvelopeIcon,
+  BookOpenIcon,
+} from "@heroicons/react/24/outline";
+
 const marketingSupport = () => {
   return (
     <>
@@ -67,40 +76,81 @@ const marketingSupport = () => {
         </section>
         <section className="my-10 rounded-[20px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-400 py-5 lg:my-32 lg:rounded-[40px]">
           <Container>
-            <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div>
+                <h2 className="mx-auto mb-5 flex w-fit items-center gap-2 text-center text-3xl font-bold text-seabreeze-500 lg:mx-0 lg:text-left">
+                  Take Your Brand to the Next Level with our Marketing Branding
+                  Package.
+                </h2>
                 <Image
                   src={marketingDesignBranding}
                   alt="illustration for marketing design & branding resources"
-                  className="w-3/4"
+                  className="h-3/4 rounded-lg object-cover"
                 />
               </div>
               <div className="mt-10 lg:mt-0">
-                <h2 className="mx-auto flex w-fit items-center gap-2 text-center text-3xl font-bold text-seabreeze-500 lg:mx-0 lg:text-left">
-                  <Image
-                    src={highlightWhite}
-                    alt="decorative heading highlight"
-                    className="hidden lg:block"
-                  />{" "}
-                  Take Your Brand to the Next Level
-                </h2>
-                <ul className="my-5 flex flex-col items-center gap-5">
-                  <li className="flex items-center justify-between rounded-xl bg-white px-10 py-5 lg:w-3/5">
-                    <Image src={stationery} />
-                    <p className="text-2xl font-bold text-neon-orange-500">
-                      Stationery Design
+                <ul className="my-5 grid grid-cols-2 items-center gap-5">
+                  <li>
+                    <div className="mb-5 w-fit rounded-lg bg-seabreeze-500 p-3">
+                      <MagnifyingGlassIcon class="h-6 w-6 text-blue-wave-500" />
+                    </div>
+                    <p className="text-seabreeze-500">
+                      <span className="font-bold">Discovery Sessions.</span>{" "}
+                      Speak with our branding specialists to identify your
+                      company's mission.
                     </p>
                   </li>
-                  <li className="flex items-center justify-between rounded-xl bg-white px-10 py-5 lg:w-3/5">
-                    <Image src={branding} />
-                    <p className="text-2xl font-bold text-neon-orange-500">
-                      Brand Guidebook
+                  <li>
+                    <div className="mb-5 w-fit rounded-lg bg-seabreeze-500 p-3">
+                      <UserCircleIcon class="h-6 w-6 text-blue-wave-500" />
+                    </div>
+                    <p className="text-seabreeze-500">
+                      <span className="font-bold">Company Profile.</span>{" "}
+                      Develop a brief written company story to use in your
+                      marketing collateral.
                     </p>
                   </li>
-                  <li className="flex items-center justify-between rounded-xl bg-white px-10 py-5 lg:w-3/5">
-                    <Image src={messaging} />
-                    <p className="text-2xl font-bold text-neon-orange-500">
-                      Brand Messaging
+                  <li>
+                    <div className="mb-5 w-fit rounded-lg bg-seabreeze-500 p-3">
+                      <ChatBubbleLeftRightIcon class="h-6 w-6 text-blue-wave-500" />
+                    </div>
+                    <p className="text-seabreeze-500">
+                      <span className="font-bold">Messaging.</span> Effectively
+                      communicate your value proposition throughout your
+                      marketing efforts with carefully curated messaging.
+                    </p>
+                  </li>
+                  <li>
+                    <div className="mb-5 w-fit rounded-lg bg-seabreeze-500 p-3">
+                      <FingerPrintIcon class="h-6 w-6 text-blue-wave-500" />
+                    </div>
+                    <p className="text-seabreeze-500">
+                      <span className="font-bold">Visual Identity System.</span>{" "}
+                      Get a custom-designed logo, along with fonts and color
+                      scheme that align with your brand.
+                    </p>
+                  </li>
+                  <li>
+                    <div className="mb-5 w-fit rounded-lg bg-seabreeze-500 p-3">
+                      <EnvelopeIcon class="h-6 w-6 text-blue-wave-500" />
+                    </div>
+                    <p className="text-seabreeze-500">
+                      <span className="font-bold">
+                        Stationary Design & Digital Graphics.
+                      </span>{" "}
+                      Custom business cards, envelopes, letterhead designs, and
+                      digital graphics.
+                    </p>
+                  </li>
+                  <li>
+                    <div className="mb-5 w-fit rounded-lg bg-seabreeze-500 p-3">
+                      <BookOpenIcon class="h-6 w-6 text-blue-wave-500" />
+                    </div>
+                    <p className="text-seabreeze-500">
+                      <span className="font-bold">Discovery Sessions.</span>{" "}
+                      Stay on brand with a guidebook that provides practical
+                      instructions on how to use your brand elements
+                      consistently throughout your marketing collateral.
                     </p>
                   </li>
                 </ul>
