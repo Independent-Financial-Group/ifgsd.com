@@ -61,19 +61,21 @@ const Modal = ({ open, setOpen, id }) => {
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div>
                   <div className="mx-auto flex items-center justify-center bg-hazard-blue-100 px-4 py-4">
-                    <Image
-                      src={`https:${data.fields.locationImage.fields.file.url}`}
-                      width={
-                        data.fields.locationImage.fields.file.details.image
-                          .width
-                      }
-                      height={
-                        data.fields.locationImage.fields.file.details.image
-                          .height
-                      }
-                      alt={data.fields.conferenceDescription}
-                      className="h-[280px] rounded-t-xl md:w-full md:object-cover"
-                    />
+                    {data.fields.locationImage && (
+                      <Image
+                        src={`https:${data.fields.locationImage.fields.file.url}`}
+                        width={
+                          data.fields.locationImage.fields.file.details.image
+                            .width
+                        }
+                        height={
+                          data.fields.locationImage.fields.file.details.image
+                            .height
+                        }
+                        alt={data.fields.conferenceDescription}
+                        className="h-[280px] rounded-t-xl md:w-full md:object-cover"
+                      />
+                    )}
                   </div>
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
