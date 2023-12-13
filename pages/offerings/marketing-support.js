@@ -10,6 +10,7 @@ import PublicLayout from "../../components/PublicLayout/PublicLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Container from "../../components/Container/Container";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import Button from "../../components/Button/Button";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
@@ -169,11 +170,14 @@ const marketingSupport = () => {
                   />{" "}
                   The Freedom to tell Your Story & Collaborate
                 </h2>
-                <p className="mt-5 text-xl">
+                <p className="my-5 text-xl">
                   IFG supports your independence to tell your story the way you
                   see it. This leads to higher collaboration across the board
                   with your peers which in turn brings more success.
                 </p>
+                <Button type={"primary"} href={"/join/contact"}>
+                  Learn More
+                </Button>
               </div>
               <div className="mt-10 lg:mt-auto">
                 <Image
