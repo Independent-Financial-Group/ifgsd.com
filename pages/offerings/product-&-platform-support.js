@@ -70,8 +70,8 @@ const productSupport = ({ formattedData }) => {
                   Vast Product Selection
                 </h2>
                 <p className="my-5 text-xl">
-                  We have selling agreements with many top-tier investment
-                  solutions providers that cover all areas of investment:
+                  We have selling agreements with top-tier investment solutions
+                  providers that cover all areas of financial planning needs:
                 </p>
                 <Image
                   src={stickyNotes}
@@ -161,12 +161,12 @@ const productSupport = ({ formattedData }) => {
               <div>
                 <h2 className="flex gap-5 text-3xl font-bold text-neon-orange-500">
                   <Image src={highlightBlue} />
-                  Robust Wealth Data Platform
+                  Robust Wealth Data Visualization
                 </h2>
                 <p className="mt-5 text-xl">
-                  IFG&apos;s Wealth Data Platform allows advisors to offer
-                  comprehensive guidance to their clients, wherever they are on
-                  their wealth journey.
+                  IFG&apos;s Wealth Data Platform allows you to visualize all of
+                  your clients financial data to offer comprehensive guidance,
+                  wherever they are on their wealth journey.
                 </p>
               </div>
             </div>
