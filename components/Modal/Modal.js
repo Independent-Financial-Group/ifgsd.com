@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 import Image from "next/image";
 
@@ -60,8 +61,8 @@ const Modal = ({ open, setOpen, id }) => {
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div>
-                  <div className="mx-auto flex items-center justify-center bg-hazard-blue-100 px-4 py-4">
-                    {data.fields.locationImage && (
+                  {data.fields.locationImage && (
+                    <div className="mx-auto flex items-center justify-center bg-hazard-blue-100 px-4 py-4">
                       <Image
                         src={`https:${data.fields.locationImage.fields.file.url}`}
                         width={
@@ -75,18 +76,21 @@ const Modal = ({ open, setOpen, id }) => {
                         alt={data.fields.conferenceDescription}
                         className="h-[280px] rounded-t-xl md:w-full md:object-cover"
                       />
-                    )}
-                  </div>
-                  <div className="mt-3 text-center sm:mt-5">
+                    </div>
+                  )}
+
+                  <div className="mt-3 sm:mt-5">
                     <Dialog.Title
                       as="h3"
                       className="text-base font-semibold leading-6 text-gray-900"
                     >
                       {data.fields.conferenceName}
+                      {data.fields.name}
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
                         {data.fields.conferenceDescription}
+                        <ReactMarkdown>{data.fields.fullDetails}</ReactMarkdown>
                       </p>
                     </div>
                   </div>

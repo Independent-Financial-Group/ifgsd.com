@@ -51,7 +51,6 @@ const conferences = ({ formattedData }) => {
 
   const handleOpen = (e) => {
     setOpen(true);
-    console.log(e.target.dataset.id);
     setSelectedConference(e.target.dataset.id);
   };
 
