@@ -59,7 +59,7 @@ const BusinessSolutionsModels = ({ formattedData }) => {
       question:
         "Will IFG support me if I have my own RIA? Can I use the IFG RIA?",
       answer:
-        "You may elect to use IFG’s RIA or an independent RIA. An independent broker-dealer, member FINRA/SIPC, that is among the largest internally controlled independent broker-dealers in the country.",
+        "You may elect to use IFG’s RIA or an independent RIA. Independent Financial Group is an independent broker-dealer, member FINRA/SIPC, that is among the largest in the country.",
     },
   ];
 
