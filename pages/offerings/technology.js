@@ -130,9 +130,9 @@ const technology = () => {
                   Your Web-based Front Office
                 </h2>
                 <p className="my-5 text-xl">
-                  Independent Financial Group’s user-friendly web-based
-                  application gives you access to comprehensive commission and
-                  client information.
+                  Independent Financial Group&apos;s user-friendly web-based
+                  application gives you access to comprehensive fee, commission,
+                  and client information.
                 </p>
                 <Button href={"/join/contact"} type={"primary"}>
                   Talk Tech with Us
