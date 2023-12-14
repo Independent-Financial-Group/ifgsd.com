@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../../components/App/Sidebar/Sidebar";
 import { useUser } from "@clerk/nextjs";
 import Layout from "../../components/App/Layout/Layout";
+import DashboardHeader from "../../components/App/DashboardHeader/DashboardHeader";
 
 const index = () => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -12,7 +13,7 @@ const index = () => {
 
   return (
     <Layout>
-      <h1>Testing</h1>
+      <DashboardHeader />
     </Layout>
   );
 };
