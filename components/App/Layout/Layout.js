@@ -28,7 +28,7 @@ const navigation = [
       {
         name: "Advisory",
         links: [
-          { name: "Overview", href: "#" },
+          { name: "Overview", href: "/app/advisory/overview" },
           { name: "Approved Products", href: "#" },
         ],
       },
@@ -62,12 +62,9 @@ const navigation = [
     name: "Resources",
     icon: FolderIcon,
     current: false,
-    children: [
-      { name: "Podcast", href: "#" },
-      { name: "Directory", links: [{ name: "Home Office", href: "#" }] },
-    ],
+    children: [{ name: "Podcast", href: "#" }],
   },
-  { name: "Contact", current: false, icon: PhoneIcon },
+  { name: "Contact", current: false, icon: PhoneIcon, href: "/app/contact" },
 ];
 
 function classNames(...classes) {
@@ -144,30 +141,83 @@ export default function Layout({ children }) {
                     <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
                         <li>
-                          <ul role="list" className="-mx-2 space-y-1">
-                            {navigation.map((item) => (
-                              <li key={item.name}>
-                                <a
-                                  href={item.href}
-                                  className={classNames(
-                                    item.current
-                                      ? "bg-gray-50 text-indigo-600"
-                                      : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
-                                    "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
-                                  )}
-                                >
-                                  <item.icon
-                                    className={classNames(
-                                      item.current
-                                        ? "text-indigo-600"
-                                        : "text-gray-400 group-hover:text-indigo-600",
-                                      "h-6 w-6 shrink-0",
-                                    )}
-                                    aria-hidden="true"
-                                  />
-                                  {item.name}
-                                </a>
-                              </li>
+                          <ul
+                            role="list"
+                            className="  -mx-2 flex flex-col gap-y-2 space-y-1"
+                          >
+                            {navigation.map((parentItem) => (
+                              <Disclosure key={parentItem.name}>
+                                {parentItem.children ? (
+                                  <>
+                                    <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                      <parentItem.icon
+                                        className={classNames(
+                                          parentItem.current
+                                            ? "text-indigo-600"
+                                            : "",
+                                          "h-6 w-6 shrink-0",
+                                        )}
+                                        aria-hidden="true"
+                                      />
+                                      {parentItem.name}
+                                    </Disclosure.Button>
+                                    <Disclosure.Panel>
+                                      {parentItem.children.map((childItem) => {
+                                        return (
+                                          <Disclosure
+                                            as="ul"
+                                            className="ml-8 flex flex-col"
+                                          >
+                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                              {childItem.name}
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel>
+                                              {childItem.links ? (
+                                                <Disclosure
+                                                  as="ul"
+                                                  className="flex flex-col items-start"
+                                                >
+                                                  {childItem.links.map(
+                                                    (link) => {
+                                                      return (
+                                                        <>
+                                                          <Link
+                                                            href={link.href}
+                                                            className={classNames(
+                                                              parentItem.current
+                                                                ? "bg-gray-50 text-indigo-600"
+                                                                : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600",
+                                                              "group ml-8 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
+                                                            )}
+                                                          >
+                                                            {link.name}
+                                                          </Link>
+                                                        </>
+                                                      );
+                                                    },
+                                                  )}
+                                                </Disclosure>
+                                              ) : null}
+                                            </Disclosure.Panel>
+                                          </Disclosure>
+                                        );
+                                      })}
+                                    </Disclosure.Panel>
+                                  </>
+                                ) : (
+                                  <Disclosure>
+                                    <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                      <parentItem.icon
+                                        className="h-6 w-6 shrink-0"
+                                        aria-hidden="true"
+                                      />
+                                      <Link href={parentItem.href}>
+                                        {parentItem.name}
+                                      </Link>
+                                    </Disclosure.Button>
+                                  </Disclosure>
+                                )}
+                              </Disclosure>
                             ))}
                           </ul>
                         </li>
@@ -180,10 +230,10 @@ export default function Layout({ children }) {
           </Dialog>
         </Transition.Root>
 
-        {/* Static sidebar for desktop */}
-        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+        {/* STATIC SIDEBAR FOR DESKTOP */}
+        <div className="relative hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-4">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white">
             <div className="flex h-16 shrink-0 items-center">
               <Image
                 className="mx-auto h-8 w-auto"
@@ -196,7 +246,7 @@ export default function Layout({ children }) {
                 {/* LOOP THROUGH NAVIGATION ARRAY */}
                 {navigation.map((parentItem) => {
                   return (
-                    <li>
+                    <li className="px-4">
                       {/* RENDER A DISCLOSURE FOR THE PARENT ITEM IN THE NAVIGATION ARRAY */}
                       <Disclosure as="div">
                         {({ open }) => (
@@ -294,7 +344,7 @@ export default function Layout({ children }) {
                                     className="h-6 w-6 shrink-0"
                                     aria-hidden="true"
                                   />
-                                  <Link href="parentItem.href">
+                                  <Link href={parentItem.href}>
                                     {parentItem.name}
                                   </Link>
                                 </Disclosure.Button>
@@ -306,6 +356,20 @@ export default function Layout({ children }) {
                     </li>
                   );
                 })}
+                <li className="absolute bottom-0 w-full bg-hazard-blue-500 hover:bg-hazard-blue-600">
+                  <button className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white">
+                    <UserButton
+                      showName={true}
+                      appearance={{
+                        elements: {
+                          userButtonBox: "flex-row-reverse",
+                          userButtonOuterIdentifier: " text-seabreeze-500",
+                          userButtonTrigger: "!focus:shadow-[#FF5617]",
+                        },
+                      }}
+                    />
+                  </button>
+                </li>
               </ul>
             </nav>
           </div>
@@ -323,14 +387,7 @@ export default function Layout({ children }) {
           <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
             Dashboard
           </div>
-          <a href="#">
-            <span className="sr-only">Your profile</span>
-            <img
-              className="h-8 w-8 rounded-full bg-gray-50"
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-            />
-          </a>
+          <UserButton />
         </div>
 
         <main className="py-10 lg:pl-72">
