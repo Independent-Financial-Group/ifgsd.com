@@ -132,54 +132,6 @@ const conferences = ({ formattedData }) => {
                   </div>
                 );
               })}
-              {/* <div className="flex flex-col rounded-t-xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600  lg:h-full">
-                <Image
-                  src={rosewood}
-                  alt="entrace to the london rosewood hotel"
-                  className="h-[280px] rounded-t-xl md:w-full md:object-cover"
-                />
-                <div className="my-auto flex items-center gap-2 px-4">
-                  <h3 className="align-middle text-xl font-bold text-seabreeze-500">
-                    Elite Advisor Conference
-                  </h3>
-                  <button
-                    onClick={handleOpen}
-                    className="text-sm text-seabreeze-500"
-                  >
-                    Read More &rarr;
-                  </button>
-                </div>
-              </div>
-              <div className="flex flex-col rounded-t-xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 lg:h-full">
-                <Image
-                  src={sandiego}
-                  alt="downtown san diego"
-                  className="h-[280px] rounded-t-xl  md:w-full md:object-cover"
-                />
-                <div className="my-auto flex items-center gap-5 px-4">
-                  <h3 className="text-xl font-bold text-seabreeze-500">
-                    National Conference
-                  </h3>
-                  <button className="text-sm text-seabreeze-500">
-                    Read More &rarr;
-                  </button>
-                </div>
-              </div>
-              <div className="rounded-t-xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 lg:h-full">
-                <Image
-                  src={phoenician}
-                  alt="the phoenician resort in scottsdale arizona"
-                  className="h-[280px] rounded-t-xl  md:w-full md:object-cover"
-                />
-                <div className="my-auto flex items-center gap-5 px-4">
-                  <h3 className="w-3/4 text-xl font-bold text-seabreeze-500">
-                    Practice Management Exchange
-                  </h3>
-                  <button className="w-1/4 text-sm text-seabreeze-500">
-                    Read More &rarr;
-                  </button>
-                </div>
-              </div> */}
             </div>
           </Container>
         </section>
