@@ -138,11 +138,11 @@ const ourMission = () => {
                   <p className="text-xl">
                     When David Fischer, and I founded IFG, we agreed that giving
                     back to our community, consistently, would be a central part
-                    of our mission. We both are fathers, and our community has
-                    been good to us and to our families. We want to make sure
-                    that all children and young adults in San Diego, and in the
-                    state of California, are being raised with the support and
-                    opportunities they need to thrive.
+                    of our mission. The three of us are family men and
+                    supportive of the community we live in. We wanted to make
+                    sure that children and young adults in San Diego are being
+                    raised with the support and opportunities they need to
+                    thrive.
                   </p>
                 </div>
                 <p className="text-right text-3xl font-bold text-neon-orange-500">
