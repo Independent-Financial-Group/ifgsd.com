@@ -10,7 +10,7 @@ const DashboardHeader = () => {
       <div className="absolute inset-x-8 top-1/2 -translate-y-1/2">
         <h1 className="text-3xl font-bold text-seabreeze-500">
           {user.lastSignInAt ? "Welcome Back, " : "Hello, "}
-          {user.firstName}
+          {user.firstName}!
         </h1>
         <p className=" text-seabreeze-500">
           This is a restricted area of our website dedicated solely to our
