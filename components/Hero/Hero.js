@@ -27,7 +27,7 @@ const Hero = ({ content }) => {
             <h1 className="text-4xl font-bold text-seabreeze-500 md:text-6xl">
               {content.heading}
             </h1>
-            <p className="mt-6 text-xl text-seabreeze-500">
+            <p className="mt-6 text-xl leading-8 text-seabreeze-500">
               {content.paragraph}
             </p>
             <div className="mt-10 flex items-center gap-x-6">
