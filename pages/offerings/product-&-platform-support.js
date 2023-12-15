@@ -149,7 +149,7 @@ const productSupport = ({ formattedData }) => {
             </ul>
           </Container>
         </section>
-        <section className="my-10 lg:my-32">
+        {/* <section className="my-10 lg:my-32">
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
               <div>
@@ -171,7 +171,7 @@ const productSupport = ({ formattedData }) => {
               </div>
             </div>
           </Container>
-        </section>
+        </section> */}
         <section className="rounded-[20px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-400 py-32 lg:rounded-[40px]">
           <Container
             classes={

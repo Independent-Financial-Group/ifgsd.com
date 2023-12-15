@@ -75,7 +75,7 @@ const conferences = ({ formattedData }) => {
               <div>
                 <h2 className="flex items-center gap-2 text-3xl font-bold text-hazard-blue-500">
                   <Image src={highlight} alt="decorative heading highlight" />
-                  On-going training
+                  Ongoing training
                 </h2>
                 <p className="mt-5 text-xl">
                   At Independent Financial Group, we not only strive for
