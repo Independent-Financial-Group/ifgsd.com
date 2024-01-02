@@ -25,9 +25,12 @@ const Stats = ({ content }) => {
               </p>
             </div>
             <div>
-              <p className="text-center font-bold text-xl text-neon-orange-500">
-                Largest Independent Broker-Dealer*
-              </p>
+              <a
+                href="/#award-reference-1"
+                className="block text-center text-xl font-bold text-neon-orange-500"
+              >
+                Largest Independent Broker-Dealer <sup>1</sup>
+              </a>
             </div>
           </div>
           <div className="flex flex-col items-center">
@@ -38,9 +41,12 @@ const Stats = ({ content }) => {
               </p>
             </div>
             <div>
-              <p className="text-center font-bold text-xl text-neon-orange-500">
-                Overall Satisfaction**
-              </p>
+              <a
+                href="/#award-reference-2"
+                className="block text-center text-xl font-bold text-neon-orange-500"
+              >
+                Overall Satisfaction <sup>2</sup>
+              </a>
             </div>
           </div>
           <div className="flex flex-col items-center">
@@ -51,9 +57,12 @@ const Stats = ({ content }) => {
               </p>
             </div>
             <div>
-              <p className="text-center font-bold text-xl text-neon-orange-500">
-                Largest Privately Held Company in San Diego***
-              </p>
+              <a
+                href="/#award-reference-3"
+                className="block text-center text-xl font-bold text-neon-orange-500"
+              >
+                Fastest-Growing Privately Held Company in San Diego <sup>3</sup>
+              </a>
             </div>
           </div>
           <div className="flex flex-col items-center">
@@ -64,35 +73,45 @@ const Stats = ({ content }) => {
               </p>
             </div>
             <div>
-              <p className="text-center font-bold text-xl text-neon-orange-500">
-                Inc. 5000 Fastest Growing Companies Finalist****
-              </p>
+              <a
+                href="/#award-reference-4"
+                className="block text-center text-xl font-bold text-neon-orange-500"
+              >
+                Inc. 5000 Fastest Growing Companies Finalist <sup>4</sup>
+              </a>
             </div>
           </div>
           <div className="flex flex-col items-center">
             <div className="relative">
               <Image src={laurel} alt="award graphic" />
-              <p className="absolute text-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-neon-orange-500">
+              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-4xl font-bold text-neon-orange-500">
                 Top 10
               </p>
             </div>
             <div>
-              <p className="text-center font-bold text-xl text-neon-orange-500">
-                In Total Advisor Payout Among Independent Broker-Dealers*****
-              </p>
+              <a
+                href="/#award-reference-56"
+                className="block text-center text-xl font-bold text-neon-orange-500"
+              >
+                In Total Advisor Payout Among Independent Broker-Dealers{" "}
+                <sup>5</sup>
+              </a>
             </div>
           </div>
           <div className="flex flex-col items-center">
             <div className="relative">
               <Image src={laurel} alt="award graphic" />
-              <p className="absolute text-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-neon-orange-500">
+              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-4xl font-bold text-neon-orange-500">
                 Top 10
               </p>
             </div>
             <div>
-              <p className="text-center font-bold text-xl text-neon-orange-500">
-                In Revenue Growth Among Independent Broker-Dealers******
-              </p>
+              <a
+                href="/#award-reference-56"
+                className="block text-center text-xl font-bold text-neon-orange-500"
+              >
+                In Revenue Growth Among Independent Broker-Dealers <sup>6</sup>
+              </a>
             </div>
           </div>
         </div>

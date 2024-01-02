@@ -2,9 +2,15 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { useRouter } from "next/router";
+
 import logo from "../../public/logo.ico";
 
 const Footer = () => {
+  const router = useRouter();
+
+  console.log(router.pathname);
+
   return (
     <footer className="bg-[#ECF1F6] dark:bg-gray-800 sm:p-6">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
@@ -156,6 +162,29 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        {router.pathname == "/" ? (
+          <div className="text-xs italic leading-7 text-gray-500">
+            <p id="award-reference-1">
+              1. Financial Advisor Magazine, 2023, based on reported gross
+              revenue.
+            </p>
+            <p id="award-reference-2">
+              2. wealthmanagement.com, Independent Broker-Dealer Report Card,
+              2020.
+            </p>
+            <p id="award-reference-3">
+              3. San Diego Business Journal, Large Category 2023, based on
+              reported revenue.
+            </p>
+            <p id="award-reference-4">
+              4. Inc. Magazine, Inc. 500|5000 Company Awards, 2006, 2010, 2011,
+              2012, 2013, 2014, 2015, 2016, 2020.
+            </p>
+            <p id="award-reference-56">
+              5/6. Financial Planning Magazine 2022, based on reported revenue.
+            </p>
+          </div>
+        ) : null}
       </div>
     </footer>
   );
