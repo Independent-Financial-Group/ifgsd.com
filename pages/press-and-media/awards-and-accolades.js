@@ -32,6 +32,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const featuredAwards = await client.getEntries({
     content_type: "featuredAwards",
+    order: "fields.order",
   });
 
   return {
@@ -145,7 +146,7 @@ const awardsAndAccolades = ({ awards }) => {
                     <h3 className="my-5 text-xl font-bold text-neon-orange-500">
                       {award.fields.heading}
                     </h3>
-                    <p className="mt-auto text-base">
+                    <p className="mt-auto text-base italic text-gray-500">
                       {award.fields.description}
                     </p>
                   </div>
