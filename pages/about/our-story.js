@@ -35,7 +35,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const timeline = await client.getEntries({
     content_type: "storyTimeline",
-    order: "sys.createdAt",
+    order: "fields.title",
   });
 
   return {

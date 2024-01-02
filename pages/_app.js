@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Script from "next/script";
 import NextNProgress from "nextjs-progressbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,12 +15,13 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1"
         ></meta>
       </Head>
-      <NextNProgress />
+      <NextNProgress color="#F47E50" />
       <ClerkProvider
         {...pageProps}
         appearance={{ elements: { footer: "hidden" } }}
       >
         <Component className="box-border" {...pageProps} />
+        <Analytics />
       </ClerkProvider>
     </>
   );

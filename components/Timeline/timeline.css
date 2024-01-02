@@ -1,0 +1,30 @@
+.my-card {
+    width: 400px !important;
+    min-height: 600px !important;
+    height: auto !important;
+    padding: 1rem 0.5rem;
+    border-radius: 8px !important;
+}
+
+.my-card-title {
+    color: #6BA9C0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100% !important;
+}
+
+.my-card-subtitle {
+    color: #F47F4F !important;
+}
+
+.my-card-text {
+    margin: 0 !important;
+}
+
+.my-card-media {
+    padding: 0 !important;
+}
+
+section [class^="MediaDetailsWrapper"] {
+    flex: 0 !important;
+}

@@ -27,7 +27,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const newsArticles = await client.getEntries({
     content_type: "newsArticle",
-    limit: 3,
+    limit: 12,
     order: "-fields.publishDate",
   });
 
@@ -59,7 +59,7 @@ const index = ({ newsArticles }) => {
           <Container>
             <Pagination
               currentPage={"1"}
-              totalPages={newsArticles.total / 3}
+              totalPages={Math.ceil(newsArticles.total / 12)}
               prevDisabled
               path={"ifg-in-the-news"}
             />
@@ -70,7 +70,7 @@ const index = ({ newsArticles }) => {
                     className="mb-10 flex flex-col bg-white md:mb-0"
                     key={article.sys.id}
                   >
-                    <Image
+                    {/* <Image
                       src={`https:${article.fields.featureImage.fields.file.url}`}
                       alt={article.fields.featureImage.fields.title}
                       width={
@@ -81,7 +81,8 @@ const index = ({ newsArticles }) => {
                         article.fields.featureImage.fields.file.details.image
                           .height
                       }
-                    />
+                      className="h-[200px] object-cover"
+                    /> */}
                     <div className="flex grow flex-col px-5 py-10">
                       <p className="text-xs font-bold text-hazard-blue-500">
                         {formatDateAndTime(article.fields.publishDate, "day")}
@@ -105,7 +106,7 @@ const index = ({ newsArticles }) => {
             </div>
             <Pagination
               currentPage={"1"}
-              totalPages={newsArticles.total / 3}
+              totalPages={Math.ceil(newsArticles.total / 12)}
               prevDisabled
               path={"ifg-in-the-news"}
             />

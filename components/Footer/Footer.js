@@ -1,4 +1,8 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+import logo from "../../public/logo.ico";
 
 const Footer = () => {
   return (
@@ -6,144 +10,119 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com" className="flex items-center">
-              <img
-                src="/logo-full-color.png"
-                className="mr-3 h-8"
-                alt="FlowBite Logo"
-              />
-            </a>
+            <Link passHref href="/" className="flex items-center">
+              <Image src={logo} className="mr-3 h-8 w-8" alt="IFG Logo" />
+            </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-0">
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-neon-orange-500 dark:text-white">
                 Company
               </h2>
               <ul className="text-xs text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="https://flowbite.com" className="hover:underline">
+                  <a href="/about/our-story" className="hover:underline">
                     Our Story
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Careers
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Culture
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
+                  <Link
+                    href="/join/why-choose-us/our-mission-and-values"
                     className="hover:underline"
                   >
                     Mission
-                  </a>
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Partners
-                  </a>
+                <li className="mb-4">
+                  <Link href="/careers" className="hover:underline">
+                    Careers
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-neon-orange-500 dark:text-white">
                 Press & Media
               </h2>
               <ul className="text-xs text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
+                  <Link
+                    href="/press-and-media/awards-and-accolades"
                     className="hover:underline"
                   >
-                    Blog
-                  </a>
+                    Awards & Accolades
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
+                  <Link
+                    href="/press-and-media/press-releases"
                     className="hover:underline"
                   >
                     Press Releases
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
+                  <Link
+                    href="/press-and-media/ifg-in-the-news"
                     className="hover:underline"
                   >
-                    Advisor Success Stories
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Podcast
-                  </a>
+                    IFG in the News
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-neon-orange-500 dark:text-white">
                 Join Us
               </h2>
               <ul className="text-xs text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Independent Business Model
-                  </a>
+                  <Link href={"/join/the-ifg-experience"}>
+                    The IFG Experience
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Visit Us
-                  </a>
+                  <Link
+                    href="/join/business-solutions-models"
+                    className="hover:underline"
+                  >
+                    Independent Business Model
+                  </Link>
                 </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Awards & Recognition
-                  </a>
+                <li className="mb-4">
+                  <Link href="/join/contact" className="hover:underline">
+                    Contact
+                  </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-neon-orange-500 dark:text-white">
                 Legal
               </h2>
               <ul className="text-xs text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a
+                    href="https://brokercheck.finra.org/firm/summary/7717"
+                    className="hover:underline"
+                  >
                     Broker Check
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <Link href="/reg-bi-investor" className="hover:underline">
                     Regulation Best Interest for Investors
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <Link href="/disclosures" className="hover:underline">
                     Disclosures
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="/privacy-policy" className="hover:underline">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -153,9 +132,9 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             © {new Date().getFullYear()}{" "}
-            <a href="https://flowbite.com" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Independent Financial Group, LLC
-            </a>
+            </Link>
             . All Rights Reserved. Independent Financial Group, LLC is a member
             of FINRA / SIPC.
           </span>
@@ -165,7 +144,7 @@ const Footer = () => {
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="h-5 w-5 fill-sunburst-500"
+                className="h-10 w-10 fill-sunburst-500"
                 role="img"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"

@@ -38,7 +38,7 @@ const ourMission = () => {
           bgPath={`bg-[url('/_mission-and-values/images/hero.webp')]`}
         >
           <div className="flex gap-6">
-            <h1 className="text-3xl md:text-5xl font-bold text-seabreeze-500">
+            <h1 className="text-3xl font-bold text-seabreeze-500 md:text-5xl">
               <Image src={highlight} alt="highlight" className="inline" />{" "}
               Mission & Values
             </h1>
@@ -49,16 +49,16 @@ const ourMission = () => {
             <Breadcrumb />
             <div className="flex flex-col gap-5 lg:grid lg:grid-cols-2">
               <div className="self-center">
-                <h2 className="mb-5 text-3xl font-bold text-hazard-blue-500 flex gap-2 items-start">
-                  <Image src={highlight} alt="highlight" />{" "}
-                  Our Culture
+                <h2 className="mb-5 flex items-start gap-2 text-3xl font-bold text-hazard-blue-500">
+                  <Image src={highlight} alt="highlight" /> Our Culture
                 </h2>
                 <p className="text-xl">
                   Independent Financial Group is dedicated to quality of service
-                  above all else. Unsatisfied with the culture of corporate
-                  finance, IFG was founded in 2003 to put the advisor first and
-                  create a truly independent business model. We are nimble and
-                  able to personalize our services to suit our advisors’ needs.
+                  above all else. Unsatisfied with the culture of Large
+                  Broker-Dealers, IFG was founded in 2003 to put the advisor
+                  first and create a truly independent business model. We are
+                  nimble and able to personalize our services to support our
+                  advisors&apos; needs.
                 </p>
               </div>
               <div>
@@ -75,7 +75,7 @@ const ourMission = () => {
             <h2 className="mb-20 text-center text-3xl font-bold">
               Our Core Values
             </h2>
-            <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 md:gap-5">
+            <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-5 lg:grid-cols-3 lg:grid-rows-1">
               <div className="text-center md:col-span-2 md:lg:col-span-1">
                 <Image
                   className="mx-auto"
@@ -83,7 +83,7 @@ const ourMission = () => {
                   alt="icon of handshake"
                 />
                 <h3 className="my-5 text-2xl font-bold">Integrity</h3>
-                <p className="md:max-w-prose text-xl">
+                <p className="text-xl md:max-w-prose">
                   We will always run our business ethically and maintain a solid
                   relationship with our regulating authorities
                 </p>
@@ -120,12 +120,9 @@ const ourMission = () => {
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div className="self-center">
-                <h2 className="mb-5 text-3xl font-bold text-neon-orange-500 flex gap-2 items-start">
-                  <Image
-                    src={highlightBlue}
-                    alt="highlight"
-                  />{" "}
-                  The IFG Charitable Mission
+                <h2 className="mb-5 flex items-start gap-2 text-3xl font-bold text-neon-orange-500">
+                  <Image src={highlightBlue} alt="highlight" /> The IFG
+                  Charitable Mission
                 </h2>
                 <div className="relative my-10">
                   <Image
@@ -139,13 +136,12 @@ const ourMission = () => {
                     alt="quote icon"
                   />
                   <p className="text-xl">
-                    When David Fischer, and I founded IFG, we agreed that giving
-                    back to our community, consistently, would be a
-                    central part of our mission. We both are fathers, and our
-                    community has been good to us and to our families. We want
-                    to make sure that all children and young adults in San
-                    Diego, and in the state of California, are being raised with
-                    the support and opportunities they need to thrive.
+                    When David Fischer and I founded IFG, we agreed that giving
+                    back to our community, consistently, would be a central part
+                    of our mission. We are family men and supportive of the
+                    community we live in. We wanted to make sure that children
+                    and young adults in San Diego are being raised with the
+                    support and opportunities they need to thrive.
                   </p>
                 </div>
                 <p className="text-right text-3xl font-bold text-neon-orange-500">
@@ -154,14 +150,14 @@ const ourMission = () => {
               </div>
               <div className="relative rounded-lg">
                 <Image
-                  className="rounded-lg object-cover mx-auto"
+                  className="mx-auto rounded-lg object-cover"
                   src={charityCulture}
                   alt="David Fischer and Scott Heising with members from Promises2Kids holding a contribution check."
                 />
                 <Image
                   src={gradientShadow}
                   alt="drop shadow"
-                  className="hidden lg:block absolute top-0 -z-10"
+                  className="absolute top-0 -z-10 hidden lg:block"
                 />
               </div>
             </div>
@@ -174,9 +170,9 @@ const ourMission = () => {
             className="absolute -bottom-9 -z-10 w-full"
           />
           <Container>
-            <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-5">
+            <div className="flex flex-col-reverse gap-5 lg:grid lg:grid-cols-2">
               <div className="relative justify-self-center">
-                <div className="w-full mx-auto md:mx-0 md:h-[410px] md:w-[410px] rounded-[20px]">
+                <div className="mx-auto w-full rounded-[20px] md:mx-0 md:h-[410px] md:w-[410px]">
                   <Image
                     className="rounded-[20px]"
                     src={employeeHeadshot}
@@ -185,9 +181,9 @@ const ourMission = () => {
                 </div>
               </div>
               <div className="self-center">
-                <h2 className="text-3xl font-bold text-hazard-blue-500 flex gap-2 items-start">
-                  <Image src={highlight} alt="highlight" />{" "}
-                  Experience Independence
+                <h2 className="flex items-start gap-2 text-3xl font-bold text-hazard-blue-500">
+                  <Image src={highlight} alt="highlight" /> Experience
+                  Independence
                 </h2>
                 <div className="relative my-5">
                   <p className="text-xl">

@@ -11,6 +11,7 @@ import Button from "../../components/Button/Button";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import Map from "../../components/Map/Map";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
@@ -18,68 +19,6 @@ import arrow from "../../public/_contact/graphics/cta-arrow.png";
 import ornament from "../../public/_global-graphics/CTA-ornament.png";
 
 const contact = () => {
-  const [states, setStates] = useState([
-    "AL",
-    "AK",
-    "AS",
-    "AZ",
-    "AR",
-    "CA",
-    "CO",
-    "CT",
-    "DE",
-    "DC",
-    "FM",
-    "FL",
-    "GA",
-    "GU",
-    "HI",
-    "ID",
-    "IL",
-    "IN",
-    "IA",
-    "KS",
-    "KY",
-    "LA",
-    "ME",
-    "MH",
-    "MD",
-    "MA",
-    "MI",
-    "MN",
-    "MS",
-    "MO",
-    "MT",
-    "NE",
-    "NV",
-    "NH",
-    "NJ",
-    "NM",
-    "NY",
-    "NC",
-    "ND",
-    "MP",
-    "OH",
-    "OK",
-    "OR",
-    "PW",
-    "PA",
-    "PR",
-    "RI",
-    "SC",
-    "SD",
-    "TN",
-    "TX",
-    "UT",
-    "VT",
-    "VI",
-    "VA",
-    "WA",
-    "WV",
-    "WI",
-    "WY",
-  ]);
-
   return (
     <>
       <Head>
@@ -156,7 +95,7 @@ const contact = () => {
                       </svg>
 
                       <a href="https://maps.app.goo.gl/ej1SFah3YuxZfmGfA">
-                        1267 High Bluff Dr, Suite 200, San Diego, CA 92130
+                        12671 High Bluff Dr, Suite 200, San Diego, CA 92130
                       </a>
                     </li>
                   </ul>
@@ -168,11 +107,11 @@ const contact = () => {
                   alt="decorative ornament graphic"
                   className="absolute -top-44 left-1/2 -z-10 -translate-x-1/2"
                 />
-                <div className="rounded-3xl bg-white p-8">
+                {/* <div className="rounded-3xl bg-white p-8">
                   <h2 className="my-5 mb-5 text-center text-3xl font-bold text-neon-orange-500">
                     Send us a message
                   </h2>
-                  <form className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="sr-only" htmlFor="name">
                         Name
@@ -182,20 +121,10 @@ const contact = () => {
                         placeholder="Name"
                         type="text"
                         id="name"
+                        name="name"
+                        onChange={handleChange}
                       />
                     </div>
-                    <div>
-                      <label className="sr-only" htmlFor="name">
-                        Company/Organization
-                      </label>
-                      <input
-                        className="w-full rounded-lg border border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
-                        placeholder="Company/Organization"
-                        type="text"
-                        id="name"
-                      />
-                    </div>
-
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div>
                         <label className="sr-only" htmlFor="email">
@@ -206,6 +135,8 @@ const contact = () => {
                           placeholder="Email address"
                           type="email"
                           id="email"
+                          onChange={handleChange}
+                          name="email"
                         />
                       </div>
 
@@ -218,37 +149,89 @@ const contact = () => {
                           placeholder="Phone Number"
                           type="tel"
                           id="phone"
+                          onChange={handleChange}
+                          name="phone"
                         />
                       </div>
                     </div>
-
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      <div>
-                        <label className="sr-only" htmlFor="email">
-                          City
-                        </label>
-                        <input
-                          className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
-                          placeholder="City"
-                          type="text"
-                          id="city"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="sr-only" htmlFor="state">
-                          Phone
-                        </label>
-                        <select
-                          id="state"
-                          className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
-                        >
-                          {states.map((state) => {
-                            return <option value={state}>{state}</option>;
-                          })}
-                        </select>
-                      </div>
+                    <div>
+                      <fieldset
+                        onChange={handleChange}
+                        className="sm:col-span-2"
+                        name="isFinancialAdvisor"
+                      >
+                        <legend className="block text-sm font-semibold leading-6 text-gray-900">
+                          Are you a financial advisor?
+                        </legend>
+                        <div className="mt-4 flex items-center gap-5 text-sm leading-6 text-gray-600">
+                          <div className="flex gap-x-2.5">
+                            <input
+                              id="isFinancialAdvisor"
+                              name="isFinancialAdvisor"
+                              defaultValue="yes"
+                              type="radio"
+                              className="mt-1 h-4 w-4 border-gray-300 text-neon-orange-600 shadow-sm focus:ring-neon-orange-600"
+                            />
+                            <label htmlFor="budget-under-25k">Yes</label>
+                          </div>
+                          <div className="flex gap-x-2.5 ">
+                            <input
+                              id="isNotFinancialAdvisor"
+                              name="isFinancialAdvisor"
+                              defaultValue="no"
+                              type="radio"
+                              className="mt-1 h-4 w-4 border-gray-300 text-neon-orange-500 shadow-sm focus:ring-neon-orange-600"
+                            />
+                            <label htmlFor="budget-25k-50k">No</label>
+                          </div>
+                        </div>
+                      </fieldset>
                     </div>
+                    {formData.isFinancialAdvisor && (
+                      <>
+                        <div>
+                          <label className="sr-only" htmlFor="name">
+                            Company/Organization
+                          </label>
+                          <input
+                            className="w-full rounded-lg border border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                            placeholder="Company/Organization"
+                            type="text"
+                            id="name"
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                          <div>
+                            <label className="sr-only" htmlFor="email">
+                              City
+                            </label>
+                            <input
+                              className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                              placeholder="City"
+                              type="text"
+                              id="city"
+                              onChange={handleChange}
+                            />
+                          </div>
+
+                          <div>
+                            <label className="sr-only" htmlFor="state">
+                              State
+                            </label>
+                            <select
+                              id="state"
+                              className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                              onChange={handleChange}
+                            >
+                              {states.map((state) => {
+                                return <option value={state}>{state}</option>;
+                              })}
+                            </select>
+                          </div>
+                        </div>
+                      </>
+                    )}
 
                     <div>
                       <label className="sr-only" htmlFor="message">
@@ -269,7 +252,8 @@ const contact = () => {
                       </button>
                     </div>
                   </form>
-                </div>
+                </div> */}
+                <ContactForm />
                 <div className="relative my-8">
                   <Image
                     src={arrow}

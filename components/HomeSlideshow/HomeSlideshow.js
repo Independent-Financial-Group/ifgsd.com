@@ -36,8 +36,6 @@ import image22 from "../../public/_home/images/slideshow/compressed/image22.webp
 import image23 from "../../public/_home/images/slideshow/compressed/image23.webp";
 import image24 from "../../public/_home/images/slideshow/compressed/image24.webp";
 import image25 from "../../public/_home/images/slideshow/compressed/image25.webp";
-import image26 from "../../public/_home/images/slideshow/compressed/image26.webp";
-
 
 const HomeSlideshow = () => {
   return (
@@ -81,49 +79,49 @@ const HomeSlideshow = () => {
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image4}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image5}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image6}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image7}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image8}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image9}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image10}
@@ -147,70 +145,70 @@ const HomeSlideshow = () => {
             modules={[EffectFade, Autoplay]}
           >
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image11}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image12}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image13}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image14}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image15}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image16}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image17}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image18}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image19}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image20}
@@ -234,45 +232,38 @@ const HomeSlideshow = () => {
             modules={[EffectFade, Autoplay]}
           >
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image21}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image22}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image23}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image24}
               />
             </SwiperSlide>
             <SwiperSlide>
-            <Image
+              <Image
                 alt="ifg slide show image"
                 className="h-48 w-full rounded-lg !object-cover !object-top"
                 src={image25}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-            <Image
-                alt="ifg slide show image"
-                className="h-48 w-full rounded-lg !object-cover !object-top"
-                src={image26}
               />
             </SwiperSlide>
           </Swiper>

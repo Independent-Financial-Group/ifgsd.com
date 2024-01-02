@@ -203,13 +203,13 @@ const HomePage = ({
                   {pageContent.sectionAbout.paragraph}{" "}
                   <span className="text-sm font-bold text-neon-orange-500">
                     {" "}
-                    <Link href="/join/why-choose-us/our-mission">
+                    <Link href="/join/why-choose-us/our-mission-and-values">
                       Our Mission&rarr;
                     </Link>
                   </span>
                 </p>
                 <div className="my-4 grid grid-cols-2 grid-rows-2 gap-4 text-seabreeze-500 lg:my-0">
-                  <div className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
+                  <div className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
                     <Image
                       src={handshake}
                       className="mx-auto"
@@ -219,7 +219,7 @@ const HomePage = ({
                       Integrity
                     </h3>
                   </div>
-                  <div className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
+                  <div className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
                     <Image
                       src={balance}
                       className="mx-auto"
@@ -227,7 +227,7 @@ const HomePage = ({
                     />
                     <h3 className="text-center text-3xl font-bold">balance</h3>
                   </div>
-                  <div className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-sunburst-500 p-3">
+                  <div className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
                     <Image src={person} className="mx-auto" alt="person icon" />
                     <h3 className="text-center text-3xl font-bold">
                       Independence
@@ -256,15 +256,17 @@ const HomePage = ({
                   {pageContent.sectionOfferings.offerings.map((offering) => {
                     return (
                       <div key={offering.slug} className="product-card">
-                        <div className="mb-2 flex flex-col items-center justify-start gap-2">
-                          <img
-                            src={`https://${offering.icon.fields.file.url}`}
-                            alt={offering.icon.title}
-                          />
-                          <h3 className="text-center text-xl font-bold text-seabreeze-500">
-                            <Link href={offering.slug}>{offering.header}</Link>
-                          </h3>
-                        </div>
+                        <Link passHref href={offering.slug}>
+                          <div className="mb-2 flex flex-col items-center justify-start gap-2">
+                            <img
+                              src={`https://${offering.icon.fields.file.url}`}
+                              alt={offering.icon.title}
+                            />
+                            <h3 className="text-center text-xl font-bold text-seabreeze-500">
+                              {offering.header}
+                            </h3>
+                          </div>
+                        </Link>
                       </div>
                     );
                   })}

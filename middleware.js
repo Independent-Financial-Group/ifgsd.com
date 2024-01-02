@@ -6,12 +6,17 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
   publicRoutes: [
     "/",
+    "/reg-bi-investor",
+    "/privacy-policy",
+    "/disclosures",
     "/join/(.*)",
     "/about/(.*)",
     "/careers(.*)",
     "/press-and-media/(.*)",
     "/offerings(.*)",
     "/find-an-advisor",
+    "/api/public(.*)",
+    "/advisor-lookup",
   ],
 });
 

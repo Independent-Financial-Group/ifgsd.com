@@ -9,11 +9,11 @@ const Hero = ({ content }) => {
       <div className="mx-auto max-w-screen-xl px-4">
         <div className="absolute top-[50%] translate-y-[-50%]">
           <div className="mb-4 sm:flex sm:justify-center md:justify-start">
-            <div className="rounded-full bg-neon-orange-500 px-3 py-1 text-sm font-semibold leading-6 text-seabreeze-100 drop-shadow-xl">
+            <div className="rounded-full bg-neon-orange-500 px-3 py-1 text-sm font-bold leading-6 text-seabreeze-100 drop-shadow-xl">
               {content.featuredAnnouncement}
               <Link
                 href={`/press-and-media/press-releases/${content.reference.fields.slug}`}
-                className="ml-4 font-bold text-neon-orange-700/50"
+                className="ml-4 font-normal text-seabreeze-500"
               >
                 <span className="1 inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
@@ -27,7 +27,7 @@ const Hero = ({ content }) => {
             <h1 className="text-4xl font-bold text-seabreeze-500 md:text-6xl">
               {content.heading}
             </h1>
-            <p className="mt-6 text-xl text-seabreeze-500">
+            <p className="mt-6 text-xl leading-8 text-seabreeze-500">
               {content.paragraph}
             </p>
             <div className="mt-10 flex items-center gap-x-6">

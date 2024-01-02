@@ -20,7 +20,7 @@ const client = contentful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-const postsPerPage = 3;
+const postsPerPage = 6;
 
 export async function getStaticPaths() {
   const res = await client.getEntries({
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
@@ -65,6 +65,7 @@ export async function getStaticProps({ params }) {
       totalPages,
       currentPage: params.page,
     },
+    revalidate: 10,
   };
 }
 
@@ -103,6 +104,7 @@ const page = ({ posts, currentPage, totalPages }) => {
                       height={
                         post.fields.image.fields.file.details.image.height
                       }
+                      className="h-[200px] object-cover"
                     />
                     <div className="flex grow flex-col px-5 py-10">
                       <p className="text-xs font-bold text-hazard-blue-500">

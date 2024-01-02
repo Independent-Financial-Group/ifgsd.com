@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 // NEXT JS IMPORTS
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 // IMPORT COMPONENTS
 import PublicLayout from "../../components/PublicLayout/PublicLayout";
@@ -10,14 +11,63 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import Container from "../../components/Container/Container";
 import Button from "../../components/Button/Button";
+import Modal from "../../components/Modal/Modal";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
+import highlightBlue from "../../public/_global-graphics/highlight-blue.png";
 import existing from "../../public/_business-solutions-models/images/existing-practice.jpg";
 import independent from "../../public/_business-solutions-models/images/independent-practice.webp";
 import selling from "../../public/_business-solutions-models/images/selling-practice.webp";
+import bussinesSolutionsGraphic from "../../public/_business-solutions-models/graphics/Business-Solution-Illustration.png";
+import faq from "../../public/_business-solutions-models/images/faq.webp";
 
-const BusinessSolutionsModels = () => {
+// CONTENTFUL IMPORTS
+const contenful = require("contentful");
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  const initialData = await client.getEntries({
+    content_type: "affiliationModel",
+    order: "sys.createdAt",
+  });
+
+  const formattedData = initialData.items.map((item) => {
+    return {
+      ...item.fields,
+      id: item.sys.id,
+    };
+  });
+
+  return { props: { formattedData }, revalidate: 10 };
+}
+
+const BusinessSolutionsModels = ({ formattedData }) => {
+  const [open, setOpen] = useState(false);
+  const [id, setId] = useState(null);
+
+  const faqs = [
+    {
+      question: "Do you support fee based or commission based business?",
+      answer:
+        "IFG offers intelligent flexibility for independent financial professionals. Our offerings serve independent financial professionals with fee focused or fee only business models – and supports independent financial professionals in the process of transforming their business from fee focused to fee only.",
+    },
+    {
+      question:
+        "Will IFG support me if I have my own RIA? Can I use the IFG RIA?",
+      answer:
+        "You may elect to use IFG’s RIA or an independent RIA. Independent Financial Group is an independent broker-dealer, member FINRA/SIPC, that is among the largest in the country.",
+    },
+  ];
+
+  const handleClick = (e) => {
+    setOpen(true);
+    setId(e.target.dataset.id);
+  };
+
   return (
     <>
       <Head>
@@ -35,62 +85,105 @@ const BusinessSolutionsModels = () => {
         <section className="my-20">
           <Container>
             <Breadcrumb />
-            <h2 className="mb-10 flex items-center gap-2 text-2xl font-bold text-hazard-blue-500 lg:text-3xl">
-              <Image src={highlight} alt="decorative highlight graphic" />
-              Tailored to Your Needs
-            </h2>
-            <div className="flex flex-col gap-5 lg:grid lg:grid-cols-3">
-              <div>
-                <Image
-                  src={independent}
-                  alt="group of advisors"
-                  className="rounded-t-3xl"
-                />
-                <div className=" w-full bg-gradient-to-r from-neon-orange-500 to-neon-orange-600">
-                  <h3 className="p-4 font-semibold text-seabreeze-500">
-                    Independent Practice
-                  </h3>
-                </div>
+            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
+              <div className="self-center">
+                <h2 className="mb-10 flex items-center gap-2 text-2xl font-bold text-hazard-blue-500 lg:text-3xl">
+                  <Image src={highlight} alt="decorative highlight graphic" />
+                  Tailored to Your Needs
+                </h2>
+                <p>
+                  We offer a customized suite of affiliation models designed to
+                  align seamlessly with your business needs. Our advisors count
+                  on us to empower their business growth and improve client
+                  relationships so they can focus on what they love.
+                </p>
               </div>
-              <div>
+              <div className="justify-self-center">
                 <Image
-                  src={existing}
-                  alt="group of advisors"
-                  className="rounded-t-3xl"
+                  src={bussinesSolutionsGraphic}
+                  alt="business man fitting a puzzle piece"
                 />
-                <div className=" w-full bg-gradient-to-r from-neon-orange-500 to-neon-orange-600">
-                  <h3 className="p-4 font-semibold text-seabreeze-500">
-                    Join an Existing Practice
-                  </h3>
-                </div>
-              </div>
-              <div>
-                <Image
-                  src={selling}
-                  alt="group of advisors"
-                  className="rounded-t-3xl"
-                />
-                <div className=" w-full bg-gradient-to-r from-neon-orange-500 to-neon-orange-600">
-                  <h3 className="p-4 font-semibold text-seabreeze-500">
-                    Independent Practice
-                  </h3>
-                </div>
               </div>
             </div>
           </Container>
         </section>
-        <section className="my-20 rounded-[40px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300">
+        <section className="my-20 rounded-[40px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300 lg:py-7">
           <Container>
-            <div className="flex flex-col items-center gap-8 py-60 lg:p-60">
-              <h2 className="text-4xl font-bold text-seabreeze-500">
-                Let&apos;s Chat
-              </h2>
-              <p className="text-xl text-seabreeze-500">
-                See how IFG can fit your practice
-              </p>
-              <Button type={"primary"} href={"/join/contact"}>
-                Talk to a Team Member
-              </Button>
+            <div className="my-5 lg:grid lg:grid-cols-2 lg:gap-5">
+              <div>
+                <h2 className="text-4xl font-bold text-seabreeze-500">
+                  Advisor Solutions. Affiliation Flexibility.
+                </h2>
+                <Image
+                  src={independent}
+                  alt="ifg team"
+                  className="my-5 self-center rounded-lg"
+                />
+              </div>
+              <div>
+                <p className="text-3xl text-seabreeze-500">
+                  You have the option of selecting from the following models:
+                </p>
+                <ul className="my-5 grid grid-cols-2 gap-5">
+                  {formattedData.map((model) => {
+                    return (
+                      <li key={model.id}>
+                        <p className="mb-5 text-base text-seabreeze-500">
+                          <span className="font-bold">{model.name}.</span>{" "}
+                          {model.shortDescription}
+                        </p>
+                        <button
+                          data-id={model.id}
+                          onClick={handleClick}
+                          className="w-full text-left text-base font-bold text-seabreeze-500"
+                        >
+                          Learn More &rarr;
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <Modal open={open} setOpen={setOpen} id={id} />
+              </div>
+            </div>
+          </Container>
+        </section>
+        <section className="my-20">
+          <Container>
+            <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+              <div className="lg:col-span-5">
+                <h2 className="mb-10 flex items-center gap-2 text-2xl font-bold text-neon-orange-500 lg:text-3xl">
+                  <Image
+                    src={highlightBlue}
+                    alt="decorative highlight graphic"
+                  />
+                  Frequent Questions & Answers
+                </h2>
+                <Image src={faq} alt="faq image" className="rounded-lg" />
+                <p className="mt-4 text-base leading-7 text-gray-600">
+                  Can’t find the answer you’re looking for? Reach out to our{" "}
+                  <Link
+                    href="/join/contact"
+                    className="font-semibold text-neon-orange-600 hover:text-neon-orange-500"
+                  >
+                    team to learn more.
+                  </Link>
+                </p>
+              </div>
+              <div className="mt-10 lg:col-span-7 lg:mt-0">
+                <dl className="space-y-10">
+                  {faqs.map((faq) => (
+                    <div key={faq.question}>
+                      <dt className="text-base font-semibold leading-7 text-gray-900">
+                        {faq.question}
+                      </dt>
+                      <dd className="mt-2 text-base leading-7 text-gray-600">
+                        {faq.answer}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
           </Container>
         </section>

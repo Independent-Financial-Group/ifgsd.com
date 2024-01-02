@@ -27,7 +27,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const pressReleases = await client.getEntries({
     content_type: "pressRelease",
-    limit: 3,
+    limit: 6,
     order: "-fields.date",
   });
 
@@ -72,7 +72,7 @@ const index = ({ formattedPressReleases, pressReleases }) => {
         <section className="my-10 lg:my-32">
           <Container>
             <Pagination
-              totalPages={pressReleases.total / 3}
+              totalPages={Math.ceil(pressReleases.total / 6)}
               currentPage={"1"}
               prevDisabled
               path={"press-releases"}
@@ -89,6 +89,7 @@ const index = ({ formattedPressReleases, pressReleases }) => {
                       alt={post.image.fields.title}
                       width={post.image.fields.file.details.image.width}
                       height={post.image.fields.file.details.image.height}
+                      className="h-[200px] object-cover"
                     />
                     <div className="flex grow flex-col px-5 py-10">
                       <p className="text-xs font-bold text-hazard-blue-500">
@@ -111,7 +112,7 @@ const index = ({ formattedPressReleases, pressReleases }) => {
               })}
             </div>
             <Pagination
-              totalPages={pressReleases.total / 3}
+              totalPages={Math.ceil(pressReleases.total / 6)}
               currentPage={"1"}
               prevDisabled
               path={"press-releases"}
