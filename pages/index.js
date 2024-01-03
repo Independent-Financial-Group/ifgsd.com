@@ -153,7 +153,12 @@ const HomePage = ({
               happy
             </p>
             <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
-              <div className="mx-auto my-10 max-w-prose text-center">
+              <motion.div
+                initial={{ y: 100 }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true }}
+                className="mx-auto my-10 max-w-prose text-center"
+              >
                 <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
                   {pageContent.sectionTestimonial.headingSecondary}
                 </h2>
@@ -168,7 +173,7 @@ const HomePage = ({
                 <p className="text-xl text-dunkel-blue-500 md:mt-5">
                   {pageContent.sectionTestimonial.paragraph}
                 </p>
-              </div>
+              </motion.div>
               <Testimonial
                 content={pageContent.sectionTestimonial}
                 testimonials={testimonials}
