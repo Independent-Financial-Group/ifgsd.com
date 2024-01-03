@@ -5,7 +5,12 @@ import Button from "../Button/Button";
 
 const Hero = ({ content }) => {
   return (
-    <header className="relative min-h-[calc(75vh-60px)] rounded-bl-[40px] rounded-br-[40px] bg-[url('/_home/images/hero.jpg')] bg-cover bg-center bg-no-repeat md:min-h-[calc(75vh-60px)] lg:min-h-[calc(90vh-60px)] xl:min-h-[calc(70vh-60px)]">
+    <motion.header
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="relative min-h-[calc(75vh-60px)] rounded-bl-[40px] rounded-br-[40px] bg-[url('/_home/images/hero.jpg')] bg-cover bg-center bg-no-repeat md:min-h-[calc(75vh-60px)] lg:min-h-[calc(90vh-60px)] xl:min-h-[calc(70vh-60px)]"
+    >
       <div className="mx-auto max-w-screen-xl px-4">
         <div className="absolute top-[50%] translate-y-[-50%]">
           <div className="mb-4 sm:flex sm:justify-center md:justify-start">
@@ -70,7 +75,7 @@ const Hero = ({ content }) => {
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
