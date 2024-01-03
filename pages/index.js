@@ -339,13 +339,12 @@ const HomePage = ({
                   </p>
 
                   <motion.div
-                    initial={{ rotate: -3 }}
-                    whileInView={{ rotate: 3 }}
-                    viewport={{ once: true }}
+                    whileInView={{ rotate: [0, 5, 0] }}
+                    viewport={{ once: true, margin: "-300px" }}
                     transition={{
                       duration: 0.1,
-                      repeat: 10,
-                      repeatType: "reverse",
+                      repeat: 8,
+                      repeatType: "mirror",
                     }}
                     className="mt-4 md:mt-8"
                   >

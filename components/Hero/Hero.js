@@ -6,8 +6,8 @@ import Button from "../Button/Button";
 const Hero = ({ content }) => {
   return (
     <motion.header
-      initial={{ y: 40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: 40, scale: 0.8, opacity: 0 }}
+      animate={{ y: 0, scale: 1, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="relative min-h-[calc(75vh-60px)] rounded-bl-[40px] rounded-br-[40px] bg-[url('/_home/images/hero.jpg')] bg-cover bg-center bg-no-repeat md:min-h-[calc(75vh-60px)] lg:min-h-[calc(90vh-60px)] xl:min-h-[calc(70vh-60px)]"
     >

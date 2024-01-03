@@ -14,14 +14,14 @@ const Nav = () => {
   const path = router.pathname;
 
   return (
-    <motion.nav
-      initial={path == "/" ? { y: -100, opacity: 0 } : { y: 0, opacity: 1 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="relative z-10 hidden bg-seabreeze-100 py-5 lg:block"
-    >
+    <nav className="relative z-10 hidden bg-seabreeze-100 py-5 lg:block">
       <Container>
-        <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
+        <motion.div
+          initial={path == "/" ? { y: -300, opacity: 0 } : { y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="row mx-auto flex max-w-screen-xl flex-row justify-between"
+        >
           <div className="col">
             <Link href="/" passHref>
               <Image
@@ -349,9 +349,9 @@ const Nav = () => {
               </div>
             </Menu>
           </div>
-        </div>
+        </motion.div>
       </Container>
-    </motion.nav>
+    </nav>
   );
 };
 
