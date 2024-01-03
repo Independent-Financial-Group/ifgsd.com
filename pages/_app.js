@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }) {
         ></meta>
         {process.env.NEXT_PUBLIC_VERCEL_ENV == "production" ? (
           <Script id="google-tag-manager" strategy="afterInteractive">
+            console.log('Starting GTM')
             {`
                     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
