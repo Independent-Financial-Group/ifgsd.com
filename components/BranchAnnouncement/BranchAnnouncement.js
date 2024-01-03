@@ -9,8 +9,8 @@ const BranchAnnouncement = ({ newBranch }) => {
     <motion.div
       initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      viewport={{ once: true, margin: "-300px" }}
+      transition={{ duration: 0.5 }}
       className="relative h-[500px] overflow-hidden rounded-[40px] bg-blue-wave-700/10 text-seabreeze-500"
     >
       <div className="h-full rounded-[40px] bg-hazard-blue-500/50 px-4 py-8 sm:py-16 lg:px-6">

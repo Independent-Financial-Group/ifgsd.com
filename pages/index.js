@@ -146,17 +146,29 @@ const HomePage = ({
         <Hero content={pageContent.hero} />
         <section className="relative my-16 lg:my-32">
           <Container>
-            <p className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-200px" }}
+              transition={{ delay: 0.5 }}
+              className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block"
+            >
               advisors
-            </p>
-            <p className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-200px" }}
+              transition={{ delay: 0.3 }}
+              className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block"
+            >
               happy
-            </p>
+            </motion.p>
             <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
               <motion.div
-                initial={{ y: 100 }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true }}
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-300px" }}
                 className="mx-auto my-10 max-w-prose text-center"
               >
                 <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
@@ -178,12 +190,22 @@ const HomePage = ({
                 content={pageContent.sectionTestimonial}
                 testimonials={testimonials}
               />
-              <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-300px" }}
+                className="text-[80px] font-bold text-[#E2E7EB] lg:hidden"
+              >
                 happy
-              </p>
-              <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-300px" }}
+                className="text-[80px] font-bold text-[#E2E7EB] lg:hidden"
+              >
                 advisors
-              </p>
+              </motion.p>
             </div>
           </Container>
         </section>
@@ -316,14 +338,24 @@ const HomePage = ({
                     {pageContent.sectionCTA.paragraph}
                   </p>
 
-                  <div className="mt-4 md:mt-8">
+                  <motion.div
+                    initial={{ rotate: -3 }}
+                    whileInView={{ rotate: 3 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.1,
+                      repeat: 10,
+                      repeatType: "reverse",
+                    }}
+                    className="mt-4 md:mt-8"
+                  >
                     <Link
                       href="/join/contact"
-                      className="order-3 inline-block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
+                      className=" order-3 block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
                     >
                       Get Started
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
 
