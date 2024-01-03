@@ -6,16 +6,31 @@ import Image from "next/image";
 // GRAPHICS
 import laurel from "../../public/_home/graphics/laurel-branded-200.png";
 
+import { motion } from "framer-motion";
+
 const Stats = ({ content }) => {
   return (
     <>
       <div className="relative lg:mt-60">
-        <h2 className="absolute -top-1/2 left-1/2 -z-10 -translate-x-1/2 py-8 text-center font-bold text-[#E2E7EB] md:text-[230px] lg:py-0 lg:text-left lg:text-[255px]">
+        <motion.h2
+          style={{ overflow: "hidden" }}
+          initial={{ width: 0 }}
+          whileInView={{ width: "auto" }}
+          viewport={{ once: true, margin: "-300px" }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="absolute -top-1/2 left-1/2 -z-10 -translate-x-1/2 py-8 text-center font-bold text-[#E2E7EB] md:text-[230px] lg:py-0 lg:text-left lg:text-[255px]"
+        >
           Rankings
-        </h2>
-        <h3 className="mb-5 text-center text-4xl font-bold text-neon-orange-500">
+        </motion.h2>
+        <motion.h3
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mb-5 text-center text-4xl font-bold text-neon-orange-500"
+        >
           Built to be the Best
-        </h3>
+        </motion.h3>
         <div className="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-5">
           <div className="flex flex-col items-center">
             <div className="relative">

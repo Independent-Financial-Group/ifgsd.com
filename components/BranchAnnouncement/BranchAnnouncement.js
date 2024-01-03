@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
-
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const BranchAnnouncement = ({ newBranch }) => {
   const fields = newBranch.fields;
 
   return (
-    <div className="relative h-[500px] overflow-hidden rounded-[40px] bg-blue-wave-700/10 text-seabreeze-500">
+    <motion.div
+      initial={{ y: 40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, margin: "-300px" }}
+      transition={{ duration: 0.5 }}
+      className="relative h-[500px] overflow-hidden rounded-[40px] bg-blue-wave-700/10 text-seabreeze-500"
+    >
       <div className="h-full rounded-[40px] bg-hazard-blue-500/50 px-4 py-8 sm:py-16 lg:px-6">
         <div className="absolute inset-0 -z-50 object-cover">
           <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
@@ -41,7 +47,7 @@ const BranchAnnouncement = ({ newBranch }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

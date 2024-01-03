@@ -146,14 +146,31 @@ const HomePage = ({
         <Hero content={pageContent.hero} />
         <section className="relative my-16 lg:my-32">
           <Container>
-            <p className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-200px" }}
+              transition={{ delay: 0.5 }}
+              className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block"
+            >
               advisors
-            </p>
-            <p className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-200px" }}
+              transition={{ delay: 0.3 }}
+              className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block"
+            >
               happy
-            </p>
+            </motion.p>
             <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
-              <div className="mx-auto my-10 max-w-prose text-center">
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-300px" }}
+                className="mx-auto my-10 max-w-prose text-center"
+              >
                 <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
                   {pageContent.sectionTestimonial.headingSecondary}
                 </h2>
@@ -168,17 +185,27 @@ const HomePage = ({
                 <p className="text-xl text-dunkel-blue-500 md:mt-5">
                   {pageContent.sectionTestimonial.paragraph}
                 </p>
-              </div>
+              </motion.div>
               <Testimonial
                 content={pageContent.sectionTestimonial}
                 testimonials={testimonials}
               />
-              <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-300px" }}
+                className="text-[80px] font-bold text-[#E2E7EB] lg:hidden"
+              >
                 happy
-              </p>
-              <p className="text-[80px] font-bold text-[#E2E7EB] lg:hidden">
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-300px" }}
+                className="text-[80px] font-bold text-[#E2E7EB] lg:hidden"
+              >
                 advisors
-              </p>
+              </motion.p>
             </div>
           </Container>
         </section>
@@ -209,7 +236,13 @@ const HomePage = ({
                   </span>
                 </p>
                 <div className="my-4 grid grid-cols-2 grid-rows-2 gap-4 text-seabreeze-500 lg:my-0">
-                  <div className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3"
+                  >
                     <Image
                       src={handshake}
                       className="mx-auto"
@@ -218,21 +251,33 @@ const HomePage = ({
                     <h3 className="text-center text-3xl font-bold">
                       Integrity
                     </h3>
-                  </div>
-                  <div className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
+                  </motion.div>
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + 0.2 }}
+                    className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3"
+                  >
                     <Image
                       src={balance}
                       className="mx-auto"
                       alt="balance icon"
                     />
                     <h3 className="text-center text-3xl font-bold">balance</h3>
-                  </div>
-                  <div className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
+                  </motion.div>
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + 0.4 }}
+                    className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3"
+                  >
                     <Image src={person} className="mx-auto" alt="person icon" />
                     <h3 className="text-center text-3xl font-bold">
                       Independence
                     </h3>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
               <HomeSlideshow />
@@ -293,14 +338,23 @@ const HomePage = ({
                     {pageContent.sectionCTA.paragraph}
                   </p>
 
-                  <div className="mt-4 md:mt-8">
+                  <motion.div
+                    whileInView={{ rotate: [0, 5, 0] }}
+                    viewport={{ once: true, margin: "-300px" }}
+                    transition={{
+                      duration: 0.1,
+                      repeat: 8,
+                      repeatType: "mirror",
+                    }}
+                    className="mt-4 md:mt-8"
+                  >
                     <Link
                       href="/join/contact"
-                      className="order-3 inline-block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
+                      className=" order-3 block rounded bg-neon-orange-500 px-12 py-3 text-sm font-bold text-white transition hover:bg-neon-orange-600 hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
                     >
                       Get Started
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
 

@@ -6,12 +6,22 @@ import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import Container from "../Container/Container";
 import Logo from "../../public/logo-full-color.png";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Nav = () => {
+  const router = useRouter();
+  const path = router.pathname;
+
   return (
     <nav className="relative z-10 hidden bg-seabreeze-100 py-5 lg:block">
       <Container>
-        <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
+        <motion.div
+          initial={path == "/" ? { y: -300, opacity: 0 } : { y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="row mx-auto flex max-w-screen-xl flex-row justify-between"
+        >
           <div className="col">
             <Link href="/" passHref>
               <Image
@@ -339,7 +349,7 @@ const Nav = () => {
               </div>
             </Menu>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </nav>
   );
