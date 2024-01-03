@@ -214,7 +214,13 @@ const HomePage = ({
                   </span>
                 </p>
                 <div className="my-4 grid grid-cols-2 grid-rows-2 gap-4 text-seabreeze-500 lg:my-0">
-                  <div className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="col-start-1 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3"
+                  >
                     <Image
                       src={handshake}
                       className="mx-auto"
@@ -223,21 +229,33 @@ const HomePage = ({
                     <h3 className="text-center text-3xl font-bold">
                       Integrity
                     </h3>
-                  </div>
-                  <div className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
+                  </motion.div>
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + 0.2 }}
+                    className="col-start-2 row-start-1 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3"
+                  >
                     <Image
                       src={balance}
                       className="mx-auto"
                       alt="balance icon"
                     />
                     <h3 className="text-center text-3xl font-bold">balance</h3>
-                  </div>
-                  <div className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3">
+                  </motion.div>
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + 0.4 }}
+                    className="col-span-2 row-start-2 rounded-[20px] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 p-3"
+                  >
                     <Image src={person} className="mx-auto" alt="person icon" />
                     <h3 className="text-center text-3xl font-bold">
                       Independence
                     </h3>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
               <HomeSlideshow />
