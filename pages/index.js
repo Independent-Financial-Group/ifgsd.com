@@ -182,7 +182,7 @@ const HomePage = ({
                     alt=""
                   />
                 </h3>
-                <p className="text-xl text-dunkel-blue-500 md:mt-5">
+                <p className="text-xl leading-8 text-dunkel-blue-500 md:mt-5">
                   {pageContent.sectionTestimonial.paragraph}
                 </p>
               </motion.div>
@@ -226,7 +226,7 @@ const HomePage = ({
                   {pageContent.sectionAbout.heading}
                 </h2>
 
-                <p className="my-4 text-gray-500 sm:text-xl">
+                <p className="my-4 !leading-8 sm:text-xl">
                   {pageContent.sectionAbout.paragraph}{" "}
                   <span className="text-sm font-bold text-neon-orange-500">
                     {" "}
@@ -334,7 +334,7 @@ const HomePage = ({
                     {pageContent.sectionCTA.heading}
                   </h2>
 
-                  <p className="py-4 text-center text-lg text-dunkel-blue-100 sm:mt-4 sm:block lg:py-0 lg:text-left">
+                  <p className="py-4 text-center text-lg !leading-8 sm:mt-4 sm:block lg:py-0 lg:text-left">
                     {pageContent.sectionCTA.paragraph}
                   </p>
 
