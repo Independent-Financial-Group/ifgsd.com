@@ -39,12 +39,12 @@ const BranchAnnouncement = ({ newBranch }) => {
             {`${fields.repNames[0]} ${fields.repNames[1]}`} with {fields.dba}{" "}
             from {fields.officeLocation}
           </p>
-          <Link
+          {/* <Link
             className="rounded-lg bg-neon-orange-500 px-4 py-2 font-bold"
             href="#"
           >
             Read More
-          </Link>
+          </Link> */}
         </div>
       </div>
     </motion.div>
