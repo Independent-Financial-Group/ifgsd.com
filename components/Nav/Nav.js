@@ -16,12 +16,7 @@ const Nav = () => {
   return (
     <nav className="relative z-10 hidden bg-seabreeze-100 py-5 lg:block">
       <Container>
-        <motion.div
-          initial={path == "/" ? { y: -300, opacity: 0 } : { y: 0, opacity: 1 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="row mx-auto flex max-w-screen-xl flex-row justify-between"
-        >
+        <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
           <div className="col">
             <Link href="/" passHref>
               <Image
@@ -349,7 +344,7 @@ const Nav = () => {
               </div>
             </Menu>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </nav>
   );
