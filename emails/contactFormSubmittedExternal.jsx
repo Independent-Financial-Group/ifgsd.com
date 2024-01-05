@@ -7,35 +7,57 @@ import { Section } from "@react-email/section";
 import { Text } from "@react-email/text";
 import { Img } from "@react-email/img";
 import { Heading } from "@react-email/heading";
+import { Tailwind } from "@react-email/tailwind";
+import { Row } from "@react-email/row";
 
-import logo from "../public/logo-full-color.png";
-
-export default function ContactFormSubmittedExternal({ formData }) {
+export default function ContactFormSubmittedExternal({
+  formData = { name: "user" },
+}) {
   return (
     <Html>
       <Head />
       <Preview>We have your email!</Preview>
-      <Section style={main}>
-        <Container style={container}>
-          <Img
-            src="https://dev.ifgsd.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-full-color.294133a8.png&w=640&q=75"
-            alt="IFG Logo"
-            width="250"
-            height="80"
-            style={image}
-          />
-          <Heading as="h1" style={h1}>
-            We have your email!
-          </Heading>
-          <Section>
-            <Text style={text}>Hi {formData.name},</Text>
-            <Text style={text}>
-              Thank you for filling out the contact form on our page! We have
-              received your email and we will reach out soon.
-            </Text>
-          </Section>
-        </Container>
-      </Section>
+      <Tailwind>
+        <Section style={{ backgroundColor: "#F3F3F3" }}>
+          <Container
+            style={{ backgroundColor: "#ffffff" }}
+            className="my-4 rounded-lg shadow-2xl"
+          >
+            <Section
+              style={{ backgroundColor: "#F47E50" }}
+              className="rounded-t-lg !bg-neon-orange-500 px-2 py-8"
+            >
+              <Row>
+                <Img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/5eDCWWALWZNRJcPH1f652F/5f75f3f20ca47fb399ec247d0cd19f80/IFG-LOGO-FULL-WHITE.png"
+                  alt="IFG Logo"
+                  style={image}
+                  className="w-1/4"
+                />
+              </Row>
+              <Row>
+                <Img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/3Q1eK8OEwne3BxXGwhZ6Eg/7ad8fccd1288cb7b602711be861baf56/email-sent-external-illustration.png"
+                  alt="Email Sent Illustration"
+                  style={image}
+                  className="w-1/3"
+                />
+                <Heading as="h1" style={h1} className="text-white">
+                  Thanks for contacting us!
+                </Heading>
+              </Row>
+            </Section>
+            <Section className="px-4">
+              <Text style={text}>Hi {formData.name},</Text>
+              <Text style={text}>
+                Thank you for filling out the contact form on our website! We
+                have received your email and a member from our team will reach
+                out soon.
+              </Text>
+            </Section>
+          </Container>
+        </Section>
+      </Tailwind>
     </Html>
   );
 }

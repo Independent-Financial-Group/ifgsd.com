@@ -40,8 +40,8 @@ export default async function (req, res) {
   };
 
   try {
-    sendgrid.send(sendOptionsExternal);
-    sendgrid.send(sendOptionsInternal);
+    await sendgrid.send(sendOptionsExternal);
+    await sendgrid.send(sendOptionsInternal);
     res.status(200).send(`Message Sent Successfully`);
   } catch (error) {
     res.status(400).send(`ERROR: ${error}`);

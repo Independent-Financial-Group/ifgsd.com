@@ -71,6 +71,8 @@ const ContactForm = () => {
     company: "",
     city: "",
     state: "",
+    aum: "",
+    businessMix: "",
     message: "",
   };
 
@@ -114,6 +116,12 @@ const ContactForm = () => {
       case "state":
         setFormData((prevState) => ({ ...prevState, state: value }));
         break;
+      case "aum":
+        setFormData((prevState) => ({ ...prevState, aum: value }));
+        break;
+      case "businessMix":
+        setFormData((prevState) => ({ ...prevState, businessMix: value }));
+        break;
       case "message":
         setFormData((prevState) => ({ ...prevState, message: value }));
         break;
@@ -122,6 +130,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
 
     const res = await fetch("/api/public/sendgrid", {
       method: "POST",
@@ -141,10 +150,15 @@ const ContactForm = () => {
     <div className="rounded-3xl bg-white p-8">
       {emailSent && (
         <>
+          <img
+            alt="email sent illustration"
+            className="mx-auto w-1/2"
+            src="https://images.ctfassets.net/9lvru9ro1ti1/3Q1eK8OEwne3BxXGwhZ6Eg/7ad8fccd1288cb7b602711be861baf56/email-sent-external-illustration.png"
+          />
           <h2 className="my-5 mb-5 text-center text-3xl font-bold text-neon-orange-500">
-            Thanks for your email!
+            Your Email has been Sent!
           </h2>
-          <p className="text-xl">
+          <p className="text-center text-gray-500">
             A member of our team will be in touch with you!
           </p>
         </>
@@ -289,6 +303,37 @@ const ContactForm = () => {
                     </select>
                   </div>
                 </div>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="sr-only" htmlFor="aum">
+                      AUM
+                    </label>
+                    <input
+                      className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                      placeholder="AUM"
+                      type="text"
+                      id="aum"
+                      name="aum"
+                      onChange={handleChange}
+                      value={formData.aum}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="sr-only" htmlFor="businessMix">
+                      Business Mix
+                    </label>
+                    <input
+                      className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
+                      placeholder="Business Mix"
+                      type="text"
+                      id="businessMix"
+                      name="businessMix"
+                      onChange={handleChange}
+                      value={formData.businessMix}
+                    />
+                  </div>
+                </div>
               </>
             )}
 
@@ -309,9 +354,27 @@ const ContactForm = () => {
             </div>
 
             <div className="mt-4 w-full">
-              <button className="w-full rounded-lg bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 px-4 py-3 font-bold text-seabreeze-500 hover:bg-neon-orange-600">
-                Send
-              </button>
+              {!isSending && (
+                <button className="w-full rounded-lg bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 px-4 py-3 font-bold text-seabreeze-500 hover:bg-neon-orange-600">
+                  Send
+                </button>
+              )}
+              {isSending && (
+                <button
+                  type="button"
+                  class=" flex w-full items-center justify-center gap-2 rounded-lg bg-neon-orange-400 px-4 py-3 font-bold text-seabreeze-400"
+                  disabled
+                >
+                  <div
+                    class="border-current inline-block h-6 w-6 animate-spin rounded-full border-[3px] border-t-transparent"
+                    role="status"
+                    aria-label="loading"
+                  >
+                    <span class="sr-only">Sending Email...</span>
+                  </div>
+                  Sending Email
+                </button>
+              )}
             </div>
           </form>
         </>

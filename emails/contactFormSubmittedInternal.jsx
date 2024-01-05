@@ -8,49 +8,113 @@ import { Text } from "@react-email/text";
 import { Img } from "@react-email/img";
 import { Heading } from "@react-email/heading";
 import { Row } from "@react-email/row";
+import { Tailwind } from "@react-email/tailwind";
+import { Hr } from "@react-email/hr";
 
 import logo from "../public/logo-full-color.png";
 
-export default function ContactFormSubmittedInternal({ formData }) {
+export default function ContactFormSubmittedInternal({
+  formData = {
+    name: "N/A",
+    email: "N/A",
+    phone: "N/A",
+    isFinancialAdvisor: false,
+    company: "N/A",
+    city: "N/A",
+    state: "N/A",
+    aum: "N/A",
+    businessMix: "N/A",
+    message:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras semper auctor neque vitae tempus quam pellentesque. Aliquam sem fringilla ut morbi.",
+  },
+}) {
   return (
     <Html>
       <Head />
-      <Preview>{`Contact form submitted on ifgsd.com`}</Preview>
-      <Section style={main}>
-        <Container style={container}>
-          <Section style={{ textAlign: "center" }}>
-            <Row>
-              <Img
-                src="https://dev.ifgsd.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-full-color.294133a8.png&w=640&q=75"
-                alt="IFG Logo"
-                width="250"
-                height="80"
-                style={image}
-              />
-              <Heading as="h1" style={h1}>
-                The Contact Form on ifgsd.com has been submitted
-              </Heading>
-            </Row>
-            <Row>
-              <Text style={text}>
-                Hello, the contact form on the ifgsd.com marketing site has been
-                submitted. Please review the details below:
-              </Text>
-              <Text style={text}>Name: {formData.name}</Text>
-              <Text style={text}>Email: {formData.email}</Text>
-              <Text style={text}>Phone: {formData.phone}</Text>
-              {formData.isFinancialAdvisor && (
-                <>
-                  <Text style={text}>{formData.company}</Text>
-                  <Text style={text}>City: {formData.city}</Text>
-                  <Text style={text}>State: {formData.state}</Text>
-                </>
-              )}
-              <Text style={text}>{formData.message}</Text>
-            </Row>
-          </Section>
-        </Container>
-      </Section>
+      <Preview>We have your email!</Preview>
+      <Tailwind>
+        <Section style={{ backgroundColor: "#F3F3F3" }}>
+          <Container
+            style={{ backgroundColor: "#ffffff" }}
+            className="my-4 rounded-lg shadow-2xl"
+          >
+            <Section
+              style={{ backgroundColor: "#F47E50" }}
+              className="rounded-t-lg !bg-neon-orange-500 px-2 py-8"
+            >
+              <Row>
+                <Img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/5eDCWWALWZNRJcPH1f652F/5f75f3f20ca47fb399ec247d0cd19f80/IFG-LOGO-FULL-WHITE.png"
+                  alt="IFG Logo"
+                  style={image}
+                  className="w-1/4"
+                />
+              </Row>
+              <Row>
+                <Img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/5PyKI2IXxQLESFyzvSl0BL/d94d9e5be2009f854f15f2c86e18117f/email-sent-internal-illustration.png"
+                  style={image}
+                  className="w-1/3"
+                />
+                <Heading as="h1" style={h1} className="text-white">
+                  New Email Submitted
+                </Heading>
+              </Row>
+            </Section>
+            <Section className="px-4">
+              <Row>
+                <Text style={text}>Hello,</Text>
+                <Text style={text}>
+                  The contact form on the website has been filled and submitted
+                  with the following details:
+                </Text>
+              </Row>
+              <Hr />
+              <Row>
+                <Text style={text}>
+                  <span className="font-bold">Name</span>: {formData.name}
+                </Text>
+                <Text style={text}>
+                  <span className="font-bold">Email</span>: {formData.email}
+                </Text>
+                <Text style={text}>
+                  <span className="font-bold">Phone</span>: {formData.phone}
+                </Text>
+                <Text style={text}>
+                  <span className="font-bold">Is Financial Advisor</span>:{" "}
+                  {formData.isFinancialAdvisor ? "Yes" : "No"}
+                </Text>
+                {formData.isFinancialAdvisor && (
+                  <>
+                    <Text style={text}>
+                      <span className="font-bold">Company</span>:{" "}
+                      {formData.company}
+                    </Text>{" "}
+                    <Text style={text}>
+                      <span className="font-bold">City</span>: {formData.city}
+                    </Text>
+                    <Text style={text}>
+                      <span className="font-bold">State</span>: {formData.state}
+                    </Text>
+                    <Text style={text}>
+                      <span className="font-bold">AUM</span>: {formData.aum}
+                    </Text>
+                    <Text style={text}>
+                      <span className="font-bold">Business Mix</span>:{" "}
+                      {formData.businessMix}
+                    </Text>
+                  </>
+                )}
+                <Text style={text} className="bg-gray-100 p-4">
+                  <span className="font-bold">Message</span>: <br />
+                  <span className="italic">{formData.message}</span>
+                </Text>
+              </Row>
+              <Hr />
+            </Section>
+          </Container>
+        </Section>
+      </Tailwind>
     </Html>
   );
 }
