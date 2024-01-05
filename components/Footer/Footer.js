@@ -9,8 +9,6 @@ import logo from "../../public/logo.ico";
 const Footer = () => {
   const router = useRouter();
 
-  console.log(router.pathname);
-
   return (
     <footer className="bg-[#ECF1F6] dark:bg-gray-800 sm:p-6">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">

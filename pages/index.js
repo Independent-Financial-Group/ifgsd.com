@@ -150,7 +150,7 @@ const HomePage = ({
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-200px" }}
-              transition={{ delay: 0.5 }}
+              transition={{ duration: 1, delay: 0.5 }}
               className="absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:left-40 lg:top-44 lg:block"
             >
               advisors
@@ -159,7 +159,7 @@ const HomePage = ({
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-200px" }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 1, delay: 0.3 }}
               className="lg:top-35 lf:left-62 absolute z-0 hidden font-bold text-[#E2E7EB] md:text-[160px] lg:block"
             >
               happy
@@ -169,6 +169,7 @@ const HomePage = ({
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-300px" }}
+                transition={{ duration: 1 }}
                 className="mx-auto my-10 max-w-prose text-center"
               >
                 <h2 className="text-xl font-bold text-dunkel-blue-500 lg:text-2xl">
