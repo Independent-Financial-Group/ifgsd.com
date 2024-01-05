@@ -305,15 +305,15 @@ const ContactForm = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="sr-only" htmlFor="AUM">
+                    <label className="sr-only" htmlFor="aum">
                       AUM
                     </label>
                     <input
                       className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-neon-orange-500 focus:outline-none focus:ring-1 focus:ring-neon-orange-500"
                       placeholder="AUM"
                       type="text"
-                      id="AUM"
-                      name="AUM"
+                      id="aum"
+                      name="aum"
                       onChange={handleChange}
                       value={formData.aum}
                     />
