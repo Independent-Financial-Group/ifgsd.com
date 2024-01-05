@@ -18,9 +18,12 @@ export default function ContactFormSubmittedInternal({
     name: "N/A",
     email: "N/A",
     phone: "N/A",
+    isFinancialAdvisor: false,
     company: "N/A",
     city: "N/A",
     state: "N/A",
+    aum: "N/A",
+    businessMix: "N/A",
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras semper auctor neque vitae tempus quam pellentesque. Aliquam sem fringilla ut morbi.",
   },
@@ -78,19 +81,33 @@ export default function ContactFormSubmittedInternal({
                   <span className="font-bold">Phone</span>: {formData.phone}
                 </Text>
                 <Text style={text}>
-                  <span className="font-bold">Company</span>: {formData.company}
-                </Text>{" "}
-                <Text style={text}>
-                  <span className="font-bold">City</span>: {formData.city}
+                  <span className="font-bold">Is Financial Advisor</span>:{" "}
+                  {formData.isFinancialAdvisor ? "Yes" : "No"}
                 </Text>
-                <Text style={text}>
-                  <span className="font-bold">State</span>: {formData.state}
-                </Text>
-                <Text style={text}>
-                  <span className="font-bold">Message</span>:
-                </Text>
-                <Text style={text} className="italic">
-                  {formData.message}
+                {formData.isFinancialAdvisor && (
+                  <>
+                    <Text style={text}>
+                      <span className="font-bold">Company</span>:{" "}
+                      {formData.company}
+                    </Text>{" "}
+                    <Text style={text}>
+                      <span className="font-bold">City</span>: {formData.city}
+                    </Text>
+                    <Text style={text}>
+                      <span className="font-bold">State</span>: {formData.state}
+                    </Text>
+                    <Text style={text}>
+                      <span className="font-bold">AUM</span>: {formData.aum}
+                    </Text>
+                    <Text style={text}>
+                      <span className="font-bold">Business Mix</span>:{" "}
+                      {formData.businessMix}
+                    </Text>
+                  </>
+                )}
+                <Text style={text} className="bg-gray-100 p-4">
+                  <span className="font-bold">Message</span>: <br />
+                  <span className="italic">{formData.message}</span>
                 </Text>
               </Row>
               <Hr />
