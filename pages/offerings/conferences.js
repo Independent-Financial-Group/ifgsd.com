@@ -79,7 +79,7 @@ const conferences = ({ formattedData }) => {
                 </h2>
                 <p className="mt-5 text-xl">
                   At Independent Financial Group, we not only strive for
-                  success, we celebrate it as well. We provide training
+                  excellence, we celebrate it as well. We provide training
                   throughout the year to help you reach your goals.
                 </p>
               </div>

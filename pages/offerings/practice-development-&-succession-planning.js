@@ -78,7 +78,7 @@ const practiceDev = () => {
             </div>
           </Container>
         </section>
-        <section className="my-10 lg:my-32">
+        {/* <section className="my-10 lg:my-32">
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
               <div>
@@ -101,7 +101,7 @@ const practiceDev = () => {
               </div>
             </div>
           </Container>
-        </section>
+        </section> */}
       </PublicLayout>
     </>
   );

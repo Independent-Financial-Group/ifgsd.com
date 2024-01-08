@@ -90,7 +90,7 @@ const Testimonial = ({ content, testimonials }) => {
                 className="absolute -top-10 right-0 z-10"
               />
 
-              <div className=" swiper-container relative mx-5 !overflow-hidden rounded-[20px] bg-gradient-to-b from-hazard-blue-500 to-blue-wave-300 p-4">
+              <div className="swiper-container relative mx-5 !overflow-hidden rounded-[20px] bg-gradient-to-b from-hazard-blue-500 to-blue-wave-300 p-4">
                 <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => {
                     return (

@@ -70,8 +70,9 @@ const productSupport = ({ formattedData }) => {
                   Vast Product Selection
                 </h2>
                 <p className="my-5 text-xl">
-                  We have selling agreements with top-tier investment solutions
-                  providers that cover all areas of financial planning needs:
+                  We have selling agreements with many well-known investment
+                  solutions providers that cover all areas of financial planning
+                  needs:
                 </p>
                 <Image
                   src={stickyNotes}
@@ -85,7 +86,7 @@ const productSupport = ({ formattedData }) => {
                 />
               </div>
               <div className="mt-5 lg:mt-0">
-                <ul className="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:grid-rows-5">
+                <ul className="flex flex-col gap-5 lg:grid lg:grid-cols-2 lg:grid-rows-6">
                   <li className=" flex items-center justify-center rounded-lg bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 text-center text-2xl font-bold text-seabreeze-500 lg:h-[150px] lg:w-[305px]">
                     Mutual Funds
                   </li>
@@ -115,6 +116,9 @@ const productSupport = ({ formattedData }) => {
                   </li>
                   <li className=" flex items-center justify-center rounded-lg bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 text-center text-2xl font-bold text-seabreeze-500 lg:h-[150px] lg:w-[305px]">
                     Insurance
+                  </li>
+                  <li className="col-span-2 flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 text-center text-2xl font-bold text-seabreeze-500">
+                    and more...
                   </li>
                 </ul>
               </div>

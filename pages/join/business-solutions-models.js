@@ -53,13 +53,38 @@ const BusinessSolutionsModels = ({ formattedData }) => {
     {
       question: "Do you support fee based or commission based business?",
       answer:
-        "IFG offers intelligent flexibility for independent financial professionals. Our offerings serve independent financial professionals with fee focused or fee only business models – and supports independent financial professionals in the process of transforming their business from fee focused to fee only.",
+        "IFG offers flexibility for independent financial professionals. Our offerings serve independent financial professionals with fee focused or fee only business models – and supports independent financial professionals in the process of transforming their business from fee focused to fee only.",
     },
     {
       question:
         "Will IFG support me if I have my own RIA? Can I use the IFG RIA?",
-      answer:
-        "You may elect to use IFG’s RIA or an independent RIA. Independent Financial Group is an independent broker-dealer, member FINRA/SIPC, that is among the largest in the country.",
+      answer: (
+        <>
+          You may elect to use IFG’s RIA or an independent RIA. Independent
+          Financial Group is an independent broker-dealer, member{" "}
+          <a
+            href="https://finra.org"
+            className="inline-block text-neon-orange-500 hover:scale-105"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FINRA
+          </a>{" "}
+          /{" "}
+          <a
+            className="inline text-neon-orange-500 hover:scale-105"
+            href="https://sipc.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SIPC
+          </a>
+          , that is among the largest in the country, by reported gross revenue.{" "}
+          <a href="/join/business-solutions-models#award-reference-1">
+            <sup>1</sup>
+          </a>
+        </>
+      ),
     },
   ];
 

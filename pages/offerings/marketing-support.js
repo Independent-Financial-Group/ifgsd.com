@@ -148,8 +148,8 @@ const marketingSupport = () => {
                       <BookOpenIcon class="h-6 w-6 text-blue-wave-500" />
                     </div>
                     <p className="text-seabreeze-500">
-                      <span className="font-bold">Discovery Sessions.</span>{" "}
-                      Stay on brand with a guidebook that provides practical
+                      <span className="font-bold">Brand Guidebook.</span> Stay
+                      on brand with a guidebook that provides practical
                       instructions on how to use your brand elements
                       consistently throughout your marketing collateral.
                     </p>

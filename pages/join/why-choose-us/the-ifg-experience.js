@@ -72,10 +72,10 @@ const TheIfgExperience = () => {
                 </h2>
                 <p className="my-8 text-xl">
                   We understand making the transition to a new firm can be a
-                  challenge. We’re proud to offer the most transition support in
-                  the industry. At IFG, transitioning is a smooth and efficient
-                  process, with the help of a dedicated transition team and
-                  personalized support.
+                  challenge. We&apos;re proud to offer comprehensive transition
+                  support to our advisors. At IFG, transitioning is a smooth and
+                  efficient process, with the help of a dedicated transition
+                  team and personalized support.
                 </p>
               </div>
             </div>
@@ -239,13 +239,19 @@ const TheIfgExperience = () => {
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-5 rounded-2xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 px-8 py-4 text-seabreeze-500">
                   <Image src={org} alt="icon of an org chart" />
-                  <p className="text-5xl font-bold">96</p>
-                  <p className="text-3xl">Home Office Employees</p>
+                  <p className="text-5xl font-bold">93</p>
+                  <p className="text-3xl">
+                    <a href="/join/why-choose-us/the-ifg-experience#homeOfficeEmployeeDisclaimer">
+                      Home Office Employees<sup className=""> 1</sup>
+                    </a>
+                  </p>
                 </div>
                 <div className="flex items-center gap-5 rounded-2xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 px-8 py-4 text-seabreeze-500">
                   <Image src={bars} alt="icon of an org chart" />
                   <p className="text-5xl font-bold">15</p>
-                  <p className="text-3xl">Average Years of Experience</p>
+                  <p className="text-3xl">
+                    Average Years of Industry Experience
+                  </p>
                 </div>
                 <div className="flex items-center gap-5 rounded-2xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 px-8 py-4 text-seabreeze-500">
                   <Image src={staff} alt="icon of an org chart" />
