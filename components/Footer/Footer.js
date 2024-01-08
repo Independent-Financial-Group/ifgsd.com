@@ -4,10 +4,9 @@ import Image from "next/image";
 
 import { useRouter } from "next/router";
 
-import logo from "../../public/logo.ico";
-
 const Footer = () => {
   const router = useRouter();
+  console.log(router.pathname);
 
   return (
     <footer className="bg-[#ECF1F6] dark:bg-gray-800 sm:p-6">
@@ -15,7 +14,11 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link passHref href="/" className="flex items-center">
-              <Image src={logo} className="mr-3 h-8 w-8" alt="IFG Logo" />
+              <img
+                src="https://images.ctfassets.net/9lvru9ro1ti1/6SSi4gjMHZJHXicKb2wwVq/f09261d90bd05c9c8623a7f5f1bcb9d5/IFG_Logo.png"
+                className="mr-3 h-8 w-8"
+                alt="IFG Logo"
+              />
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-0">
@@ -140,7 +143,22 @@ const Footer = () => {
               Independent Financial Group, LLC
             </Link>
             . All Rights Reserved. Independent Financial Group, LLC is a member
-            of FINRA / SIPC.
+            of{" "}
+            <a
+              href="https://www.finra.org/"
+              target="_blank"
+              className="inline-block font-semibold text-neon-orange-500 transition-all hover:scale-105"
+            >
+              FINRA
+            </a>{" "}
+            /{" "}
+            <a
+              href="https://www.sipc.org/"
+              className="inline-block font-semibold text-neon-orange-500 transition-all hover:scale-105"
+              target="_blank"
+            >
+              SIPC.
+            </a>
           </span>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <a
@@ -148,7 +166,7 @@ const Footer = () => {
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="h-10 w-10 fill-sunburst-500"
+                className="h-10 w-10 fill-neon-orange-500"
                 role="img"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
@@ -161,27 +179,58 @@ const Footer = () => {
           </div>
         </div>
         {router.pathname == "/" ? (
-          <div className="text-xs italic leading-7 text-gray-500">
-            <p id="award-reference-1">
-              1. Financial Advisor Magazine, 2023, based on reported gross
-              revenue.
-            </p>
-            <p id="award-reference-2">
-              2. wealthmanagement.com, Independent Broker-Dealer Report Card,
-              2020.
-            </p>
-            <p id="award-reference-3">
-              3. San Diego Business Journal, Large Category 2023, based on
-              reported revenue.
-            </p>
-            <p id="award-reference-4">
-              4. Inc. Magazine, Inc. 500|5000 Company Awards, 2006, 2010, 2011,
-              2012, 2013, 2014, 2015, 2016, 2020.
-            </p>
-            <p id="award-reference-56">
-              5/6. Financial Planning Magazine 2022, based on reported revenue.
-            </p>
-          </div>
+          <>
+            <div className="text-xs italic leading-7 text-gray-500">
+              <p id="award-reference-1">
+                1. Financial Advisor Magazine, 2023, based on reported gross
+                revenue.
+              </p>
+              <p id="award-reference-2">
+                2. wealthmanagement.com, Independent Broker-Dealer Report Card,
+                2020.
+              </p>
+              <p id="award-reference-3">
+                3. San Diego Business Journal, Large Category 2023, based on
+                reported revenue.
+              </p>
+              <p id="award-reference-4">
+                4. Inc. Magazine, Inc. 500|5000 Company Awards, 2006, 2010,
+                2011, 2012, 2013, 2014, 2015, 2016, 2020.
+              </p>
+              <p id="award-reference-56">
+                5/6. Financial Planning Magazine 2022, based on reported
+                revenue.
+              </p>
+            </div>
+            <hr className="my-5" />
+            <div className="text-xs italic text-gray-500">
+              <p>
+                The recommendations from the representatives above are unpaid,
+                and these representatives are current members of IFG.
+              </p>
+            </div>
+          </>
+        ) : null}
+        {router.pathname == "/join/why-choose-us/the-ifg-experience" ? (
+          <>
+            <div className="text-xs italic text-gray-500">
+              <p id="homeOfficeEmployeeDisclaimer">
+                1. Employee counts is as of 1/8/2024
+              </p>
+            </div>
+          </>
+        ) : null}
+        {router.pathname == "/join/business-solutions-models" ? (
+          <>
+            <div className="text-xs italic text-gray-500">
+              <p id="homeOfficeEmployeeDisclaimer">
+                <p id="award-reference-1">
+                  1. Financial Advisor Magazine, 2023, based on reported gross
+                  revenue.
+                </p>
+              </p>
+            </div>
+          </>
         ) : null}
       </div>
     </footer>
