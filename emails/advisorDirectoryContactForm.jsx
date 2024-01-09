@@ -15,15 +15,10 @@ import logo from "../public/logo-full-color.png";
 
 export default function ContactFormSubmittedInternal({
   formData = {
-    name: "N/A",
+    advisorName: "N/A",
+    userName: "N/A",
     email: "N/A",
     phone: "N/A",
-    isFinancialAdvisor: false,
-    company: "N/A",
-    city: "N/A",
-    state: "N/A",
-    aum: "N/A",
-    businessMix: "N/A",
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras semper auctor neque vitae tempus quam pellentesque. Aliquam sem fringilla ut morbi.",
   },
@@ -31,9 +26,7 @@ export default function ContactFormSubmittedInternal({
   return (
     <Html>
       <Head />
-      <Preview>
-        The contact form on the website has been filled and submitted...
-      </Preview>
+      <Preview>Request for Contact for {formData.advisorName}</Preview>
       <Tailwind>
         <Section style={{ backgroundColor: "#F3F3F3" }}>
           <Container
@@ -58,8 +51,12 @@ export default function ContactFormSubmittedInternal({
                   style={image}
                   className="w-1/3"
                 />
-                <Heading as="h1" style={h1} className="text-white">
-                  New Email Submitted
+                <Heading
+                  as="h1"
+                  style={h1}
+                  className="font-semibold text-white"
+                >
+                  A user is requesting to be contacted
                 </Heading>
               </Row>
             </Section>
@@ -67,14 +64,16 @@ export default function ContactFormSubmittedInternal({
               <Row>
                 <Text style={text}>Hello,</Text>
                 <Text style={text}>
-                  The contact form on the website has been filled and submitted
-                  with the following details:
+                  A user has filled out the contact form under the advisor
+                  directory for{" "}
+                  <span className="font-semibold">{formData.advisorName}</span>.
                 </Text>
               </Row>
               <Hr />
               <Row>
                 <Text style={text}>
-                  <span className="font-semibold">Name</span>: {formData.name}
+                  <span className="font-semibold">Name</span>:{" "}
+                  {formData.userName}
                 </Text>
                 <Text style={text}>
                   <span className="font-semibold">Email</span>: {formData.email}
@@ -82,33 +81,6 @@ export default function ContactFormSubmittedInternal({
                 <Text style={text}>
                   <span className="font-semibold">Phone</span>: {formData.phone}
                 </Text>
-                <Text style={text}>
-                  <span className="font-semibold">Is Financial Advisor</span>:{" "}
-                  {formData.isFinancialAdvisor ? "Yes" : "No"}
-                </Text>
-                {formData.isFinancialAdvisor && (
-                  <>
-                    <Text style={text}>
-                      <span className="font-semibold">Company</span>:{" "}
-                      {formData.company}
-                    </Text>{" "}
-                    <Text style={text}>
-                      <span className="font-semibold">City</span>:{" "}
-                      {formData.city}
-                    </Text>
-                    <Text style={text}>
-                      <span className="font-semibold">State</span>:{" "}
-                      {formData.state}
-                    </Text>
-                    <Text style={text}>
-                      <span className="font-semibold">AUM</span>: {formData.aum}
-                    </Text>
-                    <Text style={text}>
-                      <span className="font-semibold">Business Mix</span>:{" "}
-                      {formData.businessMix}
-                    </Text>
-                  </>
-                )}
                 <Text style={text} className="bg-gray-100 p-4">
                   <span className="font-semibold">Message</span>: <br />
                   <span className="italic">{formData.message}</span>
