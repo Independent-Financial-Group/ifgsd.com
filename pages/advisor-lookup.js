@@ -14,7 +14,6 @@ import PublicLayout from "../components/PublicLayout/PublicLayout";
 import PageHeader from "../components/PageHeader/PageHeader";
 import Container from "../components/Container/Container";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import AdvisorEmailForm from "../components/AdvisorEmailForm/AdvisorEmailForm";
 
 // REACT SPINNER
@@ -116,7 +115,6 @@ const AdvisorCard = ({ fullName, city = "N/A", state = "N/A", id }) => {
   const handleClick = (e) => {
     setOpen(true);
     setSelectedId(e.target.dataset.id);
-    console.log(e.target.dataset.id);
   };
 
   return (
@@ -217,6 +215,7 @@ const advisorLookup = () => {
         </header>
         <section className="my-10 lg:my-32">
           <Container>
+            <Breadcrumb />
             <div className="mx-auto mb-10 w-1/3">
               <label
                 htmlFor="first-name"
