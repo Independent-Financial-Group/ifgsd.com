@@ -204,10 +204,7 @@ const Footer = () => {
             </div>
             <hr className="my-5" />
             <div className="text-xs italic text-gray-500">
-              <p>
-                The recommendations from the representatives above are unpaid,
-                and these representatives are current members of IFG.
-              </p>
+              <p>Representatives above are from current members of IFG.</p>
             </div>
           </>
         ) : null}
