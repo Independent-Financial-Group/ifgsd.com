@@ -42,8 +42,7 @@ const compliance = () => {
                 </h2>
                 <p className="mt-5 text-xl">
                   Our goal is to empower you to make sound investment
-                  recommendations and readily and expediently service your
-                  clients.
+                  recommendations and expediently service your clients.
                 </p>
               </div>
               <div className="mt-5 lg:mt-0">
@@ -72,11 +71,11 @@ const compliance = () => {
                     src={highlightWhite}
                     alt="decorative heading highlight"
                   />{" "}
-                  Regulatory Expertise
+                  Regulatory Knowledge
                 </h2>
                 <p className="mt-5 text-xl text-seabreeze-500">
-                  Our teams expertise allows you to run your business with the
-                  confidence that you are compliant with regulatory
+                  Our team&apos;s expertise allows you to run your business with
+                  the confidence that you are compliant with regulatory
                   requirements.
                 </p>
               </div>

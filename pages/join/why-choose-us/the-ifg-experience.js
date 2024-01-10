@@ -239,10 +239,10 @@ const TheIfgExperience = () => {
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-5 rounded-2xl bg-gradient-to-r from-neon-orange-500 to-neon-orange-600 px-8 py-4 text-seabreeze-500">
                   <Image src={org} alt="icon of an org chart" />
-                  <p className="text-5xl font-bold">93</p>
+                  <p className="text-5xl font-bold">95</p>
                   <p className="text-3xl">
                     <a href="/join/why-choose-us/the-ifg-experience#homeOfficeEmployeeDisclaimer">
-                      Home Office Employees<sup className=""> 1</sup>
+                      Home Office Employees<sup className="text-base"> 1</sup>
                     </a>
                   </p>
                 </div>

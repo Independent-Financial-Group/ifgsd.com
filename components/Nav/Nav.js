@@ -30,7 +30,7 @@ const Nav = () => {
           <div className="col flex shrink-0 flex-row items-center lg:gap-x-5 xl:gap-x-10 ">
             <Menu>
               <div>
-                <Menu.Button className="flex h-full flex-row rounded bg-neon-orange-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:drop-shadow">
+                <Menu.Button className="flex h-full flex-row rounded bg-neon-orange-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:scale-105 hover:drop-shadow-lg">
                   <p>Join IFG</p>
                   <ChevronDownIcon
                     className="ext-dunkel-blue-500 h-5 w-5"
@@ -327,8 +327,11 @@ const Nav = () => {
             <Menu className="relative">
               <div>
                 <Menu.Button className="flex h-full flex-row text-dunkel-blue-500 ">
-                  <Link href="/advisor-lookup" className="font-bold">
-                    Find an Advisor
+                  <Link
+                    href="/join/contact"
+                    className="font-semibold text-neon-orange-500 transition-all hover:scale-105"
+                  >
+                    Contact Us
                   </Link>
                 </Menu.Button>
               </div>
@@ -337,7 +340,7 @@ const Nav = () => {
               <div>
                 <Link
                   href="https://new.ifgsd.com"
-                  className="flex h-full flex-row rounded bg-hazard-blue-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:drop-shadow"
+                  className="flex h-full flex-row rounded bg-hazard-blue-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:scale-105 hover:drop-shadow-lg"
                 >
                   Rep Portal
                 </Link>
