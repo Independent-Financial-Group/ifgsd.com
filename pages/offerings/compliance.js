@@ -74,7 +74,7 @@ const compliance = () => {
                   Regulatory Knowledge
                 </h2>
                 <p className="mt-5 text-xl text-seabreeze-500">
-                  Our team&apos;s expertise allows you to run your business with
+                  Our team&apos;s knowledge allows you to run your business with
                   the confidence that you are compliant with regulatory
                   requirements.
                 </p>
