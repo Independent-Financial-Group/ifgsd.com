@@ -114,7 +114,7 @@ const leadership = ({ formattedData: data, initialData }) => {
                   alt="portrait of IFG co-founder Dave Fischer"
                 />
                 <h3 className="text-xl font-bold">David Fischer</h3>
-                <p className="text-bold">CMO</p>
+                <p className="text-bold">Co-Founder & CMO</p>
                 <button
                   data-id="60UCpXYh3gLMMrUu7WaqZg"
                   onClick={handleClick}

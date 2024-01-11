@@ -47,7 +47,7 @@ const LeadeshipBioModal = ({ openModal, setOpenModal, entryId }) => {
           ) : (
             <>
               <img
-                className="mx-auto mb-5 rounded-[20px]"
+                className="mx-auto mb-5 w-1/2 rounded-[20px]"
                 src={`https:${bio.headshot.fields.file.url}`}
               />
               <p className="text-3xl font-bold text-hazard-blue-500">
