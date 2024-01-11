@@ -14,7 +14,7 @@ const Nav = () => {
   const path = router.pathname;
 
   return (
-    <nav className="relative z-10 hidden bg-seabreeze-100 py-5 lg:block">
+    <nav className="relative z-10 hidden bg-seabreeze-100 pb-5 pt-7 lg:block">
       <Container>
         <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
           <div className="col">
@@ -329,7 +329,7 @@ const Nav = () => {
                 <Menu.Button className="flex h-full flex-row text-dunkel-blue-500 ">
                   <Link
                     href="/join/contact"
-                    className="font-semibold text-neon-orange-500 transition-all hover:scale-105"
+                    className="font-semibold transition-all hover:scale-105"
                   >
                     Contact Us
                   </Link>
@@ -337,10 +337,19 @@ const Nav = () => {
               </div>
             </Menu>
             <Menu className="relative">
-              <div>
+              <div className="relative flex flex-col justify-start">
+                <a
+                  href="https://ifg-gateway.com"
+                  target="_blank"
+                  rel=" rel=”noopener noreferrer"
+                  className="group absolute -top-6 block w-full text-xs font-semibold text-neon-orange-500 transition-all duration-300 hover:scale-105"
+                >
+                  Gateway Login &rarr;
+                  <span class="block h-0.5 max-w-0 bg-neon-orange-500 transition-all duration-500 group-hover:max-w-full"></span>
+                </a>
                 <Link
                   href="https://new.ifgsd.com"
-                  className="flex h-full flex-row rounded bg-hazard-blue-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:scale-105 hover:drop-shadow-lg"
+                  className=" flex h-full flex-row justify-self-start rounded bg-hazard-blue-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:scale-105 hover:drop-shadow-lg"
                 >
                   Rep Portal
                 </Link>
