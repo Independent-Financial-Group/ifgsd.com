@@ -44,7 +44,7 @@ const QuickLinks = () => {
           return (
             <a
               href="#"
-              className="flex flex-col items-center justify-center rounded-lg p-2 font-bold text-neon-orange-500 transition-all hover:bg-hazard-blue-300 hover:text-seabreeze-500"
+              className="flex flex-col items-center justify-center rounded-lg p-2 font-semibold text-gray-900 transition-all hover:bg-hazard-blue-300 hover:text-seabreeze-500"
             >
               <div>
                 <LinkIcon className="mx-auto h-10" />

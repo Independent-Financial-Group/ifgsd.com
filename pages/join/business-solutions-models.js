@@ -11,7 +11,6 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import Container from "../../components/Container/Container";
 import Button from "../../components/Button/Button";
-import Modal from "../../components/Modal/Modal";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
@@ -51,7 +50,7 @@ const BusinessSolutionsModels = ({ formattedData }) => {
 
   const faqs = [
     {
-      question: "Do you support fee based or commission based business?",
+      question: "Do you support fee-based or commission-based business?",
       answer:
         "IFG offers flexibility for independent financial professionals. Our offerings serve independent financial professionals with fee focused or fee only business models – and supports independent financial professionals in the process of transforming their business from fee focused to fee only.",
     },
@@ -146,29 +145,23 @@ const BusinessSolutionsModels = ({ formattedData }) => {
                 />
               </div>
               <div>
-                <p className="text-3xl text-seabreeze-500">
+                <p className="text-3xl font-light text-seabreeze-500">
                   You have the option of selecting from the following models:
                 </p>
                 <ul className="my-5 grid grid-cols-2 gap-5">
                   {formattedData.map((model) => {
                     return (
-                      <li key={model.id}>
-                        <p className="mb-5 text-base text-seabreeze-500">
-                          <span className="font-bold">{model.name}.</span>{" "}
+                      <li className="last:col-span-2" key={model.id}>
+                        <p className="mb-5 text-xl font-light leading-7 text-seabreeze-500">
+                          <span className="block text-2xl font-semibold">
+                            {model.name}:
+                          </span>{" "}
                           {model.shortDescription}
                         </p>
-                        <button
-                          data-id={model.id}
-                          onClick={handleClick}
-                          className="w-full text-left text-base font-bold text-seabreeze-500"
-                        >
-                          Learn More &rarr;
-                        </button>
                       </li>
                     );
                   })}
                 </ul>
-                <Modal open={open} setOpen={setOpen} id={id} />
               </div>
             </div>
           </Container>
