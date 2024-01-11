@@ -108,13 +108,13 @@ const pressRelease = ({ release }) => {
         <title>{`${release.title} | IFG Press Release`}</title>
       </Head>
       <PublicLayout>
-        <header className="relative h-[calc(75vh-60px)] bg-neon-orange-500 bg-cover bg-center bg-no-repeat md:h-[calc(70vh-60px)] lg:h-[calc(50vh-60px)] xl:h-[calc(50vh-60px)]">
+        <header className="bg-neon-orange-500 bg-cover bg-center bg-no-repeat px-10 py-24">
           <Container>
-            <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/3 ">
+            <div className="">
               <p className="text-center text-base text-seabreeze-500">
                 - Press Release -
               </p>
-              <h1 className="my-5 text-center text-4xl text-seabreeze-500">
+              <h1 className="my-5 text-center font-semibold text-seabreeze-500 md:text-3xl">
                 {release.title}
               </h1>
               <p className="text-center text-base text-seabreeze-500">
@@ -123,18 +123,16 @@ const pressRelease = ({ release }) => {
             </div>
           </Container>
         </header>
-        <section className="relative">
+        <section>
           <Container>
-            <div className="absolute -top-14 left-1/2 -translate-x-1/2">
-              <Image
-                src={`https:${release.image.fields.file.url}`}
-                alt={release.image.fields.title}
-                width={release.image.fields.file.details.image.width}
-                height={release.image.fields.file.details.image.height}
-                className="rounded-[20px] object-fill"
-              />
-            </div>
-            <div className="pt-36 md:pt-72 lg:pt-[34rem]">
+            <Image
+              src={`https:${release.image.fields.file.url}`}
+              alt={release.image.fields.title}
+              width={release.image.fields.file.details.image.width}
+              height={release.image.fields.file.details.image.height}
+              className="mx-auto  my-5 h-[250px] w-[90%] rounded-[20px] object-contain md:h-[450px] lg:w-[688px]"
+            />
+            <div>
               <div className="flex flex-col items-center">
                 <Image
                   src={`https:${release.editor.photo.fields.file.url}`}
@@ -154,7 +152,7 @@ const pressRelease = ({ release }) => {
                   Press Contact
                 </a>
               </div>
-              <article className="mx-auto my-10 max-w-prose rounded-lg bg-white px-8 py-10">
+              <article className="mx-auto my-10 max-w-prose rounded-lg bg-white px-8 py-10 shadow-md">
                 {documentToReactComponents(release.writtenContent, options)}
               </article>
             </div>

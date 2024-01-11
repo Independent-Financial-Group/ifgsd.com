@@ -23,7 +23,7 @@ const Hero = ({ content }) => {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2 }}
-                className="flex w-1/2 max-w-full truncate rounded-full bg-neon-orange-500 px-3 py-1 text-sm font-bold leading-6 text-seabreeze-100 drop-shadow-xl md:w-full md:max-w-md"
+                className="flex w-[45%] truncate rounded-full bg-neon-orange-500 px-3 py-1 text-sm font-bold leading-6 text-seabreeze-100 drop-shadow-xl md:w-full md:max-w-md"
                 suppressHydrationWarning
               >
                 <p className="truncate">{content.reference.fields.title}</p>
