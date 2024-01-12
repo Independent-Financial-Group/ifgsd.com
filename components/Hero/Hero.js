@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Button from "../Button/Button";
+import Container from "../Container/Container";
 
 const Hero = ({ content }) => {
   return (
@@ -11,8 +12,8 @@ const Hero = ({ content }) => {
       transition={{ duration: 0.5 }}
       className="relative min-h-[calc(75vh-60px)] rounded-bl-[40px] rounded-br-[40px] bg-[url('/_home/images/hero.jpg')] bg-cover bg-center bg-no-repeat md:min-h-[calc(75vh-60px)] lg:min-h-[calc(90vh-60px)] xl:min-h-[calc(70vh-60px)]"
     >
-      <div className="mx-auto max-w-screen-xl px-4">
-        <div className="absolute top-[50%] translate-y-[-50%]">
+      <Container>
+        <div className="absolute top-[50%] w-[90%] translate-y-[-50%] md:w-auto">
           <div className="mb-4 sm:flex sm:justify-center md:justify-start">
             <Link
               href={`/press-and-media/press-releases/${content.reference.fields.slug}`}
@@ -23,7 +24,7 @@ const Hero = ({ content }) => {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2 }}
-                className="flex w-[45%] truncate rounded-full bg-neon-orange-500 px-3 py-1 text-sm font-bold leading-6 text-seabreeze-100 drop-shadow-xl md:w-full md:max-w-md"
+                className="flex w-full truncate rounded-full bg-neon-orange-500 px-3 py-1 text-sm font-bold leading-6 text-seabreeze-100 drop-shadow-xl md:w-full md:max-w-md"
                 suppressHydrationWarning
               >
                 <p className="truncate">{content.reference.fields.title}</p>
@@ -36,7 +37,7 @@ const Hero = ({ content }) => {
               </motion.div>
             </Link>
           </div>
-          <div className="max-w-prose">
+          <div className="lg:max-w-prose">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -57,7 +58,7 @@ const Hero = ({ content }) => {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="mt-6 text-xl leading-8 text-seabreeze-500"
+              className="mt-6 leading-8 text-seabreeze-500 lg:text-xl"
             >
               {content.paragraph}
             </motion.p>
@@ -80,7 +81,7 @@ const Hero = ({ content }) => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </Container>
     </motion.header>
   );
 };
