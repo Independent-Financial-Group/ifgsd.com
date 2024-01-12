@@ -164,11 +164,11 @@ const HomePage = ({
             >
               happy
             </motion.p>
-            <div className="relative z-10 mx-auto max-w-screen-xl px-4 lg:px-0">
+            <div className="relative mx-auto max-w-screen-xl px-4 lg:z-10 lg:px-0">
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-300px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1 }}
                 className="mx-auto my-10 max-w-prose text-center"
               >
@@ -194,7 +194,7 @@ const HomePage = ({
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-300px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 className="text-[80px] font-bold text-[#E2E7EB] lg:hidden"
               >
                 happy
@@ -202,7 +202,7 @@ const HomePage = ({
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-300px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 className="text-[80px] font-bold text-[#E2E7EB] lg:hidden"
               >
                 advisors
@@ -219,7 +219,7 @@ const HomePage = ({
           <Container>
             <div className="lg:flex lg:gap-x-4">
               <div className="lg:max-w-prose">
-                <h2 className="font-bold text-hazard-blue-500 sm:text-2xl lg:text-4xl">
+                <h2 className="text-4xl font-bold text-hazard-blue-500">
                   <img
                     className="mr-2 inline"
                     src="/graphicAssets/triangle-highlight.png"
@@ -331,7 +331,7 @@ const HomePage = ({
                     alt="arrow pointing to sign-up button"
                     className="absolute -left-24 top-4 h-[170px]"
                   />
-                  <h2 className="text-xl font-bold text-hazard-blue-500 md:text-4xl">
+                  <h2 className="text-center text-4xl font-bold text-hazard-blue-500">
                     {pageContent.sectionCTA.heading}
                   </h2>
 
