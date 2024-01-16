@@ -10,7 +10,7 @@ const index = () => {
   const { isLoaded, isSignedIn, user } = useUser();
 
   if (!isLoaded || !isSignedIn) {
-    return null;
+    return <h1>Test</h1>;
   }
 
   return (
