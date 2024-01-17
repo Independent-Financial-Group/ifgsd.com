@@ -10,10 +10,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <link rel="icon" type="image/png" href="/logo.ico" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <NextNProgress color="#F47E50" />
       <ClerkProvider

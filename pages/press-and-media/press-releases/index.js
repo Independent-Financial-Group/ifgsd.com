@@ -56,6 +56,11 @@ const index = ({ formattedPressReleases, pressReleases }) => {
     <>
       <Head>
         <title>Press Releases | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="Read up on updates from the IFG home office."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={"bg-[url('/_press-releases/images/hero.webp')]"}>

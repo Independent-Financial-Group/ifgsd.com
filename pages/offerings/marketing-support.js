@@ -38,6 +38,11 @@ const marketingSupport = () => {
         <title>
           Marketing Support | Offerings | Independent Financial Group
         </title>
+        <meta
+          name="description"
+          content="Take your business to the next level with IFGs marketing support programs."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

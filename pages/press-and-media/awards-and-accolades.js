@@ -48,6 +48,11 @@ const awardsAndAccolades = ({ awards }) => {
     <>
       <Head>
         <title>Awards & Accolades | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="Recognizing our advisors & employees."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

@@ -42,6 +42,11 @@ const index = ({ newsArticles }) => {
     <>
       <Head>
         <title>In the News | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="Read Articles from Investment publications featuring IFG."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={"bg-[url('/_ifg-in-the-news/images/hero.webp')]"}>

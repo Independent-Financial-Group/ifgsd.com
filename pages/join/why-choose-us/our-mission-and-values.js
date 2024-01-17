@@ -32,6 +32,11 @@ const ourMission = () => {
         <title>
           Our Mission & Values | Independent Financial Group San Diego
         </title>
+        <meta
+          name="description"
+          content="IFG's Mission & Values. Integrity, Balance, and Independence."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

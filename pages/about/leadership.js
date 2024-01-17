@@ -58,6 +58,11 @@ const leadership = ({ formattedData: data, initialData }) => {
     <>
       <Head>
         <title>Leadership Team | Independent Financial Group San Diego</title>
+        <meta
+          name="description"
+          content="Independent Financial Group's leadership team leverages years of financial expertise to craft a top-tier broker-dealer."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

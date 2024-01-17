@@ -23,6 +23,11 @@ const compliance = () => {
     <>
       <Head>
         <title>Compliance | Offerings | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="Learn about IFG's compliance offerings."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={"bg-[url(/_compliance/images/hero.webp)]"}>

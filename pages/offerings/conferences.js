@@ -58,6 +58,11 @@ const conferences = ({ formattedData }) => {
     <>
       <Head>
         <title>Conferences | Offerings | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="IFG offers 4 total annual conferences for advisors and their families."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

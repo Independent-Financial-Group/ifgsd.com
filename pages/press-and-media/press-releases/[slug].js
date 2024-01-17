@@ -106,6 +106,14 @@ const pressRelease = ({ release }) => {
     <>
       <Head>
         <title>{`${release.title} | IFG Press Release`}</title>
+        <meta
+          name="description"
+          content={
+            release.writtenContent.content[0].content[0].value.slice(0, 116) +
+            "..."
+          }
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <header className="bg-neon-orange-500 bg-cover bg-center bg-no-repeat px-10 py-24">

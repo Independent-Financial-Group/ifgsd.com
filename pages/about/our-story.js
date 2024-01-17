@@ -56,6 +56,8 @@ const ourStory = ({ timeline }) => {
     <>
       <Head>
         <title>Our Story | Independent Financial Group San Diego</title>
+        <meta name="description" content="The history of IFG formed in 2003." />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

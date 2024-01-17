@@ -96,6 +96,11 @@ const BusinessSolutionsModels = ({ formattedData }) => {
     <>
       <Head>
         <title>Business Solutions Models | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="Discover a customized suite of affiliation models designed to align seamlessly with your business needs."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

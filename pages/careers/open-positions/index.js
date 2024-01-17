@@ -36,7 +36,12 @@ const index = ({ data }) => {
   return (
     <>
       <Head>
-        <title>Work at IFG | Independent Financial Group San Diego</title>
+        <title>Open Positions | Independent Financial Group San Diego</title>
+        <meta
+          name="description"
+          content="View all open positions at the IFG Home Office."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <section className="relative mb-32 h-[33vh] bg-gradient-to-r from-neon-orange-500 to-neon-orange-600">

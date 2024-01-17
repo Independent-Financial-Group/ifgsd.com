@@ -33,7 +33,14 @@ const TheIfgExperience = () => {
   return (
     <>
       <Head>
-        <title>The IFG Experience</title>
+        <title>
+          The IFG Experience | Independent Financial Group San Diego
+        </title>
+        <meta
+          name="description"
+          content="Transition seamlessly to IFG with expert support for tailored solutions."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

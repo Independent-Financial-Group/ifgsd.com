@@ -24,6 +24,11 @@ const technology = () => {
     <>
       <Head>
         <title>Technology | Offerings | Independent Financial Group</title>
+        <meta
+          name="description"
+          content="Leverage IFGs technology to automate your business."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={"bg-[url(/_technology/images/hero.webp)]"}>
