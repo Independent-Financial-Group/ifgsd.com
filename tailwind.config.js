@@ -8,68 +8,81 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite-react/**/*.js",
-    "./public/**/*.html"
+    "./public/**/*.html",
   ],
   theme: {
     colors: {
-      'blue-wave': {
-        0: '#e6eff6',
-        50: '#80aed1',
-        100: '#739dc9',
-        200: '#5c8cc0',
-        300: '#447cb6',
-        400: '#2a6cac',
-        500: '#015ca2',
-        600: '#014f8c',
-        700: '#014277',
-        800: '#003663',
-        900: '#002a4f',
+      "blue-wave": {
+        0: "#e6eff6",
+        50: "#80aed1",
+        100: "#739dc9",
+        200: "#5c8cc0",
+        300: "#447cb6",
+        400: "#2a6cac",
+        500: "#015ca2",
+        600: "#014f8c",
+        700: "#014277",
+        800: "#003663",
+        900: "#002a4f",
       },
-      'dune': {
-        100: '#f2eadb',
-        200: '#f0e6d6',
-        300: '#ede3d0',
-        400: '#ebdfca',
-        500: '#e9dcc4',
-        600: '#cbbfaa',
-        700: '#ada391',
-        800: '#908878',
-        900: '#746e61'
+      "bright-blue": {
+        50: "#e8f2ff",
+        100: "#d5e7ff",
+        200: "#b3d0ff",
+        300: "#85afff",
+        400: "#5680ff",
+        500: "#2f51ff",
+        600: "#0c1dff",
+        700: "#1523ff",
+        800: "#0615cd",
+        900: "#101e9f",
+        950: "#0a105c",
       },
-      'sunburst': {
-        100: '#ee9686',
-        200: '#e88472',
-        300: '#e3725e',
-        400: '#dd5e49',
-        500: '#d64933',
-        600: '#ba3e2b',
-        700: '#9e3423',
-        800: '#842a1c',
-        900: '#6a2014'
+      dune: {
+        100: "#f2eadb",
+        200: "#f0e6d6",
+        300: "#ede3d0",
+        400: "#ebdfca",
+        500: "#e9dcc4",
+        600: "#cbbfaa",
+        700: "#ada391",
+        800: "#908878",
+        900: "#746e61",
       },
-      'dunkel-blue': {
-        100: '#656a71',
-        200: '#4e545b',
-        300: '#393f46',
-        400: '#242b33',
-        500: '#111820',
-        600: '#0d131a',
-        700: '#090f15',
-        800: '#060a0f',
-        900: '#04070a'
+      sunburst: {
+        100: "#ee9686",
+        200: "#e88472",
+        300: "#e3725e",
+        400: "#dd5e49",
+        500: "#d64933",
+        600: "#ba3e2b",
+        700: "#9e3423",
+        800: "#842a1c",
+        900: "#6a2014",
       },
-      'seabreeze': {
-        100: '#fafbfd',
-        200: '#f9fafd',
-        300: '#f9f9fd',
-        400: '#f8f9fc',
-        500: '#f7f8fc',
-        600: '#d7d8db',
-        700: '#b7b8bb',
-        800: '#999a9c',
-        900: '#7c7c7e'
+      "dunkel-blue": {
+        100: "#656a71",
+        200: "#4e545b",
+        300: "#393f46",
+        400: "#242b33",
+        500: "#111820",
+        600: "#0d131a",
+        700: "#090f15",
+        800: "#060a0f",
+        900: "#04070a",
       },
-      'hazard-blue': {
+      seabreeze: {
+        100: "#fafbfd",
+        200: "#f9fafd",
+        300: "#f9f9fd",
+        400: "#f8f9fc",
+        500: "#f7f8fc",
+        600: "#d7d8db",
+        700: "#b7b8bb",
+        800: "#999a9c",
+        900: "#7c7c7e",
+      },
+      "hazard-blue": {
         100: "#e1eef2",
         200: "#c4dde6",
         300: "#a6cbd9",
@@ -78,22 +91,22 @@ module.exports = {
         600: "#56879a",
         700: "#406573",
         800: "#2b444d",
-        900: "#152226"
+        900: "#152226",
       },
-      'neon-orange': {
-        50: '#FFFFFF',
-        100: '#FFF5F1',
-        200: '#FFD8C8',
-        300: '#FFBAA0',
-        400: '#FF9D77',
-        500: '#FF7F4E',
-        600: '#FF5616',
-        700: '#DD3D00',
-        800: '#A52E00',
-        900: '#6D1E00',
-        950: '#511600'
+      "neon-orange": {
+        50: "#FFFFFF",
+        100: "#FFF5F1",
+        200: "#FFD8C8",
+        300: "#FFBAA0",
+        400: "#FF9D77",
+        500: "#FF7F4E",
+        600: "#FF5616",
+        700: "#DD3D00",
+        800: "#A52E00",
+        900: "#6D1E00",
+        950: "#511600",
       },
-      'light-blue': {
+      "light-blue": {
         100: "#fcfdfd",
         200: "#f8fafc",
         300: "#f5f8fa",
@@ -102,21 +115,17 @@ module.exports = {
         600: "#bec2c6",
         700: "#8f9294",
         800: "#5f6163",
-        900: "#303131"
-      }
+        900: "#303131",
+      },
     },
     fontFamily: {
-      sans: ['Montserrat', 'sans-serif']
+      sans: ["Montserrat", "sans-serif"],
     },
     extend: {
       backgroundImage: {
-        'hero': "url('/ifg-hero-surfer-wave-flipped-compressed.jpg')"
-      }
-    }
+        hero: "url('/ifg-hero-surfer-wave-flipped-compressed.jpg')",
+      },
+    },
   },
-  plugins: [
-    require("flowbite/plugin"),
-    require('@tailwindcss/forms')
-  ],
-}
-
+  plugins: [require("flowbite/plugin"), require("@tailwindcss/forms")],
+};
