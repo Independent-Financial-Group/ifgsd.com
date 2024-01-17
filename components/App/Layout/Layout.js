@@ -28,8 +28,11 @@ const navigation = [
       {
         name: "Advisory",
         links: [
-          { name: "Overview", href: "/app/advisory/overview" },
+          { name: "Overview", href: "#" },
           { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
         ],
       },
       {
@@ -37,6 +40,9 @@ const navigation = [
         links: [
           { name: "Overview", href: "#" },
           { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
         ],
       },
       {
@@ -44,18 +50,81 @@ const navigation = [
         links: [
           { name: "Overview", href: "#" },
           { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
         ],
       },
-      { name: "Compliance", links: [{ name: "Overview", href: "#" }] },
-      { name: "Insurance", links: [{ name: "Overview", href: "#" }] },
-      { name: "Annuities", links: [{ name: "Overview", href: "#" }] },
-      { name: "Operations", links: [{ name: "Overview", href: "#" }] },
+      {
+        name: "Compliance",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Insurance",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Annuities",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Operations",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
       {
         name: "Practice Development",
-        links: [{ name: "overview", href: "#" }],
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
       },
-      { name: "Retirement Services", links: [{ name: "overview", href: "#" }] },
-      { name: "Supervision", links: [{ name: "overview", href: "#" }] },
+      {
+        name: "Retirement Services",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Supervision",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
     ],
   },
   {
@@ -356,7 +425,7 @@ export default function Layout({ children }) {
                     </li>
                   );
                 })}
-                <li className="absolute bottom-0 w-full bg-hazard-blue-500 hover:bg-hazard-blue-600">
+                <li className="bg-bright-blue-500 hover:bg-bright-blue-600 absolute bottom-0 w-full">
                   <button className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white">
                     <UserButton
                       showName={true}
