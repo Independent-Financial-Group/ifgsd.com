@@ -25,6 +25,11 @@ const practiceDev = () => {
           Practice Development & Succession Planning | Offerings | Independent
           Financial Group
         </title>
+        <meta
+          name="description"
+          content="IFG offers training and support to help you develop your practice and plan for succession."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader

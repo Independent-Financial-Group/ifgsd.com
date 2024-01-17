@@ -52,6 +52,13 @@ const productSupport = ({ formattedData }) => {
         <title>
           Product & Platform Support | Offerings | Independent Financial Group
         </title>
+        <meta
+          name="description"
+          content="We have selling agreements with many well-known investment
+          solutions providers that cover all areas of financial planning
+          needs"
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={"bg-[url(/_product-support/images/hero.webp)]"}>

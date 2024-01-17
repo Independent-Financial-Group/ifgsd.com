@@ -141,6 +141,12 @@ const HomePage = ({
         <title>
           Independent Financial Group San Diego | Broker-Dealer & RIA
         </title>
+        <meta
+          name="description"
+          content="
+Join Independent Financial Group - your community-focused Independent Broker-Dealer & Registered Investment Advisor. Find your place with us."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <Hero content={pageContent.hero} />

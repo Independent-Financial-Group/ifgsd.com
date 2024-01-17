@@ -27,6 +27,11 @@ const index = () => {
     <>
       <Head>
         <title>Work at IFG | Independent Financial Group San Diego</title>
+        <meta
+          name="description"
+          content="Find your next career at the IFG Home Office."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={"bg-[url(/_careers/images/hero.webp)] bg-top"}>

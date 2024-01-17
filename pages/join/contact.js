@@ -23,6 +23,11 @@ const contact = () => {
     <>
       <Head>
         <title>Contact Us | Independent Financial Group San Diego</title>
+        <meta
+          name="description"
+          content="Contact us or your financial advisor for questions."
+        />
+        <meta name="robots" content="follow, index" />
       </Head>
       <PublicLayout>
         <PageHeader bgPath={'bg-[url("/_contact/images/hero.webp")]'}>
