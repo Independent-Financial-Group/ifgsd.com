@@ -16,7 +16,7 @@ const index = () => {
   return (
     <Layout>
       <DashboardHeader />
-      <div className="my-10 grid grid-cols-12 gap-5 px-8">
+      <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
         <QuickLinks />
         <LatestAnnouncements />
         <UpcomingEvents />

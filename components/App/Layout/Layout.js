@@ -425,14 +425,15 @@ export default function Layout({ children }) {
                     </li>
                   );
                 })}
-                <li className="bg-bright-blue-500 hover:bg-bright-blue-600 absolute bottom-0 w-full">
-                  <button className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white">
+                <li className="absolute bottom-0 w-full bg-gray-100 hover:bg-gray-300">
+                  <button className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-dunkel-blue-500">
                     <UserButton
                       showName={true}
                       appearance={{
                         elements: {
                           userButtonBox: "flex-row-reverse",
-                          userButtonOuterIdentifier: " text-seabreeze-500",
+                          userButtonOuterIdentifier:
+                            " text-dunkel-blue-500 font-semibold",
                           userButtonTrigger: "!focus:shadow-[#FF5617]",
                         },
                       }}

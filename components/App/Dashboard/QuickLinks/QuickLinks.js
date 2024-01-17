@@ -41,7 +41,7 @@ const QuickLinks = () => {
           Quick Links
         </h2>
       </div>
-      <div className="">
+      <div className="p-4">
         <div className="grid grid-cols-3 gap-5">
           {quickLinks.map((link) => {
             return (

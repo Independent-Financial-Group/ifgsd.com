@@ -60,7 +60,7 @@ const UpcomingEvents = () => {
         <ol className="mt-5  divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
           {events.map((event) => (
             <li key={event.title} className="flex-auto px-1 py-3">
-              <h3 className="text-sm font-bold leading-7">{event.title}</h3>
+              <h3 className="text-sm font-semibold leading-7">{event.title}</h3>
               <div className="flex gap-5 divide-x divide-gray-500 text-xs leading-8">
                 <p className="flex items-center gap-1">
                   <CalendarIcon className="h-5" />
