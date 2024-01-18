@@ -131,7 +131,21 @@ const navigation = [
     name: "Resources",
     icon: FolderIcon,
     current: false,
-    children: [{ name: "Podcast", href: "#" }],
+    children: [
+      { name: "Bank Products", href: "#" },
+      { name: "Calendar", href: "#" },
+      { name: "Commissions", href: "#" },
+      { name: "Company Directory", href: "#" },
+      { name: "Corporate Discounts", href: "#" },
+      { name: "Partner Marketplace", href: "#" },
+      { name: "Podcast", href: "#" },
+      { name: "Publications", href: "#" },
+      { name: "Referral Program", href: "#" },
+      { name: "Retail Shop", href: "#" },
+      { name: "Straight Through Processing", href: "#" },
+      { name: "Technology", href: "#" },
+      { name: "Tutorials", href: "#" },
+    ],
   },
   { name: "Contact", current: false, icon: PhoneIcon, href: "/app/contact" },
 ];
@@ -323,9 +337,9 @@ export default function Layout({ children }) {
                             {/* DOES THE PARENT ITEM HAVE CHILDREN?*/}
                             {parentItem.children ? (
                               <>
-                                <Disclosure.Button className="group flex w-full items-center gap-x-3 rounded-lg px-2 py-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                <Disclosure.Button className="group flex w-full items-center gap-x-3 rounded-lg px-2 py-2 font-bold hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                   <parentItem.icon
-                                    className="h-6 w-6 shrink-0"
+                                    className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                     aria-hidden="true"
                                   />
                                   {parentItem.name}
@@ -408,9 +422,9 @@ export default function Layout({ children }) {
                               </>
                             ) : (
                               <Disclosure>
-                                <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                   <parentItem.icon
-                                    className="h-6 w-6 shrink-0"
+                                    className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                     aria-hidden="true"
                                   />
                                   <Link href={parentItem.href}>
