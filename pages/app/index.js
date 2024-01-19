@@ -5,6 +5,7 @@ import DashboardHeader from "../../components/App/Dashboard/DashboardHeader/Dash
 import QuickLinks from "../../components/App/Dashboard/QuickLinks/QuickLinks";
 import LatestAnnouncements from "../../components/App/Dashboard/LatestAnnouncements/LatestAnnouncements";
 import UpcomingEvents from "../../components/App/Dashboard/UpcomingEvents/UpcomingEvents";
+import ReferralProgramTool from "../../components/App/ReferralProgramTool/ReferralProgramTool";
 
 const index = () => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -20,6 +21,7 @@ const index = () => {
         <QuickLinks />
         <LatestAnnouncements />
         <UpcomingEvents />
+        <ReferralProgramTool />
       </div>
     </Layout>
   );

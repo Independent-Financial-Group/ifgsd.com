@@ -9,7 +9,7 @@ const DashboardHeader = () => {
     <header className="relative h-[20dvh] bg-[url('https://images.pexels.com/photos/1705254/pexels-photo-1705254.jpeg')] bg-cover  bg-no-repeat">
       <div className="h-full bg-white/25 bg-cover px-8 py-4 backdrop-blur-md">
         <div className="absolute inset-x-8 top-1/2 -translate-y-1/2">
-          <h1 className="text-bright-blue-600 text-3xl font-bold">
+          <h1 className="text-3xl font-bold text-seabreeze-500">
             {user.lastSignInAt ? "Welcome Back, " : "Hello, "}
             {user.firstName}!
           </h1>
