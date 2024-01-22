@@ -5,6 +5,7 @@ import Head from "next/head";
 import OverviewVideo from "../../../components/App/Internal-Pages/overview/OverviewVideo/OverviewVideo";
 import DepartmentAnnouncements from "../../../components/App/Internal-Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
 import ContentLibrary from "../../../components/App/Internal-Pages/overview/ContentLibrary/ContentLibrary";
+import TeamDirectory from "../../../components/App/Internal-Pages/overview/TeamDirectory/TeamDirectory";
 
 const overview = () => {
   return (
@@ -27,6 +28,7 @@ const overview = () => {
           <OverviewVideo />
           <DepartmentAnnouncements department={"alts"} />
           <ContentLibrary />
+          <TeamDirectory department="Alternative Investments" />
         </div>
       </Layout>
     </>
