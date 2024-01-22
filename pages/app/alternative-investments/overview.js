@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "../../../components/App/Layout/Layout";
-import PageHeader from "../../../components/App/Internal Pages/PageHeader/PageHeader";
+import PageHeader from "../../../components/App/Internal-Pages/PageHeader/PageHeader";
 import Head from "next/head";
-import OverviewVideo from "../../../components/App/Internal Pages/overview/overviewVideo/OverviewVideo";
-import DepartmentAnnouncements from "../../../components/App/Internal Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
-import ContentLibrary from "../../../components/App/Internal Pages/overview/ContentLibrary/ContentLibrary";
+import OverviewVideo from "../../../components/App/Internal-Pages/overview/overviewVideo/OverviewVideo";
+import DepartmentAnnouncements from "../../../components/App/Internal-Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
+import ContentLibrary from "../../../components/App/Internal-Pages/overview/ContentLibrary/ContentLibrary";
 
 const overview = () => {
   return (
