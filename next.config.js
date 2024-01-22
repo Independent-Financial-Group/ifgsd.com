@@ -49,4 +49,23 @@ module.exports = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/about",
+        destination: "/about/our-story",
+        permanent: true,
+      },
+      {
+        source: "/mission",
+        destination: "/join/why-choose-us/our-mission-and-values",
+        permanent: true,
+      },
+      {
+        source: "/category/press-room/press-releases",
+        destination: "/press-and-media/press-releases",
+        permanent: true,
+      },
+    ];
+  },
 };
