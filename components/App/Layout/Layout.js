@@ -28,7 +28,7 @@ const navigation = [
       {
         name: "Advisory",
         links: [
-          { name: "Overview", href: "#" },
+          { name: "Overview", href: "/app/advisory/overview" },
           { name: "Approved Products", href: "#" },
           { name: "Partners", href: "#" },
           { name: "Tools", href: "#" },
@@ -38,7 +38,7 @@ const navigation = [
       {
         name: "Alt. Investments",
         links: [
-          { name: "Overview", href: "#" },
+          { name: "Overview", href: "/app/alternative-investments/overview" },
           { name: "Approved Products", href: "#" },
           { name: "Partners", href: "#" },
           { name: "Tools", href: "#" },
