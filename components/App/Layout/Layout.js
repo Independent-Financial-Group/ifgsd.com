@@ -251,7 +251,7 @@ export default function Layout({ children }) {
                                             as="ul"
                                             className="ml-8 flex flex-col"
                                           >
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                               {childItem.name}
                                             </Disclosure.Button>
                                             <Disclosure.Panel>
@@ -363,7 +363,7 @@ export default function Layout({ children }) {
                                               {({ open }) => {
                                                 return (
                                                   <>
-                                                    <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                                    <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                                       {childItem.name}
                                                       <ChevronRightIcon
                                                         className={
@@ -408,7 +408,7 @@ export default function Layout({ children }) {
                                             </Disclosure>
                                           ) : (
                                             <Link
-                                              className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
+                                              className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                               href={childItem.href}
                                             >
                                               {childItem.name}

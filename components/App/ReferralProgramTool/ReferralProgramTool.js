@@ -13,7 +13,7 @@ const ReferralProgramTool = () => {
 
   return (
     <div className="col-span-12 w-full rounded-lg bg-white shadow">
-      <div className="mb-5 rounded-t-lg bg-bright-blue-500 py-2">
+      <div className="mb-5 rounded-t-lg bg-neon-orange-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <UserGroupIcon class="h-5 w-5" />
           Advisor Referral Program
@@ -37,21 +37,21 @@ const ReferralProgramTool = () => {
             </p>
             <div>
               <p className="text-sm">
-                <span className="text-sm font-bold uppercase leading-7 text-bright-blue-500">
+                <span className="text-sm font-bold uppercase leading-7 text-hazard-blue-500">
                   Refer & recruit.
                 </span>{" "}
                 Refer a new representative and make a significant contribution
                 by bringing them aboard.
               </p>
               <p className="my-2 text-sm">
-                <span className=" font-bold uppercase leading-7 text-bright-blue-500">
+                <span className=" font-bold uppercase leading-7 text-hazard-blue-500">
                   Recruit Produces $150,000+.
                 </span>{" "}
                 New advisor produces a minimum of $150,000 in gross commissions
                 during his or her first 12 months with IFG.
               </p>
               <p className="text-sm">
-                <span className="text-sm font-bold uppercase leading-7 text-bright-blue-500">
+                <span className="text-sm font-bold uppercase leading-7 text-hazard-blue-500">
                   Earn 2%.
                 </span>{" "}
                 As the referring representative, you will receive a 2% bonus on
@@ -71,7 +71,7 @@ const ReferralProgramTool = () => {
                   <label className="text-sm font-semibold text-gray-500">
                     Prospects Current GDC
                   </label>
-                  <p className="font-bold text-bright-blue-500">
+                  <p className="text-bright-blue-500 font-bold">
                     $
                     {currentGDC
                       .toString()

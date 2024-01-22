@@ -60,7 +60,7 @@ const LatestAnnouncements = () => {
 
   return (
     <div className="col-span-3 h-[500px] rounded-lg bg-white shadow">
-      <div className="bg-bright-blue-500 rounded-t-lg py-2">
+      <div className="rounded-t-lg bg-neon-orange-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <MegaphoneIcon className="h-5 w-5" />
           Latest Announcements
