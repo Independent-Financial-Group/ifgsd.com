@@ -55,7 +55,7 @@ const ReferralProgramTool = () => {
                   Earn 2%.
                 </span>{" "}
                 As the referring representative, you will receive a 2% bonus on
-                the recruit’s gross production.
+                the recruit&apos;s gross production.
               </p>
             </div>
           </div>
@@ -106,11 +106,13 @@ const ReferralProgramTool = () => {
                   </div>
                 )}
               </div>
-              <div className="mt-5">
-                <button className="rounded-lg bg-neon-orange-500 p-2 font-bold text-seabreeze-500">
-                  fill out form
-                </button>
-              </div>
+              {currentGDC > 150000 && (
+                <div className="mt-5">
+                  <button className="rounded-lg bg-neon-orange-500 p-2 font-bold text-seabreeze-500">
+                    fill out form
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
