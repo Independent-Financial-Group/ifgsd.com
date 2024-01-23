@@ -6,6 +6,7 @@ import OverviewVideo from "../../../components/App/Internal-Pages/overview/Overv
 import DepartmentAnnouncements from "../../../components/App/Internal-Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
 import ContentLibrary from "../../../components/App/Internal-Pages/overview/ContentLibrary/ContentLibrary";
 import TeamDirectory from "../../../components/App/Internal-Pages/overview/TeamDirectory/TeamDirectory";
+import ProductAdBanner from "../../../components/App/Internal-Pages/overview/ProductAdBanner/ProductAdBanner";
 
 const overview = () => {
   return (
@@ -27,6 +28,7 @@ const overview = () => {
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <OverviewVideo />
           <DepartmentAnnouncements department={"alts"} />
+          <ProductAdBanner />
           <ContentLibrary />
           <TeamDirectory department="Alternative Investments" />
         </div>

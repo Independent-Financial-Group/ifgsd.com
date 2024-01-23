@@ -60,13 +60,13 @@ const ContentLibrary = () => {
 
   return (
     <div className="col-span-4 h-[500px] rounded-lg bg-white  shadow">
-      <div className="mb-5 rounded-t-lg bg-hazard-blue-500 py-2">
+      <div className="rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <BuildingLibraryIcon className="h-5 w-5" />
           Content Library
         </h2>
       </div>
-      <div className="h-[90%] overflow-y-auto px-4 pl-4 pr-1 pt-4">
+      <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">
         <ol className="divide-y divide-gray-100">
           {announcements.map((announcement) => (
             <li key={announcement.title} className="flex gap-x-4 px-3 py-5">

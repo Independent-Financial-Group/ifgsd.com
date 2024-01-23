@@ -30,7 +30,7 @@ const AdSquare = () => {
   ];
 
   return (
-    <div className="col-span-4 self-center">
+    <div className="col-span-8">
       <Swiper
         slidesPerView={1}
         centeredSlides={true}
@@ -58,7 +58,7 @@ const AdSquare = () => {
                 <img
                   src={ad.url}
                   alt={ad.description}
-                  className="mx-auto h-[500px] w-[500px] rounded-lg object-contain"
+                  className="mx-auto h-[500px] w-full rounded-lg object-contain xl:object-fill"
                 />
               </a>
             </SwiperSlide>

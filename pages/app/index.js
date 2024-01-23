@@ -22,8 +22,8 @@ const index = () => {
         <QuickLinks />
         <LatestAnnouncements />
         <UpcomingEvents />
-        <ReferralProgramTool />
         <AdSquare />
+        <ReferralProgramTool />
       </div>
     </Layout>
   );
