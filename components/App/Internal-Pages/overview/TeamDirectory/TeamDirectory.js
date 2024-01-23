@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { UserGroupIcon } from "@heroicons/react/24/outline";
+import {
+  UserGroupIcon,
+  EnvelopeOpenIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 
 // CONTENTFUL IMPORTS
 const contenful = require("contentful");
@@ -32,11 +36,11 @@ const TeamDirectory = ({ department }) => {
   }, []);
 
   return (
-    <div className="col-span-4 rounded-lg bg-white shadow">
+    <div className="col-span-3 rounded-lg bg-white shadow">
       <div className="mb-5 rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <UserGroupIcon className="h-5 w-5" />
-          Your Alts Team
+          Your {department} Team
         </h2>
       </div>
       <ol className="divide-y divide-gray-100 px-4">
@@ -98,23 +102,26 @@ const TeamDirectory = ({ department }) => {
               >
                 <div className="flex min-w-0 gap-x-4">
                   <img
-                    className="h-12 w-12 flex-none rounded-full bg-gray-50"
+                    className="h-20 w-20 flex-none rounded-full bg-gray-50"
                     src={`https:${person.fields.headshot.fields.file.url}`}
                     alt={person.fields.headshot.fields.title}
                   />
                   <div className="min-w-0 flex-auto">
-                    <p className="text-sm font-semibold leading-6 text-gray-900">
+                    <p className="text-base font-semibold leading-6 text-neon-orange-500">
                       {person.fields.fullName}
                     </p>
-                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                      {person.fields.eMail}
+                    <p className="text-sm italic leading-6 text-gray-800">
+                      {person.fields.title}
                     </p>
+                    <div className="mt-1 flex items-center gap-1 truncate text-xs leading-5 text-gray-500">
+                      <EnvelopeOpenIcon className="h-4 w-4" />
+                      <p>{person.fields.eMail}</p>
+                    </div>
+                    <div className="mt-1 flex items-center gap-1 truncate text-xs leading-5 text-gray-500">
+                      <PhoneIcon className="h-4 w-4" />
+                      <p>(800) 269 - 1903 x{person.fields.extension}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                  <p className="text-sm leading-6 text-gray-900">
-                    {person.fields.title}
-                  </p>
                 </div>
               </li>
             );
