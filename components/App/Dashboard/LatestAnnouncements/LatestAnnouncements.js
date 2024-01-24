@@ -84,23 +84,30 @@ const LatestAnnouncements = () => {
                     {formatDateAndTime(announcement.fields.date, "day")}
                   </p>
                   <div className="flex gap-2">
-                    <div
-                      class={`my-2 w-fit rounded-full ${
-                        announcement.fields.priority == "High"
-                          ? "bg-red-100"
-                          : announcement.fields.priority == "Medium"
-                          ? "bg-neon-orange-100"
-                          : "bg-green-100"
-                      } px-4 py-2 text-xs font-bold ${
-                        announcement.fields.priority == "High"
-                          ? "text-red-500"
-                          : announcement.fields.priority == "Medium"
-                          ? "text-neon-orange-500"
-                          : "text-green-500"
-                      }`}
-                    >
-                      {announcement.fields.priority} Priority
-                    </div>
+                    {announcement.fields.priority && (
+                      <div
+                        class={`my-2 w-fit rounded-full ${
+                          announcement.fields.priority == "High"
+                            ? "bg-red-100"
+                            : announcement.fields.priority == "Medium"
+                            ? "bg-neon-orange-100"
+                            : "bg-green-100"
+                        } px-4 py-2 text-xs font-bold ${
+                          announcement.fields.priority == "High"
+                            ? "text-red-500"
+                            : announcement.fields.priority == "Medium"
+                            ? "text-neon-orange-500"
+                            : "text-green-500"
+                        }`}
+                      >
+                        {announcement.fields.priority} Priority
+                      </div>
+                    )}
+                    {announcement.fields.mediaType && (
+                      <div className="my-2 w-fit rounded-full bg-hazard-blue-100 px-4 py-2 text-xs font-bold text-hazard-blue-500">
+                        {announcement.fields.mediaType}
+                      </div>
+                    )}
                     <div className="my-2 w-fit rounded-full bg-gray-100 px-4 py-2 text-xs font-bold text-gray-500">
                       {announcement.fields.department}
                     </div>
