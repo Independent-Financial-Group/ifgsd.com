@@ -56,7 +56,57 @@ const navigation = [
         ],
       },
       {
+        name: "Bank Products",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Commissions & Fees",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
         name: "Compliance",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Corp. Comm.",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Fixed Income",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Info. Technology",
         links: [
           { name: "Overview", href: "#" },
           { name: "Approved Products", href: "#" },
@@ -76,7 +126,7 @@ const navigation = [
         ],
       },
       {
-        name: "Annuities",
+        name: "Operations",
         links: [
           { name: "Overview", href: "#" },
           { name: "Approved Products", href: "#" },
@@ -86,13 +136,12 @@ const navigation = [
         ],
       },
       {
-        name: "Operations",
+        name: "Portfolio Construction",
         links: [
           { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
+          { name: "Market Commentary", href: "#" },
+          { name: "Research", href: "#" },
+          { name: "Models", href: "#" },
         ],
       },
       {
@@ -132,9 +181,7 @@ const navigation = [
     icon: FolderIcon,
     current: false,
     children: [
-      { name: "Bank Products", href: "#" },
       { name: "Calendar", href: "#" },
-      { name: "Commissions", href: "#" },
       { name: "Company Directory", href: "#" },
       { name: "Corporate Discounts", href: "#" },
       { name: "Partner Marketplace", href: "#" },
