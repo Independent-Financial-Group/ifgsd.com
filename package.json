@@ -54,6 +54,7 @@
     "react-chrono": "^2.3.1",
     "react-dom": "^18.2.0",
     "react-email": "1.9.5",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-markdown": "^9.0.1",
     "react-player": "^2.14.1",
     "react-spinners": "^0.13.8",

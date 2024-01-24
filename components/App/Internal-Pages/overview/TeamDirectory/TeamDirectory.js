@@ -28,7 +28,6 @@ const TeamDirectory = ({ department }) => {
         .then((response) => {
           setData(response.items);
           setIsLoading(false);
-          console.log(data);
         });
     };
 
