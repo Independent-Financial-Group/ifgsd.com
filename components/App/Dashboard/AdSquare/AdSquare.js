@@ -30,7 +30,7 @@ const AdSquare = () => {
   ];
 
   return (
-    <div className="col-span-8">
+    <div className="col-span-7">
       <Swiper
         slidesPerView={1}
         centeredSlides={true}

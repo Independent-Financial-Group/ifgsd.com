@@ -1,79 +1,120 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { CalendarIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+// CONTENTFUL IMPORTS
+import { formatDateAndTime } from "@contentful/f36-datetime";
+const contenful = require("contentful");
+
+const client = contenful.createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
+import InfiniteScroll from "react-infinite-scroll-component";
+
 const UpcomingEvents = () => {
-  const events = [
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      location: "Webinar",
-      slug: "#",
-    },
-  ];
+  const [events, setEvents] = useState([]);
+  const [totalLength, setTotalLength] = useState(0);
+  const [page, setPage] = useState(1);
+  const todaysDate = new Date().toJSON();
+
+  const getEvents = async () => {
+    const fetchLimit = 3 * page;
+
+    const data = await client
+      .getEntries({
+        content_type: "events",
+        order: "-fields.date",
+        "fields.date[gt]": todaysDate,
+        limit: fetchLimit,
+      })
+      .then((response) => {
+        setTotalLength(response.total);
+        setEvents([...response.items]);
+        setPage((prevState) => prevState + 1);
+      });
+  };
+
+  useEffect(() => {
+    getEvents();
+    console.log(events);
+    console.log(todaysDate);
+  }, []);
 
   return (
-    <div className="col-span-4 h-[500px] rounded-lg bg-white shadow">
+    <div className="col-span-5 h-[500px] rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-neon-orange-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <CalendarIcon className="h-5 w-5" />
           Upcoming Events
         </h2>
       </div>
-      <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">
-        <ol className="mt-5  divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
-          {events.map((event) => (
-            <li key={event.title} className="flex-auto px-1 py-3">
-              <h3 className="text-sm font-semibold leading-7">{event.title}</h3>
-              <div className="flex gap-5 divide-x divide-gray-500 text-xs leading-8">
-                <p className="flex items-center gap-1">
-                  <CalendarIcon className="h-5" />
-                  {event.date}
+      <div
+        className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4"
+        id="upComingEventsScrollingDiv"
+      >
+        {events.length == 0 ? (
+          <div className="flex h-full flex-col items-center justify-center">
+            <h3 className="font-bold text-gray-500">No Upcoming Events</h3>
+          </div>
+        ) : (
+          <ol className="divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
+            <InfiniteScroll
+              dataLength={events.length}
+              scrollableTarget="upComingEventsScrollingDiv"
+              next={getEvents}
+              className="divide-y"
+              loader={
+                <p className="my-5 text-center text-xs text-gray-500">
+                  Loading More...
                 </p>
-                <p className="flex items-center gap-1 pl-4">
-                  <MapPinIcon className="h-5" />
-                  {event.location}
+              }
+              hasMore={events.length < totalLength}
+              endMessage={
+                <p className="py-5 text-center text-xs font-semibold text-neon-orange-500">
+                  No More Events...
                 </p>
-              </div>
-            </li>
-          ))}
-        </ol>
+              }
+            >
+              {events.map((event) => (
+                <li key={event.sys.id} className="flex-auto px-1 py-3">
+                  <h3 className="text-sm font-semibold leading-7">
+                    {event.fields.eventName}
+                  </h3>
+                  <div className="flex flex-col gap-2 text-xs">
+                    <p className="flex items-center gap-1 text-xs">
+                      <CalendarIcon className="h-5" />
+                      {formatDateAndTime(event.fields.date, "full")} -{" "}
+                      {formatDateAndTime(event.fields.endDate, "full")}
+                    </p>
+                    <p className="flex items-center gap-1 text-xs">
+                      <MapPinIcon className="h-5" />
+                      {event.fields.location}
+                    </p>
+                  </div>
+                  <p className="my-5 text-xs">
+                    {event.fields.description}{" "}
+                    <a
+                      className="font-semibold text-neon-orange-500"
+                      href={event.fields.registrationLink}
+                    >
+                      Register &rarr;
+                    </a>
+                  </p>
+                  <div className="flex gap-2">
+                    <div className="my-2 w-fit rounded-full bg-hazard-blue-100 px-4 py-2 text-xs font-bold text-hazard-blue-500">
+                      {event.fields.type}
+                    </div>
+                    <div className="my-2 w-fit rounded-full bg-neon-orange-100 px-4 py-2 text-xs font-bold text-neon-orange-500">
+                      {event.fields.host}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </InfiniteScroll>
+          </ol>
+        )}
       </div>
     </div>
   );

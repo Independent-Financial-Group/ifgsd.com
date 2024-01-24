@@ -19,13 +19,9 @@ const client = contenful.createClient({
 const LatestAnnouncements = () => {
   const [announcements, setAnnouncements] = useState([]);
   const [totalLength, setTotalLength] = useState(0);
-  const [loadMore, setLoadMore] = useState(false);
   const [page, setPage] = useState(1);
 
   const getAnnouncements = async () => {
-    console.log("Fetching Announcements");
-    console.log(`page num: ${page}`);
-
     const fetchLimit = 3 * page;
 
     const data = await client
@@ -35,7 +31,6 @@ const LatestAnnouncements = () => {
         limit: fetchLimit,
       })
       .then((response) => {
-        console.log(response);
         setTotalLength(response.total);
         setAnnouncements([...response.items]);
         setPage((prevState) => prevState + 1);
@@ -47,18 +42,21 @@ const LatestAnnouncements = () => {
   }, []);
 
   return (
-    <div className="col-span-6 h-[500px] rounded-lg bg-white shadow">
+    <div className="col-span-6 h-[616px] rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-neon-orange-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <MegaphoneIcon className="h-5 w-5" />
           Latest Announcements
         </h2>
       </div>
-      <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4" id="scrollingDiv">
+      <div
+        className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4"
+        id="latestAnnouncementsScrollingDiv"
+      >
         <ol>
           <InfiniteScroll
             dataLength={announcements.length}
-            scrollableTarget="scrollingDiv"
+            scrollableTarget="latestAnnouncementsScrollingDiv"
             next={getAnnouncements}
             className="divide-y"
             loader={
