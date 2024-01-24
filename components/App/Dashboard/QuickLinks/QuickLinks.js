@@ -87,13 +87,9 @@ const QuickLinks = () => {
               >
                 <div>
                   {link.imageUrl ? (
-                    <img
-                      src={link.imageUrl}
-                      alt={link.name}
-                      className="aspect-square h-11 object-contain"
-                    />
+                    <img src={link.imageUrl} alt={link.name} className="h-11" />
                   ) : link.icon ? (
-                    <link.icon className="aspect-square h-10 object-contain" />
+                    <link.icon className="h-10" />
                   ) : (
                     <LinkIcon className="mx-auto h-10" />
                   )}
