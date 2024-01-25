@@ -152,11 +152,7 @@ const leadership = ({ formattedData: data, initialData }) => {
                   <div
                     className={
                       i >= 6
-                        ? `${
-                            i >= 6
-                              ? "col-span-2 md:col-span-3 md:justify-self-center"
-                              : ""
-                          }`
+                        ? `${i >= 6 ? "col-span-2 md:col-span-2 " : ""}`
                         : "col-span-2"
                     }
                     key={person.id}
