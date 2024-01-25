@@ -384,7 +384,7 @@ export default function Layout({ children }) {
                             {/* DOES THE PARENT ITEM HAVE CHILDREN?*/}
                             {parentItem.children ? (
                               <>
-                                <Disclosure.Button className="group flex w-full items-center gap-x-3 rounded-lg px-2 py-2 font-bold hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                <Disclosure.Button className="group flex w-full items-center gap-x-3 rounded-lg px-2 py-2 hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                   <parentItem.icon
                                     className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                     aria-hidden="true"
@@ -410,7 +410,7 @@ export default function Layout({ children }) {
                                               {({ open }) => {
                                                 return (
                                                   <>
-                                                    <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                                    <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2  text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                                       {childItem.name}
                                                       <ChevronRightIcon
                                                         className={
@@ -455,7 +455,7 @@ export default function Layout({ children }) {
                                             </Disclosure>
                                           ) : (
                                             <Link
-                                              className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
+                                              className="flex w-full items-center justify-between rounded-lg p-2 text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                               href={childItem.href}
                                             >
                                               {childItem.name}
@@ -469,7 +469,7 @@ export default function Layout({ children }) {
                               </>
                             ) : (
                               <Disclosure>
-                                <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                   <parentItem.icon
                                     className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                     aria-hidden="true"
@@ -486,24 +486,25 @@ export default function Layout({ children }) {
                     </li>
                   );
                 })}
-                <li className="absolute bottom-0 w-full bg-gray-100 hover:bg-gray-300">
-                  <button className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-dunkel-blue-500">
-                    <UserButton
-                      showName={true}
-                      appearance={{
-                        elements: {
-                          userButtonBox: "flex-row-reverse",
-                          userButtonOuterIdentifier:
-                            " text-dunkel-blue-500 font-semibold",
-                          userButtonTrigger: "!focus:shadow-[#FF5617]",
-                        },
-                      }}
-                    />
-                  </button>
-                </li>
+                {/* <li className="absolute bottom-0 w-full bg-gray-100 hover:bg-gray-300">
+
+                </li> */}
               </ul>
             </nav>
           </div>
+          <button className="flex items-center gap-x-4 bg-white px-6 py-3 text-sm font-semibold leading-6 text-dunkel-blue-500">
+            <UserButton
+              showName={true}
+              appearance={{
+                elements: {
+                  userButtonBox: "flex-row-reverse",
+                  userButtonOuterIdentifier:
+                    " text-dunkel-blue-500 font-semibold",
+                  userButtonTrigger: "!focus:shadow-[#FF5617]",
+                },
+              }}
+            />
+          </button>
         </div>
 
         <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
