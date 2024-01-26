@@ -1,4 +1,10 @@
 import React from "react";
+import Link from "next/link";
+
+import {
+  MagnifyingGlassIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
 
 const MarketResearch = () => {
   const announcements = [
@@ -54,11 +60,11 @@ const MarketResearch = () => {
   ];
 
   return (
-    <div className="col-span-6 h-[500px] rounded-lg bg-white shadow">
+    <div className="col-span-4 h-[500px] rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
-          <MegaphoneIcon className="h-5 w-5" />
-          What's Happening in {department}?
+          <MagnifyingGlassIcon className="h-5 w-5" />
+          Market Research
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">
