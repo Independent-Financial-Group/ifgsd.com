@@ -3,10 +3,9 @@ import Layout from "../../../components/App/Layout/Layout";
 import PageHeader from "../../../components/App/Internal-Pages/PageHeader/PageHeader";
 import OverviewVideo from "../../../components/app/Internal-Pages/overview/OverviewVideo/OverviewVideo";
 import DepartmentAnnouncements from "../../../components/App/Internal-Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
-import ContentLibrary from "../../../components/App/Internal-Pages/overview/ContentLibrary/ContentLibrary";
 import TeamDirectory from "../../../components/App/Internal-Pages/overview/TeamDirectory/TeamDirectory";
-import ProductAdBanner from "../../../components/App/Internal-Pages/overview/ProductAdBanner/ProductAdBanner";
 import ModelsAtAGlance from "../../../components/App/Internal-Pages/overview/portfolio-construction/ModelsAtAGlance/ModelsAtAGlance";
+import MarketResearch from "../../../components/App/Internal-Pages/overview/portfolio-construction/MarketResearch/MarketResearch";
 
 const overview = () => {
   return (
@@ -19,6 +18,8 @@ const overview = () => {
         <OverviewVideo url="https://vimeo.com/905389112?share=copy" />
         <DepartmentAnnouncements department="Portfolio Construction" />
         <ModelsAtAGlance />
+        <MarketResearch />
+        <TeamDirectory department="Research & Portfolio Construction" />
       </div>
     </Layout>
   );
