@@ -3,6 +3,7 @@ import { MegaphoneIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const DepartmentAnnouncements = ({ department }) => {
+  // const announcements = null;
   const announcements = [
     {
       title: "title",
@@ -64,29 +65,36 @@ const DepartmentAnnouncements = ({ department }) => {
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">
-        <ol className="divide-y divide-gray-100">
-          {announcements.map((announcement) => (
-            <li key={announcement.title} className="flex gap-x-4 px-3 py-5">
-              <div className="min-w-0">
-                <p className="text-sm font-semibold leading-6 text-gray-900">
-                  {announcement.title}
-                </p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                  {announcement.date}
-                </p>
-                <p className="my-2 text-xs leading-7 text-gray-900">
-                  {announcement.excerpt}
-                </p>
-                <Link
-                  href="#"
-                  className="flex items-center justify-end gap-1 text-xs font-semibold hover:text-neon-orange-600"
-                >
-                  Read More <ChevronRightIcon className="h-3" />
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ol>
+        {!announcements && (
+          <div className="flex h-full items-center justify-center text-center text-xl font-semibold text-gray-300">
+            <h3>No Updates</h3>
+          </div>
+        )}
+        {announcements && (
+          <ol className="divide-y divide-gray-100">
+            {announcements.map((announcement) => (
+              <li key={announcement.title} className="flex gap-x-4 px-3 py-5">
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold leading-6 text-gray-900">
+                    {announcement.title}
+                  </p>
+                  <p className="mt-1 truncate text-xs leading-5 text-gray-500">
+                    {announcement.date}
+                  </p>
+                  <p className="my-2 text-xs leading-7 text-gray-900">
+                    {announcement.excerpt}
+                  </p>
+                  <Link
+                    href="#"
+                    className="flex items-center justify-end gap-1 text-xs font-semibold hover:text-neon-orange-600"
+                  >
+                    Read More <ChevronRightIcon className="h-3" />
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
     </div>
   );
