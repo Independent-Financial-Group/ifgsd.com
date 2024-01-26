@@ -14,8 +14,8 @@ const OverviewVideo = ({ url }) => {
       </div>
       <div className="px-4">
         <p className="text-sm leading-7 text-gray-700">
-          For a complete overview of our department, please click on our
-          informative video below!
+          Watch this introduction video for an overview of our department and
+          what you can find here.
         </p>
         <ReactPlayer url={url} controls width={"100%"} />
       </div>
