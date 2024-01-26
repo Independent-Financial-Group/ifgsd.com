@@ -17,11 +17,7 @@ const OverviewVideo = ({ url }) => {
           For a complete overview of our department, please click on our
           informative video below!
         </p>
-        <ReactPlayer
-          url="https://vimeo.com/245828169?share=copy"
-          controls
-          width={"100%"}
-        />
+        <ReactPlayer url={url} controls width={"100%"} />
       </div>
     </div>
   );
