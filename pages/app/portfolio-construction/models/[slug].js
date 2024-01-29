@@ -7,6 +7,12 @@ import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+// HERO ICONS
+import {
+  DevicePhoneMobileIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/outline";
+
 // CONTENTFUL IMPORTS
 const contenful = require("contentful");
 
@@ -66,7 +72,7 @@ const Model = ({ model }) => {
     <Layout>
       <PageHeader pageName={model.fields.name} breadCrumb="Models" />
       <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-        <GridTile colSpan={"col-span-4"} tileTitle="Breakdown">
+        <GridTile colSpan={"col-span-4"} tileTitle="Asset Allocation Breakdown">
           <Doughnut
             plugins={[ChartDataLabels]}
             options={{
@@ -115,6 +121,36 @@ const Model = ({ model }) => {
             }}
           />
         </GridTile>
+        <GridTile tileTitle={`Holdings`} colSpan={"col-span-8"}>
+          <p className="leading-7">
+            This portfolio applies global diversification, which we believe may
+            see lower volatility over time and expanded investment opportunities
+            for growth because it reduces concentration in one geographical
+            region. This conservative portfolio is best suited for investors
+            with shorter time periods, typically less than five years, or more
+            important goals. It emphasizes defensive asset classes such as
+            Treasury bonds and cash while holding little or no volatile
+            investments such as stocks.
+          </p>
+        </GridTile>
+        <div className="col-span-12">
+          <h2 className="text-center text-2xl font-semibold text-neon-orange-500">
+            Need more information?
+          </h2>
+          <p className="text-center">Give us a call or send an email.</p>
+          <div className="mt-5 flex justify-center gap-5">
+            <div className="flex flex-col items-center gap-5 text-center">
+              <DevicePhoneMobileIcon className="mx-auto h-[80px] w-[80px] text-neon-orange-500" />
+              <p className="text-lg font-bold text-hazard-blue-500">Call</p>
+              <p>(800) 269 - 1903 x321</p>
+            </div>
+            <div className="flex flex-col items-center gap-5 text-center">
+              <EnvelopeIcon className="mx-auto h-[80px] w-[80px] text-neon-orange-500" />
+              <p className="text-lg font-bold text-hazard-blue-500">Email</p>
+              <p>jnaldi@ifgsd.com</p>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );

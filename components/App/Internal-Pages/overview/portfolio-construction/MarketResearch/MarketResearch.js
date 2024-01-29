@@ -64,7 +64,7 @@ const MarketResearch = () => {
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <MagnifyingGlassIcon className="h-5 w-5" />
-          Market Research
+          Market Commentary
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">

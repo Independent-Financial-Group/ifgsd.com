@@ -139,8 +139,11 @@ const navigation = [
         name: "Portfolio Construction",
         links: [
           { name: "Overview", href: "/app/portfolio-construction/overview" },
-          { name: "Market Commentary", href: "#" },
-          { name: "Models", href: "#" },
+          {
+            name: "Market Commentary",
+            href: "/app/portfolio-construction/market-commentary",
+          },
+          { name: "Models", href: "/app/portfolio-construction/models" },
         ],
       },
       {
