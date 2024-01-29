@@ -140,7 +140,6 @@ const navigation = [
         links: [
           { name: "Overview", href: "/app/portfolio-construction/overview" },
           { name: "Market Commentary", href: "#" },
-          { name: "Research", href: "#" },
           { name: "Models", href: "#" },
         ],
       },
