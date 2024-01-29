@@ -486,9 +486,6 @@ export default function Layout({ children }) {
                     </li>
                   );
                 })}
-                {/* <li className="absolute bottom-0 w-full bg-gray-100 hover:bg-gray-300">
-
-                </li> */}
               </ul>
             </nav>
           </div>

@@ -5,7 +5,9 @@ import GridTile from "../../../../components/App/GridTile/GridTile";
 
 // CHART JS IMPORTS
 import { Chart as ChartJS } from "chart.js/auto";
-import { Bar, Pie } from "react-chartjs-2";
+import { Bar, Chart } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import Link from "next/link";
 // CONTENTFUL IMPORTS
 const contenful = require("contentful");
 
@@ -32,7 +34,7 @@ const index = () => {
     getModels();
   }, []);
 
-  const options = {
+  const optionsDesktop = {
     indexAxis: "y",
     elements: {
       bar: {
@@ -40,16 +42,20 @@ const index = () => {
       },
     },
     responsive: true,
-    plugins: {
-      //   legend: {
-      //     position: "right",
-      //   },
-      //   title: {
-      //     display: true,
-      //     text: "% of your time allocated",
-      //   },
-    },
+    maintainAspectRatio: true,
   };
+
+  const optionsMobile = {
+    indexAxis: "x",
+    elements: {
+      bar: {
+        borderWidth: 2,
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: true,
+  };
+
   return (
     <Layout>
       <PageHeader
@@ -103,28 +109,64 @@ const index = () => {
               <p className="mt-3 text-center font-semibold text-hazard-blue-500">
                 How do Advisors Actually Spend Their Time?
               </p>
-              <Bar
-                options={options}
-                data={{
-                  labels: [
-                    "Portfolio Management",
-                    "Financial Planning",
-                    "Client-Facing Activities",
-                    "Investment Management",
-                    "Administrative/Compliance Paperwork",
-                    "Prospecting New Clients",
-                    "Professional Development/Training",
-                  ],
-                  datasets: [
-                    {
-                      label: "% Time Allocated",
-                      data: [23, 16, 15, 14, 12, 11, 10],
-                      backgroundColor: "#FF7F4E",
-                      borderColor: "#FF7F4E",
-                    },
-                  ],
-                }}
-              />
+              <div className="hidden md:block">
+                <Bar
+                  plugins={[ChartDataLabels]}
+                  options={optionsDesktop}
+                  data={{
+                    labels: [
+                      "Portfolio Management",
+                      "Financial Planning",
+                      "Client-Facing Activities",
+                      "Investment Management",
+                      "Administrative/Compliance Paperwork",
+                      "Prospecting New Clients",
+                      "Professional Development/Training",
+                    ],
+                    datasets: [
+                      {
+                        label: "% Time Allocated",
+                        data: [23, 16, 15, 14, 12, 11, 10],
+                        backgroundColor: "#FF7F4E",
+                        borderColor: "#FF7F4E",
+                        datalabels: {
+                          color: "#ffffff",
+                          formatter: (value, context) => value + "%",
+                        },
+                      },
+                    ],
+                  }}
+                />
+              </div>
+              <div className="block md:hidden">
+                <Bar
+                  plugins={[ChartDataLabels]}
+                  options={optionsMobile}
+                  data={{
+                    labels: [
+                      "Portfolio Management",
+                      "Financial Planning",
+                      "Client-Facing Activities",
+                      "Investment Management",
+                      "Administrative/Compliance Paperwork",
+                      "Prospecting New Clients",
+                      "Professional Development/Training",
+                    ],
+                    datasets: [
+                      {
+                        label: "% Time Allocated",
+                        data: [23, 16, 15, 14, 12, 11, 10],
+                        backgroundColor: "#FF7F4E",
+                        borderColor: "#FF7F4E",
+                        datalabels: {
+                          color: "#ffffff",
+                          formatter: (value, context) => value + "%",
+                        },
+                      },
+                    ],
+                  }}
+                />
+              </div>
               <p className="text-center text-xs italic text-gray-500">
                 Data is based on a recent IFG survey.
               </p>
@@ -135,7 +177,7 @@ const index = () => {
           colSpan="col-span-12 "
           tileTitle="Overview of the AccessPoint Models"
         >
-          <ul className="grid grid-cols-3">
+          <ul className="py-4 xl:grid xl:grid-cols-3">
             {models.map((model) => {
               return (
                 <li>
@@ -152,12 +194,12 @@ const index = () => {
                     {!model.fields.modelDescription &&
                       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium alias quas fuga error eaque iusto unde repudiandae doloremque numquam!"}
                   </p>
-                  <a
+                  <Link
                     className="mx-auto block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
-                    href="#"
+                    href={`/app/portfolio-construction/models/${model.fields.slug}`}
                   >
                     Learn More
-                  </a>
+                  </Link>
                 </li>
               );
             })}

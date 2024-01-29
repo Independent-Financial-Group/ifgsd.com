@@ -56,22 +56,22 @@ const MarketResearch = () => {
                   {!model.fields.modelDescription &&
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium alias quas fuga error eaque iusto unde repudiandae doloremque numquam!"}
                 </p>
-                <a
+                <Link
                   className="mx-auto block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
-                  href="#"
+                  href={`/app/portfolio-construction/models/${model.fields.slug}`}
                 >
                   Learn More
-                </a>
+                </Link>
               </li>
             );
           })}
         </ul>
-        <a
+        <Link
           className="mx-auto mt-32 block w-fit rounded bg-hazard-blue-500 p-2 font-semibold text-seabreeze-500"
-          href="#"
+          href="/app/portfolio-construction/models"
         >
           See All Models
-        </a>
+        </Link>
       </div>
     </div>
   );
