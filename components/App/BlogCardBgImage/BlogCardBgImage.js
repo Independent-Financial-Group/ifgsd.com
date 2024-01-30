@@ -6,14 +6,14 @@ const BlogCardBgImage = ({
   excerpt,
 }) => {
   return (
-    <article className="group relative overflow-hidden rounded-lg shadow transition duration-700 hover:-translate-y-4 hover:shadow-xl">
+    <article className="group relative h-full overflow-hidden rounded-lg shadow transition duration-700 hover:-translate-y-4 hover:shadow-xl">
       <img
         alt="Office"
         src={imageUrl}
         className="absolute inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
       />
 
-      <div className="relative bg-gradient-to-t from-gray-900/90 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
+      <div className="relative h-full bg-gradient-to-t from-gray-900/90 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
         <div className="p-4 sm:p-6">
           <a href="#">
             <h3 className="mt-0.5 text-lg text-white">{title}</h3>
