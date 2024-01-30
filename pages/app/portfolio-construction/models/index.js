@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../../../components/App/Layout/Layout";
-import PageHeader from "../../../../components/App/Internal-Pages/PageHeader/PageHeader";
+import PageHeader from "../../../../components/App/InternalPages/PageHeader/PageHeader";
 import GridTile from "../../../../components/App/GridTile/GridTile";
 
 // CHART JS IMPORTS

@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../../components/App/Layout/Layout";
-import PageHeader from "../../../components/App/Internal-Pages/PageHeader/PageHeader";
-import OverviewVideo from "../../../components/app/Internal-Pages/overview/OverviewVideo/OverviewVideo";
-import DepartmentAnnouncements from "../../../components/App/Internal-Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
-import TeamDirectory from "../../../components/App/Internal-Pages/overview/TeamDirectory/TeamDirectory";
-import ModelsAtAGlance from "../../../components/App/Internal-Pages/overview/portfolio-construction/ModelsAtAGlance/ModelsAtAGlance";
-import MarketResearch from "../../../components/App/Internal-Pages/overview/portfolio-construction/MarketResearch/MarketResearch";
+import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
+import OverviewVideo from "../../../components/App/InternalPages/Overview/OverviewVideo/OverviewVideo";
+import DepartmentAnnouncements from "../../../components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
+import TeamDirectory from "../../../components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
+import ModelsAtAGlance from "../../../components/App/InternalPages/overview/portfolio-construction/ModelsAtAGlance/ModelsAtAGlance";
+import MarketResearch from "../../../components/App/InternalPages/overview/portfolio-construction/MarketResearch/MarketResearch";
 
 const overview = () => {
   return (

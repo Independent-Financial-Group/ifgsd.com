@@ -6,7 +6,7 @@ import OverviewVideo from "../../../components/App/InternalPages/Overview/Overvi
 import DepartmentAnnouncements from "../../../components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
 import ContentLibrary from "../../../components/App/InternalPages/Overview/ContentLibrary/ContentLibrary";
 import TeamDirectory from "../../../components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
-import ProductAdBanner from "../../../components/App/InternalPages/overview/ProductAdBanner/ProductAdBanner";
+import ProductAdBanner from "../../../components/App/InternalPages/Overview/ProductAdBanner/ProductAdBanner";
 
 const overview = () => {
   return (
