@@ -27,7 +27,6 @@ const MarketResearch = () => {
 
   useEffect(() => {
     getFeaturedModels();
-    console.log(featuredModels);
   }, []);
 
   return (
