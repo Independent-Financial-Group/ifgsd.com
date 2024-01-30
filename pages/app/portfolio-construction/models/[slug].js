@@ -74,52 +74,54 @@ const Model = ({ model }) => {
       <PageHeader pageName={model.fields.name} breadCrumb="Models" />
       <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
         <GridTile colSpan={"col-span-4"} tileTitle="Asset Allocation Breakdown">
-          <Doughnut
-            plugins={[ChartDataLabels]}
-            options={{
-              responsive: true,
-              maintainAspectRatio: true,
-              plugins: {
-                legend: {
-                  position: "right",
-                  labels: {
-                    usePointStyle: true,
-                    pointStyle: "circle",
+          <div className="flex flex-col items-center justify-center">
+            <Doughnut
+              plugins={[ChartDataLabels]}
+              options={{
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                  legend: {
+                    position: "right",
+                    labels: {
+                      usePointStyle: true,
+                      pointStyle: "circle",
+                    },
                   },
                 },
-              },
-            }}
-            data={{
-              labels:
-                model.fields.modelType == "Standard"
-                  ? ["Bonds", "Equities"]
-                  : model.fields.modelType == "With Alts"
-                  ? ["Bonds", "Equities", "Liquid Alts"]
-                  : ["Liquid Alts"],
-              datasets: [
-                {
-                  label: "percentage",
-                  data: [
-                    model.fields.bondsPercentage == 0
-                      ? ""
-                      : model.fields.bondsPercentage,
-                    model.fields.equitiesPercentage == 0
-                      ? ""
-                      : model.fields.equitiesPercentage,
-                    model.fields.liquidAltsPercentage == 0
-                      ? ""
-                      : model.fields.liquidAltsPercentage,
-                  ],
-                  backgroundColor: ["#6BA9C0", "#FF7F4E", "#054F7C"],
-                  datalabels: {
-                    color: "#ffffff",
-                    formatter: (value, context) =>
-                      value == 0 ? "" : value + "%",
+              }}
+              data={{
+                labels:
+                  model.fields.modelType == "Standard"
+                    ? ["Bonds", "Equities"]
+                    : model.fields.modelType == "With Alts"
+                    ? ["Bonds", "Equities", "Liquid Alts"]
+                    : ["Liquid Alts"],
+                datasets: [
+                  {
+                    label: "percentage",
+                    data: [
+                      model.fields.bondsPercentage == 0
+                        ? ""
+                        : model.fields.bondsPercentage,
+                      model.fields.equitiesPercentage == 0
+                        ? ""
+                        : model.fields.equitiesPercentage,
+                      model.fields.liquidAltsPercentage == 0
+                        ? ""
+                        : model.fields.liquidAltsPercentage,
+                    ],
+                    backgroundColor: ["#6BA9C0", "#FF7F4E", "#054F7C"],
+                    datalabels: {
+                      color: "#ffffff",
+                      formatter: (value, context) =>
+                        value == 0 ? "" : value + "%",
+                    },
                   },
-                },
-              ],
-            }}
-          />
+                ],
+              }}
+            />
+          </div>
         </GridTile>
         <GridTile
           tileTitle={`Holdings`}
