@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Layout from "../../../../components/App/Layout/Layout";
-import PageHeader from "../../../../components/App/Internal-Pages/PageHeader/PageHeader";
+import PageHeader from "../../../../components/App/InternalPages/PageHeader/PageHeader";
 import GridTile from "../../../../components/App/GridTile/GridTile";
-import SimilarModels from "../../../../components/App/Internal-Pages/overview/portfolio-construction/SimilarModels/SimilarModels";
+import SimilarModels from "../../../../components/App/InternalPages/Overview/portfolio-construction/SimilarModels/SimilarModels";
 // CHART JS IMPORTS
 import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";

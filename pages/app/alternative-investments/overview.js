@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../../../components/App/Layout/Layout";
-import PageHeader from "../../../components/App/Internal-Pages/PageHeader/PageHeader";
+import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
 import Head from "next/head";
-import OverviewVideo from "../../../components/app/Internal-Pages/overview/OverviewVideo/OverviewVideo";
-import DepartmentAnnouncements from "../../../components/App/Internal-Pages/overview/DepartmentAnnouncements/DepartmentAnnouncements";
-import ContentLibrary from "../../../components/App/Internal-Pages/overview/ContentLibrary/ContentLibrary";
-import TeamDirectory from "../../../components/App/Internal-Pages/overview/TeamDirectory/TeamDirectory";
-import ProductAdBanner from "../../../components/App/Internal-Pages/overview/ProductAdBanner/ProductAdBanner";
+import OverviewVideo from "../../../components/App/InternalPages/Overview/OverviewVideo/OverviewVideo";
+import DepartmentAnnouncements from "../../../components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
+import ContentLibrary from "../../../components/App/InternalPages/Overview/ContentLibrary/ContentLibrary";
+import TeamDirectory from "../../../components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
+import ProductAdBanner from "../../../components/App/InternalPages/overview/ProductAdBanner/ProductAdBanner";
 
 const overview = () => {
   return (
