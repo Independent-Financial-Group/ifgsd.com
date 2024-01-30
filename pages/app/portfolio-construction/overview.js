@@ -4,8 +4,8 @@ import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHea
 import OverviewVideo from "../../../components/App/InternalPages/Overview/OverviewVideo/OverviewVideo";
 import DepartmentAnnouncements from "../../../components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
 import TeamDirectory from "../../../components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
-import ModelsAtAGlance from "../../../components/App/InternalPages/overview/portfolio-construction/ModelsAtAGlance/ModelsAtAGlance";
-import MarketResearch from "../../../components/App/InternalPages/overview/portfolio-construction/MarketResearch/MarketResearch";
+import ModelsAtAGlance from "../../../components/App/InternalPages/Overview/PortfolioConstruction/ModelsAtAGlance/ModelsAtAGlance";
+import MarketResearch from "../../../components/App/InternalPages/Overview/PortfolioConstruction/MarketResearch/MarketResearch";
 
 const overview = () => {
   return (
