@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../components/App/Internal-Pages/PageHeader/PageHeader";
 import GridTile from "../../../../components/App/GridTile/GridTile";
+import SimilarModels from "../../../../components/App/Internal-Pages/overview/portfolio-construction/SimilarModels/SimilarModels";
 // CHART JS IMPORTS
 import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
@@ -89,7 +90,6 @@ const Model = ({ model }) => {
               },
             }}
             data={{
-              // labels: ["Bonds", "Equities", "Liquid Alts"],
               labels:
                 model.fields.modelType == "Standard"
                   ? ["Bonds", "Equities"]
@@ -121,19 +121,53 @@ const Model = ({ model }) => {
             }}
           />
         </GridTile>
-        <GridTile tileTitle={`Holdings`} colSpan={"col-span-8"}>
-          <p className="leading-7">
-            This portfolio applies global diversification, which we believe may
-            see lower volatility over time and expanded investment opportunities
-            for growth because it reduces concentration in one geographical
-            region. This conservative portfolio is best suited for investors
-            with shorter time periods, typically less than five years, or more
-            important goals. It emphasizes defensive asset classes such as
-            Treasury bonds and cash while holding little or no volatile
-            investments such as stocks.
-          </p>
+        <GridTile
+          tileTitle={`Holdings`}
+          colSpan={"col-span-8 h-[500px]"}
+          scroll={true}
+        >
+          <table className="min-w-full divide-y divide-gray-300">
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                  className="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter"
+                >
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  className="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell"
+                >
+                  Ticker
+                </th>
+                <th
+                  scope="col"
+                  className="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:table-cell"
+                >
+                  Allocation
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {model.fields.holdings.map((holding) => (
+                <tr key={holding.ticker}>
+                  <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    {holding.name}
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    {holding.ticker == "NA" ? "" : holding.ticker}
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    {holding.allocation}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </GridTile>
-        <div className="col-span-12">
+        <SimilarModels type={model.fields.modelType} />
+        <div className="col-span-7 flex flex-col items-center justify-center">
           <h2 className="text-center text-2xl font-semibold text-neon-orange-500">
             Need more information?
           </h2>
