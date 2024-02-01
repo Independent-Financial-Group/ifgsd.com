@@ -11,6 +11,7 @@ import Container from "../../../components/Container/Container";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import PreviewBanner from "../../../components/App/PreviewBanner/PreviewBanner";
 
 import * as contentful from "../../../utils/contentful";
 import { useContentfulLiveUpdates } from "@contentful/live-preview/react";
@@ -59,12 +60,14 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
   return {
     props: {
       release: pressReleases.items[0],
+      preview: preview || false,
+      draftMode: draftMode || false,
     },
     revalidate: 5,
   };
 };
 
-const pressRelease = ({ release }) => {
+const pressRelease = ({ release, preview }) => {
   if (!release) return <div>Loading...</div>;
 
   const updatedRelease = useContentfulLiveUpdates(release);
@@ -95,6 +98,7 @@ const pressRelease = ({ release }) => {
         />
         <meta name="robots" content="follow, index" />
       </Head>
+      {preview && <PreviewBanner />}
       <PublicLayout>
         <header className="bg-neon-orange-500 bg-cover bg-center bg-no-repeat px-10 py-24">
           <Container>
@@ -106,7 +110,7 @@ const pressRelease = ({ release }) => {
                 {updatedRelease.fields.title}
               </h1>
               <p className="text-center text-base text-seabreeze-500">
-                {updatedRelease.fields.date}
+                {formatDateAndTime(updatedRelease.fields.date, "day")}
               </p>
             </div>
           </Container>
