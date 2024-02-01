@@ -14,19 +14,19 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <NextNProgress color="#F47E50" />
-      <ContentfulLivePreviewProvider
-        locale="en-US"
-        enableInspectorMode={pageProps.preview}
-        enableLiveUpdates={pageProps.preview}
+      <ClerkProvider
+        {...pageProps}
+        appearance={{ elements: { footer: "hidden" } }}
       >
-        <ClerkProvider
-          {...pageProps}
-          appearance={{ elements: { footer: "hidden" } }}
+        <ContentfulLivePreviewProvider
+          locale="en-US"
+          enableInspectorMode={pageProps.preview}
+          enableLiveUpdates={pageProps.preview}
         >
           <Component className="box-border" {...pageProps} />
           <Analytics />
-        </ClerkProvider>
-      </ContentfulLivePreviewProvider>
+        </ContentfulLivePreviewProvider>
+      </ClerkProvider>
     </>
   );
 }
