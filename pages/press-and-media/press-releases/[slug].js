@@ -12,15 +12,10 @@ import { formatDateAndTime } from "@contentful/f36-datetime";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
-const contentful = require("contentful");
-
-const client = contentful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+import * as contentful from "../../../utils/contentful";
 
 export const getStaticPaths = async () => {
-  const pressReleases = await client.getEntries({
+  const pressReleases = await contentful.client.getEntries({
     content_type: "pressRelease",
     order: "-fields.date",
   });
@@ -59,8 +54,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, draftMode }) => {
   const slug = params.slug;
+  console.log(`draft mode: ${draftMode}`);
+
+  const client = draftMode ? contentful.previewClient : contentful.client;
 
   const pressReleases = await client.getEntries({
     content_type: "pressRelease",
