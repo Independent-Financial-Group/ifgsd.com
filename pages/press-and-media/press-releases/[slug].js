@@ -13,6 +13,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
 import * as contentful from "../../../utils/contentful";
+import { useContentfulLiveUpdates } from "@contentful/live-preview/react";
 
 export const getStaticPaths = async () => {
   const pressReleases = await contentful.client.getEntries({
@@ -20,26 +21,15 @@ export const getStaticPaths = async () => {
     order: "-fields.date",
   });
 
-  const formattedPressReleases = pressReleases.items.map((item) => {
-    return {
-      date: formatDateAndTime(item.fields.date, "day"),
-      editor: item.fields.author.fields,
-      title: item.fields.title,
-      slug: item.fields.slug,
-      description: item.fields.description,
-      writtenContent: item.fields.writtenContent,
-    };
-  });
-
-  const paths = await formattedPressReleases.map((release) => {
+  const paths = await pressReleases.items.map((release) => {
     return {
       params: {
-        slug: release.slug,
+        slug: release.fields.slug,
       },
     };
   });
 
-  if (!formattedPressReleases.length) {
+  if (!pressReleases.items.length) {
     return {
       redirect: {
         destination: "/",
@@ -54,11 +44,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params, draftMode }) => {
+export const getStaticProps = async ({ params, preview, draftMode }) => {
   const slug = params.slug;
-  console.log(`draft mode: ${draftMode}`);
 
-  const client = draftMode ? contentful.previewClient : contentful.client;
+  const client =
+    preview || draftMode ? contentful.previewClient : contentful.client;
 
   const pressReleases = await client.getEntries({
     content_type: "pressRelease",
@@ -66,21 +56,9 @@ export const getStaticProps = async ({ params, draftMode }) => {
     "fields.slug[match]": slug,
   });
 
-  const formattedPressReleases = pressReleases.items.map((item) => {
-    return {
-      image: item.fields.image,
-      date: formatDateAndTime(item.fields.date, "day"),
-      editor: item.fields.author.fields,
-      title: item.fields.title,
-      slug: item.fields.slug,
-      description: item.fields.description,
-      writtenContent: item.fields.writtenContent,
-    };
-  });
-
   return {
     props: {
-      release: formattedPressReleases[0],
+      release: pressReleases.items[0],
     },
     revalidate: 5,
   };
@@ -88,6 +66,8 @@ export const getStaticProps = async ({ params, draftMode }) => {
 
 const pressRelease = ({ release }) => {
   if (!release) return <div>Loading...</div>;
+
+  const updatedRelease = useContentfulLiveUpdates(release);
 
   const options = {
     renderNode: {
@@ -103,12 +83,14 @@ const pressRelease = ({ release }) => {
   return (
     <>
       <Head>
-        <title>{`${release.title} | IFG Press Release`}</title>
+        <title>{`${updatedRelease.fields.title} | IFG Press Release`}</title>
         <meta
           name="description"
           content={
-            release.writtenContent.content[0].content[0].value.slice(0, 116) +
-            "..."
+            updatedRelease.fields.writtenContent.content[0].content[0].value.slice(
+              0,
+              116,
+            ) + "..."
           }
         />
         <meta name="robots" content="follow, index" />
@@ -121,10 +103,10 @@ const pressRelease = ({ release }) => {
                 - Press Release -
               </p>
               <h1 className="my-5 text-center font-semibold text-seabreeze-500 md:text-3xl">
-                {release.title}
+                {updatedRelease.fields.title}
               </h1>
               <p className="text-center text-base text-seabreeze-500">
-                {release.date}
+                {updatedRelease.fields.date}
               </p>
             </div>
           </Container>
@@ -132,25 +114,37 @@ const pressRelease = ({ release }) => {
         <section>
           <Container>
             <Image
-              src={`https:${release.image.fields.file.url}`}
-              alt={release.image.fields.title}
-              width={release.image.fields.file.details.image.width}
-              height={release.image.fields.file.details.image.height}
+              src={`https:${updatedRelease.fields.image.fields.file.url}`}
+              alt={updatedRelease.fields.image.fields.title}
+              width={
+                updatedRelease.fields.image.fields.file.details.image.width
+              }
+              height={
+                updatedRelease.fields.image.fields.file.details.image.height
+              }
               className="mx-auto  my-5 h-[250px] w-[90%] rounded-[20px] object-contain md:h-[450px] lg:w-[688px]"
             />
             <div>
               <div className="flex flex-col items-center">
                 <Image
-                  src={`https:${release.editor.photo.fields.file.url}`}
-                  height={release.editor.photo.fields.file.details.image.height}
-                  width={release.editor.photo.fields.file.details.image.width}
-                  alt={`Image of the editor of this article, ${release.editor.fullName}`}
+                  src={`https:${updatedRelease.fields.author.fields.photo.fields.file.url}`}
+                  height={
+                    updatedRelease.fields.author.fields.photo.fields.file
+                      .details.image.height
+                  }
+                  width={
+                    updatedRelease.fields.author.fields.photo.fields.file
+                      .details.image.width
+                  }
+                  alt={`Image of the editor of this article, ${updatedRelease.fields.author.fields.fullName}`}
                   className="h-[100px] w-[100px] rounded-full"
                 />
                 <h2 className=" text-base font-bold text-neon-orange-500">
-                  {release.editor.fullName}
+                  {updatedRelease.fields.author.fields.fullName}
                 </h2>
-                <p className="text-center text-sm">{release.editor.role}</p>
+                <p className="text-center text-sm">
+                  {updatedRelease.fields.author.fields.role}
+                </p>
                 <a
                   href="mailto:psaunders@ifgsd.com"
                   className="text-xs font-bold underline"
@@ -159,7 +153,10 @@ const pressRelease = ({ release }) => {
                 </a>
               </div>
               <article className="mx-auto my-10 max-w-prose rounded-lg bg-white px-8 py-10 shadow-md">
-                {documentToReactComponents(release.writtenContent, options)}
+                {documentToReactComponents(
+                  updatedRelease.fields.writtenContent,
+                  options,
+                )}
               </article>
             </div>
           </Container>

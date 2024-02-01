@@ -6,6 +6,7 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
   //MAKE ALL ROUTES BUT /APP PUBLIC
   publicRoutes: (req) => !req.url.includes("/app"),
+  ignoredRoutes: (req) => !req.url.includes("/app"),
 });
 
 export const config = {
