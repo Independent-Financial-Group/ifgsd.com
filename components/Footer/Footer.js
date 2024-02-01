@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 
 const Footer = () => {
   const router = useRouter();
-  console.log(router.pathname);
 
   return (
     <footer className="bg-[#ECF1F6] dark:bg-gray-800 sm:p-6">

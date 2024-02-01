@@ -38,8 +38,6 @@ const UpcomingEvents = () => {
 
   useEffect(() => {
     getEvents();
-    console.log(events);
-    console.log(todaysDate);
   }, []);
 
   return (

@@ -27,7 +27,6 @@ const SimilarModels = ({ type }) => {
 
   useEffect(() => {
     getSimilarModels();
-    console.log(similarModels);
   }, []);
 
   return (
