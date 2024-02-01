@@ -4,17 +4,15 @@ import ContentContainer from "../../../../../components/App/ContentContainer/Con
 import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 import options from "../../../../../rich-text-options";
-// CONTENTFUL IMPORTS
-const contenful = require("contentful");
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import PreviewBanner from "../../../../../components/App/PreviewBanner/PreviewBanner";
 
-const client = contenful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+// CONTENTFUL IMPORTS
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import * as contentful from "../../../../../utils/contentful";
+import { useContentfulLiveUpdates } from "@contentful/live-preview/react";
 
 export async function getStaticPaths() {
-  const response = await client.getEntries({
+  const response = await contentful.client.getEntries({
     content_type: "marketCommentary",
     "fields.topic[match]": "Metrics that Matter",
   });
@@ -42,8 +40,10 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, preview, draftMode }) => {
   const slug = params.slug;
+  const client =
+    preview || draftMode ? contentful.previewClient : contentful.client;
 
   const articles = await client.getEntries({
     content_type: "marketCommentary",
@@ -54,14 +54,17 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       article: articles.items[0],
+      preview: preview || false,
+      draftMode: draftMode || false,
     },
     revalidate: 5,
   };
 };
 
-const Article = ({ article }) => {
+const Article = ({ article, preview, draftMode }) => {
   return (
     <Layout>
+      {preview && <PreviewBanner />}
       <article className="mx-auto mt-5 max-w-prose">
         <ReactPlayer
           url={article.fields.videoLink}
