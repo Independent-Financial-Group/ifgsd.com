@@ -83,8 +83,10 @@ const UpcomingEvents = () => {
                   <div className="flex flex-col gap-2 text-xs">
                     <p className="flex items-center gap-1 text-xs">
                       <CalendarIcon className="h-5" />
-                      {formatDateAndTime(event.fields.date, "full")} -{" "}
-                      {formatDateAndTime(event.fields.endDate, "full")}
+                      {formatDateAndTime(event.fields.date, "full")}{" "}
+                      {event.fields.hideEndDate
+                        ? ""
+                        : `-${formatDateAndTime(event.fields.endDate, "full")}`}
                     </p>
                     <p className="flex items-center gap-1 text-xs">
                       <MapPinIcon className="h-5" />
