@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MegaphoneIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import * as contentful from "../../../../../utils/contentful";
+import { formatDateAndTime } from "@contentful/f36-datetime";
 
 const DepartmentAnnouncements = ({ department }) => {
-  const announcements = null;
+  const [announcements, setAnnouncements] = useState([]);
+  const getAnnouncements = async () => {
+    const data = contentful.client
+      .getEntries({
+        content_type: "announcements",
+        "fields.department[match]": department,
+        order: "-fields.date",
+      })
+      .then((response) => setAnnouncements([...response.items]));
+  };
+
+  useEffect(() => {
+    getAnnouncements();
+  }, []);
 
   return (
     <div className="col-span-6 h-[500px] rounded-lg bg-white shadow">
@@ -22,19 +37,19 @@ const DepartmentAnnouncements = ({ department }) => {
         {announcements && (
           <ol className="divide-y divide-gray-100">
             {announcements.map((announcement) => (
-              <li key={announcement.title} className="flex gap-x-4 px-3 py-5">
+              <li key={announcement.sys.id} className="flex gap-x-4 px-3 py-5">
                 <div className="min-w-0">
                   <p className="text-sm font-semibold leading-6 text-gray-900">
-                    {announcement.title}
+                    {announcement.fields.title}
                   </p>
                   <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                    {announcement.date}
+                    {formatDateAndTime(announcement.fields.date, "day")}
                   </p>
                   <p className="my-2 text-xs leading-7 text-gray-900">
-                    {announcement.excerpt}
+                    {announcement.fields.excerpt}
                   </p>
                   <Link
-                    href="#"
+                    href={announcement.fields.slug}
                     className="flex items-center justify-end gap-1 text-xs font-semibold hover:text-neon-orange-600"
                   >
                     Read More <ChevronRightIcon className="h-3" />
