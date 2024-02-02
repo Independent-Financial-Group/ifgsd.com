@@ -17,7 +17,7 @@ const index = () => {
       excerpt:
         "Dive into timely asset class research and portfolio construction education to help navigate ever-evolving markets.",
       url: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      link: "/app/portfolio-construction/market-commentary/research",
+      link: "/app/portfolio-construction/market-commentary/portfolio-construction-research",
     },
     {
       name: "Market & Economic Commentary",
