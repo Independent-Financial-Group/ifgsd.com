@@ -35,14 +35,14 @@ const TeamDirectory = ({ department }) => {
   }, []);
 
   return (
-    <div className="col-span-8 rounded-lg bg-white shadow">
+    <div className="col-span-8 h-[500px] rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           <UserGroupIcon className="h-5 w-5" />
           Your {department} Team
         </h2>
       </div>
-      <ol className="divide-y divide-gray-100 px-4">
+      <ol className="h-[90%] divide-y divide-gray-100 overflow-y-auto px-4">
         {isLoading && (
           <>
             <div class="w-full rounded-md p-4">
