@@ -39,7 +39,10 @@ const navigation = [
         name: "Alt. Investments",
         links: [
           { name: "Overview", href: "/app/alternative-investments/overview" },
-          { name: "Approved Products", href: "#" },
+          {
+            name: "Inventories",
+            href: "/app/alternative-investments/inventories",
+          },
           { name: "Partners", href: "#" },
           { name: "Tools", href: "#" },
           { name: "Education", href: "#" },
@@ -108,11 +111,16 @@ const navigation = [
       {
         name: "Info. Technology",
         links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
+          { name: "Overview", href: "/app/information-technology/overview" },
+          {
+            name: "Service Status",
+            href: "/app/information-technology/service-status",
+          },
+          {
+            name: "Remote Support",
+            href: "/app/information-technology/remote-support",
+          },
+          { name: "Education", href: "/app/information-technology/education" },
         ],
       },
       {
