@@ -3,58 +3,7 @@ import { MegaphoneIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const DepartmentAnnouncements = ({ department }) => {
-  // const announcements = null;
-  const announcements = [
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-  ];
+  const announcements = null;
 
   return (
     <div className="col-span-6 h-[500px] rounded-lg bg-white shadow">
