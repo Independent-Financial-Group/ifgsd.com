@@ -3,9 +3,18 @@ import Link from "next/link";
 
 import { formatDateAndTime } from "@contentful/f36-datetime";
 
-const BlogCardSimple = ({ date, title, excerpt, slug, thumbnail }) => {
+const BlogCardSimple = ({
+  date,
+  title,
+  excerpt,
+  slug = "#",
+  thumbnail,
+  colSpan,
+}) => {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+    <article
+      className={`flex h-full flex-col overflow-hidden rounded-lg shadow transition hover:shadow-lg col-span-${colSpan}`}
+    >
       <img
         alt="Office"
         src={`https:${thumbnail}`}
