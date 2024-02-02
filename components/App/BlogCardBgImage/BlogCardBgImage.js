@@ -6,9 +6,12 @@ const BlogCardBgImage = ({
   title,
   excerpt,
   link,
+  colSpan,
 }) => {
   return (
-    <article className="group relative h-full overflow-hidden rounded-lg shadow transition duration-700 hover:-translate-y-4 hover:shadow-xl">
+    <article
+      className={`group relative h-full overflow-hidden rounded-lg shadow transition duration-700 hover:-translate-y-4 hover:shadow-xl col-span-${colSpan}`}
+    >
       <img
         alt="Office"
         src={imageUrl}

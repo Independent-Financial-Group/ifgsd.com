@@ -66,7 +66,7 @@ const Article = ({ article, preview, draftMode }) => {
       {preview && <PreviewBanner />}
       <div className="flex min-h-screen items-center justify-center">
         <article className="mx-auto w-3/4 rounded-lg bg-white px-4 py-3">
-          <h1 className="mb-5 text-4xl text-neon-orange-500">
+          <h1 className="mb-5 text-center text-4xl text-neon-orange-500">
             {article.fields.title}
           </h1>
           <img
@@ -82,6 +82,9 @@ const Article = ({ article, preview, draftMode }) => {
           >
             &larr;Back
           </Link>
+          <p className="my-5 text-center text-lg font-bold uppercase text-neon-orange-400">
+            For Financial Professional Use Only
+          </p>
         </article>
       </div>
     </Layout>

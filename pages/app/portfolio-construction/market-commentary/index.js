@@ -19,12 +19,12 @@ const index = () => {
       url: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       link: "/app/portfolio-construction/market-commentary/portfolio-construction-research",
     },
-    {
-      name: "Market & Economic Commentary",
-      excerpt: "Stay up to date on what’s driving recent market returns",
-      url: "https://images.pexels.com/photos/1438190/pexels-photo-1438190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      link: "/app/portfolio-construction/market-commentary/commentary",
-    },
+    // {
+    //   name: "Market & Economic Commentary",
+    //   excerpt: "Stay up to date on what’s driving recent market returns",
+    //   url: "https://images.pexels.com/photos/1438190/pexels-photo-1438190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //   link: "/app/portfolio-construction/market-commentary/commentary",
+    // },
   ];
 
   return (
@@ -39,10 +39,10 @@ const index = () => {
           <h2 className="text-2xl font-semibold text-hazard-blue-500">
             Topics
           </h2>
-          <ol className="mt-5 xl:grid xl:grid-cols-3 xl:gap-5">
+          <ol className="mt-5 xl:grid xl:grid-cols-4 xl:gap-5">
             {topics.map((topic) => {
               return (
-                <li className="h-full">
+                <li className="col-span-2 h-full">
                   <BlogCardBgImage
                     title={topic.name}
                     excerpt={topic.excerpt}
