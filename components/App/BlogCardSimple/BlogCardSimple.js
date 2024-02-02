@@ -5,14 +5,14 @@ import { formatDateAndTime } from "@contentful/f36-datetime";
 
 const BlogCardSimple = ({ date, title, excerpt, slug, thumbnail }) => {
   return (
-    <article className="h-full overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+    <article className="flex h-full flex-col overflow-hidden rounded-lg shadow transition hover:shadow-lg">
       <img
         alt="Office"
         src={`https:${thumbnail}`}
         className="h-56 w-full object-cover"
       />
 
-      <div className="h-full bg-white p-4 sm:p-6">
+      <div className="flex h-full flex-col bg-white p-4 sm:p-6">
         <time datetime="2022-10-10" className="block text-xs text-gray-500">
           {formatDateAndTime(date, "day")}
         </time>
@@ -23,7 +23,7 @@ const BlogCardSimple = ({ date, title, excerpt, slug, thumbnail }) => {
           </h3>
         </Link>
 
-        <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+        <p className="mt-auto line-clamp-3 text-sm/relaxed leading-6 text-gray-500">
           {excerpt}
         </p>
       </div>
