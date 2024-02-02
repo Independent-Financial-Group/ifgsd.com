@@ -1,7 +1,7 @@
 import { COOKIE_NAME_PRERENDER_BYPASS } from "next/dist/server/api-utils";
 
 export default function handler(req, res) {
-  const { slug, contentType, topic } = req.query;
+  const { slug, contentType, topic, department } = req.query;
   res.setPreviewData({});
   res.setDraftMode({ enable: true });
 
@@ -17,6 +17,11 @@ export default function handler(req, res) {
         } else if (topic == "Portfolio Construction Research") {
           pathPrefix =
             "/app/portfolio-construction/market-commentary/portfolio-construction-research/";
+        }
+        break;
+      case "education":
+        if (department == "Information Technology") {
+          pathPrefix = "/app/information-technology/education/";
         }
         break;
     }
