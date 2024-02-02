@@ -28,7 +28,11 @@ const overview = () => {
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <OverviewVideo url="https://vimeo.com/245828169?share=copy" />
           <DepartmentAnnouncements department={"alts"} />
-          <ProductAdBanner />
+          <ProductAdBanner
+            url={
+              "https://images.ctfassets.net/9lvru9ro1ti1/2mtjSuITOLE31fF5OV45XY/354efb69633de440ea2533a25c7f4220/sealy_banner_ad_2023.jpg"
+            }
+          />
           <ContentLibrary />
           <TeamDirectory department="Alternative Investments" />
         </div>
