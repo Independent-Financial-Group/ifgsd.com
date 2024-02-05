@@ -29,7 +29,6 @@ const index = () => {
       })
       .then((response) => {
         setEpisodes([...response.items]);
-        console.log(response.items);
       });
   };
 
