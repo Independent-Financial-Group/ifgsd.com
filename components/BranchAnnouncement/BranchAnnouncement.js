@@ -19,8 +19,10 @@ const BranchAnnouncement = ({ newBranch }) => {
             IFG Welcomes
           </h2>
           <p className="my-4 text-lg font-semibold lg:text-xl">
-            {`${fields.repNames[0]} ${fields.repNames[1]}`} with {fields.dba}{" "}
-            from {fields.officeLocation}
+            {fields.repNames.map((name) => (
+              <span>{name}</span>
+            ))}{" "}
+            with {fields.dba} from {fields.officeLocation}
           </p>
           {/* <Link
             className="rounded-lg bg-neon-orange-500 px-4 py-2 font-bold"
