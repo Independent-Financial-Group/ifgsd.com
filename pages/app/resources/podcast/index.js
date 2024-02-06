@@ -18,6 +18,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import * as contentful from "../../../../utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
+import Link from "next/link";
 
 const index = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -26,6 +27,7 @@ const index = () => {
     const data = await contentful.client
       .getEntries({
         content_type: "podcast",
+        limit: 6,
       })
       .then((response) => {
         setEpisodes([...response.items]);
@@ -103,9 +105,12 @@ const index = () => {
                 <ChevronRightIcon className="h-5 w-5" />
               </button>
             </div>
-            <button className="mx-auto mb-5 block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500">
+            <Link
+              href="/app/resources/podcast/all-episodes"
+              className="mx-auto mb-5 block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
+            >
               All Episodes
-            </button>
+            </Link>
           </GridTile>
           <section className="col-span-12 xl:grid xl:grid-cols-2 xl:gap-5">
             <div>
