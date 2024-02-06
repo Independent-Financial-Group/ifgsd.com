@@ -53,7 +53,7 @@ const EmployeeSearchAndFilter = ({ departmentFilter, setDepartmentFilter }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute top-full mt-2 flex h-[300px] flex-col gap-3 divide-y overflow-y-auto rounded-lg bg-white px-2 py-4 shadow-lg">
+            <Listbox.Options className="absolute top-full z-50 mt-2 flex h-[300px] flex-col gap-3 divide-y overflow-y-auto rounded-lg bg-white px-2 py-4 shadow-lg">
               {departments.map((department) => (
                 <Listbox.Option
                   className="pt-3 hover:cursor-pointer"
@@ -82,19 +82,19 @@ const EmployeeSearchAndFilter = ({ departmentFilter, setDepartmentFilter }) => {
 
 const EmployeeCard = ({ employeeData }) => {
   return (
-    <div className="col-span-4 rounded-lg bg-gray-100 px-2 py-5 text-gray-700 shadow hover:-translate-y-2 hover:cursor-pointer hover:shadow-lg ">
+    <div className="relative col-span-4 rounded-lg bg-gray-100 px-2 py-5 text-gray-700 shadow hover:-translate-y-2 hover:cursor-pointer hover:shadow-lg">
       <img
         src={`https:${employeeData.fields.headshot.fields.file.url}`}
-        className="mx-auto h-28 w-28 rounded-full border-4 border-neon-orange-500 shadow-md"
+        className="absolute -top-1/3 left-1/2 mx-auto h-28 w-28 -translate-x-1/2 rounded-full border-4 border-neon-orange-500 shadow-lg"
       />
-      <h3 className="text-center text-lg font-semibold text-hazard-blue-500">
+      <h3 className="mt-8 text-center text-lg font-semibold text-hazard-blue-500">
         {employeeData.fields.fullName}
       </h3>
       <p className="line-clamp-1 text-center text-base font-semibold">
         {employeeData.fields.title}
       </p>
       <p className="text-center text-sm">{employeeData.fields.department}</p>
-      <div className="my-5 flex items-center gap-3 text-center">
+      <div className="my-5 flex flex-col items-center gap-3 text-center">
         <p className="text-sm">
           <EnvelopeIcon className="mr-3 inline-block h-4 w-4 text-gray-700" />
           {employeeData.fields.eMail}
@@ -155,7 +155,7 @@ const companyDirectory = () => {
           pageName="Home Office Company Directory"
           breadCrumb="Resources"
         />
-        <ContentContainer>
+        <div className="my-10 flex flex-col gap-x-5 gap-y-24 px-8 xl:grid xl:grid-cols-12">
           <section className="col-span-full">
             <h2 className="text-center text-xl font-semibold text-hazard-blue-500">
               Using the Directory
@@ -185,7 +185,7 @@ const companyDirectory = () => {
               })}
             </>
           )}
-        </ContentContainer>
+        </div>
       </Layout>
     </>
   );
