@@ -24,7 +24,7 @@ const overview = () => {
           headerText={"Information Technology"}
         />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-          <OverviewVideo url="https://vimeo.com/245828169?share=copy" />
+          <OverviewVideo url="https://vimeo.com/manage/videos/864186162" />
           <DepartmentAnnouncements department={"Information Technology"} />
           <ProductAdBanner
             url={
