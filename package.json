@@ -39,6 +39,8 @@
     "@react-email/tailwind": "0.0.13",
     "@react-email/text": "0.0.6",
     "@sendgrid/mail": "^7.7.0",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@vercel/analytics": "^1.1.1",
     "@vis.gl/react-google-maps": "^0.1.2",
     "animate.css": "^4.1.1",
