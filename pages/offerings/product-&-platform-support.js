@@ -29,7 +29,7 @@ const client = contenful.createClient({
 export async function getStaticProps() {
   const initialData = await client.getEntries({
     content_type: "partners",
-    "metadata.tags.sys.id[in]": "elite",
+    "fields.partnerLevel[match]": "elite",
     order: "fields.partnerName",
   });
 
@@ -135,12 +135,12 @@ const productSupport = ({ formattedData }) => {
             <h2 className="bg-gradient-to-r from-blue-wave-400 via-blue-wave-500 to-blue-wave-400 bg-clip-text text-center text-[72px] font-bold text-transparent lg:text-[100px]">
               Invest with our Elite Partners
             </h2>
-            <ul className="mt-5 flex flex-col gap-5 lg:grid lg:grid-cols-3">
+            <ul className=" mt-5 flex w-full flex-col gap-5 lg:grid lg:grid-cols-6 [&>*:last-child:nth-child(3n-2)]:col-start-3 [&>*:last-child:nth-child(3n-2)]:col-end-5">
               {formattedData.map((partner) => {
                 return (
                   <li
                     key={partner.id}
-                    className=" flex items-center justify-center rounded-lg bg-white py-5 text-center text-2xl font-bold text-seabreeze-500"
+                    className="flex items-center justify-center rounded-lg bg-white py-5 text-center text-2xl font-bold text-seabreeze-500 lg:col-span-2"
                   >
                     <Image
                       src={`https:${partner.logo.fields.file.url}`}
@@ -152,35 +152,12 @@ const productSupport = ({ formattedData }) => {
                   </li>
                 );
               })}
-              <li className="flex items-center justify-center rounded-lg bg-gradient-to-r from-hazard-blue-500 to-blue-wave-500 py-5 text-center text-2xl font-bold text-seabreeze-500">
+              <li className=" flex items-center justify-center rounded-lg bg-gradient-to-r from-hazard-blue-500 to-blue-wave-500 py-5 text-center text-2xl font-bold text-seabreeze-500">
                 and more...
               </li>
             </ul>
           </Container>
         </section>
-        {/* <section className="my-10 lg:my-32">
-          <Container>
-            <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
-              <div>
-                <Image
-                  src={wealthDataPlatform}
-                  alt="IFG's proprietary wealth data platform"
-                />
-              </div>
-              <div>
-                <h2 className="flex gap-5 text-3xl font-bold text-neon-orange-500">
-                  <Image src={highlightBlue} />
-                  Robust Wealth Data Visualization
-                </h2>
-                <p className="mt-5 text-xl">
-                  IFG&apos;s Wealth Data Platform allows you to visualize all of
-                  your clients financial data to offer comprehensive guidance,
-                  wherever they are on their wealth journey.
-                </p>
-              </div>
-            </div>
-          </Container>
-        </section> */}
         <section className="rounded-[20px] bg-gradient-to-r from-hazard-blue-500 to-blue-wave-400 py-32 lg:rounded-[40px]">
           <Container
             classes={
