@@ -11,7 +11,11 @@ import * as contentful from "../../../utils/contentful";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-const EmployeeSearchAndFilter = ({ departmentFilter, setDepartmentFilter }) => {
+const EmployeeSearchAndFilter = ({
+  departmentFilter,
+  setDepartmentFilter,
+  setQuery,
+}) => {
   const departments = [
     "All Departments",
     "Accounting",
@@ -70,10 +74,10 @@ const EmployeeSearchAndFilter = ({ departmentFilter, setDepartmentFilter }) => {
       <div>
         <input
           type="text"
-          name="first-name"
-          id="first-name"
-          autoComplete="given-name"
+          name="search"
+          id="search"
           className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-neon-orange-600 sm:text-sm sm:leading-6"
+          onChange={(e) => setQuery(e.target.value)}
         />
       </div>
     </div>
@@ -112,6 +116,7 @@ const companyDirectory = () => {
   const [directory, setDirectory] = useState([]);
   const [directoryIsLoading, setDirectoryIsLoading] = useState(false);
   const [departmentFilter, setDepartmentFilter] = useState("All Departments");
+  const [query, setQuery] = useState(null);
 
   const getDirectory = async (filter) => {
     setDirectoryIsLoading(true);
@@ -121,7 +126,18 @@ const companyDirectory = () => {
         .getEntries({
           content_type: "companyDirectory",
           order: "fields.fullName",
-          query: filter,
+          "fields.department[in]": filter,
+        })
+        .then((response) => {
+          setDirectory([...response.items]);
+          setDirectoryIsLoading(false);
+        });
+    } else if (query) {
+      const data = await contentful.client
+        .getEntries({
+          content_type: "companyDirectory",
+          order: "fields.fullName",
+          query: query,
         })
         .then((response) => {
           setDirectory([...response.items]);
@@ -143,7 +159,7 @@ const companyDirectory = () => {
   useEffect(() => {
     setDirectoryIsLoading(true);
     getDirectory(departmentFilter);
-  }, [departmentFilter]);
+  }, [departmentFilter, query]);
 
   return (
     <>
@@ -167,6 +183,7 @@ const companyDirectory = () => {
             <EmployeeSearchAndFilter
               departmentFilter={departmentFilter}
               setDepartmentFilter={setDepartmentFilter}
+              setQuery={setQuery}
             />
           </section>
           {directoryIsLoading && (
