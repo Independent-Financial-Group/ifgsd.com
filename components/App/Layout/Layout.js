@@ -311,6 +311,7 @@ export default function Layout({ children }) {
                                           <Disclosure
                                             as="ul"
                                             className="ml-8 flex flex-col"
+                                            key={childItem.name}
                                           >
                                             <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                               {childItem.name}
@@ -326,6 +327,7 @@ export default function Layout({ children }) {
                                                       return (
                                                         <>
                                                           <Link
+                                                            key={link.href}
                                                             href={link.href}
                                                             className={classNames(
                                                               parentItem.current
@@ -390,7 +392,7 @@ export default function Layout({ children }) {
                 {/* LOOP THROUGH NAVIGATION ARRAY */}
                 {navigation.map((parentItem) => {
                   return (
-                    <li className="px-4">
+                    <li key={parentItem.name} className="px-4">
                       {/* RENDER A DISCLOSURE FOR THE PARENT ITEM IN THE NAVIGATION ARRAY */}
                       <Disclosure as="div">
                         {({ open }) => (
@@ -420,7 +422,7 @@ export default function Layout({ children }) {
                                         <>
                                           {/* DOES THE CHILD ITEM HAVE LINKS? */}
                                           {childItem.links ? (
-                                            <Disclosure>
+                                            <Disclosure key={childItem.name}>
                                               {({ open }) => {
                                                 return (
                                                   <>
@@ -443,6 +445,7 @@ export default function Layout({ children }) {
                                                               <Disclosure
                                                                 as="ul"
                                                                 className="ml-4"
+                                                                key={link.href}
                                                               >
                                                                 <Disclosure.Button
                                                                   as="li"
