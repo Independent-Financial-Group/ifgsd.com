@@ -109,6 +109,9 @@ const UpcomingEvents = () => {
                     <div className="my-2 w-fit rounded-full bg-neon-orange-100 px-4 py-2 text-xs font-bold text-neon-orange-500">
                       {event.fields.host}
                     </div>
+                    <div className="my-2 w-fit rounded-full bg-gray-100 px-4 py-2 text-xs font-bold text-gray-500">
+                      {event.fields.department}
+                    </div>
                   </div>
                 </li>
               ))}
