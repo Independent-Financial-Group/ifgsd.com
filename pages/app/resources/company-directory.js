@@ -11,6 +11,8 @@ import * as contentful from "../../../utils/contentful";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 const EmployeeSearchAndFilter = ({
   departmentFilter,
   setDepartmentFilter,
@@ -86,29 +88,36 @@ const EmployeeSearchAndFilter = ({
 
 const EmployeeCard = ({ employeeData }) => {
   return (
-    <div className="relative col-span-4 rounded-lg bg-gray-100 px-2 py-5 text-gray-700 shadow hover:-translate-y-2 hover:cursor-pointer hover:shadow-lg">
-      <img
-        src={`https:${employeeData.fields.headshot.fields.file.url}`}
-        className="absolute -top-1/3 left-1/2 mx-auto h-28 w-28 -translate-x-1/2 rounded-full border-4 border-neon-orange-500 shadow-lg"
-      />
-      <h3 className="mt-8 text-center text-lg font-semibold text-hazard-blue-500">
-        {employeeData.fields.fullName}
-      </h3>
-      <p className="line-clamp-1 text-center text-base font-semibold">
-        {employeeData.fields.title}
-      </p>
-      <p className="text-center text-sm">{employeeData.fields.department}</p>
-      <div className="my-5 flex flex-col items-center gap-3 text-center">
-        <p className="text-sm">
-          <EnvelopeIcon className="mr-3 inline-block h-4 w-4 text-gray-700" />
-          {employeeData.fields.eMail}
+    <AnimatePresence>
+      <motion.div
+        initial={{ y: 300, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 300, opacity: 0 }}
+        className="relative col-span-4 rounded-lg bg-gray-100 px-2 py-5 text-gray-700 shadow hover:-translate-y-2 hover:cursor-pointer hover:shadow-lg"
+      >
+        <img
+          src={`https:${employeeData.fields.headshot.fields.file.url}`}
+          className="absolute -top-1/3 left-1/2 mx-auto h-28 w-28 -translate-x-1/2 rounded-full border-4 border-neon-orange-500 shadow-lg"
+        />
+        <h3 className="mt-8 text-center text-lg font-semibold text-hazard-blue-500">
+          {employeeData.fields.fullName}
+        </h3>
+        <p className="line-clamp-1 text-center text-base font-semibold">
+          {employeeData.fields.title}
         </p>
-        <p className="flex-grow text-sm">
-          <PhoneIcon className="mr-3 inline-block h-4 w-4 text-gray-700" />x
-          {employeeData.fields.extension}
-        </p>
-      </div>
-    </div>
+        <p className="text-center text-sm">{employeeData.fields.department}</p>
+        <div className="my-5 flex flex-col items-center gap-3 text-center">
+          <p className="text-sm">
+            <EnvelopeIcon className="mr-3 inline-block h-4 w-4 text-gray-700" />
+            {employeeData.fields.eMail}
+          </p>
+          <p className="flex-grow text-sm">
+            <PhoneIcon className="mr-3 inline-block h-4 w-4 text-gray-700" />x
+            {employeeData.fields.extension}
+          </p>
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
