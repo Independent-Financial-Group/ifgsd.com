@@ -63,7 +63,7 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
 };
 
 const Article = ({ article, preview, draftMode }) => {
-  console.log(article.fields.partner);
+  // console.log(article.fields.audioFile.fields.file.url);
 
   return (
     <Layout>
@@ -90,7 +90,7 @@ const Article = ({ article, preview, draftMode }) => {
             Listen to Episode
           </h2>
           <AudioPlayer
-            src="https://new.ifgsd.com/wp-content/uploads/2023/10/The-Playbook-Ep.-15.mp3"
+            src={article.fields.audioFile.fields.file.url}
             showJumpControls={false}
             layout="horizontal"
           />
@@ -106,18 +106,18 @@ const Article = ({ article, preview, draftMode }) => {
                   className="mx-auto h-16 w-16 rounded-full"
                   src={`https:${guest.fields.headshot.fields.file.url}`}
                 />
-                <p className="font-semibold text-hazard-blue-500">
+                <p className="text-center font-semibold text-hazard-blue-500">
                   {guest.fields.fullName}
                 </p>
-                <p className="text-xs">{guest.fields.title}</p>
+                <p className="text-center text-xs">{guest.fields.title}</p>
               </li>
             ))}
           </ul>
         </section>
-        {!article.fields.featuresPartner && (
+        {article.fields.featuresPartner && (
           <section className="col-span-full">
-            <div className="grid grid-cols-12 items-center gap-5">
-              <div className="col-span-4 justify-self-center">
+            <div className="xl:grid xl:grid-cols-12 xl:items-center xl:gap-5">
+              <div className="xl:col-span-4 xl:justify-self-center">
                 <img
                   src={`https:${article.fields.partner.fields.logo.fields.file.url}`}
                 />

@@ -28,6 +28,7 @@ const index = () => {
       .getEntries({
         content_type: "podcast",
         limit: 6,
+        order: "-fields.date",
       })
       .then((response) => {
         setEpisodes([...response.items]);
@@ -94,7 +95,7 @@ const index = () => {
                   <SwiperSlide key={episode.sys.id}>
                     <BlogCardBgImage
                       title={episode.fields.title}
-                      link={episode.fields.slug}
+                      link={`/app/resources/podcast/${episode.fields.slug}`}
                       imageUrl={`https:${episode.fields.thumbnail.fields.file.url}`}
                       excerpt={episode.fields.description}
                     />
