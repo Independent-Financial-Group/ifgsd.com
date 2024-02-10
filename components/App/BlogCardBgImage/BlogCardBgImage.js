@@ -7,6 +7,7 @@ const BlogCardBgImage = ({
   excerpt,
   link,
   colSpan,
+  positionTop,
 }) => {
   return (
     <article
@@ -15,7 +16,9 @@ const BlogCardBgImage = ({
       <img
         alt="Office"
         src={imageUrl}
-        className="absolute inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
+        className={`absolute ${positionTop && "object-top"} ${
+          !positionTop && "object-center"
+        } inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-110`}
       />
 
       <div className="relative h-full bg-gradient-to-t from-gray-900/90 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
