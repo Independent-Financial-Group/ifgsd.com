@@ -9,6 +9,7 @@ const BlogCardSimple = ({
   excerpt,
   slug = "#",
   thumbnail,
+  edition,
   colSpan,
 }) => {
   return (
@@ -23,7 +24,7 @@ const BlogCardSimple = ({
 
       <div className="flex h-full flex-col bg-white p-4 sm:p-6">
         <time datetime="2022-10-10" className="block text-xs text-gray-500">
-          {formatDateAndTime(date, "day")}
+          {date && formatDateAndTime(date, "day")}
         </time>
 
         <Link href={slug}>
