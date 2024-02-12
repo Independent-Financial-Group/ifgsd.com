@@ -11,6 +11,7 @@ const BlogCardSimple = ({
   thumbnail,
   edition,
   colSpan,
+  inNewTab,
 }) => {
   return (
     <article
@@ -22,16 +23,26 @@ const BlogCardSimple = ({
         className="h-56 w-full object-cover"
       />
 
-      <div className="flex h-full flex-col bg-white p-4 sm:p-6">
+      <div className="flex flex-grow flex-col bg-white p-4 sm:p-6">
         <time datetime="2022-10-10" className="block text-xs text-gray-500">
           {date && formatDateAndTime(date, "day")}
         </time>
 
-        <Link href={slug}>
-          <h3 className="mt-0.5 line-clamp-2 text-lg text-gray-900 hover:text-hazard-blue-500">
-            {title}
-          </h3>
-        </Link>
+        {inNewTab && (
+          <a href={slug} target="_blank" rel="noreferrer noopener">
+            <h3 className="mt-0.5 line-clamp-2 text-lg text-gray-900 hover:text-hazard-blue-500">
+              {title}
+            </h3>
+          </a>
+        )}
+
+        {!inNewTab && (
+          <Link href={slug}>
+            <h3 className="mt-0.5 line-clamp-2 text-lg text-gray-900 hover:text-hazard-blue-500">
+              {title}
+            </h3>
+          </Link>
+        )}
 
         <p className="mt-auto line-clamp-3 text-sm/relaxed leading-6 text-gray-500">
           {excerpt}
