@@ -15,9 +15,9 @@ const index = () => {
       .getEntries({
         content_type: "publications",
         "fields.publicationType": "Blue Chip",
+        order: "-fields.date",
       })
       .then((response) => {
-        console.log(response.items);
         setMagazines([...response.items]);
       });
   };
@@ -43,6 +43,7 @@ const index = () => {
               title={magazine.fields.title}
               slug={`/app/resources/publications/bluechip/${magazine.fields.slug}`}
               edition={magazine.fields.edition}
+              thumbnail={magazine.fields.thumbnail.fields.file.url}
             />
           ))}
         </ContentContainer>

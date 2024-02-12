@@ -24,9 +24,17 @@ const BlogCardSimple = ({
       />
 
       <div className="flex flex-grow flex-col bg-white p-4 sm:p-6">
-        <time datetime="2022-10-10" className="block text-xs text-gray-500">
-          {date && formatDateAndTime(date, "day")}
-        </time>
+        {date && (
+          <time datetime="2022-10-10" className="block text-xs text-gray-500">
+            {date && formatDateAndTime(date, "day")}
+          </time>
+        )}
+
+        {edition && (
+          <span className="inline-flex w-fit items-center rounded-full bg-hazard-blue-100 px-2 py-1 text-xs font-medium text-hazard-blue-800 ring-1 ring-inset ring-hazard-blue-600/20">
+            {edition}
+          </span>
+        )}
 
         {inNewTab && (
           <a href={slug} target="_blank" rel="noreferrer noopener">
