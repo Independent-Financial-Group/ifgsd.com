@@ -15,6 +15,7 @@ const index = () => {
       .getEntries({
         content_type: "publications",
         "fields.publicationType": "Independent",
+        order: "-fields.date",
       })
       .then((response) => {
         console.log(response.items);
@@ -42,6 +43,7 @@ const index = () => {
               colSpan={"4"}
               title={magazine.fields.title}
               slug={`/app/resources/publications/the-independent/${magazine.fields.slug}`}
+              thumbnail={magazine.fields.thumbnail.fields.file.url}
             />
           ))}
         </ContentContainer>
