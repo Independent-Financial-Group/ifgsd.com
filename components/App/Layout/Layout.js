@@ -191,7 +191,7 @@ const navigation = [
     icon: FolderIcon,
     current: false,
     children: [
-      { name: "Calendar", href: "#" },
+      { name: "Calendar", href: "/app/resources/calendar" },
       { name: "Company Directory", href: "/app/resources/company-directory" },
       {
         name: "Corporate Discounts",
@@ -203,9 +203,9 @@ const navigation = [
       },
       { name: "Podcast", href: "/app/resources/podcast" },
       { name: "Publications", href: "/app/resources/publications" },
-      { name: "Referral Program", href: "#" },
+      { name: "Referral Program", href: "/app/resources/referral-program" },
       { name: "Retail Shop", href: "/app/resources/shop" },
-      { name: "Tutorials", href: "#" },
+      { name: "Story Submission", href: "/app/resources/story-submission" },
     ],
   },
   { name: "Contact", current: false, icon: PhoneIcon, href: "/app/contact" },
