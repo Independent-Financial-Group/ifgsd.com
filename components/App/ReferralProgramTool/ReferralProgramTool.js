@@ -2,15 +2,9 @@ import React, { useState } from "react";
 
 import { UserGroupIcon } from "@heroicons/react/24/outline";
 
+import ReferralProgramForm from "../ReferralProgramForm/ReferralProgramForm";
+
 const ReferralProgramTool = () => {
-  const [currentGDC, setCurrentGDC] = useState(0);
-
-  const handleRangeChange = (e) => {
-    const value = e.target.value;
-
-    setCurrentGDC(value);
-  };
-
   return (
     <div className="col-span-12 w-full rounded-lg bg-white shadow">
       <div className="mb-5 rounded-t-lg bg-neon-orange-500 py-2">
@@ -65,55 +59,7 @@ const ReferralProgramTool = () => {
               calculator below to see how much you can earn just by making an
               introduction.
             </p>
-            <div className="mt-5">
-              <div>
-                <div className="relative">
-                  <label className="text-sm font-semibold text-gray-500">
-                    Prospects Current GDC
-                  </label>
-                  <p className="font-bold text-bright-blue-500">
-                    $
-                    {currentGDC
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                  </p>
-                  <input
-                    onChange={handleRangeChange}
-                    className="w-full"
-                    type="range"
-                    value={currentGDC}
-                    min={0}
-                    max={3000000}
-                  />
-                  <span class="absolute -bottom-6 start-0 text-sm text-gray-500 dark:text-gray-400">
-                    Min ($0)
-                  </span>
-                  <span class="absolute -bottom-6 end-0 text-sm text-gray-500 dark:text-gray-400">
-                    Max ($300,000,000)
-                  </span>
-                </div>
-                {currentGDC > 150000 && (
-                  <div className="mt-10 ">
-                    <p className="text-lg font-semibold text-neon-orange-500">
-                      Your Potential Commission
-                    </p>
-                    <p className="font-semibold">
-                      $
-                      {Math.floor(currentGDC * 0.02)
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                    </p>
-                  </div>
-                )}
-              </div>
-              {currentGDC > 150000 && (
-                <div className="mt-5">
-                  <button className="rounded-lg bg-neon-orange-500 p-2 font-bold text-seabreeze-500">
-                    fill out form
-                  </button>
-                </div>
-              )}
-            </div>
+            <ReferralProgramForm />
           </div>
         </div>
       </div>
