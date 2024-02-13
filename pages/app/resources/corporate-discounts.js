@@ -8,6 +8,9 @@ import { Tab } from "@headlessui/react";
 
 import * as contentful from "../../../utils/contentful";
 
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 const corporateDiscounts = () => {
   const tabLabels = [
     "Affiliation Benefits",
@@ -50,6 +53,7 @@ const corporateDiscounts = () => {
         "fields.category[match]": "Technology",
       })
       .then((response) => {
+        console.log(response.items);
         setTechnologyDiscounts([...response.items]);
       });
 
@@ -125,9 +129,9 @@ const corporateDiscounts = () => {
               ))}
             </Tab.List>
             <Tab.Panels className="mt-5 rounded bg-white px-4 py-5 shadow">
-              <Tab.Panel className="">
+              <Tab.Panel>
                 {affiliationDiscounts.map((discount) => (
-                  <div className="col-span-full">
+                  <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
                       className="h-40 w-40 object-contain"
@@ -135,10 +139,34 @@ const corporateDiscounts = () => {
                     <h2 className="text-lg font-semibold">
                       {discount.fields.companyName}
                     </h2>
-                    <p className="columns-2 text-sm leading-7">
+                    <Markdown
+                      className="columns-2 text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
                       {discount.fields.description}
-                      {discount.fields.contactName}
-                    </p>
+                    </Markdown>
+                    {discount.fields.contactNames && (
+                      <div className="mt-5 w-fit rounded bg-neon-orange-100 p-2 text-sm text-neon-orange-500">
+                        <p className="font-semibold">
+                          Your Discount Contact(s):
+                        </p>
+                        {discount.fields.contactNames.map((name, i) => (
+                          <>
+                            {<p>{name}</p>}
+                            {discount.fields.contactEmails &&
+                            discount.fields.contactEmails.length > 0 ? (
+                              <p className="italic">
+                                {discount.fields.contactEmails[i]}
+                              </p>
+                            ) : null}
+                            {discount.fields.contactNumbers &&
+                            discount.fields.contactNumbers.length > 0 ? (
+                              <p>{discount.fields.contactNumbers[i]}</p>
+                            ) : null}
+                          </>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </Tab.Panel>
@@ -152,10 +180,34 @@ const corporateDiscounts = () => {
                     <h2 className="text-lg font-semibold">
                       {discount.fields.companyName}
                     </h2>
-                    <p className="text-sm leading-7">
+                    <Markdown
+                      className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
                       {discount.fields.description}
-                      {discount.fields.contactName}
-                    </p>
+                    </Markdown>
+                    {discount.fields.contactNames && (
+                      <div className="mt-5 rounded bg-neon-orange-100 p-2 text-sm text-neon-orange-500">
+                        <p className="font-semibold">
+                          Your Discount Contact(s):
+                        </p>
+                        {discount.fields.contactNames.map((name, i) => (
+                          <>
+                            {<p>{name}</p>}
+                            {discount.fields.contactEmails &&
+                            discount.fields.contactEmails.length > 0 ? (
+                              <p className="italic">
+                                {discount.fields.contactEmails[i]}
+                              </p>
+                            ) : null}
+                            {discount.fields.contactNumbers &&
+                            discount.fields.contactNumbers.length > 0 ? (
+                              <p>{discount.fields.contactNumbers[i]}</p>
+                            ) : null}
+                          </>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </Tab.Panel>
@@ -169,10 +221,34 @@ const corporateDiscounts = () => {
                     <h2 className="text-lg font-semibold">
                       {discount.fields.companyName}
                     </h2>
-                    <p className="text-sm leading-7">
+                    <Markdown
+                      className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
                       {discount.fields.description}
-                      {discount.fields.contactName}
-                    </p>
+                    </Markdown>
+                    {discount.fields.contactNames && (
+                      <div className="mt-5 rounded bg-neon-orange-100 p-2 text-sm text-neon-orange-500">
+                        <p className="font-semibold">
+                          Your Discount Contact(s):
+                        </p>
+                        {discount.fields.contactNames.map((name, i) => (
+                          <>
+                            {<p>{name}</p>}
+                            {discount.fields.contactEmails &&
+                            discount.fields.contactEmails.length > 0 ? (
+                              <p className="italic">
+                                {discount.fields.contactEmails[i]}
+                              </p>
+                            ) : null}
+                            {discount.fields.contactNumbers &&
+                            discount.fields.contactNumbers.length > 0 ? (
+                              <p>{discount.fields.contactNumbers[i]}</p>
+                            ) : null}
+                          </>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </Tab.Panel>
@@ -186,10 +262,34 @@ const corporateDiscounts = () => {
                     <h2 className="text-lg font-semibold">
                       {discount.fields.companyName}
                     </h2>
-                    <p className="text-sm leading-7">
+                    <Markdown
+                      className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
                       {discount.fields.description}
-                      {discount.fields.contactName}
-                    </p>
+                    </Markdown>
+                    {discount.fields.contactNames && (
+                      <div className="mt-5 rounded bg-neon-orange-100 p-2 text-sm text-neon-orange-500">
+                        <p className="font-semibold">
+                          Your Discount Contact(s):
+                        </p>
+                        {discount.fields.contactNames.map((name, i) => (
+                          <>
+                            {<p>{name}</p>}
+                            {discount.fields.contactEmails &&
+                            discount.fields.contactEmails.length > 0 ? (
+                              <p className="italic">
+                                {discount.fields.contactEmails[i]}
+                              </p>
+                            ) : null}
+                            {discount.fields.contactNumbers &&
+                            discount.fields.contactNumbers.length > 0 ? (
+                              <p>{discount.fields.contactNumbers[i]}</p>
+                            ) : null}
+                          </>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </Tab.Panel>
@@ -203,10 +303,34 @@ const corporateDiscounts = () => {
                     <h2 className="text-lg font-semibold">
                       {discount.fields.companyName}
                     </h2>
-                    <p className="text-sm leading-7">
+                    <Markdown
+                      className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
                       {discount.fields.description}
-                      {discount.fields.contactName}
-                    </p>
+                    </Markdown>
+                    {discount.fields.contactNames && (
+                      <div className="mt-5 rounded bg-neon-orange-100 p-2 text-sm text-neon-orange-500">
+                        <p className="font-semibold">
+                          Your Discount Contact(s):
+                        </p>
+                        {discount.fields.contactNames.map((name, i) => (
+                          <>
+                            {<p>{name}</p>}
+                            {discount.fields.contactEmails &&
+                            discount.fields.contactEmails.length > 0 ? (
+                              <p className="italic">
+                                {discount.fields.contactEmails[i]}
+                              </p>
+                            ) : null}
+                            {discount.fields.contactNumbers &&
+                            discount.fields.contactNumbers.length > 0 ? (
+                              <p>{discount.fields.contactNumbers[i]}</p>
+                            ) : null}
+                          </>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </Tab.Panel>
@@ -220,10 +344,34 @@ const corporateDiscounts = () => {
                     <h2 className="text-lg font-semibold">
                       {discount.fields.companyName}
                     </h2>
-                    <p className="text-sm leading-7">
+                    <Markdown
+                      className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
                       {discount.fields.description}
-                      {discount.fields.contactName}
-                    </p>
+                    </Markdown>
+                    {discount.fields.contactNames && (
+                      <div className="mt-5 rounded bg-neon-orange-100 p-2 text-sm text-neon-orange-500">
+                        <p className="font-semibold">
+                          Your Discount Contact(s):
+                        </p>
+                        {discount.fields.contactNames.map((name, i) => (
+                          <>
+                            {<p>{name}</p>}
+                            {discount.fields.contactEmails &&
+                            discount.fields.contactEmails.length > 0 ? (
+                              <p className="italic">
+                                {discount.fields.contactEmails[i]}
+                              </p>
+                            ) : null}
+                            {discount.fields.contactNumbers &&
+                            discount.fields.contactNumbers.length > 0 ? (
+                              <p>{discount.fields.contactNumbers[i]}</p>
+                            ) : null}
+                          </>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </Tab.Panel>
