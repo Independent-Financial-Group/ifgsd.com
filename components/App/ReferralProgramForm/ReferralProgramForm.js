@@ -32,6 +32,7 @@ const ReferralProgramForm = () => {
   const handleRangeChange = (e) => {
     const value = e.target.value;
 
+    setFormData((prevState) => ({ ...prevState }));
     setCurrentGDC(value);
   };
 
