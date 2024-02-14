@@ -10,25 +10,7 @@ const client = contenful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-const MarketResearch = () => {
-  const [featuredModels, setFeaturedModels] = useState([]);
-
-  const getFeaturedModels = async () => {
-    const data = await client
-      .getEntries({
-        content_type: "portfolioConstructionModels",
-        "fields.feature": true,
-        order: "fields.name",
-      })
-      .then((response) => {
-        setFeaturedModels([...response.items]);
-      });
-  };
-
-  useEffect(() => {
-    getFeaturedModels();
-  }, []);
-
+const MarketResearch = ({ featuredModels }) => {
   return (
     <div className="col-span-12 rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
