@@ -52,16 +52,14 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
     props: {
       article: articles.items[0],
       preview: preview || false,
-      draftMode: draftMode || false,
     },
     revalidate: 5,
   };
 };
 
-const Article = ({ article, preview, draftMode }) => {
+const Article = ({ article, preview }) => {
   return (
-    <Layout>
-      {preview && <PreviewBanner />}
+    <Layout preview={preview}>
       <PageHeader
         pageName={article.fields.title}
         breadCrumb={formatDateAndTime(article.fields.date, "day")}
