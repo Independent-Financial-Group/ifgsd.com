@@ -4,7 +4,8 @@ import ContactFormSubmittedInternal from "../../../emails/contactFormSubmittedIn
 import ContactFormSubmittedExternal from "../../../emails/contactFormSubmittedExternal";
 import AdvisorDirectoryContactForm from "../../../emails/advisorDirectoryContactForm";
 import PodcastQuestionForm from "../../../emails/podcastQuestionForm";
-
+import ReferralProgramEmailInternal from "../../../emails/referralProgramEmailInternal";
+import ReferralProgramEmailExternal from "../../../emails/referralProgramEmailExternal";
 export default async function (req, res) {
   sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
   const { formName } = req.body;
@@ -45,6 +46,39 @@ export default async function (req, res) {
 
     try {
       await sendgrid.send(sendOptionsInternal);
+      res.status(200).send(`Message Sent Successfully`);
+    } catch (error) {
+      res.status(400).send(`ERROR: ${error}`);
+    }
+  } else if (formName == "referral program form") {
+    const { advisorFirstName, advisorLastName, advisorEmail } = req.body;
+    const allFormData = req.body;
+
+    const internalEmailHtml = render(
+      <ReferralProgramEmailInternal formData={allFormData} />,
+    );
+
+    const externalEmailHtml = render(
+      <ReferralProgramEmailExternal formData={allFormData} />,
+    );
+
+    const sendOptionsInternal = {
+      from: "noreply@ifgsd.com",
+      to: "info@ifgsd.com",
+      subject: `${advisorFirstName} ${advisorLastName} would like to make a referral.`,
+      html: internalEmailHtml,
+    };
+
+    const sendOptionExternal = {
+      from: "noreply@ifgsd.com",
+      to: advisorEmail,
+      subject: "[CONFIRMATION] Thank you for your referral.",
+      html: externalEmailHtml,
+    };
+
+    try {
+      await sendgrid.send(sendOptionsInternal);
+      await sendgrid.send(sendOptionExternal);
       res.status(200).send(`Message Sent Successfully`);
     } catch (error) {
       res.status(400).send(`ERROR: ${error}`);

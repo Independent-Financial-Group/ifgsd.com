@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ReferralProgramForm = () => {
-  const [currentGDC, setCurrentGDC] = useState(0);
-  const [openForm, setOpenForm] = useState(false);
-  const [formValue, setFormValue] = useState({
+  const formInitialState = {
     formName: "referral program form",
     firstName: "",
     lastName: "",
@@ -16,7 +14,20 @@ const ReferralProgramForm = () => {
     advisorFirstName: "",
     advisorLastName: "",
     advisorEmail: "",
-  });
+  };
+
+  const [currentGDC, setCurrentGDC] = useState(0);
+  const [openForm, setOpenForm] = useState(false);
+  const [formData, setFormData] = useState(formInitialState);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+  const handleFormReset = (e) => {
+    setCurrentGDC(0);
+    setOpenForm(false);
+    setFormData(formInitialState);
+    setFormSubmitted(false);
+  };
 
   const handleRangeChange = (e) => {
     const value = e.target.value;
@@ -28,66 +39,102 @@ const ReferralProgramForm = () => {
     const value = e.target.value;
     const name = e.target.name;
 
-    setFormValue((prevState) => ({ ...prevState, [name]: value }));
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formValue);
+    setIsSending(true);
+    setOpenForm(false);
+    setFormSubmitted(true);
+
+    const res = await fetch("/api/public/sendgrid", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.status == 200) {
+      setIsSending(false);
+      setFormSubmitted(true);
+    }
   };
 
   return (
     <>
-      <div className="mt-5">
-        <div>
-          <div className="relative">
-            <label className="text-sm font-semibold text-gray-500">
-              Prospects Current GDC
-            </label>
-            <p className="font-bold text-bright-blue-500">
-              ${currentGDC.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            </p>
-            <input
-              onChange={handleRangeChange}
-              className="w-full"
-              type="range"
-              value={currentGDC}
-              min={0}
-              max={3000000}
-            />
-            <span class="absolute -bottom-6 start-0 text-sm text-gray-500 dark:text-gray-400">
-              Min ($0)
-            </span>
-            <span class="absolute -bottom-6 end-0 text-sm text-gray-500 dark:text-gray-400">
-              Max ($300,000,000)
-            </span>
+      {formSubmitted && (
+        <div className="mt-5">
+          <h2 className=" mb-5 font-semibold text-green-500">
+            THE FORM HAS BEEN SUBMITTED!
+          </h2>
+          <p>
+            If you are referring advisors from multiple firms, please click
+            below.
+          </p>
+          <button
+            className="mt-5 rounded bg-neon-orange-500 p-2 text-white"
+            onClick={handleFormReset}
+          >
+            Refer More Advisors
+          </button>
+        </div>
+      )}
+
+      {!formSubmitted && (
+        <div className="mt-5">
+          <div>
+            <div className="relative">
+              <label className="text-sm font-semibold text-gray-500">
+                Prospects Current GDC
+              </label>
+              <p className="font-bold text-bright-blue-500">
+                ${currentGDC.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </p>
+              <input
+                onChange={handleRangeChange}
+                className="w-full"
+                type="range"
+                value={currentGDC}
+                min={0}
+                max={3000000}
+              />
+              <span class="absolute -bottom-6 start-0 text-sm text-gray-500 dark:text-gray-400">
+                Min ($0)
+              </span>
+              <span class="absolute -bottom-6 end-0 text-sm text-gray-500 dark:text-gray-400">
+                Max ($300,000,000)
+              </span>
+            </div>
+            {currentGDC > 150000 && (
+              <div className="mt-10 ">
+                <p className="text-lg font-semibold text-neon-orange-500">
+                  Your Potential Commission
+                </p>
+                <p className="font-semibold">
+                  $
+                  {Math.floor(currentGDC * 0.02)
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </p>
+              </div>
+            )}
           </div>
           {currentGDC > 150000 && (
-            <div className="mt-10 ">
-              <p className="text-lg font-semibold text-neon-orange-500">
-                Your Potential Commission
-              </p>
-              <p className="font-semibold">
-                $
-                {Math.floor(currentGDC * 0.02)
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              </p>
+            <div className="mt-5">
+              <button
+                onClick={() => setOpenForm(true)}
+                className="rounded-lg bg-neon-orange-500 p-2 font-bold text-seabreeze-500"
+              >
+                fill out form
+              </button>
             </div>
           )}
         </div>
-        {currentGDC > 150000 && (
-          <div className="mt-5">
-            <button
-              onClick={() => setOpenForm(true)}
-              className="rounded-lg bg-neon-orange-500 p-2 font-bold text-seabreeze-500"
-            >
-              fill out form
-            </button>
-          </div>
-        )}
-      </div>
-      {openForm && currentGDC > 150000 ? (
+      )}
+
+      {!formSubmitted && openForm && currentGDC > 150000 ? (
         <AnimatePresence>
           <motion.div
             initial={{ y: 100, opacity: 0 }}

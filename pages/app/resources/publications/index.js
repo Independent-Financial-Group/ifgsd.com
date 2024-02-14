@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Layout from "../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../components/App/InternalPages/PageHeader/PageHeader";
 import BlogCardBgImage from "../../../../components/App/BlogCardBgImage/BlogCardBgImage";
@@ -29,32 +30,33 @@ const index = () => {
   ];
 
   return (
-    <Layout>
-      <PageHeader
-        pageName="Publications"
-        breadCrumb="Resources"
-        headerText="Daily Market Commentary covers global markets, stock markets, equity markets, commodities and economic news by IFG."
-      />
-      <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-        <section className="col-span-12">
-          <ol className="mt-5 xl:grid xl:grid-cols-3 xl:gap-5">
-            {topics.map((topic) => {
-              return (
-                <li className="col-span-1 h-full">
-                  <BlogCardBgImage
-                    title={topic.name}
-                    excerpt={topic.excerpt}
-                    imageUrl={topic.url}
-                    link={topic.link}
-                    positionTop
-                  />
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-      </div>
-    </Layout>
+    <>
+      <Head>
+        <title>Publications | Resources</title>
+      </Head>
+      <Layout>
+        <PageHeader pageName="Publications" breadCrumb="Resources" />
+        <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
+          <section className="col-span-12">
+            <ol className="mt-5 xl:grid xl:grid-cols-3 xl:gap-5">
+              {topics.map((topic) => {
+                return (
+                  <li className="col-span-1 h-full">
+                    <BlogCardBgImage
+                      title={topic.name}
+                      excerpt={topic.excerpt}
+                      imageUrl={topic.url}
+                      link={topic.link}
+                      positionTop
+                    />
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        </div>
+      </Layout>
+    </>
   );
 };
 
