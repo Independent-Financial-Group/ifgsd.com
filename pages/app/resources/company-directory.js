@@ -121,7 +121,15 @@ const EmployeeCard = ({ employeeData }) => {
   );
 };
 
-const companyDirectory = () => {
+export async function getStaticProps({ preview }) {
+  return {
+    props: {
+      preview: preview || false,
+    },
+  };
+}
+
+const companyDirectory = ({ preview }) => {
   const [directory, setDirectory] = useState([]);
   const [directoryIsLoading, setDirectoryIsLoading] = useState(false);
   const [departmentFilter, setDepartmentFilter] = useState("All Departments");
@@ -175,7 +183,7 @@ const companyDirectory = () => {
       <Head>
         <title>Company Directory | Home Office</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
           pageName="Home Office Company Directory"
           breadCrumb="Resources"
