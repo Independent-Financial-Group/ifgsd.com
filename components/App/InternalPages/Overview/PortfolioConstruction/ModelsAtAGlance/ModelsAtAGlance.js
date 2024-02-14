@@ -20,7 +20,7 @@ const MarketResearch = ({ featuredModels }) => {
         </h2>
       </div>
       <div className="px-4 py-4">
-        <ul className=" xl:grid xl:grid-cols-3 xl:gap-5">
+        <ul className=" md:grid md:grid-cols-2 xl:grid xl:grid-cols-3 xl:gap-5">
           {featuredModels.map((model) => {
             return (
               <li>
@@ -31,12 +31,6 @@ const MarketResearch = ({ featuredModels }) => {
                 <h3 className="text-center font-semibold">
                   {model.fields.name}
                 </h3>
-                <p className="my-5 text-center text-sm leading-7">
-                  {model.fields.modelDescription &&
-                    model.fields.modelDescription}
-                  {!model.fields.modelDescription &&
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium alias quas fuga error eaque iusto unde repudiandae doloremque numquam!"}
-                </p>
                 <Link
                   className="mx-auto block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
                   href={`/app/portfolio-construction/models/${model.fields.slug}`}
