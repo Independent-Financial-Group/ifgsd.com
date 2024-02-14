@@ -20,6 +20,7 @@ export async function getStaticProps({ preview }) {
     props: {
       episodes: [...episodes.items],
       preview: preview || false,
+      revalidate: 10,
     },
   };
 }
