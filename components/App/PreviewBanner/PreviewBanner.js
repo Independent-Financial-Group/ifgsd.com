@@ -7,7 +7,7 @@ const PreviewBanner = () => {
   console.log(router.asPath);
 
   return (
-    <div className="sticky top-0 z-50 bg-neon-orange-600 px-4 py-3 text-white">
+    <div className="sticky top-0 z-50 bg-red-600 px-4 py-3 text-white">
       <p className="text-center text-sm font-medium">
         You are viewing this page in preview mode.{" "}
         <a
