@@ -15,6 +15,7 @@ const index = () => {
     const data = await contentful.client
       .getEntries({
         content_type: "podcast",
+        order: "-fields.date",
       })
       .then((response) => {
         setEpisodes([...response.items]);

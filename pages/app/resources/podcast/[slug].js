@@ -100,18 +100,19 @@ const Article = ({ article, preview, draftMode }) => {
           <p className="mb-5 text-sm leading-7">{article.fields.description}</p>
           <h2 className="mb-5 font-semibold">Guests</h2>
           <ul className="flex gap-5">
-            {article.fields.guests.map((guest) => (
-              <li key={guest.sys.id}>
-                <img
-                  className="mx-auto h-16 w-16 rounded-full"
-                  src={`https:${guest.fields.headshot.fields.file.url}`}
-                />
-                <p className="text-center font-semibold text-hazard-blue-500">
-                  {guest.fields.fullName}
-                </p>
-                <p className="text-center text-xs">{guest.fields.title}</p>
-              </li>
-            ))}
+            {article.fields.guests &&
+              article.fields.guests.map((guest) => (
+                <li key={guest.sys.id}>
+                  <img
+                    className="mx-auto h-16 w-16 rounded-full"
+                    src={`https:${guest.fields.headshot.fields.file.url}`}
+                  />
+                  <p className="text-center font-semibold text-hazard-blue-500">
+                    {guest.fields.fullName}
+                  </p>
+                  <p className="text-center text-xs">{guest.fields.title}</p>
+                </li>
+              ))}
           </ul>
         </section>
         {article.fields.featuresPartner && (
