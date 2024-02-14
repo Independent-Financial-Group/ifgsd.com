@@ -16,7 +16,7 @@ export default function Document() {
                       `}
           </Script>
         ) : (
-          console.log("dev env no GA loading")
+          console.info("dev env no GA loading")
         )}
       </Head>
       <body>
