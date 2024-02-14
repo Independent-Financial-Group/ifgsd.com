@@ -44,8 +44,6 @@ export async function getStaticProps() {
 }
 
 const productSupport = ({ formattedData }) => {
-  console.log(formattedData);
-
   return (
     <>
       <Head>

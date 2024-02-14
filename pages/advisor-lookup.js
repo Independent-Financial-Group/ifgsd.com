@@ -49,7 +49,6 @@ const Pagination = ({
     // setIsLoading(true);
     setCurrentPage((prevState) => prevState + 1);
     setSkipNumber((prevState) => prevState + 12);
-    console.log();
   };
 
   const handlePrevPage = () => {

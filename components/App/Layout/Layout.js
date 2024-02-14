@@ -30,13 +30,22 @@ const navigation = [
         links: [
           { name: "Overview", href: "/app/advisory/overview" },
           { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
         ],
       },
       {
         name: "Alt. Investments",
         links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
+          { name: "Overview", href: "/app/alternative-investments/overview" },
+          {
+            name: "Inventories",
+            href: "/app/alternative-investments/inventories",
+          },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
         ],
       },
       {
@@ -44,25 +53,160 @@ const navigation = [
         links: [
           { name: "Overview", href: "#" },
           { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
         ],
       },
-      { name: "Compliance", links: [{ name: "Overview", href: "#" }] },
-      { name: "Insurance", links: [{ name: "Overview", href: "#" }] },
-      { name: "Annuities", links: [{ name: "Overview", href: "#" }] },
-      { name: "Operations", links: [{ name: "Overview", href: "#" }] },
+      {
+        name: "Bank Products",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Commissions & Fees",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Compliance",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Corp. Comm.",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Fixed Income",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Info. Technology",
+        links: [
+          { name: "Overview", href: "/app/information-technology/overview" },
+          {
+            name: "Service Status",
+            href: "/app/information-technology/service-status",
+          },
+          {
+            name: "Remote Support",
+            href: "/app/information-technology/remote-support",
+          },
+          { name: "Education", href: "/app/information-technology/education" },
+        ],
+      },
+      {
+        name: "Insurance",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Operations",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Portfolio Construction",
+        links: [
+          { name: "Overview", href: "/app/portfolio-construction/overview" },
+          {
+            name: "Market Commentary",
+            href: "/app/portfolio-construction/market-commentary",
+          },
+          { name: "Models", href: "/app/portfolio-construction/models" },
+        ],
+      },
       {
         name: "Practice Development",
-        links: [{ name: "overview", href: "#" }],
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
       },
-      { name: "Retirement Services", links: [{ name: "overview", href: "#" }] },
-      { name: "Supervision", links: [{ name: "overview", href: "#" }] },
+      {
+        name: "Retirement Services",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
+      {
+        name: "Supervision",
+        links: [
+          { name: "Overview", href: "#" },
+          { name: "Approved Products", href: "#" },
+          { name: "Partners", href: "#" },
+          { name: "Tools", href: "#" },
+          { name: "Education", href: "#" },
+        ],
+      },
     ],
   },
   {
     name: "Resources",
     icon: FolderIcon,
     current: false,
-    children: [{ name: "Podcast", href: "#" }],
+    children: [
+      { name: "Calendar", href: "/app/resources/calendar" },
+      { name: "Company Directory", href: "/app/resources/company-directory" },
+      {
+        name: "Corporate Discounts",
+        href: "/app/resources/corporate-discounts",
+      },
+      {
+        name: "Partner Marketplace",
+        href: "/app/resources/partner-marketplace",
+      },
+      { name: "Podcast", href: "/app/resources/podcast" },
+      { name: "Publications", href: "/app/resources/publications" },
+      { name: "Referral Program", href: "/app/resources/referral-program" },
+      { name: "Retail Shop", href: "/app/resources/shop" },
+      { name: "Story Submission", href: "/app/resources/story-submission" },
+    ],
   },
   { name: "Contact", current: false, icon: PhoneIcon, href: "/app/contact" },
 ];
@@ -167,8 +311,9 @@ export default function Layout({ children }) {
                                           <Disclosure
                                             as="ul"
                                             className="ml-8 flex flex-col"
+                                            key={childItem.name}
                                           >
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                               {childItem.name}
                                             </Disclosure.Button>
                                             <Disclosure.Panel>
@@ -182,6 +327,7 @@ export default function Layout({ children }) {
                                                       return (
                                                         <>
                                                           <Link
+                                                            key={link.href}
                                                             href={link.href}
                                                             className={classNames(
                                                               parentItem.current
@@ -246,7 +392,7 @@ export default function Layout({ children }) {
                 {/* LOOP THROUGH NAVIGATION ARRAY */}
                 {navigation.map((parentItem) => {
                   return (
-                    <li className="px-4">
+                    <li key={parentItem.name} className="px-4">
                       {/* RENDER A DISCLOSURE FOR THE PARENT ITEM IN THE NAVIGATION ARRAY */}
                       <Disclosure as="div">
                         {({ open }) => (
@@ -254,9 +400,9 @@ export default function Layout({ children }) {
                             {/* DOES THE PARENT ITEM HAVE CHILDREN?*/}
                             {parentItem.children ? (
                               <>
-                                <Disclosure.Button className="group flex w-full items-center gap-x-3 rounded-lg px-2 py-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                <Disclosure.Button className="group flex w-full items-center gap-x-3 rounded-lg px-2 py-2 hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                   <parentItem.icon
-                                    className="h-6 w-6 shrink-0"
+                                    className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                     aria-hidden="true"
                                   />
                                   {parentItem.name}
@@ -276,11 +422,11 @@ export default function Layout({ children }) {
                                         <>
                                           {/* DOES THE CHILD ITEM HAVE LINKS? */}
                                           {childItem.links ? (
-                                            <Disclosure>
+                                            <Disclosure key={childItem.name}>
                                               {({ open }) => {
                                                 return (
                                                   <>
-                                                    <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                                    <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2  text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                                       {childItem.name}
                                                       <ChevronRightIcon
                                                         className={
@@ -299,6 +445,7 @@ export default function Layout({ children }) {
                                                               <Disclosure
                                                                 as="ul"
                                                                 className="ml-4"
+                                                                key={link.href}
                                                               >
                                                                 <Disclosure.Button
                                                                   as="li"
@@ -325,7 +472,7 @@ export default function Layout({ children }) {
                                             </Disclosure>
                                           ) : (
                                             <Link
-                                              className="flex w-full items-center justify-between rounded-lg p-2 font-bold text-hazard-blue-700 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
+                                              className="flex w-full items-center justify-between rounded-lg p-2 text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                               href={childItem.href}
                                             >
                                               {childItem.name}
@@ -339,9 +486,9 @@ export default function Layout({ children }) {
                               </>
                             ) : (
                               <Disclosure>
-                                <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
+                                <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                   <parentItem.icon
-                                    className="h-6 w-6 shrink-0"
+                                    className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                     aria-hidden="true"
                                   />
                                   <Link href={parentItem.href}>
@@ -356,23 +503,22 @@ export default function Layout({ children }) {
                     </li>
                   );
                 })}
-                <li className="absolute bottom-0 w-full bg-hazard-blue-500 hover:bg-hazard-blue-600">
-                  <button className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white">
-                    <UserButton
-                      showName={true}
-                      appearance={{
-                        elements: {
-                          userButtonBox: "flex-row-reverse",
-                          userButtonOuterIdentifier: " text-seabreeze-500",
-                          userButtonTrigger: "!focus:shadow-[#FF5617]",
-                        },
-                      }}
-                    />
-                  </button>
-                </li>
               </ul>
             </nav>
           </div>
+          <button className="flex items-center gap-x-4 bg-white px-6 py-3 text-sm font-semibold leading-6 text-dunkel-blue-500">
+            <UserButton
+              showName={true}
+              appearance={{
+                elements: {
+                  userButtonBox: "flex-row-reverse",
+                  userButtonOuterIdentifier:
+                    " text-dunkel-blue-500 font-semibold",
+                  userButtonTrigger: "!focus:shadow-[#FF5617]",
+                },
+              }}
+            />
+          </button>
         </div>
 
         <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
