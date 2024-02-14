@@ -15,8 +15,8 @@ import { UserButton } from "@clerk/nextjs";
 
 import Image from "next/image";
 import Link from "next/link";
-
 import logoIcon from "../../../public/ifg-icon.png";
+import PreviewBanner from "../PreviewBanner/PreviewBanner";
 
 const navigation = [
   { name: "Dashboard", href: "/app", icon: HomeIcon, current: true },
@@ -215,8 +215,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Layout({ children }) {
+export default function Layout({ children, preview }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  console.log(preview);
 
   return (
     <>
@@ -537,7 +538,12 @@ export default function Layout({ children }) {
         </div>
 
         <main className="lg:pl-72">
-          <div>{children}</div>
+          <div>
+            <>
+              {preview && <PreviewBanner />}
+              {children}
+            </>
+          </div>
         </main>
       </div>
     </>
