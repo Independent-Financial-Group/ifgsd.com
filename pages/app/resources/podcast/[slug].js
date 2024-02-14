@@ -56,15 +56,12 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
     props: {
       article: articles.items[0],
       preview: preview || false,
-      draftMode: draftMode || false,
     },
     revalidate: 5,
   };
 };
 
-const Article = ({ article, preview, draftMode }) => {
-  // console.log(article.fields.audioFile.fields.file.url);
-
+const Article = ({ article, preview }) => {
   return (
     <Layout>
       {preview && <PreviewBanner />}
