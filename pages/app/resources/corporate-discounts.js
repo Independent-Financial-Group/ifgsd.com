@@ -11,7 +11,68 @@ import * as contentful from "../../../utils/contentful";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const corporateDiscounts = () => {
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
+
+  const affiliationData = await client.getEntries({
+    content_type: "corporateDiscounts",
+    order: "fields.companyName",
+    "fields.category[match]": "Affiliation Benefits",
+  });
+
+  const technologyData = await client.getEntries({
+    content_type: "corporateDiscounts",
+    order: "fields.companyName",
+    "fields.category[match]": "Technology",
+  });
+
+  const analysisToolsData = await client.getEntries({
+    content_type: "corporateDiscounts",
+    order: "fields.companyName",
+    "fields.category[match]": "Investment & Portfolio Analysis Tools",
+  });
+
+  const marketingData = await client.getEntries({
+    content_type: "corporateDiscounts",
+    order: "fields.companyName",
+    "fields.category[match]": "Marketing",
+  });
+
+  const educationAndTrainingData = await client.getEntries({
+    content_type: "corporateDiscounts",
+    order: "fields.companyName",
+    "fields.category[match]": "Advanced Education & Training Services",
+  });
+
+  const businessOperationsData = await client.getEntries({
+    content_type: "corporateDiscounts",
+    order: "fields.companyName",
+    "fields.category[match]": "Business Operations",
+  });
+
+  return {
+    props: {
+      preview: preview || false,
+      revalidate: 10,
+      affiliationData: [...affiliationData.items],
+      technologyData: [...technologyData.items],
+      analysisToolsData: [...analysisToolsData.items],
+      marketingData: [...marketingData.items],
+      educationAndTrainingData: [...educationAndTrainingData.items],
+      businessOperationsData: [...businessOperationsData.items],
+    },
+  };
+}
+
+const corporateDiscounts = ({
+  preview,
+  affiliationData,
+  technologyData,
+  analysisToolsData,
+  marketingData,
+  educationAndTrainingData,
+  businessOperationsData,
+}) => {
   const tabLabels = [
     "Affiliation Benefits",
     "Technology",
@@ -21,93 +82,12 @@ const corporateDiscounts = () => {
     "Business Operations",
   ];
 
-  const [affiliationDiscounts, setAffiliationDiscounts] = useState([]);
-  const [technologyDiscounts, setTechnologyDiscounts] = useState([]);
-  const [
-    investmentAndPortfolioToolsDiscounts,
-    setInvestmentAndPortfolioToolsDiscounts,
-  ] = useState([]);
-  const [marketingDiscounts, setMarketingDiscounts] = useState([]);
-  const [
-    educationAndTrainingServicesDiscounts,
-    setEducationAndTrainingServicesDiscounts,
-  ] = useState([]);
-  const [businessOperationsDiscounts, setBusinessOperationsDiscounts] =
-    useState([]);
-
-  const getCorporateDiscounts = async (category) => {
-    const affiliationData = await contentful.client
-      .getEntries({
-        content_type: "corporateDiscounts",
-        order: "fields.companyName",
-        "fields.category[match]": "Affiliation Benefits",
-      })
-      .then((response) => {
-        setAffiliationDiscounts([...response.items]);
-      });
-
-    const technologyData = await contentful.client
-      .getEntries({
-        content_type: "corporateDiscounts",
-        order: "fields.companyName",
-        "fields.category[match]": "Technology",
-      })
-      .then((response) => {
-        console.log(response.items);
-        setTechnologyDiscounts([...response.items]);
-      });
-
-    const analysisToolsData = await contentful.client
-      .getEntries({
-        content_type: "corporateDiscounts",
-        order: "fields.companyName",
-        "fields.category[match]": "Investment & Portfolio Analysis Tools",
-      })
-      .then((response) => {
-        setInvestmentAndPortfolioToolsDiscounts([...response.items]);
-      });
-
-    const marketingData = await contentful.client
-      .getEntries({
-        content_type: "corporateDiscounts",
-        order: "fields.companyName",
-        "fields.category[match]": "Marketing",
-      })
-      .then((response) => {
-        setMarketingDiscounts([...response.items]);
-      });
-
-    const educationAndTrainingData = await contentful.client
-      .getEntries({
-        content_type: "corporateDiscounts",
-        order: "fields.companyName",
-        "fields.category[match]": "Advanced Education & Training Services",
-      })
-      .then((response) => {
-        setEducationAndTrainingServicesDiscounts([...response.items]);
-      });
-
-    const businessOperationsData = await contentful.client
-      .getEntries({
-        content_type: "corporateDiscounts",
-        order: "fields.companyName",
-        "fields.category[match]": "Business Operations",
-      })
-      .then((response) => {
-        setBusinessOperationsDiscounts([...response.items]);
-      });
-  };
-
-  useEffect(() => {
-    getCorporateDiscounts();
-  }, []);
-
   return (
     <>
       <Head>
         <title>Corporate Discounts | Resources</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader pageName="Corporate Discounts" breadCrumb="Resources" />
         <ContentContainer>
           <Tab.Group as="div" className="col-span-full flex flex-col">
@@ -130,7 +110,7 @@ const corporateDiscounts = () => {
             </Tab.List>
             <Tab.Panels className="mt-5 rounded bg-white px-4 py-5 shadow">
               <Tab.Panel>
-                {affiliationDiscounts.map((discount) => (
+                {affiliationData.map((discount) => (
                   <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
@@ -171,7 +151,7 @@ const corporateDiscounts = () => {
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-5">
-                {technologyDiscounts.map((discount) => (
+                {technologyData.map((discount) => (
                   <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
@@ -212,7 +192,7 @@ const corporateDiscounts = () => {
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-5">
-                {investmentAndPortfolioToolsDiscounts.map((discount) => (
+                {analysisToolsData.map((discount) => (
                   <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
@@ -253,7 +233,7 @@ const corporateDiscounts = () => {
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-5">
-                {marketingDiscounts.map((discount) => (
+                {marketingData.map((discount) => (
                   <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
@@ -294,7 +274,7 @@ const corporateDiscounts = () => {
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-5">
-                {educationAndTrainingServicesDiscounts.map((discount) => (
+                {educationAndTrainingData.map((discount) => (
                   <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
@@ -335,7 +315,7 @@ const corporateDiscounts = () => {
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-5">
-                {businessOperationsDiscounts.map((discount) => (
+                {businessOperationsData.map((discount) => (
                   <div>
                     <img
                       src={`https:${discount.fields.companyLogo.fields.file.url}`}
