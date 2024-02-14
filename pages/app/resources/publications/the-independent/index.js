@@ -7,32 +7,31 @@ import BlogCardSimple from "../../../../../components/App/BlogCardSimple/BlogCar
 
 import * as contentful from "../../../../../utils/contentful";
 
-const index = () => {
-  const [magazines, setMagazines] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getMagazines = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "publications",
-        "fields.publicationType": "Independent",
-        order: "-fields.date",
-      })
-      .then((response) => {
-        console.log(response.items);
-        setMagazines([...response.items]);
-      });
+  const data = await client.getEntries({
+    content_type: "publications",
+    "fields.publicationType[match]": "Independent",
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      magazines: [...data.items],
+      preview: preview || false,
+      revalidate: 10,
+    },
   };
+}
 
-  useEffect(() => {
-    getMagazines();
-  }, []);
-
+const index = ({ magazines, preview }) => {
   return (
     <>
       <Head>
         <title>The Independent | Publications</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
           pageName="The Independent"
           breadCrumb="Resources > Publications"

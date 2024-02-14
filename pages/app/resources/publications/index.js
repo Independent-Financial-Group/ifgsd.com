@@ -4,7 +4,15 @@ import Layout from "../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../components/App/InternalPages/PageHeader/PageHeader";
 import BlogCardBgImage from "../../../../components/App/BlogCardBgImage/BlogCardBgImage";
 
-const index = () => {
+export async function getStaticProps({ preview }) {
+  return {
+    props: {
+      preview: preview || false,
+    },
+  };
+}
+
+const index = ({ preview }) => {
   const topics = [
     {
       name: "The Independent",
@@ -34,7 +42,7 @@ const index = () => {
       <Head>
         <title>Publications | Resources</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader pageName="Publications" breadCrumb="Resources" />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <section className="col-span-12">
