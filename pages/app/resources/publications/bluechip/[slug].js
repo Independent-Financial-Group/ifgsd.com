@@ -53,7 +53,7 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
       article: articles.items[0],
       preview: preview || false,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 };
 

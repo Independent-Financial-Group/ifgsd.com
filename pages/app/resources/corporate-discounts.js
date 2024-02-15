@@ -53,7 +53,6 @@ export async function getStaticProps({ preview }) {
   return {
     props: {
       preview: preview || false,
-      revalidate: 10,
       affiliationData: [...affiliationData.items],
       technologyData: [...technologyData.items],
       analysisToolsData: [...analysisToolsData.items],
@@ -61,6 +60,7 @@ export async function getStaticProps({ preview }) {
       educationAndTrainingData: [...educationAndTrainingData.items],
       businessOperationsData: [...businessOperationsData.items],
     },
+    revalidate: 10,
   };
 }
 

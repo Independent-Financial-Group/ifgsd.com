@@ -62,7 +62,7 @@ export const getStaticProps = async ({ params, preview }) => {
       model: models.items[0],
       preview: preview || false,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 };
 

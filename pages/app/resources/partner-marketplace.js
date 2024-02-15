@@ -46,12 +46,12 @@ export async function getStaticProps({ preview }) {
   return {
     props: {
       preview: preview || false,
-      revalidate: 10,
       elitePartners: [...elitePartners.items],
       platinumPartners: [...platinumPartners.items],
       goldPartners: [...goldPartners.items],
       silverPartners: [...silverPartners.items],
     },
+    revalidate: 10,
   };
 }
 

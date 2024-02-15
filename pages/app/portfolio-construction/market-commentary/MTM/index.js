@@ -19,8 +19,8 @@ export async function getStaticProps({ preview }) {
     props: {
       metricsArticles: [...data.items],
       preview: preview || false,
-      revalidate: 10,
     },
+    revalidate: 10,
   };
 }
 

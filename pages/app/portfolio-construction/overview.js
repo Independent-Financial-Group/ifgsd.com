@@ -45,6 +45,7 @@ export async function getServerSideProps({ preview }) {
       marketCommentary: [...marketCommentary.items],
       preview: preview || false,
     },
+    revalidate: 10,
   };
 }
 

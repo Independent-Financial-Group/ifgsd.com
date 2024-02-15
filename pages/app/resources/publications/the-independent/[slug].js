@@ -52,7 +52,7 @@ export const getStaticProps = async ({ params, preview }) => {
       article: articles.items[0],
       preview: preview || false,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 };
 

@@ -32,9 +32,9 @@ export async function getStaticProps({ preview }) {
   return {
     props: {
       episodes: [...data.items],
-      revalidate: 10,
       preview: preview || false,
     },
+    revalidate: 10,
   };
 }
 
