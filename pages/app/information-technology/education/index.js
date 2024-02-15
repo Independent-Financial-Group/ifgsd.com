@@ -7,23 +7,25 @@ import BlogCardSimple from "../../../../components/App/BlogCardSimple/BlogCardSi
 
 import * as contentful from "../../../../utils/contentful";
 
-const overview = () => {
-  const [articles, setArticles] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getArticle = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "education",
-        "fields.department[match]": "Information Technology",
-        order: "-fields.date",
-      })
-      .then((response) => setArticles([...response.items]));
+  const data = await client.getEntries({
+    content_type: "education",
+    "fields.department[match]": "Information Technology",
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      articles: [...data.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getArticle();
-  }, []);
-
+const overview = ({ articles, preview }) => {
   return (
     <>
       <Head>
@@ -33,7 +35,7 @@ const overview = () => {
           content="Educational resources from the information technology department."
         />
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
           breadCrumb={"Information Technology"}
           pageName={"Education"}

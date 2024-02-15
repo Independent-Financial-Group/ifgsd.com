@@ -3,7 +3,15 @@ import Layout from "../../../components/App/Layout/Layout";
 import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
 import Head from "next/head";
 
-const overview = () => {
+export async function getStaticProps({ preview }) {
+  return {
+    props: {
+      preview: preview || false,
+    },
+  };
+}
+
+const overview = ({ preview }) => {
   return (
     <>
       <Head>
@@ -13,7 +21,7 @@ const overview = () => {
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
           breadCrumb={"Information Technology"}
           pageName={"Service Status"}
