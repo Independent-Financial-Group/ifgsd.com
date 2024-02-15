@@ -4,16 +4,11 @@ import Link from "next/link";
 
 // CONTENTFUL IMPORTS
 import { formatDateAndTime } from "@contentful/f36-datetime";
-const contenful = require("contentful");
-
-const client = contenful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+import * as contentful from "../../../../utils/contentful";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const UpcomingEvents = () => {
+const UpcomingEvents = ({ preview }) => {
   const [events, setEvents] = useState([]);
   const [totalLength, setTotalLength] = useState(0);
   const [page, setPage] = useState(1);
@@ -21,6 +16,7 @@ const UpcomingEvents = () => {
 
   const getEvents = async () => {
     const fetchLimit = 3 * page;
+    const client = preview ? contentful.previewClient : contentful.client;
 
     const data = await client
       .getEntries({
