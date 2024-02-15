@@ -32,7 +32,7 @@ const MarketResearch = ({ featuredModels }) => {
                   {model.fields.name}
                 </h3>
                 <Link
-                  className="mx-auto block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
+                  className="mx-auto mt-5 block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
                   href={`/app/portfolio-construction/models/${model.fields.slug}`}
                 >
                   Learn More
