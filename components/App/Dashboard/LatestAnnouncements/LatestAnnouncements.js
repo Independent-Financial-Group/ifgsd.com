@@ -114,7 +114,7 @@ const LatestAnnouncements = ({ preview }) => {
                   </p>
                   <div className="flex items-center justify-end">
                     <Link
-                      href="#"
+                      href={announcement.fields.slug}
                       className="flex items-center gap-1 text-xs font-semibold hover:text-neon-orange-600"
                     >
                       Read More <ChevronRightIcon className="h-3" />
