@@ -7,27 +7,27 @@ import BlogCardSimple from "../../../../../components/App/BlogCardSimple/BlogCar
 // CONTENTFUL IMPORTS
 import * as contentful from "../../../../../utils/contentful";
 
-const index = () => {
-  const [researchArticles, setResearchArticles] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getResearchArticles = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "marketCommentary",
-        "fields.topic[match]": "Portfolio Construction Research",
-        order: "-fields.date",
-      })
-      .then((response) => {
-        setResearchArticles([...response.items]);
-      });
+  const data = await client.getEntries({
+    content_type: "marketCommentary",
+    "fields.topic[match]": "Portfolio Construction Research",
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      researchArticles: [...data.items],
+      preview: preview || false,
+      revalidate: 10,
+    },
   };
+}
 
-  useEffect(() => {
-    getResearchArticles();
-  }, []);
-
+const index = ({ preview, researchArticles }) => {
   return (
-    <Layout>
+    <Layout preview={preview}>
       <PageHeader
         pageName="Portfolio Construction Research"
         breadCrumb="Portfolio Construction > Market Commentary"

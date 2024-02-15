@@ -39,7 +39,7 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps = async ({ params, preview, draftMode }) => {
+export const getStaticProps = async ({ params, preview }) => {
   const slug = params.slug;
   const client =
     preview || draftMode ? contentful.previewClient : contentful.client;
@@ -54,16 +54,14 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
     props: {
       article: articles.items[0],
       preview: preview || false,
-      draftMode: draftMode || false,
     },
     revalidate: 5,
   };
 };
 
-const Article = ({ article, preview, draftMode }) => {
+const Article = ({ article, preview }) => {
   return (
-    <Layout>
-      {preview && <PreviewBanner />}
+    <Layout preview={preview}>
       <div className="flex min-h-screen items-center justify-center">
         <article className="mx-auto w-3/4 rounded-lg bg-white px-4 py-3">
           <h1 className="mb-5 text-center text-4xl text-neon-orange-500">
