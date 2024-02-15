@@ -10,25 +10,7 @@ const client = contenful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-const MarketResearch = () => {
-  const [featuredModels, setFeaturedModels] = useState([]);
-
-  const getFeaturedModels = async () => {
-    const data = await client
-      .getEntries({
-        content_type: "portfolioConstructionModels",
-        "fields.feature": true,
-        order: "fields.name",
-      })
-      .then((response) => {
-        setFeaturedModels([...response.items]);
-      });
-  };
-
-  useEffect(() => {
-    getFeaturedModels();
-  }, []);
-
+const MarketResearch = ({ featuredModels }) => {
   return (
     <div className="col-span-12 rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
@@ -38,7 +20,7 @@ const MarketResearch = () => {
         </h2>
       </div>
       <div className="px-4 py-4">
-        <ul className=" xl:grid xl:grid-cols-3 xl:gap-5">
+        <ul className=" md:grid md:grid-cols-2 xl:grid xl:grid-cols-3 xl:gap-5">
           {featuredModels.map((model) => {
             return (
               <li>
@@ -49,14 +31,8 @@ const MarketResearch = () => {
                 <h3 className="text-center font-semibold">
                   {model.fields.name}
                 </h3>
-                <p className="my-5 text-center text-sm leading-7">
-                  {model.fields.modelDescription &&
-                    model.fields.modelDescription}
-                  {!model.fields.modelDescription &&
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium alias quas fuga error eaque iusto unde repudiandae doloremque numquam!"}
-                </p>
                 <Link
-                  className="mx-auto block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
+                  className="mx-auto mt-5 block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
                   href={`/app/portfolio-construction/models/${model.fields.slug}`}
                 >
                   Learn More

@@ -9,31 +9,26 @@ import { Bar, Chart } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import Link from "next/link";
 // CONTENTFUL IMPORTS
-const contenful = require("contentful");
+import * as contentful from "../../../../utils/contentful";
 
-const client = contenful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-const index = () => {
-  const [models, setModels] = useState([]);
+  const data = await client.getEntries({
+    content_type: "portfolioConstructionModels",
+    order: "fields.name",
+  });
 
-  const getModels = async () => {
-    const data = await client
-      .getEntries({
-        content_type: "portfolioConstructionModels",
-        order: "fields.name",
-      })
-      .then((response) => {
-        setModels([...response.items]);
-      });
+  return {
+    props: {
+      models: [...data.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getModels();
-  }, []);
-
+const index = ({ preview, models }) => {
   const optionsDesktop = {
     indexAxis: "y",
     elements: {
@@ -57,7 +52,7 @@ const index = () => {
   };
 
   return (
-    <Layout>
+    <Layout preview={preview}>
       <PageHeader
         pageName="Access Point Models"
         breadCrumb="Portfolio Construction"
@@ -188,14 +183,8 @@ const index = () => {
                   <h3 className="text-center font-semibold">
                     {model.fields.name}
                   </h3>
-                  <p className="my-5 text-center text-sm leading-7">
-                    {model.fields.modelDescription &&
-                      model.fields.modelDescription}
-                    {!model.fields.modelDescription &&
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium alias quas fuga error eaque iusto unde repudiandae doloremque numquam!"}
-                  </p>
                   <Link
-                    className="mx-auto block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
+                    className="mx-auto mt-5 block w-fit rounded bg-neon-orange-500 p-2 font-semibold text-seabreeze-500"
                     href={`/app/portfolio-construction/models/${model.fields.slug}`}
                   >
                     Learn More

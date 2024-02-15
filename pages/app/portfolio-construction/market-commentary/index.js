@@ -3,7 +3,15 @@ import Layout from "../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../components/App/InternalPages/PageHeader/PageHeader";
 import BlogCardBgImage from "../../../../components/App/BlogCardBgImage/BlogCardBgImage";
 
-const index = () => {
+export async function getStaticProps({ preview }) {
+  return {
+    props: {
+      preview: preview || false,
+    },
+  };
+}
+
+const index = ({ preview }) => {
   const topics = [
     {
       name: "Metrics that Matter",
@@ -28,7 +36,7 @@ const index = () => {
   ];
 
   return (
-    <Layout>
+    <Layout preview={preview}>
       <PageHeader
         pageName="Market Commentary"
         breadCrumb="Portfolio Construction"

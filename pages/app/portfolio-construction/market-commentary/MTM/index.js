@@ -4,35 +4,29 @@ import PageHeader from "../../../../../components/App/InternalPages/PageHeader/P
 import ContentContainer from "../../../../../components/App/ContentContainer/ContentContainer";
 import BlogCardSimple from "../../../../../components/App/BlogCardSimple/BlogCardSimple";
 
-// CONTENTFUL IMPORTS
-const contenful = require("contentful");
+import * as contentful from "../../../../../utils/contentful";
 
-const client = contenful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-const index = () => {
-  const [metricsArticles, setMetricsArticles] = useState([]);
+  const data = await client.getEntries({
+    content_type: "marketCommentary",
+    "fields.topic[match]": "Metrics that Matter",
+    order: "-fields.date",
+  });
 
-  const getMetricsArticles = async () => {
-    const data = await client
-      .getEntries({
-        content_type: "marketCommentary",
-        "fields.topic[match]": "Metrics that Matter",
-        order: "-fields.date",
-      })
-      .then((response) => {
-        setMetricsArticles([...response.items]);
-      });
+  return {
+    props: {
+      metricsArticles: [...data.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getMetricsArticles();
-  }, []);
-
+const index = ({ metricsArticles, preview }) => {
   return (
-    <Layout>
+    <Layout preview={preview}>
       <PageHeader
         pageName="Metrics that Matter"
         breadCrumb="Portfolio Construction > Market Commentary"

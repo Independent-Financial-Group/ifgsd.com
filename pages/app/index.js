@@ -9,10 +9,16 @@ import UpcomingEvents from "../../components/App/Dashboard/UpcomingEvents/Upcomi
 import ReferralProgramTool from "../../components/App/ReferralProgramTool/ReferralProgramTool";
 import AdSquare from "../../components/App/Dashboard/AdSquare/AdSquare";
 
-const index = () => {
+export async function getStaticProps({ preview }) {
+  return {
+    props: {
+      preview: preview || false,
+    },
+  };
+}
+
+const index = ({ preview }) => {
   const { isLoaded, isSignedIn, user } = useUser();
-  // const isLoaded = false;
-  // const isSignedIn = false;
 
   if (!isLoaded || !isSignedIn) {
     return (
@@ -20,7 +26,7 @@ const index = () => {
         <Head>
           <title>Rep Portal | Independent Financial Group</title>
         </Head>
-        <Layout>
+        <Layout preview={preview}>
           <div className="m-w-full flex min-h-screen items-center justify-center">
             <div role="status">
               <svg
@@ -52,7 +58,7 @@ const index = () => {
       <Head>
         <title>Rep Portal | Independent Financial Group</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <DashboardHeader />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <QuickLinks />

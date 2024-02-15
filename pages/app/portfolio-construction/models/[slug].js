@@ -15,15 +15,10 @@ import {
 } from "@heroicons/react/24/outline";
 
 // CONTENTFUL IMPORTS
-const contenful = require("contentful");
-
-const client = contenful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+import * as contentful from "../../../../utils/contentful";
 
 export async function getStaticPaths() {
-  const response = await client.getEntries({
+  const response = await contentful.client.getEntries({
     content_type: "portfolioConstructionModels",
     order: "fields.name",
   });
@@ -51,8 +46,10 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, preview }) => {
   const slug = params.slug;
+
+  const client = preview ? contentful.previewClient : contentful.client;
 
   const models = await client.getEntries({
     content_type: "portfolioConstructionModels",
@@ -63,14 +60,15 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       model: models.items[0],
+      preview: preview || false,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 };
 
-const Model = ({ model }) => {
+const Model = ({ model, preview }) => {
   return (
-    <Layout>
+    <Layout preview={preview}>
       <PageHeader pageName={model.fields.name} breadCrumb="Models" />
       <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
         <GridTile colSpan={"col-span-4"} tileTitle="Asset Allocation Breakdown">

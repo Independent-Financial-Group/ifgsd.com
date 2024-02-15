@@ -15,8 +15,8 @@ import { UserButton } from "@clerk/nextjs";
 
 import Image from "next/image";
 import Link from "next/link";
-
 import logoIcon from "../../../public/ifg-icon.png";
+import PreviewBanner from "../PreviewBanner/PreviewBanner";
 
 const navigation = [
   { name: "Dashboard", href: "/app", icon: HomeIcon, current: true },
@@ -25,16 +25,16 @@ const navigation = [
     icon: BuildingOffice2Icon,
     current: false,
     children: [
-      {
-        name: "Advisory",
-        links: [
-          { name: "Overview", href: "/app/advisory/overview" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
+      // {
+      //   name: "Advisory",
+      //   links: [
+      //     { name: "Overview", href: "/app/advisory/overview" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
       {
         name: "Alt. Investments",
         links: [
@@ -48,66 +48,66 @@ const navigation = [
           { name: "Education", href: "#" },
         ],
       },
-      {
-        name: "Annuities",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Bank Products",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Commissions & Fees",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Compliance",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Corp. Comm.",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Fixed Income",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
+      // {
+      //   name: "Annuities",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Bank Products",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Commissions & Fees",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Compliance",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Corp. Comm.",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Fixed Income",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
       {
         name: "Info. Technology",
         links: [
@@ -123,26 +123,26 @@ const navigation = [
           { name: "Education", href: "/app/information-technology/education" },
         ],
       },
-      {
-        name: "Insurance",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Operations",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
+      // {
+      //   name: "Insurance",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Operations",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
       {
         name: "Portfolio Construction",
         links: [
@@ -154,36 +154,36 @@ const navigation = [
           { name: "Models", href: "/app/portfolio-construction/models" },
         ],
       },
-      {
-        name: "Practice Development",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Retirement Services",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
-      {
-        name: "Supervision",
-        links: [
-          { name: "Overview", href: "#" },
-          { name: "Approved Products", href: "#" },
-          { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
-        ],
-      },
+      // {
+      //   name: "Practice Development",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Retirement Services",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
+      // {
+      //   name: "Supervision",
+      //   links: [
+      //     { name: "Overview", href: "#" },
+      //     { name: "Approved Products", href: "#" },
+      //     { name: "Partners", href: "#" },
+      //     { name: "Tools", href: "#" },
+      //     { name: "Education", href: "#" },
+      //   ],
+      // },
     ],
   },
   {
@@ -191,7 +191,7 @@ const navigation = [
     icon: FolderIcon,
     current: false,
     children: [
-      { name: "Calendar", href: "/app/resources/calendar" },
+      // { name: "Calendar", href: "/app/resources/calendar" },
       { name: "Company Directory", href: "/app/resources/company-directory" },
       {
         name: "Corporate Discounts",
@@ -204,8 +204,8 @@ const navigation = [
       { name: "Podcast", href: "/app/resources/podcast" },
       { name: "Publications", href: "/app/resources/publications" },
       { name: "Referral Program", href: "/app/resources/referral-program" },
-      { name: "Retail Shop", href: "/app/resources/shop" },
-      { name: "Story Submission", href: "/app/resources/story-submission" },
+      // { name: "Retail Shop", href: "/app/resources/shop" },
+      // { name: "Story Submission", href: "/app/resources/story-submission" },
     ],
   },
   { name: "Contact", current: false, icon: PhoneIcon, href: "/app/contact" },
@@ -215,8 +215,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Layout({ children }) {
+export default function Layout({ children, preview }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  console.log(preview);
 
   return (
     <>
@@ -537,7 +538,12 @@ export default function Layout({ children }) {
         </div>
 
         <main className="lg:pl-72">
-          <div>{children}</div>
+          <div>
+            <>
+              {preview && <PreviewBanner />}
+              {children}
+            </>
+          </div>
         </main>
       </div>
     </>

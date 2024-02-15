@@ -8,7 +8,36 @@ import ContentLibrary from "../../../components/App/InternalPages/Overview/Conte
 import TeamDirectory from "../../../components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
 import ProductAdBanner from "../../../components/App/InternalPages/Overview/ProductAdBanner/ProductAdBanner";
 
-const overview = () => {
+import * as contentful from "../../../utils/contentful";
+
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
+  const department = "Alternative Investments";
+
+  const teamMemberData = await client.getEntries({
+    content_type: "companyDirectory",
+    "fields.department[match]": department,
+    "fields.termed": false,
+    order: "fields.fullName",
+  });
+
+  const departmentAnnouncementData = await client.getEntries({
+    content_type: "announcements",
+    "fields.department[match]": department,
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      teamMemberData: [...teamMemberData.items],
+      departmentAnnouncementData: [...departmentAnnouncementData.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
+  };
+}
+
+const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
   return (
     <>
       <Head>
@@ -18,7 +47,7 @@ const overview = () => {
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
           pageName={"Alternative Investments Overview"}
           headerText={
@@ -27,14 +56,17 @@ const overview = () => {
         />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <OverviewVideo url="https://vimeo.com/manage/videos/864186162" />
-          <DepartmentAnnouncements department={"alts"} />
+          <DepartmentAnnouncements
+            name="Alternative Investments"
+            data={departmentAnnouncementData}
+          />
           <ProductAdBanner
             url={
               "https://images.ctfassets.net/9lvru9ro1ti1/2mtjSuITOLE31fF5OV45XY/354efb69633de440ea2533a25c7f4220/sealy_banner_ad_2023.jpg"
             }
           />
           <ContentLibrary />
-          <TeamDirectory department="Alternative Investments" />
+          <TeamDirectory name="Alternative Investments" data={teamMemberData} />
         </div>
       </Layout>
     </>

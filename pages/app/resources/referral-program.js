@@ -6,13 +6,21 @@ import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHea
 import ContentContainer from "../../../components/App/ContentContainer/ContentContainer";
 import ReferralProgramForm from "../../../components/App/ReferralProgramForm/ReferralProgramForm";
 
-const referralProgram = () => {
+export async function getStaticProps({ preview }) {
+  return {
+    props: {
+      preview: preview || false,
+    },
+  };
+}
+
+const referralProgram = ({ preview }) => {
   return (
     <>
       <Head>
         <title>Referral Program | Resources</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
           pageName="Advisor Referral Program"
           headerText="Get rewarded when advisors you know join our family."

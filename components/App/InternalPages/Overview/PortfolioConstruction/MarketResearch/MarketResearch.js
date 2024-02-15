@@ -6,79 +6,9 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 
-import * as contentful from "../../../../../../utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 
-const MarketResearch = () => {
-  const announcements = [
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-    {
-      title: "title",
-      date: "December 7, 2023",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis...",
-      slug: "#",
-    },
-  ];
-
-  const [marketCommentary, setMarketCommentary] = useState([]);
-
-  const getMarketCommentary = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "marketCommentary",
-        order: "-fields.date",
-      })
-      .then((response) => setMarketCommentary([...response.items]));
-
-    console.log(marketCommentary);
-  };
-
-  useEffect(() => {
-    getMarketCommentary();
-  }, []);
-
+const MarketResearch = ({ marketCommentary }) => {
   return (
     <div className="col-span-4 h-[500px] rounded-lg bg-white shadow">
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">

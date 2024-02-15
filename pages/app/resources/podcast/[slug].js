@@ -41,10 +41,9 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps = async ({ params, preview, draftMode }) => {
+export const getStaticProps = async ({ params, preview }) => {
   const slug = params.slug;
-  const client =
-    preview || draftMode ? contentful.previewClient : contentful.client;
+  const client = preview ? contentful.previewClient : contentful.client;
 
   const articles = await client.getEntries({
     content_type: "podcast",
@@ -56,18 +55,14 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
     props: {
       article: articles.items[0],
       preview: preview || false,
-      draftMode: draftMode || false,
     },
-    revalidate: 5,
+    revalidate: 10,
   };
 };
 
-const Article = ({ article, preview, draftMode }) => {
-  // console.log(article.fields.audioFile.fields.file.url);
-
+const Article = ({ article, preview }) => {
   return (
-    <Layout>
-      {preview && <PreviewBanner />}
+    <Layout preview={preview}>
       <PageHeader
         pageName={article.fields.title}
         breadCrumb={formatDateAndTime(article.fields.date, "day")}

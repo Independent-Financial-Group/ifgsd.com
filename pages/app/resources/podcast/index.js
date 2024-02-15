@@ -20,31 +20,31 @@ import * as contentful from "../../../../utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import Link from "next/link";
 
-const index = () => {
-  const [episodes, setEpisodes] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getEpisodes = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "podcast",
-        limit: 6,
-        order: "-fields.date",
-      })
-      .then((response) => {
-        setEpisodes([...response.items]);
-      });
+  const data = await client.getEntries({
+    content_type: "podcast",
+    limit: 6,
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      episodes: [...data.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getEpisodes();
-  }, []);
-
+const index = ({ preview, episodes }) => {
   return (
     <>
       <Head>
         <title>The Playbook | Podcast</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader breadCrumb="IFG's Podcast Series" pageName="The Playbook" />
         <ContentContainer>
           <section className="col-span-12 items-center xl:grid xl:grid-cols-2">

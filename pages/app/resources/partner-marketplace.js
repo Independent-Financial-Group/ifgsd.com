@@ -16,93 +16,60 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 // CONTENTFUL
 import * as contentful from "../../../utils/contentful";
 
-const partnerMarketplace = () => {
-  const tabLabels = ["Elite", "Platinum", "Gold", "Silver"];
-  const [elitePartners, setElitePartners] = useState([]);
-  const [platinumPartners, setPlatinumPartners] = useState([]);
-  const [goldPartners, setGoldPartners] = useState([]);
-  const [silverPartners, setSilverPartners] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getPartners = async () => {
-    const eliteData = await contentful.client
-      .getEntries({
-        content_type: "partners",
-        "fields.partnerLevel[match]": "Elite",
-        order: "fields.partnerName",
-      })
-      .then((response) => {
-        setElitePartners([...response.items]);
-      });
-    const platinumData = await contentful.client
-      .getEntries({
-        content_type: "partners",
-        "fields.partnerLevel[match]": "Platinum",
-        order: "fields.partnerName",
-      })
-      .then((response) => {
-        setPlatinumPartners([...response.items]);
-      });
-    const goldData = await contentful.client
-      .getEntries({
-        content_type: "partners",
-        "fields.partnerLevel[match]": "Gold",
-        order: "fields.partnerName",
-      })
-      .then((response) => {
-        setGoldPartners([...response.items]);
-      });
-    const silverData = await contentful.client
-      .getEntries({
-        content_type: "partners",
-        "fields.partnerLevel[match]": "Silver",
-        order: "fields.partnerName",
-      })
-      .then((response) => {
-        setSilverPartners([...response.items]);
-      });
+  const elitePartners = await client.getEntries({
+    content_type: "partners",
+    "fields.partnerLevel[match]": "Elite",
+    order: "fields.partnerName",
+  });
+
+  const platinumPartners = await client.getEntries({
+    content_type: "partners",
+    "fields.partnerLevel[match]": "Platinum",
+    order: "fields.partnerName",
+  });
+
+  const goldPartners = await client.getEntries({
+    content_type: "partners",
+    "fields.partnerLevel[match]": "Gold",
+    order: "fields.partnerName",
+  });
+
+  const silverPartners = await client.getEntries({
+    content_type: "partners",
+    "fields.partnerLevel[match]": "Silver",
+    order: "fields.partnerName",
+  });
+
+  return {
+    props: {
+      preview: preview || false,
+      elitePartners: [...elitePartners.items],
+      platinumPartners: [...platinumPartners.items],
+      goldPartners: [...goldPartners.items],
+      silverPartners: [...silverPartners.items],
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getPartners();
-  }, []);
-
-  // const splideOptions = {
-  //   type: "slide",
-  //   pagination: true,
-  //   arrows: true,
-  //   gap: "80px",
-  //   classes: {
-  //     arrow:
-  //       "bg-neon-orange-500 absolute rounded-full p-2 z-50 disabled:bg-gray-100 h-10 w-10 [&>svg]:disabled:!fill-gray-500 [&>svg]:!fill-seabreeze-500 [&>svg]:!w-6 [&>svg]:!h-6 top-1/2 -translate-y-1/2",
-  //     pagination: "flex items-center justify-center gap-3",
-  //     page: "bg-hazard-blue-500 z-50 h-2 w-2 rounded-full",
-  //   },
-  //   breakpoints: {
-  //     640: {
-  //       perPage: 1,
-  //     },
-  //     768: {
-  //       perPage: 2,
-  //     },
-  //     1024: {
-  //       perPage: 4,
-  //     },
-  //     1280: {
-  //       perPage: 4,
-  //     },
-  //     1536: {
-  //       perPage: 4,
-  //     },
-  //   },
-  //   padding: { left: 80, right: 80 },
-  // };
+const partnerMarketplace = ({
+  preview,
+  elitePartners,
+  platinumPartners,
+  goldPartners,
+  silverPartners,
+}) => {
+  const tabLabels = ["Elite", "Platinum", "Gold", "Silver"];
 
   return (
     <>
       <Head>
         <title>Partner Market Place | Resources</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader pageName="Partner Marketplace" breadCrumb="Resources" />
         <ContentContainer>
           <Tab.Group as="div" className="col-span-full flex flex-col">

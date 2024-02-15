@@ -7,34 +7,33 @@ import BlogCardSimple from "../../../../../components/App/BlogCardSimple/BlogCar
 
 import * as contentful from "../../../../../utils/contentful";
 
-const index = () => {
-  const [connects, setConnects] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getConnects = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "publications",
-        "fields.publicationType": "Connect",
-        order: "-fields.date",
-      })
-      .then((response) => {
-        console.log(response.items);
-        setConnects([...response.items]);
-      });
+  const data = await client.getEntries({
+    content_type: "publications",
+    "fields.publicationType": "Connect",
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      connects: [...data.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getConnects();
-  }, []);
-
+const index = ({ connects, preview }) => {
   return (
     <>
       <Head>
-        <title>The Independent | Publications</title>
+        <title>IFG Connect | Publications</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader
-          pageName="The Independent"
+          pageName="IFG Connect"
           breadCrumb="Resources > Publications"
         />
         <ContentContainer>

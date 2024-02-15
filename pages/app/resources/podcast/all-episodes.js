@@ -8,30 +8,30 @@ import BlogCardSimple from "../../../../components/App/BlogCardSimple/BlogCardSi
 import * as contentful from "../../../../utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 
-const index = () => {
-  const [episodes, setEpisodes] = useState([]);
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-  const getEpisodes = async () => {
-    const data = await contentful.client
-      .getEntries({
-        content_type: "podcast",
-        order: "-fields.date",
-      })
-      .then((response) => {
-        setEpisodes([...response.items]);
-      });
+  const episodes = await client.getEntries({
+    content_type: "podcast",
+    order: "-fields.date",
+  });
+
+  return {
+    props: {
+      episodes: [...episodes.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
   };
+}
 
-  useEffect(() => {
-    getEpisodes();
-  }, []);
-
+const index = ({ episodes, preview }) => {
   return (
     <>
       <Head>
         <title>The Playbook | All Episodes</title>
       </Head>
-      <Layout>
+      <Layout preview={preview}>
         <PageHeader breadCrumb="The Playbook" pageName="All Episodes" />
         <ContentContainer>
           {episodes.map((episode) => (
