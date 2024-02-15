@@ -18,7 +18,7 @@ import {
 import * as contentful from "../../../../utils/contentful";
 
 export async function getStaticPaths() {
-  const response = await client.getEntries({
+  const response = await contentful.client.getEntries({
     content_type: "portfolioConstructionModels",
     order: "fields.name",
   });
