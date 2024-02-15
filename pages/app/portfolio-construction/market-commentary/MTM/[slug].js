@@ -42,8 +42,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params, preview }) => {
   const slug = params.slug;
-  const client =
-    preview || draftMode ? contentful.previewClient : contentful.client;
+  const client = preview ? contentful.previewClient : contentful.client;
 
   const articles = await client.getEntries({
     content_type: "marketCommentary",
