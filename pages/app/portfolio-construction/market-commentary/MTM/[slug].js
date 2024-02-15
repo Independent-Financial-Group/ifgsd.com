@@ -40,7 +40,7 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps = async ({ params, preview, draftMode }) => {
+export const getStaticProps = async ({ params, preview }) => {
   const slug = params.slug;
   const client =
     preview || draftMode ? contentful.previewClient : contentful.client;
@@ -55,16 +55,14 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
     props: {
       article: articles.items[0],
       preview: preview || false,
-      draftMode: draftMode || false,
     },
     revalidate: 5,
   };
 };
 
-const Article = ({ article, preview, draftMode }) => {
+const Article = ({ article, preview }) => {
   return (
-    <Layout>
-      {preview && <PreviewBanner />}
+    <Layout preview={preview}>
       <article className="mx-auto mt-5 max-w-prose">
         <ReactPlayer
           url={article.fields.videoLink}
