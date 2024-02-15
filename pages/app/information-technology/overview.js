@@ -17,6 +17,7 @@ export async function getStaticProps({ preview }) {
   const teamMemberData = await client.getEntries({
     content_type: "companyDirectory",
     "fields.department[match]": department,
+    "fields.termed": false,
     order: "fields.fullName",
   });
 

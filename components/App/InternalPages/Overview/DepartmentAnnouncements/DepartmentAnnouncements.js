@@ -13,7 +13,7 @@ const DepartmentAnnouncements = ({ data, name }) => {
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">
-        {!data && (
+        {!data.length && (
           <div className="flex h-full items-center justify-center text-center text-xl font-semibold text-gray-300">
             <h3>No Updates</h3>
           </div>
