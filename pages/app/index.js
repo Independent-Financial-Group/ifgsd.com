@@ -9,6 +9,8 @@ import UpcomingEvents from "../../components/App/Dashboard/UpcomingEvents/Upcomi
 import ReferralProgramTool from "../../components/App/ReferralProgramTool/ReferralProgramTool";
 import AdSquare from "../../components/App/Dashboard/AdSquare/AdSquare";
 
+import * as contentful from "../../utils/contentful";
+
 export async function getStaticProps({ preview }) {
   return {
     props: {
@@ -62,8 +64,8 @@ const index = ({ preview }) => {
         <DashboardHeader />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <QuickLinks />
-          <LatestAnnouncements />
-          <UpcomingEvents />
+          <LatestAnnouncements preview={preview} />
+          <UpcomingEvents preview={preview} />
           <AdSquare />
           <ReferralProgramTool />
         </div>
