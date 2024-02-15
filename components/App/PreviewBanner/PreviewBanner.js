@@ -9,7 +9,8 @@ const PreviewBanner = () => {
   return (
     <div className="sticky top-0 z-50 bg-red-600 px-4 py-3 text-white">
       <p className="text-center text-sm font-medium">
-        You are viewing this page in preview mode.{" "}
+        You are in preview mode. Any items in draft status in contentful will
+        now show.{" "}
         <a
           href={`/api/public/clear-preview?path=${router.asPath}`}
           className="inline-block underline"
