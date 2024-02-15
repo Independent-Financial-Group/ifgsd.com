@@ -9,31 +9,26 @@ import { Bar, Chart } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import Link from "next/link";
 // CONTENTFUL IMPORTS
-const contenful = require("contentful");
+import * as contentful from "../../../../utils/contentful";
 
-const client = contenful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
 
-const index = () => {
-  const [models, setModels] = useState([]);
+  const data = await client.getEntries({
+    content_type: "portfolioConstructionModels",
+    order: "fields.name",
+  });
 
-  const getModels = async () => {
-    const data = await client
-      .getEntries({
-        content_type: "portfolioConstructionModels",
-        order: "fields.name",
-      })
-      .then((response) => {
-        setModels([...response.items]);
-      });
+  return {
+    props: {
+      models: [...data.items],
+      preview: preview || false,
+      revalidate: 10,
+    },
   };
+}
 
-  useEffect(() => {
-    getModels();
-  }, []);
-
+const index = ({ preview, models }) => {
   const optionsDesktop = {
     indexAxis: "y",
     elements: {
@@ -57,7 +52,7 @@ const index = () => {
   };
 
   return (
-    <Layout>
+    <Layout preview={preview}>
       <PageHeader
         pageName="Access Point Models"
         breadCrumb="Portfolio Construction"
