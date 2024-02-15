@@ -9,7 +9,7 @@ import MarketResearch from "../../../components/App/InternalPages/Overview/Portf
 
 import * as contentful from "../../../utils/contentful";
 
-export async function getServerSideProps({ preview }) {
+export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
   const department = "Portfolio Construction";
 
