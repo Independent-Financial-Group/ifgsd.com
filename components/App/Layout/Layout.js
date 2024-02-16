@@ -40,8 +40,8 @@ const navigation = [
         links: [
           { name: "Overview", href: "/app/alternative-investments/overview" },
           {
-            name: "Inventories",
-            href: "/app/alternative-investments/inventories",
+            name: "Approved Products",
+            href: "/app/alternative-investments/approved-products",
           },
           { name: "Partners", href: "#" },
           { name: "Tools", href: "#" },
