@@ -168,6 +168,13 @@ const ContactForm = () => {
           <h2 className="my-5 mb-5 text-center text-3xl font-bold text-neon-orange-500">
             Send us a message
           </h2>
+          <p className="mb-5 text-xs italic leading-5 text-gray-700">
+            **If you are an existing client of an advisor affiliated with
+            Independent Financial Group with an inquiry related to updating
+            information on your account, online access, statement or tax form
+            requests, or general questions on your account, please contact your
+            financial advisor directly.
+          </p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="sr-only" htmlFor="name">
