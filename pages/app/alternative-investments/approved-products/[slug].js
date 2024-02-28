@@ -77,7 +77,7 @@ const ProductPage = ({ product, preview }) => {
         breadCrumb="Alternative Investments > Approved Product"
       />
       <ContentContainer>
-        {preview && (
+        {product && (
           <>
             <GridTile tileTitle="Product Overview" colSpan="col-span-6">
               {product.fields.productType !== "1031s" && (
