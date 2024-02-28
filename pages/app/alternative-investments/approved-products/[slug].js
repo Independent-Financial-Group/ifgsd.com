@@ -73,7 +73,7 @@ const ProductPage = ({ product, preview }) => {
   return (
     <Layout preview={preview}>
       <PageHeader
-        pageName={product.fields.offeringName}
+        pageName={product ? product.fields.offeringName : "NA"}
         breadCrumb="Alternative Investments > Approved Product"
       />
       <ContentContainer>
