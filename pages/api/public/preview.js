@@ -42,10 +42,5 @@ export default function handler(req, res) {
     );
   }
 
-  // console.log(`PREFIX: ${pathPrefix}`);
-  // console.log(`SLUG: ${slug}`);
-  // console.log(`FULL PATH: ${pathPrefix.concat(slug)}`);
-
-  // res.redirect(pathPrefix.concat(slug));
   res.redirect("/app");
 }

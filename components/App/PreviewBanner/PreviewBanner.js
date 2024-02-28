@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 
 const PreviewBanner = () => {
   const router = useRouter();
-  console.log(router.asPath);
 
   return (
     <div className="sticky top-0 z-50 bg-red-600 px-4 py-3 text-white">

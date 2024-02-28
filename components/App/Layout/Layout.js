@@ -217,7 +217,6 @@ function classNames(...classes) {
 
 export default function Layout({ children, preview }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  console.log(preview);
 
   return (
     <>

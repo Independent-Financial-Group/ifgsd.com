@@ -59,17 +59,23 @@ export const getStaticProps = async ({ params, preview }) => {
     "fields.slug[match]": slug,
   });
 
+  const otherProducts = await client.getEntries({
+    content_type: "approvedProducts",
+    "fields.productType[match]": products.items[0].fields.productType,
+    order: "fields.offeringName",
+  });
+
   return {
     props: {
       product: products.items[0] || false,
       preview: preview || false,
+      otherProducts: [...otherProducts.items],
     },
     revalidate: 10,
   };
 };
 
-const ProductPage = ({ product, preview }) => {
-  //   console.log(product.fields.supportingDocuments[0].fields.file);
+const ProductPage = ({ product, preview, otherProducts }) => {
   return (
     <Layout preview={preview}>
       <PageHeader
@@ -158,17 +164,37 @@ const ProductPage = ({ product, preview }) => {
                   ))}
               </ul>
             </GridTile>
-            <div className="col-span-6">
-              <h2 className="text-lg font-bold text-neon-orange-500">
-                Details
-              </h2>
+            <GridTile tileTitle="Details" colSpan="col-span-7">
               <Markdown
-                className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_p]:mb-2"
+                className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_h3]:font-semibold [&_h3]:text-neon-orange-500 [&_p]:mb-2 [&_td]:last:pl-3"
                 remarkPlugins={[remarkGfm]}
               >
                 {product.fields.productWriteUp}
               </Markdown>
-            </div>
+            </GridTile>
+            <GridTile
+              tileTitle={`Other ${product.fields.productType} Products`}
+              colSpan="col-span-5"
+              scroll
+            >
+              <ol className="flex flex-col divide-y">
+                {otherProducts.map((product) => (
+                  <Link
+                    key={product.sys.id}
+                    href={product.fields.slug}
+                    className="pt-1"
+                  >
+                    <h3 className="font-semibold">
+                      {product.fields.offeringName}
+                    </h3>
+                    <p className="mb-2 text-sm">
+                      <strong>Type: </strong>
+                      {product.fields.productTypeCategory}
+                    </p>
+                  </Link>
+                ))}
+              </ol>
+            </GridTile>
           </>
         )}
       </ContentContainer>
