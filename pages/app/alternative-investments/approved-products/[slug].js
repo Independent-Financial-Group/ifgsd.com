@@ -61,7 +61,7 @@ export const getStaticProps = async ({ params, preview }) => {
 
   return {
     props: {
-      product: products.items[0],
+      product: products.items[0] || false,
       preview: preview || false,
     },
     revalidate: 10,
