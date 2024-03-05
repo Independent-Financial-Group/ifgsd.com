@@ -23,7 +23,7 @@ import * as contentful from "utils/contentful";
 
 export async function getStaticPaths() {
   const response = await contentful.client.getEntries({
-    content_type: "portfolioConstructionModels",
+    content_type: "approvedProducts",
   });
 
   const paths = response.items.map((item) => {
@@ -54,20 +54,20 @@ export const getStaticProps = async ({ params, preview }) => {
 
   const client = preview ? contentful.previewClient : contentful.client;
 
-  const products = await client.getEntries({
+  const product = await client.getEntries({
     content_type: "approvedProducts",
     "fields.slug[match]": slug,
   });
 
   const otherProducts = await client.getEntries({
     content_type: "approvedProducts",
-    "fields.productType[match]": products.items[0].fields.productType,
+    "fields.productType[match]": product.items[0].fields.productType,
     order: "fields.offeringName",
   });
 
   return {
     props: {
-      product: products.items[0] || false,
+      product: product.items[0],
       preview: preview || false,
       otherProducts: [...otherProducts.items],
     },
@@ -76,10 +76,12 @@ export const getStaticProps = async ({ params, preview }) => {
 };
 
 const ProductPage = ({ product, preview, otherProducts }) => {
+  console.log(`product: ${product}`);
+
   return (
     <Layout preview={preview}>
       <PageHeader
-        pageName={product ? product.fields.offeringName : "NA"}
+        pageName={product.fields.offeringName}
         breadCrumb="Alternative Investments > Approved Product"
       />
       <ContentContainer>
@@ -166,7 +168,7 @@ const ProductPage = ({ product, preview, otherProducts }) => {
             </GridTile>
             <GridTile tileTitle="Details" colSpan="col-span-7">
               <Markdown
-                className="text-sm leading-7 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_h3]:font-semibold [&_h3]:text-neon-orange-500 [&_p]:mb-2 [&_td]:last:pl-3"
+                className="text-sm leading-7 [&>ul>li>ul]:ml-4 [&>ul>li>ul]:list-disc [&>ul]:list-disc [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_blockquote]:ml-4 [&_h3]:font-semibold [&_h3]:text-neon-orange-500 [&_p]:mb-2 [&_td]:last:pl-3 [&_ul]:list-inside [&_ul_li_p]:inline-block"
                 remarkPlugins={[remarkGfm]}
               >
                 {product.fields.productWriteUp}
