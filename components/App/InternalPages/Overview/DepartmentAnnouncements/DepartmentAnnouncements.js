@@ -33,7 +33,11 @@ const DepartmentAnnouncements = ({ data, name }) => {
                     {announcement.fields.excerpt}
                   </p>
                   <Link
-                    href={announcement.fields.slug}
+                    href={
+                      announcement.fields.linkIsCustom
+                        ? announcement.fields.slug
+                        : `/app/resources/announcements/${announcement.fields.slug}`
+                    }
                     className="flex items-center justify-end gap-1 text-xs font-semibold hover:text-neon-orange-600"
                   >
                     Read More <ChevronRightIcon className="h-3" />
