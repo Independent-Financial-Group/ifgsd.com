@@ -28,9 +28,12 @@ const options = {
     [BLOCKS.OL_LIST]: (node, children) => {
       return <ol className="list-decimal">{children}</ol>;
     },
-    // [BLOCKS.LIST_ITEM]: (node, children) => {
-    //   return <li>{children}</li>;
-    // },
+    [BLOCKS.UL_LIST]: (node, children) => {
+      return <ul className="ml-6 list-inside list-disc">{children}</ul>;
+    },
+    [BLOCKS.LIST_ITEM]: (node, children) => {
+      return <li className="[&_p]:last:m-0">{children}</li>;
+    },
     [BLOCKS.TABLE]: (node, children) => (
       <table className="inline-block">
         <tbody className="divide-y divide-gray-300">{children}</tbody>
