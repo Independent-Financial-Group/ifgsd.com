@@ -192,6 +192,7 @@ const navigation = [
     current: false,
     children: [
       // { name: "Calendar", href: "/app/resources/calendar" },
+      { name: "Announcements", href: "/app/resources/announcements" },
       { name: "Company Directory", href: "/app/resources/company-directory" },
       {
         name: "Corporate Discounts",
