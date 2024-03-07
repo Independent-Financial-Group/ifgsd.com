@@ -7,8 +7,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export default authMiddleware({
   //MAKE ALL ROUTES BUT /APP PUBLIC
-  publicRoutes: (req) => !req.url.includes("/app"),
-  ignoredRoutes: (req) => !req.url.includes("/app"),
+  // publicRoutes: (req) => !req.url.includes("/app"),
+  // ignoredRoutes: (req) => !req.url.includes("/app"),
+  publicRoutes: ["((?!^/app).*)"],
+  ignoredRoutes: ["((?!^/app).*)"],
   debug: process.env.NEXT_PUBLIC_VERCEL_ENV == "development" ? true : false,
 });
 
