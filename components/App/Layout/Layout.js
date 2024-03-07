@@ -40,8 +40,8 @@ const navigation = [
         links: [
           { name: "Overview", href: "/app/alternative-investments/overview" },
           {
-            name: "Inventories",
-            href: "/app/alternative-investments/inventories",
+            name: "Approved Products",
+            href: "/app/alternative-investments/approved-products",
           },
           { name: "Partners", href: "#" },
           { name: "Tools", href: "#" },
@@ -192,6 +192,7 @@ const navigation = [
     current: false,
     children: [
       // { name: "Calendar", href: "/app/resources/calendar" },
+      { name: "Announcements", href: "/app/resources/announcements" },
       { name: "Company Directory", href: "/app/resources/company-directory" },
       {
         name: "Corporate Discounts",
@@ -217,7 +218,6 @@ function classNames(...classes) {
 
 export default function Layout({ children, preview }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  console.log(preview);
 
   return (
     <>
