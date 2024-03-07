@@ -20,7 +20,7 @@ const BranchAnnouncement = ({ newBranch }) => {
           </h2>
           <p className="my-4 text-lg font-semibold lg:text-xl">
             {fields.repNames.map((name) => (
-              <span>{name}</span>
+              <span key={name}>{name}</span>
             ))}{" "}
             with {fields.dba} from {fields.officeLocation}
           </p>
