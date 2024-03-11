@@ -58,7 +58,7 @@ const AdSquare = () => {
                 <img
                   src={ad.url}
                   alt={ad.description}
-                  className="mx-auto h-[500px] w-full rounded-lg object-contain xl:object-fill"
+                  className="mx-auto h-[500px] w-full rounded-lg  object-cover"
                 />
               </a>
             </SwiperSlide>
