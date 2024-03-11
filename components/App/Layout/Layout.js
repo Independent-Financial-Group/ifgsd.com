@@ -520,11 +520,13 @@ export default function Layout({ children, preview }) {
             </div>
             <div className="flex flex-col gap-2 bg-white px-6 py-3 text-sm font-semibold leading-6 text-dunkel-blue-500">
               <div className="flex items-center gap-2">
-                <Image
-                  src={session.user.image}
+                <img
+                  src={
+                    session.user.image
+                      ? session.user.image
+                      : "https://images.ctfassets.net/9lvru9ro1ti1/6SSi4gjMHZJHXicKb2wwVq/f09261d90bd05c9c8623a7f5f1bcb9d5/IFG_Logo.png"
+                  }
                   className="h-10 w-10 rounded-full"
-                  width={40}
-                  height={40}
                 />
                 <p className="text-lg font-semibold">{session.user.name}</p>
               </div>
