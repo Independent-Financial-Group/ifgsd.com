@@ -29,7 +29,13 @@ export default function SignIn({ providers }) {
               <button
                 className="mx-auto flex items-center gap-1 rounded bg-gray-100 px-3 py-2 font-bold text-gray-600 hover:bg-gray-300 hover:text-gray-500"
                 onClick={() =>
-                  signIn(provider.id, { callbackUrl: callbackUrl })
+                  signIn(
+                    provider.id,
+                    {
+                      callbackUrl: callbackUrl,
+                    },
+                    { prompt: "login" },
+                  )
                 }
               >
                 <img
