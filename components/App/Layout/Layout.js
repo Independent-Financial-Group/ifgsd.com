@@ -520,9 +520,11 @@ export default function Layout({ children, preview }) {
             </div>
             <div className="flex flex-col gap-2 bg-white px-6 py-3 text-sm font-semibold leading-6 text-dunkel-blue-500">
               <div className="flex items-center gap-2">
-                <img
+                <Image
                   src={session.user.image}
                   className="h-10 w-10 rounded-full"
+                  width={40}
+                  height={40}
                 />
                 <p className="text-lg font-semibold">{session.user.name}</p>
               </div>
