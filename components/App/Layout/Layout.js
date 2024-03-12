@@ -42,8 +42,7 @@ const navigation = [
             href: "/app/alternative-investments/approved-products",
           },
           { name: "Partners", href: "#" },
-          { name: "Tools", href: "#" },
-          { name: "Education", href: "#" },
+          { name: "Content Library", href: "#" },
         ],
       },
       // {
