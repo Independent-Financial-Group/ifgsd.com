@@ -47,7 +47,7 @@ const AdSquare = () => {
       >
         {ads.map((ad) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={ad.link}>
               <a
                 key={ad.name}
                 href={ad.link}

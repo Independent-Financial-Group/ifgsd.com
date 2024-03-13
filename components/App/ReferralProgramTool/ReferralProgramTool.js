@@ -9,7 +9,7 @@ const ReferralProgramTool = () => {
     <div className="col-span-12 w-full rounded-lg bg-white shadow">
       <div className="mb-5 rounded-t-lg bg-neon-orange-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
-          <UserGroupIcon class="h-5 w-5" />
+          <UserGroupIcon className="h-5 w-5" />
           Advisor Referral Program
         </h2>
       </div>

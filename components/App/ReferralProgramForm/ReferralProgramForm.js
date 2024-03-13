@@ -101,10 +101,10 @@ const ReferralProgramForm = () => {
                 min={0}
                 max={3000000}
               />
-              <span class="absolute -bottom-6 start-0 text-sm text-gray-500 dark:text-gray-400">
+              <span className="absolute -bottom-6 start-0 text-sm text-gray-500 dark:text-gray-400">
                 Min ($0)
               </span>
-              <span class="absolute -bottom-6 end-0 text-sm text-gray-500 dark:text-gray-400">
+              <span className="absolute -bottom-6 end-0 text-sm text-gray-500 dark:text-gray-400">
                 Max ($300,000,000)
               </span>
             </div>

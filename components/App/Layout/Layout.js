@@ -41,8 +41,6 @@ const navigation = [
             name: "Approved Products",
             href: "/app/alternative-investments/approved-products",
           },
-          { name: "Partners", href: "#" },
-          { name: "Content Library", href: "#" },
         ],
       },
       // {
@@ -191,6 +189,7 @@ const navigation = [
       // { name: "Calendar", href: "/app/resources/calendar" },
       { name: "Announcements", href: "/app/resources/announcements" },
       { name: "Company Directory", href: "/app/resources/company-directory" },
+      { name: "Content Library", href: "/app/resources/content-library" },
       {
         name: "Corporate Discounts",
         href: "/app/resources/corporate-discounts",
@@ -331,9 +330,8 @@ export default function Layout({ children, preview }) {
                                                       {childItem.links.map(
                                                         (link) => {
                                                           return (
-                                                            <>
+                                                            <li key={link.name}>
                                                               <Link
-                                                                key={link.href}
                                                                 href={link.href}
                                                                 className={classNames(
                                                                   parentItem.current
@@ -344,7 +342,7 @@ export default function Layout({ children, preview }) {
                                                               >
                                                                 {link.name}
                                                               </Link>
-                                                            </>
+                                                            </li>
                                                           );
                                                         },
                                                       )}
@@ -358,7 +356,7 @@ export default function Layout({ children, preview }) {
                                       </Disclosure.Panel>
                                     </>
                                   ) : (
-                                    <Disclosure>
+                                    <Disclosure key={parentItem.name}>
                                       <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 font-bold text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                         <parentItem.icon
                                           className="h-6 w-6 shrink-0"
@@ -401,7 +399,7 @@ export default function Layout({ children, preview }) {
                     return (
                       <li key={parentItem.name} className="px-4">
                         {/* RENDER A DISCLOSURE FOR THE PARENT ITEM IN THE NAVIGATION ARRAY */}
-                        <Disclosure as="div">
+                        <Disclosure key={parentItem.name} as="div">
                           {({ open }) => (
                             <>
                               {/* DOES THE PARENT ITEM HAVE CHILDREN?*/}
@@ -453,12 +451,15 @@ export default function Layout({ children, preview }) {
                                                                   as="ul"
                                                                   className="ml-4"
                                                                   key={
-                                                                    link.href
+                                                                    link.name
                                                                   }
                                                                 >
                                                                   <Disclosure.Button
                                                                     as="li"
                                                                     className="rounded-lg p-2 hover:bg-gray-100 hover:text-gray-500"
+                                                                    key={
+                                                                      link.name
+                                                                    }
                                                                   >
                                                                     <Link
                                                                       href={
@@ -485,6 +486,7 @@ export default function Layout({ children, preview }) {
                                               <Link
                                                 className="flex w-full items-center justify-between rounded-lg p-2 text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                                 href={childItem.href}
+                                                key={childItem.name}
                                               >
                                                 {childItem.name}
                                               </Link>
@@ -496,7 +498,7 @@ export default function Layout({ children, preview }) {
                                   </Disclosure.Panel>
                                 </>
                               ) : (
-                                <Disclosure>
+                                <Disclosure as="div" key={parentItem.name}>
                                   <Disclosure.Button className="flex w-full items-center gap-x-3 rounded-lg p-2 hover:bg-neon-orange-100 hover:text-neon-orange-500">
                                     <parentItem.icon
                                       className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"

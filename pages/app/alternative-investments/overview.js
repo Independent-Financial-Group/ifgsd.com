@@ -343,7 +343,7 @@ const overview = ({
                     <button
                       onClick={handleGuideClick}
                       className="block w-fit rounded bg-gray-50 px-3 py-2 font-bold text-gray-500 ring-2 ring-inset ring-gray-500/20"
-                      data-guideLabel={tool.guideLabel}
+                      data-guidelabel={tool.guideLabel}
                     >
                       Guides
                     </button>
@@ -366,11 +366,8 @@ const overview = ({
               </h3>
               <dl className="[&_dd]:my-1 [&_dd]:ml-4 [&_dd]:text-sm">
                 {selectedGuideData.guides.map((guideCategory) => (
-                  <>
-                    <dt
-                      key={guideCategory.label}
-                      className="font-semibold text-hazard-blue-500"
-                    >
+                  <div key={guideCategory.label}>
+                    <dt className="font-semibold text-hazard-blue-500">
                       {guideCategory.label}
                     </dt>
                     <div className="divide-y [&_dd]:py-2">
@@ -388,7 +385,7 @@ const overview = ({
                         </dd>
                       ))}
                     </div>
-                  </>
+                  </div>
                 ))}
               </dl>
             </Modal>
@@ -415,12 +412,18 @@ const overview = ({
               }}
             >
               {departmentPartnerData.map((partner) => (
-                <SplideSlide key={partner.sys.id} className="">
-                  <img
-                    src={`https:${partner.fields.logo.fields.file.url}`}
-                    alt={`Logo for ${partner.fields.partnerName}`}
-                    className="aspect-[3/2] w-48 object-contain"
-                  />
+                <SplideSlide key={partner.sys.id}>
+                  <Link
+                    href={partner.fields.linkToPartnerWebsite}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src={`https:${partner.fields.logo.fields.file.url}`}
+                      alt={`Logo for ${partner.fields.partnerName}`}
+                      className="aspect-[3/2] w-48 object-contain"
+                    />
+                  </Link>
                 </SplideSlide>
               ))}
             </Splide>
