@@ -304,7 +304,7 @@ const overview = ({
           }
         />
         <ContentContainer>
-          <OverviewVideo url="https://vimeo.com/manage/videos/864186162" />
+          <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
           <DepartmentAnnouncements
             name="Alternative Investments"
             data={departmentAnnouncementData}

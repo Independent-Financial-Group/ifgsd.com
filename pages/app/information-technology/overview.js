@@ -53,7 +53,7 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
           headerText={"Information Technology"}
         />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-          <OverviewVideo url="https://vimeo.com/manage/videos/864186162" />
+          <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
           <DepartmentAnnouncements
             name="Information Technology"
             data={departmentAnnouncementData}

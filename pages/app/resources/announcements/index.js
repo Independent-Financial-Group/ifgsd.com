@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import Head from "next/head";
@@ -11,6 +11,7 @@ import * as contentful from "utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 
 import { motion, AnimatePresence } from "framer-motion";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const getStaticProps = async ({ preview }) => {
   const client = preview ? contentful.previewClient : contentful.client;
@@ -30,23 +31,82 @@ export const getStaticProps = async ({ preview }) => {
 };
 
 const index = ({ announcements, preview }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedPriority, setSelectedPriority] = useState("All");
+  const [selectedMediaType, setSelectedMediaType] = useState("All");
+  const [selectedDepartment, setSelectedDepartment] = useState("All");
+  const [announcementData, setAnnouncementData] = useState(announcements);
+
   const priorities = [
-    { id: "all", title: "All" },
-    { id: "high", title: "High" },
-    { id: "medium", title: "Medium" },
+    { id: "All", title: "All" },
+    { id: "High", title: "High" },
+    { id: "Medium", title: "Medium" },
     { id: "Low", title: "Low" },
   ];
   const mediaTypes = [
-    { id: "all", title: "All" },
-    { id: "connect", title: "Connect" },
-    { id: "blue chip", title: "Blue Chip" },
-    { id: "independent", title: "The Independent" },
-    { id: "metrics that matter", title: "Metrics that Matter" },
-    { id: "podcast", title: "Podcast" },
-    { id: "partner series", title: "Partner Series" },
-    { id: "press release", title: "Press Release" },
+    { id: "All", title: "All" },
+    { id: "Connect", title: "Connect" },
+    { id: "Blue Chip", title: "Blue Chip" },
+    { id: "Independent", title: "The Independent" },
+    { id: "Metrics that Matter", title: "Metrics that Matter" },
+    { id: "Podcast", title: "Podcast" },
+    { id: "Partner Series", title: "Partner Series" },
+    { id: "Press Release", title: "Press Release" },
   ];
-  const departments = [];
+  const departments = [
+    { id: "All", title: "All" },
+    { id: "Advisory", title: "Advisory" },
+    { id: "Alternative Investments", title: "Alternative Investments" },
+    { id: "Annuities", title: "Annuities" },
+    { id: "Commissions", title: "Commissions" },
+    { id: "Compliance", title: "Compliance" },
+    { id: "Corporate Communications", title: "Corporate Communications" },
+    { id: "Home Office", title: "Home Office" },
+    { id: "Information Technology", title: "Information Technology" },
+    { id: "Insurance", title: "Insurance" },
+    { id: "Operations", title: "Operations" },
+    { id: "Portfolio Construction", title: "Portfolio Construction" },
+    { id: "Practice Development", title: "Practice Development" },
+    { id: "Supervision", title: "Supervision" },
+  ];
+
+  const getFilteredEntries = async (priority, mediaType, department) => {
+    const client = preview ? contentful.previewClient : contentful.client;
+    setIsLoading(true);
+    const data = await client
+      .getEntries({
+        content_type: "announcements",
+        ...(priority !== "All" && { "fields.priority[match]": priority }),
+        ...(mediaType !== "All" && { "fields.mediaType[match]": mediaType }),
+        ...(department !== "All" && { "fields.department[match]": department }),
+        order: "-fields.date",
+      })
+      .then((response) => {
+        setAnnouncementData([...response.items]);
+        setIsLoading(false);
+      });
+  };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    const inputName = e.target.name;
+
+    switch (inputName) {
+      case "priority":
+        setSelectedPriority(value);
+        break;
+      case "media-type":
+        setSelectedMediaType(value);
+        break;
+      case "department":
+        setSelectedDepartment(value);
+        break;
+    }
+  };
+
+  useEffect(() => {
+    getFilteredEntries(selectedPriority, selectedMediaType, selectedDepartment);
+  }, [selectedPriority, selectedMediaType, selectedDepartment]);
 
   return (
     <>
@@ -63,71 +123,81 @@ const index = ({ announcements, preview }) => {
               transition={{ duration: 0.6 }}
               className="col-span-9 rounded-lg bg-seabreeze-500"
             >
-              <ol className="divide-y">
-                {announcements.map((announcement) => (
-                  <li
-                    key={announcement.sys.id}
-                    className="flex items-center gap-2 px-2 py-3"
-                  >
-                    <div>
-                      <h3 className="text-lg font-semibold text-neon-orange-500">
-                        {announcement.fields.title}
-                      </h3>
-                      <div className="flex items-center gap-2">
-                        <div className="my-2 flex gap-1">
-                          {announcement.fields.priority && (
-                            <div
-                              class={`my-2 w-fit rounded-full ${
-                                announcement.fields.priority == "High"
-                                  ? "bg-red-100 ring-1 ring-inset ring-red-600"
-                                  : announcement.fields.priority == "Medium"
-                                  ? "bg-neon-orange-100 ring-1 ring-inset ring-neon-orange-600"
-                                  : "bg-green-100 ring-1 ring-inset ring-green-600"
-                              } px-4 py-2 text-xs font-bold ${
-                                announcement.fields.priority == "High"
-                                  ? "text-red-600"
-                                  : announcement.fields.priority == "Medium"
-                                  ? "text-neon-orange-600"
-                                  : "text-green-600"
-                              }`}
-                            >
-                              {announcement.fields.priority} Priority
+              <ol className="h-full divide-y">
+                {!isLoading &&
+                  announcementData.map((announcement) => (
+                    <li
+                      key={announcement.sys.id}
+                      className="flex items-center gap-2 px-2 py-3"
+                    >
+                      <div>
+                        <h3 className="text-lg font-semibold text-neon-orange-500">
+                          {announcement.fields.title}
+                        </h3>
+                        <div className="flex items-center gap-2">
+                          <div className="my-2 flex gap-1">
+                            {announcement.fields.priority && (
+                              <div
+                                class={`my-2 w-fit rounded-full ${
+                                  announcement.fields.priority == "High"
+                                    ? "bg-red-100 ring-1 ring-inset ring-red-600"
+                                    : announcement.fields.priority == "Medium"
+                                    ? "bg-neon-orange-100 ring-1 ring-inset ring-neon-orange-600"
+                                    : "bg-green-100 ring-1 ring-inset ring-green-600"
+                                } px-4 py-2 text-xs font-bold ${
+                                  announcement.fields.priority == "High"
+                                    ? "text-red-600"
+                                    : announcement.fields.priority == "Medium"
+                                    ? "text-neon-orange-600"
+                                    : "text-green-600"
+                                }`}
+                              >
+                                {announcement.fields.priority} Priority
+                              </div>
+                            )}
+                            {announcement.fields.mediaType && (
+                              <div className="my-2 w-fit rounded-full bg-hazard-blue-100 px-4 py-2 text-xs font-bold text-hazard-blue-600 ring-1 ring-inset ring-hazard-blue-600">
+                                {announcement.fields.mediaType}
+                              </div>
+                            )}
+                            <div className="my-2 w-fit rounded-full bg-gray-100 px-4 py-2 text-xs font-bold text-gray-600 ring-1 ring-inset ring-gray-600">
+                              {announcement.fields.department}
                             </div>
-                          )}
-                          {announcement.fields.mediaType && (
-                            <div className="my-2 w-fit rounded-full bg-hazard-blue-100 px-4 py-2 text-xs font-bold text-hazard-blue-600 ring-1 ring-inset ring-hazard-blue-600">
-                              {announcement.fields.mediaType}
-                            </div>
-                          )}
-                          <div className="my-2 w-fit rounded-full bg-gray-100 px-4 py-2 text-xs font-bold text-gray-600 ring-1 ring-inset ring-gray-600">
-                            {announcement.fields.department}
                           </div>
+                          <svg
+                            viewBox="0 0 2 2"
+                            className="fill-current h-0.5 w-0.5"
+                          >
+                            <circle cx={1} cy={1} r={1} />
+                          </svg>
+                          <p className="text-sm font-medium text-gray-500">
+                            {formatDateAndTime(announcement.fields.date, "day")}
+                          </p>
                         </div>
-                        <svg
-                          viewBox="0 0 2 2"
-                          className="fill-current h-0.5 w-0.5"
-                        >
-                          <circle cx={1} cy={1} r={1} />
-                        </svg>
-                        <p className="text-sm font-medium text-gray-500">
-                          {formatDateAndTime(announcement.fields.date, "day")}
-                        </p>
                       </div>
-                    </div>
-                    <div className="flex flex-grow justify-end pr-8">
-                      <Link
-                        href={
-                          announcement.fields.linkIsCustom
-                            ? announcement.fields.slug
-                            : `/app/resources/announcements/${announcement.fields.slug}`
-                        }
-                        className="rounded-lg bg-neon-orange-100 px-2 py-3 text-sm font-semibold text-neon-orange-500 ring-1 ring-inset ring-neon-orange-600 transition-all hover:-translate-y-1"
-                      >
-                        View
-                      </Link>
-                    </div>
-                  </li>
-                ))}
+                      <div className="flex flex-grow justify-end pr-8">
+                        <Link
+                          href={
+                            announcement.fields.linkIsCustom
+                              ? announcement.fields.slug
+                              : `/app/resources/announcements/${announcement.fields.slug}`
+                          }
+                          className="rounded-lg bg-neon-orange-100 px-2 py-3 text-sm font-semibold text-neon-orange-500 ring-1 ring-inset ring-neon-orange-600 transition-all hover:-translate-y-1"
+                        >
+                          View
+                        </Link>
+                      </div>
+                    </li>
+                  ))}
+                {isLoading && (
+                  <div className="flex h-full items-center justify-center">
+                    <ClipLoader
+                      color="#FF7F4E"
+                      size={150}
+                      aria-label="Loading Spinner"
+                    />
+                  </div>
+                )}
               </ol>
             </motion.section>
           </AnimatePresence>
@@ -151,8 +221,10 @@ const index = ({ announcements, preview }) => {
                             id={priority.id}
                             name="priority"
                             type="radio"
-                            defaultChecked={priority.id === "email"}
                             className="h-4 w-4 border-gray-300 text-hazard-blue-600 focus:ring-hazard-blue-600"
+                            checked={selectedPriority == priority.id}
+                            onChange={handleChange}
+                            value={priority.id}
                           />
                           <label
                             htmlFor={priority.id}
@@ -178,8 +250,10 @@ const index = ({ announcements, preview }) => {
                             id={mediaType.id}
                             name="media-type"
                             type="radio"
-                            defaultChecked={mediaType.id === "email"}
                             className="h-4 w-4 border-gray-300 text-hazard-blue-600 focus:ring-hazard-blue-600"
+                            checked={selectedMediaType == mediaType.id}
+                            value={mediaType.id}
+                            onChange={handleChange}
                           />
                           <label
                             htmlFor={mediaType.id}
@@ -203,11 +277,14 @@ const index = ({ announcements, preview }) => {
                     id="department"
                     name="department"
                     className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-hazard-blue-600 ring-1 ring-inset ring-hazard-blue-300 focus:ring-2 focus:ring-hazard-blue-600 sm:text-sm sm:leading-6"
-                    defaultValue="All"
+                    defaultValue={selectedDepartment}
+                    onChange={handleChange}
                   >
-                    <option>All</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
+                    {departments.map((department) => (
+                      <option key={department.id} value={department.id}>
+                        {department.title}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
