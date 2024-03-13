@@ -3,7 +3,9 @@ import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 import { VideoCameraIcon } from "@heroicons/react/24/outline";
 
-const OverviewVideo = ({ url }) => {
+const OverviewVideo = ({
+  url = "https://placehold.co/3840x2160.mp4?text=placeholder+video",
+}) => {
   return (
     <div className="col-span-6 rounded-lg bg-white shadow">
       <div className="mb-5 rounded-t-lg bg-hazard-blue-500 py-2">

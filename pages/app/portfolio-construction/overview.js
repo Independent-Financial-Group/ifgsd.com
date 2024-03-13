@@ -65,7 +65,7 @@ const overview = ({
         pageName="Portfolio Construction Overview"
       />
       <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-        <OverviewVideo url="https://vimeo.com/905389112?share=copy" />
+        <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
         <DepartmentAnnouncements
           data={departmentAnnouncements}
           name={department}
