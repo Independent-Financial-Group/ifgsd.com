@@ -15,11 +15,17 @@ import GridTile from "components/App/GridTile/GridTile";
 
 import * as contentful from "../../../utils/contentful";
 
+// SPLIDE
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+
 import {
   WrenchIcon,
   DocumentIcon,
   DocumentArrowDownIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline";
+import { Grid } from "swiper";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
@@ -38,17 +44,29 @@ export async function getStaticProps({ preview }) {
     order: "-fields.date",
   });
 
+  const departmentPartnerData = await client.getEntries({
+    content_type: "partners",
+    "fields.department[match]": department,
+    order: "fields.partnerName",
+  });
+
   return {
     props: {
       teamMemberData: [...teamMemberData.items],
       departmentAnnouncementData: [...departmentAnnouncementData.items],
+      departmentPartnerData: [...departmentPartnerData.items],
       preview: preview || false,
     },
     revalidate: 10,
   };
 }
 
-const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
+const overview = ({
+  teamMemberData,
+  preview,
+  departmentAnnouncementData,
+  departmentPartnerData,
+}) => {
   const [open, setOpen] = useState(false);
   const [selectedPlatform, setSelectedPlatform] = useState();
 
@@ -380,6 +398,33 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
             preview={preview}
           />
           <TeamDirectory name="Alternative Investments" data={teamMemberData} />
+          <GridTile
+            tileTitle="Alternative Investment Product Partners"
+            colSpan="col-span-full"
+          >
+            <Splide
+              options={{
+                perPage: 4,
+                padding: 20,
+                classes: {
+                  arrow:
+                    "bg-neon-orange-500 rounded-full [&_*]:w-5 [&_*]:h-5 p-2 absolute z-10 disabled:bg-gray-100 [&_*]:fill-seabreeze-500 [&_*]:disabled:fill-gray-900",
+                  next: "top-1/2 right-0 -translate-y-1/2",
+                  prev: "top-1/2 rotate-180 -translate-y-1/2",
+                },
+              }}
+            >
+              {departmentPartnerData.map((partner) => (
+                <SplideSlide key={partner.sys.id} className="">
+                  <img
+                    src={`https:${partner.fields.logo.fields.file.url}`}
+                    alt={`Logo for ${partner.fields.partnerName}`}
+                    className="aspect-[3/2] w-48 object-contain"
+                  />
+                </SplideSlide>
+              ))}
+            </Splide>
+          </GridTile>
         </ContentContainer>
       </Layout>
     </>
