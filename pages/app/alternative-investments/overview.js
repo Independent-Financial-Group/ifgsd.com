@@ -24,6 +24,7 @@ import {
   DocumentIcon,
   DocumentArrowDownIcon,
   StarIcon,
+  CheckIcon,
 } from "@heroicons/react/24/outline";
 import { Grid } from "swiper";
 
@@ -50,11 +51,17 @@ export async function getStaticProps({ preview }) {
     order: "fields.partnerName",
   });
 
+  const approvedProductsSummary = await client.getEntries({
+    content_type: "approvedProducts",
+    "fields.productType[in]": "REIT,1031,Oil & Gas",
+  });
+
   return {
     props: {
       teamMemberData: [...teamMemberData.items],
       departmentAnnouncementData: [...departmentAnnouncementData.items],
       departmentPartnerData: [...departmentPartnerData.items],
+      approvedProductsSummary: [...approvedProductsSummary.items],
       preview: preview || false,
     },
     revalidate: 10,
@@ -66,9 +73,25 @@ const overview = ({
   preview,
   departmentAnnouncementData,
   departmentPartnerData,
+  approvedProductsSummary,
 }) => {
   const [open, setOpen] = useState(false);
   const [selectedPlatform, setSelectedPlatform] = useState();
+
+  const groupedProducts = approvedProductsSummary.reduce(
+    (result = [], item) => {
+      const productType = item.fields.productType;
+
+      if (!result[productType]) {
+        result[productType] = [];
+      }
+
+      result[productType].push(item);
+
+      return result;
+    },
+    {},
+  );
 
   const guides = {
     aiInsight: {
@@ -389,6 +412,70 @@ const overview = ({
                 ))}
               </dl>
             </Modal>
+          </GridTile>
+          <GridTile
+            colSpan={"col-span-full"}
+            tileTitle="Approved Products"
+            icon={<CheckIcon className="h-5 w-5" />}
+          >
+            <p className="text-sm text-gray-500">
+              For a complete list, and more details, of approved products please
+              reference the{" "}
+              <Link
+                href={"/app/alternative-investments/approved-products"}
+                className=" font-semibold italic text-neon-orange-500"
+              >
+                Approved Products
+              </Link>{" "}
+              page.
+            </p>
+            <div className="mt-5 text-gray-900 xl:grid xl:grid-cols-3">
+              <div>
+                <h3 className="font-semibold">REITs</h3>
+                <ul className="divide-y">
+                  {groupedProducts.REIT.map((item) => (
+                    <li className="ml-4" key={item.sys.id}>
+                      <Link
+                        className="text-xs text-blue-500"
+                        href={`/app/alternative-investments/approved-products/${item.fields.slug}`}
+                      >
+                        {item.fields.offeringName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold">1031s</h3>
+                <ul className="divide-y">
+                  {groupedProducts["1031"].map((item) => (
+                    <li className="ml-4" key={item.sys.id}>
+                      <Link
+                        className="text-xs text-blue-500"
+                        href={`/app/alternative-investments/approved-products/${item.fields.slug}`}
+                      >
+                        {item.fields.offeringName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold">Oil & Gas</h3>
+                <ul className="divide-y">
+                  {groupedProducts["Oil & Gas"].map((item) => (
+                    <li className="ml-4" key={item.sys.id}>
+                      <Link
+                        className="text-xs text-blue-500"
+                        href={`/app/alternative-investments/approved-products/${item.fields.slug}`}
+                      >
+                        {item.fields.offeringName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </GridTile>
           <ContentLibrary
             department="alternative investments"
