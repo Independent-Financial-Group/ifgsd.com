@@ -63,7 +63,7 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
               "https://images.ctfassets.net/9lvru9ro1ti1/7s2xUDUqhd3ZZdcYppxcFw/29ecc381a9129f8c373054e359ceb4a8/trustifi-ad-1200X630.png"
             }
           />
-          <ContentLibrary />
+          <ContentLibrary department="Information Technology" />
           <TeamDirectory data={teamMemberData} name="IT & Software Support" />
         </div>
       </Layout>

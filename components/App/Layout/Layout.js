@@ -118,16 +118,14 @@ const navigation = [
           { name: "Education", href: "/app/information-technology/education" },
         ],
       },
-      // {
-      //   name: "Insurance",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Insurance",
+        links: [
+          { name: "Overview", href: "/app/insurance/overview" },
+          { name: "Partners", href: "/app/insurance/partners" },
+          { name: "Tools", href: "/app/insurance/tools" },
+        ],
+      },
       // {
       //   name: "Operations",
       //   links: [
