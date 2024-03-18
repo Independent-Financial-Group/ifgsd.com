@@ -7,6 +7,9 @@ import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";
 import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 
+import { ApolloProvider } from "@apollo/client";
+import apolloClient from "utils/apollo";
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
@@ -16,14 +19,16 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       </Head>
       <NextNProgress color="#F47E50" />
       <SessionProvider session={session}>
-        <ContentfulLivePreviewProvider
-          locale="en-US"
-          enableInspectorMode={pageProps.preview}
-          enableLiveUpdates={pageProps.preview}
-        >
-          <Component className="box-border" {...pageProps} />
-          <Analytics />
-        </ContentfulLivePreviewProvider>
+        <ApolloProvider client={apolloClient}>
+          <ContentfulLivePreviewProvider
+            locale="en-US"
+            enableInspectorMode={pageProps.preview}
+            enableLiveUpdates={pageProps.preview}
+          >
+            <Component className="box-border" {...pageProps} />
+            <Analytics />
+          </ContentfulLivePreviewProvider>
+        </ApolloProvider>
       </SessionProvider>
     </>
   );

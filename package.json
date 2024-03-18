@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.9.7",
     "@contentful/f36-datetime": "^4.37.1",
     "@contentful/live-preview": "^2.17.2",
     "@contentful/rich-text-react-renderer": "^15.16.4",
@@ -49,6 +50,7 @@
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.3",
     "framer-motion": "^10.12.7",
+    "graphql": "^16.8.1",
     "next": "13.5",
     "next-auth": "^4.24.7",
     "next-sitemap": "^4.2.3",

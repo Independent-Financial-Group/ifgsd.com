@@ -14,6 +14,10 @@ import ContentLibrary from "components/App/InternalPages/Overview/ContentLibrary
 // CONTENTFUL
 import * as contentful from "utils/contentful";
 
+//APOLLO IMPORTS FOR GQL
+import apolloClient from "utils/apollo";
+import { gql } from "@apollo/client";
+
 // ICONS
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 
@@ -25,16 +29,107 @@ export async function getStaticProps({ preview }) {
     "fields.department[match]": "Insurance",
   });
 
+  const ytdData = await apolloClient.query({
+    query: gql`
+      query getInsuranceProductionLeaderboards {
+        insuranceProductionLeaderboards {
+          pageInfo {
+            hasNextPage
+          }
+          edges {
+            node {
+              title
+              insuranceProductionLeaderboardFields {
+                advisor {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor2 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor3 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor4 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor5 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor6 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor7 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor8 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor9 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+                advisor10 {
+                  dba
+                  fieldGroupName
+                  fullName
+                  location
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  const formattedYtdData = Object.keys(
+    ytdData.data.insuranceProductionLeaderboards.edges[0].node
+      .insuranceProductionLeaderboardFields,
+  )
+    .map(
+      (key) =>
+        ytdData.data.insuranceProductionLeaderboards.edges[0].node
+          .insuranceProductionLeaderboardFields[key],
+    )
+    .slice(1);
+
   return {
     props: {
       teamData: [...teamData.items],
+      formattedYtdData,
       preview: preview || false,
     },
     revalidate: 10,
   };
 }
 
-const overview = ({ teamData, preview }) => {
+const overview = ({ teamData, preview, formattedYtdData }) => {
   const producerRankings = {
     year: {
       fullYear: "2023",
@@ -199,14 +294,14 @@ const overview = ({ teamData, preview }) => {
                   {producerRankings.yearToDate.year}
                 </h3>
                 <ol className="space-y-1">
-                  {producerRankings.yearToDate.items.map((producer, i) => (
+                  {formattedYtdData.map((producer, i) => (
                     <li className="flex items-center gap-2 space-y-1">
                       <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-1 text-center font-semibold text-seabreeze-500">
                         {i + 1}
                       </div>
                       <div>
                         <p className="inline-block font-semibold">
-                          {producer.name},{" "}
+                          {producer.fullName},{" "}
                           <span className="font-light italic">
                             {producer.location}
                           </span>
