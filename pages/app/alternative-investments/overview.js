@@ -319,7 +319,6 @@ const overview = ({
     setSelectedPlatform(toolName);
     setSelectedGuideData(guides[toolName]);
     setOpen(true);
-    console.log(selectedGuideData);
   };
 
   return (

@@ -159,10 +159,6 @@ const approvedProducts = ({
       .then((response) => setTenThirtyOneData([...response.items]));
   };
 
-  const handleTabChange = (index, e) => {
-    console.log(tabLabels[index]);
-  };
-
   return (
     <>
       <Head>

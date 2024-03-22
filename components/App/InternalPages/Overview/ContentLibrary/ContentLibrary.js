@@ -46,8 +46,6 @@ const ContentLibrary = ({ department, preview }) => {
     getContent(department);
   }, []);
 
-  console.log(content.length);
-
   return (
     <div className="col-span-4 h-[500px] rounded-lg bg-white  shadow">
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">

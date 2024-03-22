@@ -76,8 +76,6 @@ export const getStaticProps = async ({ params, preview }) => {
 };
 
 const ProductPage = ({ product, preview, otherProducts }) => {
-  console.log(`product: ${product}`);
-
   return (
     <Layout preview={preview}>
       <PageHeader
