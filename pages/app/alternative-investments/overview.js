@@ -93,6 +93,18 @@ const overview = ({
     {},
   );
 
+  const productCategories = [
+    "1031s",
+    "BDCs",
+    "iCapital",
+    "Interval Funds",
+    "Non-Traded Preferred Securities",
+    "Oil & Gas",
+    "Qualified Opportunity Zone Funds",
+    "Real Estate",
+    "REITs",
+  ];
+
   const guides = {
     aiInsight: {
       name: "Ai Insight",
@@ -320,12 +332,7 @@ const overview = ({
         />
       </Head>
       <Layout preview={preview}>
-        <PageHeader
-          pageName={"Alternative Investments Overview"}
-          headerText={
-            "Within the Alternative Investments web pages, you have access to DPP, REIT and 1031 offerings as well as latest news."
-          }
-        />
+        <PageHeader pageName={"Alternative Investments Overview"} />
         <ContentContainer>
           <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
           <DepartmentAnnouncements
@@ -429,52 +436,20 @@ const overview = ({
               </Link>{" "}
               page.
             </p>
-            <div className="mt-5 text-gray-900 xl:grid xl:grid-cols-3">
-              <div>
-                <h3 className="font-semibold">REITs</h3>
-                <ul className="divide-y">
-                  {groupedProducts.REIT.map((item) => (
-                    <li className="ml-4" key={item.sys.id}>
-                      <Link
-                        className="text-xs text-blue-500"
-                        href={`/app/alternative-investments/approved-products/${item.fields.slug}`}
-                      >
-                        {item.fields.offeringName}
-                      </Link>
+            <div className="mt-5 text-gray-900">
+              <ul className=" items-center justify-center xl:grid xl:grid-cols-3 xl:gap-5">
+                {productCategories.map((category) => (
+                  <Link
+                    key={category}
+                    href="/app/alternative-investments/approved-products"
+                    className="transition-all hover:-translate-y-1 hover:scale-[1.02]"
+                  >
+                    <li className=" rounded bg-neon-orange-200 p-5 text-center text-sm font-semibold text-neon-orange-500 ring ring-inset ring-neon-orange-500">
+                      {category}
                     </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold">1031s</h3>
-                <ul className="divide-y">
-                  {groupedProducts["1031"].map((item) => (
-                    <li className="ml-4" key={item.sys.id}>
-                      <Link
-                        className="text-xs text-blue-500"
-                        href={`/app/alternative-investments/approved-products/${item.fields.slug}`}
-                      >
-                        {item.fields.offeringName}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold">Oil & Gas</h3>
-                <ul className="divide-y">
-                  {groupedProducts["Oil & Gas"].map((item) => (
-                    <li className="ml-4" key={item.sys.id}>
-                      <Link
-                        className="text-xs text-blue-500"
-                        href={`/app/alternative-investments/approved-products/${item.fields.slug}`}
-                      >
-                        {item.fields.offeringName}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  </Link>
+                ))}
+              </ul>
             </div>
           </GridTile>
           <ContentLibrary
