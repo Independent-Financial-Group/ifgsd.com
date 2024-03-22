@@ -174,11 +174,7 @@ const approvedProducts = ({
             Please select from one of the tabs below to view approved products
             by category.
           </p>
-          <Tab.Group
-            as="div"
-            className="col-span-full flex flex-col"
-            onChange={handleTabChange}
-          >
+          <Tab.Group as="div" className="col-span-full flex flex-col">
             <Tab.List className="flex gap-1 border-b border-neon-orange-200 text-left text-sm font-semibold">
               {tabLabels.map((label) => (
                 <Tab as={Fragment}>
