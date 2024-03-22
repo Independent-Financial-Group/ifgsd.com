@@ -21,7 +21,7 @@ const UpcomingEvents = ({ preview }) => {
     const data = await client
       .getEntries({
         content_type: "events",
-        order: "-fields.date",
+        order: "fields.date",
         "fields.date[gt]": todaysDate,
         limit: fetchLimit,
       })
