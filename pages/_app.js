@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       </Head>
       <NextNProgress color="#F47E50" />
       <SessionProvider session={session}>
-        <ApolloProvider client={apolloClient}>
+        <ApolloProvider client={apolloClient} suppressHydrationWarning>
           <ContentfulLivePreviewProvider
             locale="en-US"
             enableInspectorMode={pageProps.preview}
