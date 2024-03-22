@@ -36,7 +36,7 @@ export async function getStaticProps({ preview }) {
     content_type: "companyDirectory",
     "fields.department[match]": department,
     "fields.termed": false,
-    order: "fields.fullName",
+    order: "fields.title,fields.fullName",
   });
 
   const departmentAnnouncementData = await client.getEntries({
@@ -48,7 +48,7 @@ export async function getStaticProps({ preview }) {
   const departmentPartnerData = await client.getEntries({
     content_type: "partners",
     "fields.department[match]": department,
-    order: "fields.partnerName",
+    order: "fields.partnerLevel,fields.partnerName",
   });
 
   const approvedProductsSummary = await client.getEntries({
@@ -458,7 +458,7 @@ const overview = ({
           />
           <TeamDirectory name="Alternative Investments" data={teamMemberData} />
           <GridTile
-            tileTitle="Alternative Investment Product Partners"
+            tileTitle="Alternative Investments Strategic Partners"
             colSpan="col-span-full"
           >
             <Splide
@@ -474,7 +474,7 @@ const overview = ({
               }}
             >
               {departmentPartnerData.map((partner) => (
-                <SplideSlide key={partner.sys.id}>
+                <SplideSlide key={partner.sys.id} className="p-6">
                   <Link
                     href={partner.fields.linkToPartnerWebsite}
                     target="_blank"
@@ -486,6 +486,9 @@ const overview = ({
                       className="aspect-[3/2] w-48 object-contain"
                     />
                   </Link>
+                  <span className="mt-1 block w-fit rounded-full bg-hazard-blue-100 px-3 py-2 text-xs font-semibold text-hazard-blue-500 ring-1 ring-inset ring-hazard-blue-500">
+                    {partner.fields.partnerLevel}
+                  </span>
                 </SplideSlide>
               ))}
             </Splide>
