@@ -159,10 +159,6 @@ const approvedProducts = ({
       .then((response) => setTenThirtyOneData([...response.items]));
   };
 
-  const handleTabChange = (index, e) => {
-    console.log(tabLabels[index]);
-  };
-
   return (
     <>
       <Head>
@@ -178,11 +174,7 @@ const approvedProducts = ({
             Please select from one of the tabs below to view approved products
             by category.
           </p>
-          <Tab.Group
-            as="div"
-            className="col-span-full flex flex-col"
-            onChange={handleTabChange}
-          >
+          <Tab.Group as="div" className="col-span-full flex flex-col">
             <Tab.List className="flex gap-1 border-b border-neon-orange-200 text-left text-sm font-semibold">
               {tabLabels.map((label) => (
                 <Tab as={Fragment}>
@@ -203,7 +195,7 @@ const approvedProducts = ({
             <Tab.Panels className="mt-5 rounded bg-white px-4 py-5 shadow">
               {/* 1031 inventory tab panel */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-3 xl:gap-5">
+                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Documents to Read
@@ -309,23 +301,8 @@ const approvedProducts = ({
                       below.
                     </p>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      The percentages displayed next to the property locations
-                      represent the Investor&apos;s pro rata ownership of each
-                      property within the DST. Call sponsor to verify minimums,
-                      and suitability requirements for specific states into
-                      which you will be directing solicitations prior to
-                      speaking with any clients or prospective clients. For the
-                      most recent information, please contact the Alternative
-                      Investment Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -443,10 +420,23 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className=" text-sm leading-7">
+                  The percentages displayed next to the property locations
+                  represent the Investor&apos;s pro rata ownership of each
+                  property within the DST. Call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* BDCs tab panel */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       IFG Required Forms
@@ -468,21 +458,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -599,10 +576,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* ICAPITAL PRODUCTS TAB PANEL */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -624,21 +612,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -735,10 +710,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* INTERVAL FUNDS TAB PANEL */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -760,21 +746,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -891,10 +864,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* NON TRADED PREFERRED SECURITIES */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -916,21 +900,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -1049,10 +1020,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/*  OIL AND GAS */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -1074,21 +1056,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -1205,10 +1174,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* QUALIFIED OPPORTUNITY ZONE FUNDS */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -1230,21 +1210,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -1363,10 +1330,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className=" text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* REAL ESTATE LLCS AND LPS */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -1388,21 +1366,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -1519,10 +1484,21 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
               {/* REITS */}
               <Tab.Panel>
-                <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+                <div>
                   <div className="w-fit rounded bg-gray-100 px-4 py-2">
                     <h2 className="text-lg font-semibold text-neon-orange-500">
                       Resources
@@ -1544,21 +1520,8 @@ const approvedProducts = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="w-fit rounded bg-gray-100 px-4 py-2">
-                    <h2 className="text-lg font-semibold text-neon-orange-500">
-                      FOR BD Use Only
-                    </h2>
-                    <p className="max-w-prose text-sm leading-7">
-                      Please ensure to call sponsor to verify minimums, and
-                      suitability requirements for specific states into which
-                      you will be directing solicitations prior to speaking with
-                      any clients or prospective clients. For the most recent
-                      information, please contact the Alternative Investment
-                      Department.
-                    </p>
-                  </div>
                 </div>
-                <div className="mt-8 flow-root">
+                <div className="my-8 flow-root">
                   <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                       <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
@@ -1675,6 +1638,17 @@ const approvedProducts = ({
                     </div>
                   </div>
                 </div>
+                <h2 className="text-lg font-semibold text-neon-orange-500">
+                  FOR BD Use Only
+                </h2>
+                <p className="text-sm leading-7">
+                  Please ensure to call sponsor to verify minimums, and
+                  suitability requirements for specific states into which you
+                  will be directing solicitations prior to speaking with any
+                  clients or prospective clients. For the most recent
+                  information, please contact the Alternative Investment
+                  Department.
+                </p>
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>

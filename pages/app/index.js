@@ -21,16 +21,6 @@ export async function getStaticProps({ preview }) {
 const index = ({ preview }) => {
   const { data: session, status } = useSession();
 
-  useEffect(() => {
-    console.log(
-      `use effect running on status updates for useSession: ${status}`,
-    );
-  }, [status]);
-
-  console.log(
-    `Session within the app page: ${JSON.stringify(session, null, 3)}`,
-  );
-
   return (
     <>
       <Head>
