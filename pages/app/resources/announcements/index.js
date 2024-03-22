@@ -108,6 +108,8 @@ const index = ({ announcements, preview }) => {
     getFilteredEntries(selectedPriority, selectedMediaType, selectedDepartment);
   }, [selectedPriority, selectedMediaType, selectedDepartment]);
 
+  console.log(announcementData);
+
   return (
     <>
       <Head>
@@ -130,7 +132,20 @@ const index = ({ announcements, preview }) => {
                       key={announcement.sys.id}
                       className="flex items-center gap-2 px-2 py-3"
                     >
-                      <div>
+                      {announcement.fields.mediaThumbnail &&
+                      announcement.fields.mediaType ? (
+                        <div className="w-fit">
+                          <img
+                            src={`https:${announcement.fields.mediaThumbnail.fields.file.url}`}
+                            className="h-[200px] w-[200px] rounded object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-fit">
+                          <img src={`https://place-hold.it/200x200`} />
+                        </div>
+                      )}
+                      <div className="w-full">
                         <h3 className="text-lg font-semibold text-neon-orange-500">
                           {announcement.fields.title}
                         </h3>
