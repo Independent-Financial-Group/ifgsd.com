@@ -155,6 +155,16 @@ const Nav = () => {
                         </Link>
                       )}
                     </Menu.Item>
+                    <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
+                      {({ active }) => (
+                        <Link
+                          className={`${active && "bg-hazard-blue-500"}`}
+                          href="/about/why-your-advisor-uses-ifg"
+                        >
+                          Why Your Advisor Uses IFG
+                        </Link>
+                      )}
+                    </Menu.Item>
                   </Menu.Items>
                 </Transition>
               </div>
