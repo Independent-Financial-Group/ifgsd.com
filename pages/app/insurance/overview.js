@@ -316,8 +316,12 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
               </div>
             </div>
           </GridTile>
-          <TeamDirectory data={teamData} name="Insurance" />
-          <ContentLibrary department="Insurance" />
+          <TeamDirectory
+            data={teamData}
+            name="Insurance"
+            colSpan="col-span-4"
+          />
+          <ContentLibrary department="Insurance" colSpan="col-span-8" />
         </ContentContainer>
       </Layout>
     </>
