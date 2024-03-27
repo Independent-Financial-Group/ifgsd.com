@@ -7,6 +7,7 @@ import LatestAnnouncements from "../../components/App/Dashboard/LatestAnnounceme
 import UpcomingEvents from "../../components/App/Dashboard/UpcomingEvents/UpcomingEvents";
 import ReferralProgramTool from "../../components/App/ReferralProgramTool/ReferralProgramTool";
 import AdSquare from "../../components/App/Dashboard/AdSquare/AdSquare";
+import Disclosure from "components/App/Dashboard/Disclosure/Disclosure";
 
 import { useSession } from "next-auth/react";
 
@@ -35,6 +36,7 @@ const index = ({ preview }) => {
           <AdSquare />
           <ReferralProgramTool />
         </div>
+        <Disclosure />
       </Layout>
     </>
   );
