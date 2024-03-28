@@ -138,7 +138,7 @@ const index = () => {
                   alt="decorative heading highlight graphic"
                   className="my-5 inline-block"
                 />
-                <p className="mx-auto my-5 max-w-prose text-center text-lg font-semibold leading-7 text-gray-900">
+                <p className="mx-auto my-5 max-w-prose text-center text-lg font-semibold leading-7">
                   The world of investing offers incredible opportunities along
                   with an array of complex options. What if you had a
                   knowledgeable and experienced partner standing by your side to
@@ -172,9 +172,7 @@ const index = () => {
                 </p>
                 <ul className="mt-5 grid grid-cols-3 justify-center divide-x-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm">
                   <li className="pl-2 pr-4">
-                    <dt className="text-base font-semibold text-gray-900">
-                      Offices
-                    </dt>
+                    <dt className="text-base font-semibold">Offices</dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
                         500+
@@ -182,9 +180,7 @@ const index = () => {
                     </dd>
                   </li>
                   <li className="px-4">
-                    <dt className="text-base font-semibold text-gray-900">
-                      Offices
-                    </dt>
+                    <dt className="text-base font-semibold">Offices</dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
                         500+
@@ -192,9 +188,7 @@ const index = () => {
                     </dd>
                   </li>
                   <li className="px-4">
-                    <dt className="text-base font-semibold text-gray-900">
-                      Offices
-                    </dt>
+                    <dt className="text-base font-semibold">Offices</dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
                         500+
