@@ -20,6 +20,10 @@ import sectionImage1 from "../../public/_why-your-advisor-uses-ifg/images/person
 import sectionImage2 from "../../public/_why-your-advisor-uses-ifg/images/family-walking-on-beach-compressed.webp";
 import orangeWave from "../../public/_global-graphics/wave-orange.png";
 import orangeWaveBold from "../../public/_global-graphics/wave-orange-bold.png";
+import arrowOne from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-1.png";
+import arrowTwo from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-2.png";
+import arrowThree from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-3.png";
+import arrowFour from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-4.png";
 
 import { AcademicCapIcon } from "@heroicons/react/24/solid";
 
@@ -46,43 +50,6 @@ const index = () => {
         <Container>
           <Breadcrumb />
         </Container>
-        {/* <section className="my-10 lg:my-32">
-          <Container>
-            <div className="justify-items-center lg:grid lg:grid-cols-1">
-              <div className="max-w-prose">
-                <h2 className="mb-10 flex items-center gap-2 text-3xl font-bold text-neon-orange-500">
-                  <Image
-                    src={highlightBlue}
-                    alt="decorative heading highlight graphic"
-                    className="inline-block"
-                  />
-                  <span className="flex-grow-0 text-center">
-                    Committed to Your Long-Term Financial Success
-                  </span>
-                  <Image
-                    src={highlightBlue}
-                    alt="decorative heading highlight graphic"
-                    className="inline-block scale-x-[-1]"
-                  />
-                </h2>
-                <div class="relative mb-5">
-                  <div class="absolute -inset-2 rounded-lg bg-gradient-to-r from-neon-orange-600 via-neon-orange-600 to-hazard-blue-600 opacity-75 blur"></div>
-                  <Image
-                    src={sectionImage1}
-                    className="relative flex items-center justify-center rounded-lg bg-gray-900 text-gray-300"
-                  />
-                </div>
-
-                <p className="text-center text-lg leading-7">
-                  The world of investing offers incredible opportunities along
-                  with an array of complex options. What if you had a
-                  knowledgeable and experienced partner standing by your side to
-                  guide you through the maze of your financial investments?
-                </p>
-              </div>
-            </div>
-          </Container>
-        </section> */}
         <section className="my-10 lg:my-32">
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
@@ -194,17 +161,11 @@ const index = () => {
               <h2 className="text-4xl font-bold text-hazard-blue-500">
                 The Investor{" "}
                 <span className="block">
-                  <div className="text-shadow relative">
-                    <Image
-                      src={orangeWaveBold}
-                      className="absolute top-7 -z-10 w-1/2"
-                    />
-                    Relationship
-                  </div>
+                  <div className="text-shadow relative">Relationship</div>
                 </span>
               </h2>
               <div>
-                <p>
+                <p className="text-xl leading-7">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Numquam, aspernatur! Error iure voluptatem nesciunt modi
                   aspernatur natus blanditiis, fugit et.
@@ -242,6 +203,70 @@ const index = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+            <div className="mt-32">
+              <ul className="lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 [&>*]:flex [&>*]:flex-col [&>li>div]:flex-grow [&_li>ul]:flex [&_li>ul]:flex-col [&_li>ul]:gap-2">
+                <li>
+                  <Image src={arrowOne} />
+                  <div className="mt-5 rounded bg-white px-3 py-2">
+                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                      The Client
+                    </dt>
+                    <ul className="list-inside list-disc">
+                      <li>More than 200,000 accounts nationwide.</li>
+                      <li>
+                        Combined, our registered representatives have over $30
+                        billion in assets under advisement.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <Image src={arrowTwo} />
+                  <div className="mt-5 rounded bg-white px-3 py-2">
+                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                      The Advisor
+                    </dt>
+                    <ul className="list-inside list-disc">
+                      <li>More than 200,000 accounts nationwide.</li>
+                      <li>
+                        Combined, our registered representatives have over $30
+                        billion in assets under advisement.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <Image src={arrowThree} />
+                  <div className="mt-5 rounded bg-white px-3 py-2">
+                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                      The Broker-Dealer
+                    </dt>
+                    <ul className="list-inside list-disc">
+                      <li>More than 200,000 accounts nationwide.</li>
+                      <li>
+                        Combined, our registered representatives have over $30
+                        billion in assets under advisement.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <Image src={arrowFour} />
+                  <div className="mt-5 rounded bg-white px-3 py-2">
+                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                      The Clearing Firm
+                    </dt>
+                    <ul className="list-inside list-disc">
+                      <li>More than 200,000 accounts nationwide.</li>
+                      <li>
+                        Combined, our registered representatives have over $30
+                        billion in assets under advisement.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </div>
           </Container>
         </section>
