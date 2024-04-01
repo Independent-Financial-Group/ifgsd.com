@@ -12,11 +12,8 @@ import Button from "../../components/Button/Button";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
-import highlightBlue from "../../public/_global-graphics/highlight-blue.png";
 import highlightOrange from "../../public/_global-graphics/image-highlight-orange.png";
 import imageHighlightBlue from "../../public/_global-graphics/image-highlight-blue.png";
-import gradientShadow from "../../public/_global-graphics/gradient-shadow.png";
-import sectionImage1 from "../../public/_why-your-advisor-uses-ifg/images/person-on-a-boat-looking-at-horizon-compressed.webp";
 import sectionImage2 from "../../public/_why-your-advisor-uses-ifg/images/family-walking-on-beach-compressed.webp";
 import orangeWave from "../../public/_global-graphics/wave-orange.png";
 import orangeWaveBold from "../../public/_global-graphics/wave-orange-bold.png";
@@ -24,8 +21,11 @@ import arrowOne from "../../public/_why-your-advisor-uses-ifg/graphics/investor-
 import arrowTwo from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-2.png";
 import arrowThree from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-3.png";
 import arrowFour from "../../public/_why-your-advisor-uses-ifg/graphics/investor-relation-arrow-4.png";
-
-import { AcademicCapIcon } from "@heroicons/react/24/solid";
+import serviceIcon from "../../public/_why-your-advisor-uses-ifg/graphics/customer-service-icon-white.svg";
+import unlocked from "../../public/_why-your-advisor-uses-ifg/graphics/unlock.svg";
+import products from "../../public/_why-your-advisor-uses-ifg/graphics/products.svg";
+import risk from "../../public/_why-your-advisor-uses-ifg/graphics/risk.svg";
+import logoFull from "../../public/logo-full-color.png";
 
 const index = () => {
   return (
@@ -45,6 +45,12 @@ const index = () => {
               />
               Why Your Advisor Uses IFG
             </h1>
+            <p className="max-w-prose text-lg leading-7 text-seabreeze-500">
+              As an independent broker-dealer, we provide our advisors the
+              services, technology, operational infrastructure, and freedom of
+              products to make sound investment recommendations and build solid
+              financial plans that are truly in their client's best interest.
+            </p>
           </div>
         </PageHeader>
         <Container>
@@ -54,7 +60,7 @@ const index = () => {
           <Container>
             <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
               <div>
-                <h2 className="mb-10 flex flex-col gap-2 text-3xl font-bold text-hazard-blue-500">
+                <h2 className="mb-10 flex flex-col gap-2 text-4xl font-bold text-hazard-blue-500">
                   <Image
                     src={highlightOrange}
                     alt="decorative heading highlight graphic"
@@ -62,10 +68,13 @@ const index = () => {
                   />
                   <span className="flex-grow-0">Clients Come First</span>
                 </h2>
-                <ul className="leading-7">
+                <ul className="flex flex-col gap-10 leading-7">
                   <li className="flex items-start gap-x-3">
                     <div className="rounded-xl bg-neon-orange-500 p-2">
-                      <AcademicCapIcon className="h-12 w-12 text-seabreeze-500" />
+                      <Image
+                        src={serviceIcon}
+                        className="aspect-square w-24 object-contain"
+                      />
                     </div>
                     <span>
                       <strong className="font-semibold text-neon-orange-600">
@@ -78,7 +87,10 @@ const index = () => {
                   </li>
                   <li className="flex items-start gap-x-3">
                     <div className="rounded-xl bg-neon-orange-500 p-2">
-                      <AcademicCapIcon className="h-12 w-12 text-seabreeze-500" />
+                      <Image
+                        src={unlocked}
+                        className="aspect-square w-24 object-contain"
+                      />
                     </div>
                     <span>
                       <strong className="font-semibold text-neon-orange-600">
@@ -91,7 +103,10 @@ const index = () => {
                   </li>
                   <li className="flex items-start gap-x-3">
                     <div className="rounded-xl bg-neon-orange-500 p-2">
-                      <AcademicCapIcon className="h-12 w-12 text-seabreeze-500" />
+                      <Image
+                        src={products}
+                        className="aspect-square w-24 object-contain"
+                      />
                     </div>
                     <span>
                       <strong className="font-semibold text-neon-orange-600">
@@ -104,7 +119,10 @@ const index = () => {
                   </li>
                   <li className="flex items-start gap-x-3">
                     <div className="rounded-xl bg-neon-orange-500 p-2">
-                      <AcademicCapIcon className="h-12 w-12 text-seabreeze-500" />
+                      <Image
+                        src={risk}
+                        className="aspect-square w-24 object-contain"
+                      />
                     </div>
                     <span>
                       <strong className="font-semibold text-neon-orange-600">
@@ -166,32 +184,39 @@ const index = () => {
               </h2>
               <div>
                 <p className="text-xl leading-7">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam, aspernatur! Error iure voluptatem nesciunt modi
-                  aspernatur natus blanditiis, fugit et.
+                  Our advisors provide their clients with investment advice,
+                  free from sales pressure that isn&apos;t in the best interest
+                  of the client. This translates into long-lasting relationships
+                  built on unique levels of trust.
                 </p>
                 <ul className="mt-5 grid grid-cols-3 justify-center divide-x-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm">
                   <li className="pl-2 pr-4">
-                    <dt className="text-base font-semibold">Offices</dt>
+                    <dt className="text-base font-semibold">
+                      Accounts Nationwide
+                    </dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        500+
+                        200k+
                       </div>
                     </dd>
                   </li>
                   <li className="px-4">
-                    <dt className="text-base font-semibold">Offices</dt>
+                    <dt className="text-base font-semibold">
+                      Assets Under Advisement
+                    </dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        500+
+                        $30B
                       </div>
                     </dd>
                   </li>
                   <li className="px-4">
-                    <dt className="text-base font-semibold">Offices</dt>
+                    <dt className="text-base font-semibold">
+                      Offices Across the U.S.
+                    </dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        500+
+                        375+
                       </div>
                     </dd>
                   </li>
@@ -199,11 +224,11 @@ const index = () => {
               </div>
             </div>
             <div className="mt-32">
-              <ul className="lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 [&>*]:flex [&>*]:flex-col [&>li>div]:flex-grow [&_li>ul]:flex [&_li>ul]:flex-col [&_li>ul]:gap-2">
+              <ul className="lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 [&>*]:flex [&>*]:flex-col [&>li>div]:flex-grow [&>li_ul>li]:text-xs [&>li_ul]:mt-5 [&>li_ul]:flex [&>li_ul]:flex-col [&>li_ul]:gap-5 [&_li>ul]:flex [&_li>ul]:flex-col [&_li>ul]:gap-2">
                 <li>
                   <Image src={arrowOne} />
                   <div className="mt-5 rounded bg-white px-3 py-2">
-                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
                       The Client
                     </dt>
                     <ul className="list-inside list-disc">
@@ -218,14 +243,23 @@ const index = () => {
                 <li>
                   <Image src={arrowTwo} />
                   <div className="mt-5 rounded bg-white px-3 py-2">
-                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
                       The Advisor
                     </dt>
                     <ul className="list-inside list-disc">
-                      <li>More than 200,000 accounts nationwide.</li>
                       <li>
-                        Combined, our registered representatives have over $30
-                        billion in assets under advisement.
+                        Offers professional advice and investments, including
+                        mutual funds, annuities, life insurance, fee-based asset
+                        management, direct participation programs, stocks, and
+                        bonds.
+                      </li>
+                      <li>
+                        More than 625 affiliated representatives in 500+ offices
+                        across the country.
+                      </li>
+                      <li>
+                        No proprietary products or service influence, and access
+                        to the nations leading investment companies.
                       </li>
                     </ul>
                   </div>
@@ -233,14 +267,24 @@ const index = () => {
                 <li>
                   <Image src={arrowThree} />
                   <div className="mt-5 rounded bg-white px-3 py-2">
-                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                    <Image
+                      src={logoFull}
+                      className="mx-auto h-20 w-3/4 object-contain"
+                    />
+                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
                       The Broker-Dealer
                     </dt>
                     <ul className="list-inside list-disc">
-                      <li>More than 200,000 accounts nationwide.</li>
                       <li>
-                        Combined, our registered representatives have over $30
-                        billion in assets under advisement.
+                        Full-servicem, national independent broker-dealer firm
+                      </li>
+                      <li>
+                        Provides service and support to the IFG Registered Reps
+                      </li>
+                      <li>
+                        Member of Financial Industry Regulatory Authority
+                        (FINRA) and Securities Investor Protection Corporation
+                        (SIPC)
                       </li>
                     </ul>
                   </div>
@@ -248,14 +292,24 @@ const index = () => {
                 <li>
                   <Image src={arrowFour} />
                   <div className="mt-5 rounded bg-white px-3 py-2">
-                    <dt className="mt-2 text-3xl font-bold text-neon-orange-500">
+                    <img src="https://www.lifehealth.com/site/wp-content/uploads/2020/01/BNY-Mellon.jpg" />
+                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
                       The Clearing Firm
                     </dt>
-                    <ul className="list-inside list-disc">
-                      <li>More than 200,000 accounts nationwide.</li>
+                    <ul>
                       <li>
-                        Combined, our registered representatives have over $30
-                        billion in assets under advisement.
+                        Pershing Provides Independent Financial Group with
+                        securities clearing services. For almost 80 years, many
+                        of the most complex financial institutions in the world
+                        have chosen to work with BNY Mellon's Pershing. With a
+                        network of 1,400 clients worldwide, Pershing provides
+                        business-to-business solutions to clients representing
+                        more than $1.8 trillion in global client assets.
+                        Pershing is a part of BNY Mellon, a global investments
+                        company with #33.1 trillion in assets under custody
+                        and/or administration. They have been trusted, tested
+                        and proven to protet their clients' interests while
+                        providing the most innovative solutions possible.
                       </li>
                     </ul>
                   </div>
