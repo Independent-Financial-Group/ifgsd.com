@@ -223,8 +223,10 @@ const index = () => {
                 </ul>
               </div>
             </div>
-            <div className="mt-32">
-              <ul className="lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 [&>*]:flex [&>*]:flex-col [&>li>div]:flex-grow [&>li_ul>li]:text-xs [&>li_ul]:mt-5 [&>li_ul]:flex [&>li_ul]:flex-col [&>li_ul]:gap-5 [&_li>ul]:flex [&_li>ul]:flex-col [&_li>ul]:gap-2">
+          </Container>
+          <div className="mt-32 bg-hazard-blue-100 py-10">
+            <Container>
+              <ul className="lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 [&>*]:flex [&>*]:flex-col [&>li>div]:flex-grow [&>li_ul>li]:text-xs [&>li_ul]:mt-5 [&>li_ul]:flex [&>li_ul]:flex-col [&>li_ul]:gap-2 [&_li>ul]:flex [&_li>ul]:flex-col [&_li>ul]:gap-2">
                 <li>
                   <Image src={arrowOne} />
                   <div className="mt-5 rounded bg-white px-3 py-2">
@@ -315,8 +317,8 @@ const index = () => {
                   </div>
                 </li>
               </ul>
-            </div>
-          </Container>
+            </Container>
+          </div>
         </section>
       </PublicLayout>
     </>
