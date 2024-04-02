@@ -9,6 +9,7 @@ import Container from "../../components/Container/Container";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Button from "../../components/Button/Button";
+import { motion, AnimatePresence } from "framer-motion";
 
 // IMPORT ASSETS
 import highlight from "../../public/_global-graphics/highlight.png";
@@ -28,6 +29,20 @@ import risk from "../../public/_why-your-advisor-uses-ifg/graphics/risk.svg";
 import logoFull from "../../public/logo-full-color.png";
 
 const index = () => {
+  const demoVariants = {
+    hidden: {
+      opacity: 0,
+      y: "5rem",
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -68,8 +83,17 @@ const index = () => {
                   />
                   <span className="flex-grow-0">Clients Come First</span>
                 </h2>
-                <ul className="flex flex-col gap-10 leading-7">
-                  <li className="flex items-start gap-x-3">
+                <motion.ul
+                  variants={demoVariants}
+                  whileInView="animate"
+                  viewport={{ once: true, margin: "-100px" }}
+                  initial="hidden"
+                  className="flex flex-col gap-10 leading-7"
+                >
+                  <motion.li
+                    variants={demoVariants}
+                    className="flex items-start gap-x-3"
+                  >
                     <div className="rounded-xl bg-neon-orange-500 p-2">
                       <Image
                         src={serviceIcon}
@@ -84,8 +108,11 @@ const index = () => {
                       serve you and ensure that you understand every investment
                       decision made on your behalf.
                     </span>
-                  </li>
-                  <li className="flex items-start gap-x-3">
+                  </motion.li>
+                  <motion.li
+                    variants={demoVariants}
+                    className="flex items-start gap-x-3"
+                  >
                     <div className="rounded-xl bg-neon-orange-500 p-2">
                       <Image
                         src={unlocked}
@@ -100,8 +127,11 @@ const index = () => {
                       necessary to provide the highest-quality investment
                       solutions.
                     </span>
-                  </li>
-                  <li className="flex items-start gap-x-3">
+                  </motion.li>
+                  <motion.li
+                    variants={demoVariants}
+                    className="flex items-start gap-x-3"
+                  >
                     <div>
                       <Image
                         src={products}
@@ -117,8 +147,11 @@ const index = () => {
                       range non-proprietary products to meet your financial
                       needs.
                     </span>
-                  </li>
-                  <li className="flex items-start gap-x-3">
+                  </motion.li>
+                  <motion.li
+                    variants={demoVariants}
+                    className="flex items-start gap-x-3"
+                  >
                     <div>
                       <Image
                         src={risk}
@@ -133,8 +166,8 @@ const index = () => {
                       services are designed to support your long-term financial
                       success.
                     </span>
-                  </li>
-                </ul>
+                  </motion.li>
+                </motion.ul>
               </div>
               <div>
                 <Image
@@ -207,7 +240,7 @@ const index = () => {
                     </dt>
                     <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
                       <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        $30B
+                        $33B
                       </div>
                     </dd>
                   </li>
