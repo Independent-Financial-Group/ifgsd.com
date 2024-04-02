@@ -76,13 +76,13 @@ const index = () => {
                         className="aspect-square w-24 object-contain"
                       />
                     </div>
-                    <span>
+                    <span className="flex-grow">
                       <strong className="font-semibold text-neon-orange-600">
                         Communication and Service.
                       </strong>{" "}
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Maiores impedit perferendis suscipit eaque, iste dolor
-                      cupiditate blanditiis ratione.
+                      Our team supports your advisor 24/7 so your advisor can
+                      serve you and ensure that you understand every investment
+                      decision made on your behalf.
                     </span>
                   </li>
                   <li className="flex items-start gap-x-3">
@@ -92,45 +92,46 @@ const index = () => {
                         className="aspect-square w-24 object-contain"
                       />
                     </div>
-                    <span>
+                    <span className="flex-grow">
                       <strong className="font-semibold text-neon-orange-600">
-                        Access to Leading Investment Companies
+                        Access to Leading Investment Companies.
                       </strong>{" "}
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Maiores impedit perferendis suscipit eaque, iste dolor
-                      cupiditate blanditiis ratione.
+                      IFG Registered Representatives have the tools and research
+                      necessary to provide the highest-quality investment
+                      solutions.
                     </span>
                   </li>
                   <li className="flex items-start gap-x-3">
-                    <div className="rounded-xl bg-neon-orange-500 p-2">
+                    <div>
                       <Image
                         src={products}
-                        className="aspect-square w-24 object-contain"
+                        className="aspect-square w-36 rounded bg-neon-orange-500 p-2"
                       />
                     </div>
-                    <span>
+                    <span className="flex-grow">
                       <strong className="font-semibold text-neon-orange-600">
-                        Product Availability
+                        Product Availability.
                       </strong>{" "}
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Maiores impedit perferendis suscipit eaque, iste dolor
-                      cupiditate blanditiis ratione.
+                      Our relationships with some of the world's premier
+                      financial companies give your advisor access to a wide
+                      range non-proprietary products to meet your financial
+                      needs.
                     </span>
                   </li>
                   <li className="flex items-start gap-x-3">
-                    <div className="rounded-xl bg-neon-orange-500 p-2">
+                    <div>
                       <Image
                         src={risk}
-                        className="aspect-square w-24 object-contain"
+                        className="aspect-square w-28 rounded bg-neon-orange-500 object-contain p-2"
                       />
                     </div>
-                    <span>
+                    <span className="flex-grow">
                       <strong className="font-semibold text-neon-orange-600">
-                        Risk Management
+                        Risk Management.
                       </strong>{" "}
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Maiores impedit perferendis suscipit eaque, iste dolor
-                      cupiditate blanditiis ratione.
+                      Our risk management, due diligence, and supervisory
+                      services are designed to support your long-term financial
+                      success.
                     </span>
                   </li>
                 </ul>
