@@ -27,6 +27,8 @@ import unlocked from "../../public/_why-your-advisor-uses-ifg/graphics/unlock.sv
 import products from "../../public/_why-your-advisor-uses-ifg/graphics/products.svg";
 import risk from "../../public/_why-your-advisor-uses-ifg/graphics/risk.svg";
 import logoFull from "../../public/logo-full-color.png";
+import relationshipInfographic from "../../public/_why-your-advisor-uses-ifg/graphics/relationship-infographic.png";
+import pershingLogo from "../../public/_why-your-advisor-uses-ifg/images/pershing-logo.png";
 
 const index = () => {
   const demoVariants = {
@@ -207,7 +209,7 @@ const index = () => {
             </Container>
           </div>
         </section>
-        <section className="my-10 lg:my-32">
+        {/* <section className="my-10 lg:my-32">
           <Container>
             <div className="lg:grid lg:grid-cols-2">
               <h2 className="text-4xl font-bold text-hazard-blue-500">
@@ -349,6 +351,112 @@ const index = () => {
                       </li>
                     </ul>
                   </div>
+                </li>
+              </ul>
+            </Container>
+          </div>
+        </section> */}
+        <section className="my-10 lg:my-32">
+          <Container>
+            <div className="lg:grid lg:grid-cols-2">
+              <h2 className="text-4xl font-bold text-hazard-blue-500">
+                The Investor{" "}
+                <span className="block">
+                  <div className="text-shadow relative">Relationship</div>
+                </span>
+              </h2>
+              <div>
+                <p className="text-xl leading-7">
+                  Our advisors provide their clients with investment advice,
+                  free from sales pressure that isn&apos;t in the best interest
+                  of the client. This translates into long-lasting relationships
+                  built on unique levels of trust.
+                </p>
+                <ul className="mt-5 grid grid-cols-3 justify-center divide-x-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm">
+                  <li className="pl-2 pr-4">
+                    <dt className="text-base font-semibold">
+                      Accounts Nationwide
+                    </dt>
+                    <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
+                      <div className="flex items-baseline text-2xl font-semibold text-neon-orange-500">
+                        240k+
+                      </div>
+                    </dd>
+                  </li>
+                  <li className="px-4">
+                    <dt className="text-base font-semibold">
+                      Assets Under Advisement
+                    </dt>
+                    <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
+                      <div className="flex items-baseline text-2xl font-semibold text-neon-orange-500">
+                        $33B
+                      </div>
+                    </dd>
+                  </li>
+                  <li className="px-4">
+                    <dt className="text-base font-semibold">
+                      Offices Across the U.S.
+                    </dt>
+                    <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
+                      <div className="flex items-baseline text-2xl font-semibold text-neon-orange-500">
+                        375+
+                      </div>
+                    </dd>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Container>
+          <div className="mt-36 py-10 pb-20">
+            <Container classes={"relative"}>
+              <Image
+                src={relationshipInfographic}
+                unoptimized
+                className="mx-auto hidden w-1/2 lg:block"
+              />
+              <ul className="[&>li]:w-[26ch] [&>li]:rounded-md [&>li]:bg-seabreeze-500 [&>li]:px-3 [&>li]:py-4 [&_li>h3]:text-lg [&_li>h3]:font-semibold [&_li>h3]:text-neon-orange-500 [&_li>p]:w-[32ch] [&_li>p]:text-xs [&_li>p]:leading-6">
+                <li className="absolute -bottom-[25%] left-[5%]">
+                  <h3>The Client</h3>
+                  <p>
+                    More than 200,000 accounts nationwide are managed by our
+                    registered representatives, collectively overseeing over $30
+                    billion in assets under advisement.
+                  </p>
+                </li>
+                <li className="absolute -bottom-[55%] right-[5%]">
+                  <h3>The Advisor</h3>
+                  <p>
+                    More than 625 affiliated representatives in 500+ offices
+                    across the country offer professional advice and
+                    investments, encompassing mutual funds, annuities, life
+                    insurance, fee-based asset management, direct participation
+                    programs, stocks, and bonds, without any proprietary
+                    products or service influence, granting access to the
+                    nation's leading investment companies.
+                  </p>
+                </li>
+                <li className="absolute -top-1/4 left-10">
+                  <Image src={logoFull} className="w-1/2" />
+                  <h3>The Broker-Dealer</h3>
+                  <p>
+                    As a full-service, national independent broker-dealer firm,
+                    we provide service and support to the IFG Registered Reps,
+                    and we are a member of the Financial Industry Regulatory
+                    Authority (FINRA) and the Securities Investor Protection
+                    Corporation (SIPC).
+                  </p>
+                </li>
+                <li className="absolute -top-1/4 right-10">
+                  <Image src={pershingLogo} className="" />
+                  <h3>The Clearing Firm</h3>
+                  <p>
+                    For nearly 80 years, Pershing, a division of BNY Mellon, has
+                    offered securities clearing services to top financial
+                    institutions worldwide, serving a network of 1,400 clients
+                    representing over $1.8 trillion in global assets, known for
+                    safeguarding clients' interests and delivering innovative
+                    solutions.
+                  </p>
                 </li>
               </ul>
             </Container>
