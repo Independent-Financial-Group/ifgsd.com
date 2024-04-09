@@ -29,6 +29,7 @@ import risk from "../../public/_why-your-advisor-uses-ifg/graphics/risk.svg";
 import logoFull from "../../public/logo-full-color.png";
 import relationshipInfographic from "../../public/_why-your-advisor-uses-ifg/graphics/relationship-infographic.png";
 import pershingLogo from "../../public/_why-your-advisor-uses-ifg/images/pershing-logo.png";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
 
 const index = () => {
   const demoVariants = {
@@ -75,8 +76,8 @@ const index = () => {
         </Container>
         <section className="my-10 lg:my-32">
           <Container>
-            <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-5">
-              <div>
+            <div className="grid gap-5 lg:grid-cols-2 lg:items-center">
+              <div className="order-2 lg:order-1">
                 <h2 className="mb-10 flex flex-col gap-2 text-4xl font-bold text-hazard-blue-500">
                   <Image
                     src={highlightOrange}
@@ -171,7 +172,7 @@ const index = () => {
                   </motion.li>
                 </motion.ul>
               </div>
-              <div>
+              <div className="order-1 lg:order-2">
                 <Image
                   src={sectionImage2}
                   className="rounded-2xl border-4 border-seabreeze-500"
@@ -358,7 +359,7 @@ const index = () => {
         </section> */}
         <section className="my-10 lg:my-32">
           <Container>
-            <div className="lg:grid lg:grid-cols-2">
+            <div className="grid gap-5 lg:grid-cols-2">
               <h2 className="text-4xl font-bold text-hazard-blue-500">
                 The Investor{" "}
                 <span className="block">
@@ -372,7 +373,7 @@ const index = () => {
                   of the client. This translates into long-lasting relationships
                   built on unique levels of trust.
                 </p>
-                <ul className="mt-5 grid grid-cols-3 justify-center divide-x-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm">
+                <ul className="mt-5 grid items-center gap-5 divide-y-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm lg:grid-cols-3 lg:justify-center lg:divide-x-2 [&_li]:pt-2">
                   <li className="pl-2 pr-4">
                     <dt className="text-base font-semibold">
                       Accounts Nationwide
@@ -407,24 +408,29 @@ const index = () => {
               </div>
             </div>
           </Container>
-          <div className="mt-36 py-10 pb-20">
+          <div className="pt-10 lg:mt-36 lg:block lg:py-10 lg:pb-20">
             <Container classes={"relative"}>
               <Image
                 src={relationshipInfographic}
                 unoptimized
                 className="mx-auto hidden w-1/2 lg:block"
               />
-              <ul className="[&>li]:w-[26ch] [&>li]:rounded-md [&>li]:bg-seabreeze-500 [&>li]:px-3 [&>li]:py-4 [&_li>h3]:text-lg [&_li>h3]:font-semibold [&_li>h3]:text-neon-orange-500 [&_li>p]:w-[32ch] [&_li>p]:text-xs [&_li>p]:leading-6">
-                <li className="absolute -bottom-[25%] left-[5%]">
-                  <h3>The Client</h3>
+              <ul className="grid gap-5 [&>li]:rounded-md [&>li]:bg-seabreeze-500 [&>li]:px-3 [&>li]:py-4 lg:[&>li]:w-[26ch] [&_li>h3]:text-lg [&_li>h3]:font-semibold [&_li>h3]:text-neon-orange-500 [&_li>p]:text-xs [&_li>p]:leading-6 lg:[&_li>p]:w-[32ch]">
+                <li className="lg:absolute lg:-bottom-[25%] lg:left-[5%]">
+                  <h3>
+                    <span className="lg:hidden">1 -</span>The Client
+                  </h3>
                   <p>
                     More than 200,000 accounts nationwide are managed by our
                     registered representatives, collectively overseeing over $30
                     billion in assets under advisement.
                   </p>
                 </li>
-                <li className="absolute -bottom-[55%] right-[5%]">
-                  <h3>The Advisor</h3>
+                <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
+                <li className="lg:absolute lg:-bottom-[55%] lg:right-[5%]">
+                  <h3>
+                    <span className="lg:hidden">2 - </span>The Advisor
+                  </h3>
                   <p>
                     More than 625 affiliated representatives in 500+ offices
                     across the country offer professional advice and
@@ -435,9 +441,12 @@ const index = () => {
                     nation's leading investment companies.
                   </p>
                 </li>
-                <li className="absolute -top-1/4 left-10">
-                  <Image src={logoFull} className="w-1/2" />
-                  <h3>The Broker-Dealer</h3>
+                <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
+                <li className="lg:absolute lg:-top-1/4 lg:left-10">
+                  <Image src={logoFull} className="w-1/4 lg:w-1/2" />
+                  <h3>
+                    <span className="lg:hidden">3 - </span>The Broker-Dealer
+                  </h3>
                   <p>
                     As a full-service, national independent broker-dealer firm,
                     we provide service and support to the IFG Registered Reps,
@@ -446,9 +455,12 @@ const index = () => {
                     Corporation (SIPC).
                   </p>
                 </li>
-                <li className="absolute -top-1/4 right-10">
-                  <Image src={pershingLogo} className="" />
-                  <h3>The Clearing Firm</h3>
+                <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
+                <li className="lg:absolute lg:-top-1/4 lg:right-10">
+                  <Image src={pershingLogo} className="w-1/2 lg:w-auto" />
+                  <h3>
+                    <span className="lg:hidden">4 - </span>The Clearing Firm
+                  </h3>
                   <p>
                     For nearly 80 years, Pershing, a division of BNY Mellon, has
                     offered securities clearing services to top financial
