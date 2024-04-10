@@ -29,7 +29,10 @@ import risk from "../../public/_why-your-advisor-uses-ifg/graphics/risk.svg";
 import logoFull from "../../public/logo-full-color.png";
 import relationshipInfographic from "../../public/_why-your-advisor-uses-ifg/graphics/relationship-infographic.png";
 import pershingLogo from "../../public/_why-your-advisor-uses-ifg/images/pershing-logo.png";
+import blurGradientBlue from "../../public/_leadership/graphics/blur-gradient-left.png";
+import blurGradientOrange from "../../public/_leadership/graphics/blur-gradient-right.png";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import laJollaCoveDrone from "../../public/_why-your-advisor-uses-ifg/images/la-jolla-cove-drone-compressed.jpg";
 
 const index = () => {
   const demoVariants = {
@@ -107,9 +110,9 @@ const index = () => {
                       <strong className="font-semibold text-neon-orange-600">
                         Communication and Service.
                       </strong>{" "}
-                      Our team supports your advisor 24/7 so your advisor can
-                      serve you and ensure that you understand every investment
-                      decision made on your behalf.
+                      Our team supports your advisor so they can serve you and
+                      ensure that you understand every investment decision made
+                      on your behalf.
                     </span>
                   </motion.li>
                   <motion.li
@@ -126,9 +129,8 @@ const index = () => {
                       <strong className="font-semibold text-neon-orange-600">
                         Access to Leading Investment Companies.
                       </strong>{" "}
-                      IFG Registered Representatives have the tools and research
-                      necessary to provide the highest-quality investment
-                      solutions.
+                      IFG advisors have the tools and research necessary to
+                      provide the highest-quality investment solutions.
                     </span>
                   </motion.li>
                   <motion.li
@@ -199,7 +201,7 @@ const index = () => {
                   knowledgeable and experienced partner standing by your side to
                   guide you through the maze of your financial investments?{" "}
                   <span className="text-hazard-blue-500">
-                    Get connected with an advisor today
+                    Get connected with an IFG advisor today
                   </span>
                   .
                 </p>
@@ -210,162 +212,17 @@ const index = () => {
             </Container>
           </div>
         </section>
-        {/* <section className="my-10 lg:my-32">
-          <Container>
-            <div className="lg:grid lg:grid-cols-2">
-              <h2 className="text-4xl font-bold text-hazard-blue-500">
-                The Investor{" "}
-                <span className="block">
-                  <div className="text-shadow relative">Relationship</div>
-                </span>
-              </h2>
-              <div>
-                <p className="text-xl leading-7">
-                  Our advisors provide their clients with investment advice,
-                  free from sales pressure that isn&apos;t in the best interest
-                  of the client. This translates into long-lasting relationships
-                  built on unique levels of trust.
-                </p>
-                <ul className="mt-5 grid grid-cols-3 justify-center divide-x-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm">
-                  <li className="pl-2 pr-4">
-                    <dt className="text-base font-semibold">
-                      Accounts Nationwide
-                    </dt>
-                    <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
-                      <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        200k+
-                      </div>
-                    </dd>
-                  </li>
-                  <li className="px-4">
-                    <dt className="text-base font-semibold">
-                      Assets Under Advisement
-                    </dt>
-                    <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
-                      <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        $33B
-                      </div>
-                    </dd>
-                  </li>
-                  <li className="px-4">
-                    <dt className="text-base font-semibold">
-                      Offices Across the U.S.
-                    </dt>
-                    <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
-                      <div className="flex items-baseline text-2xl font-semibold text-neon-orange-600">
-                        375+
-                      </div>
-                    </dd>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </Container>
-          <div className="mt-32 bg-hazard-blue-100 py-10">
-            <Container>
-              <ul className="lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 [&>*]:flex [&>*]:flex-col [&>li>div]:flex-grow [&>li_ul>li]:text-xs [&>li_ul]:mt-5 [&>li_ul]:flex [&>li_ul]:flex-col [&>li_ul]:gap-2 [&_li>ul]:flex [&_li>ul]:flex-col [&_li>ul]:gap-2">
-                <li>
-                  <Image src={arrowOne} />
-                  <div className="mt-5 rounded bg-white px-3 py-2">
-                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
-                      The Client
-                    </dt>
-                    <ul className="list-inside list-disc">
-                      <li>More than 200,000 accounts nationwide.</li>
-                      <li>
-                        Combined, our registered representatives have over $30
-                        billion in assets under advisement.
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <Image src={arrowTwo} />
-                  <div className="mt-5 rounded bg-white px-3 py-2">
-                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
-                      The Advisor
-                    </dt>
-                    <ul className="list-inside list-disc">
-                      <li>
-                        Offers professional advice and investments, including
-                        mutual funds, annuities, life insurance, fee-based asset
-                        management, direct participation programs, stocks, and
-                        bonds.
-                      </li>
-                      <li>
-                        More than 625 affiliated representatives in 500+ offices
-                        across the country.
-                      </li>
-                      <li>
-                        No proprietary products or service influence, and access
-                        to the nations leading investment companies.
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <Image src={arrowThree} />
-                  <div className="mt-5 rounded bg-white px-3 py-2">
-                    <Image
-                      src={logoFull}
-                      className="mx-auto h-20 w-3/4 object-contain"
-                    />
-                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
-                      The Broker-Dealer
-                    </dt>
-                    <ul className="list-inside list-disc">
-                      <li>
-                        Full-servicem, national independent broker-dealer firm
-                      </li>
-                      <li>
-                        Provides service and support to the IFG Registered Reps
-                      </li>
-                      <li>
-                        Member of Financial Industry Regulatory Authority
-                        (FINRA) and Securities Investor Protection Corporation
-                        (SIPC)
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <Image src={arrowFour} />
-                  <div className="mt-5 rounded bg-white px-3 py-2">
-                    <img src="https://www.lifehealth.com/site/wp-content/uploads/2020/01/BNY-Mellon.jpg" />
-                    <dt className="mt-2 text-2xl font-bold text-neon-orange-500">
-                      The Clearing Firm
-                    </dt>
-                    <ul>
-                      <li>
-                        Pershing Provides Independent Financial Group with
-                        securities clearing services. For almost 80 years, many
-                        of the most complex financial institutions in the world
-                        have chosen to work with BNY Mellon's Pershing. With a
-                        network of 1,400 clients worldwide, Pershing provides
-                        business-to-business solutions to clients representing
-                        more than $1.8 trillion in global client assets.
-                        Pershing is a part of BNY Mellon, a global investments
-                        company with #33.1 trillion in assets under custody
-                        and/or administration. They have been trusted, tested
-                        and proven to protet their clients' interests while
-                        providing the most innovative solutions possible.
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </Container>
-          </div>
-        </section> */}
         <section className="my-10 lg:my-32">
           <Container>
             <div className="grid gap-5 lg:grid-cols-2">
-              <h2 className="text-4xl font-bold text-hazard-blue-500">
-                The Investor{" "}
-                <span className="block">
-                  <div className="text-shadow relative">Relationship</div>
-                </span>
-              </h2>
+              <div>
+                <h2 className="w-fit rounded-md bg-neon-orange-500 p-4 text-4xl font-bold text-seabreeze-500">
+                  The Investor{" "}
+                  <span className="block">
+                    <div className="text-shadow relative">Relationship</div>
+                  </span>
+                </h2>
+              </div>
               <div>
                 <p className="text-xl leading-7">
                   Our advisors provide their clients with investment advice,
@@ -373,7 +230,7 @@ const index = () => {
                   of the client. This translates into long-lasting relationships
                   built on unique levels of trust.
                 </p>
-                <ul className="mt-5 grid items-center gap-5 divide-y-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm lg:grid-cols-3 lg:justify-center lg:divide-x-2 [&_li]:pt-2">
+                <ul className="mt-5 grid items-center gap-5 divide-y-2 rounded-lg bg-seabreeze-500 px-2 py-3 shadow-sm lg:grid-cols-3 lg:justify-center lg:divide-x-2 lg:divide-y-0 [&_li]:pt-2">
                   <li className="pl-2 pr-4">
                     <dt className="text-base font-semibold">
                       Accounts Nationwide
@@ -408,70 +265,89 @@ const index = () => {
               </div>
             </div>
           </Container>
-          <div className="pt-10 lg:mt-36 lg:block lg:py-10 lg:pb-20">
-            <Container classes={"relative"}>
-              <Image
-                src={relationshipInfographic}
-                unoptimized
-                className="mx-auto hidden w-1/2 lg:block"
-              />
-              <ul className="grid gap-5 [&>li]:rounded-md [&>li]:bg-seabreeze-500 [&>li]:px-3 [&>li]:py-4 lg:[&>li]:w-[26ch] [&_li>h3]:text-lg [&_li>h3]:font-semibold [&_li>h3]:text-neon-orange-500 [&_li>p]:text-xs [&_li>p]:leading-6 lg:[&_li>p]:w-[32ch]">
-                <li className="lg:absolute lg:-bottom-[25%] lg:left-[5%]">
-                  <h3>
-                    <span className="lg:hidden">1 -</span>The Client
-                  </h3>
-                  <p>
-                    More than 200,000 accounts nationwide are managed by our
-                    registered representatives, collectively overseeing over $30
-                    billion in assets under advisement.
-                  </p>
-                </li>
-                <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
-                <li className="lg:absolute lg:-bottom-[55%] lg:right-[5%]">
-                  <h3>
-                    <span className="lg:hidden">2 - </span>The Advisor
-                  </h3>
-                  <p>
-                    More than 625 affiliated representatives in 500+ offices
-                    across the country offer professional advice and
-                    investments, encompassing mutual funds, annuities, life
-                    insurance, fee-based asset management, direct participation
-                    programs, stocks, and bonds, without any proprietary
-                    products or service influence, granting access to the
-                    nation's leading investment companies.
-                  </p>
-                </li>
-                <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
-                <li className="lg:absolute lg:-top-1/4 lg:left-10">
-                  <Image src={logoFull} className="w-1/4 lg:w-1/2" />
-                  <h3>
-                    <span className="lg:hidden">3 - </span>The Broker-Dealer
-                  </h3>
-                  <p>
-                    As a full-service, national independent broker-dealer firm,
-                    we provide service and support to the IFG Registered Reps,
-                    and we are a member of the Financial Industry Regulatory
-                    Authority (FINRA) and the Securities Investor Protection
-                    Corporation (SIPC).
-                  </p>
-                </li>
-                <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
-                <li className="lg:absolute lg:-top-1/4 lg:right-10">
-                  <Image src={pershingLogo} className="w-1/2 lg:w-auto" />
-                  <h3>
-                    <span className="lg:hidden">4 - </span>The Clearing Firm
-                  </h3>
-                  <p>
-                    For nearly 80 years, Pershing, a division of BNY Mellon, has
-                    offered securities clearing services to top financial
-                    institutions worldwide, serving a network of 1,400 clients
-                    representing over $1.8 trillion in global assets, known for
-                    safeguarding clients' interests and delivering innovative
-                    solutions.
-                  </p>
-                </li>
-              </ul>
-            </Container>
+          <div className="relative bg-[url('/_why-your-advisor-uses-ifg/images/la-jolla-cove-drone-compressed.jpg')] bg-cover lg:mt-20 lg:block  lg:h-[900px]">
+            <div className="h-[100%] bg-white/20">
+              <Container classes={"relative lg:flex lg:items-center"}>
+                <Image
+                  src={relationshipInfographic}
+                  unoptimized
+                  className="mx-auto hidden w-1/2 lg:block"
+                />
+                <ul className="grid gap-5 [&>li]:rounded-md [&>li]:bg-white [&>li]:px-3 [&>li]:py-4 [&>li]:shadow-md [&>li]:ring [&>li]:ring-inset [&>li]:ring-hazard-blue-500  lg:[&>li]:w-[26ch] [&_li>h3]:text-lg [&_li>h3]:font-semibold [&_li>h3]:text-neon-orange-500 [&_li>p]:text-xs [&_li>p]:leading-6 lg:[&_li>p]:w-[32ch]">
+                  <li className="lg:absolute lg:bottom-[25%] lg:left-[5%]">
+                    <h3>
+                      <span className="lg:hidden">1 -</span>The Client
+                    </h3>
+                    <p>
+                      More than 200,000 accounts nationwide are managed by our
+                      advisors, collectively overseeing over $30 billion in
+                      assets under advisement.
+                    </p>
+                  </li>
+                  <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
+                  <li className="lg:absolute lg:bottom-[10%] lg:right-[8%]">
+                    <h3>
+                      <span className="lg:hidden">2 - </span>The Advisor
+                    </h3>
+                    <p>
+                      More than 625 affiliated in 500+ offices across the
+                      country offer professional advice and investments,
+                      encompassing mutual funds, annuities, life insurance,
+                      fee-based asset management, direct participation programs,
+                      stocks, and bonds, without any proprietary products or
+                      service influence, granting access to the nation's leading
+                      investment companies.
+                    </p>
+                  </li>
+                  <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
+                  <li className="lg:absolute lg:left-10 lg:top-[15%]">
+                    <Image src={logoFull} className="w-1/4 lg:w-1/2" />
+                    <h3>
+                      <span className="lg:hidden">3 - </span>The Broker-Dealer
+                    </h3>
+                    <p>
+                      As a full-service, national independent broker-dealer
+                      firm, we provide service and support to the IFG advisor,
+                      and we are a member of the Financial Industry Regulatory
+                      Authority{" "}
+                      <a
+                        className="font-bold text-neon-orange-500"
+                        href="https://finra.org"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        (FINRA)
+                      </a>{" "}
+                      and the Securities Investor Protection Corporation{" "}
+                      <a
+                        className="font-bold text-neon-orange-500"
+                        href="https://sipc.org"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        (SIPC)
+                      </a>
+                      .
+                    </p>
+                  </li>
+                  <ArrowDownIcon className="mx-auto h-10 w-10 font-bold text-neon-orange-500 lg:hidden" />
+                  <li className="lg:absolute lg:right-10 lg:top-[5%]">
+                    <Image src={pershingLogo} className="w-1/2 lg:w-auto" />
+                    <h3>
+                      <span className="lg:hidden">4 - </span>The Clearing Firm
+                    </h3>
+                    <p>
+                      For nearly 80 years, Pershing, a division of BNY Mellon,
+                      has offered securities clearing services to top financial
+                      institutions worldwide, serving a network of 1,400 clients
+                      representing over $1.8 trillion in global assets, known
+                      for safeguarding clients' interests and delivering
+                      innovative solutions.
+                    </p>
+                  </li>
+                </ul>
+              </Container>
+            </div>
           </div>
         </section>
       </PublicLayout>
