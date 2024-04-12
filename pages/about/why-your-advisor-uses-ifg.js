@@ -149,7 +149,7 @@ const index = () => {
                       </strong>{" "}
                       Our relationships with some of the world's premier
                       financial companies give your advisor access to a wide
-                      range non-proprietary products to meet your financial
+                      range of non-proprietary products to meet your financial
                       needs.
                     </span>
                   </motion.li>
