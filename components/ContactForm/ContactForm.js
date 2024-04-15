@@ -134,7 +134,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
-    recaptchaRef.current.execute();
+    const token = await recaptchaRef.current.executeAsync();
 
     const res = await fetch("/api/public/sendgrid", {
       method: "POST",
@@ -195,7 +195,6 @@ const ContactForm = () => {
               ref={recaptchaRef}
               size="invisible"
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-              onChange={onReCAPTCHAChange}
             />
             <div>
               <label className="sr-only" htmlFor="name">
