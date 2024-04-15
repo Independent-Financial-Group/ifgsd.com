@@ -150,17 +150,6 @@ const ContactForm = () => {
     }
   };
 
-  const onReCAPTCHAChange = (captchaCode) => {
-    // If the reCAPTCHA code is null or undefined indicating that
-    // the reCAPTCHA was expired then return early
-    if (!captchaCode) {
-      return;
-    }
-    // Reset the reCAPTCHA so that it can be executed again if user
-    // submits another email.
-    recaptchaRef.current.reset();
-  };
-
   return (
     <div className="rounded-3xl bg-white p-8">
       {emailSent && (
