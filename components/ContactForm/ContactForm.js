@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
+  const recaptchaRef = React.createRef();
+
   const [states, setStates] = useState([
     "AL",
     "AK",
@@ -131,6 +134,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
+    const token = await recaptchaRef.current.executeAsync();
 
     const res = await fetch("/api/public/sendgrid", {
       method: "POST",
@@ -176,6 +180,11 @@ const ContactForm = () => {
             financial advisor directly.
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              size="invisible"
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            />
             <div>
               <label className="sr-only" htmlFor="name">
                 Name
