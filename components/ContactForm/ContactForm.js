@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
+  const recaptchaRef = React.createRef();
+
   const [states, setStates] = useState([
     "AL",
     "AK",
@@ -131,6 +134,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
+    recaptchaRef.current.execute();
 
     const res = await fetch("/api/public/sendgrid", {
       method: "POST",
@@ -144,6 +148,17 @@ const ContactForm = () => {
       setFormData(initialFormState);
       setEmailSent(true);
     }
+  };
+
+  const onReCAPTCHAChange = (captchaCode) => {
+    // If the reCAPTCHA code is null or undefined indicating that
+    // the reCAPTCHA was expired then return early
+    if (!captchaCode) {
+      return;
+    }
+    // Reset the reCAPTCHA so that it can be executed again if user
+    // submits another email.
+    recaptchaRef.current.reset();
   };
 
   return (
@@ -176,6 +191,12 @@ const ContactForm = () => {
             financial advisor directly.
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              size="invisible"
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              onChange={onReCAPTCHAChange}
+            />
             <div>
               <label className="sr-only" htmlFor="name">
                 Name
