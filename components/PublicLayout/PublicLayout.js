@@ -8,7 +8,9 @@ const PublicLayout = ({ children }) => {
     <>
       <Nav />
       <MobileNav />
-      <main className="min-h-[calc(100vh-113px)] overflow-x-hidden">{children}</main>
+      <main className="min-h-[calc(100vh-113px)] overflow-x-hidden overflow-y-hidden">
+        {children}
+      </main>
       <Footer />
     </>
   );
