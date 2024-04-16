@@ -20,10 +20,9 @@ const Nav = () => {
           <div className="col">
             <Link href="/" passHref>
               <Image
-                width={250}
                 alt="IFG logo"
                 src={Logo}
-                className="lg:max-w-[120px] xl:max-w-[250px]"
+                className="lg:max-w-[150px] xl:max-w-[250px]"
               />
             </Link>
           </div>
@@ -46,7 +45,7 @@ const Nav = () => {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute right-36 top-3/4 z-10 flex w-56 flex-col rounded bg-white text-sm drop-shadow xl:right-auto">
+                  <Menu.Items className="absolute top-[90%] z-10 flex w-56 flex-col rounded bg-white text-sm drop-shadow xl:right-auto xl:top-[80%]">
                     <Menu.Item>
                       <Menu as="div" className="relative">
                         <Menu.Button className="flex w-full flex-row items-center px-2 py-3 hover:bg-hazard-blue-500 hover:text-seabreeze-500">
@@ -152,6 +151,16 @@ const Nav = () => {
                           href="/about/our-story"
                         >
                           Our Story
+                        </Link>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item className="px-2 py-3 hover:text-seabreeze-500">
+                      {({ active }) => (
+                        <Link
+                          className={`${active && "bg-hazard-blue-500"}`}
+                          href="/about/why-your-advisor-uses-ifg"
+                        >
+                          Why Your Advisor Uses IFG
                         </Link>
                       )}
                     </Menu.Item>
