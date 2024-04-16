@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-@import url('../components/Timeline/timeline.css');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("../components/Timeline/timeline.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    html {
-        @apply scroll-smooth
-    }
+  html {
+    @apply scroll-smooth;
+  }
 }
 
 body {
-    background-color: #ECF1F6;
+  background-color: #ecf1f6;
+  color: #2a2e41;
 }
 
 .outline {
-    outline: 2px solid red;
+  outline: 2px solid red;
 }
 
-
 .width-300 {
-    width: 300px;
+  width: 300px;
 }
