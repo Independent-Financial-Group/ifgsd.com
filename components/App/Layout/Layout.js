@@ -147,16 +147,12 @@ const navigation = [
           { name: "Models", href: "/app/portfolio-construction/models" },
         ],
       },
-      // {
-      //   name: "Practice Development",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Practice Development",
+        links: [
+          { name: "Overview", href: "/app/practice-development/overview" },
+        ],
+      },
       // {
       //   name: "Retirement Services",
       //   links: [
