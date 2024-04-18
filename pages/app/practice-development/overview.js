@@ -48,10 +48,18 @@ const overview = ({ preview }) => {
           <DepartmentAnnouncements data={[]} name="Practice Development" />
           <div className="col-span-full">
             <h2 className="text-3xl font-bold text-neon-orange-500">
-              Resources for every phase of your practice.
+              Educational resources for every phase of your practice.
             </h2>
           </div>
           <GridTile tileTitle="High Growth Practice" colSpan="col-span-4">
+            <dl>
+              <dt className="font-semibold text-neon-orange-500">Goal</dt>
+              <dd className="text-xs leading-5 text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente praesentium nihil aliquid consequatur nobis molestiae,
+                fugit obcaecati perspiciatis aut. Laborum.
+              </dd>
+            </dl>
             <ul className="divide-y [&_li]:py-4">
               <li className="flex items-center gap-2">
                 <img
@@ -104,6 +112,14 @@ const overview = ({ preview }) => {
             </ul>
           </GridTile>
           <GridTile tileTitle="Mature Practice" colSpan="col-span-4">
+            <dl>
+              <dt className="font-semibold text-neon-orange-500">Goal</dt>
+              <dd className="text-xs leading-5 text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+                rerum earum pariatur impedit rem ex soluta mollitia ullam, quod
+                alias.
+              </dd>
+            </dl>
             <ul className="divide-y [&_li]:py-4">
               <li className="flex items-center gap-2">
                 <img
@@ -156,6 +172,14 @@ const overview = ({ preview }) => {
             </ul>
           </GridTile>
           <GridTile tileTitle="Transforming Practice" colSpan="col-span-4">
+            <dl>
+              <dt className="font-semibold text-neon-orange-500">Goal</dt>
+              <dd className="text-xs leading-5 text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente praesentium nihil aliquid consequatur nobis molestiae,
+                fugit obcaecati perspiciatis aut. Laborum.
+              </dd>
+            </dl>
             <ul className="divide-y [&_li]:py-4">
               <li className="flex items-center gap-2">
                 <span className="inline-block h-14 w-14 overflow-hidden rounded-full bg-gray-100">
