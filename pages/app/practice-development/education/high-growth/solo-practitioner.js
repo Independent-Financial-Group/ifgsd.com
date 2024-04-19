@@ -2,26 +2,48 @@ import React from "react";
 
 // NEXT
 import Head from "next/head";
+import Link from "next/link";
 // COMPONENTS
 import Layout from "components/App/Layout/Layout";
 import ContentContainer from "components/App/ContentContainer/ContentContainer";
 import GridTile from "components/App/GridTile/GridTile";
 import PageHeader from "components/App/InternalPages/PageHeader/PageHeader";
+import ContentLibrary from "components/App/InternalPages/Overview/ContentLibrary/ContentLibrary";
 
 import * as contentful from "utils/contentful";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
 
+  const data = await client.getEntries({
+    content_type: "contentLibrary",
+    "fields.department[match]": "Practice Development",
+  });
+
   return {
     props: {
+      data: [...data.items],
       preview: preview || false,
     },
     revalidate: 10,
   };
 }
 
-const index = ({ preview }) => {
+const index = ({ data, preview }) => {
+  const formattedData = data.reduce((result, item) => {
+    const subcategory = item.fields.subcategory;
+
+    if (!result[subcategory]) {
+      result[subcategory] = [];
+    }
+
+    result[subcategory].push(item);
+
+    return result;
+  }, []);
+
+  console.log(formattedData);
+
   return (
     <>
       <Head>
@@ -34,15 +56,14 @@ const index = ({ preview }) => {
         />
         <ContentContainer additionalClasses="relative">
           <GridTile
-            colSpan="col-span-6"
+            colSpan="col-span-6 row-start-1 row-end-2"
             tileTitle="Persona"
-            additionalClasses="sticky top-0"
           >
             <section className="flex items-center gap-5">
               <img
-                src="https://images.ctfassets.net/9lvru9ro1ti1/4kjidbgqBD3x4StC6zwb7i/07c2df2c1d6e5be20e551a9802c9fe6e/user-persona.png"
+                src="https://media.istockphoto.com/id/1540766989/photo/young-adult-male-entrepreneur-poses-for-photo.jpg?s=612x612&w=0&k=20&c=W4EkFAVsKSXe4RJMd6FTAEzWTA2pbIlP4Y-LDG-0gMs="
                 alt="user persona"
-                className="h-[100px] w-[100px]"
+                className="h-[100px] w-[100px] rounded-full object-cover"
               />
               <div>
                 <h3 className="text-2xl font-bold text-neon-orange-500">
@@ -141,10 +162,42 @@ const index = ({ preview }) => {
               </ul>
             </section>
           </GridTile>
-          <GridTile
+          <ContentLibrary
+            department="Practice Development"
+            tileTitle="Resources"
+            colSpan={"col-span-6 row-start-1 row-end-2"}
+          />
+          {/* <GridTile
             scroll
             tileTitle="Resources"
             colSpan="col-span-6"
+            additionalClasses={"h-[400px]"}
+          >
+            {Object.keys(formattedData).map((subcategory) => {
+              return (
+                <>
+                  <div className="sticky top-0 z-10 border-y border-b-gray-200 border-t-gray-100 bg-neon-orange-100 px-3 py-1.5 text-sm font-semibold leading-6 text-neon-orange-600">
+                    <h3>
+                      {subcategory == "undefined" ? "All/Mixed" : subcategory}
+                    </h3>
+                  </div>
+                  <ul>
+                    {formattedData[subcategory].map((item) => (
+                      <li key={item.sys.id} className="flex gap-2">
+                        <div className="flex-grow">{item.fields.title}</div>
+                        <div>
+                          <Link href={item.fields.slug}>Open</Link>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              );
+            })}
+          </GridTile> */}
+          <GridTile
+            tileTitle={"TEST"}
+            colSpan="col-start-7 col-end-12 row-start-2 row-end-3"
           ></GridTile>
         </ContentContainer>
       </Layout>
