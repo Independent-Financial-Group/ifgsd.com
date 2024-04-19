@@ -12,7 +12,13 @@ import Link from "next/link";
 import * as contentful from "utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 
-const ContentLibrary = ({ department, preview, colSpan }) => {
+const ContentLibrary = ({
+  department,
+  preview,
+  colSpan,
+  tileTitle,
+  fixedHeight,
+}) => {
   const [content, setContent] = useState([]);
 
   const getContent = async (department, preview) => {
@@ -48,14 +54,20 @@ const ContentLibrary = ({ department, preview, colSpan }) => {
 
   return (
     <div
-      className={`${
-        colSpan ? colSpan : "col-span-4"
-      } h-[500px] rounded-lg bg-white  shadow`}
+      className={`${colSpan ? colSpan : "col-span-4"} ${
+        !fixedHeight ? null : "h-[500px]"
+      } rounded-lg bg-white  shadow`}
     >
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
-          <BuildingLibraryIcon className="h-5 w-5" />
-          Content Library
+          {tileTitle ? (
+            tileTitle
+          ) : (
+            <>
+              <BuildingLibraryIcon className="h-5 w-5" />
+              Content Library
+            </>
+          )}
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto">
