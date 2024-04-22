@@ -152,7 +152,6 @@ const navigation = [
         links: [
           { name: "Overview", href: "/app/practice-development/overview" },
           { name: "Education", href: "/app/practice-development/education" },
-          { name: "Partners", href: "/app/practice-development/partners" },
         ],
       },
       // {
