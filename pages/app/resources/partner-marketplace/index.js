@@ -2,10 +2,11 @@ import React, { useState, useEffect, Fragment } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "../../../components/App/Layout/Layout";
-import ContentContainer from "../../../components/App/ContentContainer/ContentContainer";
-import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
-import GridTile from "../../../components/App/GridTile/GridTile";
+import Layout from "components/App/Layout/Layout";
+import ContentContainer from "components/App/ContentContainer/ContentContainer";
+import PageHeader from "components/App/InternalPages/PageHeader/PageHeader";
+import GridTile from "components/App/GridTile/GridTile";
+
 import { Tab } from "@headlessui/react";
 
 // SPLIDE
@@ -14,7 +15,7 @@ import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 // CONTENTFUL
-import * as contentful from "../../../utils/contentful";
+import * as contentful from "../../../../utils/contentful";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
