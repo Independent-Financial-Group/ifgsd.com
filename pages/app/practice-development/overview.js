@@ -73,7 +73,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className="rounded bg-neon-orange-200 p-2 text-xs text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -89,7 +89,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className=" rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -105,7 +105,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className="rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -133,7 +133,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className=" rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -149,7 +149,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className="rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -165,7 +165,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className="rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -198,7 +198,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className="rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -219,7 +219,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className=" rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
@@ -240,7 +240,7 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className=" rounded bg-neon-orange-200 p-2 font-semibold text-neon-orange-500">
+                <button className="rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500">
                   Access
                 </button>
               </li>
