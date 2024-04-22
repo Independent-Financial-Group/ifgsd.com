@@ -167,38 +167,6 @@ const index = ({ data, preview }) => {
             tileTitle="Resources"
             colSpan={"col-span-6 row-start-1 row-end-2"}
           />
-          {/* <GridTile
-            scroll
-            tileTitle="Resources"
-            colSpan="col-span-6"
-            additionalClasses={"h-[400px]"}
-          >
-            {Object.keys(formattedData).map((subcategory) => {
-              return (
-                <>
-                  <div className="sticky top-0 z-10 border-y border-b-gray-200 border-t-gray-100 bg-neon-orange-100 px-3 py-1.5 text-sm font-semibold leading-6 text-neon-orange-600">
-                    <h3>
-                      {subcategory == "undefined" ? "All/Mixed" : subcategory}
-                    </h3>
-                  </div>
-                  <ul>
-                    {formattedData[subcategory].map((item) => (
-                      <li key={item.sys.id} className="flex gap-2">
-                        <div className="flex-grow">{item.fields.title}</div>
-                        <div>
-                          <Link href={item.fields.slug}>Open</Link>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              );
-            })}
-          </GridTile> */}
-          <GridTile
-            tileTitle={"TEST"}
-            colSpan="col-start-7 col-end-12 row-start-2 row-end-3"
-          ></GridTile>
         </ContentContainer>
       </Layout>
     </>
