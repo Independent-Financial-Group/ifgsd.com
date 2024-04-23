@@ -126,16 +126,13 @@ const navigation = [
           { name: "Tools", href: "/app/insurance/tools" },
         ],
       },
-      // {
-      //   name: "Operations",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Operations",
+        links: [
+          { name: "Overview", href: "/app/operations/overview" },
+          // { name: "Education", href: "#" },
+        ],
+      },
       {
         name: "Portfolio Construction",
         links: [
