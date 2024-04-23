@@ -83,9 +83,32 @@ const ContentLibrary = ({
                 {content[subcategory].map((item) => (
                   <li key={item.sys.id} className="py-5">
                     <div className="min-w-0">
-                      <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                      {item.fields.category == "File" ? (
+                        <Link
+                          href={`https:${item.fields.file.fields.file.url}`}
+                          className="text-xs font-semibold "
+                        >
+                          <h3 className="text-sm font-semibold leading-6 text-gray-900 hover:text-neon-orange-600">
+                            {item.fields.title}
+                          </h3>
+                        </Link>
+                      ) : (
+                        <Link
+                          href={
+                            item.fields.isDirectLink
+                              ? item.fields.slug
+                              : `/app/resources/content-library/${item.fields.slug}`
+                          }
+                          className="text-xs font-semibold"
+                        >
+                          <h3 className="text-sm font-semibold leading-6 text-gray-900 hover:text-neon-orange-600">
+                            {item.fields.title}
+                          </h3>
+                        </Link>
+                      )}
+                      {/* <h3 className="text-sm font-semibold leading-6 text-gray-900">
                         {item.fields.title}
-                      </h3>
+                      </h3> */}
                       <div className="flex items-center gap-2">
                         <span className="inline-flex items-center rounded-md bg-neon-orange-100 px-2 py-1 text-xs font-medium ring-1 ring-inset ring-neon-orange-500/10">
                           {item.fields.category == "Video" ? (
@@ -100,10 +123,10 @@ const ContentLibrary = ({
                           {formatDateAndTime(item.fields.date, "day")}
                         </p>
                       </div>
-                      <p className="my-2 line-clamp-2 text-xs leading-7 text-gray-900">
+                      <p className="my-2 line-clamp-2 text-xs leading-5 text-gray-900">
                         {item.fields.description}
                       </p>
-                      {item.fields.category == "File" ? (
+                      {/* {item.fields.category == "File" ? (
                         <Link
                           href={`https:${item.fields.file.fields.file.url}`}
                           className="flex items-center justify-end gap-1 text-xs font-semibold hover:text-neon-orange-600"
@@ -121,7 +144,7 @@ const ContentLibrary = ({
                         >
                           Access <ChevronRightIcon className="h-3" />
                         </Link>
-                      )}
+                      )} */}
                     </div>
                   </li>
                 ))}
