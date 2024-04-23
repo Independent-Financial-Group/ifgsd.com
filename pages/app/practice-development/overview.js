@@ -2,6 +2,7 @@ import React from "react";
 
 // NEXT
 import Head from "next/head";
+import Link from "next/link";
 // COMPONENTS
 import Layout from "components/App/Layout/Layout";
 import ContentContainer from "components/App/ContentContainer/ContentContainer";
@@ -73,9 +74,14 @@ const overview = ({ preview }) => {
                     Debitis, quos!
                   </p>
                 </div>
-                <button className="rounded bg-neon-orange-200 p-2 text-xs text-xs font-semibold text-neon-orange-500">
+                <Link
+                  href={
+                    "/app/practice-development/education/high-growth/solo-practitioner"
+                  }
+                  className="rounded bg-neon-orange-200 p-2 text-xs font-semibold text-neon-orange-500"
+                >
                   Access
-                </button>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <img
