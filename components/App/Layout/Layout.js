@@ -546,14 +546,13 @@ export default function Layout({ children, preview }) {
             <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
               Dashboard
             </div>
-            {/* <UserButton /> */}
           </div>
 
           <main className="lg:pl-72">
             <div>
               <>
                 {preview && <PreviewBanner />}
-                {children}
+                <div className="xl:mx-auto xl:max-w-screen-xl">{children}</div>
               </>
             </div>
           </main>
