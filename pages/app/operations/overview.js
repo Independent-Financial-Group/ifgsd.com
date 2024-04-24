@@ -57,7 +57,7 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
             name="Ops"
             data={departmentAnnouncementData}
           />
-          <ContentLibrary department="Operations" />
+          <ContentLibrary department="Operations" fixedHeight />
           <TeamDirectory data={teamMemberData} name="Operations" />
         </div>
       </Layout>
