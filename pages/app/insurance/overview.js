@@ -2,6 +2,8 @@ import React from "react";
 
 // NEXT
 import Head from "next/head";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 // COMPONENTS
 import Layout from "components/App/Layout/Layout";
 import ContentContainer from "components/App/ContentContainer/ContentContainer";
@@ -11,6 +13,7 @@ import OverviewVideo from "components/App/InternalPages/Overview/OverviewVideo/O
 import DepartmentAnnouncements from "components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
 import TeamDirectory from "components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
 import ContentLibrary from "components/App/InternalPages/Overview/ContentLibrary/ContentLibrary";
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 // CONTENTFUL
 import * as contentful from "utils/contentful";
 
@@ -27,6 +30,12 @@ export async function getStaticProps({ preview }) {
   const teamData = await client.getEntries({
     content_type: "companyDirectory",
     "fields.department[match]": "Insurance",
+  });
+
+  const toolsData = await client.getEntries({
+    content_type: "tools",
+    limit: 3,
+    "fields.department": "Insurance",
   });
 
   const ytdData = await apolloClient.query({
@@ -123,13 +132,14 @@ export async function getStaticProps({ preview }) {
     props: {
       teamData: [...teamData.items],
       formattedYtdData,
+      toolsData: [...toolsData.items],
       preview: preview || false,
     },
     revalidate: 10,
   };
 }
 
-const overview = ({ teamData, preview, formattedYtdData }) => {
+const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
   const producerRankings = {
     year: {
       fullYear: "2023",
@@ -247,12 +257,12 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
       <Head>
         <title>Insurance | Overview</title>
       </Head>
+      <PageHeader
+        breadCrumb="Departments > Insurance"
+        pageName="Insurance Solutions"
+        headerText="The IFG Insurance and Annuity Department is committed to providing personalized service and thought leadership focused on business development. Our mission is to elevate the level of advice our advisors deliver by connecting them with the highest level of expertise, the latest technology tools and proven effective marketing systems."
+      />
       <Layout preview={preview}>
-        <PageHeader
-          breadCrumb="Departments > Insurance"
-          pageName="Insurance Solutions"
-          headerText="The IFG Insurance and Annuity Department is committed to providing personalized service and thought leadership focused on business development. Our mission is to elevate the level of advice our advisors deliver by connecting them with the highest level of expertise, the latest technology tools and proven effective marketing systems."
-        />
         <ContentContainer>
           <OverviewVideo />
           <DepartmentAnnouncements data={[]} name="Insurance" />
@@ -263,23 +273,23 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
           >
             <div className="xl:grid xl:grid-cols-2 xl:gap-5">
               <div>
-                <h3 className="mb-5 text-2xl font-bold text-neon-orange-500">
+                <h3 className="mb-5 font-bold text-neon-orange-500">
                   Top 10 Insurance Producers of {producerRankings.year.fullYear}
                 </h3>
                 <ol className="space-y-1">
                   {producerRankings.year.items.map((producer, i) => (
-                    <li className="flex items-center gap-2 space-y-1">
-                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-1 text-center font-semibold text-seabreeze-500">
+                    <li className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-2 text-center text-xs font-semibold text-seabreeze-500">
                         {i + 1}
                       </div>
                       <div>
-                        <p className="inline-block font-semibold">
+                        <p className=" inline-block text-xs font-semibold">
                           {producer.name},{" "}
                           <span className="font-light italic">
                             {producer.location}
                           </span>
                         </p>
-                        <p className="text-sm text-hazard-blue-500">
+                        <p className="text-[10px] text-hazard-blue-500">
                           {producer.dba}
                         </p>
                       </div>
@@ -288,25 +298,25 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
                 </ol>
               </div>
               <div>
-                <h3 className="mb-5 text-2xl font-bold text-neon-orange-500">
+                <h3 className="mb-5 font-bold text-neon-orange-500">
                   Top 10 Insurance Producer Rankings Year to Date for{" "}
                   {producerRankings.yearToDate.quarter}{" "}
                   {producerRankings.yearToDate.year}
                 </h3>
                 <ol className="space-y-1">
                   {formattedYtdData.map((producer, i) => (
-                    <li className="flex items-center gap-2 space-y-1">
-                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-1 text-center font-semibold text-seabreeze-500">
+                    <li className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-2 text-center text-xs font-semibold text-seabreeze-500">
                         {i + 1}
                       </div>
                       <div>
-                        <p className="inline-block font-semibold">
+                        <p className="inline-block text-xs font-semibold">
                           {producer.fullName},{" "}
                           <span className="font-light italic">
                             {producer.location}
                           </span>
                         </p>
-                        <p className="text-sm text-hazard-blue-500">
+                        <p className="text-[10px] text-hazard-blue-500">
                           {producer.dba}
                         </p>
                       </div>
@@ -321,7 +331,62 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
             name="Insurance"
             colSpan="col-span-4"
           />
-          <ContentLibrary department="Insurance" colSpan="col-span-8" />
+          <ContentLibrary
+            department="Insurance"
+            colSpan="col-span-8"
+            fixedHeight
+          />
+          <GridTile colSpan="col-span-6" tileTitle="Insurance Tools">
+            <p className="mb-5 text-xs">Browse tools from our partners</p>
+            <ol className="mb-5">
+              {toolsData.map((tool) => (
+                <li
+                  key={tool.sys.id}
+                  className="group rounded px-1 py-2 hover:bg-neon-orange-100"
+                >
+                  <Link
+                    href="http://go.ashbrokerage.com/WBN2020-06-23-LI_Replay.html"
+                    className="flex gap-2"
+                  >
+                    <img
+                      src={`https:${tool.fields.thumbnail.fields.file.url}`}
+                      className="aspect-square h-24 object-contain"
+                    />
+                    <div className="[&_p]:text-xs">
+                      <h3 className="font-semibold group-hover:text-neon-orange-500">
+                        {tool.fields.title}
+                      </h3>
+                      {tool.fields.partner && (
+                        <p className="my-1 w-fit rounded-full bg-hazard-blue-100 p-2 italic text-hazard-blue-500">
+                          {tool.fields.partner &&
+                            tool.fields.partner.fields.partnerName}
+                        </p>
+                      )}
+                      <p className="leading-5 group-hover:text-neon-orange-500">
+                        Term insurance is a simple product. Getting a policy
+                        issued for your clients should be simple too. Ash Term
+                        Express is the most straightforward term life process in
+                        the industry.
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+            <Link
+              href="/app/insurance/tools"
+              className="block rounded bg-neon-orange-500 p-2 text-center font-semibold text-seabreeze-500"
+            >
+              More
+            </Link>
+          </GridTile>
+          <GridTile tileTitle="Insurance Review Program" colSpan="col-span-6">
+            {/* <ReactPlayer
+              url="https://player.vimeo.com/video/870728361?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1&h=435e872d7c#t="
+              controls
+              width={"100%"}
+            /> */}
+          </GridTile>
         </ContentContainer>
       </Layout>
     </>
