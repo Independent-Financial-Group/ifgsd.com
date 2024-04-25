@@ -22,7 +22,10 @@ import apolloClient from "utils/apollo";
 import { gql } from "@apollo/client";
 
 // ICONS
-import { ChartBarIcon } from "@heroicons/react/24/outline";
+import {
+  ChartBarIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
@@ -337,39 +340,40 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
             fixedHeight
           />
           <GridTile colSpan="col-span-6" tileTitle="Insurance Tools">
-            <p className="mb-5 text-xs">Browse tools from our partners</p>
-            <ol className="mb-5">
+            <p className="mb-5 text-xs">
+              Browse tools from our partners. Click "more" to see the full list
+              of tools.
+            </p>
+            <ol className="mb-5 divide-y">
               {toolsData.map((tool) => (
-                <li
-                  key={tool.sys.id}
-                  className="group rounded px-1 py-2 hover:bg-neon-orange-100"
-                >
-                  <Link
-                    href="http://go.ashbrokerage.com/WBN2020-06-23-LI_Replay.html"
-                    className="flex gap-2"
-                  >
-                    <img
-                      src={`https:${tool.fields.thumbnail.fields.file.url}`}
-                      className="aspect-square h-24 object-contain"
-                    />
-                    <div className="[&_p]:text-xs">
-                      <h3 className="font-semibold group-hover:text-neon-orange-500">
-                        {tool.fields.title}
-                      </h3>
-                      {tool.fields.partner && (
-                        <p className="my-1 w-fit rounded-full bg-hazard-blue-100 p-2 italic text-hazard-blue-500">
-                          {tool.fields.partner &&
-                            tool.fields.partner.fields.partnerName}
-                        </p>
-                      )}
-                      <p className="leading-5 group-hover:text-neon-orange-500">
-                        Term insurance is a simple product. Getting a policy
-                        issued for your clients should be simple too. Ash Term
-                        Express is the most straightforward term life process in
-                        the industry.
+                <li key={tool.sys.id} className="flex gap-5 rounded px-1 py-2">
+                  <img
+                    src={`https:${tool.fields.thumbnail.fields.file.url}`}
+                    className="aspect-square h-24 object-contain"
+                  />
+                  <div className="[&_p]:text-xs">
+                    <h3 className="font-semibold">{tool.fields.title}</h3>
+                    {tool.fields.partner && (
+                      <p className="my-1 w-fit rounded-full bg-hazard-blue-100 p-2 italic text-hazard-blue-500">
+                        {tool.fields.partner &&
+                          tool.fields.partner.fields.partnerName}
                       </p>
-                    </div>
-                  </Link>
+                    )}
+                    <p className="my-2 line-clamp-3">
+                      {tool.fields.writtenContent}
+                    </p>
+                    {tool.fields.link && (
+                      <a
+                        className="flex w-fit items-center gap-1 align-middle text-xs font-bold text-neon-orange-500"
+                        href={tool.fields.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <p>Launch</p>
+                        <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                 </li>
               ))}
             </ol>
@@ -380,13 +384,47 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
               More
             </Link>
           </GridTile>
-          <GridTile tileTitle="Insurance Review Program" colSpan="col-span-6">
-            {/* <ReactPlayer
-              url="https://player.vimeo.com/video/870728361?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1&h=435e872d7c#t="
-              controls
-              width={"100%"}
-            /> */}
+          <GridTile
+            tileTitle="Insurance Review Program"
+            colSpan="col-span-6"
+            additionalClasses="flex flex-col"
+          >
+            <img
+              src="https://images.ctfassets.net/9lvru9ro1ti1/2wMjJiPCyFEVfS8sI0DdYP/cf3020c17ca5036d316a6b2ab24bd3e0/life-insurance-review-2023-scaled.jpg"
+              className="mb-2 h-[150px] w-full rounded object-cover object-center"
+            />
+            <p className="text-xs">
+              Built to provide you with a platform strategy that is proven to be
+              effective at growing revenue while building deeper relationships
+              with your clients.
+            </p>
+            <div className="my-5">
+              <h3 className="mb-2 text-pretty font-semibold text-neon-orange-500">
+                Reasons Why Periodic Reviews of Life Insurance Policies are
+                Required
+              </h3>
+              <ol className="flex list-inside list-decimal flex-col gap-5 text-xs marker:font-bold marker:text-neon-orange-500">
+                <li>Policy Owner insurance needs change</li>
+                <li>Policy Performance</li>
+                <li>Policy not properly structured</li>
+                <li>Beneficiary reviews</li>
+                <li>Record important product anniversary dates</li>
+                <li>Better product options available</li>
+              </ol>
+            </div>
+            <div className="">
+              <Link
+                href="/app/insurance/review-program"
+                className="mt-auto block rounded bg-neon-orange-500 p-2 text-center font-semibold text-seabreeze-500"
+              >
+                Get Started
+              </Link>
+            </div>
           </GridTile>
+          <GridTile
+            tileTitle="Marketing Resources"
+            colSpan="col-span-4"
+          ></GridTile>
         </ContentContainer>
       </Layout>
     </>
