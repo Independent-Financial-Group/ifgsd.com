@@ -21,7 +21,9 @@ const GridTile = ({
           {tileTitle}
         </h2>
       </div>
-      <div className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"}`}>
+      <div
+        className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"} h-full`}
+      >
         {children}
       </div>
     </section>
