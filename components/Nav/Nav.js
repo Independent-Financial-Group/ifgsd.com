@@ -348,7 +348,7 @@ const Nav = () => {
             <Menu className="relative">
               <div className="relative flex flex-col justify-start">
                 <Link
-                  href="https://new.ifgsd.com"
+                  href="/app"
                   className=" flex h-full flex-row justify-self-start rounded bg-hazard-blue-500 p-3 text-seabreeze-500 transition-all hover:-translate-y-1 hover:scale-105 hover:drop-shadow-lg"
                 >
                   Rep Portal
