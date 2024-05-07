@@ -28,7 +28,7 @@ const ContentLibrary = ({
         .getEntries({
           content_type: "contentLibrary",
           "fields.department[match]": department,
-          order: "-fields.date",
+          order: "fields.subcategory,fields.title",
         })
         .then((response) => {
           const groupedItems = response.items.reduce((result, item) => {
