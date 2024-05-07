@@ -263,7 +263,7 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
       <PageHeader
         breadCrumb="Departments > Insurance"
         pageName="Insurance Solutions"
-        headerText="The IFG Insurance and Annuity Department is committed to providing personalized service and thought leadership focused on business development. Our mission is to elevate the level of advice our advisors deliver by connecting them with the highest level of expertise, the latest technology tools and proven effective marketing systems."
+        headerText="The IFG Insurance Department is committed to providing personalized service and thought leadership focused on business development. Our mission is to elevate the level of advice our advisors deliver by connecting them with the highest level of expertise, the latest technology tools and proven effective marketing systems."
       />
       <Layout preview={preview}>
         <ContentContainer>
