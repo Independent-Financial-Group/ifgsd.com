@@ -3,6 +3,11 @@ import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 import { VideoCameraIcon } from "@heroicons/react/24/outline";
 
+/**
+ *A component for the department overview pages
+ * @param {string} url - The URL of the vimeo video.
+ */
+
 const OverviewVideo = ({
   url = "https://placehold.co/3840x2160.mp4?text=placeholder+video",
 }) => {
