@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../components/App/InternalPages/PageHeader/PageHeader";
 import BlogCardBgImage from "../../../../components/App/BlogCardBgImage/BlogCardBgImage";
+import ContentContainer from "components/App/ContentContainer/ContentContainer";
+import Head from "next/head";
 
 export async function getStaticProps({ preview }) {
   return {
@@ -36,34 +38,39 @@ const index = ({ preview }) => {
   ];
 
   return (
-    <Layout preview={preview}>
+    <>
+      <Head>
+        <title>Market Commentary | Portfolio Construction</title>
+      </Head>
       <PageHeader
         pageName="Market Commentary"
         breadCrumb="Portfolio Construction"
         headerText="Daily Market Commentary covers global markets, stock markets, equity markets, commodities and economic news by IFG."
       />
-      <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-        <section className="col-span-12">
-          <h2 className="text-2xl font-semibold text-hazard-blue-500">
-            Topics
-          </h2>
-          <ol className="mt-5 xl:grid xl:grid-cols-4 xl:gap-5">
-            {topics.map((topic) => {
-              return (
-                <li className="col-span-2 h-full">
-                  <BlogCardBgImage
-                    title={topic.name}
-                    excerpt={topic.excerpt}
-                    imageUrl={topic.url}
-                    link={topic.link}
-                  />
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-      </div>
-    </Layout>
+      <Layout preview={preview}>
+        <ContentContainer>
+          <section className="col-span-12">
+            <h2 className="text-2xl font-semibold text-hazard-blue-500">
+              Topics
+            </h2>
+            <ol className="mt-5 xl:grid xl:grid-cols-4 xl:gap-5">
+              {topics.map((topic) => {
+                return (
+                  <li className="col-span-2 h-full">
+                    <BlogCardBgImage
+                      title={topic.name}
+                      excerpt={topic.excerpt}
+                      imageUrl={topic.url}
+                      link={topic.link}
+                    />
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        </ContentContainer>
+      </Layout>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import Layout from "../../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../../components/App/InternalPages/PageHeader/PageHeader";
 import ContentContainer from "../../../../../components/App/ContentContainer/ContentContainer";
 import BlogCardSimple from "../../../../../components/App/BlogCardSimple/BlogCardSimple";
+import Head from "next/head";
 
 // CONTENTFUL IMPORTS
 import * as contentful from "../../../../../utils/contentful";
@@ -27,33 +28,38 @@ export async function getStaticProps({ preview }) {
 
 const index = ({ preview, researchArticles }) => {
   return (
-    <Layout preview={preview}>
+    <>
+      <Head>
+        <title>Market Commentary | Portfolio Construction Research</title>
+      </Head>
       <PageHeader
         pageName="Portfolio Construction Research"
         breadCrumb="Portfolio Construction > Market Commentary"
       />
-      <ContentContainer>
-        <ol className="col-span-12 gap-5 xl:grid xl:grid-cols-3">
-          {researchArticles.map((article) => {
-            return (
-              <li key={article.sys.id}>
-                <BlogCardSimple
-                  title={article.fields.title}
-                  date={article.fields.date}
-                  thumbnail={
-                    article.fields.thumbnail
-                      ? article.fields.thumbnail.fields.file.url
-                      : ""
-                  }
-                  slug={`/app/portfolio-construction/market-commentary/portfolio-construction-research/${article.fields.slug}`}
-                  excerpt={article.fields.excerpt}
-                />
-              </li>
-            );
-          })}
-        </ol>
-      </ContentContainer>
-    </Layout>
+      <Layout preview={preview}>
+        <ContentContainer>
+          <ol className="col-span-12 gap-5 xl:grid xl:grid-cols-3">
+            {researchArticles.map((article) => {
+              return (
+                <li key={article.sys.id}>
+                  <BlogCardSimple
+                    title={article.fields.title}
+                    date={article.fields.date}
+                    thumbnail={
+                      article.fields.thumbnail
+                        ? article.fields.thumbnail.fields.file.url
+                        : ""
+                    }
+                    slug={`/app/portfolio-construction/market-commentary/portfolio-construction-research/${article.fields.slug}`}
+                    excerpt={article.fields.excerpt}
+                  />
+                </li>
+              );
+            })}
+          </ol>
+        </ContentContainer>
+      </Layout>
+    </>
   );
 };
 

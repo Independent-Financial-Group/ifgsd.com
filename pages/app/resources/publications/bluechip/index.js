@@ -31,11 +31,8 @@ const index = ({ magazines, preview }) => {
       <Head>
         <title>Blue Chip | Publications</title>
       </Head>
+      <PageHeader pageName="Blue Chip" breadCrumb="Resources > Publications" />
       <Layout preview={preview}>
-        <PageHeader
-          pageName="Blue Chip"
-          breadCrumb="Resources > Publications"
-        />
         <ContentContainer>
           {magazines.map((magazine) => (
             <BlogCardSimple

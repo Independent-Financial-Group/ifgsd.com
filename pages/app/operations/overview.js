@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../../../components/App/Layout/Layout";
+import ContentContainer from "components/App/ContentContainer/ContentContainer";
 import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
 import Head from "next/head";
 import OverviewVideo from "../../../components/App/InternalPages/Overview/OverviewVideo/OverviewVideo";
@@ -46,12 +47,9 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
+      <PageHeader pageName={"Operations Overview"} headerText={"Operations"} />
       <Layout preview={preview}>
-        <PageHeader
-          pageName={"Operations Overview"}
-          headerText={"Operations"}
-        />
-        <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
+        <ContentContainer>
           <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
           <DepartmentAnnouncements
             name="Ops"
@@ -59,7 +57,7 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
           />
           <ContentLibrary department="Operations" fixedHeight />
           <TeamDirectory data={teamMemberData} name="Operations" />
-        </div>
+        </ContentContainer>
       </Layout>
     </>
   );

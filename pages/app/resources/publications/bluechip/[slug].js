@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Layout from "../../../../../components/App/Layout/Layout";
+import Head from "next/head";
 import ContentContainer from "../../../../../components/App/ContentContainer/ContentContainer";
-import PreviewBanner from "../../../../../components/App/PreviewBanner/PreviewBanner";
 
 import * as contentful from "../../../../../utils/contentful";
 import PageHeader from "../../../../../components/App/InternalPages/PageHeader/PageHeader";
@@ -59,13 +59,18 @@ export const getStaticProps = async ({ params, preview, draftMode }) => {
 
 const Article = ({ article, preview }) => {
   return (
-    <Layout preview={preview}>
+    <>
+      <Head>
+        <title>{article.fields.title} | Blue Chip</title>
+      </Head>
       <PageHeader
         pageName={article.fields.title}
         breadCrumb={formatDateAndTime(article.fields.date, "day")}
       />
-      <IssuuPublication src={article.fields.embedSourceLink} />
-    </Layout>
+      <Layout preview={preview}>
+        <IssuuPublication src={article.fields.embedSourceLink} />
+      </Layout>
+    </>
   );
 };
 

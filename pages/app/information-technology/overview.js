@@ -9,6 +9,7 @@ import TeamDirectory from "../../../components/App/InternalPages/Overview/TeamDi
 import ProductAdBanner from "../../../components/App/InternalPages/Overview/ProductAdBanner/ProductAdBanner";
 
 import * as contentful from "../../../utils/contentful";
+import ContentContainer from "components/App/ContentContainer/ContentContainer";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
@@ -47,12 +48,12 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
+      <PageHeader
+        pageName={"Information Technology Overview"}
+        headerText={"Information Technology"}
+      />
       <Layout preview={preview}>
-        <PageHeader
-          pageName={"Information Technology Overview"}
-          headerText={"Information Technology"}
-        />
-        <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
+        <ContentContainer>
           <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
           <DepartmentAnnouncements
             name="Information Technology"
@@ -65,7 +66,7 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
           />
           <ContentLibrary department="Information Technology" />
           <TeamDirectory data={teamMemberData} name="IT & Software Support" />
-        </div>
+        </ContentContainer>
       </Layout>
     </>
   );

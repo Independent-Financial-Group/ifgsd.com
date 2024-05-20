@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import Layout from "../../../../../components/App/Layout/Layout";
-import ContentContainer from "../../../../../components/App/ContentContainer/ContentContainer";
 import options from "../../../../../rich-text-options";
-import PreviewBanner from "../../../../../components/App/PreviewBanner/PreviewBanner";
 import Link from "next/link";
+import Head from "next/head";
 
 // CONTENTFUL IMPORTS
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";

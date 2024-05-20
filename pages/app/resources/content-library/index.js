@@ -137,9 +137,8 @@ const index = ({ data, preview }) => {
       <Head>
         <title>Content Library | IFG Rep Portal</title>
       </Head>
+      <PageHeader pageName="IFG Content Library" breadCrumb={"Resources"} />
       <Layout preview={preview}>
-        <PageHeader pageName="IFG Content Library" breadCrumb={"Resources"} />
-
         <ContentContainer>
           <section className="col-span-9 xl:grid xl:grid-cols-2 xl:gap-5">
             {contentData.map((content) => (

@@ -39,11 +39,11 @@ const overview = ({ preview }) => {
       <Head>
         <title>Practice Development | Overview</title>
       </Head>
+      <PageHeader
+        breadCrumb="Departments > Practice Development"
+        pageName="Overview"
+      />
       <Layout preview={preview}>
-        <PageHeader
-          breadCrumb="Departments > Practice Development"
-          pageName="Overview"
-        />
         <ContentContainer>
           <OverviewVideo />
           <DepartmentAnnouncements data={[]} name="Practice Development" />

@@ -118,8 +118,8 @@ const index = ({ announcements, preview }) => {
       <Head>
         <title>Announcements | IFG</title>
       </Head>
+      <PageHeader pageName="Announcements" breadCrumb="Resources" />
       <Layout preview={preview}>
-        <PageHeader pageName="Announcements" breadCrumb="Resources" />
         <ContentContainer>
           <AnimatePresence>
             <motion.section
