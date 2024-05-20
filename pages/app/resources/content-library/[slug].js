@@ -31,6 +31,7 @@ export async function getStaticProps({ params, preview }) {
   const data = await client.getEntries({
     content_type: "contentLibrary",
     "fields.slug[match]": slug,
+    "fields.containsDirectLink[nin]": 1,
   });
 
   return {
