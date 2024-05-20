@@ -87,8 +87,8 @@ const corporateDiscounts = ({
       <Head>
         <title>Corporate Discounts | Resources</title>
       </Head>
+      <PageHeader pageName="Corporate Discounts" breadCrumb="Resources" />
       <Layout preview={preview}>
-        <PageHeader pageName="Corporate Discounts" breadCrumb="Resources" />
         <ContentContainer>
           <Tab.Group as="div" className="col-span-full flex flex-col">
             <Tab.List className="flex gap-1 border-b border-neon-orange-200 text-left text-sm font-semibold">
