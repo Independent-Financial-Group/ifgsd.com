@@ -44,17 +44,29 @@ export async function getStaticProps({ preview }) {
     order: "-fields.title",
   });
 
+  const marketingResources = await client.getEntries({
+    content_type: "insuranceReviewProgramResources",
+    "fields.category[nin]": "FMO Partner Resource",
+    order: "-fields.title",
+  });
+
   return {
     props: {
       ashResources: [...ashResources.items],
       dbsResources: [...dbsResources.items],
+      marketingResources: [...marketingResources.items],
       preview: preview || false,
     },
     revalidate: 10,
   };
 }
 
-const reviewProgram = ({ preview, ashResources, dbsResources }) => {
+const reviewProgram = ({
+  preview,
+  ashResources,
+  dbsResources,
+  marketingResources,
+}) => {
   const resasonsReviewsAreRequired = [
     {
       heading: "Policy owner insurance needs change",
@@ -101,6 +113,8 @@ const reviewProgram = ({ preview, ashResources, dbsResources }) => {
       ],
     },
   ];
+
+  const sortedMarketingData = useDataSorter(marketingResources, "category");
 
   return (
     <>
@@ -232,40 +246,37 @@ const reviewProgram = ({ preview, ashResources, dbsResources }) => {
               FMO Partner Resources
             </h3>
             <div className="grid grid-cols-2 gap-6">
-              <div className="mt-6 space-y-6 font-semibold">
-                <h4>Ash Brokerage</h4>
-                <ol className="flex flex-col gap-5">
+              <div className="mt-6 space-y-4 font-semibold">
+                <h4 className="text-blue-vibrant-400">Ash Brokerage</h4>
+                <ol className="flex flex-col space-y-1">
                   {ashResources.map((asset) => (
-                    <li
-                      key={asset.sys.id}
-                      className="rounded bg-neon-orange-200 font-semibold text-neon-orange-500"
-                    >
+                    <li key={asset.sys.id} className="text-xs font-semibold">
                       <Link
                         target="_blank"
-                        href={`https:${asset.fields.file.url}`}
-                        className="flex items-center gap-2 px-2 py-4"
+                        href={`https:${asset.fields.file.fields.file.url}`}
+                        className="hover:text-blue-vibrant-500 flex items-center gap-2"
                       >
-                        <ArrowTopRightOnSquareIcon className="h-6 w-6" />
+                        <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                         <span>{asset.fields.title}</span>
                       </Link>
                     </li>
                   ))}
                 </ol>
               </div>
-              <div className="mt-6 space-y-6 font-semibold">
-                <h4>DBS</h4>
-                <ol className="flex flex-col gap-5">
+              <div className="mt-6 space-y-2 font-semibold">
+                <h4 className="text-blue-vibrant-400">DBS</h4>
+                <ol className="flex flex-col space-y-1">
                   {dbsResources.map((asset) => (
                     <li
                       key={asset.sys.id}
-                      className="rounded bg-neon-orange-200 font-semibold text-neon-orange-500"
+                      className="w-fit text-xs font-semibold"
                     >
                       <Link
                         target="_blank"
                         href={`https:${asset.fields.file.url}`}
-                        className="flex items-center gap-2 px-2 py-4"
+                        className="flex items-center gap-2"
                       >
-                        <ArrowTopRightOnSquareIcon className="h-6 w-6" />
+                        <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                         <span>{asset.fields.title}</span>
                       </Link>
                     </li>
@@ -273,6 +284,32 @@ const reviewProgram = ({ preview, ashResources, dbsResources }) => {
                 </ol>
               </div>
             </div>
+          </section>
+          <section className="col-span-6 space-y-2">
+            <h3 className="text-2xl font-bold text-neon-orange-500">
+              Marketing Resources
+            </h3>
+            <ol className="grid grid-cols-2 gap-5">
+              {Object.keys(sortedMarketingData).map((key) => (
+                <li key={key}>
+                  <h4 className="text-blue-vibrant-400 font-semibold">{key}</h4>
+                  <ol className="space-y-1">
+                    {sortedMarketingData[key].map((resource) => (
+                      <li key={resource.sys.id}>
+                        <Link
+                          target="_blank"
+                          href={`#`}
+                          className="flex items-center gap-2 text-xs"
+                        >
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                          <span>{resource.fields.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </li>
+              ))}
+            </ol>
           </section>
         </ContentContainer>
       </Layout>
