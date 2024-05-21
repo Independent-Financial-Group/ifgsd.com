@@ -340,49 +340,54 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
             fixedHeight
           />
           <GridTile colSpan="col-span-6" tileTitle="Insurance Tools">
-            <p className="mb-5 text-xs">
-              Browse tools from our partners. Click "more" to see the full list
-              of tools.
-            </p>
-            <ol className="mb-5 divide-y">
-              {toolsData.map((tool) => (
-                <li key={tool.sys.id} className="flex gap-5 rounded px-1 py-2">
-                  <img
-                    src={`https:${tool.fields.thumbnail.fields.file.url}`}
-                    className="aspect-square h-24 object-contain"
-                  />
-                  <div className="[&_p]:text-xs">
-                    <h3 className="font-semibold">{tool.fields.title}</h3>
-                    {tool.fields.partner && (
-                      <p className="my-1 w-fit rounded-full bg-hazard-blue-100 p-2 italic text-hazard-blue-500">
-                        {tool.fields.partner &&
-                          tool.fields.partner.fields.partnerName}
+            <div className="flex h-[90%] flex-col">
+              <p className="mb-5 text-xs">
+                Browse tools from our partners. Click "more" to see the full
+                list of tools.
+              </p>
+              <ol className="mb-5 divide-y">
+                {toolsData.map((tool) => (
+                  <li
+                    key={tool.sys.id}
+                    className="flex gap-5 rounded px-1 py-2"
+                  >
+                    <img
+                      src={`https:${tool.fields.thumbnail.fields.file.url}`}
+                      className="aspect-square h-24 object-contain"
+                    />
+                    <div className="[&_p]:text-xs">
+                      <h3 className="font-semibold">{tool.fields.title}</h3>
+                      {tool.fields.partner && (
+                        <p className="my-1 w-fit rounded-full bg-hazard-blue-100 p-2 italic text-hazard-blue-500">
+                          {tool.fields.partner &&
+                            tool.fields.partner.fields.partnerName}
+                        </p>
+                      )}
+                      <p className="my-2 line-clamp-3">
+                        {tool.fields.writtenContent}
                       </p>
-                    )}
-                    <p className="my-2 line-clamp-3">
-                      {tool.fields.writtenContent}
-                    </p>
-                    {tool.fields.link && (
-                      <a
-                        className="flex w-fit items-center gap-1 align-middle text-xs font-bold text-neon-orange-500"
-                        href={tool.fields.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p>Launch</p>
-                        <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                      </a>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <Link
-              href="/app/insurance/tools"
-              className="block rounded bg-neon-orange-500 p-2 text-center font-semibold text-seabreeze-500"
-            >
-              More
-            </Link>
+                      {tool.fields.link && (
+                        <a
+                          className="flex w-fit items-center gap-1 align-middle text-xs font-bold text-neon-orange-500"
+                          href={tool.fields.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>Launch</p>
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <Link
+                href="/app/insurance/tools"
+                className="mt-auto block rounded bg-neon-orange-500 p-2 text-center font-semibold text-seabreeze-500"
+              >
+                More
+              </Link>
+            </div>
           </GridTile>
           <GridTile
             tileTitle="Insurance Review Program"

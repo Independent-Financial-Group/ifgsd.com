@@ -22,7 +22,9 @@ const GridTile = ({
         </h2>
       </div>
       <div
-        className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"} h-full`}
+        className={`px-4 pb-2 ${
+          scroll && "h-[85%] overflow-y-auto"
+        } flex h-full flex-col`}
       >
         {children}
       </div>
