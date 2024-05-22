@@ -125,6 +125,10 @@ const navigation = [
           { name: "Partners", href: "/app/insurance/partners" },
           { name: "Tools", href: "/app/insurance/tools" },
           { name: "Education", href: "/app/insurance/education" },
+          {
+            name: "Marketing Resources",
+            href: "/app/insurance/marketing-resources",
+          },
         ],
       },
       {
