@@ -13,7 +13,9 @@ const GridTile = ({
 }) => {
   return (
     <section
-      className={`${colSpan} rounded-lg bg-white shadow ${additionalClasses}`}
+      className={`${colSpan} rounded-lg bg-white shadow ${additionalClasses} ${
+        scroll && "h-[600px]"
+      }`}
     >
       <div className={`mb-5 rounded-t-lg ${titleHex} py-2`}>
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
@@ -22,9 +24,9 @@ const GridTile = ({
         </h2>
       </div>
       <div
-        className={`px-4 pb-2 ${
-          scroll && "h-[85%] overflow-y-auto"
-        } flex h-full flex-col`}
+        className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"} flex ${
+          !scroll && "h-full"
+        } flex-col`}
       >
         {children}
       </div>
