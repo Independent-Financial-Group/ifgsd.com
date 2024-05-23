@@ -426,10 +426,100 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
               </Link>
             </div>
           </GridTile>
-          <GridTile
-            tileTitle="Marketing Resources"
-            colSpan="col-span-4"
-          ></GridTile>
+          <GridTile scroll tileTitle="Marketing Resources" colSpan="col-span-6">
+            <p className="text-sm">
+              Browse marketing resources, carrier marketing microsites, and
+              educational programs and seminars.
+            </p>
+            <ol className="space-y-4 divide-y-2 divide-gray-100 py-2 [&>li]:py-2 [&_li>img]:w-1/3">
+              <li className="space-y-6">
+                <img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/3wCcoWBwL60F8Bqv9eEy3N/0831838caeb71694a7e2af6966454feb/Impact.webp"
+                  alt="impact partnership logo"
+                />
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-neon-orange-500">
+                    Impact Partnership
+                  </h4>
+                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                    Marketing Resource
+                  </span>
+                  <p className="text-xs leading-6">
+                    Find the best resources for financial radio/television
+                    programs, adult education, client appreciation events,
+                    branding, and marketing all in one place. The best part -
+                    your insurance and annuity production cover the marketing
+                    costs as Impact Partnership helps you grow your sales to new
+                    heights.
+                  </p>
+                  <Link
+                    className="text-blue-vibrant-500 text-xs font-bold underline"
+                    href="https://impactpartner.wistia.com/medias/og78n37xt8"
+                    target="_blank"
+                  >
+                    Watch a video presentation
+                  </Link>
+                </div>
+              </li>
+              <li className="space-y-6">
+                <img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/7MTJovYNzM5Fl4SvOTbU4e/ae61952fad768b192cadd9f13140b58d/prudential-logo.png?h=250"
+                  alt="prudential logo"
+                  className="w-[50px]"
+                />
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-neon-orange-500">
+                    Prudential Life Marketing Micro Site
+                  </h4>
+                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                    Marketing Microsite
+                  </span>
+                  <Link
+                    href="https://view.ceros.com/prudential/trimester-marketing-2024-ili/p/7?mkt_tok=NzAzLU5IUi04NDkAAAGTFiyeC92RtLMSPLalj388eqXCtAT1tiVpskSxgmSM2E-QoIilkmvHbpghsVodUe_F7JblY2lKPgJMRvPpG_DJNWPzwWiSgm49mfLPSDfh"
+                    className="text-blue-vibrant-500 text-xs underline"
+                  >
+                    Launch
+                  </Link>
+                </div>
+              </li>
+              <li className="space-y-6">
+                <img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/6EdBcDXRUVd2IOaIquoe8Q/dddd6f2b021d0e526a7e761cab5c2cc7/american_retirement_institue_logo.png?h=250"
+                  alt="prudential logo"
+                  className="w-[50px]"
+                />
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-neon-orange-500">
+                    American Retirement Insitute
+                  </h4>
+                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                    Adult Education/Seminar
+                  </span>
+                  <p className="text-xs italic">Pre-Approved by Compliance</p>
+                  <p className="text-xs leading-5">
+                    Impact Partnership's exclusive seminar program, American
+                    Retirement Institute (ARI), offers classroom-style courses
+                    designed to give pre-retirees and retirees in your community
+                    a detailed overview of common retirement topics like income
+                    in retirement, taxes, social security, and health care.
+                  </p>
+                  <Link
+                    href="https://gallery.mailchimp.com/ed907ad6fd8ba2b323ddb8edb/files/00c0d5ff-7f17-4434-abc0-0fa69f703183/ARI_IntroGuide_S01_TS.pdf"
+                    target="_blank"
+                    className="text-blue-vibrant-500 text-xs underline"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </li>
+            </ol>
+            <Link
+              href="/app/insurance/marketing-resources"
+              className="mt-5 rounded bg-neon-orange-500 p-2 text-center font-semibold text-neon-orange-50"
+            >
+              See All Resources
+            </Link>
+          </GridTile>
         </ContentContainer>
       </Layout>
     </>
