@@ -108,11 +108,6 @@ const index = ({ announcements, preview }) => {
     getFilteredEntries(selectedPriority, selectedMediaType, selectedDepartment);
   }, [selectedPriority, selectedMediaType, selectedDepartment]);
 
-  console.log(
-    `Media Thumbnail is Present: ${!!announcementData[0].fields
-      .mediaThumbnail}`,
-  );
-
   return (
     <>
       <Head>
