@@ -23,16 +23,13 @@ const navigation = [
     icon: BuildingOffice2Icon,
     current: false,
     children: [
-      // {
-      //   name: "Advisory",
-      //   links: [
-      //     { name: "Overview", href: "/app/advisory/overview" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Advisory",
+        links: [
+          { name: "Overview", href: "/app/advisory/overview" },
+          { name: "Mutual Funds", href: "/app/advisory/mutual-funds" },
+        ],
+      },
       {
         name: "Alt. Investments",
         links: [
@@ -153,13 +150,13 @@ const navigation = [
           { name: "Models", href: "/app/portfolio-construction/models" },
         ],
       },
-      {
-        name: "Practice Development",
-        links: [
-          { name: "Overview", href: "/app/practice-development/overview" },
-          { name: "Education", href: "/app/practice-development/education" },
-        ],
-      },
+      // {
+      //   name: "Practice Development",
+      //   links: [
+      //     { name: "Overview", href: "/app/practice-development/overview" },
+      //     { name: "Education", href: "/app/practice-development/education" },
+      //   ],
+      // },
       // {
       //   name: "Retirement Services",
       //   links: [
@@ -457,7 +454,7 @@ export default function Layout({ children, preview }) {
                                                                 >
                                                                   <Disclosure.Button
                                                                     as="li"
-                                                                    className="rounded-lg p-2 hover:bg-gray-100 hover:text-gray-500"
+                                                                    className="rounded-lg p-2 hover:bg-gray-100"
                                                                     key={
                                                                       link.name
                                                                     }
