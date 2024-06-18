@@ -129,6 +129,10 @@ const navigation = [
             name: "Marketing Resources",
             href: "/app/insurance/marketing-resources",
           },
+          {
+            name: "Insurance Review Program",
+            href: "/app/insurance/insurance-review-program",
+          },
         ],
       },
       {
@@ -389,12 +393,12 @@ export default function Layout({ children, preview }) {
                   alt="Your Company"
                 />
               </div>
-              <nav>
+              <nav className="text-sm">
                 <ul className="flex flex-col gap-y-5">
                   {/* LOOP THROUGH NAVIGATION ARRAY */}
                   {navigation.map((parentItem) => {
                     return (
-                      <li key={parentItem.name} className="px-4">
+                      <li key={parentItem.name} className="px-4 font-bold">
                         {/* RENDER A DISCLOSURE FOR THE PARENT ITEM IN THE NAVIGATION ARRAY */}
                         <Disclosure key={parentItem.name} as="div">
                           {({ open }) => (
@@ -417,7 +421,7 @@ export default function Layout({ children, preview }) {
                                     />
                                   </Disclosure.Button>
                                   <Disclosure.Panel className="ml-4 mt-2">
-                                    <ul className="flex flex-col">
+                                    <ul className="flex flex-col border-l-2 border-neon-orange-500">
                                       {/* LOOP OVER THE CHILD ITEMS */}
                                       {parentItem.children.map((childItem) => {
                                         return (
@@ -428,7 +432,7 @@ export default function Layout({ children, preview }) {
                                                 {({ open }) => {
                                                   return (
                                                     <>
-                                                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2  text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-semibold  hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                                         {childItem.name}
                                                         <ChevronRightIcon
                                                           className={
@@ -446,7 +450,7 @@ export default function Layout({ children, preview }) {
                                                               return (
                                                                 <Disclosure
                                                                   as="ul"
-                                                                  className="ml-4"
+                                                                  className="ml-4 border-l-2 border-hazard-blue-500 font-normal"
                                                                   key={
                                                                     link.name
                                                                   }
@@ -481,7 +485,7 @@ export default function Layout({ children, preview }) {
                                               </Disclosure>
                                             ) : (
                                               <Link
-                                                className="flex w-full items-center justify-between rounded-lg p-2 text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
+                                                className="flex w-full items-center justify-between rounded-lg p-2 font-semibold hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                                 href={childItem.href}
                                                 key={childItem.name}
                                               >
