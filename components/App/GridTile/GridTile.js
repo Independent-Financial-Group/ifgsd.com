@@ -6,7 +6,7 @@ const GridTile = ({
   tileTitle,
   colSpan,
   children,
-  scroll,
+  scroll = false,
   titleHex = "bg-hazard-blue-500",
   icon,
   additionalClasses,
@@ -14,7 +14,7 @@ const GridTile = ({
   return (
     <section
       className={`${colSpan} rounded-lg bg-white shadow ${additionalClasses} ${
-        scroll && "h-[600px]"
+        scroll == true ? "h-[600px]" : null
       }`}
     >
       <div className={`mb-5 rounded-t-lg ${titleHex} py-2`}>
@@ -25,7 +25,7 @@ const GridTile = ({
       </div>
       <div
         className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"} flex ${
-          !scroll && "h-full"
+          scroll == true ? "h-full" : null
         } flex-col`}
       >
         {children}
