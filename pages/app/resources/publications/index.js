@@ -42,8 +42,8 @@ const index = ({ preview }) => {
       <Head>
         <title>Publications | Resources</title>
       </Head>
+      <PageHeader pageName="Publications" breadCrumb="Resources" />
       <Layout preview={preview}>
-        <PageHeader pageName="Publications" breadCrumb="Resources" />
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
           <section className="col-span-12">
             <ol className="mt-5 xl:grid xl:grid-cols-3 xl:gap-5">

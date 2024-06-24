@@ -2,10 +2,11 @@ import React, { useState, useEffect, Fragment } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "../../../components/App/Layout/Layout";
-import ContentContainer from "../../../components/App/ContentContainer/ContentContainer";
-import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
-import GridTile from "../../../components/App/GridTile/GridTile";
+import Layout from "components/App/Layout/Layout";
+import ContentContainer from "components/App/ContentContainer/ContentContainer";
+import PageHeader from "components/App/InternalPages/PageHeader/PageHeader";
+import GridTile from "components/App/GridTile/GridTile";
+
 import { Tab } from "@headlessui/react";
 
 // SPLIDE
@@ -14,7 +15,7 @@ import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 // CONTENTFUL
-import * as contentful from "../../../utils/contentful";
+import * as contentful from "../../../../utils/contentful";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
@@ -69,8 +70,8 @@ const partnerMarketplace = ({
       <Head>
         <title>Partner Market Place | Resources</title>
       </Head>
+      <PageHeader pageName="Partner Marketplace" breadCrumb="Resources" />
       <Layout preview={preview}>
-        <PageHeader pageName="Partner Marketplace" breadCrumb="Resources" />
         <ContentContainer>
           <Tab.Group as="div" className="col-span-full flex flex-col">
             <Tab.List className="flex gap-1 border-b border-neon-orange-200 text-left text-sm font-semibold">
@@ -94,10 +95,8 @@ const partnerMarketplace = ({
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-x-10 xl:gap-y-5">
                 {elitePartners.map((partner) => (
                   <div>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mb-5 outline"
                     >
                       <img
@@ -105,31 +104,27 @@ const partnerMarketplace = ({
                         alt={`${partner.fields.parterName} logo`}
                         className="mb-3 h-[150px] w-full object-contain"
                       />
-                    </a>
+                    </Link>
                     <h2 className="font-semibold text-gray-900">
                       {partner.fields.partnerName}
                     </h2>
                     <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
                       {partner.fields.about}
                     </p>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
                     >
                       Learn More
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-x-10 xl:gap-y-5">
                 {platinumPartners.map((partner) => (
                   <div>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mb-5 outline"
                     >
                       <img
@@ -137,31 +132,27 @@ const partnerMarketplace = ({
                         alt={`${partner.fields.parterName} logo`}
                         className="mb-3 h-[150px] w-full object-contain"
                       />
-                    </a>
+                    </Link>
                     <h2 className="font-semibold text-gray-900">
                       {partner.fields.partnerName}
                     </h2>
                     <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
                       {partner.fields.about}
                     </p>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
                     >
                       Learn More
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-x-10 xl:gap-y-5">
                 {goldPartners.map((partner) => (
                   <div>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mb-5 outline"
                     >
                       <img
@@ -169,31 +160,27 @@ const partnerMarketplace = ({
                         alt={`${partner.fields.parterName} logo`}
                         className="mb-3 h-[150px] w-full object-contain"
                       />
-                    </a>
+                    </Link>
                     <h2 className="font-semibold text-gray-900">
                       {partner.fields.partnerName}
                     </h2>
                     <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
                       {partner.fields.about}
                     </p>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
                     >
                       Learn More
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
               <Tab.Panel className="xl:grid xl:grid-cols-3 xl:gap-x-10 xl:gap-y-5">
                 {silverPartners.map((partner) => (
                   <div>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mb-5 outline"
                     >
                       <img
@@ -201,21 +188,19 @@ const partnerMarketplace = ({
                         alt={`${partner.fields.parterName} logo`}
                         className="mb-3 h-[150px] w-full object-contain"
                       />
-                    </a>
+                    </Link>
                     <h2 className="font-semibold text-gray-900">
                       {partner.fields.partnerName}
                     </h2>
                     <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
                       {partner.fields.about}
                     </p>
-                    <a
-                      href={partner.fields.linkToPartnerWebsite}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                    <Link
+                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
                       className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
                     >
                       Learn More
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </Tab.Panel>

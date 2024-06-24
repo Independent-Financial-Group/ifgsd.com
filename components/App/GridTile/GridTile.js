@@ -6,19 +6,28 @@ const GridTile = ({
   tileTitle,
   colSpan,
   children,
-  scroll,
+  scroll = false,
   titleHex = "bg-hazard-blue-500",
   icon,
+  additionalClasses,
 }) => {
   return (
-    <section className={`${colSpan} rounded-lg bg-white shadow`}>
+    <section
+      className={`${colSpan} rounded-lg bg-white shadow ${additionalClasses} ${
+        scroll == true ? "h-[600px]" : null
+      }`}
+    >
       <div className={`mb-5 rounded-t-lg ${titleHex} py-2`}>
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           {icon}
           {tileTitle}
         </h2>
       </div>
-      <div className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"}`}>
+      <div
+        className={`px-4 pb-2 ${scroll && "h-[85%] overflow-y-auto"} flex ${
+          scroll == true ? "h-full" : null
+        } flex-col`}
+      >
         {children}
       </div>
     </section>

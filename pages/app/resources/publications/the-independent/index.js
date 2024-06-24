@@ -31,11 +31,11 @@ const index = ({ magazines, preview }) => {
       <Head>
         <title>The Independent | Publications</title>
       </Head>
+      <PageHeader
+        pageName="The Independent"
+        breadCrumb="Resources > Publications"
+      />
       <Layout preview={preview}>
-        <PageHeader
-          pageName="The Independent"
-          breadCrumb="Resources > Publications"
-        />
         <ContentContainer>
           {magazines.map((magazine) => (
             <BlogCardSimple

@@ -108,18 +108,13 @@ const index = ({ announcements, preview }) => {
     getFilteredEntries(selectedPriority, selectedMediaType, selectedDepartment);
   }, [selectedPriority, selectedMediaType, selectedDepartment]);
 
-  console.log(
-    `Media Thumbnail is Present: ${!!announcementData[0].fields
-      .mediaThumbnail}`,
-  );
-
   return (
     <>
       <Head>
         <title>Announcements | IFG</title>
       </Head>
+      <PageHeader pageName="Announcements" breadCrumb="Resources" />
       <Layout preview={preview}>
-        <PageHeader pageName="Announcements" breadCrumb="Resources" />
         <ContentContainer>
           <AnimatePresence>
             <motion.section
@@ -135,18 +130,6 @@ const index = ({ announcements, preview }) => {
                       key={announcement.sys.id}
                       className="flex items-center gap-2 px-2 py-3"
                     >
-                      {!!announcement.fields.mediaThumbnail && (
-                        <div className="w-fit">
-                          <img
-                            src={
-                              announcement.fields.mediaThumbnail
-                                ? `https:${announcement.fields.mediaThumbnail.fields.file.url}`
-                                : "https://place-hold.it/200x200"
-                            }
-                            className="h-[200px] w-[200px] rounded object-cover"
-                          />
-                        </div>
-                      )}
                       <div className="w-full">
                         <h3 className="text-lg font-semibold text-neon-orange-500">
                           {announcement.fields.title}
@@ -191,18 +174,30 @@ const index = ({ announcements, preview }) => {
                             {formatDateAndTime(announcement.fields.date, "day")}
                           </p>
                         </div>
-                      </div>
-                      <div className="flex flex-grow justify-end pr-8">
                         <Link
                           href={
                             announcement.fields.linkIsCustom
                               ? announcement.fields.slug
                               : `/app/resources/announcements/${announcement.fields.slug}`
                           }
-                          className="rounded-lg bg-neon-orange-100 px-2 py-3 text-sm font-semibold text-neon-orange-500 ring-1 ring-inset ring-neon-orange-600 transition-all hover:-translate-y-1"
+                          className="block w-fit rounded-lg bg-neon-orange-100 px-8 py-3 text-center text-xs font-semibold text-neon-orange-500 ring-1 ring-inset ring-neon-orange-600 transition-all hover:-translate-y-1"
                         >
                           View
                         </Link>
+                      </div>
+                      <div className="flex flex-grow flex-col justify-end pr-8">
+                        {!!announcement.fields.mediaThumbnail && (
+                          <div className="w-fit">
+                            <img
+                              src={
+                                announcement.fields.mediaThumbnail
+                                  ? `https:${announcement.fields.mediaThumbnail.fields.file.url}`
+                                  : "https://place-hold.it/200x200"
+                              }
+                              className="h-[200px] w-[200px] rounded object-cover"
+                            />
+                          </div>
+                        )}
                       </div>
                     </li>
                   ))}

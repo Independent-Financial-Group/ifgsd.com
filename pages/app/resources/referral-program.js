@@ -20,12 +20,12 @@ const referralProgram = ({ preview }) => {
       <Head>
         <title>Referral Program | Resources</title>
       </Head>
+      <PageHeader
+        pageName="Advisor Referral Program"
+        headerText="Get rewarded when advisors you know join our family."
+        breadCrumb="Resources"
+      />
       <Layout preview={preview}>
-        <PageHeader
-          pageName="Advisor Referral Program"
-          headerText="Get rewarded when advisors you know join our family."
-          breadCrumb="Resources"
-        />
         <ContentContainer>
           <div className="leading-7 xl:col-span-6">
             <h2 className="text-2xl font-semibold text-hazard-blue-500">

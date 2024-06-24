@@ -8,7 +8,7 @@ import * as contentful from "utils/contentful";
 export async function getStaticPaths() {
   const slugs = await contentful.client.getEntries({
     content_type: "contentLibrary",
-    "fields.isDirectLink[in]": false,
+    "fields.isDirectLink": false,
     select: "fields.slug",
   });
 
@@ -35,7 +35,7 @@ export async function getStaticProps({ params, preview }) {
 
   return {
     props: {
-      content: data.items[0],
+      content: data.items[0] || null,
       preview: preview || false,
     },
     revalidate: 10,
@@ -43,12 +43,12 @@ export async function getStaticProps({ params, preview }) {
 }
 
 const index = ({ content, preview }) => {
-  const [pageType, setPageType] = useState(content.fields.category);
+  // const [pageType, setPageType] = useState(content.fields.category);
 
   return (
     <>
       <Head>
-        <title>{content.fields.title} | Content Library</title>
+        <title>{!null && content.fields.title} | Content Library</title>
       </Head>
       <Layout preview={preview}></Layout>
     </>

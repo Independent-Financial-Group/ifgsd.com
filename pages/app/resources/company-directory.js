@@ -183,11 +183,11 @@ const companyDirectory = ({ preview }) => {
       <Head>
         <title>Company Directory | Home Office</title>
       </Head>
+      <PageHeader
+        pageName="Home Office Company Directory"
+        breadCrumb="Resources"
+      />
       <Layout preview={preview}>
-        <PageHeader
-          pageName="Home Office Company Directory"
-          breadCrumb="Resources"
-        />
         <div className="my-10 flex flex-col gap-x-5 gap-y-24 px-8 xl:grid xl:grid-cols-12">
           <section className="col-span-full">
             <h2 className="text-center text-xl font-semibold text-hazard-blue-500">

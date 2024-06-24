@@ -164,11 +164,11 @@ const approvedProducts = ({
       <Head>
         <title>Approved Products | Alt. Investments</title>
       </Head>
+      <PageHeader
+        pageName="Approved Products"
+        breadCrumb="Alternative Investments"
+      />
       <Layout preview={preview}>
-        <PageHeader
-          pageName="Approved Products"
-          breadCrumb="Alternative Investments"
-        />
         <ContentContainer>
           <p className="col-span-4 text-sm italic text-gray-800">
             Please select from one of the tabs below to view approved products

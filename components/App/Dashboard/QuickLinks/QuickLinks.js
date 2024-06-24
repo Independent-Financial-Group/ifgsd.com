@@ -13,58 +13,82 @@ const QuickLinks = () => {
       name: "Gateway",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/5SNN2i1X9MJyXkmG4aHYvP/8e21059c7aecf3ef73eddb66353e6966/gateway-icon.webp",
+      link: "https://ifg-gateway.com",
+      openInNewTab: true,
     },
     {
       name: "Form CRS",
       icon: CheckCircleIcon,
+      link: "#",
+      openInNewTab: false,
     },
     {
       name: "Podcast",
       icon: MicrophoneIcon,
+      link: "/app/resources/podcast",
+      openInNewTab: false,
     },
     {
       name: "Alt. Investments",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/25J0MM51vIn1eB14u4Jzgd/1e044fcd747afd3c7fc0ae234d9c4885/Alternative-Investments-icon.webp",
+      link: "/app/alternative-investments/overview",
+      openInNewTab: false,
     },
     {
       name: "Advisory",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/60C0i3TDN20P3F4CU0R6bL/0ed3a1a19ff49baf53704175b8e064d5/advisory-icon.webp",
+      link: "/app/advisory/overview",
+      openInNewTab: false,
     },
     {
       name: "Annuities",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/7JiMv3yZDvr33jocks00GQ/7dd57d3eb260faf1e6787bddd9e8b904/annuities-icon.webp",
+      link: "/app/annuities/overview",
+      openInNewTab: false,
     },
     {
-      name: "Market Linked Products",
+      name: "Structured Products",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/4opgkt22bfKCzjmwqOzw79/a9a8e9c6b36a9bfab29bdd9869cdd345/market-linked-products-icon.webp",
+      link: "/app/structured-products/overview",
+      openInNewTab: false,
     },
     {
       name: "Commissions & Fees",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/1MNqX3GjYc0CjRGlbetXbR/8a92af5e7e429b96051c4eec22707a42/Commissions-icon.jpg",
+      link: "/app/commissions/overview",
+      openInNewTab: false,
     },
     {
-      name: "Technology",
+      name: "Information Technology",
       icon: CodeBracketIcon,
+      link: "/app/information-technology/overview",
+      openInNewTab: false,
     },
     {
       name: "Retirement Services",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/PAggjtxvHkeaBbz7YfWb4/ada6cdfbef0679416361f84f7d9ee3ce/Retirement-Services-icon.webp",
+      link: "/app/retirement-services/overview",
+      openInNewTab: false,
     },
     {
       name: "Mutual Funds",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/5TD3gzmt0rQ9zqYRkffnIT/cbc208979eeeb638eee75aeeeda287b4/Mutual-Funds-Icon.webp",
+      link: "/app/mutual-funds/overview",
+      openInNewTab: false,
     },
     {
       name: "Insurance",
       imageUrl:
         "https://images.ctfassets.net/9lvru9ro1ti1/1S2BA2dhHJtFTsgZiTYfAn/bcfae58625adda34e907a3546282c286/Insurance-icon.webp",
+      link: "/app/insurance/overview",
+      openInNewTab: false,
     },
   ];
 
@@ -80,8 +104,9 @@ const QuickLinks = () => {
         <div className="grid grid-cols-3 items-center gap-5">
           {quickLinks.map((link) => {
             return (
-              <a
-                href="#"
+              <Link
+                href={link.link}
+                target={link.openInNewTab ? "_blank" : null}
                 className="flex flex-col items-center justify-center rounded-lg p-2 font-semibold text-gray-900"
                 key={link.name}
               >
@@ -97,7 +122,7 @@ const QuickLinks = () => {
                 <div className="mt-5">
                   <p className="w-full text-center">{link.name}</p>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

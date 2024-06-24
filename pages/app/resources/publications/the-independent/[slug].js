@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Head from "next/head";
 import Layout from "../../../../../components/App/Layout/Layout";
 import ContentContainer from "../../../../../components/App/ContentContainer/ContentContainer";
 import PreviewBanner from "../../../../../components/App/PreviewBanner/PreviewBanner";
@@ -58,13 +59,18 @@ export const getStaticProps = async ({ params, preview }) => {
 
 const Article = ({ article, preview }) => {
   return (
-    <Layout preview={preview}>
+    <>
+      <Head>
+        <title>{article.fields.title} | The Independent</title>
+      </Head>
       <PageHeader
         pageName={article.fields.title}
         breadCrumb={formatDateAndTime(article.fields.date, "day")}
       />
-      <IssuuPublication src={article.fields.embedSourceLink} />
-    </Layout>
+      <Layout preview={preview}>
+        <IssuuPublication src={article.fields.embedSourceLink} />
+      </Layout>
+    </>
   );
 };
 

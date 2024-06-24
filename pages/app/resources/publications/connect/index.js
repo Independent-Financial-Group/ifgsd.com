@@ -31,11 +31,11 @@ const index = ({ connects, preview }) => {
       <Head>
         <title>IFG Connect | Publications</title>
       </Head>
+      <PageHeader
+        pageName="IFG Connect"
+        breadCrumb="Resources > Publications"
+      />
       <Layout preview={preview}>
-        <PageHeader
-          pageName="IFG Connect"
-          breadCrumb="Resources > Publications"
-        />
         <ContentContainer>
           {connects.map((connect) => (
             <BlogCardSimple

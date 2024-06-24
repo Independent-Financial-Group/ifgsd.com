@@ -2,6 +2,8 @@ import React from "react";
 
 // NEXT
 import Head from "next/head";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 // COMPONENTS
 import Layout from "components/App/Layout/Layout";
 import ContentContainer from "components/App/ContentContainer/ContentContainer";
@@ -11,6 +13,7 @@ import OverviewVideo from "components/App/InternalPages/Overview/OverviewVideo/O
 import DepartmentAnnouncements from "components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
 import TeamDirectory from "components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
 import ContentLibrary from "components/App/InternalPages/Overview/ContentLibrary/ContentLibrary";
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 // CONTENTFUL
 import * as contentful from "utils/contentful";
 
@@ -19,7 +22,10 @@ import apolloClient from "utils/apollo";
 import { gql } from "@apollo/client";
 
 // ICONS
-import { ChartBarIcon } from "@heroicons/react/24/outline";
+import {
+  ChartBarIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
 
 export async function getStaticProps({ preview }) {
   const client = preview ? contentful.previewClient : contentful.client;
@@ -27,6 +33,12 @@ export async function getStaticProps({ preview }) {
   const teamData = await client.getEntries({
     content_type: "companyDirectory",
     "fields.department[match]": "Insurance",
+  });
+
+  const toolsData = await client.getEntries({
+    content_type: "tools",
+    limit: 3,
+    "fields.department": "Insurance",
   });
 
   const ytdData = await apolloClient.query({
@@ -123,13 +135,14 @@ export async function getStaticProps({ preview }) {
     props: {
       teamData: [...teamData.items],
       formattedYtdData,
+      toolsData: [...toolsData.items],
       preview: preview || false,
     },
     revalidate: 10,
   };
 }
 
-const overview = ({ teamData, preview, formattedYtdData }) => {
+const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
   const producerRankings = {
     year: {
       fullYear: "2023",
@@ -247,12 +260,12 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
       <Head>
         <title>Insurance | Overview</title>
       </Head>
+      <PageHeader
+        breadCrumb="Departments > Insurance"
+        pageName="Insurance Solutions"
+        headerText="The IFG Insurance Department is committed to providing personalized service and thought leadership focused on business development. Our mission is to elevate the level of advice our advisors deliver by connecting them with the highest level of expertise, the latest technology tools and proven effective marketing systems."
+      />
       <Layout preview={preview}>
-        <PageHeader
-          breadCrumb="Departments > Insurance"
-          pageName="Insurance Solutions"
-          headerText="The IFG Insurance and Annuity Department is committed to providing personalized service and thought leadership focused on business development. Our mission is to elevate the level of advice our advisors deliver by connecting them with the highest level of expertise, the latest technology tools and proven effective marketing systems."
-        />
         <ContentContainer>
           <OverviewVideo />
           <DepartmentAnnouncements data={[]} name="Insurance" />
@@ -263,23 +276,23 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
           >
             <div className="xl:grid xl:grid-cols-2 xl:gap-5">
               <div>
-                <h3 className="mb-5 text-2xl font-bold text-neon-orange-500">
+                <h3 className="mb-5 font-bold text-neon-orange-500">
                   Top 10 Insurance Producers of {producerRankings.year.fullYear}
                 </h3>
                 <ol className="space-y-1">
                   {producerRankings.year.items.map((producer, i) => (
-                    <li className="flex items-center gap-2 space-y-1">
-                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-1 text-center font-semibold text-seabreeze-500">
+                    <li className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-2 text-center text-xs font-semibold text-seabreeze-500">
                         {i + 1}
                       </div>
                       <div>
-                        <p className="inline-block font-semibold">
+                        <p className=" inline-block text-xs font-semibold">
                           {producer.name},{" "}
                           <span className="font-light italic">
                             {producer.location}
                           </span>
                         </p>
-                        <p className="text-sm text-hazard-blue-500">
+                        <p className="text-[10px] text-hazard-blue-500">
                           {producer.dba}
                         </p>
                       </div>
@@ -288,25 +301,25 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
                 </ol>
               </div>
               <div>
-                <h3 className="mb-5 text-2xl font-bold text-neon-orange-500">
+                <h3 className="mb-5 font-bold text-neon-orange-500">
                   Top 10 Insurance Producer Rankings Year to Date for{" "}
                   {producerRankings.yearToDate.quarter}{" "}
                   {producerRankings.yearToDate.year}
                 </h3>
                 <ol className="space-y-1">
                   {formattedYtdData.map((producer, i) => (
-                    <li className="flex items-center gap-2 space-y-1">
-                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-1 text-center font-semibold text-seabreeze-500">
+                    <li className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-full bg-neon-orange-500 p-2 text-center text-xs font-semibold text-seabreeze-500">
                         {i + 1}
                       </div>
                       <div>
-                        <p className="inline-block font-semibold">
+                        <p className="inline-block text-xs font-semibold">
                           {producer.fullName},{" "}
                           <span className="font-light italic">
                             {producer.location}
                           </span>
                         </p>
-                        <p className="text-sm text-hazard-blue-500">
+                        <p className="text-[10px] text-hazard-blue-500">
                           {producer.dba}
                         </p>
                       </div>
@@ -316,8 +329,197 @@ const overview = ({ teamData, preview, formattedYtdData }) => {
               </div>
             </div>
           </GridTile>
-          <TeamDirectory data={teamData} name="Insurance" />
-          <ContentLibrary department="Insurance" />
+          <TeamDirectory
+            data={teamData}
+            name="Insurance"
+            colSpan="col-span-4"
+          />
+          <ContentLibrary
+            department="Insurance"
+            colSpan="col-span-8"
+            fixedHeight
+          />
+          <GridTile colSpan="col-span-6" tileTitle="Insurance Tools">
+            <div className="flex h-[90%] flex-col">
+              <p className="mb-5 text-xs">
+                Browse tools from our partners. Click "more" to see the full
+                list of tools.
+              </p>
+              <ol className="mb-5 divide-y">
+                {toolsData.map((tool) => (
+                  <li
+                    key={tool.sys.id}
+                    className="flex gap-5 rounded px-1 py-2"
+                  >
+                    <img
+                      src={`https:${tool.fields.thumbnail.fields.file.url}`}
+                      className="aspect-square h-24 object-contain"
+                    />
+                    <div className="[&_p]:text-xs">
+                      <h3 className="font-semibold">{tool.fields.title}</h3>
+                      {tool.fields.partner && (
+                        <p className="my-1 w-fit rounded-full bg-hazard-blue-100 p-2 italic text-hazard-blue-500">
+                          {tool.fields.partner &&
+                            tool.fields.partner.fields.partnerName}
+                        </p>
+                      )}
+                      <p className="my-2 line-clamp-3">
+                        {tool.fields.writtenContent}
+                      </p>
+                      {tool.fields.link && (
+                        <a
+                          className="flex w-fit items-center gap-1 align-middle text-xs font-bold text-neon-orange-500"
+                          href={tool.fields.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>Launch</p>
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <Link
+                href="/app/insurance/tools"
+                className="mt-auto block rounded bg-neon-orange-500 p-2 text-center font-semibold text-seabreeze-500"
+              >
+                More
+              </Link>
+            </div>
+          </GridTile>
+          <GridTile
+            tileTitle="Insurance Review Program"
+            colSpan="col-span-6"
+            additionalClasses="flex flex-col"
+          >
+            <img
+              src="https://images.ctfassets.net/9lvru9ro1ti1/2wMjJiPCyFEVfS8sI0DdYP/cf3020c17ca5036d316a6b2ab24bd3e0/life-insurance-review-2023-scaled.jpg"
+              className="mb-2 h-[150px] w-full rounded object-cover object-center"
+            />
+            <p className="text-xs">
+              Built to provide you with a platform strategy that is proven to be
+              effective at growing revenue while building deeper relationships
+              with your clients.
+            </p>
+            <div className="my-5">
+              <h3 className="mb-2 text-pretty font-semibold text-neon-orange-500">
+                Reasons Why Periodic Reviews of Life Insurance Policies are
+                Required
+              </h3>
+              <ol className="flex list-inside list-decimal flex-col gap-5 text-xs marker:font-bold marker:text-neon-orange-500">
+                <li>Policy Owner insurance needs change</li>
+                <li>Policy Performance</li>
+                <li>Policy not properly structured</li>
+                <li>Beneficiary reviews</li>
+                <li>Record important product anniversary dates</li>
+                <li>Better product options available</li>
+              </ol>
+            </div>
+            <div className="">
+              <Link
+                href="/app/insurance/review-program"
+                className="mt-auto block rounded bg-neon-orange-500 p-2 text-center font-semibold text-seabreeze-500"
+              >
+                Get Started
+              </Link>
+            </div>
+          </GridTile>
+          <GridTile scroll tileTitle="Marketing Resources" colSpan="col-span-6">
+            <p className="text-sm">
+              Browse marketing resources, carrier marketing microsites, and
+              educational programs and seminars.
+            </p>
+            <ol className="space-y-4 divide-y-2 divide-gray-100 py-2 [&>li]:py-2 [&_li>img]:w-1/3">
+              <li className="space-y-6">
+                <img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/3wCcoWBwL60F8Bqv9eEy3N/0831838caeb71694a7e2af6966454feb/Impact.webp"
+                  alt="impact partnership logo"
+                />
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-neon-orange-500">
+                    Impact Partnership
+                  </h4>
+                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                    Marketing Resource
+                  </span>
+                  <p className="text-xs leading-6">
+                    Find the best resources for financial radio/television
+                    programs, adult education, client appreciation events,
+                    branding, and marketing all in one place. The best part -
+                    your insurance and annuity production cover the marketing
+                    costs as Impact Partnership helps you grow your sales to new
+                    heights.
+                  </p>
+                  <Link
+                    className="text-blue-vibrant-500 text-xs font-bold underline"
+                    href="https://impactpartner.wistia.com/medias/og78n37xt8"
+                    target="_blank"
+                  >
+                    Watch a video presentation
+                  </Link>
+                </div>
+              </li>
+              <li className="space-y-6">
+                <img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/7MTJovYNzM5Fl4SvOTbU4e/ae61952fad768b192cadd9f13140b58d/prudential-logo.png?h=250"
+                  alt="prudential logo"
+                  className="w-[50px]"
+                />
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-neon-orange-500">
+                    Prudential Life Marketing Micro Site
+                  </h4>
+                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                    Marketing Microsite
+                  </span>
+                  <Link
+                    href="https://view.ceros.com/prudential/trimester-marketing-2024-ili/p/7?mkt_tok=NzAzLU5IUi04NDkAAAGTFiyeC92RtLMSPLalj388eqXCtAT1tiVpskSxgmSM2E-QoIilkmvHbpghsVodUe_F7JblY2lKPgJMRvPpG_DJNWPzwWiSgm49mfLPSDfh"
+                    className="text-blue-vibrant-500 text-xs underline"
+                  >
+                    Launch
+                  </Link>
+                </div>
+              </li>
+              <li className="space-y-6">
+                <img
+                  src="https://images.ctfassets.net/9lvru9ro1ti1/6EdBcDXRUVd2IOaIquoe8Q/dddd6f2b021d0e526a7e761cab5c2cc7/american_retirement_institue_logo.png?h=250"
+                  alt="prudential logo"
+                  className="w-[50px]"
+                />
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-neon-orange-500">
+                    American Retirement Insitute
+                  </h4>
+                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                    Adult Education/Seminar
+                  </span>
+                  <p className="text-xs italic">Pre-Approved by Compliance</p>
+                  <p className="text-xs leading-5">
+                    Impact Partnership's exclusive seminar program, American
+                    Retirement Institute (ARI), offers classroom-style courses
+                    designed to give pre-retirees and retirees in your community
+                    a detailed overview of common retirement topics like income
+                    in retirement, taxes, social security, and health care.
+                  </p>
+                  <Link
+                    href="https://gallery.mailchimp.com/ed907ad6fd8ba2b323ddb8edb/files/00c0d5ff-7f17-4434-abc0-0fa69f703183/ARI_IntroGuide_S01_TS.pdf"
+                    target="_blank"
+                    className="text-blue-vibrant-500 text-xs underline"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </li>
+            </ol>
+            <Link
+              href="/app/insurance/marketing-resources"
+              className="mt-5 rounded bg-neon-orange-500 p-2 text-center font-semibold text-neon-orange-50"
+            >
+              See All Resources
+            </Link>
+          </GridTile>
         </ContentContainer>
       </Layout>
     </>

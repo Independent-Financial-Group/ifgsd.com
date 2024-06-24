@@ -31,8 +31,8 @@ const index = ({ episodes, preview }) => {
       <Head>
         <title>The Playbook | All Episodes</title>
       </Head>
+      <PageHeader breadCrumb="The Playbook" pageName="All Episodes" />
       <Layout preview={preview}>
-        <PageHeader breadCrumb="The Playbook" pageName="All Episodes" />
         <ContentContainer>
           {episodes.map((episode) => (
             <BlogCardSimple

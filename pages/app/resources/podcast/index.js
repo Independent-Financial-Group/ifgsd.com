@@ -44,8 +44,8 @@ const index = ({ preview, episodes }) => {
       <Head>
         <title>The Playbook | Podcast</title>
       </Head>
+      <PageHeader breadCrumb="IFG's Podcast Series" pageName="The Playbook" />
       <Layout preview={preview}>
-        <PageHeader breadCrumb="IFG's Podcast Series" pageName="The Playbook" />
         <ContentContainer>
           <section className="col-span-12 items-center xl:grid xl:grid-cols-2">
             <div>

@@ -2,11 +2,15 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
 const options = {
   preserveWhitespace: true,
-  renderText: (text) => {
-    return text.split("\n").reduce((children, textSegment, index) => {
-      return [...children, index > 0 && <br key={index} />, textSegment];
-    }, []);
-  },
+  // renderText: (text) => {
+  //   if (!text) {
+  //     return "\n";
+  //   }
+
+  //   return text.split("\n").reduce((children, textSegment, index) => {
+  //     return [...children, index > 0 && <br key={index} />, textSegment];
+  //   }, []);
+  // },
   renderNode: {
     [BLOCKS.HEADING_1]: (node, children) => {
       return (

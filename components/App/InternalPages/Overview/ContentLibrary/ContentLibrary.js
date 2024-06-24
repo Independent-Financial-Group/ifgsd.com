@@ -12,7 +12,13 @@ import Link from "next/link";
 import * as contentful from "utils/contentful";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 
-const ContentLibrary = ({ department, preview }) => {
+const ContentLibrary = ({
+  department,
+  preview,
+  colSpan,
+  tileTitle,
+  fixedHeight,
+}) => {
   const [content, setContent] = useState([]);
 
   const getContent = async (department, preview) => {
@@ -22,7 +28,7 @@ const ContentLibrary = ({ department, preview }) => {
         .getEntries({
           content_type: "contentLibrary",
           "fields.department[match]": department,
-          order: "-fields.date",
+          order: "fields.subcategory,fields.title",
         })
         .then((response) => {
           const groupedItems = response.items.reduce((result, item) => {
@@ -47,11 +53,21 @@ const ContentLibrary = ({ department, preview }) => {
   }, []);
 
   return (
-    <div className="col-span-4 h-[500px] rounded-lg bg-white  shadow">
+    <div
+      className={`${colSpan ? colSpan : "col-span-4"} ${
+        !fixedHeight ? null : "h-[500px]"
+      } rounded-lg bg-white  shadow`}
+    >
       <div className="rounded-t-lg bg-hazard-blue-500 py-2">
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
-          <BuildingLibraryIcon className="h-5 w-5" />
-          Content Library
+          {tileTitle ? (
+            tileTitle
+          ) : (
+            <>
+              <BuildingLibraryIcon className="h-5 w-5" />
+              Content Library
+            </>
+          )}
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto">
@@ -67,9 +83,32 @@ const ContentLibrary = ({ department, preview }) => {
                 {content[subcategory].map((item) => (
                   <li key={item.sys.id} className="py-5">
                     <div className="min-w-0">
-                      <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                      {item.fields.category == "File" ? (
+                        <Link
+                          href={`https:${item.fields.file.fields.file.url}`}
+                          className="text-xs font-semibold "
+                        >
+                          <h3 className="text-sm font-semibold leading-6 text-gray-900 hover:text-neon-orange-600">
+                            {item.fields.title}
+                          </h3>
+                        </Link>
+                      ) : (
+                        <Link
+                          href={
+                            item.fields.isDirectLink
+                              ? item.fields.slug
+                              : `/app/resources/content-library/${item.fields.slug}`
+                          }
+                          className="text-xs font-semibold"
+                        >
+                          <h3 className="text-sm font-semibold leading-6 text-gray-900 hover:text-neon-orange-600">
+                            {item.fields.title}
+                          </h3>
+                        </Link>
+                      )}
+                      {/* <h3 className="text-sm font-semibold leading-6 text-gray-900">
                         {item.fields.title}
-                      </h3>
+                      </h3> */}
                       <div className="flex items-center gap-2">
                         <span className="inline-flex items-center rounded-md bg-neon-orange-100 px-2 py-1 text-xs font-medium ring-1 ring-inset ring-neon-orange-500/10">
                           {item.fields.category == "Video" ? (
@@ -84,10 +123,10 @@ const ContentLibrary = ({ department, preview }) => {
                           {formatDateAndTime(item.fields.date, "day")}
                         </p>
                       </div>
-                      <p className="my-2 line-clamp-2 text-xs leading-7 text-gray-900">
+                      <p className="my-2 line-clamp-2 text-xs leading-5 text-gray-900">
                         {item.fields.description}
                       </p>
-                      {item.fields.category == "File" ? (
+                      {/* {item.fields.category == "File" ? (
                         <Link
                           href={`https:${item.fields.file.fields.file.url}`}
                           className="flex items-center justify-end gap-1 text-xs font-semibold hover:text-neon-orange-600"
@@ -105,7 +144,7 @@ const ContentLibrary = ({ department, preview }) => {
                         >
                           Access <ChevronRightIcon className="h-3" />
                         </Link>
-                      )}
+                      )} */}
                     </div>
                   </li>
                 ))}

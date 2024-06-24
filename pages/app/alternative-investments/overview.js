@@ -330,8 +330,8 @@ const overview = ({
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
+      <PageHeader pageName={"Alternative Investments Overview"} />
       <Layout preview={preview}>
-        <PageHeader pageName={"Alternative Investments Overview"} />
         <ContentContainer>
           <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
           <DepartmentAnnouncements

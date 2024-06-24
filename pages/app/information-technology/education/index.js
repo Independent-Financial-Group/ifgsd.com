@@ -35,11 +35,11 @@ const overview = ({ articles, preview }) => {
           content="Educational resources from the information technology department."
         />
       </Head>
+      <PageHeader
+        breadCrumb={"Information Technology"}
+        pageName={"Education"}
+      />
       <Layout preview={preview}>
-        <PageHeader
-          breadCrumb={"Information Technology"}
-          pageName={"Education"}
-        />
         <ContentContainer>
           {articles.map((article) => {
             return (

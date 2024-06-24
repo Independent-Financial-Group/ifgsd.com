@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 import Layout from "../../../../../components/App/Layout/Layout";
 import PageHeader from "../../../../../components/App/InternalPages/PageHeader/PageHeader";
 import ContentContainer from "../../../../../components/App/ContentContainer/ContentContainer";
@@ -26,29 +27,34 @@ export async function getStaticProps({ preview }) {
 
 const index = ({ metricsArticles, preview }) => {
   return (
-    <Layout preview={preview}>
+    <>
+      <Head>
+        <title>Metrics that Matter | Portfolio Construction</title>
+      </Head>
       <PageHeader
         pageName="Metrics that Matter"
         breadCrumb="Portfolio Construction > Market Commentary"
       />
-      <ContentContainer>
-        <ol className="col-span-12 gap-5 xl:grid xl:grid-cols-3">
-          {metricsArticles.map((article) => {
-            return (
-              <li key={article.sys.id}>
-                <BlogCardSimple
-                  title={article.fields.title}
-                  date={article.fields.date}
-                  thumbnail={article.fields.thumbnail.fields.file.url}
-                  slug={`/app/portfolio-construction/market-commentary/MTM/${article.fields.slug}`}
-                  excerpt={article.fields.excerpt}
-                />
-              </li>
-            );
-          })}
-        </ol>
-      </ContentContainer>
-    </Layout>
+      <Layout preview={preview}>
+        <ContentContainer>
+          <ol className="col-span-12 gap-5 xl:grid xl:grid-cols-3">
+            {metricsArticles.map((article) => {
+              return (
+                <li key={article.sys.id}>
+                  <BlogCardSimple
+                    title={article.fields.title}
+                    date={article.fields.date}
+                    thumbnail={article.fields.thumbnail.fields.file.url}
+                    slug={`/app/portfolio-construction/market-commentary/MTM/${article.fields.slug}`}
+                    excerpt={article.fields.excerpt}
+                  />
+                </li>
+              );
+            })}
+          </ol>
+        </ContentContainer>
+      </Layout>
+    </>
   );
 };
 

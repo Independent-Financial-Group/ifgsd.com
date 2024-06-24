@@ -23,16 +23,13 @@ const navigation = [
     icon: BuildingOffice2Icon,
     current: false,
     children: [
-      // {
-      //   name: "Advisory",
-      //   links: [
-      //     { name: "Overview", href: "/app/advisory/overview" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Advisory",
+        links: [
+          { name: "Overview", href: "/app/advisory/overview" },
+          { name: "Mutual Funds", href: "/app/advisory/mutual-funds" },
+        ],
+      },
       {
         name: "Alt. Investments",
         links: [
@@ -124,18 +121,24 @@ const navigation = [
           { name: "Overview", href: "/app/insurance/overview" },
           { name: "Partners", href: "/app/insurance/partners" },
           { name: "Tools", href: "/app/insurance/tools" },
+          { name: "Education", href: "/app/insurance/education" },
+          {
+            name: "Marketing Resources",
+            href: "/app/insurance/marketing-resources",
+          },
+          {
+            name: "Insurance Review Program",
+            href: "/app/insurance/insurance-review-program",
+          },
         ],
       },
-      // {
-      //   name: "Operations",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Operations",
+        links: [
+          { name: "Overview", href: "/app/operations/overview" },
+          // { name: "Education", href: "#" },
+        ],
+      },
       {
         name: "Portfolio Construction",
         links: [
@@ -150,11 +153,8 @@ const navigation = [
       // {
       //   name: "Practice Development",
       //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
+      //     { name: "Overview", href: "/app/practice-development/overview" },
+      //     { name: "Education", href: "/app/practice-development/education" },
       //   ],
       // },
       // {
@@ -390,12 +390,12 @@ export default function Layout({ children, preview }) {
                   alt="Your Company"
                 />
               </div>
-              <nav>
+              <nav className="text-sm">
                 <ul className="flex flex-col gap-y-5">
                   {/* LOOP THROUGH NAVIGATION ARRAY */}
                   {navigation.map((parentItem) => {
                     return (
-                      <li key={parentItem.name} className="px-4">
+                      <li key={parentItem.name} className="px-4 font-bold">
                         {/* RENDER A DISCLOSURE FOR THE PARENT ITEM IN THE NAVIGATION ARRAY */}
                         <Disclosure key={parentItem.name} as="div">
                           {({ open }) => (
@@ -418,7 +418,7 @@ export default function Layout({ children, preview }) {
                                     />
                                   </Disclosure.Button>
                                   <Disclosure.Panel className="ml-4 mt-2">
-                                    <ul className="flex flex-col">
+                                    <ul className="flex flex-col border-l-2 border-neon-orange-500">
                                       {/* LOOP OVER THE CHILD ITEMS */}
                                       {parentItem.children.map((childItem) => {
                                         return (
@@ -429,7 +429,7 @@ export default function Layout({ children, preview }) {
                                                 {({ open }) => {
                                                   return (
                                                     <>
-                                                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2  text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-semibold  hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                                         {childItem.name}
                                                         <ChevronRightIcon
                                                           className={
@@ -447,14 +447,14 @@ export default function Layout({ children, preview }) {
                                                               return (
                                                                 <Disclosure
                                                                   as="ul"
-                                                                  className="ml-4"
+                                                                  className="ml-4 border-l-2 border-hazard-blue-500 font-normal"
                                                                   key={
                                                                     link.name
                                                                   }
                                                                 >
                                                                   <Disclosure.Button
                                                                     as="li"
-                                                                    className="rounded-lg p-2 hover:bg-gray-100 hover:text-gray-500"
+                                                                    className="rounded-lg p-2 hover:bg-gray-100"
                                                                     key={
                                                                       link.name
                                                                     }
@@ -482,7 +482,7 @@ export default function Layout({ children, preview }) {
                                               </Disclosure>
                                             ) : (
                                               <Link
-                                                className="flex w-full items-center justify-between rounded-lg p-2 text-hazard-blue-500 hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
+                                                className="flex w-full items-center justify-between rounded-lg p-2 font-semibold hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                                 href={childItem.href}
                                                 key={childItem.name}
                                               >
@@ -552,14 +552,13 @@ export default function Layout({ children, preview }) {
             <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
               Dashboard
             </div>
-            {/* <UserButton /> */}
           </div>
 
           <main className="lg:pl-72">
             <div>
               <>
                 {preview && <PreviewBanner />}
-                {children}
+                <div className="xl:mx-auto xl:max-w-screen-xl">{children}</div>
               </>
             </div>
           </main>

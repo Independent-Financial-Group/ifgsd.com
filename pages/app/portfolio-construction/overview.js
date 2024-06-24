@@ -1,5 +1,7 @@
 import React from "react";
+import Head from "next/head";
 import Layout from "../../../components/App/Layout/Layout";
+import ContentContainer from "components/App/ContentContainer/ContentContainer";
 import PageHeader from "../../../components/App/InternalPages/PageHeader/PageHeader";
 import OverviewVideo from "../../../components/App/InternalPages/Overview/OverviewVideo/OverviewVideo";
 import DepartmentAnnouncements from "../../../components/App/InternalPages/Overview/DepartmentAnnouncements/DepartmentAnnouncements";
@@ -59,22 +61,27 @@ const overview = ({
   marketCommentary,
 }) => {
   return (
-    <Layout preview={preview}>
+    <>
+      <Head>
+        <title>Overview | Portfolio Construction</title>
+      </Head>
       <PageHeader
         headerText="Read up on market commentary, research and review our models."
         pageName="Portfolio Construction Overview"
       />
-      <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-        <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
-        <DepartmentAnnouncements
-          data={departmentAnnouncements}
-          name={department}
-        />
-        <ModelsAtAGlance featuredModels={featuredModels} />
-        <MarketResearch marketCommentary={marketCommentary} />
-        <TeamDirectory name={department} data={teamMembers} />
-      </div>
-    </Layout>
+      <Layout preview={preview}>
+        <ContentContainer>
+          <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
+          <DepartmentAnnouncements
+            data={departmentAnnouncements}
+            name={department}
+          />
+          <ModelsAtAGlance featuredModels={featuredModels} />
+          <MarketResearch marketCommentary={marketCommentary} />
+          <TeamDirectory name={department} data={teamMembers} />
+        </ContentContainer>
+      </Layout>
+    </>
   );
 };
 

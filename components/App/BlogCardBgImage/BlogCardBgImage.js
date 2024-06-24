@@ -10,7 +10,8 @@ const BlogCardBgImage = ({
   positionTop,
 }) => {
   return (
-    <article
+    <Link
+      href={link}
       className={`group relative h-full overflow-hidden rounded-lg shadow transition duration-700 hover:-translate-y-4 hover:shadow-xl col-span-${colSpan}`}
     >
       <img
@@ -34,7 +35,7 @@ const BlogCardBgImage = ({
           </p>
         </div>
       </div>
-    </article>
+    </Link>
   );
 };
 
