@@ -65,7 +65,11 @@ const options = {
       }
     },
     [INLINES.HYPERLINK]: (node, text) => (
-      <a className="text-blue-wave-500 underline" href={node.data.uri}>
+      <a
+        className="text-blue-wave-500 underline"
+        target="_blank"
+        href={node.data.uri}
+      >
         {text}
       </a>
     ),
