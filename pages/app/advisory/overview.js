@@ -31,6 +31,7 @@ export async function getStaticProps({ preview }) {
       preview: preview || false,
       teamData: [...teamData.items],
     },
+    revalidate: 10,
   };
 }
 
