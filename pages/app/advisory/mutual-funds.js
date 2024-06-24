@@ -109,14 +109,15 @@ const Page = ({ mutualFunds, preview }) => {
               </tbody>
             </table>
             <nav
-              className="flex w-full items-center justify-between rounded-b border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
+              className="flex w-full items-center justify-between rounded-b border-t border-gray-200 bg-seabreeze-500 px-4 py-3 sm:px-6"
               aria-label="Pagination"
             >
               <div className="hidden sm:block">
-                <p className="text-sm text-gray-700">
-                  Showing <span className="font-medium">{startIndex + 1}</span>{" "}
-                  to <span className="font-medium">{endIndex}</span> of{" "}
-                  <span className="font-medium">{mutualFunds.length}</span>{" "}
+                <p className="text-sm">
+                  Showing{" "}
+                  <span className="font-semibold">{startIndex + 1}</span> to{" "}
+                  <span className="font-semibold">{endIndex}</span> of{" "}
+                  <span className="font-semibold">{mutualFunds.length}</span>{" "}
                   results
                 </p>
               </div>
