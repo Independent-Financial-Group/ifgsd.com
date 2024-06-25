@@ -52,7 +52,7 @@ const navigation = [
       // },
       {
         name: "Bank Products",
-        links: [{ name: "Overview", href: "/app/bank-products" }],
+        links: [{ name: "Overview", href: "/app/bank-products/overview" }],
       },
       // {
       //   name: "Commissions & Fees",
