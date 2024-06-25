@@ -50,16 +50,10 @@ const navigation = [
       //     { name: "Education", href: "#" },
       //   ],
       // },
-      // {
-      //   name: "Bank Products",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Bank Products",
+        links: [{ name: "Overview", href: "/app/bank-products/overview" }],
+      },
       // {
       //   name: "Commissions & Fees",
       //   links: [
