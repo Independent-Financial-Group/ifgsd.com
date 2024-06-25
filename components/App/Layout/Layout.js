@@ -429,7 +429,7 @@ export default function Layout({ children, preview }) {
                                                 {({ open }) => {
                                                   return (
                                                     <>
-                                                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg p-2 font-semibold  hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
+                                                      <Disclosure.Button className="mb-1 ml-2 flex w-full items-center justify-between rounded-lg  p-2 font-semibold hover:bg-hazard-blue-100 hover:text-hazard-blue-500">
                                                         {childItem.name}
                                                         <ChevronRightIcon
                                                           className={
@@ -454,7 +454,7 @@ export default function Layout({ children, preview }) {
                                                                 >
                                                                   <Disclosure.Button
                                                                     as="li"
-                                                                    className="rounded-lg p-2 hover:bg-gray-100"
+                                                                    className="ml-2 rounded-lg p-2 hover:bg-gray-100"
                                                                     key={
                                                                       link.name
                                                                     }
@@ -482,7 +482,7 @@ export default function Layout({ children, preview }) {
                                               </Disclosure>
                                             ) : (
                                               <Link
-                                                className="flex w-full items-center justify-between rounded-lg p-2 font-semibold hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
+                                                className="mb-1 ml-2 flex w-full items-center justify-between rounded-lg p-2 font-semibold hover:bg-hazard-blue-100 hover:text-hazard-blue-500"
                                                 href={childItem.href}
                                                 key={childItem.name}
                                               >
