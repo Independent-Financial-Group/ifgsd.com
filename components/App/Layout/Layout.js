@@ -64,16 +64,10 @@ const navigation = [
       //     { name: "Education", href: "#" },
       //   ],
       // },
-      // {
-      //   name: "Compliance",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Compliance",
+        links: [{ name: "Overview", href: "/app/compliance/overview" }],
+      },
       // {
       //   name: "Corp. Comm.",
       //   links: [
