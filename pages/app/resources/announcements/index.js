@@ -194,7 +194,7 @@ const index = ({ announcements, preview }) => {
                                   ? `https:${announcement.fields.mediaThumbnail.fields.file.url}`
                                   : "https://place-hold.it/200x200"
                               }
-                              className="h-[200px] w-[200px] rounded object-cover"
+                              className="h-[200px] w-[600px] rounded object-contain"
                             />
                           </div>
                         )}
