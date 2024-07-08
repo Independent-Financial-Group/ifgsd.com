@@ -30,23 +30,10 @@ export async function getStaticProps({ preview }) {
     order: "-fields.date",
   });
 
-  const departmentPartnerData = await client.getEntries({
-    content_type: "partners",
-    "fields.department[match]": department,
-    order: "fields.partnerLevel,fields.partnerName",
-  });
-
-  const approvedProductsSummary = await client.getEntries({
-    content_type: "approvedProducts",
-    "fields.productType[in]": "REIT,1031,Oil & Gas",
-  });
-
   return {
     props: {
       teamMemberData: [...teamMemberData.items],
       departmentAnnouncementData: [...departmentAnnouncementData.items],
-      departmentPartnerData: [...departmentPartnerData.items],
-      approvedProductsSummary: [...approvedProductsSummary.items],
       preview: preview || false,
     },
     revalidate: 10,
@@ -76,7 +63,7 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
             data={teamMemberData}
             colSpan={"col-span-4"}
           />
-          <ContentLibrary data={[]} colSpan={"col-span-8"} />
+          <ContentLibrary department={"Supervision"} colSpan={"col-span-8"} />
           <GridTile
             tileTitle={'IFG\'s "Straight Through" Business Process'}
             colSpan={"col-span-6"}
