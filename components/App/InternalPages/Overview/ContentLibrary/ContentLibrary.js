@@ -18,7 +18,7 @@ const ContentLibrary = ({
   colSpan,
   tileTitle,
   tileTitleColor = "bg-hazard-blue-500",
-  fixedHeight,
+  fixedHeight = true,
 }) => {
   const [content, setContent] = useState([]);
 
