@@ -8,6 +8,7 @@ import UpcomingEvents from "../../components/App/Dashboard/UpcomingEvents/Upcomi
 import ReferralProgramTool from "../../components/App/ReferralProgramTool/ReferralProgramTool";
 import AdSquare from "../../components/App/Dashboard/AdSquare/AdSquare";
 import Disclosure from "components/App/Dashboard/Disclosure/Disclosure";
+import ContentLibrary from "components/App/InternalPages/Overview/ContentLibrary/ContentLibrary";
 
 import { useSession } from "next-auth/react";
 
@@ -31,7 +32,12 @@ const index = ({ preview }) => {
           <QuickLinks />
           <LatestAnnouncements preview={preview} />
           <UpcomingEvents preview={preview} />
-          <AdSquare />
+          {/* <AdSquare /> */}
+          <ContentLibrary
+            fixedHeight
+            colSpan={"col-span-7"}
+            tileTitleColor="bg-neon-orange-500"
+          />
           <ReferralProgramTool />
         </div>
       </Layout>
