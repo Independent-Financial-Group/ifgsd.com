@@ -44,13 +44,13 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
   return (
     <>
       <Head>
-        <title>Overview | Alternative Investments</title>
+        <title>Overview | Supervision</title>
         <meta
           name="description"
-          content="An overview of the Alternative Investments Department at IFG."
+          content="An overview of the Supervision Department at IFG."
         />
       </Head>
-      <PageHeader pageName={"Alternative Investments Overview"} />
+      <PageHeader pageName={"Supervision Overview"} />
       <Layout preview={preview}>
         <ContentContainer>
           <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
