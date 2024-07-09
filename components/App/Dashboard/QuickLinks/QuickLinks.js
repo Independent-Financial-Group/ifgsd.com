@@ -10,83 +10,90 @@ import Link from "next/link";
 const QuickLinks = () => {
   const quickLinks = [
     {
-      name: "Gateway",
+      name: (
+        <span>
+          Gateway<span className="align-super">+</span>
+        </span>
+      ),
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/5SNN2i1X9MJyXkmG4aHYvP/8e21059c7aecf3ef73eddb66353e6966/gateway-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/5SNN2i1X9MJyXkmG4aHYvP/9cba126c2f450399dd5e0624fdf64a6b/Artboard_1.png",
       link: "https://ifg-gateway.com",
       openInNewTab: true,
     },
     {
       name: "Form CRS",
-      icon: CheckCircleIcon,
+      imageUrl:
+        "https://images.ctfassets.net/9lvru9ro1ti1/6V3OIT5gfdwceAGKHbiqmn/9944b0701bef1c9e8e3206981f9ae8ed/form_crs.png",
       link: "#",
       openInNewTab: false,
     },
     {
       name: "Podcast",
-      icon: MicrophoneIcon,
+      imageUrl:
+        "https://images.ctfassets.net/9lvru9ro1ti1/KU0brQS1whQaQJ4SQCV5u/947ccb7ac2f3ae87ae710adbb6cd67da/podcast.png",
       link: "/app/resources/podcast",
       openInNewTab: false,
     },
     {
       name: "Alt. Investments",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/25J0MM51vIn1eB14u4Jzgd/1e044fcd747afd3c7fc0ae234d9c4885/Alternative-Investments-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/6sUniE65bd3WKHNbYL35uy/8046724be127e701f5ad7644cdc6c3d4/alternative_investments_icon.png",
       link: "/app/alternative-investments/overview",
       openInNewTab: false,
     },
     {
       name: "Advisory",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/60C0i3TDN20P3F4CU0R6bL/0ed3a1a19ff49baf53704175b8e064d5/advisory-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/2gMcbSBP3T6teZqVRGairH/903db44f5516d33b3aa1bbc7331d4121/advisory_icon_80x80.png",
       link: "/app/advisory/overview",
       openInNewTab: false,
     },
     {
       name: "Annuities",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/7JiMv3yZDvr33jocks00GQ/7dd57d3eb260faf1e6787bddd9e8b904/annuities-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/3LTHARshi6c2LZpz0sWI9j/6b70caada289168f4378c2cc5c2311f2/annuities_icon_80x80.png",
       link: "/app/annuities/overview",
       openInNewTab: false,
     },
     {
       name: "Structured Products",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/4opgkt22bfKCzjmwqOzw79/a9a8e9c6b36a9bfab29bdd9869cdd345/market-linked-products-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/3Kji3KhvfeY3uj942pamf0/59ae8c2d57f54a0c000796c34e0d9968/structured_products_icon_80x80.png?h=250",
       link: "/app/structured-products/overview",
       openInNewTab: false,
     },
     {
       name: "Commissions & Fees",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/1MNqX3GjYc0CjRGlbetXbR/8a92af5e7e429b96051c4eec22707a42/Commissions-icon.jpg",
+        "https://images.ctfassets.net/9lvru9ro1ti1/t6lqhiKBJMAHoYGDkoM9R/b9c929afe8f5a2a4cd646ebef367be3b/commissions_and_fees_icon_80x80.png?h=250",
       link: "/app/commissions/overview",
       openInNewTab: false,
     },
     {
       name: "Information Technology",
-      icon: CodeBracketIcon,
+      imageUrl:
+        "https://images.ctfassets.net/9lvru9ro1ti1/4XeegKT0v32JLPQFng5miA/ee7e25d9a5d3a4d77ce3d117475fc4e3/information_technology_icon_80x80.png?h=250",
       link: "/app/information-technology/overview",
       openInNewTab: false,
     },
     {
       name: "Retirement Services",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/PAggjtxvHkeaBbz7YfWb4/ada6cdfbef0679416361f84f7d9ee3ce/Retirement-Services-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/7i0px5j6StYcwGab1W9nS4/6fd0cf237cdf0a72bd2d126b420c74d0/retirement_services_icon_80x80.png?h=250",
       link: "/app/retirement-services/overview",
       openInNewTab: false,
     },
     {
       name: "Mutual Funds",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/5TD3gzmt0rQ9zqYRkffnIT/cbc208979eeeb638eee75aeeeda287b4/Mutual-Funds-Icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/7yvPVpndmwHGvaBAIfZx1t/df3dce14f5bf380b459c3e189e9a3bca/mutual_funds_icon_80x80.png?h=250",
       link: "/app/mutual-funds/overview",
       openInNewTab: false,
     },
     {
       name: "Insurance",
       imageUrl:
-        "https://images.ctfassets.net/9lvru9ro1ti1/1S2BA2dhHJtFTsgZiTYfAn/bcfae58625adda34e907a3546282c286/Insurance-icon.webp",
+        "https://images.ctfassets.net/9lvru9ro1ti1/6KIDjP3LW9ne9jObvtV8Kz/e8eb299b2d39bc7cf103b8a5fbab8355/insurance_icon_80x80.png?h=250",
       link: "/app/insurance/overview",
       openInNewTab: false,
     },
@@ -107,19 +114,25 @@ const QuickLinks = () => {
               <Link
                 href={link.link}
                 target={link.openInNewTab ? "_blank" : null}
-                className="flex flex-col items-center justify-center rounded-lg p-2 font-semibold text-gray-900"
+                className="group flex flex-col items-center justify-center rounded-lg p-2 text-sm"
                 key={link.name}
               >
                 <div>
                   {link.imageUrl ? (
-                    <img src={link.imageUrl} alt={link.name} className="h-11" />
+                    <div className="bg-ifg-turqoise-500 flex aspect-square h-[60px] items-center rounded-full transition-all group-hover:-translate-y-2 group-hover:scale-110 group-hover:shadow-md">
+                      <img
+                        src={link.imageUrl}
+                        alt={link.name}
+                        className="mx-auto aspect-square h-[40px] object-contain"
+                      />
+                    </div>
                   ) : link.icon ? (
                     <link.icon className="h-10" />
                   ) : (
                     <LinkIcon className="mx-auto h-10" />
                   )}
                 </div>
-                <div className="mt-5">
+                <div className="mt-1">
                   <p className="w-full text-center">{link.name}</p>
                 </div>
               </Link>

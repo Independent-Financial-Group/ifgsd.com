@@ -155,16 +155,13 @@ const navigation = [
       //     { name: "Education", href: "#" },
       //   ],
       // },
-      // {
-      //   name: "Supervision",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Supervision",
+        links: [
+          { name: "Overview", href: "/app/supervision/overview" },
+          { name: "Straight Through Processing", href: "/app/supervision/stp" },
+        ],
+      },
     ],
   },
   {

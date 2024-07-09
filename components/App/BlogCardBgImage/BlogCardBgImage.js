@@ -22,7 +22,7 @@ const BlogCardBgImage = ({
         } inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-110`}
       />
 
-      <div className="relative h-full bg-gradient-to-t from-gray-900/90 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
+      <div className="relative h-full bg-gradient-to-t from-gray-900/90 to-gray-900/25 pt-32 transition-all duration-700 group-hover:scale-110 sm:pt-48 lg:pt-64">
         <div className="p-4 sm:p-6">
           <Link href={link}>
             <h3 className="mt-0.5 line-clamp-1 text-lg font-semibold text-white">

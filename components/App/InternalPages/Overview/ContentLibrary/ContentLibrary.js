@@ -17,17 +17,39 @@ const ContentLibrary = ({
   preview,
   colSpan,
   tileTitle,
-  fixedHeight,
+  tileTitleColor = "bg-hazard-blue-500",
+  fixedHeight = true,
 }) => {
   const [content, setContent] = useState([]);
 
   const getContent = async (department, preview) => {
+    const client = preview ? contentful.previewClient : contentful.client;
     if (department) {
-      const client = preview ? contentful.previewClient : contentful.client;
       const data = await client
         .getEntries({
           content_type: "contentLibrary",
           "fields.department[match]": department,
+          order: "fields.subcategory,fields.title",
+        })
+        .then((response) => {
+          const groupedItems = response.items.reduce((result, item) => {
+            const subcategory = item.fields.subcategory;
+
+            if (!result[subcategory]) {
+              result[subcategory] = [];
+            }
+
+            result[subcategory].push(item);
+
+            return result;
+          }, []);
+
+          setContent(groupedItems);
+        });
+    } else {
+      const data = await client
+        .getEntries({
+          content_type: "contentLibrary",
           order: "fields.subcategory,fields.title",
         })
         .then((response) => {
@@ -58,7 +80,7 @@ const ContentLibrary = ({
         !fixedHeight ? null : "h-[500px]"
       } rounded-lg bg-white  shadow`}
     >
-      <div className="rounded-t-lg bg-hazard-blue-500 py-2">
+      <div className={`rounded-t-lg ${tileTitleColor}  py-2`}>
         <h2 className="ml-4 flex gap-2 font-bold text-seabreeze-500">
           {tileTitle ? (
             tileTitle
@@ -122,6 +144,11 @@ const ContentLibrary = ({
                         <p className="mt-1 truncate text-xs font-semibold leading-5 text-gray-500">
                           {formatDateAndTime(item.fields.date, "day")}
                         </p>
+                        {!department && (
+                          <p className="bg-ifg-turqoise-100 text-ifg-turqoise-500 rounded-full px-2 py-1 text-xs font-bold">
+                            {item.fields.department}
+                          </p>
+                        )}
                       </div>
                       <p className="my-2 line-clamp-2 text-xs leading-5 text-gray-900">
                         {item.fields.description}

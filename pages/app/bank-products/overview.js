@@ -42,8 +42,8 @@ const Overview = ({ preview, departmentMembers }) => {
         <ContentContainer>
           <section className="space-y-4 xl:col-span-6">
             <h3 className="text-pretty text-3xl font-bold text-hazard-blue-500">
-              A full suite of client lending solutions and cash management
-              solutions is now avialable!
+              A full suite of client lending and cash management solutions is
+              now available!
             </h3>
             <p>
               Effective immediately, financial professionals affiliated with IFG
@@ -133,9 +133,9 @@ const Overview = ({ preview, departmentMembers }) => {
           </section>
         </ContentContainer>
         <section className="bg-[url('https://images.ctfassets.net/9lvru9ro1ti1/3V0P5hFofZqSM0vefdl8ae/b5f588662f12486f93cb5edd40ef5e67/sandiego-drone-shot-alex-garcia.jpg')] bg-cover bg-no-repeat">
-          <div className="mb-8 !h-[100%] bg-ifg-turqoise-500/25 py-8">
+          <div className="bg-ifg-turqoise-500/25 mb-8 !h-[100%] py-8">
             <ContentContainer>
-              <div className="col-span-full space-y-4 text-center text-ifg-turqoise-800">
+              <div className="text-ifg-turqoise-800 col-span-full space-y-4 text-center">
                 <h3 className="text-5xl font-bold">Webinar Replay</h3>
                 <p className="text-xl font-medium text-white">
                   If you missed our national launch webinar, please watch below.
