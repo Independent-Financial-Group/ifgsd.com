@@ -97,7 +97,7 @@ const partnerMarketplace = ({
                   <div>
                     <Link
                       href={partner.fields.linkToPartnerWebsite}
-                      className="mb-5 outline"
+                      className="mb-5"
                       target="_blank"
                     >
                       <img
@@ -117,7 +117,7 @@ const partnerMarketplace = ({
                   <div>
                     <Link
                       href={partner.fields.linkToPartnerWebsite}
-                      className="mb-5 outline"
+                      className="mb-5"
                       target="_blank"
                     >
                       <img
@@ -137,7 +137,7 @@ const partnerMarketplace = ({
                   <div>
                     <Link
                       href={partner.fields.linkToPartnerWebsite}
-                      className="mb-5 outline"
+                      className="mb-5"
                       target="_blank"
                     >
                       <img
