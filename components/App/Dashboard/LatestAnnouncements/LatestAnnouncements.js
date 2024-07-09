@@ -69,10 +69,7 @@ const LatestAnnouncements = ({ preview }) => {
             }
           >
             {announcements.map((announcement) => (
-              <li
-                key={announcement.fields.title}
-                className="flex gap-x-4 px-3 py-5"
-              >
+              <li key={announcement.fields.title} className="gap-x-4 px-3 py-5">
                 <div className="min-w-0">
                   <p className="text-sm font-semibold leading-6 text-gray-900">
                     {announcement.fields.title}
