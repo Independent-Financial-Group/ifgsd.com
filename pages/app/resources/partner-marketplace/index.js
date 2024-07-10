@@ -96,8 +96,9 @@ const partnerMarketplace = ({
                 {elitePartners.map((partner) => (
                   <div>
                     <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mb-5 outline"
+                      href={partner.fields.linkToPartnerWebsite}
+                      className="mb-5"
+                      target="_blank"
                     >
                       <img
                         src={`https:${partner.fields.logo.fields.file.url}`}
@@ -105,18 +106,9 @@ const partnerMarketplace = ({
                         className="mb-3 h-[150px] w-full object-contain"
                       />
                     </Link>
-                    <h2 className="font-semibold text-gray-900">
+                    <h2 className="text-ifg-turqoise-500 text-center font-semibold">
                       {partner.fields.partnerName}
                     </h2>
-                    <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
-                      {partner.fields.about}
-                    </p>
-                    <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
-                    >
-                      Learn More
-                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
@@ -124,8 +116,9 @@ const partnerMarketplace = ({
                 {platinumPartners.map((partner) => (
                   <div>
                     <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mb-5 outline"
+                      href={partner.fields.linkToPartnerWebsite}
+                      className="mb-5"
+                      target="_blank"
                     >
                       <img
                         src={`https:${partner.fields.logo.fields.file.url}`}
@@ -133,18 +126,9 @@ const partnerMarketplace = ({
                         className="mb-3 h-[150px] w-full object-contain"
                       />
                     </Link>
-                    <h2 className="font-semibold text-gray-900">
+                    <h2 className="text-ifg-turqoise-500 text-center font-semibold">
                       {partner.fields.partnerName}
                     </h2>
-                    <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
-                      {partner.fields.about}
-                    </p>
-                    <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
-                    >
-                      Learn More
-                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
@@ -152,8 +136,9 @@ const partnerMarketplace = ({
                 {goldPartners.map((partner) => (
                   <div>
                     <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mb-5 outline"
+                      href={partner.fields.linkToPartnerWebsite}
+                      className="mb-5"
+                      target="_blank"
                     >
                       <img
                         src={`https:${partner.fields.logo.fields.file.url}`}
@@ -161,18 +146,9 @@ const partnerMarketplace = ({
                         className="mb-3 h-[150px] w-full object-contain"
                       />
                     </Link>
-                    <h2 className="font-semibold text-gray-900">
+                    <h2 className="text-ifg-turqoise-500 text-center font-semibold">
                       {partner.fields.partnerName}
                     </h2>
-                    <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
-                      {partner.fields.about}
-                    </p>
-                    <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
-                    >
-                      Learn More
-                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
@@ -180,8 +156,9 @@ const partnerMarketplace = ({
                 {silverPartners.map((partner) => (
                   <div>
                     <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mb-5 outline"
+                      href={partner.fields.linkToPartnerWebsite}
+                      className="mb-5"
+                      target="_blank"
                     >
                       <img
                         src={`https:${partner.fields.logo.fields.file.url}`}
@@ -189,18 +166,9 @@ const partnerMarketplace = ({
                         className="mb-3 h-[150px] w-full object-contain"
                       />
                     </Link>
-                    <h2 className="font-semibold text-gray-900">
+                    <h2 className="text-ifg-turqoise-500 text-center font-semibold">
                       {partner.fields.partnerName}
                     </h2>
-                    <p className="my-3 line-clamp-3 text-sm leading-7 text-gray-600">
-                      {partner.fields.about}
-                    </p>
-                    <Link
-                      href={`/app/resources/partner-marketplace/${partner.fields.slug}`}
-                      className="mx-auto block w-fit rounded bg-hazard-blue-500 p-2 text-white hover:cursor-pointer "
-                    >
-                      Learn More
-                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
