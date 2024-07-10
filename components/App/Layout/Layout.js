@@ -54,16 +54,6 @@ const navigation = [
         name: "Bank Products",
         links: [{ name: "Overview", href: "/app/bank-products/overview" }],
       },
-      // {
-      //   name: "Commissions & Fees",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
       {
         name: "Compliance",
         links: [{ name: "Overview", href: "/app/compliance/overview" }],
@@ -171,6 +161,10 @@ const navigation = [
     children: [
       // { name: "Calendar", href: "/app/resources/calendar" },
       { name: "Announcements", href: "/app/resources/announcements" },
+      {
+        name: "Commissions & Fee Schedule",
+        href: "/app/resources/commissions-and-fee-schedule",
+      },
       { name: "Company Directory", href: "/app/resources/company-directory" },
       { name: "Content Library", href: "/app/resources/content-library" },
       {
