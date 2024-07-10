@@ -21,11 +21,11 @@ const overview = ({ preview }) => {
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
+      <PageHeader
+        breadCrumb={"Information Technology"}
+        pageName={"Service Status"}
+      />
       <Layout preview={preview}>
-        <PageHeader
-          breadCrumb={"Information Technology"}
-          pageName={"Service Status"}
-        />
         <iframe
           src="https://status.ifgsd.com/"
           frameborder="0"
