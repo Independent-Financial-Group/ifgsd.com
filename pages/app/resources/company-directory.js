@@ -93,7 +93,7 @@ const EmployeeCard = ({ employeeData }) => {
         initial={{ y: 300, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 300, opacity: 0 }}
-        className="relative col-span-4 rounded-lg bg-gray-100 px-2 py-5 text-gray-700 shadow hover:-translate-y-2 hover:cursor-pointer hover:shadow-lg"
+        className="relative col-span-4 rounded-lg bg-white px-2 py-5 shadow hover:-translate-y-2 hover:cursor-pointer hover:shadow-lg"
       >
         <img
           src={`https:${employeeData.fields.headshot.fields.file.url}`}
