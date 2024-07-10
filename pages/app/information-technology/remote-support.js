@@ -21,11 +21,11 @@ const overview = ({ preview }) => {
           content="An overview of the Alternative Investments Department at IFG."
         />
       </Head>
+      <PageHeader
+        breadCrumb={"Information Technology"}
+        pageName={"Remote Support"}
+      />
       <Layout preview={preview}>
-        <PageHeader
-          breadCrumb={"Information Technology"}
-          pageName={"Remote Support"}
-        />
         <iframe
           src="https://ifgsd.screenconnect.com/"
           frameborder="0"
