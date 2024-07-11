@@ -109,7 +109,7 @@ const Article = ({ article, preview }) => {
                       src={`https:${guest.fields.headshot.fields.file.url}`}
                     />
                     <p className="text-center font-semibold text-hazard-blue-500">
-                      {guest.fields.fullName}
+                      {guest.fields.fullName} {guest.fields.lastName}
                     </p>
                     <p className="text-center text-xs">{guest.fields.title}</p>
                   </li>

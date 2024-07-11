@@ -100,7 +100,7 @@ const EmployeeCard = ({ employeeData }) => {
           className="absolute -top-1/3 left-1/2 mx-auto h-28 w-28 -translate-x-1/2 rounded-full border-4 border-neon-orange-500 shadow-lg"
         />
         <h3 className="mt-8 text-center text-lg font-semibold text-hazard-blue-500">
-          {employeeData.fields.fullName}
+          {employeeData.fields.fullName} {employeeData.fields.lastName}
         </h3>
         <p className="line-clamp-1 text-center text-base font-semibold">
           {employeeData.fields.title}
@@ -142,7 +142,8 @@ const companyDirectory = ({ preview }) => {
       const data = await contentful.client
         .getEntries({
           content_type: "companyDirectory",
-          order: "fields.fullName",
+          order: "fields.lastName",
+          "fields.termed": false,
           "fields.department[in]": filter,
         })
         .then((response) => {
@@ -153,7 +154,8 @@ const companyDirectory = ({ preview }) => {
       const data = await contentful.client
         .getEntries({
           content_type: "companyDirectory",
-          order: "fields.fullName",
+          order: "fields.lastName",
+          "fields.termed": false,
           query: query,
         })
         .then((response) => {
@@ -164,7 +166,8 @@ const companyDirectory = ({ preview }) => {
       const data = await contentful.client
         .getEntries({
           content_type: "companyDirectory",
-          order: "fields.fullName",
+          order: "fields.lastName",
+          "fields.termed": false,
         })
         .then((response) => {
           setDirectory([...response.items]);
