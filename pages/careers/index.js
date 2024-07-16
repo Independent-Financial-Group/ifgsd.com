@@ -85,9 +85,112 @@ const index = ({ data }) => {
             Find Your Next Career with IFG
           </h1>
         </PageHeader>
-        <section className="relative my-10 lg:my-32">
+        <section className="my-10 lg:my-32 ">
           <Container>
             <Breadcrumb />
+            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
+              <div className="mb-10 lg:mb-0">
+                <h2 className="flex items-center gap-2 text-3xl font-bold text-neon-orange-500">
+                  <Image
+                    src={highlightBlue}
+                    alt="decorative heading highlight"
+                  />
+                  Perks & Benefits
+                </h2>
+                <p className="my-5 text-xl">
+                  IFG offers a competitive benefits package with:
+                </p>
+                <ul className="flex flex-col justify-center divide-y-2 divide-neon-orange-500 text-xl [&>li]:py-5 [&_li>img]:w-6">
+                  <li className="flex items-center gap-2">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      Company Paid Medical, Dental, and Vision.
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      Paid time off (Including all stock market holidays).
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      401k Matching Program.
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      Professional Development Reimbursement Program.
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      Market-level Compensation Based on Experience.
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      Employee Events.
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      On-site Gym.
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2 ">
+                    <Image src={checkmarkOrange} alt="orange checkmark" />
+                    <p className="font-semibold text-hazard-blue-500">
+                      Employee Tenure Recognition.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <Image
+                  src={section3Image}
+                  alt="ifg employees at company events"
+                  className="mx-auto"
+                />
+              </div>
+            </div>
+          </Container>
+        </section>
+        <section className="my-20 bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300 py-10 lg:my-32 lg:rounded-[40px]">
+          <Container>
+            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
+              <div className="mb-10 lg:mb-0">
+                <Image
+                  src={section2Image}
+                  alt="Employees learning"
+                  className="rounded-xl"
+                />
+              </div>
+              <div className="lg:self-center">
+                <h2 className="flex items-center gap-2 text-3xl font-bold text-seabreeze-500">
+                  <Image
+                    src={highlightWhite}
+                    alt="decorative heading highlight"
+                  />{" "}
+                  Professional Development
+                </h2>
+                <p className="my-5 text-xl text-seabreeze-500">
+                  Our team members are our most valuable resources. We are
+                  committed to nurturing your potential by providing support
+                  through a professional development reimbursement program,
+                  comprehensive training, and mentorship initiatives.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+        <section className="relative my-10 lg:my-32">
+          <Container>
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div className="mb-10">
                 <h2 className="flex items-center gap-2 text-3xl font-bold text-hazard-blue-500">
@@ -203,123 +306,11 @@ const index = ({ data }) => {
                   </div>
                 )}
               </div>
-              {/* <div className="sticky top-11 h-1/2 w-1/2 bg-red-500"></div> */}
               <Image
                 src={section1Image}
                 alt="Employees and Founders at different IFG events"
                 className="sticky top-11 self-baseline"
               />
-              {/* <div className="self-stretch outline">
-                <div className="h-1/2 w-1/2 bg-red-500"></div>
-                <Image
-                  src={section1Image}
-                  alt="Employees and Founders at different IFG events"
-                  className="!sticky !top-11"
-                />
-              </div> */}
-            </div>
-          </Container>
-        </section>
-        <section className="my-20 bg-gradient-to-r from-hazard-blue-500 to-blue-wave-300 py-10 lg:my-32 lg:rounded-[40px]">
-          <Container>
-            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
-              <div className="mb-10 lg:mb-0">
-                <Image
-                  src={section2Image}
-                  alt="Employees learning"
-                  className="rounded-xl"
-                />
-              </div>
-              <div className="lg:self-center">
-                <h2 className="flex items-center gap-2 text-3xl font-bold text-seabreeze-500">
-                  <Image
-                    src={highlightWhite}
-                    alt="decorative heading highlight"
-                  />{" "}
-                  Professional Development
-                </h2>
-                <p className="my-5 text-xl text-seabreeze-500">
-                  Our team members are our most valuable resources. We are
-                  committed to nurturing your potential by providing support
-                  through a professional development reimbursement program,
-                  comprehensive training, and mentorship initiatives.
-                </p>
-              </div>
-            </div>
-          </Container>
-        </section>
-        <section className="my-10 lg:my-32 ">
-          <Container>
-            <div className="lg:grid lg:grid-cols-2 lg:gap-5">
-              <div className="mb-10 lg:mb-0">
-                <h2 className="flex items-center gap-2 text-3xl font-bold text-neon-orange-500">
-                  <Image
-                    src={highlightBlue}
-                    alt="decorative heading highlight"
-                  />
-                  Perks & Benefits
-                </h2>
-                <p className="my-5 text-xl">
-                  IFG offers a competitive benefits package with:
-                </p>
-                <ul className="flex flex-col justify-center divide-y-2 divide-neon-orange-500 text-xl [&>li]:py-5 [&_li>img]:w-6">
-                  <li className="flex items-center gap-2">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      Company Paid Medical, Dental, and Vision.
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      Paid time off (Including all stock market holidays).
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      401k Matching Program.
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      Professional Development Reimbursement Program.
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      Market-level Compensation Based on Experience.
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      Employee Events.
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      On-site Gym.
-                    </p>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <Image src={checkmarkOrange} alt="orange checkmark" />
-                    <p className="font-semibold text-hazard-blue-500">
-                      Employee Tenure Recognition.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <Image
-                  src={section3Image}
-                  alt="ifg employees at company events"
-                  className="mx-auto"
-                />
-              </div>
             </div>
           </Container>
         </section>
