@@ -178,7 +178,7 @@ const navigation = [
       { name: "Podcast", href: "/app/resources/podcast" },
       { name: "Publications", href: "/app/resources/publications" },
       { name: "Referral Program", href: "/app/resources/referral-program" },
-      // { name: "Retail Shop", href: "/app/resources/shop" },
+      { name: "Retail Shop", href: "/app/resources/retail-shop" },
       // { name: "Story Submission", href: "/app/resources/story-submission" },
     ],
   },
