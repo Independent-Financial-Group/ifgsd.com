@@ -14,7 +14,7 @@ const Nav = () => {
   const path = router.pathname;
 
   return (
-    <nav className="relative z-10 hidden bg-seabreeze-100 pb-5 pt-7 lg:block">
+    <nav className="relative z-10 hidden bg-seabreeze-100 pb-5 pt-7 lg:block print:block">
       <Container>
         <div className="row mx-auto flex max-w-screen-xl flex-row justify-between">
           <div className="col">
