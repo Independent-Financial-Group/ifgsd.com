@@ -14,7 +14,10 @@ function classNames(...classes) {
 
 const MobileNav = () => {
   return (
-    <Disclosure as="nav" className="bg-white drop-shadow lg:hidden">
+    <Disclosure
+      as="nav"
+      className="bg-white drop-shadow lg:hidden print:hidden"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6">
