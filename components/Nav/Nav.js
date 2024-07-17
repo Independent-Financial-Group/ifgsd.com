@@ -22,7 +22,7 @@ const Nav = () => {
               <Image
                 alt="IFG logo"
                 src={Logo}
-                className="lg:max-w-[150px] xl:max-w-[250px]"
+                className="lg:max-w-[150px] xl:max-w-[250px] print:max-w-[100px]"
               />
             </Link>
           </div>
