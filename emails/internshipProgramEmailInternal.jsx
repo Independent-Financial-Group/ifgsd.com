@@ -13,22 +13,19 @@ import {
   Hr,
 } from "@react-email/components";
 
-// import logo from "../public/logo-full-color.png";
-
-export default function ContactFormSubmittedInternal({
+export default function internshipApplicationSubmissionInternal({
   formData = {
-    advisorName: "N/A",
-    userName: "N/A",
+    firstName: "N/A",
+    lastName: "N/A",
     email: "N/A",
-    phone: "N/A",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras semper auctor neque vitae tempus quam pellentesque. Aliquam sem fringilla ut morbi.",
   },
 }) {
   return (
     <Html>
       <Head />
-      <Preview>Request for Contact for {formData.advisorName}</Preview>
+      <Preview>
+        A new application has been submitted for the IFG internship program.
+      </Preview>
       <Tailwind>
         <Section style={{ backgroundColor: "#F3F3F3" }}>
           <Container
@@ -53,12 +50,8 @@ export default function ContactFormSubmittedInternal({
                   style={image}
                   className="w-1/3"
                 />
-                <Heading
-                  as="h1"
-                  style={h1}
-                  className="font-semibold text-white"
-                >
-                  A user is requesting to be contacted
+                <Heading as="h1" style={h1} className="text-white">
+                  New Internship Application Submitted
                 </Heading>
               </Row>
             </Section>
@@ -66,29 +59,20 @@ export default function ContactFormSubmittedInternal({
               <Row>
                 <Text style={text}>Hello,</Text>
                 <Text style={text}>
-                  A user has filled out the contact form under the advisor
-                  directory for{" "}
-                  <span className="font-semibold">{formData.advisorName}</span>.
+                  A new candidate has submitted an application for the
+                  Internship Program. Attached is the cover letter and resume.
                 </Text>
               </Row>
               <Hr />
               <Row>
                 <Text style={text}>
-                  <span className="font-semibold">Name</span>:{" "}
-                  {formData.userName}
+                  <strong>Full Name:</strong> {formData.firstName}{" "}
+                  {formData.lastName}
                 </Text>
                 <Text style={text}>
-                  <span className="font-semibold">Email</span>: {formData.email}
-                </Text>
-                <Text style={text}>
-                  <span className="font-semibold">Phone</span>: {formData.phone}
-                </Text>
-                <Text style={text} className="bg-gray-100 p-4">
-                  <span className="font-semibold">Message</span>: <br />
-                  <span className="italic">{formData.message}</span>
+                  <strong>Email Address:</strong> {formData.email}
                 </Text>
               </Row>
-              <Hr />
             </Section>
           </Container>
         </Section>

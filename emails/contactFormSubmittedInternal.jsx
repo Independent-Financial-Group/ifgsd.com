@@ -1,17 +1,19 @@
-import { Button } from "@react-email/button";
-import { Container } from "@react-email/container";
-import { Head } from "@react-email/head";
-import { Html } from "@react-email/html";
-import { Preview } from "@react-email/preview";
-import { Section } from "@react-email/section";
-import { Text } from "@react-email/text";
-import { Img } from "@react-email/img";
-import { Heading } from "@react-email/heading";
-import { Row } from "@react-email/row";
-import { Tailwind } from "@react-email/tailwind";
-import { Hr } from "@react-email/hr";
+import {
+  Button,
+  Container,
+  Head,
+  Html,
+  Preview,
+  Section,
+  Text,
+  Img,
+  Heading,
+  Row,
+  Tailwind,
+  Hr,
+} from "@react-email/components";
 
-import logo from "../public/logo-full-color.png";
+// import logo from "../public/logo-full-color.png";
 
 export default function ContactFormSubmittedInternal({
   formData = {
