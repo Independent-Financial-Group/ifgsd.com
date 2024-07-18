@@ -360,9 +360,6 @@ const index = ({ data, newHires }) => {
                 <ul className="col-span-2 flex justify-around gap-5">
                   {newHires.map((newHire) => (
                     <li key={newHire.sys.id}>
-                      {console.log(
-                        JSON.stringify(newHire.fields.headshot, null, 3),
-                      )}
                       <Image
                         src={`https:${newHire.fields.headshot.fields.file.url}`}
                         height={
