@@ -61,7 +61,7 @@ export default async function (req, res) {
     // EMAIL OPTIONS FOR EMAIL GOING TO HR
     const sendOptionsInternal = {
       from: "noreply@ifgsd.com",
-      to: "agarcia@ifgsd.com",
+      to: "mmontanez@ifgsd.com",
       subject: `${firstName} ${lastName} has applied for an Internship`,
       html: internalEmailHtml,
       attachments: [
