@@ -354,7 +354,7 @@ const index = ({ data, newHires }) => {
               <div className="bg-[url('/_careers/images/wave-background.png')] bg-cover bg-bottom py-8 lg:grid lg:grid-cols-2 lg:gap-5">
                 <div className="col-span-2">
                   <h2 className="text-center text-3xl font-bold uppercase text-neon-orange-500">
-                    New Hire Spotlight
+                    Congrats, New Hires!
                   </h2>
                 </div>
                 <ul className="col-span-2 flex justify-around gap-5">
