@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -10,24 +10,29 @@ import Modal from "components/App/Modal/Modal";
 
 import * as contentful from "utils/contentful";
 
-import { ShoppingBagIcon } from "@heroicons/react/24/solid";
+import { ShoppingBagIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ addToCart, product, cart }) => {
+  const [itemAdded, setItemAdded] = useState(false);
+
+  useEffect(() => {
+    if (cart.findIndex((item) => item.sys.id == product.sys.id) == -1) {
+      setItemAdded(false);
+    }
+  }, [cart]);
+
   return (
-    <div key={product.sys.id} className="group relative">
-      <div className="aspect-h-1 aspect-w-1 lg:aspect-none w-full overflow-hidden rounded-md bg-gray-200  lg:h-80">
+    <div key={product.sys.id} className="group relative flex flex-col">
+      <div className="aspect-h-1 aspect-w-1 lg:aspect-none w-full overflow-hidden rounded-md  lg:h-80">
         <img
           src={`https:${product.fields.mainProductImage.fields.file.url}`}
-          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+          className="aspect-square h-full w-full object-contain object-center mix-blend-multiply lg:h-full lg:w-full"
         />
       </div>
       <div className="mt-4 flex justify-between">
         <div>
           <h4 className="text-sm text-gray-700">
-            <a href={product.href}>
-              <span aria-hidden="true" className="absolute inset-0" />
-              {product.fields.productName}
-            </a>
+            <a href={product.href}>{product.fields.productName}</a>
           </h4>
           <p className="mt-1 text-sm text-gray-500">{product.color}</p>
         </div>
@@ -35,7 +40,7 @@ const ProductCard = ({ product }) => {
           ${product.fields.price}
         </p>
       </div>
-      <div>
+      <div className="mt-auto">
         {product.fields.hasLimitedAvailability && (
           <em className="text-xs italic text-red-500">
             This item is in limited availability. We may not have this item in
@@ -50,7 +55,186 @@ const ProductCard = ({ product }) => {
             ))}
           </div>
         )}
+        <div className="mt-4 flex">
+          <button
+            data-productid={product.sys.id}
+            className="bg-ifg-turqoise-500 w-full rounded px-2 py-3 text-sm font-semibold uppercase text-white shadow hover:cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-300"
+            onClick={(e) => {
+              addToCart(e);
+              setItemAdded(true);
+            }}
+            disabled={itemAdded}
+          >
+            {itemAdded && "In Cart"}
+            {!itemAdded && "Add to Cart"}
+          </button>
+        </div>
       </div>
+    </div>
+  );
+};
+
+const Cart = ({ cart, removeFromCart, updateCartQuantity }) => {
+  const [emailIsSending, setEmailIsSending] = useState(false);
+  const [orderPlaced, setOrderPlaced] = useState(false);
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [shippingAddress, setShippingAddress] = useState("");
+
+  const placeOrder = async (e) => {
+    e.preventDefault();
+    setEmailIsSending(true);
+
+    const res = await fetch("/api/public/placeorder", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: fullName,
+        email: email,
+        shippingAddress: shippingAddress,
+        subtotal: cart.reduce((a, b) => {
+          return a + b.fields.price * b.quantity;
+        }, 0),
+        items: cart,
+      }),
+    });
+
+    if (res.status == 200) {
+      setOrderPlaced(true);
+      setEmailIsSending(false);
+    }
+  };
+
+  return (
+    <div>
+      <h4 className="mb-4 font-semibold">Cart</h4>
+      {orderPlaced ? (
+        <>
+          <CheckCircleIcon className="mx-auto h-14 w-14 text-green-500" />
+          <p className="text-center font-semibold text-gray-500">
+            Your order has been placed!
+          </p>
+        </>
+      ) : (
+        <>
+          {!cart.length && (
+            <p className="text-center text-sm uppercase text-gray-500">
+              No Items in Cart
+            </p>
+          )}
+          {cart.length > 0 && (
+            <>
+              <ul className="space-y-2 divide-y">
+                {cart.map((item) => (
+                  <li
+                    key={item.sys.id}
+                    className="flex items-center justify-between gap-5 pt-4 first:pt-0"
+                  >
+                    <div className="flex-grow space-y-2">
+                      <img
+                        src={`https:${item.fields.mainProductImage.fields.file.url}`}
+                        className="h-14 w-14 object-contain"
+                      />
+                      <p className="text-sm font-semibold">
+                        {item.fields.productName}
+                      </p>
+                      <div className="flex gap-5">
+                        <p className="text-ifg-turqoise-500 self-end font-semibold">
+                          ${item.fields.price}
+                        </p>
+                        <button
+                          className="text-xs text-red-500"
+                          data-productid={item.sys.id}
+                          onClick={removeFromCart}
+                        >
+                          remove
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="text-xs font-bold uppercase">
+                        Quantity
+                      </label>
+                      <input
+                        type="number"
+                        defaultValue="1"
+                        min={1}
+                        className="w-1/2 rounded border-gray-300 pr-0"
+                        name={item.sys.id}
+                        onChange={(e) => updateCartQuantity(e)}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-right">
+                <strong className="text-neon-orange-500">Subtotal</strong>:
+                {" $"}
+                {cart.reduce((a, b) => {
+                  // console.log(`b value ${JSON.stringify(b)}`);
+
+                  return a + b.fields.price * b.quantity;
+                }, 0)}
+              </p>
+              <p className="my-2 text-xs italic text-red-500">
+                Shipping & Handling Will be Applied After and you will receive
+                an email with the tracking number and total price
+              </p>
+              <form className="space-y-4" onSubmit={placeOrder}>
+                <div>
+                  <label htmlFor="fullName">Full Name</label>
+                  <input
+                    name="fullName"
+                    className="w-full rounded border-gray-300"
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    name="email"
+                    className="w-full rounded border-gray-300"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="shippingAddress">Full Shipping Address</label>
+                  <input
+                    name="shipppingAddress"
+                    className="w-full rounded border-gray-300"
+                    type="text"
+                    value={shippingAddress}
+                    onChange={(e) => setShippingAddress(e.target.value)}
+                    required
+                  />
+                </div>
+                {emailIsSending ? (
+                  <input
+                    type="submit"
+                    className="mt-6 w-full rounded bg-gray-500 px-2 py-3 font-bold text-gray-300 shadow"
+                    disabled
+                    value="Placing Order..."
+                  />
+                ) : (
+                  <input
+                    type="submit"
+                    className="mt-6 w-full rounded bg-green-500 px-2 py-3 font-bold text-green-100 shadow hover:cursor-pointer"
+                    value={"Place Order"}
+                  />
+                )}
+              </form>
+            </>
+          )}
+        </>
+      )}
     </div>
   );
 };
@@ -74,6 +258,40 @@ export async function getStaticProps({ preview }) {
 
 const Page = ({ products, preview }) => {
   const [open, setOpen] = useState(false);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (e) => {
+    const productId = e.target.dataset.productid;
+
+    const item = products.find((product) => product.sys.id == productId);
+
+    item.quantity = 1;
+
+    setCart((prevState) => [...prevState, item]);
+  };
+
+  const removeFromCart = (e) => {
+    const productId = e.target.dataset.productid;
+
+    setCart((prevState) => [
+      ...prevState.filter((item) => item.sys.id !== productId),
+    ]);
+  };
+
+  const updateCartQuantity = (e) => {
+    console.log(e.target.name);
+    let productId = e.target.name;
+
+    setCart((prevState) => {
+      prevState.forEach((item) => {
+        if (item.sys.id == productId) {
+          item.quantity = e.target.value;
+        }
+      });
+
+      return [...prevState];
+    });
+  };
 
   return (
     <>
@@ -83,10 +301,10 @@ const Page = ({ products, preview }) => {
       <PageHeader pageName="Retail Shop" breadCrumb="Resources" />
       <Layout preview={preview}>
         <ContentContainer>
-          <section className="col-span-full">
+          <section className="col-span-9">
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div>
-                <h2 className="text-2xl font-bold text-ifg-turqoise-500">
+                <h2 className="text-ifg-turqoise-500 text-2xl font-bold">
                   IFG Merchandise
                 </h2>
                 <p>
@@ -98,61 +316,28 @@ const Page = ({ products, preview }) => {
                   made via check or commissions deduction.
                 </em>
               </div>
-              <div className="flex items-center justify-center">
-                <button
-                  className="rounded bg-neon-orange-500 px-2 py-4 font-bold text-white shadow transition-all hover:-translate-y-1"
-                  onClick={() => setOpen((prevState) => !prevState)}
-                >
-                  Place an order
-                </button>
-              </div>
             </div>
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <div className="mt-6 grid grid-cols-1 items-stretch gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {products.map((product) => {
-                return <ProductCard product={product} />;
+                return (
+                  <ProductCard
+                    key={product.sys.id}
+                    product={product}
+                    addToCart={addToCart}
+                    cart={cart}
+                  />
+                );
               })}
             </div>
           </section>
+          <section className="sticky top-10 col-span-3 max-h-[500px] self-start overflow-y-auto rounded bg-white px-2 py-4 shadow">
+            <Cart
+              cart={cart}
+              removeFromCart={removeFromCart}
+              updateCartQuantity={updateCartQuantity}
+            />
+          </section>
         </ContentContainer>
-        <Modal
-          open={open}
-          setOpen={setOpen}
-          icon={<ShoppingBagIcon className="h-8 w-8 text-ifg-turqoise-500" />}
-        >
-          <p className="text-center font-bold uppercase text-hazard-blue-500">
-            Place an order with IFG
-          </p>
-          <em className="text-sm text-gray-500">
-            Limit 5 of each item per order
-          </em>
-          <form>
-            <div className="flex flex-col gap-2">
-              {products.map((product) => (
-                <>
-                  <div className="flex items-center justify-start gap-1">
-                    <input
-                      key={product.sys.id}
-                      type="checkbox"
-                      id={product.sys.id}
-                      className="rounded border-gray-300 text-neon-orange-500 focus:ring-neon-orange-500"
-                    />
-                    <label>{product.fields.productName}</label>
-                  </div>
-                  <div className="ml-8">
-                    <label className="text-xs font-bold">Quantity</label>
-                    <input
-                      type="number"
-                      max="5"
-                      min="1"
-                      defaultValue="1"
-                      className="ml-2 w-fit rounded border-gray-300 p-0 pl-2 text-center text-xs ring-2 focus:ring-neon-orange-500"
-                    />
-                  </div>
-                </>
-              ))}
-            </div>
-          </form>
-        </Modal>
       </Layout>
     </>
   );
