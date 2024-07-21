@@ -79,6 +79,7 @@ const StorySubmissionForm = () => {
   };
 
   const [formData, setFormData] = useState(initialFormState);
+  const [emailSending, setEmailSending] = useState(false);
 
   const handleChange = (e) => {
     const key = e.target.name;
@@ -92,6 +93,57 @@ const StorySubmissionForm = () => {
     setFormData((prevState) => ({ ...prevState, files: [...files] }));
   };
 
+  const toBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        // Convert the file to Base64
+        const selectedFileBase64 = event.target.result.split(",")[1];
+
+        resolve({ ...file, base64File: selectedFileBase64 });
+      };
+
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const convertedFiles = await formData.files.forEach(async (file) => {
+      const convertedFiles = [];
+
+      const convertedFile = await toBase64(file);
+
+      convertedFiles.push(convertedFile);
+    });
+
+    console.log(convertedFiles);
+
+    // setFormData((prevState) => ({
+    //   ...prevState,
+    //   convertedFiles: convertedFiles,
+    // }));
+
+    // console.log(formData);
+
+    // const res = await fetch("/api/public/submit-story", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     ...formData,
+    //     convertedFiles: convertedFiles,
+    //   }),
+    // });
+
+    // if (res.status == 200) {
+    //   setEmailIsSending(false);
+    // }
+  };
+
   useEffect(() => console.log(formData), [formData]);
 
   return (
@@ -99,7 +151,10 @@ const StorySubmissionForm = () => {
       <h3 className="mb-5 text-5xl font-bold text-hazard-blue-500">
         Submit your Story
       </h3>
-      <form className="rounded-xl bg-white px-2 py-4 shadow lg:grid lg:grid-cols-6 lg:gap-5">
+      <form
+        className="group rounded-xl bg-white px-2 py-4 shadow lg:grid lg:grid-cols-6 lg:gap-5"
+        onSubmit={handleSubmit}
+      >
         <div className="col-span-3 space-y-1">
           <label htmlFor="firstName" className="block text-xs">
             First Name<sup className="font-bold text-red-500">*</sup>
@@ -292,6 +347,12 @@ const StorySubmissionForm = () => {
                 </label>
               </div>
             </div>
+          </div>
+          <div className="mt-5">
+            <input
+              type="submit"
+              className="w-full rounded bg-gray-500 py-4 font-bold text-white group-valid:bg-green-500 group-valid:hover:cursor-pointer"
+            />
           </div>
         </div>
       </form>
