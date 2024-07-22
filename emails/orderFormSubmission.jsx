@@ -92,7 +92,7 @@ export default function ContactFormSubmittedInternal({ cart }) {
                 <Hr />
                 <Row>
                   <Text className="text-right">
-                    Subtotal: <strong>{cart.subtotal}</strong>
+                    Subtotal: <strong>${cart.subtotal}</strong>
                   </Text>
                 </Row>
               </Container>
