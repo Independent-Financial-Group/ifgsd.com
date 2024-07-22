@@ -179,7 +179,7 @@ const navigation = [
       { name: "Publications", href: "/app/resources/publications" },
       { name: "Referral Program", href: "/app/resources/referral-program" },
       { name: "Retail Shop", href: "/app/resources/retail-shop" },
-      // { name: "Story Submission", href: "/app/resources/story-submission" },
+      { name: "Story Submission", href: "/app/resources/story-submission" },
     ],
   },
   { name: "Contact", current: false, icon: PhoneIcon, href: "/app/contact" },
