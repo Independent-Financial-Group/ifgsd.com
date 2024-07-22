@@ -6,6 +6,9 @@ import Link from "next/link";
 import { formatDateAndTime } from "@contentful/f36-datetime";
 import * as contentful from "../../../../utils/contentful";
 
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const UpcomingEvents = ({ preview }) => {
@@ -90,7 +93,13 @@ const UpcomingEvents = ({ preview }) => {
                     </p>
                   </div>
                   <p className="my-5 text-xs">
-                    {event.fields.description}{" "}
+                    <Markdown
+                      className="my-5 text-xs leading-5 [&_a]:my-2 [&_a]:flex [&_a]:w-fit [&_a]:items-center [&_a]:gap-2 [&_a]:font-semibold [&_a]:text-blue-wave-500 [&_a_img]:h-4 [&_a_img]:w-4 [&_em]:text-xs [&_em]:text-blue-wave-500 [&_h3]:text-base [&_h3]:font-semibold [&_p]:mb-2 [&_ul]:list-inside [&_ul]:list-disc"
+                      remarkPlugins={[remarkGfm]}
+                    >
+                      {event.fields.description}
+                    </Markdown>
+                    {/* {event.fields.description}{" "} */}
                     <a
                       className="font-semibold text-neon-orange-500"
                       href={event.fields.registrationLink}
