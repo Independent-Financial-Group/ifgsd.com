@@ -7,7 +7,14 @@ import Layout from "components/App/Layout/Layout";
 import PageHeader from "components/App/InternalPages/PageHeader/PageHeader";
 import ContentContainer from "components/App/ContentContainer/ContentContainer";
 
-import { DocumentArrowUpIcon, DocumentIcon } from "@heroicons/react/24/solid";
+import {
+  DocumentArrowUpIcon,
+  DocumentIcon,
+  GlobeAltIcon,
+} from "@heroicons/react/24/solid";
+
+import { formatDateAndTime } from "@contentful/f36-datetime";
+import * as contentful from "/utils/contentful";
 
 const StorySubmissionForm = () => {
   const states = [
@@ -80,6 +87,8 @@ const StorySubmissionForm = () => {
 
   const [formData, setFormData] = useState(initialFormState);
   const [emailSending, setEmailSending] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const [uploadLimitExceeded, setUploadLimitExceeded] = useState(false);
 
   const handleChange = (e) => {
     const key = e.target.name;
@@ -90,7 +99,19 @@ const StorySubmissionForm = () => {
   const handleFileUpload = (e) => {
     const files = e.target.files;
 
-    setFormData((prevState) => ({ ...prevState, files: [...files] }));
+    const arrOfFiles = [...files];
+
+    const totalFileSize = arrOfFiles.reduce((a, b) => {
+      return a + b.size;
+    }, 0);
+
+    if (totalFileSize >= 10000000) {
+      setUploadLimitExceeded(true);
+      setFormData((prevState) => ({ ...prevState, files: [] }));
+    } else {
+      setUploadLimitExceeded(false);
+      setFormData((prevState) => ({ ...prevState, files: arrOfFiles }));
+    }
   };
 
   const toBase64 = (file) => {
@@ -110,41 +131,39 @@ const StorySubmissionForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setEmailSending(true);
 
-    const convertedFiles = await formData.files.forEach(async (file) => {
-      const convertedFiles = [];
+    const convertedFiles = [];
 
-      const convertedFile = await toBase64(file);
+    for (let i = 0; i < formData.files.length; i++) {
+      const convertedFile = await toBase64(formData.files[i]);
 
-      convertedFiles.push(convertedFile);
+      convertedFiles.push({
+        base64File: convertedFile.base64File,
+        fileMeta: {
+          fileName: formData.files[i].name,
+          fileType: formData.files[i].type,
+        },
+      });
+    }
+
+    const res = await fetch("/api/public/submit-story", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        convertedFiles: convertedFiles,
+      }),
     });
 
-    console.log(convertedFiles);
-
-    // setFormData((prevState) => ({
-    //   ...prevState,
-    //   convertedFiles: convertedFiles,
-    // }));
-
-    // console.log(formData);
-
-    // const res = await fetch("/api/public/submit-story", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     ...formData,
-    //     convertedFiles: convertedFiles,
-    //   }),
-    // });
-
-    // if (res.status == 200) {
-    //   setEmailIsSending(false);
-    // }
+    if (res.status == 200) {
+      setEmailSending(false);
+      setEmailSent(true);
+      setFormData(initialFormState);
+    }
   };
-
-  useEffect(() => console.log(formData), [formData]);
 
   return (
     <>
@@ -161,10 +180,11 @@ const StorySubmissionForm = () => {
           </label>
           <input
             name="firstName"
-            className="w-full rounded border-gray-300"
+            className="w-full rounded border-gray-300 focus:ring-0"
             type="text"
             required
             onChange={handleChange}
+            value={formData.firstName}
           />
         </div>
         <div className="col-span-3 space-y-1">
@@ -173,10 +193,11 @@ const StorySubmissionForm = () => {
           </label>
           <input
             name="lastName"
-            className="w-full rounded border-gray-300"
+            className="w-full rounded border-gray-300 focus:ring-0"
             type="text"
             required
             onChange={handleChange}
+            value={formData.lastName}
           />
         </div>
         <div className="col-span-3 space-y-1">
@@ -189,6 +210,7 @@ const StorySubmissionForm = () => {
             type="email"
             required
             onChange={handleChange}
+            value={formData.email}
           />
         </div>
         <div className="col-span-3 space-y-1">
@@ -201,6 +223,7 @@ const StorySubmissionForm = () => {
             type="tel"
             required
             onChange={handleChange}
+            value={formData.phone}
           />
         </div>
         <div className="col-span-6 space-y-2 lg:grid lg:grid-cols-3 lg:gap-5">
@@ -214,6 +237,7 @@ const StorySubmissionForm = () => {
               type="text"
               required
               onChange={handleChange}
+              value={formData.address}
             />
           </div>
           <div className="space-y-1">
@@ -223,6 +247,7 @@ const StorySubmissionForm = () => {
               type="text"
               required
               onChange={handleChange}
+              value={formData.city}
             />
             <label htmlFor="city" className="block text-xs">
               City<sup className="font-bold text-red-500">*</sup>
@@ -234,6 +259,8 @@ const StorySubmissionForm = () => {
               className="w-full rounded border-gray-300"
               required
               onChange={handleChange}
+              defaultValue={states[0]}
+              value={formData.state}
             >
               {states.map((state) => (
                 <option key={state} value={state}>
@@ -252,6 +279,7 @@ const StorySubmissionForm = () => {
               type="text"
               required
               onChange={handleChange}
+              value={formData.zip}
             />
             <label htmlFor="zip" className="block text-xs">
               Zip Code<sup className="font-bold text-red-500">*</sup>
@@ -268,6 +296,7 @@ const StorySubmissionForm = () => {
             required
             onChange={handleChange}
             rows={8}
+            value={formData.details}
           ></textarea>
         </div>
         <div className="col-span-3 space-y-1">
@@ -279,6 +308,8 @@ const StorySubmissionForm = () => {
             className="w-full rounded border-gray-300"
             required
             onChange={handleChange}
+            defaultValue={"New Hire"}
+            value={formData.category}
           >
             <option value="New Hire">New Hire</option>
             <option value="License & Designations">
@@ -305,6 +336,7 @@ const StorySubmissionForm = () => {
             type="url"
             className="w-full rounded border-gray-300"
             onChange={handleChange}
+            value={formData.link}
           />
         </div>
         <div className="col-span-full">
@@ -326,15 +358,32 @@ const StorySubmissionForm = () => {
                   className="relative w-full cursor-pointer rounded-md bg-white font-semibold text-neon-orange-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-neon-orange-600 focus-within:ring-offset-2 hover:text-neon-orange-500"
                 >
                   <span className="">Click to Upload Files</span>
+                  <span className="block font-normal text-gray-400">
+                    Please limit total file size of attachments to 10Mb
+                  </span>
+                  {uploadLimitExceeded && (
+                    <span className="mt-5 block rounded bg-red-100 px-2 text-sm font-bold text-red-500">
+                      Total file size of attachments exceeds 10Mb limit. Please
+                      choose smaller files.
+                    </span>
+                  )}
                   {formData.files.length > 0 && (
-                    <ul className="flex flex-col items-center">
-                      {formData.files.map((file) => (
-                        <li className="text-ifg-turqoise-500 flex items-center gap-1">
-                          <DocumentIcon className="h-4 w-4" />
-                          <p>{file.name}</p>
-                        </li>
-                      ))}
-                    </ul>
+                    <>
+                      <p className="rounded-t bg-hazard-blue-100 font-bold uppercase text-hazard-blue-500">
+                        Files to be Sent
+                      </p>
+                      <ul className="flex flex-col items-center rounded-b bg-gray-100">
+                        {formData.files.map((file) => (
+                          <li
+                            key={file.name}
+                            className="text-ifg-turqoise-500 flex items-center gap-1"
+                          >
+                            <DocumentIcon className="h-4 w-4" />
+                            <p>{file.name}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
                   )}
                   <input
                     id="files"
@@ -349,25 +398,61 @@ const StorySubmissionForm = () => {
             </div>
           </div>
           <div className="mt-5">
-            <input
-              type="submit"
-              className="w-full rounded bg-gray-500 py-4 font-bold text-white group-valid:bg-green-500 group-valid:hover:cursor-pointer"
-            />
+            {emailSending ? (
+              <input
+                type="submit"
+                className="w-full rounded bg-gray-300 py-4 font-bold text-gray-500"
+                disabled={true}
+                value={"Sending Email..."}
+              />
+            ) : (
+              <input
+                type="submit"
+                className="disabled: w-full rounded bg-gray-500 py-4 font-bold text-white group-valid:bg-green-500 group-valid:hover:cursor-pointer"
+                value={"Submit Story"}
+              />
+            )}
           </div>
         </div>
+        {emailSent && (
+          <div className="col-span-full w-full rounded bg-green-200 text-center font-bold text-green-500">
+            <p>
+              Thanks for you Submission! An email has been sent to us and we
+              will reach out if we need any more details.
+            </p>
+          </div>
+        )}
       </form>
     </>
   );
 };
 
-const Page = () => {
+export async function getStaticProps({ preview }) {
+  const client = preview ? contentful.previewClient : contentful.client;
+
+  const data = await client.getEntries({
+    content_type: "featuredStories",
+    order: "-fields.date",
+    limit: 3,
+  });
+
+  return {
+    props: {
+      featuredStories: [...data.items],
+      preview: preview || false,
+    },
+    revalidate: 10,
+  };
+}
+
+const Page = ({ featuredStories, preview }) => {
   return (
     <>
       <Head>
         <title>Submit Your Story | IFG Rep Portal</title>
       </Head>
       <PageHeader pageName="Story Submission" breadCrumb="Resources" />
-      <Layout>
+      <Layout preview={preview}>
         <ContentContainer>
           <section className="space-y-6 lg:col-span-6">
             <h3 className="text-ifg-turqoise-500 text-5xl font-bold">
@@ -398,72 +483,38 @@ const Page = () => {
               Featured Stories
             </h3>
             <ul className="lg:grid lg:grid-cols-3 lg:gap-5">
-              <li className="bg-white shadow">
-                <img
-                  className="aspect-square h-[300px] w-full rounded-t object-cover"
-                  src="https://images.ctfassets.net/9lvru9ro1ti1/5tyiA8LOCFvlJPcKLSYkiw/c813ee3bb1ad8796a10c6421f966efe4/chris_vizzi_advisor_of_the_year_2024.JPG"
-                />
-                <div className="space-y-4 px-2 py-4">
-                  <div>
-                    <h4 className="font-bold">
-                      Chris Vizzi Wins Advisor of the Year
-                    </h4>
-                    <p className="text-xs text-gray-500">June 24th, 2024</p>
+              {featuredStories.map((story) => (
+                <li className="bg-white shadow">
+                  <img
+                    className="aspect-square h-[300px] w-full rounded-t object-cover"
+                    src={`https:${story.fields.thumbnail.fields.file.url}`}
+                  />
+                  <div className="space-y-4 px-2 py-4">
+                    <div>
+                      <h4 className="font-bold">{story.fields.heading}</h4>
+                      <p className="text-xs text-gray-500">
+                        {formatDateAndTime(story.fields.date, "day")}
+                      </p>
+                    </div>
+                    <p className="text-sm leading-6">
+                      {story.fields.description}
+                    </p>
+                    {story.fields.articleLink && (
+                      <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={story.fields.articleLink}
+                        className="block"
+                      >
+                        <GlobeAltIcon className="text-ifg-turqoise-500 inline h-5 w-5" />
+                        <span className="text-ifg-turqoise-500 text-sm font-semibold">
+                          Read More
+                        </span>
+                      </Link>
+                    )}
                   </div>
-                  <p className="text-sm leading-6">
-                    Chris's dedication to excellence in serving his clients is
-                    truly inspiring, and he is an incredibly accomplished
-                    philanthropist. This recognition from Investment News is a
-                    testament to his hard work, expertise, and commitment to the
-                    profession. Chris, we are incredibly proud to have you as
-                    part of the IFG family.
-                  </p>
-                </div>
-              </li>
-              <li className="bg-white shadow">
-                <img
-                  className="aspect-square h-[300px] w-full rounded-t object-cover"
-                  src="https://images.ctfassets.net/9lvru9ro1ti1/5tyiA8LOCFvlJPcKLSYkiw/c813ee3bb1ad8796a10c6421f966efe4/chris_vizzi_advisor_of_the_year_2024.JPG"
-                />
-                <div className="space-y-4 px-2 py-4">
-                  <div>
-                    <h4 className="font-bold">
-                      Chris Vizzi Wins Advisor of the Year
-                    </h4>
-                    <p className="text-xs text-gray-500">June 24th, 2024</p>
-                  </div>
-                  <p className="text-sm leading-6">
-                    Chris's dedication to excellence in serving his clients is
-                    truly inspiring, and he is an incredibly accomplished
-                    philanthropist. This recognition from Investment News is a
-                    testament to his hard work, expertise, and commitment to the
-                    profession. Chris, we are incredibly proud to have you as
-                    part of the IFG family.
-                  </p>
-                </div>
-              </li>
-              <li className="bg-white shadow">
-                <img
-                  className="aspect-square h-[300px] w-full rounded-t object-cover"
-                  src="https://images.ctfassets.net/9lvru9ro1ti1/5tyiA8LOCFvlJPcKLSYkiw/c813ee3bb1ad8796a10c6421f966efe4/chris_vizzi_advisor_of_the_year_2024.JPG"
-                />
-                <div className="space-y-4 px-2 py-4">
-                  <div>
-                    <h4 className="font-bold">
-                      Chris Vizzi Wins Advisor of the Year
-                    </h4>
-                    <p className="text-xs text-gray-500">June 24th, 2024</p>
-                  </div>
-                  <p className="text-sm leading-6">
-                    Chris's dedication to excellence in serving his clients is
-                    truly inspiring, and he is an incredibly accomplished
-                    philanthropist. This recognition from Investment News is a
-                    testament to his hard work, expertise, and commitment to the
-                    profession. Chris, we are incredibly proud to have you as
-                    part of the IFG family.
-                  </p>
-                </div>
-              </li>
+                </li>
+              ))}
             </ul>
           </section>
           <section className="col-span-full my-32">
