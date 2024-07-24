@@ -59,16 +59,6 @@ const navigation = [
         links: [{ name: "Overview", href: "/app/compliance/overview" }],
       },
       // {
-      //   name: "Corp. Comm.",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
-      // {
       //   name: "Fixed Income",
       //   links: [
       //     { name: "Overview", href: "#" },
@@ -128,13 +118,12 @@ const navigation = [
           { name: "Models", href: "/app/portfolio-construction/models" },
         ],
       },
-      // {
-      //   name: "Practice Development",
-      //   links: [
-      //     { name: "Overview", href: "/app/practice-development/overview" },
-      //     { name: "Education", href: "/app/practice-development/education" },
-      //   ],
-      // },
+      {
+        name: "Practice Development",
+        links: [
+          { name: "Overview", href: "/app/practice-development/overview" },
+        ],
+      },
       // {
       //   name: "Retirement Services",
       //   links: [
