@@ -110,7 +110,9 @@ const LatestAnnouncements = ({ preview }) => {
                     {announcement.fields.excerpt}...
                   </p>
                   <div className="flex items-center justify-end">
-                    {announcement.fields.mediaType == "Podcast" ? (
+                    {announcement.fields.mediaType == "Podcast" ||
+                    "Blue Chip" ||
+                    "Independent" ? (
                       <Link
                         className="flex items-center gap-1 text-xs font-semibold hover:text-neon-orange-600"
                         href={`/app/resources/${announcement.fields.slug}`}

@@ -68,7 +68,9 @@ const Article = ({ article, preview }) => {
         breadCrumb={formatDateAndTime(article.fields.date, "day")}
       />
       <Layout preview={preview}>
-        <IssuuPublication src={article.fields.embedSourceLink} />
+        <div className="col-span-full flex min-h-[calc(100vh-200px)] items-center">
+          <IssuuPublication src={article.fields.embedSourceLink} />
+        </div>
       </Layout>
     </>
   );
