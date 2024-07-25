@@ -44,6 +44,7 @@ const index = ({ magazines, preview }) => {
               slug={`/app/resources/publications/the-independent/${magazine.fields.slug}`}
               thumbnail={magazine.fields.thumbnail.fields.file.url}
               edition={magazine.fields.edition}
+              isPublication
             />
           ))}
         </ContentContainer>

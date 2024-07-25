@@ -41,6 +41,7 @@ const index = ({ magazines, preview }) => {
               slug={`/app/resources/publications/bluechip/${magazine.fields.slug}`}
               edition={magazine.fields.edition}
               thumbnail={magazine.fields.thumbnail.fields.file.url}
+              isPublication
             />
           ))}
         </ContentContainer>
