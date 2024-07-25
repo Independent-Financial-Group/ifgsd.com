@@ -12,6 +12,7 @@ const BlogCardSimple = ({
   edition,
   colSpan,
   inNewTab,
+  isPublication = false,
 }) => {
   return (
     <article
@@ -20,7 +21,9 @@ const BlogCardSimple = ({
       <img
         alt="Office"
         src={`https:${thumbnail}`}
-        className="h-56 w-full object-cover"
+        className={`h-56 w-full ${
+          isPublication ? "bg-white object-contain pt-5" : "object-cover"
+        }`}
       />
 
       <div className="flex flex-grow flex-col bg-white p-4 sm:p-6">
