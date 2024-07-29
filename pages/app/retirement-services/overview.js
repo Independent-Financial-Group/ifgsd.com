@@ -229,7 +229,7 @@ const Page = () => {
           </GridTile>
           <section className="col-span-full">
             <div>
-              <div className="rounded rounded-lg bg-[url('https://images.ctfassets.net/9lvru9ro1ti1/4kxFhZGQbqiJx1slZMzwTa/3e4dee541c9468524e4a244bc2dc5435/retirement_services_image_3.png')] bg-cover bg-center bg-no-repeat">
+              <div className="rounded-lg bg-[url('https://images.ctfassets.net/9lvru9ro1ti1/4kxFhZGQbqiJx1slZMzwTa/3e4dee541c9468524e4a244bc2dc5435/retirement_services_image_3.png')] bg-cover bg-center bg-no-repeat">
                 <div className="min-h-64 rounded bg-black/50 px-4 py-2 shadow">
                   <h4 className="text-2xl font-bold text-white">
                     Continous Education Offering
