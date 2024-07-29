@@ -466,7 +466,10 @@ export default function Layout({ children, preview }) {
                                       className="h-6 w-6 shrink-0 text-neon-orange-600 hover:bg-neon-orange-100 hover:text-neon-orange-500"
                                       aria-hidden="true"
                                     />
-                                    <Link href={parentItem.href}>
+                                    <Link
+                                      href={parentItem.href}
+                                      className="block w-full text-left"
+                                    >
                                       {parentItem.name}
                                     </Link>
                                   </Disclosure.Button>
