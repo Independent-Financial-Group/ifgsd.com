@@ -111,8 +111,8 @@ const LatestAnnouncements = ({ preview }) => {
                   </p>
                   <div className="flex items-center justify-end">
                     {announcement.fields.mediaType == "Podcast" ||
-                    "Blue Chip" ||
-                    "Independent" ? (
+                    announcement.fields.mediaType == "Blue Chip" ||
+                    announcement.fields.mediaType == "Independent" ? (
                       <Link
                         className="flex items-center gap-1 text-xs font-semibold hover:text-neon-orange-600"
                         href={`/app/resources/${announcement.fields.slug}`}
@@ -127,8 +127,12 @@ const LatestAnnouncements = ({ preview }) => {
                             : `/app/resources/announcements/${announcement.fields.slug}`
                         } `}
                         className="flex items-center gap-1 text-xs font-semibold hover:text-neon-orange-600"
+                        target={
+                          announcement.fields.linkIsCustom ? "_blank" : null
+                        }
                       >
-                        Read More <ChevronRightIcon className="h-3" />
+                        Read More {announcement.fields.linkIsCustom}{" "}
+                        <ChevronRightIcon className="h-3" />
                       </Link>
                     )}
                   </div>
