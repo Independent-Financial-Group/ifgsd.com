@@ -128,16 +128,7 @@ const Article = ({ article, preview }) => {
                   <h2 className="font-semibold text-neon-orange-500">
                     About {article.fields.partner.fields.partnerName}
                   </h2>
-                  <p>
-                    Cottonwood Communities, Inc. ("CWREIT") is a publicly
-                    registered, non-traded, net asset value ("NAV")-based
-                    perpetual life real estate investment trust that owns a
-                    diverse portfolio of multifamily apartment communities and
-                    multifamily real estate-related assets located throughout
-                    the United States. Shares of the offering are available to
-                    investors that meet the minimum suitability standards set
-                    forth in the prospectus.
-                  </p>
+                  <p>{article.fields.partner.fields.about}</p>
                 </div>
               </div>
             </section>

@@ -124,16 +124,12 @@ const navigation = [
           { name: "Overview", href: "/app/practice-development/overview" },
         ],
       },
-      // {
-      //   name: "Retirement Services",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Retirement Services",
+        links: [
+          { name: "Overview", href: "/app/retirement-services/overview" },
+        ],
+      },
       {
         name: "Supervision",
         links: [
