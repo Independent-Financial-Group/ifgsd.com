@@ -45,7 +45,7 @@ const index = ({ preview }) => {
       <PageHeader pageName="Publications" breadCrumb="Resources" />
       <Layout preview={preview}>
         <div className="my-10 flex flex-col gap-5 px-8 xl:grid xl:grid-cols-12 xl:gap-5">
-          <section className="col-span-12">
+          <section className="col-span-12 rounded bg-white px-4 py-8 shadow">
             <ol className="mt-5 xl:grid xl:grid-cols-3 xl:gap-5">
               {topics.map((topic) => {
                 return (
