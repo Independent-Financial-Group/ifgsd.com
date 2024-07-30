@@ -62,6 +62,7 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
             fixedHeight={false}
             data={teamMemberData}
             colSpan={"col-span-4"}
+            name={"Supervision"}
           />
           <ContentLibrary department={"Supervision"} colSpan={"col-span-8"} />
           <GridTile
