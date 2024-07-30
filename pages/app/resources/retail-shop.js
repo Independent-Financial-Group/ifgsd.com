@@ -22,7 +22,10 @@ const ProductCard = ({ addToCart, product, cart }) => {
   }, [cart]);
 
   return (
-    <div key={product.sys.id} className="group relative flex flex-col">
+    <div
+      key={product.sys.id}
+      className="group relative flex flex-col rounded-md bg-white p-4 shadow"
+    >
       <div className="aspect-h-1 aspect-w-1 lg:aspect-none w-full overflow-hidden rounded-md  lg:h-80">
         <img
           src={`https:${product.fields.mainProductImage.fields.file.url}`}
@@ -58,7 +61,7 @@ const ProductCard = ({ addToCart, product, cart }) => {
         <div className="mt-4 flex">
           <button
             data-productid={product.sys.id}
-            className="bg-ifg-turqoise-500 w-full rounded px-2 py-3 text-sm font-semibold uppercase text-white shadow hover:cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-300"
+            className="w-full rounded bg-ifg-turqoise-500 px-2 py-3 text-sm font-semibold uppercase text-white shadow hover:cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-300"
             onClick={(e) => {
               addToCart(e);
               setItemAdded(true);
@@ -141,7 +144,7 @@ const Cart = ({ cart, removeFromCart, updateCartQuantity }) => {
                         {item.fields.productName}
                       </p>
                       <div className="flex gap-5">
-                        <p className="text-ifg-turqoise-500 self-end font-semibold">
+                        <p className="self-end font-semibold text-ifg-turqoise-500">
                           ${item.fields.price}
                         </p>
                         <button
@@ -304,7 +307,7 @@ const Page = ({ products, preview }) => {
           <section className="col-span-9">
             <div className="lg:grid lg:grid-cols-2 lg:gap-5">
               <div>
-                <h2 className="text-ifg-turqoise-500 text-2xl font-bold">
+                <h2 className="text-2xl font-bold text-ifg-turqoise-500">
                   IFG Merchandise
                 </h2>
                 <p>
@@ -317,7 +320,7 @@ const Page = ({ products, preview }) => {
                 </em>
               </div>
             </div>
-            <div className="mt-6 grid grid-cols-1 items-stretch gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <div className="mt-6 grid grid-cols-1 items-stretch gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
               {products.map((product) => {
                 return (
                   <ProductCard
