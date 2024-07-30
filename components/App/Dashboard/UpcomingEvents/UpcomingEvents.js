@@ -99,13 +99,14 @@ const UpcomingEvents = ({ preview }) => {
                     >
                       {event.fields.description}
                     </Markdown>
-                    {/* {event.fields.description}{" "} */}
-                    <a
-                      className="font-semibold text-neon-orange-500"
-                      href={event.fields.registrationLink}
-                    >
-                      Register &rarr;
-                    </a>
+                    {event.fields.registrationLink && (
+                      <a
+                        className="font-semibold text-neon-orange-500"
+                        href={event.fields.registrationLink}
+                      >
+                        Register &rarr;
+                      </a>
+                    )}
                   </p>
                   <div className="grid grid-cols-3 items-start gap-2 text-center text-xs font-semibold">
                     <div className="my-2 rounded-full bg-hazard-blue-100 px-4 py-2 text-hazard-blue-500">
