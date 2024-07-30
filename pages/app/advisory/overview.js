@@ -48,7 +48,7 @@ const overview = ({ preview, teamData }) => {
       <PageHeader pageName={"Advisory Overview"} />
       <Layout preview={preview}>
         <ContentContainer>
-          <OverviewVideo />
+          {/* <OverviewVideo /> */}
           <DepartmentAnnouncements data={[]} name="Advisory" />
           <GridTile
             tileTitle="Advisory Solutions Brochure"

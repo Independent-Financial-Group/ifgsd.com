@@ -333,16 +333,16 @@ const overview = ({
       <PageHeader pageName={"Alternative Investments Overview"} />
       <Layout preview={preview}>
         <ContentContainer>
-          <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
+          {/* <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" /> */}
           <DepartmentAnnouncements
             name="Alternative Investments"
             data={departmentAnnouncementData}
           />
-          <ProductAdBanner
+          {/* <ProductAdBanner
             url={
               "https://images.ctfassets.net/9lvru9ro1ti1/2mtjSuITOLE31fF5OV45XY/354efb69633de440ea2533a25c7f4220/sealy_banner_ad_2023.jpg"
             }
-          />
+          /> */}
           <GridTile
             icon={<WrenchIcon className="h-6 w-6 text-seabreeze-500" />}
             tileTitle={"Tools"}
