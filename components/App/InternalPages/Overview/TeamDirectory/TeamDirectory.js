@@ -90,7 +90,7 @@ const TeamDirectory = ({ data, name, colSpan }) => {
                 />
                 <div className="min-w-0 flex-auto">
                   <p className="text-base font-semibold leading-6 text-neon-orange-500">
-                    {person.fields.fullName}
+                    {person.fields.fullName} {person.fields.lastName}
                   </p>
                   <p className="text-sm italic leading-6 text-gray-800">
                     {person.fields.title}

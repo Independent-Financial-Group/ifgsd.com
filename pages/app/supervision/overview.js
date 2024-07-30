@@ -53,7 +53,7 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
       <PageHeader pageName={"Supervision Overview"} />
       <Layout preview={preview}>
         <ContentContainer>
-          <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
+          {/* <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" /> */}
           <DepartmentAnnouncements
             name="Supervision"
             data={departmentAnnouncementData}
@@ -62,6 +62,7 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
             fixedHeight={false}
             data={teamMemberData}
             colSpan={"col-span-4"}
+            name={"Supervision"}
           />
           <ContentLibrary department={"Supervision"} colSpan={"col-span-8"} />
           <GridTile
@@ -78,7 +79,7 @@ const overview = ({ teamMemberData, preview, departmentAnnouncementData }) => {
                 accounts and update existing accounts directly on Gateway.
               </p>
               <div>
-                <h4 className="text-ifg-turqoise-500 font-semibold">
+                <h4 className="font-semibold text-ifg-turqoise-500">
                   Included Benefits
                 </h4>
                 <ul className="list-inside list-disc">

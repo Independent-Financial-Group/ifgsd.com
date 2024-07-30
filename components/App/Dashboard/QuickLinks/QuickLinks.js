@@ -12,7 +12,10 @@ const QuickLinks = () => {
     {
       name: (
         <span>
-          Gateway<span className="align-super">+</span>
+          Gateway
+          <span className="align-super font-semibold text-neon-orange-500">
+            +
+          </span>
         </span>
       ),
       imageUrl:
@@ -119,7 +122,7 @@ const QuickLinks = () => {
               >
                 <div>
                   {link.imageUrl ? (
-                    <div className="bg-ifg-turqoise-500 flex aspect-square h-[60px] items-center rounded-full transition-all group-hover:-translate-y-2 group-hover:scale-110 group-hover:shadow-md">
+                    <div className="flex aspect-square h-[60px] items-center rounded-full bg-ifg-turqoise-500 transition-all group-hover:-translate-y-2 group-hover:scale-110 group-hover:shadow-md">
                       <img
                         src={link.imageUrl}
                         alt={link.name}

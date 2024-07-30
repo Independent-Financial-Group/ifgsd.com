@@ -267,7 +267,7 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
       />
       <Layout preview={preview}>
         <ContentContainer>
-          <OverviewVideo />
+          {/* <OverviewVideo /> */}
           <DepartmentAnnouncements data={[]} name="Insurance" />
           <GridTile
             tileTitle="Insurance Production Leaderboards"
@@ -441,7 +441,7 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
                   <h4 className="font-semibold text-neon-orange-500">
                     Impact Partnership
                   </h4>
-                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                  <span className="block w-fit rounded-full bg-blue-vibrant-100 p-2 text-xs text-blue-vibrant-500 ring-1 ring-inset ring-blue-vibrant-600">
                     Marketing Resource
                   </span>
                   <p className="text-xs leading-6">
@@ -453,7 +453,7 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
                     heights.
                   </p>
                   <Link
-                    className="text-blue-vibrant-500 text-xs font-bold underline"
+                    className="text-xs font-bold text-blue-vibrant-500 underline"
                     href="https://impactpartner.wistia.com/medias/og78n37xt8"
                     target="_blank"
                   >
@@ -471,12 +471,12 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
                   <h4 className="font-semibold text-neon-orange-500">
                     Prudential Life Marketing Micro Site
                   </h4>
-                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                  <span className="block w-fit rounded-full bg-blue-vibrant-100 p-2 text-xs text-blue-vibrant-500 ring-1 ring-inset ring-blue-vibrant-600">
                     Marketing Microsite
                   </span>
                   <Link
                     href="https://view.ceros.com/prudential/trimester-marketing-2024-ili/p/7?mkt_tok=NzAzLU5IUi04NDkAAAGTFiyeC92RtLMSPLalj388eqXCtAT1tiVpskSxgmSM2E-QoIilkmvHbpghsVodUe_F7JblY2lKPgJMRvPpG_DJNWPzwWiSgm49mfLPSDfh"
-                    className="text-blue-vibrant-500 text-xs underline"
+                    className="text-xs text-blue-vibrant-500 underline"
                   >
                     Launch
                   </Link>
@@ -492,7 +492,7 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
                   <h4 className="font-semibold text-neon-orange-500">
                     American Retirement Insitute
                   </h4>
-                  <span className="bg-blue-vibrant-100 text-blue-vibrant-500 ring-blue-vibrant-600 block w-fit rounded-full p-2 text-xs ring-1 ring-inset">
+                  <span className="block w-fit rounded-full bg-blue-vibrant-100 p-2 text-xs text-blue-vibrant-500 ring-1 ring-inset ring-blue-vibrant-600">
                     Adult Education/Seminar
                   </span>
                   <p className="text-xs italic">Pre-Approved by Compliance</p>
@@ -506,7 +506,7 @@ const overview = ({ teamData, preview, formattedYtdData, toolsData }) => {
                   <Link
                     href="https://gallery.mailchimp.com/ed907ad6fd8ba2b323ddb8edb/files/00c0d5ff-7f17-4434-abc0-0fa69f703183/ARI_IntroGuide_S01_TS.pdf"
                     target="_blank"
-                    className="text-blue-vibrant-500 text-xs underline"
+                    className="text-xs text-blue-vibrant-500 underline"
                   >
                     Learn More
                   </Link>

@@ -2,7 +2,7 @@ import React from "react";
 
 const PageHeader = ({ pageName, headerText, breadCrumb }) => {
   return (
-    <header className="relative min-h-[200px] bg-neon-orange-500 lg:ml-72">
+    <header className="sticky top-0 z-10 min-h-[200px] bg-neon-orange-500 lg:ml-72">
       <div className="h-full px-8 py-4">
         <div className="absolute inset-x-8 top-1/2 -translate-y-1/2">
           {breadCrumb && (

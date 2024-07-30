@@ -54,7 +54,7 @@ const overview = ({ preview, teamMemberData, departmentAnnouncementData }) => {
       />
       <Layout preview={preview}>
         <ContentContainer>
-          <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" />
+          {/* <OverviewVideo url="https://placehold.co/3840x2160.mp4?text=placeholder+video" /> */}
           <DepartmentAnnouncements
             name="Information Technology"
             data={departmentAnnouncementData}

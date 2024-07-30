@@ -105,7 +105,7 @@ const ReferralProgramForm = () => {
                 Min ($0)
               </span>
               <span className="absolute -bottom-6 end-0 text-sm text-gray-500 dark:text-gray-400">
-                Max ($300,000,000)
+                Max ($3,000,000)
               </span>
             </div>
             {currentGDC > 150000 && (

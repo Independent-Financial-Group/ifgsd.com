@@ -57,7 +57,7 @@ const Overview = ({
       <PageHeader pageName="Overview" breadCrumb="Compliance" />
       <Layout preview={preview}>
         <ContentContainer>
-          <OverviewVideo />
+          {/* <OverviewVideo /> */}
           <DepartmentAnnouncements
             data={departmentAnnouncements}
             name="Compliance"

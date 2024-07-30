@@ -130,11 +130,7 @@ const Model = ({ model, preview }) => {
               />
             </div>
           </GridTile>
-          <GridTile
-            tileTitle={`Holdings`}
-            colSpan={"col-span-8 h-[500px]"}
-            scroll={true}
-          >
+          <GridTile tileTitle={`Holdings`} colSpan={"col-span-8"} scroll={true}>
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr>
