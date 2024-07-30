@@ -22,7 +22,7 @@ const DepartmentAnnouncements = ({ data, name }) => {
           <ol className="divide-y divide-gray-100">
             {data.map((announcement) => (
               <li key={announcement.sys.id} className="flex gap-x-4 px-3 py-5">
-                <div className="min-w-0">
+                <div className="w-full">
                   <p className="text-sm font-semibold leading-6 text-gray-900">
                     {announcement.fields.title}
                   </p>
