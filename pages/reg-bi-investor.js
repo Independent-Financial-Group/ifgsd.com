@@ -77,13 +77,13 @@ const regBiInvestor = ({
         <title>Reg BI for Investors | Independent Financial Group</title>
       </Head>
       <PublicLayout>
-        <header className="relative h-[calc(35vh-60px)] rounded-b-[20px] bg-neon-orange-500">
+        <header className="relative min-h-max rounded-b-[20px] bg-neon-orange-500 py-8">
           <Container>
-            <div className="absolute top-1/2 -translate-y-1/2 ">
+            <div>
               <h1 className="text-5xl font-bold text-seabreeze-500">
                 Regulation Best Interest for Investors
               </h1>
-              <p className="my-5 max-w-prose text-base text-seabreeze-500">
+              <p className="my-5 text-base text-seabreeze-500">
                 When we provide you with a recommendation as your broker-dealer
                 or act as your Investment Advisor, we have to act in your best
                 interest and not put our interest ahead of yours. At the same
@@ -92,7 +92,7 @@ const regBiInvestor = ({
                 because they can affect the recommendation and Investment Advice
                 we provide you.
               </p>
-              <p className="max-w-prose text-seabreeze-500">
+              <p className="text-seabreeze-500">
                 This portion of our website provides potential and existing
                 clients of our Financial Service Representatives information and
                 important disclosures about Independent Financial Group. It also
@@ -126,19 +126,27 @@ const regBiInvestor = ({
               <p className="text-xl font-bold text-neon-orange-500">
                 Diclosures at a glance:
               </p>
-              <ul className="flex gap-5 font-bold text-blue-wave-500">
+              <ul className="flex gap-5 divide-x-2 divide-gray-300 font-semibold text-blue-wave-500 [&>li]:pl-2">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a
+                    href="https://assets.ctfassets.net/9lvru9ro1ti1/6xRN3xQeErEGkaFnM3fyiG/c907f289493b0cb5b9e42c6b9580bd95/Form-CRS-06.2020.pdf"
+                    className="hover:underline"
+                    target="_blank"
+                  >
                     Form CRS (PDF)
                   </a>
                 </li>
-                <li className="border-x-2 border-gray-300 px-2">
+                {/* <li className="border-x-2 border-gray-300 px-2">
                   <a href="#" className="hover:underline">
                     Form CRS Supplement (PDF)
                   </a>
-                </li>
+                </li> */}
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a
+                    href="https://assets.ctfassets.net/9lvru9ro1ti1/2wH6AxfgwpRUZaENAb8Qp9/afe840da32af94146ac06d2589f516c6/ADV_2A_07012024_FINAL.pdf"
+                    className="hover:underline"
+                    target="_blank"
+                  >
                     ADV Part 2A (PDF)
                   </a>
                 </li>
@@ -151,7 +159,7 @@ const regBiInvestor = ({
                     {({ open }) => (
                       <>
                         <dt>
-                          <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+                          <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer">
                             <span className="text-base font-semibold leading-7">
                               {faq.fields.label}
                             </span>
