@@ -181,6 +181,7 @@ const index = ({ announcements, preview }) => {
                               : `/app/resources/announcements/${announcement.fields.slug}`
                           }
                           className="block w-fit rounded-lg bg-neon-orange-100 px-8 py-3 text-center text-xs font-semibold text-neon-orange-500 ring-1 ring-inset ring-neon-orange-600 transition-all hover:-translate-y-1"
+                          target="_blank"
                         >
                           View
                         </Link>
