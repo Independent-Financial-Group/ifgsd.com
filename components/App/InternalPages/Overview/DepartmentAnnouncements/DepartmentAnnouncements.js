@@ -13,7 +13,7 @@ const DepartmentAnnouncements = ({ data, name }) => {
         </h2>
       </div>
       <div className="h-[90%] overflow-y-auto pl-4 pr-1 pt-4">
-        {!data.length && (
+        {!data && (
           <div className="flex h-full items-center justify-center text-center text-xl font-semibold text-gray-300">
             <h3>No Updates</h3>
           </div>
@@ -22,6 +22,15 @@ const DepartmentAnnouncements = ({ data, name }) => {
           <ol className="divide-y divide-gray-100">
             {data.map((announcement) => (
               <li key={announcement.sys.id} className="flex gap-x-4 px-3 py-5">
+                <div>
+                  {announcement.fields.mediaThumbnail && (
+                    <img
+                      src={`https:${announcement.fields.mediaThumbnail.fields.file.url}`}
+                      alt={announcement.fields.mediaThumbnail.fields.title}
+                      className="aspect-video max-w-[300px] object-contain"
+                    />
+                  )}
+                </div>
                 <div className="w-full">
                   <p className="text-sm font-semibold leading-6 text-gray-900">
                     {announcement.fields.title}
