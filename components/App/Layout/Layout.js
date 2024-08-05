@@ -40,16 +40,29 @@ const navigation = [
           },
         ],
       },
-      // {
-      //   name: "Annuities",
-      //   links: [
-      //     { name: "Overview", href: "#" },
-      //     { name: "Approved Products", href: "#" },
-      //     { name: "Partners", href: "#" },
-      //     { name: "Tools", href: "#" },
-      //     { name: "Education", href: "#" },
-      //   ],
-      // },
+      {
+        name: "Annuities",
+        links: [
+          { name: "Overview", href: "/app/annuities/overview" },
+          {
+            name: "Annuity Policy Review",
+            href: "/app/annuities/annuity-policy-review",
+          },
+          { name: "Firelight", href: "/app/annuities/firelight" },
+          {
+            name: "Variable Annuitiy & RILAs",
+            href: "/app/annuities/variable-annuitiy-and-rilas",
+          },
+          {
+            name: "Fixed & Fixed Index Annuity",
+            href: "/app/annuities/fixed-and-fixed-index-annuity",
+          },
+          {
+            name: "Tools & Technology",
+            href: "/app/annuities/tools-and-technology",
+          },
+        ],
+      },
       {
         name: "Bank Products",
         links: [{ name: "Overview", href: "/app/bank-products/overview" }],
