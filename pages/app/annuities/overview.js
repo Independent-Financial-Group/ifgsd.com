@@ -9,6 +9,7 @@ import DepartmentAnnouncements from "components/App/InternalPages/Overview/Depar
 import GridTile from "components/App/GridTile/GridTile";
 import Modal from "components/App/Modal/Modal";
 import ReactMarkdown from "react-markdown";
+import TeamDirectory from "components/App/InternalPages/Overview/TeamDirectory/TeamDirectory";
 
 import * as contentful from "/utils/contentful";
 
@@ -29,17 +30,36 @@ export async function getStaticProps({ preview }) {
     order: "fields.heading",
   });
 
+  const annuityTeam = await client.getEntries({
+    content_type: "companyDirectory",
+    "fields.department[match]": "Annuities",
+  });
+
+  const annuityAnnouncements = await client.getEntries({
+    content_type: "announcements",
+    "fields.department[match]": "Annuities",
+    order: "-fields.date",
+  });
+
   return {
     props: {
       preview: preview || false,
       NAICFiles: [...NAICFiles.items],
       annuitySpotlight: [...annuitySpotlight.items],
+      annuityAnnouncements: [...annuityAnnouncements.items],
+      annuityTeam: [...annuityTeam.items],
     },
     revalidate: 10,
   };
 }
 
-const Page = ({ preview, NAICFiles, annuitySpotlight }) => {
+const Page = ({
+  preview,
+  NAICFiles,
+  annuitySpotlight,
+  annuityAnnouncements,
+  annuityTeam,
+}) => {
   const [open, setOpen] = useState(false);
   const [selectedSpotlightId, setSelectedSpotlightId] = useState(null);
 
@@ -49,9 +69,12 @@ const Page = ({ preview, NAICFiles, annuitySpotlight }) => {
         <title>Overview | Annuities</title>
       </Head>
       <PageHeader pageName={"Overview"} breadCrumb={"Annuities"} />
-      <Layout>
+      <Layout preview={preview}>
         <ContentContainer>
-          <DepartmentAnnouncements data={[]} name={"Annuities"} />
+          <DepartmentAnnouncements
+            data={annuityAnnouncements}
+            name={"Annuities"}
+          />
           <GridTile
             colSpan={"col-span-6"}
             tileTitle={"NAIC Model Regulation 275"}
@@ -127,6 +150,7 @@ const Page = ({ preview, NAICFiles, annuitySpotlight }) => {
                 ))}
             </Modal>
           </GridTile>
+          <TeamDirectory colSpan={"col-span-6"} data={annuityTeam} />
         </ContentContainer>
       </Layout>
     </>
