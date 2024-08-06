@@ -150,7 +150,11 @@ const Page = ({
                 ))}
             </Modal>
           </GridTile>
-          <TeamDirectory colSpan={"col-span-6"} data={annuityTeam} />
+          <TeamDirectory
+            colSpan={"col-span-6"}
+            data={annuityTeam}
+            name={"Annuities"}
+          />
         </ContentContainer>
       </Layout>
     </>
